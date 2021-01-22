@@ -14,13 +14,13 @@ You can install the Python package directly from the hosted git repository.
 To install the lastest version:
 
 ```sh
-pip install git+https://gitlab.com/simscale-gmbh/public/simscale-python-sdk.git
+pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git
 ```
 
 To install a specific version:
 
 ```sh
-pip install git+https://gitlab.com/simscale-gmbh/public/simscale-python-sdk.git@0.0.10
+pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git@0.0.10
 ```
 
 Then import the package:
