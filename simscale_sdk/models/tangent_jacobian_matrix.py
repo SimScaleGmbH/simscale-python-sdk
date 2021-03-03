@@ -60,8 +60,10 @@ class TangentJacobianMatrix(object):
         self.discriminator = None
 
         self.type = type
-        self.max_newton_iteration = max_newton_iteration
-        self.reactualization_iteration = reactualization_iteration
+        if max_newton_iteration is not None:
+            self.max_newton_iteration = max_newton_iteration
+        if reactualization_iteration is not None:
+            self.reactualization_iteration = reactualization_iteration
         if reactualization_increment is not None:
             self.reactualization_increment = reactualization_increment
         if change_jacobian_matrix is not None:
@@ -110,8 +112,6 @@ class TangentJacobianMatrix(object):
         :param max_newton_iteration: The max_newton_iteration of this TangentJacobianMatrix.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and max_newton_iteration is None:  # noqa: E501
-            raise ValueError("Invalid value for `max_newton_iteration`, must not be `None`")  # noqa: E501
 
         self._max_newton_iteration = max_newton_iteration
 
@@ -135,8 +135,6 @@ class TangentJacobianMatrix(object):
         :param reactualization_iteration: The reactualization_iteration of this TangentJacobianMatrix.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and reactualization_iteration is None:  # noqa: E501
-            raise ValueError("Invalid value for `reactualization_iteration`, must not be `None`")  # noqa: E501
 
         self._reactualization_iteration = reactualization_iteration
 

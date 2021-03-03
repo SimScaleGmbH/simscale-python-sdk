@@ -42,7 +42,7 @@ class EigenModeVerification(object):
         'precision_shift': 'precisionShift'
     }
 
-    def __init__(self, stop_error=False, threshold=None, precision_shift=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, stop_error=None, threshold=None, precision_shift=None, local_vars_configuration=None):  # noqa: E501
         """EigenModeVerification - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,7 +53,8 @@ class EigenModeVerification(object):
         self._precision_shift = None
         self.discriminator = None
 
-        self.stop_error = stop_error
+        if stop_error is not None:
+            self.stop_error = stop_error
         if threshold is not None:
             self.threshold = threshold
         if precision_shift is not None:
@@ -77,8 +78,6 @@ class EigenModeVerification(object):
         :param stop_error: The stop_error of this EigenModeVerification.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and stop_error is None:  # noqa: E501
-            raise ValueError("Invalid value for `stop_error`, must not be `None`")  # noqa: E501
 
         self._stop_error = stop_error
 

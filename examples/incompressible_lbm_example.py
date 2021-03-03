@@ -105,7 +105,6 @@ mesh_region_uuid = simulation_api.create_geometry_primitive(project_id, mesh_reg
 # Define simulation spec
 model = IncompressiblePacefish(
     bounding_box_uuid=external_flow_domain_uuid,
-    turbulence_model='KOMEGASST_DDES',
     material=IncompressibleMaterial(
         name='Air',
         viscosity_model=NewtonianViscosityModel(
@@ -118,8 +117,8 @@ model = IncompressiblePacefish(
     flow_domain_boundaries=FlowDomainBoundaries(
         xmin=VelocityInletBC(
             name='Velocity inlet (A)',
-            velocity=FixedMagnitudeVBC(value=DimensionalFunctionSpeed(value=ConstantFunction(value=10), unit='m/s')),
-            turbulence_intensity=TurbulenceIntensityTIBC(value=DimensionalFunctionDimensionless(value=ConstantFunction(value=0.01), unit='')),
+            velocity=FixedMagnitudeVBC(value=DimensionalFunctionSpeed(value=ConstantFunction(value=10.5), unit='m/s')),
+            turbulence_intensity=TurbulenceIntensityTIBC(value=DimensionalFunctionDimensionless(value=ConstantFunction(value=0.015), unit='')),
             dissipation_type=AutomaticOmegaDissipation()
         ),
         xmax=PressureOutletBC(
@@ -146,67 +145,48 @@ model = IncompressiblePacefish(
     ),
     simulation_control=FluidSimulationControl(
         end_time=DimensionalTime(value=5, unit='s'),
-        max_run_time=DimensionalTime(value=10000, unit='s'),
     ),
-    advanced_modelling=AdvancedModelling(  # TODO: must set empty lists
-        surface_roughness=[],
-        porous_objects=[],
-        rotating_walls=[],
-    ),
+    advanced_modelling=AdvancedModelling(),
     result_control=FluidResultControls(
         forces_moments=[
             ForcesMomentsResultControl(
                 name='Forces and moments 1',
                 center_of_rotation=DimensionalVectorLength(value=DecimalVector(x=0, y=0, z=0), unit='m'),
                 write_control=HighResolution(),
-                fraction_from_end=0.2,
                 export_statistics=False,
                 group_assignments=False,
                 topological_reference=TopologicalReference(
                     entities=entities,
-                    sets=[]  # TODO: default value None fails to load workbench
                 ),
             ),
             ForcesMomentsResultControl(
                 name='Forces and moments 2',
                 center_of_rotation=DimensionalVectorLength(value=DecimalVector(x=0, y=0, z=0), unit='m'),
                 write_control=HighResolution(),
-                fraction_from_end=0.2,
-                export_statistics=True,
-                group_assignments=True,
+                fraction_from_end=0.3,
                 topological_reference=TopologicalReference(
                     entities=entities,
-                    sets=[]  # TODO: default value None fails to load workbench
                 ),
             ),
         ],
         probe_points=[
             ProbePointsResultControl(
-                type='PROBE_POINTS',
                 name='Probe point 1',
                 write_control=ModerateResolution(),
-                fraction_from_end=0.2,
-                export_statistics=True,
-                probe_locations=TableDefinedProbeLocations(type='TABULAR', object_id=table_id)
+                probe_locations=TableDefinedProbeLocations(table_id=table_id)
             )
         ],
-        field_calculations=[],
         transient_result_control=TransientResultControl(
             write_control=CoarseResolution(),
-            fraction_from_end=0.2,
-            export_fluid=True,
             export_surface=True,
             geometry_primitive_uuids=[external_flow_domain_uuid],
         ),
         statistical_averaging_result_control=StatisticalAveragingResultControlV2(
             sampling_interval=CoarseResolution(),
-            fraction_from_end=0.2,
-            export_fluid=True,
             export_surface=True,
             geometry_primitive_uuids=[external_flow_domain_uuid],
         ),
         snapshot_result_control=SnapshotResultControl(
-            export_fluid=True,
             export_surface=True,
             geometry_primitive_uuids=[external_flow_domain_uuid],
         ),
@@ -215,7 +195,6 @@ model = IncompressiblePacefish(
         new_fineness=PacefishFinenessCoarse(),
         reference_length_computation=AutomaticReferenceLength(),
         primary_topology=Region(geometry_primitive_uuids=[mesh_region_uuid]),
-        refinements=[]
     ),
 )
 simulation_spec = SimulationSpec(name='Incompressible LBM', geometry_id=geometry_id, model=model)

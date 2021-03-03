@@ -73,7 +73,7 @@ class OneOfCustomFluidBCPressure(object):
         'WAVE_TRANSMISSIVE': 'WaveTransmissivePBC'
     }
 
-    def __init__(self, type='WAVE_TRANSMISSIVE', relax_boundary=False, far_field_value=None, relaxation_length_scale=None, fan_pressure=None, direction=None, environmental_total_pressure=None, gamma=None, gradient=None, value=None, total_pressure=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='WAVE_TRANSMISSIVE', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, fan_pressure=None, direction=None, environmental_total_pressure=None, gamma=None, gradient=None, value=None, total_pressure=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCPressure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,7 +94,8 @@ class OneOfCustomFluidBCPressure(object):
         self.discriminator = 'type'
 
         self.type = type
-        self.relax_boundary = relax_boundary
+        if relax_boundary is not None:
+            self.relax_boundary = relax_boundary
         if far_field_value is not None:
             self.far_field_value = far_field_value
         if relaxation_length_scale is not None:
@@ -157,8 +158,6 @@ class OneOfCustomFluidBCPressure(object):
         :param relax_boundary: The relax_boundary of this OneOfCustomFluidBCPressure.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and relax_boundary is None:  # noqa: E501
-            raise ValueError("Invalid value for `relax_boundary`, must not be `None`")  # noqa: E501
 
         self._relax_boundary = relax_boundary
 

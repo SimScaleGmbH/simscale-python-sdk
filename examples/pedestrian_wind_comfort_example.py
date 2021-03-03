@@ -104,24 +104,15 @@ model = WindComfort(
         max_direction_run_time=DimensionalTime(10000, "s"),
         number_of_fluid_passes=0.2
     ),
-    advanced_modelling=AdvancedModelling(
-        surface_roughness=[],
-        porous_objects=[],
-    ),
+    advanced_modelling=AdvancedModelling(),
     additional_result_export=FluidResultControls(
-        forces_moments=[],
-        probe_points=[],
         transient_result_control=TransientResultControl(
             write_control=CoarseResolution(),
             fraction_from_end=0.1,
-            export_fluid=True,
-            export_surface=False,
         ),
         statistical_averaging_result_control=StatisticalAveragingResultControlV2(
             sampling_interval=CoarseResolution(),
             fraction_from_end=0.1,
-            export_fluid=True,
-            export_surface=False,
         ),
     ),
     mesh_settings=WindComfortMesh(wind_comfort_fineness=PacefishFinenessVeryCoarse())

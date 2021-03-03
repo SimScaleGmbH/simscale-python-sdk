@@ -68,7 +68,7 @@ class ConjugateHeatTransfer(object):
         'is_compressible': 'isCompressible'
     }
 
-    def __init__(self, type='CONJUGATE_HEAT_TRANSFER', mesh_spec_id=None, enable_radiation=False, turbulence_model=None, time_dependency=None, connection_groups=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, is_compressible=True, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONJUGATE_HEAT_TRANSFER', mesh_spec_id=None, enable_radiation=None, turbulence_model=None, time_dependency=None, connection_groups=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, is_compressible=None, local_vars_configuration=None):  # noqa: E501
         """ConjugateHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,7 +95,8 @@ class ConjugateHeatTransfer(object):
         self.type = type
         if mesh_spec_id is not None:
             self.mesh_spec_id = mesh_spec_id
-        self.enable_radiation = enable_radiation
+        if enable_radiation is not None:
+            self.enable_radiation = enable_radiation
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
@@ -120,7 +121,8 @@ class ConjugateHeatTransfer(object):
             self.result_control = result_control
         if contact_handling_mode is not None:
             self.contact_handling_mode = contact_handling_mode
-        self.is_compressible = is_compressible
+        if is_compressible is not None:
+            self.is_compressible = is_compressible
 
     @property
     def type(self):
@@ -170,6 +172,7 @@ class ConjugateHeatTransfer(object):
     def enable_radiation(self):
         """Gets the enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
 
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
         :rtype: bool
@@ -180,12 +183,11 @@ class ConjugateHeatTransfer(object):
     def enable_radiation(self, enable_radiation):
         """Sets the enable_radiation of this ConjugateHeatTransfer.
 
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_radiation: The enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and enable_radiation is None:  # noqa: E501
-            raise ValueError("Invalid value for `enable_radiation`, must not be `None`")  # noqa: E501
 
         self._enable_radiation = enable_radiation
 
@@ -193,6 +195,7 @@ class ConjugateHeatTransfer(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this ConjugateHeatTransfer.  # noqa: E501
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :return: The turbulence_model of this ConjugateHeatTransfer.  # noqa: E501
         :rtype: str
@@ -203,6 +206,7 @@ class ConjugateHeatTransfer(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this ConjugateHeatTransfer.
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this ConjugateHeatTransfer.  # noqa: E501
         :type: str
@@ -471,8 +475,6 @@ class ConjugateHeatTransfer(object):
         :param is_compressible: The is_compressible of this ConjugateHeatTransfer.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and is_compressible is None:  # noqa: E501
-            raise ValueError("Invalid value for `is_compressible`, must not be `None`")  # noqa: E501
 
         self._is_compressible = is_compressible
 

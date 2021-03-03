@@ -97,12 +97,6 @@ class PerfectGasEquationOfState(object):
         :param energy: The energy of this PerfectGasEquationOfState.  # noqa: E501
         :type: str
         """
-        allowed_values = ["SENSIBLE_ENTHALPY", "SENSIBLE_INTERNAL_ENERGY"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and energy not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `energy` ({0}), must be one of {1}"  # noqa: E501
-                .format(energy, allowed_values)
-            )
 
         self._energy = energy
 

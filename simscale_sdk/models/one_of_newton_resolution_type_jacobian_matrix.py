@@ -51,7 +51,7 @@ class OneOfNewtonResolutionTypeJacobianMatrix(object):
         'ELASTIC': 'ElasticJacobianMatrix'
     }
 
-    def __init__(self, type='ELASTIC', max_newton_iteration=35, reactualization_iteration=None, reactualization_increment=None, change_jacobian_matrix=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELASTIC', max_newton_iteration=None, reactualization_iteration=None, reactualization_increment=None, change_jacobian_matrix=None, local_vars_configuration=None):  # noqa: E501
         """OneOfNewtonResolutionTypeJacobianMatrix - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,8 +65,10 @@ class OneOfNewtonResolutionTypeJacobianMatrix(object):
         self.discriminator = 'type'
 
         self.type = type
-        self.max_newton_iteration = max_newton_iteration
-        self.reactualization_iteration = reactualization_iteration
+        if max_newton_iteration is not None:
+            self.max_newton_iteration = max_newton_iteration
+        if reactualization_iteration is not None:
+            self.reactualization_iteration = reactualization_iteration
         if reactualization_increment is not None:
             self.reactualization_increment = reactualization_increment
         if change_jacobian_matrix is not None:
@@ -115,8 +117,6 @@ class OneOfNewtonResolutionTypeJacobianMatrix(object):
         :param max_newton_iteration: The max_newton_iteration of this OneOfNewtonResolutionTypeJacobianMatrix.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and max_newton_iteration is None:  # noqa: E501
-            raise ValueError("Invalid value for `max_newton_iteration`, must not be `None`")  # noqa: E501
 
         self._max_newton_iteration = max_newton_iteration
 
@@ -140,8 +140,6 @@ class OneOfNewtonResolutionTypeJacobianMatrix(object):
         :param reactualization_iteration: The reactualization_iteration of this OneOfNewtonResolutionTypeJacobianMatrix.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and reactualization_iteration is None:  # noqa: E501
-            raise ValueError("Invalid value for `reactualization_iteration`, must not be `None`")  # noqa: E501
 
         self._reactualization_iteration = reactualization_iteration
 

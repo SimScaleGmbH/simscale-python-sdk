@@ -34,30 +34,24 @@ class OneOfImplicitTimeIntegrationTypeScheme(object):
         'type': 'str',
         'alpha': 'float',
         'method': 'str',
-        'k': 'float',
         'beta': 'float',
-        'gamma': 'float',
-        'theta': 'float'
+        'gamma': 'float'
     }
 
     attribute_map = {
         'type': 'type',
         'alpha': 'alpha',
         'method': 'method',
-        'k': 'k',
         'beta': 'beta',
-        'gamma': 'gamma',
-        'theta': 'theta'
+        'gamma': 'gamma'
     }
 
     discriminator_value_class_map = {
         'HHT': 'HhtTimeIntegrationScheme',
-        'KRENK': 'KrenkTimeIntegrationScheme',
-        'NEWMARK': 'NewmarkTimeIntegrationScheme',
-        'THETA_METHOD': 'ThetaTimeIntegrationScheme'
+        'NEWMARK': 'NewmarkTimeIntegrationScheme'
     }
 
-    def __init__(self, type='THETA_METHOD', alpha=None, method=None, k=None, beta=None, gamma=None, theta=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NEWMARK', alpha=None, method=None, beta=None, gamma=None, local_vars_configuration=None):  # noqa: E501
         """OneOfImplicitTimeIntegrationTypeScheme - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,10 +60,8 @@ class OneOfImplicitTimeIntegrationTypeScheme(object):
         self._type = None
         self._alpha = None
         self._method = None
-        self._k = None
         self._beta = None
         self._gamma = None
-        self._theta = None
         self.discriminator = 'type'
 
         self.type = type
@@ -77,14 +69,10 @@ class OneOfImplicitTimeIntegrationTypeScheme(object):
             self.alpha = alpha
         if method is not None:
             self.method = method
-        if k is not None:
-            self.k = k
         if beta is not None:
             self.beta = beta
         if gamma is not None:
             self.gamma = gamma
-        if theta is not None:
-            self.theta = theta
 
     @property
     def type(self):
@@ -162,32 +150,6 @@ class OneOfImplicitTimeIntegrationTypeScheme(object):
         self._method = method
 
     @property
-    def k(self):
-        """Gets the k of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
-
-        Numerical damping of the <i>Krenk sheme</i> is controlled by the parameter <b>&kappa;</b>, which must be equal to or greater than 1.0. If <b>&kappa;</b> is set to 1.0, then there won't be any numerical dissipation. The larger <b>&kappa;</b>, the more numerical damping will occur.  # noqa: E501
-
-        :return: The k of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
-        :rtype: float
-        """
-        return self._k
-
-    @k.setter
-    def k(self, k):
-        """Sets the k of this OneOfImplicitTimeIntegrationTypeScheme.
-
-        Numerical damping of the <i>Krenk sheme</i> is controlled by the parameter <b>&kappa;</b>, which must be equal to or greater than 1.0. If <b>&kappa;</b> is set to 1.0, then there won't be any numerical dissipation. The larger <b>&kappa;</b>, the more numerical damping will occur.  # noqa: E501
-
-        :param k: The k of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
-        :type: float
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                k is not None and k < 1):  # noqa: E501
-            raise ValueError("Invalid value for `k`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._k = k
-
-    @property
     def beta(self):
         """Gets the beta of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
 
@@ -244,35 +206,6 @@ class OneOfImplicitTimeIntegrationTypeScheme(object):
             raise ValueError("Invalid value for `gamma`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._gamma = gamma
-
-    @property
-    def theta(self):
-        """Gets the theta of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
-
-        The parameter <b>&theta;</b> must be ranging between 0.5 and 1.0: 0.5 corresponds to a minimum, 1.0 to a maximum of numerical dissipation. The selection of <b>&theta;</b> = 1.0 leads to the <b>Euler scheme</b>, whereas <b>&theta;</b> = 0.5 leads to the <i>Crank-Nicolson</i> scheme of order 2.  # noqa: E501
-
-        :return: The theta of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
-        :rtype: float
-        """
-        return self._theta
-
-    @theta.setter
-    def theta(self, theta):
-        """Sets the theta of this OneOfImplicitTimeIntegrationTypeScheme.
-
-        The parameter <b>&theta;</b> must be ranging between 0.5 and 1.0: 0.5 corresponds to a minimum, 1.0 to a maximum of numerical dissipation. The selection of <b>&theta;</b> = 1.0 leads to the <b>Euler scheme</b>, whereas <b>&theta;</b> = 0.5 leads to the <i>Crank-Nicolson</i> scheme of order 2.  # noqa: E501
-
-        :param theta: The theta of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
-        :type: float
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                theta is not None and theta > 1):  # noqa: E501
-            raise ValueError("Invalid value for `theta`, must be a value less than or equal to `1`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                theta is not None and theta < 0.5):  # noqa: E501
-            raise ValueError("Invalid value for `theta`, must be a value greater than or equal to `0.5`")  # noqa: E501
-
-        self._theta = theta
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

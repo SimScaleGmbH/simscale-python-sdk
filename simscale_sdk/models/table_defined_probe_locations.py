@@ -32,27 +32,27 @@ class TableDefinedProbeLocations(object):
     """
     openapi_types = {
         'type': 'str',
-        'object_id': 'str'
+        'table_id': 'str'
     }
 
     attribute_map = {
         'type': 'type',
-        'object_id': 'objectId'
+        'table_id': 'tableId'
     }
 
-    def __init__(self, type='TABULAR', object_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TABULAR', table_id=None, local_vars_configuration=None):  # noqa: E501
         """TableDefinedProbeLocations - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._object_id = None
+        self._table_id = None
         self.discriminator = None
 
         self.type = type
-        if object_id is not None:
-            self.object_id = object_id
+        if table_id is not None:
+            self.table_id = table_id
 
     @property
     def type(self):
@@ -78,25 +78,27 @@ class TableDefinedProbeLocations(object):
         self._type = type
 
     @property
-    def object_id(self):
-        """Gets the object_id of this TableDefinedProbeLocations.  # noqa: E501
+    def table_id(self):
+        """Gets the table_id of this TableDefinedProbeLocations.  # noqa: E501
 
+        The ID of the imported table.  # noqa: E501
 
-        :return: The object_id of this TableDefinedProbeLocations.  # noqa: E501
+        :return: The table_id of this TableDefinedProbeLocations.  # noqa: E501
         :rtype: str
         """
-        return self._object_id
+        return self._table_id
 
-    @object_id.setter
-    def object_id(self, object_id):
-        """Sets the object_id of this TableDefinedProbeLocations.
+    @table_id.setter
+    def table_id(self, table_id):
+        """Sets the table_id of this TableDefinedProbeLocations.
 
+        The ID of the imported table.  # noqa: E501
 
-        :param object_id: The object_id of this TableDefinedProbeLocations.  # noqa: E501
+        :param table_id: The table_id of this TableDefinedProbeLocations.  # noqa: E501
         :type: str
         """
 
-        self._object_id = object_id
+        self._table_id = table_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

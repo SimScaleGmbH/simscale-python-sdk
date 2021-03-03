@@ -33,16 +33,18 @@ class OriginalEntityReference(object):
     openapi_types = {
         'path': 'list[BodyPath]',
         'body': 'str',
-        'entity': 'str'
+        'entity': 'str',
+        'attribute_list': 'list[EntityAttribute]'
     }
 
     attribute_map = {
         'path': 'path',
         'body': 'body',
-        'entity': 'entity'
+        'entity': 'entity',
+        'attribute_list': 'attributeList'
     }
 
-    def __init__(self, path=None, body=None, entity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, path=None, body=None, entity=None, attribute_list=None, local_vars_configuration=None):  # noqa: E501
         """OriginalEntityReference - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class OriginalEntityReference(object):
         self._path = None
         self._body = None
         self._entity = None
+        self._attribute_list = None
         self.discriminator = None
 
         if path is not None:
@@ -59,6 +62,8 @@ class OriginalEntityReference(object):
             self.body = body
         if entity is not None:
             self.entity = entity
+        if attribute_list is not None:
+            self.attribute_list = attribute_list
 
     @property
     def path(self):
@@ -128,6 +133,29 @@ class OriginalEntityReference(object):
         """
 
         self._entity = entity
+
+    @property
+    def attribute_list(self):
+        """Gets the attribute_list of this OriginalEntityReference.  # noqa: E501
+
+        The attributes assigned to the entity.  # noqa: E501
+
+        :return: The attribute_list of this OriginalEntityReference.  # noqa: E501
+        :rtype: list[EntityAttribute]
+        """
+        return self._attribute_list
+
+    @attribute_list.setter
+    def attribute_list(self, attribute_list):
+        """Sets the attribute_list of this OriginalEntityReference.
+
+        The attributes assigned to the entity.  # noqa: E501
+
+        :param attribute_list: The attribute_list of this OriginalEntityReference.  # noqa: E501
+        :type: list[EntityAttribute]
+        """
+
+        self._attribute_list = attribute_list
 
     def to_dict(self):
         """Returns the model properties as a dict"""

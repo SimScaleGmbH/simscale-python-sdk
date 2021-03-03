@@ -62,6 +62,7 @@ class TableFunctionParameter(object):
     def reference(self):
         """Gets the reference of this TableFunctionParameter.  # noqa: E501
 
+        Indicates which column of the table contains the values of this independent variable. One-based indexing must be used. For example, set this property to '1' if the first column of the table contains the values of this independent variable.  # noqa: E501
 
         :return: The reference of this TableFunctionParameter.  # noqa: E501
         :rtype: int
@@ -72,6 +73,7 @@ class TableFunctionParameter(object):
     def reference(self, reference):
         """Sets the reference of this TableFunctionParameter.
 
+        Indicates which column of the table contains the values of this independent variable. One-based indexing must be used. For example, set this property to '1' if the first column of the table contains the values of this independent variable.  # noqa: E501
 
         :param reference: The reference of this TableFunctionParameter.  # noqa: E501
         :type: int
@@ -85,6 +87,7 @@ class TableFunctionParameter(object):
     def parameter(self):
         """Gets the parameter of this TableFunctionParameter.  # noqa: E501
 
+        The name of the independent variable. Possible values: 'X', 'Y', 'Z', 'HEIGHT', 'Temperature', 'T' (time), 'Q' (mass flow rate), 'V_DOT' (volumetric flow rate), 'F' (frequency), 'E' (strain)  # noqa: E501
 
         :return: The parameter of this TableFunctionParameter.  # noqa: E501
         :rtype: str
@@ -95,6 +98,7 @@ class TableFunctionParameter(object):
     def parameter(self, parameter):
         """Sets the parameter of this TableFunctionParameter.
 
+        The name of the independent variable. Possible values: 'X', 'Y', 'Z', 'HEIGHT', 'Temperature', 'T' (time), 'Q' (mass flow rate), 'V_DOT' (volumetric flow rate), 'F' (frequency), 'E' (strain)  # noqa: E501
 
         :param parameter: The parameter of this TableFunctionParameter.  # noqa: E501
         :type: str

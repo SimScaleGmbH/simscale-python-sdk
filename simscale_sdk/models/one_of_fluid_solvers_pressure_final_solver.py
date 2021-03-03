@@ -64,7 +64,7 @@ class OneOfFluidSolversPressureFinalSolver(object):
         'SMOOTH': 'SmoothSolver'
     }
 
-    def __init__(self, type='SMOOTH', absolute_tolerance=None, relative_tolerance=None, smoother=None, num_pre_sweeps=None, num_post_sweeps=None, cache_agglomeration_on=True, num_cells_coarsest_level=None, num_merge_levels=None, preconditioner=None, num_sweeps=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SMOOTH', absolute_tolerance=None, relative_tolerance=None, smoother=None, num_pre_sweeps=None, num_post_sweeps=None, cache_agglomeration_on=None, num_cells_coarsest_level=None, num_merge_levels=None, preconditioner=None, num_sweeps=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidSolversPressureFinalSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,7 +94,8 @@ class OneOfFluidSolversPressureFinalSolver(object):
             self.num_pre_sweeps = num_pre_sweeps
         if num_post_sweeps is not None:
             self.num_post_sweeps = num_post_sweeps
-        self.cache_agglomeration_on = cache_agglomeration_on
+        if cache_agglomeration_on is not None:
+            self.cache_agglomeration_on = cache_agglomeration_on
         if num_cells_coarsest_level is not None:
             self.num_cells_coarsest_level = num_cells_coarsest_level
         if num_merge_levels is not None:
@@ -280,8 +281,6 @@ class OneOfFluidSolversPressureFinalSolver(object):
         :param cache_agglomeration_on: The cache_agglomeration_on of this OneOfFluidSolversPressureFinalSolver.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and cache_agglomeration_on is None:  # noqa: E501
-            raise ValueError("Invalid value for `cache_agglomeration_on`, must not be `None`")  # noqa: E501
 
         self._cache_agglomeration_on = cache_agglomeration_on
 

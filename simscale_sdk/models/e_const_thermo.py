@@ -34,7 +34,7 @@ class EConstThermo(object):
         'type': 'str',
         'specific_heat': 'DimensionalSpecificHeat',
         'heat_of_formation': 'DimensionalSpecificEnergy',
-        'equation_of_state': 'PerfectGasEquationOfStateEConstThermo'
+        'equation_of_state': 'PerfectGasEquationOfState'
     }
 
     attribute_map = {
@@ -135,7 +135,7 @@ class EConstThermo(object):
 
 
         :return: The equation_of_state of this EConstThermo.  # noqa: E501
-        :rtype: PerfectGasEquationOfStateEConstThermo
+        :rtype: PerfectGasEquationOfState
         """
         return self._equation_of_state
 
@@ -145,7 +145,7 @@ class EConstThermo(object):
 
 
         :param equation_of_state: The equation_of_state of this EConstThermo.  # noqa: E501
-        :type: PerfectGasEquationOfStateEConstThermo
+        :type: PerfectGasEquationOfState
         """
 
         self._equation_of_state = equation_of_state

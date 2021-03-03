@@ -137,6 +137,7 @@ class IncompressiblePacefish(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this IncompressiblePacefish.  # noqa: E501
 
+        Choose between RANS, LES, or DES turbulence models. <a href='https://www.simscale.com/docs/incompressible-lbm-lattice-boltzmann-advanced/#turbulence-models-in-incompressible-lbm' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The turbulence_model of this IncompressiblePacefish.  # noqa: E501
         :rtype: str
@@ -147,6 +148,7 @@ class IncompressiblePacefish(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this IncompressiblePacefish.
 
+        Choose between RANS, LES, or DES turbulence models. <a href='https://www.simscale.com/docs/incompressible-lbm-lattice-boltzmann-advanced/#turbulence-models-in-incompressible-lbm' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this IncompressiblePacefish.  # noqa: E501
         :type: str

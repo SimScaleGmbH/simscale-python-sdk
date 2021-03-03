@@ -69,7 +69,7 @@ class OneOfSolidNumericsEigenSolver(object):
         'QZ': 'QZ'
     }
 
-    def __init__(self, type='QZ', prec_soren=None, nmax_iter_soren=None, prec_ortho=None, nmax_iter_ortho=None, prec_lanczos=None, max_iter_qr=None, mode_rigid=True, prec_bathe=None, nmax_iter_bathe=None, prec_jacobi=None, max_iter_jacobi=None, type_qz=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='QZ', prec_soren=None, nmax_iter_soren=None, prec_ortho=None, nmax_iter_ortho=None, prec_lanczos=None, max_iter_qr=None, mode_rigid=None, prec_bathe=None, nmax_iter_bathe=None, prec_jacobi=None, max_iter_jacobi=None, type_qz=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidNumericsEigenSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -103,7 +103,8 @@ class OneOfSolidNumericsEigenSolver(object):
             self.prec_lanczos = prec_lanczos
         if max_iter_qr is not None:
             self.max_iter_qr = max_iter_qr
-        self.mode_rigid = mode_rigid
+        if mode_rigid is not None:
+            self.mode_rigid = mode_rigid
         if prec_bathe is not None:
             self.prec_bathe = prec_bathe
         if nmax_iter_bathe is not None:
@@ -297,8 +298,6 @@ class OneOfSolidNumericsEigenSolver(object):
         :param mode_rigid: The mode_rigid of this OneOfSolidNumericsEigenSolver.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and mode_rigid is None:  # noqa: E501
-            raise ValueError("Invalid value for `mode_rigid`, must not be `None`")  # noqa: E501
 
         self._mode_rigid = mode_rigid
 

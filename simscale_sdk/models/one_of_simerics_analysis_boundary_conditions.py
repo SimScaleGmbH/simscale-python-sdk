@@ -68,6 +68,8 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
 
     discriminator_value_class_map = {
         'VELOCITY_INLET_V3': 'VelocityInletBC',
+        'VELOCITY_OUTLET_V7': 'VelocityOutletBC',
+        'PRESSURE_INLET_V31': 'PressureInletBC',
         'PRESSURE_OUTLET_V30': 'PressureOutletBC',
         'WALL_V34': 'WallBC'
     }

@@ -33,7 +33,7 @@ class RestrictedTableDefinedFunction(object):
     openapi_types = {
         'type': 'str',
         'label': 'str',
-        'object_id': 'str',
+        'table_id': 'str',
         'result_index': 'list[int]',
         'independent_variables': 'list[TableFunctionParameter]',
         'separator': 'str'
@@ -42,13 +42,13 @@ class RestrictedTableDefinedFunction(object):
     attribute_map = {
         'type': 'type',
         'label': 'label',
-        'object_id': 'objectId',
+        'table_id': 'tableId',
         'result_index': 'resultIndex',
         'independent_variables': 'independentVariables',
         'separator': 'separator'
     }
 
-    def __init__(self, type='RESTRICTED_TABLE_DEFINED', label=None, object_id=None, result_index=None, independent_variables=None, separator=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='RESTRICTED_TABLE_DEFINED', label=None, table_id=None, result_index=None, independent_variables=None, separator=None, local_vars_configuration=None):  # noqa: E501
         """RestrictedTableDefinedFunction - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,7 +56,7 @@ class RestrictedTableDefinedFunction(object):
 
         self._type = None
         self._label = None
-        self._object_id = None
+        self._table_id = None
         self._result_index = None
         self._independent_variables = None
         self._separator = None
@@ -65,8 +65,8 @@ class RestrictedTableDefinedFunction(object):
         self.type = type
         if label is not None:
             self.label = label
-        if object_id is not None:
-            self.object_id = object_id
+        if table_id is not None:
+            self.table_id = table_id
         if result_index is not None:
             self.result_index = result_index
         if independent_variables is not None:
@@ -119,30 +119,33 @@ class RestrictedTableDefinedFunction(object):
         self._label = label
 
     @property
-    def object_id(self):
-        """Gets the object_id of this RestrictedTableDefinedFunction.  # noqa: E501
+    def table_id(self):
+        """Gets the table_id of this RestrictedTableDefinedFunction.  # noqa: E501
 
+        The ID of the imported table.  # noqa: E501
 
-        :return: The object_id of this RestrictedTableDefinedFunction.  # noqa: E501
+        :return: The table_id of this RestrictedTableDefinedFunction.  # noqa: E501
         :rtype: str
         """
-        return self._object_id
+        return self._table_id
 
-    @object_id.setter
-    def object_id(self, object_id):
-        """Sets the object_id of this RestrictedTableDefinedFunction.
+    @table_id.setter
+    def table_id(self, table_id):
+        """Sets the table_id of this RestrictedTableDefinedFunction.
 
+        The ID of the imported table.  # noqa: E501
 
-        :param object_id: The object_id of this RestrictedTableDefinedFunction.  # noqa: E501
+        :param table_id: The table_id of this RestrictedTableDefinedFunction.  # noqa: E501
         :type: str
         """
 
-        self._object_id = object_id
+        self._table_id = table_id
 
     @property
     def result_index(self):
         """Gets the result_index of this RestrictedTableDefinedFunction.  # noqa: E501
 
+        Indicates which column(s) of the table contains the result values. One-based indexing must be used. For example, set this field to '[2]' if the second column of the table contains the dependent variable values.  # noqa: E501
 
         :return: The result_index of this RestrictedTableDefinedFunction.  # noqa: E501
         :rtype: list[int]
@@ -153,6 +156,7 @@ class RestrictedTableDefinedFunction(object):
     def result_index(self, result_index):
         """Sets the result_index of this RestrictedTableDefinedFunction.
 
+        Indicates which column(s) of the table contains the result values. One-based indexing must be used. For example, set this field to '[2]' if the second column of the table contains the dependent variable values.  # noqa: E501
 
         :param result_index: The result_index of this RestrictedTableDefinedFunction.  # noqa: E501
         :type: list[int]
@@ -185,6 +189,7 @@ class RestrictedTableDefinedFunction(object):
     def separator(self):
         """Gets the separator of this RestrictedTableDefinedFunction.  # noqa: E501
 
+        Values in each row are separated by this character. Also known as a delimiter.  # noqa: E501
 
         :return: The separator of this RestrictedTableDefinedFunction.  # noqa: E501
         :rtype: str
@@ -195,6 +200,7 @@ class RestrictedTableDefinedFunction(object):
     def separator(self, separator):
         """Sets the separator of this RestrictedTableDefinedFunction.
 
+        Values in each row are separated by this character. Also known as a delimiter.  # noqa: E501
 
         :param separator: The separator of this RestrictedTableDefinedFunction.  # noqa: E501
         :type: str

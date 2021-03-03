@@ -56,11 +56,11 @@ class Analysis(object):
         'flow_domain_boundaries': 'FlowDomainBoundaries',
         'advanced_modelling': 'AdvancedModelling',
         'mesh_settings_new': 'OneOfIncompressiblePacefishMeshSettingsNew',
+        'mesh_settings': 'WindComfortMesh',
         'region_of_interest': 'RegionOfInterest',
         'wind_conditions': 'WindConditions',
         'pedestrian_comfort_map': 'list[PedestrianComfortSurface]',
         'additional_result_export': 'FluidResultControls',
-        'mesh_settings': 'WindComfortMesh',
         'enable_radiation': 'bool',
         'contact_handling_mode': 'str',
         'use_local_time_stepping': 'bool'
@@ -92,11 +92,11 @@ class Analysis(object):
         'flow_domain_boundaries': 'flowDomainBoundaries',
         'advanced_modelling': 'advancedModelling',
         'mesh_settings_new': 'meshSettingsNew',
+        'mesh_settings': 'meshSettings',
         'region_of_interest': 'regionOfInterest',
         'wind_conditions': 'windConditions',
         'pedestrian_comfort_map': 'pedestrianComfortMap',
         'additional_result_export': 'additionalResultExport',
-        'mesh_settings': 'meshSettings',
         'enable_radiation': 'enableRadiation',
         'contact_handling_mode': 'contactHandlingMode',
         'use_local_time_stepping': 'useLocalTimeStepping'
@@ -120,7 +120,7 @@ class Analysis(object):
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', mesh_spec_id=None, non_linear_analysis=False, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, is_compressible=False, turbulence_model=None, algorithm=None, num_of_passive_species=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, mesh_settings=None, enable_radiation=False, contact_handling_mode=None, use_local_time_stepping=False, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', mesh_spec_id=None, non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, is_compressible=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -151,11 +151,11 @@ class Analysis(object):
         self._flow_domain_boundaries = None
         self._advanced_modelling = None
         self._mesh_settings_new = None
+        self._mesh_settings = None
         self._region_of_interest = None
         self._wind_conditions = None
         self._pedestrian_comfort_map = None
         self._additional_result_export = None
-        self._mesh_settings = None
         self._enable_radiation = None
         self._contact_handling_mode = None
         self._use_local_time_stepping = None
@@ -164,7 +164,8 @@ class Analysis(object):
         self.type = type
         if mesh_spec_id is not None:
             self.mesh_spec_id = mesh_spec_id
-        self.non_linear_analysis = non_linear_analysis
+        if non_linear_analysis is not None:
+            self.non_linear_analysis = non_linear_analysis
         if connection_groups is not None:
             self.connection_groups = connection_groups
         if element_technology is not None:
@@ -189,7 +190,8 @@ class Analysis(object):
             self.time_dependency = time_dependency
         if inertia_effect is not None:
             self.inertia_effect = inertia_effect
-        self.is_compressible = is_compressible
+        if is_compressible is not None:
+            self.is_compressible = is_compressible
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if algorithm is not None:
@@ -208,6 +210,8 @@ class Analysis(object):
             self.advanced_modelling = advanced_modelling
         if mesh_settings_new is not None:
             self.mesh_settings_new = mesh_settings_new
+        if mesh_settings is not None:
+            self.mesh_settings = mesh_settings
         if region_of_interest is not None:
             self.region_of_interest = region_of_interest
         if wind_conditions is not None:
@@ -216,12 +220,12 @@ class Analysis(object):
             self.pedestrian_comfort_map = pedestrian_comfort_map
         if additional_result_export is not None:
             self.additional_result_export = additional_result_export
-        if mesh_settings is not None:
-            self.mesh_settings = mesh_settings
-        self.enable_radiation = enable_radiation
+        if enable_radiation is not None:
+            self.enable_radiation = enable_radiation
         if contact_handling_mode is not None:
             self.contact_handling_mode = contact_handling_mode
-        self.use_local_time_stepping = use_local_time_stepping
+        if use_local_time_stepping is not None:
+            self.use_local_time_stepping = use_local_time_stepping
 
     @property
     def type(self):
@@ -271,6 +275,7 @@ class Analysis(object):
     def non_linear_analysis(self):
         """Gets the non_linear_analysis of this Analysis.  # noqa: E501
 
+        <p>Choose if your analysis should feature any kind of <b>nonlinearity</b> like <b>physical contacts, nonlinear materials</b> as hyperelasticity or plasticity or <b>large rotations</b> and <b>large deformations, temperature dependant material properties</b> or <b>temperature dependant boundary conditions</b>. For a <b>linear analysis</b> none of those nonlinearities are available.</p>  # noqa: E501
 
         :return: The non_linear_analysis of this Analysis.  # noqa: E501
         :rtype: bool
@@ -281,12 +286,11 @@ class Analysis(object):
     def non_linear_analysis(self, non_linear_analysis):
         """Sets the non_linear_analysis of this Analysis.
 
+        <p>Choose if your analysis should feature any kind of <b>nonlinearity</b> like <b>physical contacts, nonlinear materials</b> as hyperelasticity or plasticity or <b>large rotations</b> and <b>large deformations, temperature dependant material properties</b> or <b>temperature dependant boundary conditions</b>. For a <b>linear analysis</b> none of those nonlinearities are available.</p>  # noqa: E501
 
         :param non_linear_analysis: The non_linear_analysis of this Analysis.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and non_linear_analysis is None:  # noqa: E501
-            raise ValueError("Invalid value for `non_linear_analysis`, must not be `None`")  # noqa: E501
 
         self._non_linear_analysis = non_linear_analysis
 
@@ -531,6 +535,7 @@ class Analysis(object):
     def inertia_effect(self):
         """Gets the inertia_effect of this Analysis.  # noqa: E501
 
+        <p>Select if inertia effects should be considered in the analysis. If high loading velocities or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
 
         :return: The inertia_effect of this Analysis.  # noqa: E501
         :rtype: str
@@ -541,6 +546,7 @@ class Analysis(object):
     def inertia_effect(self, inertia_effect):
         """Sets the inertia_effect of this Analysis.
 
+        <p>Select if inertia effects should be considered in the analysis. If high loading velocities or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
 
         :param inertia_effect: The inertia_effect of this Analysis.  # noqa: E501
         :type: str
@@ -566,8 +572,6 @@ class Analysis(object):
         :param is_compressible: The is_compressible of this Analysis.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and is_compressible is None:  # noqa: E501
-            raise ValueError("Invalid value for `is_compressible`, must not be `None`")  # noqa: E501
 
         self._is_compressible = is_compressible
 
@@ -575,6 +579,7 @@ class Analysis(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this Analysis.  # noqa: E501
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :return: The turbulence_model of this Analysis.  # noqa: E501
         :rtype: str
@@ -585,6 +590,7 @@ class Analysis(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this Analysis.
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this Analysis.  # noqa: E501
         :type: str
@@ -623,6 +629,7 @@ class Analysis(object):
     def num_of_passive_species(self):
         """Gets the num_of_passive_species of this Analysis.  # noqa: E501
 
+        Select the number of passive species involved in the simulation. Passive species allow you to simulate the transport of a scalar quantity within a fluid flow without affecting it. <a href='https://www.simscale.com/docs/simulation-setup/global-settings/#passive-species' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The num_of_passive_species of this Analysis.  # noqa: E501
         :rtype: int
@@ -633,6 +640,7 @@ class Analysis(object):
     def num_of_passive_species(self, num_of_passive_species):
         """Sets the num_of_passive_species of this Analysis.
 
+        Select the number of passive species involved in the simulation. Passive species allow you to simulate the transport of a scalar quantity within a fluid flow without affecting it. <a href='https://www.simscale.com/docs/simulation-setup/global-settings/#passive-species' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param num_of_passive_species: The num_of_passive_species of this Analysis.  # noqa: E501
         :type: int
@@ -773,6 +781,27 @@ class Analysis(object):
         self._mesh_settings_new = mesh_settings_new
 
     @property
+    def mesh_settings(self):
+        """Gets the mesh_settings of this Analysis.  # noqa: E501
+
+
+        :return: The mesh_settings of this Analysis.  # noqa: E501
+        :rtype: WindComfortMesh
+        """
+        return self._mesh_settings
+
+    @mesh_settings.setter
+    def mesh_settings(self, mesh_settings):
+        """Sets the mesh_settings of this Analysis.
+
+
+        :param mesh_settings: The mesh_settings of this Analysis.  # noqa: E501
+        :type: WindComfortMesh
+        """
+
+        self._mesh_settings = mesh_settings
+
+    @property
     def region_of_interest(self):
         """Gets the region_of_interest of this Analysis.  # noqa: E501
 
@@ -857,30 +886,10 @@ class Analysis(object):
         self._additional_result_export = additional_result_export
 
     @property
-    def mesh_settings(self):
-        """Gets the mesh_settings of this Analysis.  # noqa: E501
-
-
-        :return: The mesh_settings of this Analysis.  # noqa: E501
-        :rtype: WindComfortMesh
-        """
-        return self._mesh_settings
-
-    @mesh_settings.setter
-    def mesh_settings(self, mesh_settings):
-        """Sets the mesh_settings of this Analysis.
-
-
-        :param mesh_settings: The mesh_settings of this Analysis.  # noqa: E501
-        :type: WindComfortMesh
-        """
-
-        self._mesh_settings = mesh_settings
-
-    @property
     def enable_radiation(self):
         """Gets the enable_radiation of this Analysis.  # noqa: E501
 
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_radiation of this Analysis.  # noqa: E501
         :rtype: bool
@@ -891,12 +900,11 @@ class Analysis(object):
     def enable_radiation(self, enable_radiation):
         """Sets the enable_radiation of this Analysis.
 
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_radiation: The enable_radiation of this Analysis.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and enable_radiation is None:  # noqa: E501
-            raise ValueError("Invalid value for `enable_radiation`, must not be `None`")  # noqa: E501
 
         self._enable_radiation = enable_radiation
 
@@ -931,6 +939,7 @@ class Analysis(object):
     def use_local_time_stepping(self):
         """Gets the use_local_time_stepping of this Analysis.  # noqa: E501
 
+        With the <i>Local time stepping</i> option enabled, it’s possible to accelerate the simulation towards a steady-state. As a result, faster computing times and smaller result data size. Commonly used in ship hull resistance analysis.  # noqa: E501
 
         :return: The use_local_time_stepping of this Analysis.  # noqa: E501
         :rtype: bool
@@ -941,12 +950,11 @@ class Analysis(object):
     def use_local_time_stepping(self, use_local_time_stepping):
         """Sets the use_local_time_stepping of this Analysis.
 
+        With the <i>Local time stepping</i> option enabled, it’s possible to accelerate the simulation towards a steady-state. As a result, faster computing times and smaller result data size. Commonly used in ship hull resistance analysis.  # noqa: E501
 
         :param use_local_time_stepping: The use_local_time_stepping of this Analysis.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and use_local_time_stepping is None:  # noqa: E501
-            raise ValueError("Invalid value for `use_local_time_stepping`, must not be `None`")  # noqa: E501
 
         self._use_local_time_stepping = use_local_time_stepping
 

@@ -37,7 +37,7 @@ class PressureInletBC(object):
         'pressure_rgh': 'TotalPBC',
         'gauge_pressure': 'OneOfPressureInletBCGaugePressure',
         'gauge_pressure_rgh': 'TotalPBC',
-        'temperature': 'FixedValueTBC',
+        'temperature': 'OneOfPressureInletBCTemperature',
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'FixedValuePFBC',
         'net_radiative_heat_flux': 'OneOfPressureInletBCNetRadiativeHeatFlux',
@@ -233,7 +233,7 @@ class PressureInletBC(object):
 
 
         :return: The temperature of this PressureInletBC.  # noqa: E501
-        :rtype: FixedValueTBC
+        :rtype: OneOfPressureInletBCTemperature
         """
         return self._temperature
 
@@ -243,7 +243,7 @@ class PressureInletBC(object):
 
 
         :param temperature: The temperature of this PressureInletBC.  # noqa: E501
-        :type: FixedValueTBC
+        :type: OneOfPressureInletBCTemperature
         """
 
         self._temperature = temperature

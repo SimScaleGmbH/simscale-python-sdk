@@ -105,9 +105,6 @@ class ComputingCore(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
-                num_of_computing_processors is not None and num_of_computing_processors > 64):  # noqa: E501
-            raise ValueError("Invalid value for `num_of_computing_processors`, must be a value less than or equal to `64`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
                 num_of_computing_processors is not None and num_of_computing_processors < -1):  # noqa: E501
             raise ValueError("Invalid value for `num_of_computing_processors`, must be a value greater than or equal to `-1`")  # noqa: E501
 

@@ -91,7 +91,7 @@ class OneOfCustomFluidBCVelocity(object):
         'TURBULENT_DFSEM_INLET': 'TurbulentDFSEMInletVBC'
     }
 
-    def __init__(self, type='TURBULENT_DFSEM_INLET', relax_boundary=False, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, surface_roughness=None, phase=None, mean_velocity=None, rotation=None, domain_length_scale=None, eddy_length_scale=None, velocity=None, reynolds_stress_tensor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TURBULENT_DFSEM_INLET', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, surface_roughness=None, phase=None, mean_velocity=None, rotation=None, domain_length_scale=None, eddy_length_scale=None, velocity=None, reynolds_stress_tensor=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -117,7 +117,8 @@ class OneOfCustomFluidBCVelocity(object):
         self.discriminator = 'type'
 
         self.type = type
-        self.relax_boundary = relax_boundary
+        if relax_boundary is not None:
+            self.relax_boundary = relax_boundary
         if far_field_value is not None:
             self.far_field_value = far_field_value
         if relaxation_length_scale is not None:
@@ -190,8 +191,6 @@ class OneOfCustomFluidBCVelocity(object):
         :param relax_boundary: The relax_boundary of this OneOfCustomFluidBCVelocity.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and relax_boundary is None:  # noqa: E501
-            raise ValueError("Invalid value for `relax_boundary`, must not be `None`")  # noqa: E501
 
         self._relax_boundary = relax_boundary
 

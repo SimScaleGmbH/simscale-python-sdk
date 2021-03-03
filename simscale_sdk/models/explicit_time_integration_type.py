@@ -46,7 +46,7 @@ class ExplicitTimeIntegrationType(object):
         'mass_matrix_shift': 'massMatrixShift'
     }
 
-    def __init__(self, type='EXPLICIT', scheme=None, scheme_formulation=None, stop_on_cfl_criterion=True, mass_matrix_shift=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EXPLICIT', scheme=None, scheme_formulation=None, stop_on_cfl_criterion=None, mass_matrix_shift=None, local_vars_configuration=None):  # noqa: E501
         """ExplicitTimeIntegrationType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,7 +64,8 @@ class ExplicitTimeIntegrationType(object):
             self.scheme = scheme
         if scheme_formulation is not None:
             self.scheme_formulation = scheme_formulation
-        self.stop_on_cfl_criterion = stop_on_cfl_criterion
+        if stop_on_cfl_criterion is not None:
+            self.stop_on_cfl_criterion = stop_on_cfl_criterion
         if mass_matrix_shift is not None:
             self.mass_matrix_shift = mass_matrix_shift
 
@@ -161,8 +162,6 @@ class ExplicitTimeIntegrationType(object):
         :param stop_on_cfl_criterion: The stop_on_cfl_criterion of this ExplicitTimeIntegrationType.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and stop_on_cfl_criterion is None:  # noqa: E501
-            raise ValueError("Invalid value for `stop_on_cfl_criterion`, must not be `None`")  # noqa: E501
 
         self._stop_on_cfl_criterion = stop_on_cfl_criterion
 

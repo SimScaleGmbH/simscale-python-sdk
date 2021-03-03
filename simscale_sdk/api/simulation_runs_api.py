@@ -745,6 +745,7 @@ class SimulationRunsApi(object):
         :param str project_id: The project ID (required)
         :param str simulation_id: The simulation ID (required)
         :param str run_id: The simulation run ID (required)
+        :param str simulation_spec_schema_version: Version of the schema the simulation spec should conform to
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -771,6 +772,7 @@ class SimulationRunsApi(object):
         :param str project_id: The project ID (required)
         :param str simulation_id: The simulation ID (required)
         :param str run_id: The simulation run ID (required)
+        :param str simulation_spec_schema_version: Version of the schema the simulation spec should conform to
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -790,7 +792,8 @@ class SimulationRunsApi(object):
         all_params = [
             'project_id',
             'simulation_id',
-            'run_id'
+            'run_id',
+            'simulation_spec_schema_version'
         ]
         all_params.extend(
             [
@@ -833,6 +836,8 @@ class SimulationRunsApi(object):
             path_params['runId'] = local_var_params['run_id']  # noqa: E501
 
         query_params = []
+        if 'simulation_spec_schema_version' in local_var_params and local_var_params['simulation_spec_schema_version'] is not None:  # noqa: E501
+            query_params.append(('simulationSpecSchemaVersion', local_var_params['simulation_spec_schema_version']))  # noqa: E501
 
         header_params = {}
 

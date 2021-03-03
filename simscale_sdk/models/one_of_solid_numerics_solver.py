@@ -82,7 +82,7 @@ class OneOfSolidNumericsSolver(object):
         'PETSC': 'PETSCSolver'
     }
 
-    def __init__(self, type='PETSC', force_symmetric=None, preconditioner=None, max_iterations=None, convergence_threshold=None, precision_singularity_detection=None, stop_if_singular=True, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=True, renumbering_method=None, postprocessing=None, distributed_matrix_storage=None, memory_management=None, eliminate_lagrange_multipliers=None, algorithm=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PETSC', force_symmetric=None, preconditioner=None, max_iterations=None, convergence_threshold=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, distributed_matrix_storage=None, memory_management=None, eliminate_lagrange_multipliers=None, algorithm=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidNumericsSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -120,7 +120,8 @@ class OneOfSolidNumericsSolver(object):
             self.convergence_threshold = convergence_threshold
         if precision_singularity_detection is not None:
             self.precision_singularity_detection = precision_singularity_detection
-        self.stop_if_singular = stop_if_singular
+        if stop_if_singular is not None:
+            self.stop_if_singular = stop_if_singular
         if matrix_type is not None:
             self.matrix_type = matrix_type
         if memory_percentage_for_pivoting is not None:
@@ -131,7 +132,8 @@ class OneOfSolidNumericsSolver(object):
             self.matrix_filtering_threshold = matrix_filtering_threshold
         if single_precision is not None:
             self.single_precision = single_precision
-        self.preprocessing = preprocessing
+        if preprocessing is not None:
+            self.preprocessing = preprocessing
         if renumbering_method is not None:
             self.renumbering_method = renumbering_method
         if postprocessing is not None:
@@ -307,8 +309,6 @@ class OneOfSolidNumericsSolver(object):
         :param stop_if_singular: The stop_if_singular of this OneOfSolidNumericsSolver.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and stop_if_singular is None:  # noqa: E501
-            raise ValueError("Invalid value for `stop_if_singular`, must not be `None`")  # noqa: E501
 
         self._stop_if_singular = stop_if_singular
 
@@ -453,8 +453,6 @@ class OneOfSolidNumericsSolver(object):
         :param preprocessing: The preprocessing of this OneOfSolidNumericsSolver.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and preprocessing is None:  # noqa: E501
-            raise ValueError("Invalid value for `preprocessing`, must not be `None`")  # noqa: E501
 
         self._preprocessing = preprocessing
 

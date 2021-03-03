@@ -66,7 +66,7 @@ class ThermalMechanical(object):
         'mesh_order': 'meshOrder'
     }
 
-    def __init__(self, type='THERMAL_MECHANICAL', mesh_spec_id=None, time_dependency=None, inertia_effect=None, non_linear_analysis=False, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='THERMAL_MECHANICAL', mesh_spec_id=None, time_dependency=None, inertia_effect=None, non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
         """ThermalMechanical - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,7 +96,8 @@ class ThermalMechanical(object):
             self.time_dependency = time_dependency
         if inertia_effect is not None:
             self.inertia_effect = inertia_effect
-        self.non_linear_analysis = non_linear_analysis
+        if non_linear_analysis is not None:
+            self.non_linear_analysis = non_linear_analysis
         if connection_groups is not None:
             self.connection_groups = connection_groups
         if element_technology is not None:
@@ -187,6 +188,7 @@ class ThermalMechanical(object):
     def inertia_effect(self):
         """Gets the inertia_effect of this ThermalMechanical.  # noqa: E501
 
+        <p>Select if inertia effects should be considered in the analysis. If high loading velocities or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
 
         :return: The inertia_effect of this ThermalMechanical.  # noqa: E501
         :rtype: str
@@ -197,6 +199,7 @@ class ThermalMechanical(object):
     def inertia_effect(self, inertia_effect):
         """Sets the inertia_effect of this ThermalMechanical.
 
+        <p>Select if inertia effects should be considered in the analysis. If high loading velocities or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
 
         :param inertia_effect: The inertia_effect of this ThermalMechanical.  # noqa: E501
         :type: str
@@ -208,6 +211,7 @@ class ThermalMechanical(object):
     def non_linear_analysis(self):
         """Gets the non_linear_analysis of this ThermalMechanical.  # noqa: E501
 
+        <p>Choose if your analysis should feature any kind of <b>nonlinearity</b> like <b>physical contacts, nonlinear materials</b> as hyperelasticity or plasticity or <b>large rotations</b> and <b>large deformations, temperature dependant material properties</b> or <b>temperature dependant boundary conditions</b>. For a <b>linear analysis</b> none of those nonlinearities are available.</p>  # noqa: E501
 
         :return: The non_linear_analysis of this ThermalMechanical.  # noqa: E501
         :rtype: bool
@@ -218,12 +222,11 @@ class ThermalMechanical(object):
     def non_linear_analysis(self, non_linear_analysis):
         """Sets the non_linear_analysis of this ThermalMechanical.
 
+        <p>Choose if your analysis should feature any kind of <b>nonlinearity</b> like <b>physical contacts, nonlinear materials</b> as hyperelasticity or plasticity or <b>large rotations</b> and <b>large deformations, temperature dependant material properties</b> or <b>temperature dependant boundary conditions</b>. For a <b>linear analysis</b> none of those nonlinearities are available.</p>  # noqa: E501
 
         :param non_linear_analysis: The non_linear_analysis of this ThermalMechanical.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and non_linear_analysis is None:  # noqa: E501
-            raise ValueError("Invalid value for `non_linear_analysis`, must not be `None`")  # noqa: E501
 
         self._non_linear_analysis = non_linear_analysis
 

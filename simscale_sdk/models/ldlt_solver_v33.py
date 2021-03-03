@@ -44,7 +44,7 @@ class LDLTSolverV33(object):
         'stop_if_singular': 'stopIfSingular'
     }
 
-    def __init__(self, type='LDLT_V33', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=True, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='LDLT_V33', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, local_vars_configuration=None):  # noqa: E501
         """LDLTSolverV33 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,7 +61,8 @@ class LDLTSolverV33(object):
             self.force_symmetric = force_symmetric
         if precision_singularity_detection is not None:
             self.precision_singularity_detection = precision_singularity_detection
-        self.stop_if_singular = stop_if_singular
+        if stop_if_singular is not None:
+            self.stop_if_singular = stop_if_singular
 
     @property
     def type(self):
@@ -152,8 +153,6 @@ class LDLTSolverV33(object):
         :param stop_if_singular: The stop_if_singular of this LDLTSolverV33.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and stop_if_singular is None:  # noqa: E501
-            raise ValueError("Invalid value for `stop_if_singular`, must not be `None`")  # noqa: E501
 
         self._stop_if_singular = stop_if_singular
 

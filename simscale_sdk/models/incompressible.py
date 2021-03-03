@@ -66,7 +66,7 @@ class Incompressible(object):
         'result_control': 'resultControl'
     }
 
-    def __init__(self, type='INCOMPRESSIBLE', mesh_spec_id=None, is_compressible=False, turbulence_model=None, time_dependency=None, algorithm=None, num_of_passive_species=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INCOMPRESSIBLE', mesh_spec_id=None, is_compressible=None, turbulence_model=None, time_dependency=None, algorithm=None, num_of_passive_species=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
         """Incompressible - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,7 +92,8 @@ class Incompressible(object):
         self.type = type
         if mesh_spec_id is not None:
             self.mesh_spec_id = mesh_spec_id
-        self.is_compressible = is_compressible
+        if is_compressible is not None:
+            self.is_compressible = is_compressible
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
@@ -180,8 +181,6 @@ class Incompressible(object):
         :param is_compressible: The is_compressible of this Incompressible.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and is_compressible is None:  # noqa: E501
-            raise ValueError("Invalid value for `is_compressible`, must not be `None`")  # noqa: E501
 
         self._is_compressible = is_compressible
 
@@ -189,6 +188,7 @@ class Incompressible(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this Incompressible.  # noqa: E501
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :return: The turbulence_model of this Incompressible.  # noqa: E501
         :rtype: str
@@ -199,6 +199,7 @@ class Incompressible(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this Incompressible.
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this Incompressible.  # noqa: E501
         :type: str
@@ -258,6 +259,7 @@ class Incompressible(object):
     def num_of_passive_species(self):
         """Gets the num_of_passive_species of this Incompressible.  # noqa: E501
 
+        Select the number of passive species involved in the simulation. Passive species allow you to simulate the transport of a scalar quantity within a fluid flow without affecting it. <a href='https://www.simscale.com/docs/simulation-setup/global-settings/#passive-species' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The num_of_passive_species of this Incompressible.  # noqa: E501
         :rtype: int
@@ -268,6 +270,7 @@ class Incompressible(object):
     def num_of_passive_species(self, num_of_passive_species):
         """Sets the num_of_passive_species of this Incompressible.
 
+        Select the number of passive species involved in the simulation. Passive species allow you to simulate the transport of a scalar quantity within a fluid flow without affecting it. <a href='https://www.simscale.com/docs/simulation-setup/global-settings/#passive-species' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param num_of_passive_species: The num_of_passive_species of this Incompressible.  # noqa: E501
         :type: int

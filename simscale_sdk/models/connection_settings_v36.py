@@ -52,7 +52,7 @@ class ConnectionSettingsV36(object):
         'enable_heat_transfer': 'enableHeatTransfer'
     }
 
-    def __init__(self, nonlinearity_resolution=None, friction=None, contact_non_linearity_resolution=None, convergence_stabilization=True, contact_smoothing=False, stop_if_interpenetration=False, verify_norms=True, enable_heat_transfer=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, nonlinearity_resolution=None, friction=None, contact_non_linearity_resolution=None, convergence_stabilization=None, contact_smoothing=None, stop_if_interpenetration=None, verify_norms=None, enable_heat_transfer=None, local_vars_configuration=None):  # noqa: E501
         """ConnectionSettingsV36 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,10 +74,14 @@ class ConnectionSettingsV36(object):
             self.friction = friction
         if contact_non_linearity_resolution is not None:
             self.contact_non_linearity_resolution = contact_non_linearity_resolution
-        self.convergence_stabilization = convergence_stabilization
-        self.contact_smoothing = contact_smoothing
-        self.stop_if_interpenetration = stop_if_interpenetration
-        self.verify_norms = verify_norms
+        if convergence_stabilization is not None:
+            self.convergence_stabilization = convergence_stabilization
+        if contact_smoothing is not None:
+            self.contact_smoothing = contact_smoothing
+        if stop_if_interpenetration is not None:
+            self.stop_if_interpenetration = stop_if_interpenetration
+        if verify_norms is not None:
+            self.verify_norms = verify_norms
         if enable_heat_transfer is not None:
             self.enable_heat_transfer = enable_heat_transfer
 
@@ -162,8 +166,6 @@ class ConnectionSettingsV36(object):
         :param convergence_stabilization: The convergence_stabilization of this ConnectionSettingsV36.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and convergence_stabilization is None:  # noqa: E501
-            raise ValueError("Invalid value for `convergence_stabilization`, must not be `None`")  # noqa: E501
 
         self._convergence_stabilization = convergence_stabilization
 
@@ -185,8 +187,6 @@ class ConnectionSettingsV36(object):
         :param contact_smoothing: The contact_smoothing of this ConnectionSettingsV36.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and contact_smoothing is None:  # noqa: E501
-            raise ValueError("Invalid value for `contact_smoothing`, must not be `None`")  # noqa: E501
 
         self._contact_smoothing = contact_smoothing
 
@@ -208,8 +208,6 @@ class ConnectionSettingsV36(object):
         :param stop_if_interpenetration: The stop_if_interpenetration of this ConnectionSettingsV36.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and stop_if_interpenetration is None:  # noqa: E501
-            raise ValueError("Invalid value for `stop_if_interpenetration`, must not be `None`")  # noqa: E501
 
         self._stop_if_interpenetration = stop_if_interpenetration
 
@@ -231,8 +229,6 @@ class ConnectionSettingsV36(object):
         :param verify_norms: The verify_norms of this ConnectionSettingsV36.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and verify_norms is None:  # noqa: E501
-            raise ValueError("Invalid value for `verify_norms`, must not be `None`")  # noqa: E501
 
         self._verify_norms = verify_norms
 

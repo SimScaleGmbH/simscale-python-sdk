@@ -44,7 +44,7 @@ class SnapshotResultControl(object):
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='SNAPSHOT', export_fluid=True, export_surface=False, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SNAPSHOT', export_fluid=None, export_surface=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """SnapshotResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,8 +57,10 @@ class SnapshotResultControl(object):
         self.discriminator = None
 
         self.type = type
-        self.export_fluid = export_fluid
-        self.export_surface = export_surface
+        if export_fluid is not None:
+            self.export_fluid = export_fluid
+        if export_surface is not None:
+            self.export_surface = export_surface
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
 
@@ -105,8 +107,6 @@ class SnapshotResultControl(object):
         :param export_fluid: The export_fluid of this SnapshotResultControl.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and export_fluid is None:  # noqa: E501
-            raise ValueError("Invalid value for `export_fluid`, must not be `None`")  # noqa: E501
 
         self._export_fluid = export_fluid
 
@@ -130,8 +130,6 @@ class SnapshotResultControl(object):
         :param export_surface: The export_surface of this SnapshotResultControl.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and export_surface is None:  # noqa: E501
-            raise ValueError("Invalid value for `export_surface`, must not be `None`")  # noqa: E501
 
         self._export_surface = export_surface
 

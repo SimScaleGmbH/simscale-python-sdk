@@ -62,7 +62,7 @@ class StaticAnalysis(object):
         'mesh_order': 'meshOrder'
     }
 
-    def __init__(self, type='STATIC_ANALYSIS', mesh_spec_id=None, non_linear_analysis=False, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='STATIC_ANALYSIS', mesh_spec_id=None, non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
         """StaticAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,7 +86,8 @@ class StaticAnalysis(object):
         self.type = type
         if mesh_spec_id is not None:
             self.mesh_spec_id = mesh_spec_id
-        self.non_linear_analysis = non_linear_analysis
+        if non_linear_analysis is not None:
+            self.non_linear_analysis = non_linear_analysis
         if connection_groups is not None:
             self.connection_groups = connection_groups
         if element_technology is not None:
@@ -156,6 +157,7 @@ class StaticAnalysis(object):
     def non_linear_analysis(self):
         """Gets the non_linear_analysis of this StaticAnalysis.  # noqa: E501
 
+        <p>Choose if your analysis should feature any kind of <b>nonlinearity</b> like <b>physical contacts, nonlinear materials</b> as hyperelasticity or plasticity or <b>large rotations</b> and <b>large deformations, temperature dependant material properties</b> or <b>temperature dependant boundary conditions</b>. For a <b>linear analysis</b> none of those nonlinearities are available.</p>  # noqa: E501
 
         :return: The non_linear_analysis of this StaticAnalysis.  # noqa: E501
         :rtype: bool
@@ -166,12 +168,11 @@ class StaticAnalysis(object):
     def non_linear_analysis(self, non_linear_analysis):
         """Sets the non_linear_analysis of this StaticAnalysis.
 
+        <p>Choose if your analysis should feature any kind of <b>nonlinearity</b> like <b>physical contacts, nonlinear materials</b> as hyperelasticity or plasticity or <b>large rotations</b> and <b>large deformations, temperature dependant material properties</b> or <b>temperature dependant boundary conditions</b>. For a <b>linear analysis</b> none of those nonlinearities are available.</p>  # noqa: E501
 
         :param non_linear_analysis: The non_linear_analysis of this StaticAnalysis.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and non_linear_analysis is None:  # noqa: E501
-            raise ValueError("Invalid value for `non_linear_analysis`, must not be `None`")  # noqa: E501
 
         self._non_linear_analysis = non_linear_analysis
 

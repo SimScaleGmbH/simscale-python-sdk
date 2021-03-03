@@ -32,23 +32,27 @@ class SimericsAnalysis(object):
     """
     openapi_types = {
         'type': 'str',
-        'materials': 'IncompressibleFluidMaterials',
-        'initial_conditions': 'FluidInitialConditions',
+        'materials': 'SimericsFluidMaterials',
+        'is_compressible': 'bool',
         'boundary_conditions': 'list[OneOfSimericsAnalysisBoundaryConditions]',
         'simulation_control': 'FluidSimulationControl',
-        'result_control': 'FluidResultControls'
+        'result_control': 'FluidResultControls',
+        'turbulence_model': 'str',
+        'mesh_settings': 'ManualSimericsMeshSettings'
     }
 
     attribute_map = {
         'type': 'type',
         'materials': 'materials',
-        'initial_conditions': 'initialConditions',
+        'is_compressible': 'isCompressible',
         'boundary_conditions': 'boundaryConditions',
         'simulation_control': 'simulationControl',
-        'result_control': 'resultControl'
+        'result_control': 'resultControl',
+        'turbulence_model': 'turbulenceModel',
+        'mesh_settings': 'meshSettings'
     }
 
-    def __init__(self, type='SIMERICS_ANALYSIS', materials=None, initial_conditions=None, boundary_conditions=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMERICS_ANALYSIS', materials=None, is_compressible=None, boundary_conditions=None, simulation_control=None, result_control=None, turbulence_model=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimericsAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,23 +60,29 @@ class SimericsAnalysis(object):
 
         self._type = None
         self._materials = None
-        self._initial_conditions = None
+        self._is_compressible = None
         self._boundary_conditions = None
         self._simulation_control = None
         self._result_control = None
+        self._turbulence_model = None
+        self._mesh_settings = None
         self.discriminator = None
 
         self.type = type
         if materials is not None:
             self.materials = materials
-        if initial_conditions is not None:
-            self.initial_conditions = initial_conditions
+        if is_compressible is not None:
+            self.is_compressible = is_compressible
         if boundary_conditions is not None:
             self.boundary_conditions = boundary_conditions
         if simulation_control is not None:
             self.simulation_control = simulation_control
         if result_control is not None:
             self.result_control = result_control
+        if turbulence_model is not None:
+            self.turbulence_model = turbulence_model
+        if mesh_settings is not None:
+            self.mesh_settings = mesh_settings
 
     @property
     def type(self):
@@ -103,7 +113,7 @@ class SimericsAnalysis(object):
 
 
         :return: The materials of this SimericsAnalysis.  # noqa: E501
-        :rtype: IncompressibleFluidMaterials
+        :rtype: SimericsFluidMaterials
         """
         return self._materials
 
@@ -113,31 +123,31 @@ class SimericsAnalysis(object):
 
 
         :param materials: The materials of this SimericsAnalysis.  # noqa: E501
-        :type: IncompressibleFluidMaterials
+        :type: SimericsFluidMaterials
         """
 
         self._materials = materials
 
     @property
-    def initial_conditions(self):
-        """Gets the initial_conditions of this SimericsAnalysis.  # noqa: E501
+    def is_compressible(self):
+        """Gets the is_compressible of this SimericsAnalysis.  # noqa: E501
 
 
-        :return: The initial_conditions of this SimericsAnalysis.  # noqa: E501
-        :rtype: FluidInitialConditions
+        :return: The is_compressible of this SimericsAnalysis.  # noqa: E501
+        :rtype: bool
         """
-        return self._initial_conditions
+        return self._is_compressible
 
-    @initial_conditions.setter
-    def initial_conditions(self, initial_conditions):
-        """Sets the initial_conditions of this SimericsAnalysis.
+    @is_compressible.setter
+    def is_compressible(self, is_compressible):
+        """Sets the is_compressible of this SimericsAnalysis.
 
 
-        :param initial_conditions: The initial_conditions of this SimericsAnalysis.  # noqa: E501
-        :type: FluidInitialConditions
+        :param is_compressible: The is_compressible of this SimericsAnalysis.  # noqa: E501
+        :type: bool
         """
 
-        self._initial_conditions = initial_conditions
+        self._is_compressible = is_compressible
 
     @property
     def boundary_conditions(self):
@@ -201,6 +211,54 @@ class SimericsAnalysis(object):
         """
 
         self._result_control = result_control
+
+    @property
+    def turbulence_model(self):
+        """Gets the turbulence_model of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The turbulence_model of this SimericsAnalysis.  # noqa: E501
+        :rtype: str
+        """
+        return self._turbulence_model
+
+    @turbulence_model.setter
+    def turbulence_model(self, turbulence_model):
+        """Sets the turbulence_model of this SimericsAnalysis.
+
+
+        :param turbulence_model: The turbulence_model of this SimericsAnalysis.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["NONE", "KEPSILON"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and turbulence_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `turbulence_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(turbulence_model, allowed_values)
+            )
+
+        self._turbulence_model = turbulence_model
+
+    @property
+    def mesh_settings(self):
+        """Gets the mesh_settings of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The mesh_settings of this SimericsAnalysis.  # noqa: E501
+        :rtype: ManualSimericsMeshSettings
+        """
+        return self._mesh_settings
+
+    @mesh_settings.setter
+    def mesh_settings(self, mesh_settings):
+        """Sets the mesh_settings of this SimericsAnalysis.
+
+
+        :param mesh_settings: The mesh_settings of this SimericsAnalysis.  # noqa: E501
+        :type: ManualSimericsMeshSettings
+        """
+
+        self._mesh_settings = mesh_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

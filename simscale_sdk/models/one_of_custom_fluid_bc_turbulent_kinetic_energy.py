@@ -61,7 +61,7 @@ class OneOfCustomFluidBCTurbulentKineticEnergy(object):
         'FULL_RESOLUTION': 'FullResolutionTKEBC'
     }
 
-    def __init__(self, type='FULL_RESOLUTION', gradient=None, value=None, intensity=None, wall_roughness=False, roughness_height=None, roughness_constant=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FULL_RESOLUTION', gradient=None, value=None, intensity=None, wall_roughness=None, roughness_height=None, roughness_constant=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCTurbulentKineticEnergy - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,7 +83,8 @@ class OneOfCustomFluidBCTurbulentKineticEnergy(object):
             self.value = value
         if intensity is not None:
             self.intensity = intensity
-        self.wall_roughness = wall_roughness
+        if wall_roughness is not None:
+            self.wall_roughness = wall_roughness
         if roughness_height is not None:
             self.roughness_height = roughness_height
         if roughness_constant is not None:
@@ -199,8 +200,6 @@ class OneOfCustomFluidBCTurbulentKineticEnergy(object):
         :param wall_roughness: The wall_roughness of this OneOfCustomFluidBCTurbulentKineticEnergy.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and wall_roughness is None:  # noqa: E501
-            raise ValueError("Invalid value for `wall_roughness`, must not be `None`")  # noqa: E501
 
         self._wall_roughness = wall_roughness
 

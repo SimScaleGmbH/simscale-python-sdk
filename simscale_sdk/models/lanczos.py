@@ -48,7 +48,7 @@ class Lanczos(object):
         'mode_rigid': 'modeRigid'
     }
 
-    def __init__(self, type='TRI_DIAG', prec_ortho=None, nmax_iter_ortho=None, prec_lanczos=None, max_iter_qr=None, mode_rigid=True, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TRI_DIAG', prec_ortho=None, nmax_iter_ortho=None, prec_lanczos=None, max_iter_qr=None, mode_rigid=None, local_vars_configuration=None):  # noqa: E501
         """Lanczos - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,7 +71,8 @@ class Lanczos(object):
             self.prec_lanczos = prec_lanczos
         if max_iter_qr is not None:
             self.max_iter_qr = max_iter_qr
-        self.mode_rigid = mode_rigid
+        if mode_rigid is not None:
+            self.mode_rigid = mode_rigid
 
     @property
     def type(self):
@@ -210,8 +211,6 @@ class Lanczos(object):
         :param mode_rigid: The mode_rigid of this Lanczos.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and mode_rigid is None:  # noqa: E501
-            raise ValueError("Invalid value for `mode_rigid`, must not be `None`")  # noqa: E501
 
         self._mode_rigid = mode_rigid
 

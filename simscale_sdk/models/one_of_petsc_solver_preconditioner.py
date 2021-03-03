@@ -57,7 +57,7 @@ class OneOfPETSCSolverPreconditioner(object):
         'INACTIVE': 'InactivePreconditioner'
     }
 
-    def __init__(self, type='INACTIVE', actualisation_rate=None, memory_percentage_for_pivoting=None, matrix_completeness=0, preconditioner_matrix_growth=None, renumbering_method=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INACTIVE', actualisation_rate=None, memory_percentage_for_pivoting=None, matrix_completeness=None, preconditioner_matrix_growth=None, renumbering_method=None, local_vars_configuration=None):  # noqa: E501
         """OneOfPETSCSolverPreconditioner - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,7 +76,8 @@ class OneOfPETSCSolverPreconditioner(object):
             self.actualisation_rate = actualisation_rate
         if memory_percentage_for_pivoting is not None:
             self.memory_percentage_for_pivoting = memory_percentage_for_pivoting
-        self.matrix_completeness = matrix_completeness
+        if matrix_completeness is not None:
+            self.matrix_completeness = matrix_completeness
         if preconditioner_matrix_growth is not None:
             self.preconditioner_matrix_growth = preconditioner_matrix_growth
         if renumbering_method is not None:
@@ -171,8 +172,6 @@ class OneOfPETSCSolverPreconditioner(object):
         :param matrix_completeness: The matrix_completeness of this OneOfPETSCSolverPreconditioner.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and matrix_completeness is None:  # noqa: E501
-            raise ValueError("Invalid value for `matrix_completeness`, must not be `None`")  # noqa: E501
 
         self._matrix_completeness = matrix_completeness
 

@@ -32,20 +32,25 @@ class OneOfPressureOutletBCPressure(object):
     """
     openapi_types = {
         'type': 'str',
-        'value': 'DimensionalPressure'
+        'value': 'DimensionalPressure',
+        'total_pressure': 'DimensionalFunctionPressure',
+        'gamma': 'DimensionalFunctionDimensionless'
     }
 
     attribute_map = {
         'type': 'type',
-        'value': 'value'
+        'value': 'value',
+        'total_pressure': 'totalPressure',
+        'gamma': 'gamma'
     }
 
     discriminator_value_class_map = {
         'FIXED_VALUE': 'FixedValuePBC',
-        'FIXED_MEAN': 'MeanValuePBC'
+        'FIXED_MEAN': 'MeanValuePBC',
+        'TOTAL_PRESSURE': 'TotalPBC'
     }
 
-    def __init__(self, type='FIXED_MEAN', value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOTAL_PRESSURE', value=None, total_pressure=None, gamma=None, local_vars_configuration=None):  # noqa: E501
         """OneOfPressureOutletBCPressure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,11 +58,17 @@ class OneOfPressureOutletBCPressure(object):
 
         self._type = None
         self._value = None
+        self._total_pressure = None
+        self._gamma = None
         self.discriminator = 'type'
 
         self.type = type
         if value is not None:
             self.value = value
+        if total_pressure is not None:
+            self.total_pressure = total_pressure
+        if gamma is not None:
+            self.gamma = gamma
 
     @property
     def type(self):
@@ -102,6 +113,48 @@ class OneOfPressureOutletBCPressure(object):
         """
 
         self._value = value
+
+    @property
+    def total_pressure(self):
+        """Gets the total_pressure of this OneOfPressureOutletBCPressure.  # noqa: E501
+
+
+        :return: The total_pressure of this OneOfPressureOutletBCPressure.  # noqa: E501
+        :rtype: DimensionalFunctionPressure
+        """
+        return self._total_pressure
+
+    @total_pressure.setter
+    def total_pressure(self, total_pressure):
+        """Sets the total_pressure of this OneOfPressureOutletBCPressure.
+
+
+        :param total_pressure: The total_pressure of this OneOfPressureOutletBCPressure.  # noqa: E501
+        :type: DimensionalFunctionPressure
+        """
+
+        self._total_pressure = total_pressure
+
+    @property
+    def gamma(self):
+        """Gets the gamma of this OneOfPressureOutletBCPressure.  # noqa: E501
+
+
+        :return: The gamma of this OneOfPressureOutletBCPressure.  # noqa: E501
+        :rtype: DimensionalFunctionDimensionless
+        """
+        return self._gamma
+
+    @gamma.setter
+    def gamma(self, gamma):
+        """Sets the gamma of this OneOfPressureOutletBCPressure.
+
+
+        :param gamma: The gamma of this OneOfPressureOutletBCPressure.  # noqa: E501
+        :type: DimensionalFunctionDimensionless
+        """
+
+        self._gamma = gamma
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

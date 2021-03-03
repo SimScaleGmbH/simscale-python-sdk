@@ -50,7 +50,7 @@ class RegionInterface(object):
         'custom_modified': 'customModified'
     }
 
-    def __init__(self, type='REGION_INTERFACE', name=None, interface_thermal=None, master_topological_reference=None, slave_topological_reference=None, is_partial=False, custom_modified=False, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='REGION_INTERFACE', name=None, interface_thermal=None, master_topological_reference=None, slave_topological_reference=None, is_partial=None, custom_modified=None, local_vars_configuration=None):  # noqa: E501
         """RegionInterface - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,8 +74,10 @@ class RegionInterface(object):
             self.master_topological_reference = master_topological_reference
         if slave_topological_reference is not None:
             self.slave_topological_reference = slave_topological_reference
-        self.is_partial = is_partial
-        self.custom_modified = custom_modified
+        if is_partial is not None:
+            self.is_partial = is_partial
+        if custom_modified is not None:
+            self.custom_modified = custom_modified
 
     @property
     def type(self):
@@ -202,8 +204,6 @@ class RegionInterface(object):
         :param is_partial: The is_partial of this RegionInterface.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and is_partial is None:  # noqa: E501
-            raise ValueError("Invalid value for `is_partial`, must not be `None`")  # noqa: E501
 
         self._is_partial = is_partial
 
@@ -225,8 +225,6 @@ class RegionInterface(object):
         :param custom_modified: The custom_modified of this RegionInterface.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and custom_modified is None:  # noqa: E501
-            raise ValueError("Invalid value for `custom_modified`, must not be `None`")  # noqa: E501
 
         self._custom_modified = custom_modified
 

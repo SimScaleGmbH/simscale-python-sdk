@@ -2,7 +2,7 @@
 
 API access is currently part of our paid Enterprise plan. However, if you have an idea for an integration or app and would like to become a development partner, please contact us at api@simscale.com!
 
-## Requirements.
+## Requirements
 
 Python >= 3.6
 
@@ -20,7 +20,7 @@ pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git
 To install a specific version:
 
 ```sh
-pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git@0.0.10
+pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git@0.0.12
 ```
 
 Then import the package:

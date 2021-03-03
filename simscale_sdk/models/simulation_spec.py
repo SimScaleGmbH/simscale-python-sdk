@@ -37,6 +37,7 @@ class SimulationSpec(object):
         'created_at': 'datetime',
         'modified_at': 'datetime',
         'geometry_id': 'str',
+        'mesh_id': 'str',
         'model': 'Analysis'
     }
 
@@ -47,10 +48,11 @@ class SimulationSpec(object):
         'created_at': 'createdAt',
         'modified_at': 'modifiedAt',
         'geometry_id': 'geometryId',
+        'mesh_id': 'meshId',
         'model': 'model'
     }
 
-    def __init__(self, simulation_id=None, name=None, version='77', created_at=None, modified_at=None, geometry_id=None, model=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, simulation_id=None, name=None, version='0.7', created_at=None, modified_at=None, geometry_id=None, mesh_id=None, model=None, local_vars_configuration=None):  # noqa: E501
         """SimulationSpec - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +64,7 @@ class SimulationSpec(object):
         self._created_at = None
         self._modified_at = None
         self._geometry_id = None
+        self._mesh_id = None
         self._model = None
         self.discriminator = None
 
@@ -74,6 +77,8 @@ class SimulationSpec(object):
         if modified_at is not None:
             self.modified_at = modified_at
         self.geometry_id = geometry_id
+        if mesh_id is not None:
+            self.mesh_id = mesh_id
         self.model = model
 
     @property
@@ -207,6 +212,29 @@ class SimulationSpec(object):
             raise ValueError("Invalid value for `geometry_id`, must not be `None`")  # noqa: E501
 
         self._geometry_id = geometry_id
+
+    @property
+    def mesh_id(self):
+        """Gets the mesh_id of this SimulationSpec.  # noqa: E501
+
+        The generated mesh ID which is to be used in the simualtion. This field should be left empty for analysis types that do not require a generated mesh like 'INCOMPRESSIBLE_PACEFISH', 'WIND_COMFORT', 'SIMERICS_ANALYSIS' etc.  # noqa: E501
+
+        :return: The mesh_id of this SimulationSpec.  # noqa: E501
+        :rtype: str
+        """
+        return self._mesh_id
+
+    @mesh_id.setter
+    def mesh_id(self, mesh_id):
+        """Sets the mesh_id of this SimulationSpec.
+
+        The generated mesh ID which is to be used in the simualtion. This field should be left empty for analysis types that do not require a generated mesh like 'INCOMPRESSIBLE_PACEFISH', 'WIND_COMFORT', 'SIMERICS_ANALYSIS' etc.  # noqa: E501
+
+        :param mesh_id: The mesh_id of this SimulationSpec.  # noqa: E501
+        :type: str
+        """
+
+        self._mesh_id = mesh_id
 
     @property
     def model(self):

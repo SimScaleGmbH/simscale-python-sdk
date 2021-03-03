@@ -46,7 +46,7 @@ class WaveTransmissivePBC(object):
         'relaxation_length_scale': 'relaxationLengthScale'
     }
 
-    def __init__(self, type='WAVE_TRANSMISSIVE', specific_heat_ratio=None, relax_boundary=False, far_field_value=None, relaxation_length_scale=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='WAVE_TRANSMISSIVE', specific_heat_ratio=None, relax_boundary=None, far_field_value=None, relaxation_length_scale=None, local_vars_configuration=None):  # noqa: E501
         """WaveTransmissivePBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,7 +62,8 @@ class WaveTransmissivePBC(object):
         self.type = type
         if specific_heat_ratio is not None:
             self.specific_heat_ratio = specific_heat_ratio
-        self.relax_boundary = relax_boundary
+        if relax_boundary is not None:
+            self.relax_boundary = relax_boundary
         if far_field_value is not None:
             self.far_field_value = far_field_value
         if relaxation_length_scale is not None:
@@ -130,8 +131,6 @@ class WaveTransmissivePBC(object):
         :param relax_boundary: The relax_boundary of this WaveTransmissivePBC.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and relax_boundary is None:  # noqa: E501
-            raise ValueError("Invalid value for `relax_boundary`, must not be `None`")  # noqa: E501
 
         self._relax_boundary = relax_boundary
 

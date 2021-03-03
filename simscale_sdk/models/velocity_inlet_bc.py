@@ -34,7 +34,7 @@ class VelocityInletBC(object):
         'type': 'str',
         'name': 'str',
         'velocity': 'OneOfVelocityInletBCVelocity',
-        'temperature': 'FixedValueTBC',
+        'temperature': 'OneOfVelocityInletBCTemperature',
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'FixedValuePFBC',
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
@@ -170,7 +170,7 @@ class VelocityInletBC(object):
 
 
         :return: The temperature of this VelocityInletBC.  # noqa: E501
-        :rtype: FixedValueTBC
+        :rtype: OneOfVelocityInletBCTemperature
         """
         return self._temperature
 
@@ -180,7 +180,7 @@ class VelocityInletBC(object):
 
 
         :param temperature: The temperature of this VelocityInletBC.  # noqa: E501
-        :type: FixedValueTBC
+        :type: OneOfVelocityInletBCTemperature
         """
 
         self._temperature = temperature

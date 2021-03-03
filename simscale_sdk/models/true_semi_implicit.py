@@ -44,7 +44,7 @@ class TrueSemiImplicit(object):
         'solver': 'solver'
     }
 
-    def __init__(self, type='TRUE_SEMI_IMPLICIT', limiter_iterations=None, compression_correction=True, solver=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TRUE_SEMI_IMPLICIT', limiter_iterations=None, compression_correction=None, solver=None, local_vars_configuration=None):  # noqa: E501
         """TrueSemiImplicit - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,7 +59,8 @@ class TrueSemiImplicit(object):
         self.type = type
         if limiter_iterations is not None:
             self.limiter_iterations = limiter_iterations
-        self.compression_correction = compression_correction
+        if compression_correction is not None:
+            self.compression_correction = compression_correction
         if solver is not None:
             self.solver = solver
 
@@ -125,8 +126,6 @@ class TrueSemiImplicit(object):
         :param compression_correction: The compression_correction of this TrueSemiImplicit.  # noqa: E501
         :type: bool
         """
-        if self.local_vars_configuration.client_side_validation and compression_correction is None:  # noqa: E501
-            raise ValueError("Invalid value for `compression_correction`, must not be `None`")  # noqa: E501
 
         self._compression_correction = compression_correction
 

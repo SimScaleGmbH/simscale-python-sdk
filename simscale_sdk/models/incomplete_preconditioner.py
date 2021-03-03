@@ -44,7 +44,7 @@ class IncompletePreconditioner(object):
         'renumbering_method': 'renumberingMethod'
     }
 
-    def __init__(self, type='INCOMPLETE_LDLT', matrix_completeness=0, preconditioner_matrix_growth=None, renumbering_method=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INCOMPLETE_LDLT', matrix_completeness=None, preconditioner_matrix_growth=None, renumbering_method=None, local_vars_configuration=None):  # noqa: E501
         """IncompletePreconditioner - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,7 +57,8 @@ class IncompletePreconditioner(object):
         self.discriminator = None
 
         self.type = type
-        self.matrix_completeness = matrix_completeness
+        if matrix_completeness is not None:
+            self.matrix_completeness = matrix_completeness
         if preconditioner_matrix_growth is not None:
             self.preconditioner_matrix_growth = preconditioner_matrix_growth
         if renumbering_method is not None:
@@ -104,8 +105,6 @@ class IncompletePreconditioner(object):
         :param matrix_completeness: The matrix_completeness of this IncompletePreconditioner.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and matrix_completeness is None:  # noqa: E501
-            raise ValueError("Invalid value for `matrix_completeness`, must not be `None`")  # noqa: E501
 
         self._matrix_completeness = matrix_completeness
 
