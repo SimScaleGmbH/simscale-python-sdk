@@ -32,7 +32,6 @@ class ThermalMechanical(object):
     """
     openapi_types = {
         'type': 'str',
-        'mesh_spec_id': 'str',
         'time_dependency': 'OneOfThermalMechanicalTimeDependency',
         'inertia_effect': 'str',
         'non_linear_analysis': 'bool',
@@ -50,7 +49,6 @@ class ThermalMechanical(object):
 
     attribute_map = {
         'type': 'type',
-        'mesh_spec_id': 'meshSpecId',
         'time_dependency': 'timeDependency',
         'inertia_effect': 'inertiaEffect',
         'non_linear_analysis': 'nonLinearAnalysis',
@@ -66,14 +64,13 @@ class ThermalMechanical(object):
         'mesh_order': 'meshOrder'
     }
 
-    def __init__(self, type='THERMAL_MECHANICAL', mesh_spec_id=None, time_dependency=None, inertia_effect=None, non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='THERMAL_MECHANICAL', time_dependency=None, inertia_effect=None, non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
         """ThermalMechanical - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._mesh_spec_id = None
         self._time_dependency = None
         self._inertia_effect = None
         self._non_linear_analysis = None
@@ -90,8 +87,6 @@ class ThermalMechanical(object):
         self.discriminator = None
 
         self.type = type
-        if mesh_spec_id is not None:
-            self.mesh_spec_id = mesh_spec_id
         if time_dependency is not None:
             self.time_dependency = time_dependency
         if inertia_effect is not None:
@@ -141,27 +136,6 @@ class ThermalMechanical(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def mesh_spec_id(self):
-        """Gets the mesh_spec_id of this ThermalMechanical.  # noqa: E501
-
-
-        :return: The mesh_spec_id of this ThermalMechanical.  # noqa: E501
-        :rtype: str
-        """
-        return self._mesh_spec_id
-
-    @mesh_spec_id.setter
-    def mesh_spec_id(self, mesh_spec_id):
-        """Sets the mesh_spec_id of this ThermalMechanical.
-
-
-        :param mesh_spec_id: The mesh_spec_id of this ThermalMechanical.  # noqa: E501
-        :type: str
-        """
-
-        self._mesh_spec_id = mesh_spec_id
 
     @property
     def time_dependency(self):

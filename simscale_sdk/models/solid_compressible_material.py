@@ -33,8 +33,6 @@ class SolidCompressibleMaterial(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'thermo_type': 'str',
-        'mixture': 'str',
         'specie': 'SpecieDefault',
         'transport': 'OneOfSolidCompressibleMaterialTransport',
         'emissivity': 'float',
@@ -45,8 +43,6 @@ class SolidCompressibleMaterial(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
-        'thermo_type': 'thermoType',
-        'mixture': 'mixture',
         'specie': 'specie',
         'transport': 'transport',
         'emissivity': 'emissivity',
@@ -54,7 +50,7 @@ class SolidCompressibleMaterial(object):
         'built_in_material': 'builtInMaterial'
     }
 
-    def __init__(self, type=None, name=None, thermo_type=None, mixture=None, specie=None, transport=None, emissivity=None, topological_reference=None, built_in_material=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type=None, name=None, specie=None, transport=None, emissivity=None, topological_reference=None, built_in_material=None, local_vars_configuration=None):  # noqa: E501
         """SolidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,8 +58,6 @@ class SolidCompressibleMaterial(object):
 
         self._type = None
         self._name = None
-        self._thermo_type = None
-        self._mixture = None
         self._specie = None
         self._transport = None
         self._emissivity = None
@@ -75,10 +69,6 @@ class SolidCompressibleMaterial(object):
             self.type = type
         if name is not None:
             self.name = name
-        if thermo_type is not None:
-            self.thermo_type = thermo_type
-        if mixture is not None:
-            self.mixture = mixture
         if specie is not None:
             self.specie = specie
         if transport is not None:
@@ -131,58 +121,6 @@ class SolidCompressibleMaterial(object):
         """
 
         self._name = name
-
-    @property
-    def thermo_type(self):
-        """Gets the thermo_type of this SolidCompressibleMaterial.  # noqa: E501
-
-        <br><b>Thermophysical models </b><p><b>PsiThermo model:</b> This is for a all compressible fluid with fixed chemical composition. based on the compressibility &psi; and the changes in pressure, the density is then determined by the selected Equation of State.</p><p><b>RhoThermo model:</b> This model is for natural or forced convection heat transfer in compressible fluid with fixed chemical composition.</p>  # noqa: E501
-
-        :return: The thermo_type of this SolidCompressibleMaterial.  # noqa: E501
-        :rtype: str
-        """
-        return self._thermo_type
-
-    @thermo_type.setter
-    def thermo_type(self, thermo_type):
-        """Sets the thermo_type of this SolidCompressibleMaterial.
-
-        <br><b>Thermophysical models </b><p><b>PsiThermo model:</b> This is for a all compressible fluid with fixed chemical composition. based on the compressibility &psi; and the changes in pressure, the density is then determined by the selected Equation of State.</p><p><b>RhoThermo model:</b> This model is for natural or forced convection heat transfer in compressible fluid with fixed chemical composition.</p>  # noqa: E501
-
-        :param thermo_type: The thermo_type of this SolidCompressibleMaterial.  # noqa: E501
-        :type: str
-        """
-
-        self._thermo_type = thermo_type
-
-    @property
-    def mixture(self):
-        """Gets the mixture of this SolidCompressibleMaterial.  # noqa: E501
-
-        <p><b>pure mixtures:</b> This represents a mixture with fixed chemical composition.</p>  # noqa: E501
-
-        :return: The mixture of this SolidCompressibleMaterial.  # noqa: E501
-        :rtype: str
-        """
-        return self._mixture
-
-    @mixture.setter
-    def mixture(self, mixture):
-        """Sets the mixture of this SolidCompressibleMaterial.
-
-        <p><b>pure mixtures:</b> This represents a mixture with fixed chemical composition.</p>  # noqa: E501
-
-        :param mixture: The mixture of this SolidCompressibleMaterial.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["PURE_MIXTURE"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and mixture not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `mixture` ({0}), must be one of {1}"  # noqa: E501
-                .format(mixture, allowed_values)
-            )
-
-        self._mixture = mixture
 
     @property
     def specie(self):

@@ -32,7 +32,6 @@ class Analysis(object):
     """
     openapi_types = {
         'type': 'str',
-        'mesh_spec_id': 'str',
         'non_linear_analysis': 'bool',
         'connection_groups': 'list[Contact]',
         'element_technology': 'SolidElementTechnology',
@@ -44,9 +43,8 @@ class Analysis(object):
         'simulation_control': 'SolidSimulationControl',
         'result_control': 'SolidResultControl',
         'mesh_order': 'str',
-        'time_dependency': 'TransientTimeDependency',
+        'time_dependency': 'OneOfConjugateHeatTransferTimeDependency',
         'inertia_effect': 'str',
-        'is_compressible': 'bool',
         'turbulence_model': 'str',
         'algorithm': 'str',
         'num_of_passive_species': 'int',
@@ -56,6 +54,7 @@ class Analysis(object):
         'flow_domain_boundaries': 'FlowDomainBoundaries',
         'advanced_modelling': 'AdvancedModelling',
         'mesh_settings_new': 'OneOfIncompressiblePacefishMeshSettingsNew',
+        'is_compressible': 'bool',
         'mesh_settings': 'WindComfortMesh',
         'region_of_interest': 'RegionOfInterest',
         'wind_conditions': 'WindConditions',
@@ -63,12 +62,13 @@ class Analysis(object):
         'additional_result_export': 'FluidResultControls',
         'enable_radiation': 'bool',
         'contact_handling_mode': 'str',
+        'solar_calculator': 'SolarCalculator',
+        'enable_solar_load': 'bool',
         'use_local_time_stepping': 'bool'
     }
 
     attribute_map = {
         'type': 'type',
-        'mesh_spec_id': 'meshSpecId',
         'non_linear_analysis': 'nonLinearAnalysis',
         'connection_groups': 'connectionGroups',
         'element_technology': 'elementTechnology',
@@ -82,7 +82,6 @@ class Analysis(object):
         'mesh_order': 'meshOrder',
         'time_dependency': 'timeDependency',
         'inertia_effect': 'inertiaEffect',
-        'is_compressible': 'isCompressible',
         'turbulence_model': 'turbulenceModel',
         'algorithm': 'algorithm',
         'num_of_passive_species': 'numOfPassiveSpecies',
@@ -92,6 +91,7 @@ class Analysis(object):
         'flow_domain_boundaries': 'flowDomainBoundaries',
         'advanced_modelling': 'advancedModelling',
         'mesh_settings_new': 'meshSettingsNew',
+        'is_compressible': 'isCompressible',
         'mesh_settings': 'meshSettings',
         'region_of_interest': 'regionOfInterest',
         'wind_conditions': 'windConditions',
@@ -99,6 +99,8 @@ class Analysis(object):
         'additional_result_export': 'additionalResultExport',
         'enable_radiation': 'enableRadiation',
         'contact_handling_mode': 'contactHandlingMode',
+        'solar_calculator': 'solarCalculator',
+        'enable_solar_load': 'enableSolarLoad',
         'use_local_time_stepping': 'useLocalTimeStepping'
     }
 
@@ -120,14 +122,13 @@ class Analysis(object):
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', mesh_spec_id=None, non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, is_compressible=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, solar_calculator=None, enable_solar_load=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._mesh_spec_id = None
         self._non_linear_analysis = None
         self._connection_groups = None
         self._element_technology = None
@@ -141,7 +142,6 @@ class Analysis(object):
         self._mesh_order = None
         self._time_dependency = None
         self._inertia_effect = None
-        self._is_compressible = None
         self._turbulence_model = None
         self._algorithm = None
         self._num_of_passive_species = None
@@ -151,6 +151,7 @@ class Analysis(object):
         self._flow_domain_boundaries = None
         self._advanced_modelling = None
         self._mesh_settings_new = None
+        self._is_compressible = None
         self._mesh_settings = None
         self._region_of_interest = None
         self._wind_conditions = None
@@ -158,12 +159,12 @@ class Analysis(object):
         self._additional_result_export = None
         self._enable_radiation = None
         self._contact_handling_mode = None
+        self._solar_calculator = None
+        self._enable_solar_load = None
         self._use_local_time_stepping = None
         self.discriminator = 'type'
 
         self.type = type
-        if mesh_spec_id is not None:
-            self.mesh_spec_id = mesh_spec_id
         if non_linear_analysis is not None:
             self.non_linear_analysis = non_linear_analysis
         if connection_groups is not None:
@@ -190,8 +191,6 @@ class Analysis(object):
             self.time_dependency = time_dependency
         if inertia_effect is not None:
             self.inertia_effect = inertia_effect
-        if is_compressible is not None:
-            self.is_compressible = is_compressible
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if algorithm is not None:
@@ -210,6 +209,8 @@ class Analysis(object):
             self.advanced_modelling = advanced_modelling
         if mesh_settings_new is not None:
             self.mesh_settings_new = mesh_settings_new
+        if is_compressible is not None:
+            self.is_compressible = is_compressible
         if mesh_settings is not None:
             self.mesh_settings = mesh_settings
         if region_of_interest is not None:
@@ -224,6 +225,10 @@ class Analysis(object):
             self.enable_radiation = enable_radiation
         if contact_handling_mode is not None:
             self.contact_handling_mode = contact_handling_mode
+        if solar_calculator is not None:
+            self.solar_calculator = solar_calculator
+        if enable_solar_load is not None:
+            self.enable_solar_load = enable_solar_load
         if use_local_time_stepping is not None:
             self.use_local_time_stepping = use_local_time_stepping
 
@@ -249,27 +254,6 @@ class Analysis(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def mesh_spec_id(self):
-        """Gets the mesh_spec_id of this Analysis.  # noqa: E501
-
-
-        :return: The mesh_spec_id of this Analysis.  # noqa: E501
-        :rtype: str
-        """
-        return self._mesh_spec_id
-
-    @mesh_spec_id.setter
-    def mesh_spec_id(self, mesh_spec_id):
-        """Sets the mesh_spec_id of this Analysis.
-
-
-        :param mesh_spec_id: The mesh_spec_id of this Analysis.  # noqa: E501
-        :type: str
-        """
-
-        self._mesh_spec_id = mesh_spec_id
 
     @property
     def non_linear_analysis(self):
@@ -516,7 +500,7 @@ class Analysis(object):
 
 
         :return: The time_dependency of this Analysis.  # noqa: E501
-        :rtype: TransientTimeDependency
+        :rtype: OneOfConjugateHeatTransferTimeDependency
         """
         return self._time_dependency
 
@@ -526,7 +510,7 @@ class Analysis(object):
 
 
         :param time_dependency: The time_dependency of this Analysis.  # noqa: E501
-        :type: TransientTimeDependency
+        :type: OneOfConjugateHeatTransferTimeDependency
         """
 
         self._time_dependency = time_dependency
@@ -553,27 +537,6 @@ class Analysis(object):
         """
 
         self._inertia_effect = inertia_effect
-
-    @property
-    def is_compressible(self):
-        """Gets the is_compressible of this Analysis.  # noqa: E501
-
-
-        :return: The is_compressible of this Analysis.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_compressible
-
-    @is_compressible.setter
-    def is_compressible(self, is_compressible):
-        """Sets the is_compressible of this Analysis.
-
-
-        :param is_compressible: The is_compressible of this Analysis.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_compressible = is_compressible
 
     @property
     def turbulence_model(self):
@@ -781,6 +744,29 @@ class Analysis(object):
         self._mesh_settings_new = mesh_settings_new
 
     @property
+    def is_compressible(self):
+        """Gets the is_compressible of this Analysis.  # noqa: E501
+
+        <ul><li>Toggle off <em>Compressible</em> for small temperature variations within the domain, for example, in natural convection simulations (Boussinesq approximation). Use Gauge pressure (0 Pa). </li><li>Toggle on <em>Compressible</em> to calculate resulting density variations within the domain based on pressure and temperature. Use Absolute pressure (for example, 101325 Pa at sea level)</li></ul>  # noqa: E501
+
+        :return: The is_compressible of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_compressible
+
+    @is_compressible.setter
+    def is_compressible(self, is_compressible):
+        """Sets the is_compressible of this Analysis.
+
+        <ul><li>Toggle off <em>Compressible</em> for small temperature variations within the domain, for example, in natural convection simulations (Boussinesq approximation). Use Gauge pressure (0 Pa). </li><li>Toggle on <em>Compressible</em> to calculate resulting density variations within the domain based on pressure and temperature. Use Absolute pressure (for example, 101325 Pa at sea level)</li></ul>  # noqa: E501
+
+        :param is_compressible: The is_compressible of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_compressible = is_compressible
+
+    @property
     def mesh_settings(self):
         """Gets the mesh_settings of this Analysis.  # noqa: E501
 
@@ -934,6 +920,48 @@ class Analysis(object):
             )
 
         self._contact_handling_mode = contact_handling_mode
+
+    @property
+    def solar_calculator(self):
+        """Gets the solar_calculator of this Analysis.  # noqa: E501
+
+
+        :return: The solar_calculator of this Analysis.  # noqa: E501
+        :rtype: SolarCalculator
+        """
+        return self._solar_calculator
+
+    @solar_calculator.setter
+    def solar_calculator(self, solar_calculator):
+        """Sets the solar_calculator of this Analysis.
+
+
+        :param solar_calculator: The solar_calculator of this Analysis.  # noqa: E501
+        :type: SolarCalculator
+        """
+
+        self._solar_calculator = solar_calculator
+
+    @property
+    def enable_solar_load(self):
+        """Gets the enable_solar_load of this Analysis.  # noqa: E501
+
+
+        :return: The enable_solar_load of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_solar_load
+
+    @enable_solar_load.setter
+    def enable_solar_load(self, enable_solar_load):
+        """Sets the enable_solar_load of this Analysis.
+
+
+        :param enable_solar_load: The enable_solar_load of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_solar_load = enable_solar_load
 
     @property
     def use_local_time_stepping(self):

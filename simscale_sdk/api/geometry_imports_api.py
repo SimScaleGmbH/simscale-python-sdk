@@ -34,7 +34,7 @@ class GeometryImportsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_geometry_import(self, project_id, geometry_import_id, **kwargs):  # noqa: E501
+    def get_geometry_import(self, project_id, geometry_import_id, **kwargs): # noqa: E501
         """Get information about the geometry import  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -155,7 +155,7 @@ class GeometryImportsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_geometry_import_event_log(self, project_id, geometry_import_id, **kwargs):  # noqa: E501
+    def get_geometry_import_event_log(self, project_id, geometry_import_id, **kwargs): # noqa: E501
         """Get the geometry import event log  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -276,7 +276,7 @@ class GeometryImportsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def import_geometry(self, project_id, geometry_import_request, **kwargs):  # noqa: E501
+    def import_geometry(self, project_id, geometry_import_request, **kwargs): # noqa: E501
         """Import a new geometry  # noqa: E501
 
         Geometry import requires the following steps: 1. Request a temporary storage location via `POST /storage`. 2. Upload your CAD file using the HTTP `PUT` method to the `url` provided in the temporary storage location response object. 3. Start the import via `POST /projects/{projectId}/geometryimports` and include the `storageId` provided in the temporary storage location response object. 4. Check for the import status via `GET /projects/{projectId}/geometryimports/{geometryImportId}`.   # noqa: E501

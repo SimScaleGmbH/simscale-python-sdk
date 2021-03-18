@@ -32,7 +32,6 @@ class StaticAnalysis(object):
     """
     openapi_types = {
         'type': 'str',
-        'mesh_spec_id': 'str',
         'non_linear_analysis': 'bool',
         'connection_groups': 'list[OneOfStaticAnalysisConnectionGroups]',
         'element_technology': 'SolidElementTechnology',
@@ -48,7 +47,6 @@ class StaticAnalysis(object):
 
     attribute_map = {
         'type': 'type',
-        'mesh_spec_id': 'meshSpecId',
         'non_linear_analysis': 'nonLinearAnalysis',
         'connection_groups': 'connectionGroups',
         'element_technology': 'elementTechnology',
@@ -62,14 +60,13 @@ class StaticAnalysis(object):
         'mesh_order': 'meshOrder'
     }
 
-    def __init__(self, type='STATIC_ANALYSIS', mesh_spec_id=None, non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='STATIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
         """StaticAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._mesh_spec_id = None
         self._non_linear_analysis = None
         self._connection_groups = None
         self._element_technology = None
@@ -84,8 +81,6 @@ class StaticAnalysis(object):
         self.discriminator = None
 
         self.type = type
-        if mesh_spec_id is not None:
-            self.mesh_spec_id = mesh_spec_id
         if non_linear_analysis is not None:
             self.non_linear_analysis = non_linear_analysis
         if connection_groups is not None:
@@ -131,27 +126,6 @@ class StaticAnalysis(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def mesh_spec_id(self):
-        """Gets the mesh_spec_id of this StaticAnalysis.  # noqa: E501
-
-
-        :return: The mesh_spec_id of this StaticAnalysis.  # noqa: E501
-        :rtype: str
-        """
-        return self._mesh_spec_id
-
-    @mesh_spec_id.setter
-    def mesh_spec_id(self, mesh_spec_id):
-        """Sets the mesh_spec_id of this StaticAnalysis.
-
-
-        :param mesh_spec_id: The mesh_spec_id of this StaticAnalysis.  # noqa: E501
-        :type: str
-        """
-
-        self._mesh_spec_id = mesh_spec_id
 
     @property
     def non_linear_analysis(self):

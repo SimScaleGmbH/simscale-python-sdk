@@ -34,7 +34,7 @@ class StorageApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_storage(self, **kwargs):  # noqa: E501
+    def create_storage(self, **kwargs): # noqa: E501
         """Create a temporary storage location  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

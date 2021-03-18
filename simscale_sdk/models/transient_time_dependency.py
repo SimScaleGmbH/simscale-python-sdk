@@ -31,28 +31,23 @@ class TransientTimeDependency(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'type': 'str',
-        'based_on': 'str'
+        'type': 'str'
     }
 
     attribute_map = {
-        'type': 'type',
-        'based_on': 'basedOn'
+        'type': 'type'
     }
 
-    def __init__(self, type='TRANSIENT', based_on=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TRANSIENT', local_vars_configuration=None):  # noqa: E501
         """TransientTimeDependency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._based_on = None
         self.discriminator = None
 
         self.type = type
-        if based_on is not None:
-            self.based_on = based_on
 
     @property
     def type(self):
@@ -76,33 +71,6 @@ class TransientTimeDependency(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def based_on(self):
-        """Gets the based_on of this TransientTimeDependency.  # noqa: E501
-
-
-        :return: The based_on of this TransientTimeDependency.  # noqa: E501
-        :rtype: str
-        """
-        return self._based_on
-
-    @based_on.setter
-    def based_on(self, based_on):
-        """Sets the based_on of this TransientTimeDependency.
-
-
-        :param based_on: The based_on of this TransientTimeDependency.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["PRESSURE"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and based_on not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `based_on` ({0}), must be one of {1}"  # noqa: E501
-                .format(based_on, allowed_values)
-            )
-
-        self._based_on = based_on
 
     def to_dict(self):
         """Returns the model properties as a dict"""

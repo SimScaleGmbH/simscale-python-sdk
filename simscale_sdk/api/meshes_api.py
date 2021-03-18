@@ -34,7 +34,7 @@ class MeshesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_mesh(self, project_id, mesh_id, **kwargs):  # noqa: E501
+    def get_mesh(self, project_id, mesh_id, **kwargs): # noqa: E501
         """Get information about the mesh  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -155,7 +155,7 @@ class MeshesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_meshes(self, project_id, **kwargs):  # noqa: E501
+    def get_meshes(self, project_id, **kwargs): # noqa: E501
         """List meshes within a project  # noqa: E501
 
         Only finished and non-uploaded meshes are included.  # noqa: E501

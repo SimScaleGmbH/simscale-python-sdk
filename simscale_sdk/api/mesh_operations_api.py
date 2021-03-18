@@ -34,7 +34,7 @@ class MeshOperationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def cancel_mesh_operation(self, project_id, mesh_operation_id, **kwargs):  # noqa: E501
+    def cancel_mesh_operation(self, project_id, mesh_operation_id, **kwargs): # noqa: E501
         """Cancel the mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -155,7 +155,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def check_mesh_operation_setup(self, project_id, mesh_operation_id, **kwargs):  # noqa: E501
+    def check_mesh_operation_setup(self, project_id, mesh_operation_id, **kwargs): # noqa: E501
         """Check the mesh operation setup  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -167,7 +167,6 @@ class MeshOperationsApi(object):
         :param str project_id: The project ID (required)
         :param str mesh_operation_id: The mesh operation ID (required)
         :param str simulation_id: The related simulation ID of a physics based mesh operation
-        :param bool physics_based_meshing: Whether the mesh operation is physics based or not. A physics based mesh operation requires a simulationId.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -194,7 +193,6 @@ class MeshOperationsApi(object):
         :param str project_id: The project ID (required)
         :param str mesh_operation_id: The mesh operation ID (required)
         :param str simulation_id: The related simulation ID of a physics based mesh operation
-        :param bool physics_based_meshing: Whether the mesh operation is physics based or not. A physics based mesh operation requires a simulationId.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -214,8 +212,7 @@ class MeshOperationsApi(object):
         all_params = [
             'project_id',
             'mesh_operation_id',
-            'simulation_id',
-            'physics_based_meshing'
+            'simulation_id'
         ]
         all_params.extend(
             [
@@ -254,8 +251,6 @@ class MeshOperationsApi(object):
         query_params = []
         if 'simulation_id' in local_var_params and local_var_params['simulation_id'] is not None:  # noqa: E501
             query_params.append(('simulationId', local_var_params['simulation_id']))  # noqa: E501
-        if 'physics_based_meshing' in local_var_params and local_var_params['physics_based_meshing'] is not None:  # noqa: E501
-            query_params.append(('physicsBasedMeshing', local_var_params['physics_based_meshing']))  # noqa: E501
 
         header_params = {}
 
@@ -286,7 +281,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_mesh_operation(self, project_id, mesh_operation, **kwargs):  # noqa: E501
+    def create_mesh_operation(self, project_id, mesh_operation, **kwargs): # noqa: E501
         """Create a mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -411,7 +406,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def estimate_mesh_operation(self, project_id, mesh_operation_id, **kwargs):  # noqa: E501
+    def estimate_mesh_operation(self, project_id, mesh_operation_id, **kwargs): # noqa: E501
         """Estimate the mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -532,7 +527,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_mesh_operation(self, project_id, mesh_operation_id, meshing_spec_schema_version, **kwargs):  # noqa: E501
+    def get_mesh_operation(self, project_id, mesh_operation_id, meshing_spec_schema_version='0.3', **kwargs): # noqa: E501
         """Get information about the mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -662,7 +657,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_mesh_operation_event_log(self, project_id, mesh_operation_id, **kwargs):  # noqa: E501
+    def get_mesh_operation_event_log(self, project_id, mesh_operation_id, **kwargs): # noqa: E501
         """Get the mesh operation event log  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -783,7 +778,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_mesh_operations(self, project_id, **kwargs):  # noqa: E501
+    def get_mesh_operations(self, project_id, **kwargs): # noqa: E501
         """List mesh operations for a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -913,7 +908,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def start_mesh_operation(self, project_id, mesh_operation_id, **kwargs):  # noqa: E501
+    def start_mesh_operation(self, project_id, mesh_operation_id, **kwargs): # noqa: E501
         """Start the mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -925,7 +920,6 @@ class MeshOperationsApi(object):
         :param str project_id: The project ID (required)
         :param str mesh_operation_id: The mesh operation ID (required)
         :param str simulation_id: The related simulation ID of a physics based mesh operation
-        :param bool physics_based_meshing: Whether the mesh operation is physics based or not. A physics based mesh operation requires a simulationId.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -952,7 +946,6 @@ class MeshOperationsApi(object):
         :param str project_id: The project ID (required)
         :param str mesh_operation_id: The mesh operation ID (required)
         :param str simulation_id: The related simulation ID of a physics based mesh operation
-        :param bool physics_based_meshing: Whether the mesh operation is physics based or not. A physics based mesh operation requires a simulationId.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -972,8 +965,7 @@ class MeshOperationsApi(object):
         all_params = [
             'project_id',
             'mesh_operation_id',
-            'simulation_id',
-            'physics_based_meshing'
+            'simulation_id'
         ]
         all_params.extend(
             [
@@ -1012,8 +1004,6 @@ class MeshOperationsApi(object):
         query_params = []
         if 'simulation_id' in local_var_params and local_var_params['simulation_id'] is not None:  # noqa: E501
             query_params.append(('simulationId', local_var_params['simulation_id']))  # noqa: E501
-        if 'physics_based_meshing' in local_var_params and local_var_params['physics_based_meshing'] is not None:  # noqa: E501
-            query_params.append(('physicsBasedMeshing', local_var_params['physics_based_meshing']))  # noqa: E501
 
         header_params = {}
 
@@ -1044,7 +1034,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_mesh_operation(self, project_id, mesh_operation_id, mesh_operation, **kwargs):  # noqa: E501
+    def update_mesh_operation(self, project_id, mesh_operation_id, mesh_operation, **kwargs): # noqa: E501
         """Update information about the mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

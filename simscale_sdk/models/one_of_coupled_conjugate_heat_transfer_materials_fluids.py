@@ -44,8 +44,6 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'molar_weight': 'DimensionalMolarMass',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
-        'thermo_type': 'str',
-        'mixture': 'str',
         'specie': 'SpecieDefault',
         'transport': 'OneOfFluidCompressibleMaterialTransport'
     }
@@ -64,8 +62,6 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'molar_weight': 'molarWeight',
         'topological_reference': 'topologicalReference',
         'built_in_material': 'builtInMaterial',
-        'thermo_type': 'thermoType',
-        'mixture': 'mixture',
         'specie': 'specie',
         'transport': 'transport'
     }
@@ -75,7 +71,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'COMPRESSIBLE': 'FluidCompressibleMaterial'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, topological_reference=None, built_in_material=None, thermo_type=None, mixture=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, topological_reference=None, built_in_material=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferMaterialsFluids - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,8 +90,6 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         self._molar_weight = None
         self._topological_reference = None
         self._built_in_material = None
-        self._thermo_type = None
-        self._mixture = None
         self._specie = None
         self._transport = None
         self.discriminator = 'type'
@@ -125,10 +119,6 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
             self.topological_reference = topological_reference
         if built_in_material is not None:
             self.built_in_material = built_in_material
-        if thermo_type is not None:
-            self.thermo_type = thermo_type
-        if mixture is not None:
-            self.mixture = mixture
         if specie is not None:
             self.specie = specie
         if transport is not None:
@@ -420,58 +410,6 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         """
 
         self._built_in_material = built_in_material
-
-    @property
-    def thermo_type(self):
-        """Gets the thermo_type of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
-
-        <br><b>Thermophysical models </b><p><b>PsiThermo model:</b> This is for a all compressible fluid with fixed chemical composition. based on the compressibility &psi; and the changes in pressure, the density is then determined by the selected Equation of State.</p><p><b>RhoThermo model:</b> This model is for natural or forced convection heat transfer in compressible fluid with fixed chemical composition.</p>  # noqa: E501
-
-        :return: The thermo_type of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
-        :rtype: str
-        """
-        return self._thermo_type
-
-    @thermo_type.setter
-    def thermo_type(self, thermo_type):
-        """Sets the thermo_type of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
-
-        <br><b>Thermophysical models </b><p><b>PsiThermo model:</b> This is for a all compressible fluid with fixed chemical composition. based on the compressibility &psi; and the changes in pressure, the density is then determined by the selected Equation of State.</p><p><b>RhoThermo model:</b> This model is for natural or forced convection heat transfer in compressible fluid with fixed chemical composition.</p>  # noqa: E501
-
-        :param thermo_type: The thermo_type of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
-        :type: str
-        """
-
-        self._thermo_type = thermo_type
-
-    @property
-    def mixture(self):
-        """Gets the mixture of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
-
-        <p><b>pure mixtures:</b> This represents a mixture with fixed chemical composition.</p>  # noqa: E501
-
-        :return: The mixture of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
-        :rtype: str
-        """
-        return self._mixture
-
-    @mixture.setter
-    def mixture(self, mixture):
-        """Sets the mixture of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
-
-        <p><b>pure mixtures:</b> This represents a mixture with fixed chemical composition.</p>  # noqa: E501
-
-        :param mixture: The mixture of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["PURE_MIXTURE"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and mixture not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `mixture` ({0}), must be one of {1}"  # noqa: E501
-                .format(mixture, allowed_values)
-            )
-
-        self._mixture = mixture
 
     @property
     def specie(self):

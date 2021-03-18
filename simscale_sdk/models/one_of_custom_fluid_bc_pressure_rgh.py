@@ -35,7 +35,6 @@ class OneOfCustomFluidBCPressureRgh(object):
         'fan_pressure': 'DimensionalFunctionPressure',
         'direction': 'str',
         'environmental_total_pressure': 'DimensionalPressure',
-        'gamma': 'DimensionalFunctionDimensionless',
         'gradient': 'DimensionalForceDensity',
         'value': 'DimensionalPressure',
         'total_pressure': 'DimensionalFunctionPressure'
@@ -46,7 +45,6 @@ class OneOfCustomFluidBCPressureRgh(object):
         'fan_pressure': 'fanPressure',
         'direction': 'direction',
         'environmental_total_pressure': 'environmentalTotalPressure',
-        'gamma': 'gamma',
         'gradient': 'gradient',
         'value': 'value',
         'total_pressure': 'totalPressure'
@@ -64,7 +62,7 @@ class OneOfCustomFluidBCPressureRgh(object):
         'TOTAL_PRESSURE': 'TotalPBC'
     }
 
-    def __init__(self, type='TOTAL_PRESSURE', fan_pressure=None, direction=None, environmental_total_pressure=None, gamma=None, gradient=None, value=None, total_pressure=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOTAL_PRESSURE', fan_pressure=None, direction=None, environmental_total_pressure=None, gradient=None, value=None, total_pressure=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCPressureRgh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,7 +72,6 @@ class OneOfCustomFluidBCPressureRgh(object):
         self._fan_pressure = None
         self._direction = None
         self._environmental_total_pressure = None
-        self._gamma = None
         self._gradient = None
         self._value = None
         self._total_pressure = None
@@ -87,8 +84,6 @@ class OneOfCustomFluidBCPressureRgh(object):
             self.direction = direction
         if environmental_total_pressure is not None:
             self.environmental_total_pressure = environmental_total_pressure
-        if gamma is not None:
-            self.gamma = gamma
         if gradient is not None:
             self.gradient = gradient
         if value is not None:
@@ -187,27 +182,6 @@ class OneOfCustomFluidBCPressureRgh(object):
         """
 
         self._environmental_total_pressure = environmental_total_pressure
-
-    @property
-    def gamma(self):
-        """Gets the gamma of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
-
-
-        :return: The gamma of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
-        :rtype: DimensionalFunctionDimensionless
-        """
-        return self._gamma
-
-    @gamma.setter
-    def gamma(self, gamma):
-        """Sets the gamma of this OneOfCustomFluidBCPressureRgh.
-
-
-        :param gamma: The gamma of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
-        :type: DimensionalFunctionDimensionless
-        """
-
-        self._gamma = gamma
 
     @property
     def gradient(self):

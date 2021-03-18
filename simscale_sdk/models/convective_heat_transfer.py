@@ -32,7 +32,6 @@ class ConvectiveHeatTransfer(object):
     """
     openapi_types = {
         'type': 'str',
-        'mesh_spec_id': 'str',
         'is_compressible': 'bool',
         'enable_radiation': 'bool',
         'turbulence_model': 'str',
@@ -50,7 +49,6 @@ class ConvectiveHeatTransfer(object):
 
     attribute_map = {
         'type': 'type',
-        'mesh_spec_id': 'meshSpecId',
         'is_compressible': 'isCompressible',
         'enable_radiation': 'enableRadiation',
         'turbulence_model': 'turbulenceModel',
@@ -66,14 +64,13 @@ class ConvectiveHeatTransfer(object):
         'result_control': 'resultControl'
     }
 
-    def __init__(self, type='CONVECTIVE_HEAT_TRANSFER', mesh_spec_id=None, is_compressible=None, enable_radiation=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONVECTIVE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
         """ConvectiveHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._mesh_spec_id = None
         self._is_compressible = None
         self._enable_radiation = None
         self._turbulence_model = None
@@ -90,8 +87,6 @@ class ConvectiveHeatTransfer(object):
         self.discriminator = None
 
         self.type = type
-        if mesh_spec_id is not None:
-            self.mesh_spec_id = mesh_spec_id
         if is_compressible is not None:
             self.is_compressible = is_compressible
         if enable_radiation is not None:
@@ -141,27 +136,6 @@ class ConvectiveHeatTransfer(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def mesh_spec_id(self):
-        """Gets the mesh_spec_id of this ConvectiveHeatTransfer.  # noqa: E501
-
-
-        :return: The mesh_spec_id of this ConvectiveHeatTransfer.  # noqa: E501
-        :rtype: str
-        """
-        return self._mesh_spec_id
-
-    @mesh_spec_id.setter
-    def mesh_spec_id(self, mesh_spec_id):
-        """Sets the mesh_spec_id of this ConvectiveHeatTransfer.
-
-
-        :param mesh_spec_id: The mesh_spec_id of this ConvectiveHeatTransfer.  # noqa: E501
-        :type: str
-        """
-
-        self._mesh_spec_id = mesh_spec_id
 
     @property
     def is_compressible(self):

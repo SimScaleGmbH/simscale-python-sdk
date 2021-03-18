@@ -35,7 +35,7 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         'name': 'str',
         'refinement': 'OneOfRegionRefinementWithLengthRefinement',
         'topological_reference': 'TopologicalReference',
-        'geometry_primitives': 'list[str]',
+        'geometry_primitive_uuids': 'list[str]',
         'max_element_size': 'DimensionalLength',
         'number_of_layers': 'int',
         'total_relative_thickness': 'float',
@@ -47,7 +47,7 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         'name': 'name',
         'refinement': 'refinement',
         'topological_reference': 'topologicalReference',
-        'geometry_primitives': 'geometryPrimitives',
+        'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'max_element_size': 'maxElementSize',
         'number_of_layers': 'numberOfLayers',
         'total_relative_thickness': 'totalRelativeThickness',
@@ -60,7 +60,7 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         'SIMMETRIX_BOUNDARY_LAYER_V13': 'SimmetrixBoundaryLayerRefinement'
     }
 
-    def __init__(self, type='SIMMETRIX_BOUNDARY_LAYER_V13', name=None, refinement=None, topological_reference=None, geometry_primitives=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_BOUNDARY_LAYER_V13', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixMeshingSolidRefinements - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,7 +70,7 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         self._name = None
         self._refinement = None
         self._topological_reference = None
-        self._geometry_primitives = None
+        self._geometry_primitive_uuids = None
         self._max_element_size = None
         self._number_of_layers = None
         self._total_relative_thickness = None
@@ -84,8 +84,8 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
             self.refinement = refinement
         if topological_reference is not None:
             self.topological_reference = topological_reference
-        if geometry_primitives is not None:
-            self.geometry_primitives = geometry_primitives
+        if geometry_primitive_uuids is not None:
+            self.geometry_primitive_uuids = geometry_primitive_uuids
         if max_element_size is not None:
             self.max_element_size = max_element_size
         if number_of_layers is not None:
@@ -182,25 +182,25 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         self._topological_reference = topological_reference
 
     @property
-    def geometry_primitives(self):
-        """Gets the geometry_primitives of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+    def geometry_primitive_uuids(self):
+        """Gets the geometry_primitive_uuids of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
 
 
-        :return: The geometry_primitives of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :return: The geometry_primitive_uuids of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
         :rtype: list[str]
         """
-        return self._geometry_primitives
+        return self._geometry_primitive_uuids
 
-    @geometry_primitives.setter
-    def geometry_primitives(self, geometry_primitives):
-        """Sets the geometry_primitives of this OneOfSimmetrixMeshingSolidRefinements.
+    @geometry_primitive_uuids.setter
+    def geometry_primitive_uuids(self, geometry_primitive_uuids):
+        """Sets the geometry_primitive_uuids of this OneOfSimmetrixMeshingSolidRefinements.
 
 
-        :param geometry_primitives: The geometry_primitives of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :param geometry_primitive_uuids: The geometry_primitive_uuids of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
         :type: list[str]
         """
 
-        self._geometry_primitives = geometry_primitives
+        self._geometry_primitive_uuids = geometry_primitive_uuids
 
     @property
     def max_element_size(self):

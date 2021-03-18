@@ -34,7 +34,7 @@ class ProjectsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def create_project(self, project, **kwargs):  # noqa: E501
+    def create_project(self, project, **kwargs): # noqa: E501
         """Create a new project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -150,7 +150,7 @@ class ProjectsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_project(self, project_id, **kwargs):  # noqa: E501
+    def get_project(self, project_id, **kwargs): # noqa: E501
         """Get information about an existing project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -262,7 +262,7 @@ class ProjectsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_projects(self, **kwargs):  # noqa: E501
+    def get_projects(self, **kwargs): # noqa: E501
         """List projects  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -383,7 +383,7 @@ class ProjectsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_project(self, project_id, project, **kwargs):  # noqa: E501
+    def update_project(self, project_id, project, **kwargs): # noqa: E501
         """Update an existing project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

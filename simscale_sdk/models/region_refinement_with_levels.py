@@ -35,7 +35,7 @@ class RegionRefinementWithLevels(object):
         'name': 'str',
         'refinement': 'OneOfRegionRefinementWithLevelsRefinement',
         'topological_reference': 'TopologicalReference',
-        'geometry_primitives': 'list[str]'
+        'geometry_primitive_uuids': 'list[str]'
     }
 
     attribute_map = {
@@ -43,10 +43,10 @@ class RegionRefinementWithLevels(object):
         'name': 'name',
         'refinement': 'refinement',
         'topological_reference': 'topologicalReference',
-        'geometry_primitives': 'geometryPrimitives'
+        'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='REGION_LEVELS', name=None, refinement=None, topological_reference=None, geometry_primitives=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='REGION_LEVELS', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """RegionRefinementWithLevels - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,7 +56,7 @@ class RegionRefinementWithLevels(object):
         self._name = None
         self._refinement = None
         self._topological_reference = None
-        self._geometry_primitives = None
+        self._geometry_primitive_uuids = None
         self.discriminator = None
 
         self.type = type
@@ -66,8 +66,8 @@ class RegionRefinementWithLevels(object):
             self.refinement = refinement
         if topological_reference is not None:
             self.topological_reference = topological_reference
-        if geometry_primitives is not None:
-            self.geometry_primitives = geometry_primitives
+        if geometry_primitive_uuids is not None:
+            self.geometry_primitive_uuids = geometry_primitive_uuids
 
     @property
     def type(self):
@@ -156,25 +156,25 @@ class RegionRefinementWithLevels(object):
         self._topological_reference = topological_reference
 
     @property
-    def geometry_primitives(self):
-        """Gets the geometry_primitives of this RegionRefinementWithLevels.  # noqa: E501
+    def geometry_primitive_uuids(self):
+        """Gets the geometry_primitive_uuids of this RegionRefinementWithLevels.  # noqa: E501
 
 
-        :return: The geometry_primitives of this RegionRefinementWithLevels.  # noqa: E501
+        :return: The geometry_primitive_uuids of this RegionRefinementWithLevels.  # noqa: E501
         :rtype: list[str]
         """
-        return self._geometry_primitives
+        return self._geometry_primitive_uuids
 
-    @geometry_primitives.setter
-    def geometry_primitives(self, geometry_primitives):
-        """Sets the geometry_primitives of this RegionRefinementWithLevels.
+    @geometry_primitive_uuids.setter
+    def geometry_primitive_uuids(self, geometry_primitive_uuids):
+        """Sets the geometry_primitive_uuids of this RegionRefinementWithLevels.
 
 
-        :param geometry_primitives: The geometry_primitives of this RegionRefinementWithLevels.  # noqa: E501
+        :param geometry_primitive_uuids: The geometry_primitive_uuids of this RegionRefinementWithLevels.  # noqa: E501
         :type: list[str]
         """
 
-        self._geometry_primitives = geometry_primitives
+        self._geometry_primitive_uuids = geometry_primitive_uuids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

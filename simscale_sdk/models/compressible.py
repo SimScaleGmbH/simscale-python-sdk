@@ -32,8 +32,6 @@ class Compressible(object):
     """
     openapi_types = {
         'type': 'str',
-        'mesh_spec_id': 'str',
-        'is_compressible': 'bool',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfCompressibleTimeDependency',
         'model': 'FluidModel',
@@ -48,8 +46,6 @@ class Compressible(object):
 
     attribute_map = {
         'type': 'type',
-        'mesh_spec_id': 'meshSpecId',
-        'is_compressible': 'isCompressible',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
         'model': 'model',
@@ -62,15 +58,13 @@ class Compressible(object):
         'result_control': 'resultControl'
     }
 
-    def __init__(self, type='COMPRESSIBLE', mesh_spec_id=None, is_compressible=None, turbulence_model=None, time_dependency=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', turbulence_model=None, time_dependency=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
         """Compressible - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._mesh_spec_id = None
-        self._is_compressible = None
         self._turbulence_model = None
         self._time_dependency = None
         self._model = None
@@ -84,10 +78,6 @@ class Compressible(object):
         self.discriminator = None
 
         self.type = type
-        if mesh_spec_id is not None:
-            self.mesh_spec_id = mesh_spec_id
-        if is_compressible is not None:
-            self.is_compressible = is_compressible
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
@@ -131,48 +121,6 @@ class Compressible(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def mesh_spec_id(self):
-        """Gets the mesh_spec_id of this Compressible.  # noqa: E501
-
-
-        :return: The mesh_spec_id of this Compressible.  # noqa: E501
-        :rtype: str
-        """
-        return self._mesh_spec_id
-
-    @mesh_spec_id.setter
-    def mesh_spec_id(self, mesh_spec_id):
-        """Sets the mesh_spec_id of this Compressible.
-
-
-        :param mesh_spec_id: The mesh_spec_id of this Compressible.  # noqa: E501
-        :type: str
-        """
-
-        self._mesh_spec_id = mesh_spec_id
-
-    @property
-    def is_compressible(self):
-        """Gets the is_compressible of this Compressible.  # noqa: E501
-
-
-        :return: The is_compressible of this Compressible.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_compressible
-
-    @is_compressible.setter
-    def is_compressible(self, is_compressible):
-        """Sets the is_compressible of this Compressible.
-
-
-        :param is_compressible: The is_compressible of this Compressible.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_compressible = is_compressible
 
     @property
     def turbulence_model(self):

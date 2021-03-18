@@ -49,7 +49,7 @@ geometry_import = GeometryImportRequest(
     location=GeometryImportRequestLocation(storage_id),
     format='STL',
     input_unit='m',
-    options=GeometryImportRequestOptions(facet_split=False, sewing=True, improve=True, optimize_for_lbm_solver=True),
+    options=GeometryImportRequestOptions(facet_split=False, sewing=False, improve=True, optimize_for_lbm_solver=True),
 )
 geometry_import = geometry_import_api.import_geometry(project_id, geometry_import)
 geometry_import_id = geometry_import.geometry_import_id
@@ -73,17 +73,31 @@ geometry_mappings = geometry_api.get_geometry_mappings(project_id, geometry_id, 
 entities = [mapping.name for mapping in geometry_mappings._embedded]
 print(f'entities: {entities}')
 
-# upload probe points
-csv_storage = storage_api.create_storage()
-with open('fixtures/ProbePoint.csv', 'rb') as file:
-    api_client.rest_client.PUT(url=csv_storage.url, headers={'Content-Type': 'application/octet-stream'}, body=file.read())
-csv_storage_id = csv_storage.storage_id
-print(f'Probepoint storageId: {csv_storage_id}')
+# Upload table containing Probe Points information
+probe_points_csv_storage = storage_api.create_storage()
+with open('fixtures/ProbePoints.csv', 'rb') as file:
+    api_client.rest_client.PUT(url=probe_points_csv_storage.url, headers={'Content-Type': 'application/octet-stream'},
+                               body=file.read())
+probe_point_csv_storage_id = probe_points_csv_storage.storage_id
+print(f'Probe Points table storageId: {probe_point_csv_storage_id}')
 
-# import probe points
-table_import = TableImportRequest(location=TableImportRequestLocation(csv_storage_id))
-table_import_response = table_import_api.import_table(project_id, table_import)
-table_id = table_import_response.table_id
+# Import table containing Probe Points information
+probe_points_table_import = TableImportRequest(location=TableImportRequestLocation(probe_point_csv_storage_id))
+probe_points_table_import_response = table_import_api.import_table(project_id, probe_points_table_import)
+probe_points_table_id = probe_points_table_import_response.table_id
+
+# Upload table containing Inlet Profile information
+inlet_profile_csv_storage = storage_api.create_storage()
+with open('fixtures/InletProfile.csv', 'rb') as file:
+    api_client.rest_client.PUT(url=inlet_profile_csv_storage.url, headers={'Content-Type': 'application/octet-stream'},
+                               body=file.read())
+inlet_profile_csv_storage_id = inlet_profile_csv_storage.storage_id
+print(f'Inlet Profile table storageId: {inlet_profile_csv_storage_id}')
+
+# Import table containing Inlet Profile information
+inlet_profile_table_import = TableImportRequest(location=TableImportRequestLocation(inlet_profile_csv_storage_id))
+inlet_profile_table_import_response = table_import_api.import_table(project_id, inlet_profile_table_import)
+inlet_profile_table_id = inlet_profile_table_import_response.table_id
 
 # Create geometry primitives
 external_flow_domain = RotatableCartesianBox(
@@ -117,9 +131,27 @@ model = IncompressiblePacefish(
     flow_domain_boundaries=FlowDomainBoundaries(
         xmin=VelocityInletBC(
             name='Velocity inlet (A)',
-            velocity=FixedMagnitudeVBC(value=DimensionalFunctionSpeed(value=ConstantFunction(value=10.5), unit='m/s')),
-            turbulence_intensity=TurbulenceIntensityTIBC(value=DimensionalFunctionDimensionless(value=ConstantFunction(value=0.015), unit='')),
-            dissipation_type=AutomaticOmegaDissipation()
+            velocity=FixedMagnitudeVBC(
+                value=DimensionalFunctionSpeed(
+                    value=TableDefinedFunction(
+                        table_id=inlet_profile_table_id,
+                        result_index=[2],
+                        independent_variables=[TableFunctionParameter(reference=1, parameter="HEIGHT", unit="m")]
+                    ),
+                    unit='m/s')
+            ),
+            turbulence_intensity=TurbulenceIntensityTIBC(
+                value=DimensionalFunctionDimensionless(value=ConstantFunction(value=0.015), unit='')),
+            dissipation_type=CustomOmegaDissipation(
+                value=DimensionalFunctionSpecificTurbulenceDissipationRate(
+                    value=TableDefinedFunction(
+                        table_id=inlet_profile_table_id,
+                        result_index=[3],
+                        independent_variables=[TableFunctionParameter(reference=1, parameter="HEIGHT", unit="m")]
+                    ),
+                    unit='1/s'
+                )
+            )
         ),
         xmax=PressureOutletBC(
             name='Pressure outlet (B)'
@@ -173,7 +205,7 @@ model = IncompressiblePacefish(
             ProbePointsResultControl(
                 name='Probe point 1',
                 write_control=ModerateResolution(),
-                probe_locations=TableDefinedProbeLocations(table_id=table_id)
+                probe_locations=TableDefinedProbeLocations(table_id=probe_points_table_id)
             )
         ],
         transient_result_control=TransientResultControl(
@@ -202,6 +234,8 @@ simulation_spec = SimulationSpec(name='Incompressible LBM', geometry_id=geometry
 # Create simulation
 simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id
 print(f'simulationId: {simulation_id}')
+
+
 
 # Read simulation spec and update with the deserialized model
 simulation_spec = simulation_api.get_simulation(project_id, simulation_id)
@@ -256,7 +290,11 @@ while simulation_run.status not in ('FINISHED', 'CANCELED', 'FAILED'):
 results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, run_id)
 
 probe_point_plot_statistical_data_info = [r for r in results._embedded if r.category == 'PROBE_POINT_PLOT_STATISTICAL_DATA'][0]
-probe_point_plot_statistical_data_response = api_client.rest_client.GET(url=probe_point_plot_statistical_data_info.download.url, headers={api_key_header: api_key}, _preload_content=False)
+probe_point_plot_statistical_data_response = api_client.rest_client.GET(
+    url=probe_point_plot_statistical_data_info.download.url,
+    headers={api_key_header: api_key},
+    _preload_content=False
+)
 probe_point_plot_statistical_data_csv = probe_point_plot_statistical_data_response.data.decode('utf-8')
 print(f'Probe point plot statistical data as CSV: {probe_point_plot_statistical_data_csv}')
 
@@ -265,7 +303,11 @@ with open('probe_points.csv', 'w') as file:
     file.write(probe_point_plot_statistical_data_csv)
 
 averaged_solution_info = [r for r in results._embedded if r.category == 'AVERAGED_SOLUTION'][0]
-averaged_solution_response = api_client.rest_client.GET(url=averaged_solution_info.download.url, headers={api_key_header: api_key}, _preload_content=False)
+averaged_solution_response = api_client.rest_client.GET(
+    url=averaged_solution_info.download.url,
+    headers={api_key_header: api_key},
+    _preload_content=False
+)
 with open('averaged_solution.zip', 'wb') as file:
     file.write(averaged_solution_response.data)
 zip = zipfile.ZipFile('averaged_solution.zip')

@@ -34,25 +34,27 @@ class SimericsAnalysis(object):
         'type': 'str',
         'materials': 'SimericsFluidMaterials',
         'is_compressible': 'bool',
+        'turbulence_model': 'str',
         'boundary_conditions': 'list[OneOfSimericsAnalysisBoundaryConditions]',
         'simulation_control': 'FluidSimulationControl',
+        'mesh_settings': 'ManualSimericsMeshSettings',
         'result_control': 'FluidResultControls',
-        'turbulence_model': 'str',
-        'mesh_settings': 'ManualSimericsMeshSettings'
+        'advanced_concepts': 'AdvancedConcepts'
     }
 
     attribute_map = {
         'type': 'type',
         'materials': 'materials',
         'is_compressible': 'isCompressible',
+        'turbulence_model': 'turbulenceModel',
         'boundary_conditions': 'boundaryConditions',
         'simulation_control': 'simulationControl',
+        'mesh_settings': 'meshSettings',
         'result_control': 'resultControl',
-        'turbulence_model': 'turbulenceModel',
-        'mesh_settings': 'meshSettings'
+        'advanced_concepts': 'advancedConcepts'
     }
 
-    def __init__(self, type='SIMERICS_ANALYSIS', materials=None, is_compressible=None, boundary_conditions=None, simulation_control=None, result_control=None, turbulence_model=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMERICS_ANALYSIS', materials=None, is_compressible=None, turbulence_model=None, boundary_conditions=None, simulation_control=None, mesh_settings=None, result_control=None, advanced_concepts=None, local_vars_configuration=None):  # noqa: E501
         """SimericsAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,11 +63,12 @@ class SimericsAnalysis(object):
         self._type = None
         self._materials = None
         self._is_compressible = None
+        self._turbulence_model = None
         self._boundary_conditions = None
         self._simulation_control = None
-        self._result_control = None
-        self._turbulence_model = None
         self._mesh_settings = None
+        self._result_control = None
+        self._advanced_concepts = None
         self.discriminator = None
 
         self.type = type
@@ -73,16 +76,18 @@ class SimericsAnalysis(object):
             self.materials = materials
         if is_compressible is not None:
             self.is_compressible = is_compressible
+        if turbulence_model is not None:
+            self.turbulence_model = turbulence_model
         if boundary_conditions is not None:
             self.boundary_conditions = boundary_conditions
         if simulation_control is not None:
             self.simulation_control = simulation_control
-        if result_control is not None:
-            self.result_control = result_control
-        if turbulence_model is not None:
-            self.turbulence_model = turbulence_model
         if mesh_settings is not None:
             self.mesh_settings = mesh_settings
+        if result_control is not None:
+            self.result_control = result_control
+        if advanced_concepts is not None:
+            self.advanced_concepts = advanced_concepts
 
     @property
     def type(self):
@@ -150,6 +155,33 @@ class SimericsAnalysis(object):
         self._is_compressible = is_compressible
 
     @property
+    def turbulence_model(self):
+        """Gets the turbulence_model of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The turbulence_model of this SimericsAnalysis.  # noqa: E501
+        :rtype: str
+        """
+        return self._turbulence_model
+
+    @turbulence_model.setter
+    def turbulence_model(self, turbulence_model):
+        """Sets the turbulence_model of this SimericsAnalysis.
+
+
+        :param turbulence_model: The turbulence_model of this SimericsAnalysis.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["NONE", "KEPSILON"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and turbulence_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `turbulence_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(turbulence_model, allowed_values)
+            )
+
+        self._turbulence_model = turbulence_model
+
+    @property
     def boundary_conditions(self):
         """Gets the boundary_conditions of this SimericsAnalysis.  # noqa: E501
 
@@ -192,6 +224,27 @@ class SimericsAnalysis(object):
         self._simulation_control = simulation_control
 
     @property
+    def mesh_settings(self):
+        """Gets the mesh_settings of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The mesh_settings of this SimericsAnalysis.  # noqa: E501
+        :rtype: ManualSimericsMeshSettings
+        """
+        return self._mesh_settings
+
+    @mesh_settings.setter
+    def mesh_settings(self, mesh_settings):
+        """Sets the mesh_settings of this SimericsAnalysis.
+
+
+        :param mesh_settings: The mesh_settings of this SimericsAnalysis.  # noqa: E501
+        :type: ManualSimericsMeshSettings
+        """
+
+        self._mesh_settings = mesh_settings
+
+    @property
     def result_control(self):
         """Gets the result_control of this SimericsAnalysis.  # noqa: E501
 
@@ -213,52 +266,25 @@ class SimericsAnalysis(object):
         self._result_control = result_control
 
     @property
-    def turbulence_model(self):
-        """Gets the turbulence_model of this SimericsAnalysis.  # noqa: E501
+    def advanced_concepts(self):
+        """Gets the advanced_concepts of this SimericsAnalysis.  # noqa: E501
 
 
-        :return: The turbulence_model of this SimericsAnalysis.  # noqa: E501
-        :rtype: str
+        :return: The advanced_concepts of this SimericsAnalysis.  # noqa: E501
+        :rtype: AdvancedConcepts
         """
-        return self._turbulence_model
+        return self._advanced_concepts
 
-    @turbulence_model.setter
-    def turbulence_model(self, turbulence_model):
-        """Sets the turbulence_model of this SimericsAnalysis.
-
-
-        :param turbulence_model: The turbulence_model of this SimericsAnalysis.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["NONE", "KEPSILON"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and turbulence_model not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `turbulence_model` ({0}), must be one of {1}"  # noqa: E501
-                .format(turbulence_model, allowed_values)
-            )
-
-        self._turbulence_model = turbulence_model
-
-    @property
-    def mesh_settings(self):
-        """Gets the mesh_settings of this SimericsAnalysis.  # noqa: E501
+    @advanced_concepts.setter
+    def advanced_concepts(self, advanced_concepts):
+        """Sets the advanced_concepts of this SimericsAnalysis.
 
 
-        :return: The mesh_settings of this SimericsAnalysis.  # noqa: E501
-        :rtype: ManualSimericsMeshSettings
-        """
-        return self._mesh_settings
-
-    @mesh_settings.setter
-    def mesh_settings(self, mesh_settings):
-        """Sets the mesh_settings of this SimericsAnalysis.
-
-
-        :param mesh_settings: The mesh_settings of this SimericsAnalysis.  # noqa: E501
-        :type: ManualSimericsMeshSettings
+        :param advanced_concepts: The advanced_concepts of this SimericsAnalysis.  # noqa: E501
+        :type: AdvancedConcepts
         """
 
-        self._mesh_settings = mesh_settings
+        self._advanced_concepts = advanced_concepts
 
     def to_dict(self):
         """Returns the model properties as a dict"""

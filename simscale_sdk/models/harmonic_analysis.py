@@ -32,7 +32,6 @@ class HarmonicAnalysis(object):
     """
     openapi_types = {
         'type': 'str',
-        'mesh_spec_id': 'str',
         'connection_groups': 'list[Contact]',
         'element_technology': 'SolidElementTechnology',
         'model': 'SolidModel',
@@ -47,7 +46,6 @@ class HarmonicAnalysis(object):
 
     attribute_map = {
         'type': 'type',
-        'mesh_spec_id': 'meshSpecId',
         'connection_groups': 'connectionGroups',
         'element_technology': 'elementTechnology',
         'model': 'model',
@@ -60,14 +58,13 @@ class HarmonicAnalysis(object):
         'mesh_order': 'meshOrder'
     }
 
-    def __init__(self, type='HARMONIC_ANALYSIS', mesh_spec_id=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HARMONIC_ANALYSIS', connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
         """HarmonicAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._mesh_spec_id = None
         self._connection_groups = None
         self._element_technology = None
         self._model = None
@@ -81,8 +78,6 @@ class HarmonicAnalysis(object):
         self.discriminator = None
 
         self.type = type
-        if mesh_spec_id is not None:
-            self.mesh_spec_id = mesh_spec_id
         if connection_groups is not None:
             self.connection_groups = connection_groups
         if element_technology is not None:
@@ -126,27 +121,6 @@ class HarmonicAnalysis(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def mesh_spec_id(self):
-        """Gets the mesh_spec_id of this HarmonicAnalysis.  # noqa: E501
-
-
-        :return: The mesh_spec_id of this HarmonicAnalysis.  # noqa: E501
-        :rtype: str
-        """
-        return self._mesh_spec_id
-
-    @mesh_spec_id.setter
-    def mesh_spec_id(self, mesh_spec_id):
-        """Sets the mesh_spec_id of this HarmonicAnalysis.
-
-
-        :param mesh_spec_id: The mesh_spec_id of this HarmonicAnalysis.  # noqa: E501
-        :type: str
-        """
-
-        self._mesh_spec_id = mesh_spec_id
 
     @property
     def connection_groups(self):

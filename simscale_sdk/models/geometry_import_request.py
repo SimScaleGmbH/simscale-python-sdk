@@ -117,7 +117,7 @@ class GeometryImportRequest(object):
     def format(self):
         """Gets the format of this GeometryImportRequest.  # noqa: E501
 
-        The CAD format. Currently only STL is supported, additional formats will be added in future.  # noqa: E501
+        The CAD format.  # noqa: E501
 
         :return: The format of this GeometryImportRequest.  # noqa: E501
         :rtype: str
@@ -128,14 +128,14 @@ class GeometryImportRequest(object):
     def format(self, format):
         """Sets the format of this GeometryImportRequest.
 
-        The CAD format. Currently only STL is supported, additional formats will be added in future.  # noqa: E501
+        The CAD format.  # noqa: E501
 
         :param format: The format of this GeometryImportRequest.  # noqa: E501
         :type: str
         """
         if self.local_vars_configuration.client_side_validation and format is None:  # noqa: E501
             raise ValueError("Invalid value for `format`, must not be `None`")  # noqa: E501
-        allowed_values = ["STL", "PARASOLID"]  # noqa: E501
+        allowed_values = ["ACIS", "AUTODESK", "CATIA", "CREO", "IGES", "NX", "PARASOLID", "REVIT", "RHINOCEROS", "SOLIDEDGE", "SOLIDWORKS", "STEP", "STL"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and format not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501

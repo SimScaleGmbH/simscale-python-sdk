@@ -38,7 +38,7 @@ class PressureOutletBC(object):
         'gauge_pressure': 'OneOfPressureOutletBCGaugePressure',
         'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh',
         'net_radiative_heat_flux': 'OneOfPressureOutletBCNetRadiativeHeatFlux',
-        'radiative_intensity_ray': 'OpenBoundaryRayBC',
+        'radiative_intensity_ray': 'OneOfPressureOutletBCRadiativeIntensityRay',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -244,7 +244,7 @@ class PressureOutletBC(object):
 
 
         :return: The radiative_intensity_ray of this PressureOutletBC.  # noqa: E501
-        :rtype: OpenBoundaryRayBC
+        :rtype: OneOfPressureOutletBCRadiativeIntensityRay
         """
         return self._radiative_intensity_ray
 
@@ -254,7 +254,7 @@ class PressureOutletBC(object):
 
 
         :param radiative_intensity_ray: The radiative_intensity_ray of this PressureOutletBC.  # noqa: E501
-        :type: OpenBoundaryRayBC
+        :type: OneOfPressureOutletBCRadiativeIntensityRay
         """
 
         self._radiative_intensity_ray = radiative_intensity_ray

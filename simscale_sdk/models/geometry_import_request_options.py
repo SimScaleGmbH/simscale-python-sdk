@@ -44,7 +44,7 @@ class GeometryImportRequestOptions(object):
         'optimize_for_lbm_solver': 'optimizeForLBMSolver'
     }
 
-    def __init__(self, facet_split=True, sewing=True, improve=True, optimize_for_lbm_solver=True, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, facet_split=False, sewing=False, improve=True, optimize_for_lbm_solver=False, local_vars_configuration=None):  # noqa: E501
         """GeometryImportRequestOptions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +65,7 @@ class GeometryImportRequestOptions(object):
     def facet_split(self):
         """Gets the facet_split of this GeometryImportRequestOptions.  # noqa: E501
 
+        _Facet Split_ tries to split the faceted parts of a model. This means it can create new faces from original faces. In this case it's not possible to use the original faces to make assignments.   # noqa: E501
 
         :return: The facet_split of this GeometryImportRequestOptions.  # noqa: E501
         :rtype: bool
@@ -75,6 +76,7 @@ class GeometryImportRequestOptions(object):
     def facet_split(self, facet_split):
         """Sets the facet_split of this GeometryImportRequestOptions.
 
+        _Facet Split_ tries to split the faceted parts of a model. This means it can create new faces from original faces. In this case it's not possible to use the original faces to make assignments.   # noqa: E501
 
         :param facet_split: The facet_split of this GeometryImportRequestOptions.  # noqa: E501
         :type: bool
@@ -88,6 +90,7 @@ class GeometryImportRequestOptions(object):
     def sewing(self):
         """Gets the sewing of this GeometryImportRequestOptions.  # noqa: E501
 
+        _Automatic Sewing_ is sewing faces or sheet bodies together. This means that it can create one new face from two (or more) original faces, as well as one solid body from two (or more) original sheet bodies. In this case, if the entities have the same ID, it will be inherited by the newly created entity. However if the original entities do not share the same ID, only one of these will be mapped to the new entity. This might not be desirable if one would like to make assignments on the original entities and not on the new (sewn) entities.   # noqa: E501
 
         :return: The sewing of this GeometryImportRequestOptions.  # noqa: E501
         :rtype: bool
@@ -98,6 +101,7 @@ class GeometryImportRequestOptions(object):
     def sewing(self, sewing):
         """Sets the sewing of this GeometryImportRequestOptions.
 
+        _Automatic Sewing_ is sewing faces or sheet bodies together. This means that it can create one new face from two (or more) original faces, as well as one solid body from two (or more) original sheet bodies. In this case, if the entities have the same ID, it will be inherited by the newly created entity. However if the original entities do not share the same ID, only one of these will be mapped to the new entity. This might not be desirable if one would like to make assignments on the original entities and not on the new (sewn) entities.   # noqa: E501
 
         :param sewing: The sewing of this GeometryImportRequestOptions.  # noqa: E501
         :type: bool
@@ -111,6 +115,7 @@ class GeometryImportRequestOptions(object):
     def improve(self):
         """Gets the improve of this GeometryImportRequestOptions.  # noqa: E501
 
+        This option tries to improve the topology (e.g. edges, vertices) and geometry of the model by adjusting tolerances, simplifying entities, etc. As this option should improve CAD operations and data handling for all downstream applications it is recommended to use it on import. For very complex models it can take a considerable amount of time though, therefore you can also opt-out and reconsider in case you face issues in geometry handling or meshing.   # noqa: E501
 
         :return: The improve of this GeometryImportRequestOptions.  # noqa: E501
         :rtype: bool
@@ -121,6 +126,7 @@ class GeometryImportRequestOptions(object):
     def improve(self, improve):
         """Sets the improve of this GeometryImportRequestOptions.
 
+        This option tries to improve the topology (e.g. edges, vertices) and geometry of the model by adjusting tolerances, simplifying entities, etc. As this option should improve CAD operations and data handling for all downstream applications it is recommended to use it on import. For very complex models it can take a considerable amount of time though, therefore you can also opt-out and reconsider in case you face issues in geometry handling or meshing.   # noqa: E501
 
         :param improve: The improve of this GeometryImportRequestOptions.  # noqa: E501
         :type: bool
@@ -134,6 +140,7 @@ class GeometryImportRequestOptions(object):
     def optimize_for_lbm_solver(self):
         """Gets the optimize_for_lbm_solver of this GeometryImportRequestOptions.  # noqa: E501
 
+        This option allows you to import a *.stl file that is optimized for the Incompressible LBM and Wind Comfort analysis types. It leaves out complex import steps like sewing and cleanup that are not required by the LBM solver and therefore also allows to import big and complex models fast.   # noqa: E501
 
         :return: The optimize_for_lbm_solver of this GeometryImportRequestOptions.  # noqa: E501
         :rtype: bool
@@ -144,6 +151,7 @@ class GeometryImportRequestOptions(object):
     def optimize_for_lbm_solver(self, optimize_for_lbm_solver):
         """Sets the optimize_for_lbm_solver of this GeometryImportRequestOptions.
 
+        This option allows you to import a *.stl file that is optimized for the Incompressible LBM and Wind Comfort analysis types. It leaves out complex import steps like sewing and cleanup that are not required by the LBM solver and therefore also allows to import big and complex models fast.   # noqa: E501
 
         :param optimize_for_lbm_solver: The optimize_for_lbm_solver of this GeometryImportRequestOptions.  # noqa: E501
         :type: bool

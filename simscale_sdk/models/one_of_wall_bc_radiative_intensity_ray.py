@@ -33,21 +33,24 @@ class OneOfWallBCRadiativeIntensityRay(object):
     openapi_types = {
         'type': 'str',
         'emissivity': 'float',
-        'farfield_black_body_temperature': 'DimensionalTemperature'
+        'farfield_black_body_temperature': 'DimensionalTemperature',
+        'transmissivity': 'float'
     }
 
     attribute_map = {
         'type': 'type',
         'emissivity': 'emissivity',
-        'farfield_black_body_temperature': 'farfieldBlackBodyTemperature'
+        'farfield_black_body_temperature': 'farfieldBlackBodyTemperature',
+        'transmissivity': 'transmissivity'
     }
 
     discriminator_value_class_map = {
         'GREYBODY_DIFFUSIVE_RAY': 'GreybodyDiffusiveRayBC',
-        'OPEN_BOUNDARY_RAY': 'OpenBoundaryRayBC'
+        'OPEN_BOUNDARY_RAY': 'OpenBoundaryRayBC',
+        'SEMI_OPEN_BOUNDARY_RAY': 'SemiOpenBoundaryRayBC'
     }
 
-    def __init__(self, type='OPEN_BOUNDARY_RAY', emissivity=None, farfield_black_body_temperature=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SEMI_OPEN_BOUNDARY_RAY', emissivity=None, farfield_black_body_temperature=None, transmissivity=None, local_vars_configuration=None):  # noqa: E501
         """OneOfWallBCRadiativeIntensityRay - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +59,7 @@ class OneOfWallBCRadiativeIntensityRay(object):
         self._type = None
         self._emissivity = None
         self._farfield_black_body_temperature = None
+        self._transmissivity = None
         self.discriminator = 'type'
 
         self.type = type
@@ -63,6 +67,8 @@ class OneOfWallBCRadiativeIntensityRay(object):
             self.emissivity = emissivity
         if farfield_black_body_temperature is not None:
             self.farfield_black_body_temperature = farfield_black_body_temperature
+        if transmissivity is not None:
+            self.transmissivity = transmissivity
 
     @property
     def type(self):
@@ -134,6 +140,33 @@ class OneOfWallBCRadiativeIntensityRay(object):
         """
 
         self._farfield_black_body_temperature = farfield_black_body_temperature
+
+    @property
+    def transmissivity(self):
+        """Gets the transmissivity of this OneOfWallBCRadiativeIntensityRay.  # noqa: E501
+
+
+        :return: The transmissivity of this OneOfWallBCRadiativeIntensityRay.  # noqa: E501
+        :rtype: float
+        """
+        return self._transmissivity
+
+    @transmissivity.setter
+    def transmissivity(self, transmissivity):
+        """Sets the transmissivity of this OneOfWallBCRadiativeIntensityRay.
+
+
+        :param transmissivity: The transmissivity of this OneOfWallBCRadiativeIntensityRay.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                transmissivity is not None and transmissivity > 1):  # noqa: E501
+            raise ValueError("Invalid value for `transmissivity`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                transmissivity is not None and transmissivity < 0):  # noqa: E501
+            raise ValueError("Invalid value for `transmissivity`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._transmissivity = transmissivity
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

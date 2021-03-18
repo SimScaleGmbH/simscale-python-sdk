@@ -32,7 +32,6 @@ class ConjugateHeatTransfer(object):
     """
     openapi_types = {
         'type': 'str',
-        'mesh_spec_id': 'str',
         'enable_radiation': 'bool',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfConjugateHeatTransferTimeDependency',
@@ -45,13 +44,11 @@ class ConjugateHeatTransfer(object):
         'numerics': 'FluidNumerics',
         'simulation_control': 'FluidSimulationControl',
         'result_control': 'FluidResultControls',
-        'contact_handling_mode': 'str',
-        'is_compressible': 'bool'
+        'contact_handling_mode': 'str'
     }
 
     attribute_map = {
         'type': 'type',
-        'mesh_spec_id': 'meshSpecId',
         'enable_radiation': 'enableRadiation',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
@@ -64,18 +61,16 @@ class ConjugateHeatTransfer(object):
         'numerics': 'numerics',
         'simulation_control': 'simulationControl',
         'result_control': 'resultControl',
-        'contact_handling_mode': 'contactHandlingMode',
-        'is_compressible': 'isCompressible'
+        'contact_handling_mode': 'contactHandlingMode'
     }
 
-    def __init__(self, type='CONJUGATE_HEAT_TRANSFER', mesh_spec_id=None, enable_radiation=None, turbulence_model=None, time_dependency=None, connection_groups=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, is_compressible=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONJUGATE_HEAT_TRANSFER', enable_radiation=None, turbulence_model=None, time_dependency=None, connection_groups=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
         """ConjugateHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._mesh_spec_id = None
         self._enable_radiation = None
         self._turbulence_model = None
         self._time_dependency = None
@@ -89,12 +84,9 @@ class ConjugateHeatTransfer(object):
         self._simulation_control = None
         self._result_control = None
         self._contact_handling_mode = None
-        self._is_compressible = None
         self.discriminator = None
 
         self.type = type
-        if mesh_spec_id is not None:
-            self.mesh_spec_id = mesh_spec_id
         if enable_radiation is not None:
             self.enable_radiation = enable_radiation
         if turbulence_model is not None:
@@ -121,8 +113,6 @@ class ConjugateHeatTransfer(object):
             self.result_control = result_control
         if contact_handling_mode is not None:
             self.contact_handling_mode = contact_handling_mode
-        if is_compressible is not None:
-            self.is_compressible = is_compressible
 
     @property
     def type(self):
@@ -146,27 +136,6 @@ class ConjugateHeatTransfer(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def mesh_spec_id(self):
-        """Gets the mesh_spec_id of this ConjugateHeatTransfer.  # noqa: E501
-
-
-        :return: The mesh_spec_id of this ConjugateHeatTransfer.  # noqa: E501
-        :rtype: str
-        """
-        return self._mesh_spec_id
-
-    @mesh_spec_id.setter
-    def mesh_spec_id(self, mesh_spec_id):
-        """Sets the mesh_spec_id of this ConjugateHeatTransfer.
-
-
-        :param mesh_spec_id: The mesh_spec_id of this ConjugateHeatTransfer.  # noqa: E501
-        :type: str
-        """
-
-        self._mesh_spec_id = mesh_spec_id
 
     @property
     def enable_radiation(self):
@@ -456,27 +425,6 @@ class ConjugateHeatTransfer(object):
             )
 
         self._contact_handling_mode = contact_handling_mode
-
-    @property
-    def is_compressible(self):
-        """Gets the is_compressible of this ConjugateHeatTransfer.  # noqa: E501
-
-
-        :return: The is_compressible of this ConjugateHeatTransfer.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_compressible
-
-    @is_compressible.setter
-    def is_compressible(self, is_compressible):
-        """Sets the is_compressible of this ConjugateHeatTransfer.
-
-
-        :param is_compressible: The is_compressible of this ConjugateHeatTransfer.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_compressible = is_compressible
 
     def to_dict(self):
         """Returns the model properties as a dict"""

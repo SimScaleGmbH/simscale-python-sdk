@@ -40,7 +40,7 @@ class VelocityInletBC(object):
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfVelocityInletBCNetRadiativeHeatFlux',
-        'radiative_intensity_ray': 'OpenBoundaryRayBC',
+        'radiative_intensity_ray': 'OneOfVelocityInletBCRadiativeIntensityRay',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -298,7 +298,7 @@ class VelocityInletBC(object):
 
 
         :return: The radiative_intensity_ray of this VelocityInletBC.  # noqa: E501
-        :rtype: OpenBoundaryRayBC
+        :rtype: OneOfVelocityInletBCRadiativeIntensityRay
         """
         return self._radiative_intensity_ray
 
@@ -308,7 +308,7 @@ class VelocityInletBC(object):
 
 
         :param radiative_intensity_ray: The radiative_intensity_ray of this VelocityInletBC.  # noqa: E501
-        :type: OpenBoundaryRayBC
+        :type: OneOfVelocityInletBCRadiativeIntensityRay
         """
 
         self._radiative_intensity_ray = radiative_intensity_ray

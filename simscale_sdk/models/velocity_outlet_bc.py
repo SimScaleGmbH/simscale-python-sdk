@@ -36,6 +36,7 @@ class VelocityOutletBC(object):
         'velocity': 'OneOfVelocityOutletBCVelocity',
         'phase_fraction': 'OneOfVelocityOutletBCPhaseFraction',
         'net_radiative_heat_flux': 'OneOfVelocityOutletBCNetRadiativeHeatFlux',
+        'radiative_intensity_ray': 'OneOfVelocityOutletBCRadiativeIntensityRay',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -45,10 +46,11 @@ class VelocityOutletBC(object):
         'velocity': 'velocity',
         'phase_fraction': 'phaseFraction',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
+        'radiative_intensity_ray': 'radiativeIntensityRay',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='VELOCITY_OUTLET_V7', name=None, velocity=None, phase_fraction=None, net_radiative_heat_flux=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VELOCITY_OUTLET_V7', name=None, velocity=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """VelocityOutletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class VelocityOutletBC(object):
         self._velocity = None
         self._phase_fraction = None
         self._net_radiative_heat_flux = None
+        self._radiative_intensity_ray = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -71,6 +74,8 @@ class VelocityOutletBC(object):
             self.phase_fraction = phase_fraction
         if net_radiative_heat_flux is not None:
             self.net_radiative_heat_flux = net_radiative_heat_flux
+        if radiative_intensity_ray is not None:
+            self.radiative_intensity_ray = radiative_intensity_ray
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -180,6 +185,27 @@ class VelocityOutletBC(object):
         """
 
         self._net_radiative_heat_flux = net_radiative_heat_flux
+
+    @property
+    def radiative_intensity_ray(self):
+        """Gets the radiative_intensity_ray of this VelocityOutletBC.  # noqa: E501
+
+
+        :return: The radiative_intensity_ray of this VelocityOutletBC.  # noqa: E501
+        :rtype: OneOfVelocityOutletBCRadiativeIntensityRay
+        """
+        return self._radiative_intensity_ray
+
+    @radiative_intensity_ray.setter
+    def radiative_intensity_ray(self, radiative_intensity_ray):
+        """Sets the radiative_intensity_ray of this VelocityOutletBC.
+
+
+        :param radiative_intensity_ray: The radiative_intensity_ray of this VelocityOutletBC.  # noqa: E501
+        :type: OneOfVelocityOutletBCRadiativeIntensityRay
+        """
+
+        self._radiative_intensity_ray = radiative_intensity_ray
 
     @property
     def topological_reference(self):

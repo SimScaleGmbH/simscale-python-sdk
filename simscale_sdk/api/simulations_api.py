@@ -34,7 +34,7 @@ class SimulationsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def check_simulation_setup(self, project_id, simulation_id, **kwargs):  # noqa: E501
+    def check_simulation_setup(self, project_id, simulation_id, **kwargs): # noqa: E501
         """Check the simulation setup  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -155,7 +155,7 @@ class SimulationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_geometry_primitive(self, project_id, geometry_primitive, **kwargs):  # noqa: E501
+    def create_geometry_primitive(self, project_id, geometry_primitive, **kwargs): # noqa: E501
         """Create a geometry primitive for reference within a Simulation spec.  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -280,7 +280,7 @@ class SimulationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_simulation(self, project_id, simulation_spec, **kwargs):  # noqa: E501
+    def create_simulation(self, project_id, simulation_spec, **kwargs): # noqa: E501
         """Create a simulation setup  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -405,7 +405,7 @@ class SimulationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def estimate_simulation_setup(self, project_id, simulation_id, **kwargs):  # noqa: E501
+    def estimate_simulation_setup(self, project_id, simulation_id, **kwargs): # noqa: E501
         """Estimate the simulation setup  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -526,7 +526,7 @@ class SimulationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_simulation(self, project_id, simulation_id, **kwargs):  # noqa: E501
+    def get_simulation(self, project_id, simulation_id, **kwargs): # noqa: E501
         """Get information about the simulation setup  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -652,7 +652,7 @@ class SimulationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_simulations(self, project_id, **kwargs):  # noqa: E501
+    def get_simulations(self, project_id, **kwargs): # noqa: E501
         """List simulation setups within a project  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -782,7 +782,7 @@ class SimulationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_simulation(self, project_id, simulation_id, simulation_spec, **kwargs):  # noqa: E501
+    def update_simulation(self, project_id, simulation_id, simulation_spec, **kwargs): # noqa: E501
         """Update information about the simulation setup  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

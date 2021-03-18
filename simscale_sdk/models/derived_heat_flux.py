@@ -36,7 +36,8 @@ class DerivedHeatFlux(object):
         'ambient_temperature': 'DimensionalTemperature',
         'additional_heat_flux': 'DimensionalHeatFlux',
         'wall_thermal': 'OneOfDerivedHeatFluxWallThermal',
-        'outer_surface_emissivity': 'float'
+        'outer_surface_emissivity': 'float',
+        'receives_external_solar_load': 'bool'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class DerivedHeatFlux(object):
         'ambient_temperature': 'ambientTemperature',
         'additional_heat_flux': 'additionalHeatFlux',
         'wall_thermal': 'wallThermal',
-        'outer_surface_emissivity': 'outerSurfaceEmissivity'
+        'outer_surface_emissivity': 'outerSurfaceEmissivity',
+        'receives_external_solar_load': 'receivesExternalSolarLoad'
     }
 
-    def __init__(self, type='DERIVED', heat_transfer_coefficient=None, ambient_temperature=None, additional_heat_flux=None, wall_thermal=None, outer_surface_emissivity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='DERIVED', heat_transfer_coefficient=None, ambient_temperature=None, additional_heat_flux=None, wall_thermal=None, outer_surface_emissivity=None, receives_external_solar_load=None, local_vars_configuration=None):  # noqa: E501
         """DerivedHeatFlux - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class DerivedHeatFlux(object):
         self._additional_heat_flux = None
         self._wall_thermal = None
         self._outer_surface_emissivity = None
+        self._receives_external_solar_load = None
         self.discriminator = None
 
         self.type = type
@@ -73,6 +76,8 @@ class DerivedHeatFlux(object):
             self.wall_thermal = wall_thermal
         if outer_surface_emissivity is not None:
             self.outer_surface_emissivity = outer_surface_emissivity
+        if receives_external_solar_load is not None:
+            self.receives_external_solar_load = receives_external_solar_load
 
     @property
     def type(self):
@@ -209,6 +214,27 @@ class DerivedHeatFlux(object):
             raise ValueError("Invalid value for `outer_surface_emissivity`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._outer_surface_emissivity = outer_surface_emissivity
+
+    @property
+    def receives_external_solar_load(self):
+        """Gets the receives_external_solar_load of this DerivedHeatFlux.  # noqa: E501
+
+
+        :return: The receives_external_solar_load of this DerivedHeatFlux.  # noqa: E501
+        :rtype: bool
+        """
+        return self._receives_external_solar_load
+
+    @receives_external_solar_load.setter
+    def receives_external_solar_load(self, receives_external_solar_load):
+        """Sets the receives_external_solar_load of this DerivedHeatFlux.
+
+
+        :param receives_external_solar_load: The receives_external_solar_load of this DerivedHeatFlux.  # noqa: E501
+        :type: bool
+        """
+
+        self._receives_external_solar_load = receives_external_solar_load
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -32,17 +32,15 @@ class TotalPBC(object):
     """
     openapi_types = {
         'type': 'str',
-        'total_pressure': 'DimensionalFunctionPressure',
-        'gamma': 'DimensionalFunctionDimensionless'
+        'total_pressure': 'DimensionalFunctionPressure'
     }
 
     attribute_map = {
         'type': 'type',
-        'total_pressure': 'totalPressure',
-        'gamma': 'gamma'
+        'total_pressure': 'totalPressure'
     }
 
-    def __init__(self, type='TOTAL_PRESSURE', total_pressure=None, gamma=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOTAL_PRESSURE', total_pressure=None, local_vars_configuration=None):  # noqa: E501
         """TotalPBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,14 +48,11 @@ class TotalPBC(object):
 
         self._type = None
         self._total_pressure = None
-        self._gamma = None
         self.discriminator = None
 
         self.type = type
         if total_pressure is not None:
             self.total_pressure = total_pressure
-        if gamma is not None:
-            self.gamma = gamma
 
     @property
     def type(self):
@@ -102,27 +97,6 @@ class TotalPBC(object):
         """
 
         self._total_pressure = total_pressure
-
-    @property
-    def gamma(self):
-        """Gets the gamma of this TotalPBC.  # noqa: E501
-
-
-        :return: The gamma of this TotalPBC.  # noqa: E501
-        :rtype: DimensionalFunctionDimensionless
-        """
-        return self._gamma
-
-    @gamma.setter
-    def gamma(self, gamma):
-        """Sets the gamma of this TotalPBC.
-
-
-        :param gamma: The gamma of this TotalPBC.  # noqa: E501
-        :type: DimensionalFunctionDimensionless
-        """
-
-        self._gamma = gamma
 
     def to_dict(self):
         """Returns the model properties as a dict"""

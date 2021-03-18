@@ -47,7 +47,7 @@ geometry_import = GeometryImportRequest(
     location=GeometryImportRequestLocation(storage_id),
     format='STL',
     input_unit='m',
-    options=GeometryImportRequestOptions(facet_split=False, sewing=True, improve=True, optimize_for_lbm_solver=True),
+    options=GeometryImportRequestOptions(facet_split=False, sewing=False, improve=True, optimize_for_lbm_solver=True),
 )
 geometry_import = geometry_import_api.import_geometry(project_id, geometry_import)
 geometry_import_id = geometry_import.geometry_import_id

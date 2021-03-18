@@ -34,7 +34,7 @@ class GeometriesApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def get_geometries(self, project_id, **kwargs):  # noqa: E501
+    def get_geometries(self, project_id, **kwargs): # noqa: E501
         """List geometries within a project  # noqa: E501
 
         Only valid geometries that can be used for a simulation setup are included.  # noqa: E501
@@ -166,7 +166,7 @@ class GeometriesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_geometry(self, project_id, geometry_id, **kwargs):  # noqa: E501
+    def get_geometry(self, project_id, geometry_id, **kwargs): # noqa: E501
         """Get information about the geometry  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -287,10 +287,10 @@ class GeometriesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_geometry_mappings(self, project_id, geometry_id, **kwargs):  # noqa: E501
+    def get_geometry_mappings(self, project_id, geometry_id, **kwargs): # noqa: E501
         """Describe id mapping of the geometry  # noqa: E501
 
-        Assignment of topological entities (faces, bodies) in the simulation setup is a non-trivial task. Complex models can consist of several assemblies which may contain multiple occurrences of bodies and their entities. In order to describe an assignment unambiguously the full path from the root part of the model to the actual topological entity is required.  SimScale generates unique internal names for all topological entities of a model during the geometry import which are used for assignments within the simulation spec. Examples of internal names are `B1_TE5` or `A1_I26_A5_I27_B102_TE196`.  This API endpoint allows to retrieve a mapping between the internal names and a detailed description of the entities which includes: * The topological entity class (body or face) * The original body and entity names * The path from the root of the model  Please note that during geometry import the model's topology can be modified (e.g. facet split and other import options) which means that there is no 1:1 mapping between the internal and original names.   # noqa: E501
+        Assignment of topological entities (faces, bodies) in the simulation setup is a non-trivial task. Complex models can consist of several assemblies which may contain multiple occurrences of bodies and their entities. In order to describe an assignment unambiguously the full path from the root part of the model to the actual topological entity is required.  SimScale generates unique internal names for all topological entities of a model during the geometry import which are used for assignments within the simulation spec. Examples of internal names are `B1_TE5` or `A1_I26_A5_I27_B102_TE196`.  This API endpoint allows to retrieve a mapping between the internal names and a detailed description of the entities which includes: * The topological entity class (body or face) * The original body and entity names * Entity attributes like `SDL/TYSA_NAME` or `SDL/TYSA_COLOUR` * The path from the root of the model  Please note that during geometry import the model's topology can be modified (e.g. facet split and other import options) which means that there is no 1:1 mapping between the internal and original names.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_geometry_mappings(project_id, geometry_id, async_req=True)
@@ -304,6 +304,8 @@ class GeometriesApi(object):
         :param str _class: The entity class to filter.
         :param list[str] bodies: The body names to filter. If multiple body names are provided any match.
         :param list[str] entities: The entity names to filter. If multiple entity names are provided any match.
+        :param list[str] attributes: The attribute names to filter. If multiple attribute names are provided any match.
+        :param list[str] values: The attribute values to filter. If multiple attribute values are provided any match.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -321,7 +323,7 @@ class GeometriesApi(object):
     def get_geometry_mappings_with_http_info(self, project_id, geometry_id, **kwargs):  # noqa: E501
         """Describe id mapping of the geometry  # noqa: E501
 
-        Assignment of topological entities (faces, bodies) in the simulation setup is a non-trivial task. Complex models can consist of several assemblies which may contain multiple occurrences of bodies and their entities. In order to describe an assignment unambiguously the full path from the root part of the model to the actual topological entity is required.  SimScale generates unique internal names for all topological entities of a model during the geometry import which are used for assignments within the simulation spec. Examples of internal names are `B1_TE5` or `A1_I26_A5_I27_B102_TE196`.  This API endpoint allows to retrieve a mapping between the internal names and a detailed description of the entities which includes: * The topological entity class (body or face) * The original body and entity names * The path from the root of the model  Please note that during geometry import the model's topology can be modified (e.g. facet split and other import options) which means that there is no 1:1 mapping between the internal and original names.   # noqa: E501
+        Assignment of topological entities (faces, bodies) in the simulation setup is a non-trivial task. Complex models can consist of several assemblies which may contain multiple occurrences of bodies and their entities. In order to describe an assignment unambiguously the full path from the root part of the model to the actual topological entity is required.  SimScale generates unique internal names for all topological entities of a model during the geometry import which are used for assignments within the simulation spec. Examples of internal names are `B1_TE5` or `A1_I26_A5_I27_B102_TE196`.  This API endpoint allows to retrieve a mapping between the internal names and a detailed description of the entities which includes: * The topological entity class (body or face) * The original body and entity names * Entity attributes like `SDL/TYSA_NAME` or `SDL/TYSA_COLOUR` * The path from the root of the model  Please note that during geometry import the model's topology can be modified (e.g. facet split and other import options) which means that there is no 1:1 mapping between the internal and original names.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_geometry_mappings_with_http_info(project_id, geometry_id, async_req=True)
@@ -335,6 +337,8 @@ class GeometriesApi(object):
         :param str _class: The entity class to filter.
         :param list[str] bodies: The body names to filter. If multiple body names are provided any match.
         :param list[str] entities: The entity names to filter. If multiple entity names are provided any match.
+        :param list[str] attributes: The attribute names to filter. If multiple attribute names are provided any match.
+        :param list[str] values: The attribute values to filter. If multiple attribute values are provided any match.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -358,7 +362,9 @@ class GeometriesApi(object):
             'page',
             '_class',
             'bodies',
-            'entities'
+            'entities',
+            'attributes',
+            'values'
         ]
         all_params.extend(
             [
@@ -415,6 +421,12 @@ class GeometriesApi(object):
         if 'entities' in local_var_params and local_var_params['entities'] is not None:  # noqa: E501
             query_params.append(('entities', local_var_params['entities']))  # noqa: E501
             collection_formats['entities'] = 'multi'  # noqa: E501
+        if 'attributes' in local_var_params and local_var_params['attributes'] is not None:  # noqa: E501
+            query_params.append(('attributes', local_var_params['attributes']))  # noqa: E501
+            collection_formats['attributes'] = 'multi'  # noqa: E501
+        if 'values' in local_var_params and local_var_params['values'] is not None:  # noqa: E501
+            query_params.append(('values', local_var_params['values']))  # noqa: E501
+            collection_formats['values'] = 'multi'  # noqa: E501
 
         header_params = {}
 
@@ -445,7 +457,7 @@ class GeometriesApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_geometry(self, project_id, geometry_id, geometry, **kwargs):  # noqa: E501
+    def update_geometry(self, project_id, geometry_id, geometry, **kwargs): # noqa: E501
         """Update geometry information  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

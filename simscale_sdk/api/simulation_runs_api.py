@@ -34,7 +34,7 @@ class SimulationRunsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def cancel_simulation_run(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
+    def cancel_simulation_run(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
         """Cancel the simulation run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -164,7 +164,7 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def create_simulation_run(self, project_id, simulation_id, simulation_run, **kwargs):  # noqa: E501
+    def create_simulation_run(self, project_id, simulation_id, simulation_run, **kwargs): # noqa: E501
         """Create a simulation run  # noqa: E501
 
         This operation creates a run in status `READY`, however the run is not automatically started. The run must be started explicitely using the `POST /projects/{projectId}/simulations/{simulationId}/runs/{runId}/start` endpoint.   # noqa: E501
@@ -300,7 +300,7 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_simulation_run(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
+    def get_simulation_run(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
         """Get basic information about the simulation run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -430,7 +430,7 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_simulation_run_event_log(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
+    def get_simulation_run_event_log(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
         """Get the simulation run event log  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -560,7 +560,7 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_simulation_run_results(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
+    def get_simulation_run_results(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
         """List available results for a simulation runs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -733,7 +733,7 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_simulation_run_spec(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
+    def get_simulation_run_spec(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
         """Get the simulation run spec  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -868,7 +868,7 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_simulation_runs(self, project_id, simulation_id, **kwargs):  # noqa: E501
+    def get_simulation_runs(self, project_id, simulation_id, **kwargs): # noqa: E501
         """List simulation runs for a simulation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1007,7 +1007,7 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def start_simulation_run(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
+    def start_simulation_run(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
         """Start the simulation run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
@@ -1137,7 +1137,7 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def update_simulation_run(self, project_id, simulation_id, run_id, simulation_run, **kwargs):  # noqa: E501
+    def update_simulation_run(self, project_id, simulation_id, run_id, simulation_run, **kwargs): # noqa: E501
         """Update an existing simulation run  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

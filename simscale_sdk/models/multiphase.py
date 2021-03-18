@@ -32,11 +32,8 @@ class Multiphase(object):
     """
     openapi_types = {
         'type': 'str',
-        'mesh_spec_id': 'str',
-        'is_compressible': 'bool',
         'use_local_time_stepping': 'bool',
         'turbulence_model': 'str',
-        'time_dependency': 'TransientTimeDependency',
         'model': 'FluidModel',
         'materials': 'IncompressibleFluidMaterials',
         'initial_conditions': 'FluidInitialConditions',
@@ -49,11 +46,8 @@ class Multiphase(object):
 
     attribute_map = {
         'type': 'type',
-        'mesh_spec_id': 'meshSpecId',
-        'is_compressible': 'isCompressible',
         'use_local_time_stepping': 'useLocalTimeStepping',
         'turbulence_model': 'turbulenceModel',
-        'time_dependency': 'timeDependency',
         'model': 'model',
         'materials': 'materials',
         'initial_conditions': 'initialConditions',
@@ -64,18 +58,15 @@ class Multiphase(object):
         'result_control': 'resultControl'
     }
 
-    def __init__(self, type='MULTIPHASE', mesh_spec_id=None, is_compressible=None, use_local_time_stepping=None, turbulence_model=None, time_dependency=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MULTIPHASE', use_local_time_stepping=None, turbulence_model=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
         """Multiphase - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._mesh_spec_id = None
-        self._is_compressible = None
         self._use_local_time_stepping = None
         self._turbulence_model = None
-        self._time_dependency = None
         self._model = None
         self._materials = None
         self._initial_conditions = None
@@ -87,16 +78,10 @@ class Multiphase(object):
         self.discriminator = None
 
         self.type = type
-        if mesh_spec_id is not None:
-            self.mesh_spec_id = mesh_spec_id
-        if is_compressible is not None:
-            self.is_compressible = is_compressible
         if use_local_time_stepping is not None:
             self.use_local_time_stepping = use_local_time_stepping
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
-        if time_dependency is not None:
-            self.time_dependency = time_dependency
         if model is not None:
             self.model = model
         if materials is not None:
@@ -136,48 +121,6 @@ class Multiphase(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def mesh_spec_id(self):
-        """Gets the mesh_spec_id of this Multiphase.  # noqa: E501
-
-
-        :return: The mesh_spec_id of this Multiphase.  # noqa: E501
-        :rtype: str
-        """
-        return self._mesh_spec_id
-
-    @mesh_spec_id.setter
-    def mesh_spec_id(self, mesh_spec_id):
-        """Sets the mesh_spec_id of this Multiphase.
-
-
-        :param mesh_spec_id: The mesh_spec_id of this Multiphase.  # noqa: E501
-        :type: str
-        """
-
-        self._mesh_spec_id = mesh_spec_id
-
-    @property
-    def is_compressible(self):
-        """Gets the is_compressible of this Multiphase.  # noqa: E501
-
-
-        :return: The is_compressible of this Multiphase.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_compressible
-
-    @is_compressible.setter
-    def is_compressible(self, is_compressible):
-        """Sets the is_compressible of this Multiphase.
-
-
-        :param is_compressible: The is_compressible of this Multiphase.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_compressible = is_compressible
 
     @property
     def use_local_time_stepping(self):
@@ -230,27 +173,6 @@ class Multiphase(object):
             )
 
         self._turbulence_model = turbulence_model
-
-    @property
-    def time_dependency(self):
-        """Gets the time_dependency of this Multiphase.  # noqa: E501
-
-
-        :return: The time_dependency of this Multiphase.  # noqa: E501
-        :rtype: TransientTimeDependency
-        """
-        return self._time_dependency
-
-    @time_dependency.setter
-    def time_dependency(self, time_dependency):
-        """Sets the time_dependency of this Multiphase.
-
-
-        :param time_dependency: The time_dependency of this Multiphase.  # noqa: E501
-        :type: TransientTimeDependency
-        """
-
-        self._time_dependency = time_dependency
 
     @property
     def model(self):

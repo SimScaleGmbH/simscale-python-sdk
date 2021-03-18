@@ -34,7 +34,7 @@ class TableImportsApi(object):
             api_client = ApiClient()
         self.api_client = api_client
 
-    def import_table(self, project_id, table_import_request, **kwargs):  # noqa: E501
+    def import_table(self, project_id, table_import_request, **kwargs): # noqa: E501
         """Import a new table for reference within a Simulation spec.  # noqa: E501
 
         Table import requires the following steps: 1. Request a temporary storage location via `POST /storage`. 2. Upload your table definition using the HTTP `PUT` method to the `url` provided in the temporary storage location response object. 3. Import via `POST /projects/{projectId}/tableimports` and include the `storageId` provided in the temporary storage location response object.   # noqa: E501
