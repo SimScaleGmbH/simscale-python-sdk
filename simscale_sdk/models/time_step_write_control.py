@@ -58,6 +58,7 @@ class TimeStepWriteControl(object):
     def type(self):
         """Gets the type of this TimeStepWriteControl.  # noqa: E501
 
+        This option controls how the simulation results are written and how frequently.  Schema name: TimeStepWriteControl  # noqa: E501
 
         :return: The type of this TimeStepWriteControl.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class TimeStepWriteControl(object):
     def type(self, type):
         """Sets the type of this TimeStepWriteControl.
 
+        This option controls how the simulation results are written and how frequently.  Schema name: TimeStepWriteControl  # noqa: E501
 
         :param type: The type of this TimeStepWriteControl.  # noqa: E501
         :type: str

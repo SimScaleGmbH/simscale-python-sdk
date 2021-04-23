@@ -78,6 +78,7 @@ class RotatingMotionBC(object):
     def type(self):
         """Gets the type of this RotatingMotionBC.  # noqa: E501
 
+        <p>The rotating motion constraint applies a predefined rigid body rotation to the assigned entities. All seven user defined components may be defined also as function or table value and also the movement of the base point during rotation is taken into account.<br /><br />Important remarks: <br /><ul><li>If functions or tables are used for the rotation axis, make sure that the axis vector never has zero length during rotation.</li></p>  Schema name: RotatingMotionBC  # noqa: E501
 
         :return: The type of this RotatingMotionBC.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class RotatingMotionBC(object):
     def type(self, type):
         """Sets the type of this RotatingMotionBC.
 
+        <p>The rotating motion constraint applies a predefined rigid body rotation to the assigned entities. All seven user defined components may be defined also as function or table value and also the movement of the base point during rotation is taken into account.<br /><br />Important remarks: <br /><ul><li>If functions or tables are used for the rotation axis, make sure that the axis vector never has zero length during rotation.</li></p>  Schema name: RotatingMotionBC  # noqa: E501
 
         :param type: The type of this RotatingMotionBC.  # noqa: E501
         :type: str

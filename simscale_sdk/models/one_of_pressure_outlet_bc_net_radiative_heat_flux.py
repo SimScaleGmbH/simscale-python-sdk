@@ -68,6 +68,7 @@ class OneOfPressureOutletBCNetRadiativeHeatFlux(object):
     def type(self):
         """Gets the type of this OneOfPressureOutletBCNetRadiativeHeatFlux.  # noqa: E501
 
+        Schema name: OpenWindowRSBC  # noqa: E501
 
         :return: The type of this OneOfPressureOutletBCNetRadiativeHeatFlux.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class OneOfPressureOutletBCNetRadiativeHeatFlux(object):
     def type(self, type):
         """Sets the type of this OneOfPressureOutletBCNetRadiativeHeatFlux.
 
+        Schema name: OpenWindowRSBC  # noqa: E501
 
         :param type: The type of this OneOfPressureOutletBCNetRadiativeHeatFlux.  # noqa: E501
         :type: str

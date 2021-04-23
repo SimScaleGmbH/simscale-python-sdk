@@ -53,6 +53,7 @@ class FalseLineSearch(object):
     def type(self):
         """Gets the type of this FalseLineSearch.  # noqa: E501
 
+        <p>Line search can be used to improve convergence for nonlinear calculations with the Newton method.</p>  Schema name: FalseLineSearch  # noqa: E501
 
         :return: The type of this FalseLineSearch.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class FalseLineSearch(object):
     def type(self, type):
         """Sets the type of this FalseLineSearch.
 
+        <p>Line search can be used to improve convergence for nonlinear calculations with the Newton method.</p>  Schema name: FalseLineSearch  # noqa: E501
 
         :param type: The type of this FalseLineSearch.  # noqa: E501
         :type: str

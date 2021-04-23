@@ -78,6 +78,7 @@ class SurfaceRefinementHexDominantSnappy(object):
     def type(self):
         """Gets the type of this SurfaceRefinementHexDominantSnappy.  # noqa: E501
 
+        A <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#surface-refinement' target='_blank'><b>surface refinement</b></a> can be used to refine the mesh near the surfaces of assigned faces and/or solids. A surface refinement can also be used to create a <u>cell zone</u>.  Schema name: SurfaceRefinementHexDominantSnappy  # noqa: E501
 
         :return: The type of this SurfaceRefinementHexDominantSnappy.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class SurfaceRefinementHexDominantSnappy(object):
     def type(self, type):
         """Sets the type of this SurfaceRefinementHexDominantSnappy.
 
+        A <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#surface-refinement' target='_blank'><b>surface refinement</b></a> can be used to refine the mesh near the surfaces of assigned faces and/or solids. A surface refinement can also be used to create a <u>cell zone</u>.  Schema name: SurfaceRefinementHexDominantSnappy  # noqa: E501
 
         :param type: The type of this SurfaceRefinementHexDominantSnappy.  # noqa: E501
         :type: str

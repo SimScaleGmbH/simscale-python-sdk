@@ -63,6 +63,7 @@ class SymmetryBC(object):
     def type(self):
         """Gets the type of this SymmetryBC.  # noqa: E501
 
+        This boundary condition provides a symmetry condition on any face by applying a mirror effect. The fluxes and the normal components across the symmetry face are set to zero. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/' target='_blank'>Learn more</a>.  Schema name: SymmetryBC  # noqa: E501
 
         :return: The type of this SymmetryBC.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class SymmetryBC(object):
     def type(self, type):
         """Sets the type of this SymmetryBC.
 
+        This boundary condition provides a symmetry condition on any face by applying a mirror effect. The fluxes and the normal components across the symmetry face are set to zero. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/' target='_blank'>Learn more</a>.  Schema name: SymmetryBC  # noqa: E501
 
         :param type: The type of this SymmetryBC.  # noqa: E501
         :type: str

@@ -93,6 +93,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
     def type(self):
         """Gets the type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
 
+        Schema name: FieldCalculationsThermalComfortResultControl  # noqa: E501
 
         :return: The type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
         :rtype: str
@@ -103,6 +104,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
     def type(self, type):
         """Sets the type of this OneOfFluidResultControlsFieldCalculations.
 
+        Schema name: FieldCalculationsThermalComfortResultControl  # noqa: E501
 
         :param type: The type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
         :type: str

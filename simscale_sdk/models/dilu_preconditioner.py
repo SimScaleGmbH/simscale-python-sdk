@@ -53,6 +53,7 @@ class DILUPreconditioner(object):
     def type(self):
         """Gets the type of this DILUPreconditioner.  # noqa: E501
 
+        Diagonal incomplete lower-upper (ILU) algorithm for non-symmetric matrices without fill-in.  Schema name: DILUPreconditioner  # noqa: E501
 
         :return: The type of this DILUPreconditioner.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class DILUPreconditioner(object):
     def type(self, type):
         """Sets the type of this DILUPreconditioner.
 
+        Diagonal incomplete lower-upper (ILU) algorithm for non-symmetric matrices without fill-in.  Schema name: DILUPreconditioner  # noqa: E501
 
         :param type: The type of this DILUPreconditioner.  # noqa: E501
         :type: str

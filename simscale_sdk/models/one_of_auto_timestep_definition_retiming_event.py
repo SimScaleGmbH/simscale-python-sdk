@@ -75,6 +75,7 @@ class OneOfAutoTimestepDefinitionRetimingEvent(object):
     def type(self):
         """Gets the type of this OneOfAutoTimestepDefinitionRetimingEvent.  # noqa: E501
 
+        <p>Select the event for the time step adaptation. Currently there are four different events possible that trigger a time step adaptation:</p><ul><li><p><b>Error</b>: This is the case of a general error like for example non-convergence or singular matrix errors.</p></ul><ul><li><p><b>Collision</b>: This event is triggered if in a computation with physical contact a contact state change from open to closed is noticed. This time step adaptation is especially useful in dynamics to reduce the effect of artificial oscillations due to inexact collision detection.</p></ul><ul><li><p><b>Field Change</b>: The user can define the maximum delta that a field is allowed to change within one time step, if the defined threshold is exceeded the time step is adapted. This time stepping criteria is especially useful to capture material nonlinearitier more exact.</p></ul><ul><li><p><b>Non-monotonous residual</b>: This event is triggered if the residual has not been reduced within three iterations . This criteria is mostly used to reduce runtime by detecting diverging time steps before reaching the maximum number of allowed newton iterations.</p></ul>  Schema name: NonMonotomousResidualRetimingEvent  # noqa: E501
 
         :return: The type of this OneOfAutoTimestepDefinitionRetimingEvent.  # noqa: E501
         :rtype: str
@@ -85,6 +86,7 @@ class OneOfAutoTimestepDefinitionRetimingEvent(object):
     def type(self, type):
         """Sets the type of this OneOfAutoTimestepDefinitionRetimingEvent.
 
+        <p>Select the event for the time step adaptation. Currently there are four different events possible that trigger a time step adaptation:</p><ul><li><p><b>Error</b>: This is the case of a general error like for example non-convergence or singular matrix errors.</p></ul><ul><li><p><b>Collision</b>: This event is triggered if in a computation with physical contact a contact state change from open to closed is noticed. This time step adaptation is especially useful in dynamics to reduce the effect of artificial oscillations due to inexact collision detection.</p></ul><ul><li><p><b>Field Change</b>: The user can define the maximum delta that a field is allowed to change within one time step, if the defined threshold is exceeded the time step is adapted. This time stepping criteria is especially useful to capture material nonlinearitier more exact.</p></ul><ul><li><p><b>Non-monotonous residual</b>: This event is triggered if the residual has not been reduced within three iterations . This criteria is mostly used to reduce runtime by detecting diverging time steps before reaching the maximum number of allowed newton iterations.</p></ul>  Schema name: NonMonotomousResidualRetimingEvent  # noqa: E501
 
         :param type: The type of this OneOfAutoTimestepDefinitionRetimingEvent.  # noqa: E501
         :type: str

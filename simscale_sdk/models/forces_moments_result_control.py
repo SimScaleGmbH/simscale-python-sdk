@@ -88,6 +88,7 @@ class ForcesMomentsResultControl(object):
     def type(self):
         """Gets the type of this ForcesMomentsResultControl.  # noqa: E501
 
+        Schema name: ForcesMomentsResultControl  # noqa: E501
 
         :return: The type of this ForcesMomentsResultControl.  # noqa: E501
         :rtype: str
@@ -98,6 +99,7 @@ class ForcesMomentsResultControl(object):
     def type(self, type):
         """Sets the type of this ForcesMomentsResultControl.
 
+        Schema name: ForcesMomentsResultControl  # noqa: E501
 
         :param type: The type of this ForcesMomentsResultControl.  # noqa: E501
         :type: str

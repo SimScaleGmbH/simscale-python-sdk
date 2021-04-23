@@ -58,6 +58,7 @@ class OneOfInterpolationSchemesInterpolateRho0Velocity0(object):
     def type(self):
         """Gets the type of this OneOfInterpolationSchemesInterpolateRho0Velocity0.  # noqa: E501
 
+        Schema name: LinearInterpolationScheme  # noqa: E501
 
         :return: The type of this OneOfInterpolationSchemesInterpolateRho0Velocity0.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class OneOfInterpolationSchemesInterpolateRho0Velocity0(object):
     def type(self, type):
         """Sets the type of this OneOfInterpolationSchemesInterpolateRho0Velocity0.
 
+        Schema name: LinearInterpolationScheme  # noqa: E501
 
         :param type: The type of this OneOfInterpolationSchemesInterpolateRho0Velocity0.  # noqa: E501
         :type: str

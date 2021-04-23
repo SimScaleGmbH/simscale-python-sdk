@@ -58,6 +58,7 @@ class FixedPowerHeatFlux(object):
     def type(self):
         """Gets the type of this FixedPowerHeatFlux.  # noqa: E501
 
+        Schema name: FixedPowerHeatFlux  # noqa: E501
 
         :return: The type of this FixedPowerHeatFlux.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class FixedPowerHeatFlux(object):
     def type(self, type):
         """Sets the type of this FixedPowerHeatFlux.
 
+        Schema name: FixedPowerHeatFlux  # noqa: E501
 
         :param type: The type of this FixedPowerHeatFlux.  # noqa: E501
         :type: str

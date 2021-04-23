@@ -64,6 +64,7 @@ class OneOfSurfaceNormalGradientSchemesForDefault(object):
     def type(self):
         """Gets the type of this OneOfSurfaceNormalGradientSchemesForDefault.  # noqa: E501
 
+        Schema name: LimitedCorrectedSurfaceNormalGradientScheme  # noqa: E501
 
         :return: The type of this OneOfSurfaceNormalGradientSchemesForDefault.  # noqa: E501
         :rtype: str
@@ -74,6 +75,7 @@ class OneOfSurfaceNormalGradientSchemesForDefault(object):
     def type(self, type):
         """Sets the type of this OneOfSurfaceNormalGradientSchemesForDefault.
 
+        Schema name: LimitedCorrectedSurfaceNormalGradientScheme  # noqa: E501
 
         :param type: The type of this OneOfSurfaceNormalGradientSchemesForDefault.  # noqa: E501
         :type: str

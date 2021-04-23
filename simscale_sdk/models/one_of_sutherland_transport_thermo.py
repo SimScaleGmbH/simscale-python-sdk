@@ -73,6 +73,7 @@ class OneOfSutherlandTransportThermo(object):
     def type(self):
         """Gets the type of this OneOfSutherlandTransportThermo.  # noqa: E501
 
+        <br><p>The <b>Thermo models</b> are used to calculate the specific heat at constant pressure (<i>Cp</i>) for the fluid. The available models are:</p><p><b>hConst:</b> This model assumes a constant value for specific heat at fixed pressure (<i>Cp</i>). </p><p><b>eConst:</b> This model assumes a constant value for the specific heat at fixed volume (<i>Cv</i>). </p>  Schema name: HConstThermo  # noqa: E501
 
         :return: The type of this OneOfSutherlandTransportThermo.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class OneOfSutherlandTransportThermo(object):
     def type(self, type):
         """Sets the type of this OneOfSutherlandTransportThermo.
 
+        <br><p>The <b>Thermo models</b> are used to calculate the specific heat at constant pressure (<i>Cp</i>) for the fluid. The available models are:</p><p><b>hConst:</b> This model assumes a constant value for specific heat at fixed pressure (<i>Cp</i>). </p><p><b>eConst:</b> This model assumes a constant value for the specific heat at fixed volume (<i>Cv</i>). </p>  Schema name: HConstThermo  # noqa: E501
 
         :param type: The type of this OneOfSutherlandTransportThermo.  # noqa: E501
         :type: str

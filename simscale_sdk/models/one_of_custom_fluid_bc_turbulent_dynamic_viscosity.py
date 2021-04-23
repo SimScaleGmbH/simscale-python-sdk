@@ -74,6 +74,7 @@ class OneOfCustomFluidBCTurbulentDynamicViscosity(object):
     def type(self):
         """Gets the type of this OneOfCustomFluidBCTurbulentDynamicViscosity.  # noqa: E501
 
+        Schema name: FullResolutionDVBC  # noqa: E501
 
         :return: The type of this OneOfCustomFluidBCTurbulentDynamicViscosity.  # noqa: E501
         :rtype: str
@@ -84,6 +85,7 @@ class OneOfCustomFluidBCTurbulentDynamicViscosity(object):
     def type(self, type):
         """Sets the type of this OneOfCustomFluidBCTurbulentDynamicViscosity.
 
+        Schema name: FullResolutionDVBC  # noqa: E501
 
         :param type: The type of this OneOfCustomFluidBCTurbulentDynamicViscosity.  # noqa: E501
         :type: str

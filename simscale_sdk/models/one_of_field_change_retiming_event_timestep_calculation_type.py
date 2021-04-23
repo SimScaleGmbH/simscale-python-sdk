@@ -73,6 +73,7 @@ class OneOfFieldChangeRetimingEventTimestepCalculationType(object):
     def type(self):
         """Gets the type of this OneOfFieldChangeRetimingEventTimestepCalculationType.  # noqa: E501
 
+        <p>Select how the time increments should be computed in case of an adaptation event. Currently four types are available (which may not all be available for every event):</p><ul><li><p><b>Manual</b>: Here the user defines fixed time step subdivision and augmentation settings.</p></ul><ul><li><p><b>Newton Iterations Target</b>: With this setting the user defines a target value for the Newton Iterations and the time increments are calculated automatically to having this value as objective.</p></ul><ul><li><p><b>Field Change Target</b>: With this setting the user defines a target value for change of a specific field component within a time increment and the time increments are calculated automatically to having this value as objective.</p></ul><ul><li><p><b>Mixed</b>: The mixed type uses a fixed subdivision and an automatic adaptation of the time step with a target value for the change of the selected field component.</p></ul>  Schema name: FieldChangeTargetCalculationType  # noqa: E501
 
         :return: The type of this OneOfFieldChangeRetimingEventTimestepCalculationType.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class OneOfFieldChangeRetimingEventTimestepCalculationType(object):
     def type(self, type):
         """Sets the type of this OneOfFieldChangeRetimingEventTimestepCalculationType.
 
+        <p>Select how the time increments should be computed in case of an adaptation event. Currently four types are available (which may not all be available for every event):</p><ul><li><p><b>Manual</b>: Here the user defines fixed time step subdivision and augmentation settings.</p></ul><ul><li><p><b>Newton Iterations Target</b>: With this setting the user defines a target value for the Newton Iterations and the time increments are calculated automatically to having this value as objective.</p></ul><ul><li><p><b>Field Change Target</b>: With this setting the user defines a target value for change of a specific field component within a time increment and the time increments are calculated automatically to having this value as objective.</p></ul><ul><li><p><b>Mixed</b>: The mixed type uses a fixed subdivision and an automatic adaptation of the time step with a target value for the change of the selected field component.</p></ul>  Schema name: FieldChangeTargetCalculationType  # noqa: E501
 
         :param type: The type of this OneOfFieldChangeRetimingEventTimestepCalculationType.  # noqa: E501
         :type: str

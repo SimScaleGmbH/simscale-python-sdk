@@ -78,6 +78,7 @@ class OneOfNewtonResolutionTypeJacobianMatrix(object):
     def type(self):
         """Gets the type of this OneOfNewtonResolutionTypeJacobianMatrix.  # noqa: E501
 
+        <p>Select which stiffnes matrix should be used for computing the Jacobian of the Newton method. Choosing the tangent stiffnes matrix via <b>tangent matrix</b> allows a full Newton approach whereas the selection of the <b>elastic matrix</b> results in a quasi-Newton approach.</p>  Schema name: ElasticJacobianMatrix  # noqa: E501
 
         :return: The type of this OneOfNewtonResolutionTypeJacobianMatrix.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class OneOfNewtonResolutionTypeJacobianMatrix(object):
     def type(self, type):
         """Sets the type of this OneOfNewtonResolutionTypeJacobianMatrix.
 
+        <p>Select which stiffnes matrix should be used for computing the Jacobian of the Newton method. Choosing the tangent stiffnes matrix via <b>tangent matrix</b> allows a full Newton approach whereas the selection of the <b>elastic matrix</b> results in a quasi-Newton approach.</p>  Schema name: ElasticJacobianMatrix  # noqa: E501
 
         :param type: The type of this OneOfNewtonResolutionTypeJacobianMatrix.  # noqa: E501
         :type: str

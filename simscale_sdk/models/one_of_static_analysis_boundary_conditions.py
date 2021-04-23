@@ -161,6 +161,7 @@ class OneOfStaticAnalysisBoundaryConditions(object):
     def type(self):
         """Gets the type of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
 
+        This is a <b>volume load</b> boundary condition representing a distributed load on the selected volumes applied in the global coordinate system and each element of the assignment is loaded with a volume force depending on the volume of the element.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the volume of the selection</li></ul>  Schema name: VolumeLoadBC  # noqa: E501
 
         :return: The type of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -171,6 +172,7 @@ class OneOfStaticAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfStaticAnalysisBoundaryConditions.
 
+        This is a <b>volume load</b> boundary condition representing a distributed load on the selected volumes applied in the global coordinate system and each element of the assignment is loaded with a volume force depending on the volume of the element.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the volume of the selection</li></ul>  Schema name: VolumeLoadBC  # noqa: E501
 
         :param type: The type of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
         :type: str

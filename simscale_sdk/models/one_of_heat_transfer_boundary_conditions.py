@@ -90,6 +90,7 @@ class OneOfHeatTransferBoundaryConditions(object):
     def type(self):
         """Gets the type of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
 
+        This is a <b>volume heat source</b> boundary condition. It is applied to the <b>volume elements</b> in the selected volumes or volume groups.<br /><br />Important remarks: <br /><ul><li>The total heat generated depends on the volume of the selection as the value is given as Watt per cubic meter.</li><li>For positive values heat is generated, for negative values the bc represents a heat sink.</li><li>You may define a <b>parameter dependent (x,y,z,t)</b> value by defining a formula or uploading a table (csv-file)</li></ul>  Schema name: VolumeHeatFluxBC  # noqa: E501
 
         :return: The type of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -100,6 +101,7 @@ class OneOfHeatTransferBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfHeatTransferBoundaryConditions.
 
+        This is a <b>volume heat source</b> boundary condition. It is applied to the <b>volume elements</b> in the selected volumes or volume groups.<br /><br />Important remarks: <br /><ul><li>The total heat generated depends on the volume of the selection as the value is given as Watt per cubic meter.</li><li>For positive values heat is generated, for negative values the bc represents a heat sink.</li><li>You may define a <b>parameter dependent (x,y,z,t)</b> value by defining a formula or uploading a table (csv-file)</li></ul>  Schema name: VolumeHeatFluxBC  # noqa: E501
 
         :param type: The type of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
         :type: str

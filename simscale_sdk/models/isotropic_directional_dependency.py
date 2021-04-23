@@ -63,6 +63,7 @@ class IsotropicDirectionalDependency(object):
     def type(self):
         """Gets the type of this IsotropicDirectionalDependency.  # noqa: E501
 
+        <p>Choose the directional dependency for this property. <b>Anisotropic and orthotropic materials will be available soon.</b></p>  Schema name: IsotropicDirectionalDependency  # noqa: E501
 
         :return: The type of this IsotropicDirectionalDependency.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class IsotropicDirectionalDependency(object):
     def type(self, type):
         """Sets the type of this IsotropicDirectionalDependency.
 
+        <p>Choose the directional dependency for this property. <b>Anisotropic and orthotropic materials will be available soon.</b></p>  Schema name: IsotropicDirectionalDependency  # noqa: E501
 
         :param type: The type of this IsotropicDirectionalDependency.  # noqa: E501
         :type: str

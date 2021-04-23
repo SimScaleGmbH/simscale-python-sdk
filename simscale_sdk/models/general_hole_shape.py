@@ -53,6 +53,7 @@ class GeneralHoleShape(object):
     def type(self):
         """Gets the type of this GeneralHoleShape.  # noqa: E501
 
+        General formulation that does not depend on the shape of the holes. Valid only for thin plates where thickness to hole ratio is less than 0.015 and Reynolds number is greater than 10000.  Schema name: GeneralHoleShape  # noqa: E501
 
         :return: The type of this GeneralHoleShape.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class GeneralHoleShape(object):
     def type(self, type):
         """Sets the type of this GeneralHoleShape.
 
+        General formulation that does not depend on the shape of the holes. Valid only for thin plates where thickness to hole ratio is less than 0.015 and Reynolds number is greater than 10000.  Schema name: GeneralHoleShape  # noqa: E501
 
         :param type: The type of this GeneralHoleShape.  # noqa: E501
         :type: str

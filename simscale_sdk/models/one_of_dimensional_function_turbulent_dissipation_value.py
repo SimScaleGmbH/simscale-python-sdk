@@ -129,6 +129,7 @@ class OneOfDimensionalFunctionTurbulentDissipationValue(object):
     def type(self):
         """Gets the type of this OneOfDimensionalFunctionTurbulentDissipationValue.  # noqa: E501
 
+        Schema name: TableDefinedFunction  # noqa: E501
 
         :return: The type of this OneOfDimensionalFunctionTurbulentDissipationValue.  # noqa: E501
         :rtype: str
@@ -139,6 +140,7 @@ class OneOfDimensionalFunctionTurbulentDissipationValue(object):
     def type(self, type):
         """Sets the type of this OneOfDimensionalFunctionTurbulentDissipationValue.
 
+        Schema name: TableDefinedFunction  # noqa: E501
 
         :param type: The type of this OneOfDimensionalFunctionTurbulentDissipationValue.  # noqa: E501
         :type: str

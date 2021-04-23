@@ -58,6 +58,7 @@ class OneOfFluxSchemesForDefault(object):
     def type(self):
         """Gets the type of this OneOfFluxSchemesForDefault.  # noqa: E501
 
+        Schema name: KurganovFluxScheme  # noqa: E501
 
         :return: The type of this OneOfFluxSchemesForDefault.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class OneOfFluxSchemesForDefault(object):
     def type(self, type):
         """Sets the type of this OneOfFluxSchemesForDefault.
 
+        Schema name: KurganovFluxScheme  # noqa: E501
 
         :param type: The type of this OneOfFluxSchemesForDefault.  # noqa: E501
         :type: str

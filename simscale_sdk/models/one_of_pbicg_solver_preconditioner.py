@@ -104,6 +104,7 @@ class OneOfPBICGSolverPreconditioner(object):
     def type(self):
         """Gets the type of this OneOfPBICGSolverPreconditioner.  # noqa: E501
 
+        Crout's version of the incomplete lower-upper (ILU) algorithm with arbitrary level of fill-in.  Schema name: ILUCpPreconditioner  # noqa: E501
 
         :return: The type of this OneOfPBICGSolverPreconditioner.  # noqa: E501
         :rtype: str
@@ -114,6 +115,7 @@ class OneOfPBICGSolverPreconditioner(object):
     def type(self, type):
         """Sets the type of this OneOfPBICGSolverPreconditioner.
 
+        Crout's version of the incomplete lower-upper (ILU) algorithm with arbitrary level of fill-in.  Schema name: ILUCpPreconditioner  # noqa: E501
 
         :param type: The type of this OneOfPBICGSolverPreconditioner.  # noqa: E501
         :type: str

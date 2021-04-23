@@ -83,6 +83,7 @@ class LayerAddition(object):
     def type(self):
         """Gets the type of this LayerAddition.  # noqa: E501
 
+        <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#layers-refinement' target='_blank'><b>Inflated boundary layers</b></a> are used to resolve the boundary layer near walls (no-slip) which are in contact with the fluid. Using boundary layers is generally recommended for turbulent simulations.  Schema name: LayerAddition  # noqa: E501
 
         :return: The type of this LayerAddition.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class LayerAddition(object):
     def type(self, type):
         """Sets the type of this LayerAddition.
 
+        <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#layers-refinement' target='_blank'><b>Inflated boundary layers</b></a> are used to resolve the boundary layer near walls (no-slip) which are in contact with the fluid. Using boundary layers is generally recommended for turbulent simulations.  Schema name: LayerAddition  # noqa: E501
 
         :param type: The type of this LayerAddition.  # noqa: E501
         :type: str

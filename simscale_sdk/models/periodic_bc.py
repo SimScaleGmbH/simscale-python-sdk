@@ -63,6 +63,7 @@ class PeriodicBC(object):
     def type(self):
         """Gets the type of this PeriodicBC.  # noqa: E501
 
+        This boundary condition should be used on two faces of a system as if they are physically connected. It is required that the two faces are of same size and shape and the face elements of the mesh are congruent on both sides. Works for uploaded meshes only. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/periodic-boundary-condition/' target='_blank'>Learn more</a>.  Schema name: PeriodicBC  # noqa: E501
 
         :return: The type of this PeriodicBC.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class PeriodicBC(object):
     def type(self, type):
         """Sets the type of this PeriodicBC.
 
+        This boundary condition should be used on two faces of a system as if they are physically connected. It is required that the two faces are of same size and shape and the face elements of the mesh are congruent on both sides. Works for uploaded meshes only. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/periodic-boundary-condition/' target='_blank'>Learn more</a>.  Schema name: PeriodicBC  # noqa: E501
 
         :param type: The type of this PeriodicBC.  # noqa: E501
         :type: str

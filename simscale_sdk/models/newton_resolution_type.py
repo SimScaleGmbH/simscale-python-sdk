@@ -68,6 +68,7 @@ class NewtonResolutionType(object):
     def type(self):
         """Gets the type of this NewtonResolutionType.  # noqa: E501
 
+        <p>Choose how the nonlinearities are solved. Currently for direct solvers only the Newton-Raphson method is available via the selection <b>Newton</b>. For iterative solvers also an inexact version of the Newton-Raphson method is available via the selection <b>Newton-Krylov</b>.</p>  Schema name: NewtonResolutionType  # noqa: E501
 
         :return: The type of this NewtonResolutionType.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class NewtonResolutionType(object):
     def type(self, type):
         """Sets the type of this NewtonResolutionType.
 
+        <p>Choose how the nonlinearities are solved. Currently for direct solvers only the Newton-Raphson method is available via the selection <b>Newton</b>. For iterative solvers also an inexact version of the Newton-Raphson method is available via the selection <b>Newton-Krylov</b>.</p>  Schema name: NewtonResolutionType  # noqa: E501
 
         :param type: The type of this NewtonResolutionType.  # noqa: E501
         :type: str

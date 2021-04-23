@@ -109,6 +109,7 @@ class OneOfCustomFluidBCPhaseFraction(object):
     def type(self):
         """Gets the type of this OneOfCustomFluidBCPhaseFraction.  # noqa: E501
 
+        Schema name: SymmetryPFBC  # noqa: E501
 
         :return: The type of this OneOfCustomFluidBCPhaseFraction.  # noqa: E501
         :rtype: str
@@ -119,6 +120,7 @@ class OneOfCustomFluidBCPhaseFraction(object):
     def type(self, type):
         """Sets the type of this OneOfCustomFluidBCPhaseFraction.
 
+        Schema name: SymmetryPFBC  # noqa: E501
 
         :param type: The type of this OneOfCustomFluidBCPhaseFraction.  # noqa: E501
         :type: str

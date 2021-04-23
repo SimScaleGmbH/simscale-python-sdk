@@ -53,6 +53,7 @@ class CoarseResolution(object):
     def type(self):
         """Gets the type of this CoarseResolution.  # noqa: E501
 
+        Output will be written every 8 time steps.  Schema name: CoarseResolution  # noqa: E501
 
         :return: The type of this CoarseResolution.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class CoarseResolution(object):
     def type(self, type):
         """Sets the type of this CoarseResolution.
 
+        Output will be written every 8 time steps.  Schema name: CoarseResolution  # noqa: E501
 
         :param type: The type of this CoarseResolution.  # noqa: E501
         :type: str

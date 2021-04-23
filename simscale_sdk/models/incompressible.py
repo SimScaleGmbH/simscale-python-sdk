@@ -113,6 +113,7 @@ class Incompressible(object):
     def type(self):
         """Gets the type of this Incompressible.  # noqa: E501
 
+        Schema name: Incompressible  # noqa: E501
 
         :return: The type of this Incompressible.  # noqa: E501
         :rtype: str
@@ -123,6 +124,7 @@ class Incompressible(object):
     def type(self, type):
         """Sets the type of this Incompressible.
 
+        Schema name: Incompressible  # noqa: E501
 
         :param type: The type of this Incompressible.  # noqa: E501
         :type: str

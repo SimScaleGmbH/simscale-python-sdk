@@ -67,6 +67,7 @@ class OneOfProbePointsResultControlWriteControl(object):
     def type(self):
         """Gets the type of this OneOfProbePointsResultControlWriteControl.  # noqa: E501
 
+        This option controls how the simulation results are written and how frequently.  Schema name: CustomResolution  # noqa: E501
 
         :return: The type of this OneOfProbePointsResultControlWriteControl.  # noqa: E501
         :rtype: str
@@ -77,6 +78,7 @@ class OneOfProbePointsResultControlWriteControl(object):
     def type(self, type):
         """Sets the type of this OneOfProbePointsResultControlWriteControl.
 
+        This option controls how the simulation results are written and how frequently.  Schema name: CustomResolution  # noqa: E501
 
         :param type: The type of this OneOfProbePointsResultControlWriteControl.  # noqa: E501
         :type: str

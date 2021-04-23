@@ -73,6 +73,7 @@ class OscillatingRotatingSBM(object):
     def type(self):
         """Gets the type of this OscillatingRotatingSBM.  # noqa: E501
 
+        Schema name: OscillatingRotatingSBM  # noqa: E501
 
         :return: The type of this OscillatingRotatingSBM.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class OscillatingRotatingSBM(object):
     def type(self, type):
         """Sets the type of this OscillatingRotatingSBM.
 
+        Schema name: OscillatingRotatingSBM  # noqa: E501
 
         :param type: The type of this OscillatingRotatingSBM.  # noqa: E501
         :type: str

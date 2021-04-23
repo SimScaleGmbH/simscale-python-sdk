@@ -53,6 +53,7 @@ class DICPreconditioner(object):
     def type(self):
         """Gets the type of this DICPreconditioner.  # noqa: E501
 
+        Diagonal incomplete Cholesky algorithm for symmetric matrices without fill-in.  Schema name: DICPreconditioner  # noqa: E501
 
         :return: The type of this DICPreconditioner.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class DICPreconditioner(object):
     def type(self, type):
         """Sets the type of this DICPreconditioner.
 
+        Diagonal incomplete Cholesky algorithm for symmetric matrices without fill-in.  Schema name: DICPreconditioner  # noqa: E501
 
         :param type: The type of this DICPreconditioner.  # noqa: E501
         :type: str

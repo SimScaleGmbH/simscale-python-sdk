@@ -78,6 +78,7 @@ class OneOfSolidSimulationControlExcitationFrequencies(object):
     def type(self):
         """Gets the type of this OneOfSolidSimulationControlExcitationFrequencies.  # noqa: E501
 
+        <p>Set the frequencies for the harmonic excitation. Setting it to <b>single frequency</b> will only compute harmonic excitation on that frequency. To have harmonic excitations on multiple frequencies, please choose <b>frequency list</b>. </p>  Schema name: FrequencyList  # noqa: E501
 
         :return: The type of this OneOfSolidSimulationControlExcitationFrequencies.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class OneOfSolidSimulationControlExcitationFrequencies(object):
     def type(self, type):
         """Sets the type of this OneOfSolidSimulationControlExcitationFrequencies.
 
+        <p>Set the frequencies for the harmonic excitation. Setting it to <b>single frequency</b> will only compute harmonic excitation on that frequency. To have harmonic excitations on multiple frequencies, please choose <b>frequency list</b>. </p>  Schema name: FrequencyList  # noqa: E501
 
         :param type: The type of this OneOfSolidSimulationControlExcitationFrequencies.  # noqa: E501
         :type: str

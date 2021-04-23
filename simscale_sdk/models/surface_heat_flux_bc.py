@@ -68,6 +68,7 @@ class SurfaceHeatFluxBC(object):
     def type(self):
         """Gets the type of this SurfaceHeatFluxBC.  # noqa: E501
 
+        Define the heatflux per unit area that enters the body through the assigned faces. Negative sign determines flux leaving the body.  Schema name: SurfaceHeatFluxBC  # noqa: E501
 
         :return: The type of this SurfaceHeatFluxBC.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class SurfaceHeatFluxBC(object):
     def type(self, type):
         """Sets the type of this SurfaceHeatFluxBC.
 
+        Define the heatflux per unit area that enters the body through the assigned faces. Negative sign determines flux leaving the body.  Schema name: SurfaceHeatFluxBC  # noqa: E501
 
         :param type: The type of this SurfaceHeatFluxBC.  # noqa: E501
         :type: str

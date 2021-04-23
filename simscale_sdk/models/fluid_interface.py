@@ -58,6 +58,7 @@ class FluidInterface(object):
     def type(self):
         """Gets the type of this FluidInterface.  # noqa: E501
 
+        Schema name: FluidInterface  # noqa: E501
 
         :return: The type of this FluidInterface.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class FluidInterface(object):
     def type(self, type):
         """Sets the type of this FluidInterface.
 
+        Schema name: FluidInterface  # noqa: E501
 
         :param type: The type of this FluidInterface.  # noqa: E501
         :type: str

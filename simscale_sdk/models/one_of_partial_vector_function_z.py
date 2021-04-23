@@ -63,6 +63,7 @@ class OneOfPartialVectorFunctionZ(object):
     def type(self):
         """Gets the type of this OneOfPartialVectorFunctionZ.  # noqa: E501
 
+        Schema name: UnconstrainedOptionalFunction  # noqa: E501
 
         :return: The type of this OneOfPartialVectorFunctionZ.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class OneOfPartialVectorFunctionZ(object):
     def type(self, type):
         """Sets the type of this OneOfPartialVectorFunctionZ.
 
+        Schema name: UnconstrainedOptionalFunction  # noqa: E501
 
         :param type: The type of this OneOfPartialVectorFunctionZ.  # noqa: E501
         :type: str

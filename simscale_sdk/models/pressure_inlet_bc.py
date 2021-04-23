@@ -103,6 +103,7 @@ class PressureInletBC(object):
     def type(self):
         """Gets the type of this PressureInletBC.  # noqa: E501
 
+        This boundary condition is suitable for inlet and open boundaries where the value of pressure is known. For Incompressible and Passive Scalar Transport analysis the specific Pressure i.e. Pressure/Density is used.  Schema name: PressureInletBC  # noqa: E501
 
         :return: The type of this PressureInletBC.  # noqa: E501
         :rtype: str
@@ -113,6 +114,7 @@ class PressureInletBC(object):
     def type(self, type):
         """Sets the type of this PressureInletBC.
 
+        This boundary condition is suitable for inlet and open boundaries where the value of pressure is known. For Incompressible and Passive Scalar Transport analysis the specific Pressure i.e. Pressure/Density is used.  Schema name: PressureInletBC  # noqa: E501
 
         :param type: The type of this PressureInletBC.  # noqa: E501
         :type: str

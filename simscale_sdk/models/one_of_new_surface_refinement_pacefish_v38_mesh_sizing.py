@@ -78,6 +78,7 @@ class OneOfNewSurfaceRefinementPacefishV38MeshSizing(object):
     def type(self):
         """Gets the type of this OneOfNewSurfaceRefinementPacefishV38MeshSizing.  # noqa: E501
 
+        Schema name: ManualSurfaceSizingPacefish  # noqa: E501
 
         :return: The type of this OneOfNewSurfaceRefinementPacefishV38MeshSizing.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class OneOfNewSurfaceRefinementPacefishV38MeshSizing(object):
     def type(self, type):
         """Sets the type of this OneOfNewSurfaceRefinementPacefishV38MeshSizing.
 
+        Schema name: ManualSurfaceSizingPacefish  # noqa: E501
 
         :param type: The type of this OneOfNewSurfaceRefinementPacefishV38MeshSizing.  # noqa: E501
         :type: str

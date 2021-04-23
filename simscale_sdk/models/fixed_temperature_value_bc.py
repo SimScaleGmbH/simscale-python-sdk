@@ -68,6 +68,7 @@ class FixedTemperatureValueBC(object):
     def type(self):
         """Gets the type of this FixedTemperatureValueBC.  # noqa: E501
 
+        This is a boundary condition for the <b>temperature</b> variable. It prescribes the given temperature value on all selected groups.<br /><br />Important remarks: <br /><ul><li>Do not define a temperature and a heat flux boundary condition on the same group</li><li>Do not define the temperature on slave entities of <b>Contact Constraints</b> as they are constrained by the master temperature</li><li>You may define a <b>parameter dependent (x,y,z,t)</b> value by defining a formula or uploading a table (csv-file)</li></ul>  Schema name: FixedTemperatureValueBC  # noqa: E501
 
         :return: The type of this FixedTemperatureValueBC.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class FixedTemperatureValueBC(object):
     def type(self, type):
         """Sets the type of this FixedTemperatureValueBC.
 
+        This is a boundary condition for the <b>temperature</b> variable. It prescribes the given temperature value on all selected groups.<br /><br />Important remarks: <br /><ul><li>Do not define a temperature and a heat flux boundary condition on the same group</li><li>Do not define the temperature on slave entities of <b>Contact Constraints</b> as they are constrained by the master temperature</li><li>You may define a <b>parameter dependent (x,y,z,t)</b> value by defining a formula or uploading a table (csv-file)</li></ul>  Schema name: FixedTemperatureValueBC  # noqa: E501
 
         :param type: The type of this FixedTemperatureValueBC.  # noqa: E501
         :type: str

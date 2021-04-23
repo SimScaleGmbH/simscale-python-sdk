@@ -64,6 +64,7 @@ class Expansion(object):
     def type(self):
         """Gets the type of this Expansion.  # noqa: E501
 
+        <p>Define the directional dependency of this property. Isotropic means directionally independent.</p>  Schema name: Expansion  # noqa: E501
 
         :return: The type of this Expansion.  # noqa: E501
         :rtype: str
@@ -74,6 +75,7 @@ class Expansion(object):
     def type(self, type):
         """Sets the type of this Expansion.
 
+        <p>Define the directional dependency of this property. Isotropic means directionally independent.</p>  Schema name: Expansion  # noqa: E501
 
         :param type: The type of this Expansion.  # noqa: E501
         :type: str

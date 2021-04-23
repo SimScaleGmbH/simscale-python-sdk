@@ -68,6 +68,7 @@ class OneOfIsotropicSpringStiffnessStiffnessDefinition(object):
     def type(self):
         """Gets the type of this OneOfIsotropicSpringStiffnessStiffnessDefinition.  # noqa: E501
 
+        Schema name: DistributedIsotropicStiffnessDefinition  # noqa: E501
 
         :return: The type of this OneOfIsotropicSpringStiffnessStiffnessDefinition.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class OneOfIsotropicSpringStiffnessStiffnessDefinition(object):
     def type(self, type):
         """Sets the type of this OneOfIsotropicSpringStiffnessStiffnessDefinition.
 
+        Schema name: DistributedIsotropicStiffnessDefinition  # noqa: E501
 
         :param type: The type of this OneOfIsotropicSpringStiffnessStiffnessDefinition.  # noqa: E501
         :type: str

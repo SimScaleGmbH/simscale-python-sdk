@@ -68,6 +68,7 @@ class Point(object):
     def type(self):
         """Gets the type of this Point.  # noqa: E501
 
+        Schema name: Point  # noqa: E501
 
         :return: The type of this Point.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class Point(object):
     def type(self, type):
         """Sets the type of this Point.
 
+        Schema name: Point  # noqa: E501
 
         :param type: The type of this Point.  # noqa: E501
         :type: str

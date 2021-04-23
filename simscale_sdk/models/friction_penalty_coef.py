@@ -63,6 +63,7 @@ class FrictionPenaltyCoef(object):
     def type(self):
         """Gets the type of this FrictionPenaltyCoef.  # noqa: E501
 
+        Schema name: FrictionPenaltyCoef  # noqa: E501
 
         :return: The type of this FrictionPenaltyCoef.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class FrictionPenaltyCoef(object):
     def type(self, type):
         """Sets the type of this FrictionPenaltyCoef.
 
+        Schema name: FrictionPenaltyCoef  # noqa: E501
 
         :param type: The type of this FrictionPenaltyCoef.  # noqa: E501
         :type: str

@@ -128,6 +128,7 @@ class OneOfSimericsFluidMaterialsFluids(object):
     def type(self):
         """Gets the type of this OneOfSimericsFluidMaterialsFluids.  # noqa: E501
 
+        Schema name: FluidCompressibleMaterial  # noqa: E501
 
         :return: The type of this OneOfSimericsFluidMaterialsFluids.  # noqa: E501
         :rtype: str
@@ -138,6 +139,7 @@ class OneOfSimericsFluidMaterialsFluids(object):
     def type(self, type):
         """Sets the type of this OneOfSimericsFluidMaterialsFluids.
 
+        Schema name: FluidCompressibleMaterial  # noqa: E501
 
         :param type: The type of this OneOfSimericsFluidMaterialsFluids.  # noqa: E501
         :type: str

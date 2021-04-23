@@ -83,6 +83,7 @@ class VelocityOutletBC(object):
     def type(self):
         """Gets the type of this VelocityOutletBC.  # noqa: E501
 
+        <br>This boundary condition imposes a known flow rate or velocity at an outlet.<p>The sub-types for a <b>Velocity Outlet</b> boundary are as follows:</p><ul><li><b>Fixed value:</b> defines a constant or time/space dependent velocity values. The flow direction is based on input values.</li><li><b>Mean value:</b> defines a mean or time/space dependent velocity values across the surface(s) selected. The flow direction is based on input values.</li><li><b>Free stream:</b> defines a Inflow/Outflow condition at boundaries far away from the object. The flow direction is based on input values.</li><li><b>Flow rate:</b> defines a target flow rate. <b>Flow rate value must be positive.</b></li><li><b>Face normal value:</b> defines a target face normal mean outlet velocity. <b>Velocity value must be positive.</b></li></ul>  Schema name: VelocityOutletBC  # noqa: E501
 
         :return: The type of this VelocityOutletBC.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class VelocityOutletBC(object):
     def type(self, type):
         """Sets the type of this VelocityOutletBC.
 
+        <br>This boundary condition imposes a known flow rate or velocity at an outlet.<p>The sub-types for a <b>Velocity Outlet</b> boundary are as follows:</p><ul><li><b>Fixed value:</b> defines a constant or time/space dependent velocity values. The flow direction is based on input values.</li><li><b>Mean value:</b> defines a mean or time/space dependent velocity values across the surface(s) selected. The flow direction is based on input values.</li><li><b>Free stream:</b> defines a Inflow/Outflow condition at boundaries far away from the object. The flow direction is based on input values.</li><li><b>Flow rate:</b> defines a target flow rate. <b>Flow rate value must be positive.</b></li><li><b>Face normal value:</b> defines a target face normal mean outlet velocity. <b>Velocity value must be positive.</b></li></ul>  Schema name: VelocityOutletBC  # noqa: E501
 
         :param type: The type of this VelocityOutletBC.  # noqa: E501
         :type: str

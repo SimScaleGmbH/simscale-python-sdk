@@ -63,6 +63,7 @@ class IncompletePreconditionerV33(object):
     def type(self):
         """Gets the type of this IncompletePreconditionerV33.  # noqa: E501
 
+        Schema name: IncompletePreconditionerV33  # noqa: E501
 
         :return: The type of this IncompletePreconditionerV33.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class IncompletePreconditionerV33(object):
     def type(self, type):
         """Sets the type of this IncompletePreconditionerV33.
 
+        Schema name: IncompletePreconditionerV33  # noqa: E501
 
         :param type: The type of this IncompletePreconditionerV33.  # noqa: E501
         :type: str

@@ -103,6 +103,7 @@ class FrequencyAnalysis(object):
     def type(self):
         """Gets the type of this FrequencyAnalysis.  # noqa: E501
 
+        Schema name: FrequencyAnalysis  # noqa: E501
 
         :return: The type of this FrequencyAnalysis.  # noqa: E501
         :rtype: str
@@ -113,6 +114,7 @@ class FrequencyAnalysis(object):
     def type(self, type):
         """Sets the type of this FrequencyAnalysis.
 
+        Schema name: FrequencyAnalysis  # noqa: E501
 
         :param type: The type of this FrequencyAnalysis.  # noqa: E501
         :type: str

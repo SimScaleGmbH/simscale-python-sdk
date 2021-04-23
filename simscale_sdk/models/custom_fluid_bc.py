@@ -153,6 +153,7 @@ class CustomFluidBC(object):
     def type(self):
         """Gets the type of this CustomFluidBC.  # noqa: E501
 
+        This boundary condition allows the user to choose conditions for each physical variable separately. It provides full flexibility over the choice of boundary conditions to make advanced customization possible.  Schema name: CustomFluidBC  # noqa: E501
 
         :return: The type of this CustomFluidBC.  # noqa: E501
         :rtype: str
@@ -163,6 +164,7 @@ class CustomFluidBC(object):
     def type(self, type):
         """Sets the type of this CustomFluidBC.
 
+        This boundary condition allows the user to choose conditions for each physical variable separately. It provides full flexibility over the choice of boundary conditions to make advanced customization possible.  Schema name: CustomFluidBC  # noqa: E501
 
         :param type: The type of this CustomFluidBC.  # noqa: E501
         :type: str

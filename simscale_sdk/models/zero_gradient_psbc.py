@@ -53,6 +53,7 @@ class ZeroGradientPSBC(object):
     def type(self):
         """Gets the type of this ZeroGradientPSBC.  # noqa: E501
 
+        Schema name: ZeroGradientPSBC  # noqa: E501
 
         :return: The type of this ZeroGradientPSBC.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class ZeroGradientPSBC(object):
     def type(self, type):
         """Sets the type of this ZeroGradientPSBC.
 
+        Schema name: ZeroGradientPSBC  # noqa: E501
 
         :param type: The type of this ZeroGradientPSBC.  # noqa: E501
         :type: str

@@ -68,6 +68,7 @@ class FeatureRefinement(object):
     def type(self):
         """Gets the type of this FeatureRefinement.  # noqa: E501
 
+        A <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#feature-refinement' target='_blank'><b>feature refinement</b></a> can be used to refine the geometry’s feature edges. All edges whose adjacent surface normals form an angle of less than 150° will be refined.  Schema name: FeatureRefinement  # noqa: E501
 
         :return: The type of this FeatureRefinement.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class FeatureRefinement(object):
     def type(self, type):
         """Sets the type of this FeatureRefinement.
 
+        A <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#feature-refinement' target='_blank'><b>feature refinement</b></a> can be used to refine the geometry’s feature edges. All edges whose adjacent surface normals form an angle of less than 150° will be refined.  Schema name: FeatureRefinement  # noqa: E501
 
         :param type: The type of this FeatureRefinement.  # noqa: E501
         :type: str

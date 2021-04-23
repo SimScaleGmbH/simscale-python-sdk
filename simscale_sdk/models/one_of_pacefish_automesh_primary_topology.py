@@ -68,6 +68,7 @@ class OneOfPacefishAutomeshPrimaryTopology(object):
     def type(self):
         """Gets the type of this OneOfPacefishAutomeshPrimaryTopology.  # noqa: E501
 
+        Schema name: Region  # noqa: E501
 
         :return: The type of this OneOfPacefishAutomeshPrimaryTopology.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class OneOfPacefishAutomeshPrimaryTopology(object):
     def type(self, type):
         """Sets the type of this OneOfPacefishAutomeshPrimaryTopology.
 
+        Schema name: Region  # noqa: E501
 
         :param type: The type of this OneOfPacefishAutomeshPrimaryTopology.  # noqa: E501
         :type: str

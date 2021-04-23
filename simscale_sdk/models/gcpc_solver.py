@@ -73,6 +73,7 @@ class GCPCSolver(object):
     def type(self):
         """Gets the type of this GCPCSolver.  # noqa: E501
 
+        <p>Choose a linear equation system solver for your calculation:</p><ul><li><p><b>Multfront</b> is a direct solver of the multifrontal type. It is easy to set up and behaves well for most problems.</p></ul><ul><li><p><b>MUMPS</b> is a general purpose direct solver of the multifrontal type. It provides a lot of parameter settings to allow the best fitting to your problems needs.</p></ul><ul><li><p><b>LDLT</b> is a direct solver which uses a Gaussian Algortihm. It is comparatively slow for big problems.</p></ul><ul><li><p><b>PETSC</b> is an iterative solver specially designed to deal with large systems. It scales very effectively in parallel and is the best choice for large problems.</p></ul><ul><li><p><b>GCPC</b> is an iterative solver of the pre-conditioned conjugate gradient type. It scales well in parallel and is also usable for large problems.</p></ul>  Schema name: GCPCSolver  # noqa: E501
 
         :return: The type of this GCPCSolver.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class GCPCSolver(object):
     def type(self, type):
         """Sets the type of this GCPCSolver.
 
+        <p>Choose a linear equation system solver for your calculation:</p><ul><li><p><b>Multfront</b> is a direct solver of the multifrontal type. It is easy to set up and behaves well for most problems.</p></ul><ul><li><p><b>MUMPS</b> is a general purpose direct solver of the multifrontal type. It provides a lot of parameter settings to allow the best fitting to your problems needs.</p></ul><ul><li><p><b>LDLT</b> is a direct solver which uses a Gaussian Algortihm. It is comparatively slow for big problems.</p></ul><ul><li><p><b>PETSC</b> is an iterative solver specially designed to deal with large systems. It scales very effectively in parallel and is the best choice for large problems.</p></ul><ul><li><p><b>GCPC</b> is an iterative solver of the pre-conditioned conjugate gradient type. It scales well in parallel and is also usable for large problems.</p></ul>  Schema name: GCPCSolver  # noqa: E501
 
         :param type: The type of this GCPCSolver.  # noqa: E501
         :type: str

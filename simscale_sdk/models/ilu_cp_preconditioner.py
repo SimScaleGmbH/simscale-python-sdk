@@ -58,6 +58,7 @@ class ILUCpPreconditioner(object):
     def type(self):
         """Gets the type of this ILUCpPreconditioner.  # noqa: E501
 
+        Crout's version of the incomplete lower-upper (ILU) algorithm with arbitrary level of fill-in.  Schema name: ILUCpPreconditioner  # noqa: E501
 
         :return: The type of this ILUCpPreconditioner.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class ILUCpPreconditioner(object):
     def type(self, type):
         """Sets the type of this ILUCpPreconditioner.
 
+        Crout's version of the incomplete lower-upper (ILU) algorithm with arbitrary level of fill-in.  Schema name: ILUCpPreconditioner  # noqa: E501
 
         :param type: The type of this ILUCpPreconditioner.  # noqa: E501
         :type: str

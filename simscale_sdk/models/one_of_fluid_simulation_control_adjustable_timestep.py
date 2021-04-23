@@ -73,6 +73,7 @@ class OneOfFluidSimulationControlAdjustableTimestep(object):
     def type(self):
         """Gets the type of this OneOfFluidSimulationControlAdjustableTimestep.  # noqa: E501
 
+        This option activates an adjustable time step. The time step is being modified according to the Courant number.  Schema name: ActiveAdjustableTimestep  # noqa: E501
 
         :return: The type of this OneOfFluidSimulationControlAdjustableTimestep.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class OneOfFluidSimulationControlAdjustableTimestep(object):
     def type(self, type):
         """Sets the type of this OneOfFluidSimulationControlAdjustableTimestep.
 
+        This option activates an adjustable time step. The time step is being modified according to the Courant number.  Schema name: ActiveAdjustableTimestep  # noqa: E501
 
         :param type: The type of this OneOfFluidSimulationControlAdjustableTimestep.  # noqa: E501
         :type: str

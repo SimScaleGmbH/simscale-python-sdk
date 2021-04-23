@@ -83,6 +83,7 @@ class LayerRefinement(object):
     def type(self):
         """Gets the type of this LayerRefinement.  # noqa: E501
 
+        <p><a href='https://www.simscale.com/docs/simulation-setup/meshing/tet-dominant/#layer-inflation' target='_blank'><b>Layer inflation</b></a> allows the creation of prismatic boundary layers for certain mesh regions.</p><p>Prismatic layers are mostly used in CFD simulations on no-slip walls in order to efficiently capture the boundary layer velocity profile, but they may be also used in certain structural simulations like stamping or deep-drawing processes.</p><p><img src=\"/spec/resources/help/imgs/boundary-layer.png\" class=\"helpPopupImage\"/> The figure shows a sample mesh with boundary layers added.</p>  Schema name: LayerRefinement  # noqa: E501
 
         :return: The type of this LayerRefinement.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class LayerRefinement(object):
     def type(self, type):
         """Sets the type of this LayerRefinement.
 
+        <p><a href='https://www.simscale.com/docs/simulation-setup/meshing/tet-dominant/#layer-inflation' target='_blank'><b>Layer inflation</b></a> allows the creation of prismatic boundary layers for certain mesh regions.</p><p>Prismatic layers are mostly used in CFD simulations on no-slip walls in order to efficiently capture the boundary layer velocity profile, but they may be also used in certain structural simulations like stamping or deep-drawing processes.</p><p><img src=\"/spec/resources/help/imgs/boundary-layer.png\" class=\"helpPopupImage\"/> The figure shows a sample mesh with boundary layers added.</p>  Schema name: LayerRefinement  # noqa: E501
 
         :param type: The type of this LayerRefinement.  # noqa: E501
         :type: str

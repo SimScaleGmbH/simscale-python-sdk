@@ -77,6 +77,7 @@ class OneOfPorousTreeTreeType(object):
     def type(self):
         """Gets the type of this OneOfPorousTreeTreeType.  # noqa: E501
 
+        Schema name: Chestnut  # noqa: E501
 
         :return: The type of this OneOfPorousTreeTreeType.  # noqa: E501
         :rtype: str
@@ -87,6 +88,7 @@ class OneOfPorousTreeTreeType(object):
     def type(self, type):
         """Sets the type of this OneOfPorousTreeTreeType.
 
+        Schema name: Chestnut  # noqa: E501
 
         :param type: The type of this OneOfPorousTreeTreeType.  # noqa: E501
         :type: str

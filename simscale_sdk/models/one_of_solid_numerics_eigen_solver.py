@@ -120,6 +120,7 @@ class OneOfSolidNumericsEigenSolver(object):
     def type(self):
         """Gets the type of this OneOfSolidNumericsEigenSolver.  # noqa: E501
 
+        Schema name: QZ  # noqa: E501
 
         :return: The type of this OneOfSolidNumericsEigenSolver.  # noqa: E501
         :rtype: str
@@ -130,6 +131,7 @@ class OneOfSolidNumericsEigenSolver(object):
     def type(self, type):
         """Sets the type of this OneOfSolidNumericsEigenSolver.
 
+        Schema name: QZ  # noqa: E501
 
         :param type: The type of this OneOfSolidNumericsEigenSolver.  # noqa: E501
         :type: str

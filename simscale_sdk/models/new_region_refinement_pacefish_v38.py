@@ -68,6 +68,7 @@ class NewRegionRefinementPacefishV38(object):
     def type(self):
         """Gets the type of this NewRegionRefinementPacefishV38.  # noqa: E501
 
+        Schema name: NewRegionRefinementPacefishV38  # noqa: E501
 
         :return: The type of this NewRegionRefinementPacefishV38.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class NewRegionRefinementPacefishV38(object):
     def type(self, type):
         """Sets the type of this NewRegionRefinementPacefishV38.
 
+        Schema name: NewRegionRefinementPacefishV38  # noqa: E501
 
         :param type: The type of this NewRegionRefinementPacefishV38.  # noqa: E501
         :type: str

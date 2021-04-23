@@ -68,6 +68,7 @@ class OneOfConnectionSettingsV36NonlinearityResolution(object):
     def type(self):
         """Gets the type of this OneOfConnectionSettingsV36NonlinearityResolution.  # noqa: E501
 
+        Schema name: FixedPointNonLinearityResolution  # noqa: E501
 
         :return: The type of this OneOfConnectionSettingsV36NonlinearityResolution.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class OneOfConnectionSettingsV36NonlinearityResolution(object):
     def type(self, type):
         """Sets the type of this OneOfConnectionSettingsV36NonlinearityResolution.
 
+        Schema name: FixedPointNonLinearityResolution  # noqa: E501
 
         :param type: The type of this OneOfConnectionSettingsV36NonlinearityResolution.  # noqa: E501
         :type: str

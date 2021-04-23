@@ -78,6 +78,7 @@ class Cylinder(object):
     def type(self):
         """Gets the type of this Cylinder.  # noqa: E501
 
+        Schema name: Cylinder  # noqa: E501
 
         :return: The type of this Cylinder.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class Cylinder(object):
     def type(self, type):
         """Sets the type of this Cylinder.
 
+        Schema name: Cylinder  # noqa: E501
 
         :param type: The type of this Cylinder.  # noqa: E501
         :type: str

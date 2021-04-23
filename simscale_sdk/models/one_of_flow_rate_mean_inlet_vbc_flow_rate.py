@@ -63,6 +63,7 @@ class OneOfFlowRateMeanInletVBCFlowRate(object):
     def type(self):
         """Gets the type of this OneOfFlowRateMeanInletVBCFlowRate.  # noqa: E501
 
+        <p>Defines the volumetric flow rate <strong>per each face</strong> of the assignment.</p>  Schema name: VolumetricFlow  # noqa: E501
 
         :return: The type of this OneOfFlowRateMeanInletVBCFlowRate.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class OneOfFlowRateMeanInletVBCFlowRate(object):
     def type(self, type):
         """Sets the type of this OneOfFlowRateMeanInletVBCFlowRate.
 
+        <p>Defines the volumetric flow rate <strong>per each face</strong> of the assignment.</p>  Schema name: VolumetricFlow  # noqa: E501
 
         :param type: The type of this OneOfFlowRateMeanInletVBCFlowRate.  # noqa: E501
         :type: str

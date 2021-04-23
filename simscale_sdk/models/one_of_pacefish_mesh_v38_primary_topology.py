@@ -63,6 +63,7 @@ class OneOfPacefishMeshV38PrimaryTopology(object):
     def type(self):
         """Gets the type of this OneOfPacefishMeshV38PrimaryTopology.  # noqa: E501
 
+        Schema name: BuildingsOfInterest  # noqa: E501
 
         :return: The type of this OneOfPacefishMeshV38PrimaryTopology.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class OneOfPacefishMeshV38PrimaryTopology(object):
     def type(self, type):
         """Sets the type of this OneOfPacefishMeshV38PrimaryTopology.
 
+        Schema name: BuildingsOfInterest  # noqa: E501
 
         :param type: The type of this OneOfPacefishMeshV38PrimaryTopology.  # noqa: E501
         :type: str

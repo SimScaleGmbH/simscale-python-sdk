@@ -68,6 +68,7 @@ class OneOfSimmetrixBoundaryLayerRefinementLayerType(object):
     def type(self):
         """Gets the type of this OneOfSimmetrixBoundaryLayerRefinementLayerType.  # noqa: E501
 
+        Schema name: FractionalHeight2  # noqa: E501
 
         :return: The type of this OneOfSimmetrixBoundaryLayerRefinementLayerType.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class OneOfSimmetrixBoundaryLayerRefinementLayerType(object):
     def type(self, type):
         """Sets the type of this OneOfSimmetrixBoundaryLayerRefinementLayerType.
 
+        Schema name: FractionalHeight2  # noqa: E501
 
         :param type: The type of this OneOfSimmetrixBoundaryLayerRefinementLayerType.  # noqa: E501
         :type: str

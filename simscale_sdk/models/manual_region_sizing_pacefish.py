@@ -58,6 +58,7 @@ class ManualRegionSizingPacefish(object):
     def type(self):
         """Gets the type of this ManualRegionSizingPacefish.  # noqa: E501
 
+        Schema name: ManualRegionSizingPacefish  # noqa: E501
 
         :return: The type of this ManualRegionSizingPacefish.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class ManualRegionSizingPacefish(object):
     def type(self, type):
         """Sets the type of this ManualRegionSizingPacefish.
 
+        Schema name: ManualRegionSizingPacefish  # noqa: E501
 
         :param type: The type of this ManualRegionSizingPacefish.  # noqa: E501
         :type: str

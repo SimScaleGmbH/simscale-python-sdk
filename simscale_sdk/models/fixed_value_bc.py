@@ -68,6 +68,7 @@ class FixedValueBC(object):
     def type(self):
         """Gets the type of this FixedValueBC.  # noqa: E501
 
+        This is a boundary condition for the <b>displacement vector</b> variable. You can define prescribed values for the displacement of the assigned groups in every coordinate direction (x,y,z) or leave it unconstrained in order to let the entity move freely. <br /><br />Important remarks: <br /><ul><li>Choose 0 as value in order to fix your selection</li><li>Do not constrain entities in directions where a load boundary condition is applied</li><li>Do not constrain entities with multiple Dirichlet boundary conditions in one direction (overconstrained)</li><li>Do not constrain slave entities of <b>Contact Constraints</b> as they are constrained by the master in that direction (overconstrained)</li></ul>   Schema name: FixedValueBC  # noqa: E501
 
         :return: The type of this FixedValueBC.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class FixedValueBC(object):
     def type(self, type):
         """Sets the type of this FixedValueBC.
 
+        This is a boundary condition for the <b>displacement vector</b> variable. You can define prescribed values for the displacement of the assigned groups in every coordinate direction (x,y,z) or leave it unconstrained in order to let the entity move freely. <br /><br />Important remarks: <br /><ul><li>Choose 0 as value in order to fix your selection</li><li>Do not constrain entities in directions where a load boundary condition is applied</li><li>Do not constrain entities with multiple Dirichlet boundary conditions in one direction (overconstrained)</li><li>Do not constrain slave entities of <b>Contact Constraints</b> as they are constrained by the master in that direction (overconstrained)</li></ul>   Schema name: FixedValueBC  # noqa: E501
 
         :param type: The type of this FixedValueBC.  # noqa: E501
         :type: str

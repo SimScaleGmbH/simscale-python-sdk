@@ -36,9 +36,9 @@ class OneOfSolarCalculatorSolarLoad(object):
         'diffusive_solar_load': 'DimensionalHeatFlux',
         'sky_cloud_cover_fraction': 'float',
         'ground_reflectivity': 'float',
-        'a': 'float',
-        'b': 'float',
-        'c': 'float'
+        'apparent_solar_irradiation': 'DimensionalHeatFlux',
+        'atmospheric_extinction_coefficient': 'float',
+        'diffusive_radiation_factor': 'float'
     }
 
     attribute_map = {
@@ -47,9 +47,9 @@ class OneOfSolarCalculatorSolarLoad(object):
         'diffusive_solar_load': 'diffusiveSolarLoad',
         'sky_cloud_cover_fraction': 'skyCloudCoverFraction',
         'ground_reflectivity': 'groundReflectivity',
-        'a': 'A',
-        'b': 'B',
-        'c': 'C'
+        'apparent_solar_irradiation': 'apparentSolarIrradiation',
+        'atmospheric_extinction_coefficient': 'atmosphericExtinctionCoefficient',
+        'diffusive_radiation_factor': 'diffusiveRadiationFactor'
     }
 
     discriminator_value_class_map = {
@@ -57,7 +57,7 @@ class OneOfSolarCalculatorSolarLoad(object):
         'FAIR_WEATHER_CONDITIONS': 'FairWeatherConditions'
     }
 
-    def __init__(self, type='FAIR_WEATHER_CONDITIONS', directed_solar_load=None, diffusive_solar_load=None, sky_cloud_cover_fraction=None, ground_reflectivity=None, a=None, b=None, c=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FAIR_WEATHER_CONDITIONS', directed_solar_load=None, diffusive_solar_load=None, sky_cloud_cover_fraction=None, ground_reflectivity=None, apparent_solar_irradiation=None, atmospheric_extinction_coefficient=None, diffusive_radiation_factor=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolarCalculatorSolarLoad - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,9 +68,9 @@ class OneOfSolarCalculatorSolarLoad(object):
         self._diffusive_solar_load = None
         self._sky_cloud_cover_fraction = None
         self._ground_reflectivity = None
-        self._a = None
-        self._b = None
-        self._c = None
+        self._apparent_solar_irradiation = None
+        self._atmospheric_extinction_coefficient = None
+        self._diffusive_radiation_factor = None
         self.discriminator = 'type'
 
         self.type = type
@@ -82,17 +82,18 @@ class OneOfSolarCalculatorSolarLoad(object):
             self.sky_cloud_cover_fraction = sky_cloud_cover_fraction
         if ground_reflectivity is not None:
             self.ground_reflectivity = ground_reflectivity
-        if a is not None:
-            self.a = a
-        if b is not None:
-            self.b = b
-        if c is not None:
-            self.c = c
+        if apparent_solar_irradiation is not None:
+            self.apparent_solar_irradiation = apparent_solar_irradiation
+        if atmospheric_extinction_coefficient is not None:
+            self.atmospheric_extinction_coefficient = atmospheric_extinction_coefficient
+        if diffusive_radiation_factor is not None:
+            self.diffusive_radiation_factor = diffusive_radiation_factor
 
     @property
     def type(self):
         """Gets the type of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
 
+        Schema name: FairWeatherConditions  # noqa: E501
 
         :return: The type of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
         :rtype: str
@@ -103,6 +104,7 @@ class OneOfSolarCalculatorSolarLoad(object):
     def type(self, type):
         """Sets the type of this OneOfSolarCalculatorSolarLoad.
 
+        Schema name: FairWeatherConditions  # noqa: E501
 
         :param type: The type of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
         :type: str
@@ -209,79 +211,80 @@ class OneOfSolarCalculatorSolarLoad(object):
         self._ground_reflectivity = ground_reflectivity
 
     @property
-    def a(self):
-        """Gets the a of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+    def apparent_solar_irradiation(self):
+        """Gets the apparent_solar_irradiation of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
 
 
-        :return: The a of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
-        :rtype: float
+        :return: The apparent_solar_irradiation of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+        :rtype: DimensionalHeatFlux
         """
-        return self._a
+        return self._apparent_solar_irradiation
 
-    @a.setter
-    def a(self, a):
-        """Sets the a of this OneOfSolarCalculatorSolarLoad.
+    @apparent_solar_irradiation.setter
+    def apparent_solar_irradiation(self, apparent_solar_irradiation):
+        """Sets the apparent_solar_irradiation of this OneOfSolarCalculatorSolarLoad.
 
 
-        :param a: The a of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
-        :type: float
+        :param apparent_solar_irradiation: The apparent_solar_irradiation of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+        :type: DimensionalHeatFlux
         """
-        if (self.local_vars_configuration.client_side_validation and
-                a is not None and a < 0):  # noqa: E501
-            raise ValueError("Invalid value for `a`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._a = a
+        self._apparent_solar_irradiation = apparent_solar_irradiation
 
     @property
-    def b(self):
-        """Gets the b of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+    def atmospheric_extinction_coefficient(self):
+        """Gets the atmospheric_extinction_coefficient of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
 
+        Atmospheric extinction coefficient (B)  # noqa: E501
 
-        :return: The b of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+        :return: The atmospheric_extinction_coefficient of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
         :rtype: float
         """
-        return self._b
+        return self._atmospheric_extinction_coefficient
 
-    @b.setter
-    def b(self, b):
-        """Sets the b of this OneOfSolarCalculatorSolarLoad.
+    @atmospheric_extinction_coefficient.setter
+    def atmospheric_extinction_coefficient(self, atmospheric_extinction_coefficient):
+        """Sets the atmospheric_extinction_coefficient of this OneOfSolarCalculatorSolarLoad.
 
+        Atmospheric extinction coefficient (B)  # noqa: E501
 
-        :param b: The b of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+        :param atmospheric_extinction_coefficient: The atmospheric_extinction_coefficient of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                b is not None and b < 0):  # noqa: E501
-            raise ValueError("Invalid value for `b`, must be a value greater than or equal to `0`")  # noqa: E501
+                atmospheric_extinction_coefficient is not None and atmospheric_extinction_coefficient < 0):  # noqa: E501
+            raise ValueError("Invalid value for `atmospheric_extinction_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._b = b
+        self._atmospheric_extinction_coefficient = atmospheric_extinction_coefficient
 
     @property
-    def c(self):
-        """Gets the c of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+    def diffusive_radiation_factor(self):
+        """Gets the diffusive_radiation_factor of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
 
+        Diffusive radiation factor (C)  # noqa: E501
 
-        :return: The c of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+        :return: The diffusive_radiation_factor of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
         :rtype: float
         """
-        return self._c
+        return self._diffusive_radiation_factor
 
-    @c.setter
-    def c(self, c):
-        """Sets the c of this OneOfSolarCalculatorSolarLoad.
+    @diffusive_radiation_factor.setter
+    def diffusive_radiation_factor(self, diffusive_radiation_factor):
+        """Sets the diffusive_radiation_factor of this OneOfSolarCalculatorSolarLoad.
 
+        Diffusive radiation factor (C)  # noqa: E501
 
-        :param c: The c of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
+        :param diffusive_radiation_factor: The diffusive_radiation_factor of this OneOfSolarCalculatorSolarLoad.  # noqa: E501
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                c is not None and c > 1):  # noqa: E501
-            raise ValueError("Invalid value for `c`, must be a value less than or equal to `1`")  # noqa: E501
+                diffusive_radiation_factor is not None and diffusive_radiation_factor > 1):  # noqa: E501
+            raise ValueError("Invalid value for `diffusive_radiation_factor`, must be a value less than or equal to `1`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                c is not None and c < 0):  # noqa: E501
-            raise ValueError("Invalid value for `c`, must be a value greater than or equal to `0`")  # noqa: E501
+                diffusive_radiation_factor is not None and diffusive_radiation_factor < 0):  # noqa: E501
+            raise ValueError("Invalid value for `diffusive_radiation_factor`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._c = c
+        self._diffusive_radiation_factor = diffusive_radiation_factor
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

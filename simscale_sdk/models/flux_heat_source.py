@@ -58,6 +58,7 @@ class FluxHeatSource(object):
     def type(self):
         """Gets the type of this FluxHeatSource.  # noqa: E501
 
+        Schema name: FluxHeatSource  # noqa: E501
 
         :return: The type of this FluxHeatSource.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class FluxHeatSource(object):
     def type(self, type):
         """Sets the type of this FluxHeatSource.
 
+        Schema name: FluxHeatSource  # noqa: E501
 
         :param type: The type of this FluxHeatSource.  # noqa: E501
         :type: str

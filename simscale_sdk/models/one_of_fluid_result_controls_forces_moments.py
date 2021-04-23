@@ -123,6 +123,7 @@ class OneOfFluidResultControlsForcesMoments(object):
     def type(self):
         """Gets the type of this OneOfFluidResultControlsForcesMoments.  # noqa: E501
 
+        Schema name: ForceMomentCoefficientsResultControl  # noqa: E501
 
         :return: The type of this OneOfFluidResultControlsForcesMoments.  # noqa: E501
         :rtype: str
@@ -133,6 +134,7 @@ class OneOfFluidResultControlsForcesMoments(object):
     def type(self, type):
         """Sets the type of this OneOfFluidResultControlsForcesMoments.
 
+        Schema name: ForceMomentCoefficientsResultControl  # noqa: E501
 
         :param type: The type of this OneOfFluidResultControlsForcesMoments.  # noqa: E501
         :type: str

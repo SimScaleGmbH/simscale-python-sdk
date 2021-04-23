@@ -102,6 +102,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
     def type(self):
         """Gets the type of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
 
+        This boundary condition restrains the displacement of a face in its normal direction in order to represent a symmetry plane of the structure. Use this boundary condition to reduce the model size significantly if the geometry and the loading conditions are symmetric.<br /><br />Important remarks: <br /><ul><li>The solver uses linear relations between all three DOFs to constrian the normal movement, thus overcontraint conditions may appear if the edges of the selected faces are constrained by other displacement boundary conditions. If the assigned faces are orthogonal to a global coordinate axes, it is recommended to directly specifiy the symmetry conditions with a <b>fixed value</b> bc.</li></ul>  Schema name: SymmetryPlaneBC  # noqa: E501
 
         :return: The type of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -112,6 +113,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfFrequencyAnalysisBoundaryConditions.
 
+        This boundary condition restrains the displacement of a face in its normal direction in order to represent a symmetry plane of the structure. Use this boundary condition to reduce the model size significantly if the geometry and the loading conditions are symmetric.<br /><br />Important remarks: <br /><ul><li>The solver uses linear relations between all three DOFs to constrian the normal movement, thus overcontraint conditions may appear if the edges of the selected faces are constrained by other displacement boundary conditions. If the assigned faces are orthogonal to a global coordinate axes, it is recommended to directly specifiy the symmetry conditions with a <b>fixed value</b> bc.</li></ul>  Schema name: SymmetryPlaneBC  # noqa: E501
 
         :param type: The type of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
         :type: str

@@ -78,6 +78,7 @@ class NodalLoadBC(object):
     def type(self):
         """Gets the type of this NodalLoadBC.  # noqa: E501
 
+        This is a <b>force</b> boundary condition representing an equal point force on <b>each node of the assignment</b>. The total force applied on the assignemnt is calculated as the user defined forces times the number of nodes in the assignment.<br /><br />Important remarks: <br /><ul><li>As the total load is depending on the number of nodes, and thus the mesh fineness, is recommended only for loads on single nodes</li><li>In most cases point loads are unphysical and distributed loads should be used instead</li></ul>  Schema name: NodalLoadBC  # noqa: E501
 
         :return: The type of this NodalLoadBC.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class NodalLoadBC(object):
     def type(self, type):
         """Sets the type of this NodalLoadBC.
 
+        This is a <b>force</b> boundary condition representing an equal point force on <b>each node of the assignment</b>. The total force applied on the assignemnt is calculated as the user defined forces times the number of nodes in the assignment.<br /><br />Important remarks: <br /><ul><li>As the total load is depending on the number of nodes, and thus the mesh fineness, is recommended only for loads on single nodes</li><li>In most cases point loads are unphysical and distributed loads should be used instead</li></ul>  Schema name: NodalLoadBC  # noqa: E501
 
         :param type: The type of this NodalLoadBC.  # noqa: E501
         :type: str

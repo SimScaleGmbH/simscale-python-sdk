@@ -67,6 +67,7 @@ class OneOfSurfaceRefinementWindComfortNewFineness(object):
     def type(self):
         """Gets the type of this OneOfSurfaceRefinementWindComfortNewFineness.  # noqa: E501
 
+        Schema name: PacefishFinenessTargetSize  # noqa: E501
 
         :return: The type of this OneOfSurfaceRefinementWindComfortNewFineness.  # noqa: E501
         :rtype: str
@@ -77,6 +78,7 @@ class OneOfSurfaceRefinementWindComfortNewFineness(object):
     def type(self, type):
         """Sets the type of this OneOfSurfaceRefinementWindComfortNewFineness.
 
+        Schema name: PacefishFinenessTargetSize  # noqa: E501
 
         :param type: The type of this OneOfSurfaceRefinementWindComfortNewFineness.  # noqa: E501
         :type: str

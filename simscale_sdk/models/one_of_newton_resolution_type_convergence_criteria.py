@@ -63,6 +63,7 @@ class OneOfNewtonResolutionTypeConvergenceCriteria(object):
     def type(self):
         """Gets the type of this OneOfNewtonResolutionTypeConvergenceCriteria.  # noqa: E501
 
+        <p>Select the type of convergence criterion for the nonlinear solution method.</p> <br /><br />Important remarks: <br /><ul><li>Choose <b>absolute</b> if you want convergence to be reached when the maximum residual of all degrees of freedom of a given Newton iteration is lower than the given tolerance.</li><li>Choose <b>relative</b> if the same criteria as <b>absolute</b> will be checked but for the maximum relative residual i.e. maximum absolute residual divided by external force. Please note, if no external force is involved e.g. two far objects coming in contact, then using relative criteria will lead to singularity and convergence will not be attained.</li></ul>  Schema name: AbsoluteConvergenceCriteria  # noqa: E501
 
         :return: The type of this OneOfNewtonResolutionTypeConvergenceCriteria.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class OneOfNewtonResolutionTypeConvergenceCriteria(object):
     def type(self, type):
         """Sets the type of this OneOfNewtonResolutionTypeConvergenceCriteria.
 
+        <p>Select the type of convergence criterion for the nonlinear solution method.</p> <br /><br />Important remarks: <br /><ul><li>Choose <b>absolute</b> if you want convergence to be reached when the maximum residual of all degrees of freedom of a given Newton iteration is lower than the given tolerance.</li><li>Choose <b>relative</b> if the same criteria as <b>absolute</b> will be checked but for the maximum relative residual i.e. maximum absolute residual divided by external force. Please note, if no external force is involved e.g. two far objects coming in contact, then using relative criteria will lead to singularity and convergence will not be attained.</li></ul>  Schema name: AbsoluteConvergenceCriteria  # noqa: E501
 
         :param type: The type of this OneOfNewtonResolutionTypeConvergenceCriteria.  # noqa: E501
         :type: str

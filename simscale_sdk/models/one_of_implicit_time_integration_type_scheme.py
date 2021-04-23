@@ -78,6 +78,7 @@ class OneOfImplicitTimeIntegrationTypeScheme(object):
     def type(self):
         """Gets the type of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
 
+        Schema name: NewmarkTimeIntegrationScheme  # noqa: E501
 
         :return: The type of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class OneOfImplicitTimeIntegrationTypeScheme(object):
     def type(self, type):
         """Sets the type of this OneOfImplicitTimeIntegrationTypeScheme.
 
+        Schema name: NewmarkTimeIntegrationScheme  # noqa: E501
 
         :param type: The type of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
         :type: str

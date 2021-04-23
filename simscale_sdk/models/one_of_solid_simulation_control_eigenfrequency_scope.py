@@ -73,6 +73,7 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
     def type(self):
         """Gets the type of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
 
+        <p>Select how you want to control natural frequencies to be computed:</p> <li><i>First modes</i>: The first <i>Number of modes</i> will be searched and computed, in the order of low to high frequency.</li><li><i>Frequency range</i>: All the modes within the range of frequencies will be searched and computed. The frequency range is specified by a <i>Start frequency</i> and an <i>End frequency</i>.</li>  Schema name: FrequencyRange  # noqa: E501
 
         :return: The type of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
     def type(self, type):
         """Sets the type of this OneOfSolidSimulationControlEigenfrequencyScope.
 
+        <p>Select how you want to control natural frequencies to be computed:</p> <li><i>First modes</i>: The first <i>Number of modes</i> will be searched and computed, in the order of low to high frequency.</li><li><i>Frequency range</i>: All the modes within the range of frequencies will be searched and computed. The frequency range is specified by a <i>Start frequency</i> and an <i>End frequency</i>.</li>  Schema name: FrequencyRange  # noqa: E501
 
         :param type: The type of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
         :type: str

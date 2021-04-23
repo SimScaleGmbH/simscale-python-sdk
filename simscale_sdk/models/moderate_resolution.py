@@ -53,6 +53,7 @@ class ModerateResolution(object):
     def type(self):
         """Gets the type of this ModerateResolution.  # noqa: E501
 
+        Output will be written every 4 time steps.  Schema name: ModerateResolution  # noqa: E501
 
         :return: The type of this ModerateResolution.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class ModerateResolution(object):
     def type(self, type):
         """Sets the type of this ModerateResolution.
 
+        Output will be written every 4 time steps.  Schema name: ModerateResolution  # noqa: E501
 
         :param type: The type of this ModerateResolution.  # noqa: E501
         :type: str

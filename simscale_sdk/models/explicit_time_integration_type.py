@@ -73,6 +73,7 @@ class ExplicitTimeIntegrationType(object):
     def type(self):
         """Gets the type of this ExplicitTimeIntegrationType.  # noqa: E501
 
+        <p>Choose the time integration scheme type</p><br /><br />Important remarks:<br /><ul><li>Choose <b>implicit</b> if the problem is static or dynamic but not so complex. Implicit analysis takes more solution time but can solve the problem easily with larger timesteps. Therefore, it is always recommended to use implicit time integration scheme. </li><i>Choose <b>explicit</b> if the problem is only dynamic and highly complex. Explicit analysis takes less solution time but also needs more refined (small) timesteps to solve the problem. Therefore, in most of the cases it's not recommended due to convergence problems. </i></ul>   Schema name: ExplicitTimeIntegrationType  # noqa: E501
 
         :return: The type of this ExplicitTimeIntegrationType.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class ExplicitTimeIntegrationType(object):
     def type(self, type):
         """Sets the type of this ExplicitTimeIntegrationType.
 
+        <p>Choose the time integration scheme type</p><br /><br />Important remarks:<br /><ul><li>Choose <b>implicit</b> if the problem is static or dynamic but not so complex. Implicit analysis takes more solution time but can solve the problem easily with larger timesteps. Therefore, it is always recommended to use implicit time integration scheme. </li><i>Choose <b>explicit</b> if the problem is only dynamic and highly complex. Explicit analysis takes less solution time but also needs more refined (small) timesteps to solve the problem. Therefore, in most of the cases it's not recommended due to convergence problems. </i></ul>   Schema name: ExplicitTimeIntegrationType  # noqa: E501
 
         :param type: The type of this ExplicitTimeIntegrationType.  # noqa: E501
         :type: str

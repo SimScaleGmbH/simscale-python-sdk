@@ -88,6 +88,7 @@ class TwoResistorNetwork(object):
     def type(self):
         """Gets the type of this TwoResistorNetwork.  # noqa: E501
 
+        <br>Apply thermal resistance network modelling. Select the top face of the body you want to assign. <p>The models for <b>thermal resistance network</b> are as follows:</p><ul><li><b>Star Network Resistance Model:</b> defines a thermal resistance network consisting out of a top, a board, a board to interface and four side resistances. A power source is assigned to the body.</li><li><b>Two resistor Model:</b> defines a thermal resistance network consisting out of a top, a board and a board to interface resistance. A power source is assigned to the body.</li></ul>  Schema name: TwoResistorNetwork  # noqa: E501
 
         :return: The type of this TwoResistorNetwork.  # noqa: E501
         :rtype: str
@@ -98,6 +99,7 @@ class TwoResistorNetwork(object):
     def type(self, type):
         """Sets the type of this TwoResistorNetwork.
 
+        <br>Apply thermal resistance network modelling. Select the top face of the body you want to assign. <p>The models for <b>thermal resistance network</b> are as follows:</p><ul><li><b>Star Network Resistance Model:</b> defines a thermal resistance network consisting out of a top, a board, a board to interface and four side resistances. A power source is assigned to the body.</li><li><b>Two resistor Model:</b> defines a thermal resistance network consisting out of a top, a board and a board to interface resistance. A power source is assigned to the body.</li></ul>  Schema name: TwoResistorNetwork  # noqa: E501
 
         :param type: The type of this TwoResistorNetwork.  # noqa: E501
         :type: str

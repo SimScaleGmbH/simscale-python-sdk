@@ -68,6 +68,7 @@ class OrthotropicConductivity(object):
     def type(self):
         """Gets the type of this OrthotropicConductivity.  # noqa: E501
 
+        <p>Define the directional dependency of this property. Isotropic means directionally independent. Orthotropic means directionally dependent.</p>  Schema name: OrthotropicConductivity  # noqa: E501
 
         :return: The type of this OrthotropicConductivity.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class OrthotropicConductivity(object):
     def type(self, type):
         """Sets the type of this OrthotropicConductivity.
 
+        <p>Define the directional dependency of this property. Isotropic means directionally independent. Orthotropic means directionally dependent.</p>  Schema name: OrthotropicConductivity  # noqa: E501
 
         :param type: The type of this OrthotropicConductivity.  # noqa: E501
         :type: str

@@ -93,6 +93,7 @@ class SimericsAnalysis(object):
     def type(self):
         """Gets the type of this SimericsAnalysis.  # noqa: E501
 
+        Schema name: SimericsAnalysis  # noqa: E501
 
         :return: The type of this SimericsAnalysis.  # noqa: E501
         :rtype: str
@@ -103,6 +104,7 @@ class SimericsAnalysis(object):
     def type(self, type):
         """Sets the type of this SimericsAnalysis.
 
+        Schema name: SimericsAnalysis  # noqa: E501
 
         :param type: The type of this SimericsAnalysis.  # noqa: E501
         :type: str

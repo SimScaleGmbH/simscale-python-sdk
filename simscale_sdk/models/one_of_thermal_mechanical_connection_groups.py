@@ -32,42 +32,43 @@ class OneOfThermalMechanicalConnectionGroups(object):
     """
     openapi_types = {
         'type': 'str',
-        'settings': 'ConnectionSettingsV36',
-        'connections': 'list[OneOfContactConnections]'
+        'connections': 'list[OneOfPhysicalContactConnections]',
+        'settings': 'ConnectionSettingsV36'
     }
 
     attribute_map = {
         'type': 'type',
-        'settings': 'settings',
-        'connections': 'connections'
+        'connections': 'connections',
+        'settings': 'settings'
     }
 
     discriminator_value_class_map = {
-        'PHYSICAL_CONTACT_V36': 'PhysicalContact',
-        'CONTACT': 'Contact'
+        'CONTACT': 'Contact',
+        'PHYSICAL_CONTACT_V36': 'PhysicalContact'
     }
 
-    def __init__(self, type='CONTACT', settings=None, connections=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PHYSICAL_CONTACT_V36', connections=None, settings=None, local_vars_configuration=None):  # noqa: E501
         """OneOfThermalMechanicalConnectionGroups - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._settings = None
         self._connections = None
+        self._settings = None
         self.discriminator = 'type'
 
         self.type = type
-        if settings is not None:
-            self.settings = settings
         if connections is not None:
             self.connections = connections
+        if settings is not None:
+            self.settings = settings
 
     @property
     def type(self):
         """Gets the type of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
 
+        Schema name: PhysicalContact  # noqa: E501
 
         :return: The type of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class OneOfThermalMechanicalConnectionGroups(object):
     def type(self, type):
         """Sets the type of this OneOfThermalMechanicalConnectionGroups.
 
+        Schema name: PhysicalContact  # noqa: E501
 
         :param type: The type of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
         :type: str
@@ -86,6 +88,27 @@ class OneOfThermalMechanicalConnectionGroups(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def connections(self):
+        """Gets the connections of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
+
+
+        :return: The connections of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
+        :rtype: list[OneOfPhysicalContactConnections]
+        """
+        return self._connections
+
+    @connections.setter
+    def connections(self, connections):
+        """Sets the connections of this OneOfThermalMechanicalConnectionGroups.
+
+
+        :param connections: The connections of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
+        :type: list[OneOfPhysicalContactConnections]
+        """
+
+        self._connections = connections
 
     @property
     def settings(self):
@@ -107,27 +130,6 @@ class OneOfThermalMechanicalConnectionGroups(object):
         """
 
         self._settings = settings
-
-    @property
-    def connections(self):
-        """Gets the connections of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
-
-
-        :return: The connections of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
-        :rtype: list[OneOfContactConnections]
-        """
-        return self._connections
-
-    @connections.setter
-    def connections(self, connections):
-        """Sets the connections of this OneOfThermalMechanicalConnectionGroups.
-
-
-        :param connections: The connections of this OneOfThermalMechanicalConnectionGroups.  # noqa: E501
-        :type: list[OneOfContactConnections]
-        """
-
-        self._connections = connections
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

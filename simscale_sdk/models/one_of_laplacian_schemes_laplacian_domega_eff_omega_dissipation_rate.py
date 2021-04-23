@@ -64,6 +64,7 @@ class OneOfLaplacianSchemesLaplacianDomegaEffOmegaDissipationRate(object):
     def type(self):
         """Gets the type of this OneOfLaplacianSchemesLaplacianDomegaEffOmegaDissipationRate.  # noqa: E501
 
+        Schema name: GaussLinearUncorrectedLaplacianScheme  # noqa: E501
 
         :return: The type of this OneOfLaplacianSchemesLaplacianDomegaEffOmegaDissipationRate.  # noqa: E501
         :rtype: str
@@ -74,6 +75,7 @@ class OneOfLaplacianSchemesLaplacianDomegaEffOmegaDissipationRate(object):
     def type(self, type):
         """Sets the type of this OneOfLaplacianSchemesLaplacianDomegaEffOmegaDissipationRate.
 
+        Schema name: GaussLinearUncorrectedLaplacianScheme  # noqa: E501
 
         :param type: The type of this OneOfLaplacianSchemesLaplacianDomegaEffOmegaDissipationRate.  # noqa: E501
         :type: str

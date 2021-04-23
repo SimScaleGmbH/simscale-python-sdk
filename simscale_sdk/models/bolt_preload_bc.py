@@ -68,6 +68,7 @@ class BoltPreloadBC(object):
     def type(self):
         """Gets the type of this BoltPreloadBC.  # noqa: E501
 
+        <b>Bolt preload</b> boundary condition helps to model pre-stressed bolts in a CAD geometry for structural analysis. Enter a preload <i>force</i> to be assigned to cylindrical faces representing the shank of the bolt. <br><b>Note:</b><ul><li>These faces should be continuous and not be assigned to contact definitions.</li><li>Each bolt gets only one load, if multiple faces for the same bolt are assigned, they get ignored.</li><li>The applied load <b>does not get</b> distributed if multiple bolts are assigned.</li></ul> <img src=\"/spec/resources/help/imgs/bolt_preload_help_text.png\" class=\"helpPopupImage\"/> <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/bolt-preload/' target='_blank'>Learn more</a>.  Schema name: BoltPreloadBC  # noqa: E501
 
         :return: The type of this BoltPreloadBC.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class BoltPreloadBC(object):
     def type(self, type):
         """Sets the type of this BoltPreloadBC.
 
+        <b>Bolt preload</b> boundary condition helps to model pre-stressed bolts in a CAD geometry for structural analysis. Enter a preload <i>force</i> to be assigned to cylindrical faces representing the shank of the bolt. <br><b>Note:</b><ul><li>These faces should be continuous and not be assigned to contact definitions.</li><li>Each bolt gets only one load, if multiple faces for the same bolt are assigned, they get ignored.</li><li>The applied load <b>does not get</b> distributed if multiple bolts are assigned.</li></ul> <img src=\"/spec/resources/help/imgs/bolt_preload_help_text.png\" class=\"helpPopupImage\"/> <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/bolt-preload/' target='_blank'>Learn more</a>.  Schema name: BoltPreloadBC  # noqa: E501
 
         :param type: The type of this BoltPreloadBC.  # noqa: E501
         :type: str

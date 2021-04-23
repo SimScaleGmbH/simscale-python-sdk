@@ -68,6 +68,7 @@ class CentrifugalForceBC(object):
     def type(self):
         """Gets the type of this CentrifugalForceBC.  # noqa: E501
 
+        <p>This is a <b>centrifugal force</b> boundary condition. Each volume element of the selection is loaded with a centrifugal force which is calculated depending on its volume, the density of the assigned material, its distance from the axis of rotation and the defined rotational velocity.</p>  Schema name: CentrifugalForceBC  # noqa: E501
 
         :return: The type of this CentrifugalForceBC.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class CentrifugalForceBC(object):
     def type(self, type):
         """Sets the type of this CentrifugalForceBC.
 
+        <p>This is a <b>centrifugal force</b> boundary condition. Each volume element of the selection is loaded with a centrifugal force which is calculated depending on its volume, the density of the assigned material, its distance from the axis of rotation and the defined rotational velocity.</p>  Schema name: CentrifugalForceBC  # noqa: E501
 
         :param type: The type of this CentrifugalForceBC.  # noqa: E501
         :type: str

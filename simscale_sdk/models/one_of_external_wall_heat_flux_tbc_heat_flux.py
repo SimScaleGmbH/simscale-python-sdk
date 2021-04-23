@@ -37,7 +37,6 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         'additional_heat_flux': 'DimensionalHeatFlux',
         'wall_thermal': 'OneOfDerivedHeatFluxWallThermal',
         'outer_surface_emissivity': 'float',
-        'receives_external_solar_load': 'bool',
         'value': 'DimensionalPower'
     }
 
@@ -48,7 +47,6 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         'additional_heat_flux': 'additionalHeatFlux',
         'wall_thermal': 'wallThermal',
         'outer_surface_emissivity': 'outerSurfaceEmissivity',
-        'receives_external_solar_load': 'receivesExternalSolarLoad',
         'value': 'value'
     }
 
@@ -58,7 +56,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         'FIXED_POWER': 'FixedPowerHeatFlux'
     }
 
-    def __init__(self, type='FIXED_POWER', heat_transfer_coefficient=None, ambient_temperature=None, additional_heat_flux=None, wall_thermal=None, outer_surface_emissivity=None, receives_external_solar_load=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_POWER', heat_transfer_coefficient=None, ambient_temperature=None, additional_heat_flux=None, wall_thermal=None, outer_surface_emissivity=None, value=None, local_vars_configuration=None):  # noqa: E501
         """OneOfExternalWallHeatFluxTBCHeatFlux - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,7 +68,6 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         self._additional_heat_flux = None
         self._wall_thermal = None
         self._outer_surface_emissivity = None
-        self._receives_external_solar_load = None
         self._value = None
         self.discriminator = 'type'
 
@@ -85,8 +82,6 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
             self.wall_thermal = wall_thermal
         if outer_surface_emissivity is not None:
             self.outer_surface_emissivity = outer_surface_emissivity
-        if receives_external_solar_load is not None:
-            self.receives_external_solar_load = receives_external_solar_load
         if value is not None:
             self.value = value
 
@@ -94,6 +89,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
     def type(self):
         """Gets the type of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
 
+        Schema name: FixedPowerHeatFlux  # noqa: E501
 
         :return: The type of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
         :rtype: str
@@ -104,6 +100,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
     def type(self, type):
         """Sets the type of this OneOfExternalWallHeatFluxTBCHeatFlux.
 
+        Schema name: FixedPowerHeatFlux  # noqa: E501
 
         :param type: The type of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
         :type: str
@@ -201,7 +198,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
     def outer_surface_emissivity(self):
         """Gets the outer_surface_emissivity of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
 
-        Emissivity of the outer side of the surface or the last wall thermal layer.  # noqa: E501
+        Emissivity/Absorptivity of the outer side of the surface or the last wall thermal layer.  # noqa: E501
 
         :return: The outer_surface_emissivity of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
         :rtype: float
@@ -212,7 +209,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
     def outer_surface_emissivity(self, outer_surface_emissivity):
         """Sets the outer_surface_emissivity of this OneOfExternalWallHeatFluxTBCHeatFlux.
 
-        Emissivity of the outer side of the surface or the last wall thermal layer.  # noqa: E501
+        Emissivity/Absorptivity of the outer side of the surface or the last wall thermal layer.  # noqa: E501
 
         :param outer_surface_emissivity: The outer_surface_emissivity of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
         :type: float
@@ -225,27 +222,6 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
             raise ValueError("Invalid value for `outer_surface_emissivity`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._outer_surface_emissivity = outer_surface_emissivity
-
-    @property
-    def receives_external_solar_load(self):
-        """Gets the receives_external_solar_load of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
-
-
-        :return: The receives_external_solar_load of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
-        :rtype: bool
-        """
-        return self._receives_external_solar_load
-
-    @receives_external_solar_load.setter
-    def receives_external_solar_load(self, receives_external_solar_load):
-        """Sets the receives_external_solar_load of this OneOfExternalWallHeatFluxTBCHeatFlux.
-
-
-        :param receives_external_solar_load: The receives_external_solar_load of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
-        :type: bool
-        """
-
-        self._receives_external_solar_load = receives_external_solar_load
 
     @property
     def value(self):

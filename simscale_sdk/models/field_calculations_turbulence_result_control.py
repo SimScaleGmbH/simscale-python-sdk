@@ -63,6 +63,7 @@ class FieldCalculationsTurbulenceResultControl(object):
     def type(self):
         """Gets the type of this FieldCalculationsTurbulenceResultControl.  # noqa: E501
 
+        Schema name: FieldCalculationsTurbulenceResultControl  # noqa: E501
 
         :return: The type of this FieldCalculationsTurbulenceResultControl.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class FieldCalculationsTurbulenceResultControl(object):
     def type(self, type):
         """Sets the type of this FieldCalculationsTurbulenceResultControl.
 
+        Schema name: FieldCalculationsTurbulenceResultControl  # noqa: E501
 
         :param type: The type of this FieldCalculationsTurbulenceResultControl.  # noqa: E501
         :type: str

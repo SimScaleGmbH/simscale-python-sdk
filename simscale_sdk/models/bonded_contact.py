@@ -78,6 +78,7 @@ class BondedContact(object):
     def type(self):
         """Gets the type of this BondedContact.  # noqa: E501
 
+        Schema name: BondedContact  # noqa: E501
 
         :return: The type of this BondedContact.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class BondedContact(object):
     def type(self, type):
         """Sets the type of this BondedContact.
 
+        Schema name: BondedContact  # noqa: E501
 
         :param type: The type of this BondedContact.  # noqa: E501
         :type: str

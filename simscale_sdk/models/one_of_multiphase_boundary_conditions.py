@@ -181,6 +181,7 @@ class OneOfMultiphaseBoundaryConditions(object):
     def type(self):
         """Gets the type of this OneOfMultiphaseBoundaryConditions.  # noqa: E501
 
+        This boundary condition is intended only for uploaded 2D OpenFOAM meshes. A 2D mesh is ensured by having a single cell thickness in one of the 3 spatial directions. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/empty-2d/' target='_blank'>Learn more.</a>  Schema name: Empty2DBC  # noqa: E501
 
         :return: The type of this OneOfMultiphaseBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -191,6 +192,7 @@ class OneOfMultiphaseBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfMultiphaseBoundaryConditions.
 
+        This boundary condition is intended only for uploaded 2D OpenFOAM meshes. A 2D mesh is ensured by having a single cell thickness in one of the 3 spatial directions. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/empty-2d/' target='_blank'>Learn more.</a>  Schema name: Empty2DBC  # noqa: E501
 
         :param type: The type of this OneOfMultiphaseBoundaryConditions.  # noqa: E501
         :type: str

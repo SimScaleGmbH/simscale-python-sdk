@@ -93,6 +93,7 @@ class RemoteForceLoadBC(object):
     def type(self):
         """Gets the type of this RemoteForceLoadBC.  # noqa: E501
 
+        This is a <b>remote force</b> boundary condition where the load is applied on the assignment via a remote point. Therefore the assignment is connected to the remote point with RBE3 (deformable) or MPC (undeformable) conditions and the defined force is applied to the remote point.<br /><br />Important remarks: <br /><ul><li>The total force will be <b>distributed on the selection</b></li><li>As the assignments are connected to the remote point, additional constraints on these nodes may lead to overconstrained systems.</li><li>If the number of nodes of the assignment is large (>1000> it is recommended to use the <b>MUMPS</b> or <b>PETSC</b> solver.</li><li>This boundary condition is only valid for small rotations. </li></ul>   Schema name: RemoteForceLoadBC  # noqa: E501
 
         :return: The type of this RemoteForceLoadBC.  # noqa: E501
         :rtype: str
@@ -103,6 +104,7 @@ class RemoteForceLoadBC(object):
     def type(self, type):
         """Sets the type of this RemoteForceLoadBC.
 
+        This is a <b>remote force</b> boundary condition where the load is applied on the assignment via a remote point. Therefore the assignment is connected to the remote point with RBE3 (deformable) or MPC (undeformable) conditions and the defined force is applied to the remote point.<br /><br />Important remarks: <br /><ul><li>The total force will be <b>distributed on the selection</b></li><li>As the assignments are connected to the remote point, additional constraints on these nodes may lead to overconstrained systems.</li><li>If the number of nodes of the assignment is large (>1000> it is recommended to use the <b>MUMPS</b> or <b>PETSC</b> solver.</li><li>This boundary condition is only valid for small rotations. </li></ul>   Schema name: RemoteForceLoadBC  # noqa: E501
 
         :param type: The type of this RemoteForceLoadBC.  # noqa: E501
         :type: str

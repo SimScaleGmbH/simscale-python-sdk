@@ -73,6 +73,7 @@ class ConvectiveHeatFluxBC(object):
     def type(self):
         """Gets the type of this ConvectiveHeatFluxBC.  # noqa: E501
 
+        This is a <b>heat flux</b> boundary condition representing a <b>convective heat flux</b> on the selected face groups. It is defined by the <b>reference temperature</b> (surrounding temperature) and the <b>convection coefficient</b>.<br /><br />Important remarks: <br /><ul><li>The convection coefficient is not only dependent on the material of the surrounding fluid but a property of the flow</li><li>You may define a <b>parameter dependent (x,y,z,t)</b> value by defining a formula or uploading a table (csv-file) for the <b>reference temperature</b> and the <b>convection coefficient</b></li></ul>  Schema name: ConvectiveHeatFluxBC  # noqa: E501
 
         :return: The type of this ConvectiveHeatFluxBC.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class ConvectiveHeatFluxBC(object):
     def type(self, type):
         """Sets the type of this ConvectiveHeatFluxBC.
 
+        This is a <b>heat flux</b> boundary condition representing a <b>convective heat flux</b> on the selected face groups. It is defined by the <b>reference temperature</b> (surrounding temperature) and the <b>convection coefficient</b>.<br /><br />Important remarks: <br /><ul><li>The convection coefficient is not only dependent on the material of the surrounding fluid but a property of the flow</li><li>You may define a <b>parameter dependent (x,y,z,t)</b> value by defining a formula or uploading a table (csv-file) for the <b>reference temperature</b> and the <b>convection coefficient</b></li></ul>  Schema name: ConvectiveHeatFluxBC  # noqa: E501
 
         :param type: The type of this ConvectiveHeatFluxBC.  # noqa: E501
         :type: str

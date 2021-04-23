@@ -53,6 +53,7 @@ class IsotropicDarcyForchheimer(object):
     def type(self):
         """Gets the type of this IsotropicDarcyForchheimer.  # noqa: E501
 
+        Isotropic porous object where the same permeability and friction form coefficient are applied in all directions.  Schema name: IsotropicDarcyForchheimer  # noqa: E501
 
         :return: The type of this IsotropicDarcyForchheimer.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class IsotropicDarcyForchheimer(object):
     def type(self, type):
         """Sets the type of this IsotropicDarcyForchheimer.
 
+        Isotropic porous object where the same permeability and friction form coefficient are applied in all directions.  Schema name: IsotropicDarcyForchheimer  # noqa: E501
 
         :param type: The type of this IsotropicDarcyForchheimer.  # noqa: E501
         :type: str

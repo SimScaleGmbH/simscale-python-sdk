@@ -128,6 +128,7 @@ class CoupledConjugateHeatTransfer(object):
     def type(self):
         """Gets the type of this CoupledConjugateHeatTransfer.  # noqa: E501
 
+        Schema name: CoupledConjugateHeatTransfer  # noqa: E501
 
         :return: The type of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: str
@@ -138,6 +139,7 @@ class CoupledConjugateHeatTransfer(object):
     def type(self, type):
         """Sets the type of this CoupledConjugateHeatTransfer.
 
+        Schema name: CoupledConjugateHeatTransfer  # noqa: E501
 
         :param type: The type of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: str
@@ -434,6 +436,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_solar_load(self):
         """Gets the enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
 
+        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul>  # noqa: E501
 
         :return: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: bool
@@ -444,6 +447,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_solar_load(self, enable_solar_load):
         """Sets the enable_solar_load of this CoupledConjugateHeatTransfer.
 
+        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul>  # noqa: E501
 
         :param enable_solar_load: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: bool

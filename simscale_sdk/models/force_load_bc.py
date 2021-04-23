@@ -78,6 +78,7 @@ class ForceLoadBC(object):
     def type(self):
         """Gets the type of this ForceLoadBC.  # noqa: E501
 
+        <p>This is a <b>force</b> boundary condition representing a <b>distributed force on the selection</b>. The total force is defined in the global coordinate system and each element of the assignment is loaded with a surface traction depending on the area of the element.</p>  Schema name: ForceLoadBC  # noqa: E501
 
         :return: The type of this ForceLoadBC.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class ForceLoadBC(object):
     def type(self, type):
         """Sets the type of this ForceLoadBC.
 
+        <p>This is a <b>force</b> boundary condition representing a <b>distributed force on the selection</b>. The total force is defined in the global coordinate system and each element of the assignment is loaded with a surface traction depending on the area of the element.</p>  Schema name: ForceLoadBC  # noqa: E501
 
         :param type: The type of this ForceLoadBC.  # noqa: E501
         :type: str

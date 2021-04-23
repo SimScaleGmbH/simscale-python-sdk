@@ -68,6 +68,7 @@ class AreaAverageResultControl(object):
     def type(self):
         """Gets the type of this AreaAverageResultControl.  # noqa: E501
 
+        Schema name: AreaAverageResultControl  # noqa: E501
 
         :return: The type of this AreaAverageResultControl.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class AreaAverageResultControl(object):
     def type(self, type):
         """Sets the type of this AreaAverageResultControl.
 
+        Schema name: AreaAverageResultControl  # noqa: E501
 
         :param type: The type of this AreaAverageResultControl.  # noqa: E501
         :type: str

@@ -83,6 +83,7 @@ class ProbePointsResultControl(object):
     def type(self):
         """Gets the type of this ProbePointsResultControl.  # noqa: E501
 
+        Schema name: ProbePointsResultControl  # noqa: E501
 
         :return: The type of this ProbePointsResultControl.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class ProbePointsResultControl(object):
     def type(self, type):
         """Sets the type of this ProbePointsResultControl.
 
+        Schema name: ProbePointsResultControl  # noqa: E501
 
         :param type: The type of this ProbePointsResultControl.  # noqa: E501
         :type: str

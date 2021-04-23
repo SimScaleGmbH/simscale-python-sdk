@@ -103,6 +103,7 @@ class OneOfDimensionalVectorFunctionPressureValue(object):
     def type(self):
         """Gets the type of this OneOfDimensionalVectorFunctionPressureValue.  # noqa: E501
 
+        Schema name: TableDefinedVectorFunction  # noqa: E501
 
         :return: The type of this OneOfDimensionalVectorFunctionPressureValue.  # noqa: E501
         :rtype: str
@@ -113,6 +114,7 @@ class OneOfDimensionalVectorFunctionPressureValue(object):
     def type(self, type):
         """Sets the type of this OneOfDimensionalVectorFunctionPressureValue.
 
+        Schema name: TableDefinedVectorFunction  # noqa: E501
 
         :param type: The type of this OneOfDimensionalVectorFunctionPressureValue.  # noqa: E501
         :type: str

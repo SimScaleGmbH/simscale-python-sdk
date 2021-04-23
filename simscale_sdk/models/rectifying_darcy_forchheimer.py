@@ -58,6 +58,7 @@ class RectifyingDarcyForchheimer(object):
     def type(self):
         """Gets the type of this RectifyingDarcyForchheimer.  # noqa: E501
 
+        Directional porous object where the permeability and friction form coefficient are applied only in the specified direction. For directions orthogonal to the specified direction, the permeability is set to zero, i.e. there is no flow in the orthogonal directions.  Schema name: RectifyingDarcyForchheimer  # noqa: E501
 
         :return: The type of this RectifyingDarcyForchheimer.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class RectifyingDarcyForchheimer(object):
     def type(self, type):
         """Sets the type of this RectifyingDarcyForchheimer.
 
+        Directional porous object where the permeability and friction form coefficient are applied only in the specified direction. For directions orthogonal to the specified direction, the permeability is set to zero, i.e. there is no flow in the orthogonal directions.  Schema name: RectifyingDarcyForchheimer  # noqa: E501
 
         :param type: The type of this RectifyingDarcyForchheimer.  # noqa: E501
         :type: str

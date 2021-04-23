@@ -53,6 +53,7 @@ class WindTunnelSizeLarge(object):
     def type(self):
         """Gets the type of this WindTunnelSizeLarge.  # noqa: E501
 
+        Schema name: WindTunnelSizeLarge  # noqa: E501
 
         :return: The type of this WindTunnelSizeLarge.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class WindTunnelSizeLarge(object):
     def type(self, type):
         """Sets the type of this WindTunnelSizeLarge.
 
+        Schema name: WindTunnelSizeLarge  # noqa: E501
 
         :param type: The type of this WindTunnelSizeLarge.  # noqa: E501
         :type: str

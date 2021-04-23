@@ -113,6 +113,7 @@ class DebugMeshSizingSimmetrix(object):
     def type(self):
         """Gets the type of this DebugMeshSizingSimmetrix.  # noqa: E501
 
+        Schema name: DebugMeshSizingSimmetrix  # noqa: E501
 
         :return: The type of this DebugMeshSizingSimmetrix.  # noqa: E501
         :rtype: str
@@ -123,6 +124,7 @@ class DebugMeshSizingSimmetrix(object):
     def type(self, type):
         """Sets the type of this DebugMeshSizingSimmetrix.
 
+        Schema name: DebugMeshSizingSimmetrix  # noqa: E501
 
         :param type: The type of this DebugMeshSizingSimmetrix.  # noqa: E501
         :type: str

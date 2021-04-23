@@ -68,6 +68,7 @@ class IsotropicPlasticHardening(object):
     def type(self):
         """Gets the type of this IsotropicPlasticHardening.  # noqa: E501
 
+        <p>Define the plastic hardening type of the material.</p>  Schema name: IsotropicPlasticHardening  # noqa: E501
 
         :return: The type of this IsotropicPlasticHardening.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class IsotropicPlasticHardening(object):
     def type(self, type):
         """Sets the type of this IsotropicPlasticHardening.
 
+        <p>Define the plastic hardening type of the material.</p>  Schema name: IsotropicPlasticHardening  # noqa: E501
 
         :param type: The type of this IsotropicPlasticHardening.  # noqa: E501
         :type: str

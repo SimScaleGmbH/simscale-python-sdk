@@ -68,6 +68,7 @@ class SimmetrixLocalSizingRefinement(object):
     def type(self):
         """Gets the type of this SimmetrixLocalSizingRefinement.  # noqa: E501
 
+        Refine specific faces of interest or complex geometrical shapes by defining a local element size. This will ensure a relatively uniform mesh.  Schema name: SimmetrixLocalSizingRefinement  # noqa: E501
 
         :return: The type of this SimmetrixLocalSizingRefinement.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class SimmetrixLocalSizingRefinement(object):
     def type(self, type):
         """Sets the type of this SimmetrixLocalSizingRefinement.
 
+        Refine specific faces of interest or complex geometrical shapes by defining a local element size. This will ensure a relatively uniform mesh.  Schema name: SimmetrixLocalSizingRefinement  # noqa: E501
 
         :param type: The type of this SimmetrixLocalSizingRefinement.  # noqa: E501
         :type: str

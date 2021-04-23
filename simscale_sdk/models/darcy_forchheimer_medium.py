@@ -83,6 +83,7 @@ class DarcyForchheimerMedium(object):
     def type(self):
         """Gets the type of this DarcyForchheimerMedium.  # noqa: E501
 
+        Schema name: DarcyForchheimerMedium  # noqa: E501
 
         :return: The type of this DarcyForchheimerMedium.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class DarcyForchheimerMedium(object):
     def type(self, type):
         """Sets the type of this DarcyForchheimerMedium.
 
+        Schema name: DarcyForchheimerMedium  # noqa: E501
 
         :param type: The type of this DarcyForchheimerMedium.  # noqa: E501
         :type: str

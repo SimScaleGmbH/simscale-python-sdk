@@ -68,6 +68,7 @@ class OneOfFrictionContactContactSolutionMethod(object):
     def type(self):
         """Gets the type of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
 
+        Schema name: PenaltyMethod  # noqa: E501
 
         :return: The type of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class OneOfFrictionContactContactSolutionMethod(object):
     def type(self, type):
         """Sets the type of this OneOfFrictionContactContactSolutionMethod.
 
+        Schema name: PenaltyMethod  # noqa: E501
 
         :param type: The type of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
         :type: str

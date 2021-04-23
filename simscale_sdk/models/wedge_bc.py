@@ -63,6 +63,7 @@ class WedgeBC(object):
     def type(self):
         """Gets the type of this WedgeBC.  # noqa: E501
 
+        This boundary condition is applied to the front and back faces of an axisymmetric system (eg. cylinder). Note that the face elements of the mesh need to be congruent on both the faces. Works for uploaded 2D meshes only.  <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/wedge/' target='_blank'>Learn more</a>.  Schema name: WedgeBC  # noqa: E501
 
         :return: The type of this WedgeBC.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class WedgeBC(object):
     def type(self, type):
         """Sets the type of this WedgeBC.
 
+        This boundary condition is applied to the front and back faces of an axisymmetric system (eg. cylinder). Note that the face elements of the mesh need to be congruent on both the faces. Works for uploaded 2D meshes only.  <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/wedge/' target='_blank'>Learn more</a>.  Schema name: WedgeBC  # noqa: E501
 
         :param type: The type of this WedgeBC.  # noqa: E501
         :type: str

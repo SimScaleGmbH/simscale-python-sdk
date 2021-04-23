@@ -69,6 +69,7 @@ class OneOfRegionRefinementWithLengthRefinement(object):
     def type(self):
         """Gets the type of this OneOfRegionRefinementWithLengthRefinement.  # noqa: E501
 
+        Schema name: OutsideRegionRefinementWithLength  # noqa: E501
 
         :return: The type of this OneOfRegionRefinementWithLengthRefinement.  # noqa: E501
         :rtype: str
@@ -79,6 +80,7 @@ class OneOfRegionRefinementWithLengthRefinement(object):
     def type(self, type):
         """Sets the type of this OneOfRegionRefinementWithLengthRefinement.
 
+        Schema name: OutsideRegionRefinementWithLength  # noqa: E501
 
         :param type: The type of this OneOfRegionRefinementWithLengthRefinement.  # noqa: E501
         :type: str

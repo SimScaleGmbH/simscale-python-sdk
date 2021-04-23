@@ -63,6 +63,7 @@ class OneOfVelocityInletBCDissipationType(object):
     def type(self):
         """Gets the type of this OneOfVelocityInletBCDissipationType.  # noqa: E501
 
+        Schema name: CustomOmegaDissipation  # noqa: E501
 
         :return: The type of this OneOfVelocityInletBCDissipationType.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class OneOfVelocityInletBCDissipationType(object):
     def type(self, type):
         """Sets the type of this OneOfVelocityInletBCDissipationType.
 
+        Schema name: CustomOmegaDissipation  # noqa: E501
 
         :param type: The type of this OneOfVelocityInletBCDissipationType.  # noqa: E501
         :type: str

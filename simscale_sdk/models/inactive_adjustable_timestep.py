@@ -53,6 +53,7 @@ class InactiveAdjustableTimestep(object):
     def type(self):
         """Gets the type of this InactiveAdjustableTimestep.  # noqa: E501
 
+        This option activates an adjustable time step. The time step is being modified according to the Courant number.  Schema name: InactiveAdjustableTimestep  # noqa: E501
 
         :return: The type of this InactiveAdjustableTimestep.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class InactiveAdjustableTimestep(object):
     def type(self, type):
         """Sets the type of this InactiveAdjustableTimestep.
 
+        This option activates an adjustable time step. The time step is being modified according to the Courant number.  Schema name: InactiveAdjustableTimestep  # noqa: E501
 
         :param type: The type of this InactiveAdjustableTimestep.  # noqa: E501
         :type: str

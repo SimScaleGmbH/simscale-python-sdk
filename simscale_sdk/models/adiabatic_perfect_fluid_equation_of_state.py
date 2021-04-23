@@ -78,6 +78,7 @@ class AdiabaticPerfectFluidEquationOfState(object):
     def type(self):
         """Gets the type of this AdiabaticPerfectFluidEquationOfState.  # noqa: E501
 
+        <br><p>The <b>Equation of state</b> describes the relation between density of a fluid and the fluid pressure and temperature. The available options are:</p><p><b>Rho const:</b> Fluid density is assumed constant.</p><p><b>Incompressibel perfect gas:</b> The fluid is assumed to be an 'Ideal Gas' that is incompressible by pressure. But, fluid density can change due to temperature.</p><p><b>Perfect gas:</b> Fluid is assumed to be an 'Ideal Gas' and obeys the 'Ideal Gas Law'.</p><p><b>Perfect fluid:</b> Fluid density can change due to pressure and temperature with respect to a base value.</p><p><b>Adiabatic perfect fluid:</b> The fluid is a perfect fluid which is adiabatic in nature.</p> <a href='https://www.simscale.com/docs/simulation-setup/materials/thermophysical-fluid-models/#equation-of-state' target='_blank'>Learn more</a>.  Schema name: AdiabaticPerfectFluidEquationOfState  # noqa: E501
 
         :return: The type of this AdiabaticPerfectFluidEquationOfState.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class AdiabaticPerfectFluidEquationOfState(object):
     def type(self, type):
         """Sets the type of this AdiabaticPerfectFluidEquationOfState.
 
+        <br><p>The <b>Equation of state</b> describes the relation between density of a fluid and the fluid pressure and temperature. The available options are:</p><p><b>Rho const:</b> Fluid density is assumed constant.</p><p><b>Incompressibel perfect gas:</b> The fluid is assumed to be an 'Ideal Gas' that is incompressible by pressure. But, fluid density can change due to temperature.</p><p><b>Perfect gas:</b> Fluid is assumed to be an 'Ideal Gas' and obeys the 'Ideal Gas Law'.</p><p><b>Perfect fluid:</b> Fluid density can change due to pressure and temperature with respect to a base value.</p><p><b>Adiabatic perfect fluid:</b> The fluid is a perfect fluid which is adiabatic in nature.</p> <a href='https://www.simscale.com/docs/simulation-setup/materials/thermophysical-fluid-models/#equation-of-state' target='_blank'>Learn more</a>.  Schema name: AdiabaticPerfectFluidEquationOfState  # noqa: E501
 
         :param type: The type of this AdiabaticPerfectFluidEquationOfState.  # noqa: E501
         :type: str

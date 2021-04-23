@@ -73,6 +73,7 @@ class HerschelBulkleyViscosityModel(object):
     def type(self):
         """Gets the type of this HerschelBulkleyViscosityModel.  # noqa: E501
 
+        Choose between <a href='https://www.simscale.com/docs/simulation-setup/materials/#newtonian-model' target='_blank'>Newtonian</a> and <a href='https://www.simscale.com/docs/simulation-setup/materials/non-newtonian-models/' target='_blank'>Non-Newtonian</a> viscosity models.  Schema name: HerschelBulkleyViscosityModel  # noqa: E501
 
         :return: The type of this HerschelBulkleyViscosityModel.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class HerschelBulkleyViscosityModel(object):
     def type(self, type):
         """Sets the type of this HerschelBulkleyViscosityModel.
 
+        Choose between <a href='https://www.simscale.com/docs/simulation-setup/materials/#newtonian-model' target='_blank'>Newtonian</a> and <a href='https://www.simscale.com/docs/simulation-setup/materials/non-newtonian-models/' target='_blank'>Non-Newtonian</a> viscosity models.  Schema name: HerschelBulkleyViscosityModel  # noqa: E501
 
         :param type: The type of this HerschelBulkleyViscosityModel.  # noqa: E501
         :type: str

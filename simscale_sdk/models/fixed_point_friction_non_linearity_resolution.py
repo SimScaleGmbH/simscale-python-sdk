@@ -63,6 +63,7 @@ class FixedPointFrictionNonLinearityResolution(object):
     def type(self):
         """Gets the type of this FixedPointFrictionNonLinearityResolution.  # noqa: E501
 
+        Schema name: FixedPointFrictionNonLinearityResolution  # noqa: E501
 
         :return: The type of this FixedPointFrictionNonLinearityResolution.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class FixedPointFrictionNonLinearityResolution(object):
     def type(self, type):
         """Sets the type of this FixedPointFrictionNonLinearityResolution.
 
+        Schema name: FixedPointFrictionNonLinearityResolution  # noqa: E501
 
         :param type: The type of this FixedPointFrictionNonLinearityResolution.  # noqa: E501
         :type: str

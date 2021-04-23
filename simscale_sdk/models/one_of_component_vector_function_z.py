@@ -129,6 +129,7 @@ class OneOfComponentVectorFunctionZ(object):
     def type(self):
         """Gets the type of this OneOfComponentVectorFunctionZ.  # noqa: E501
 
+        Schema name: TableDefinedFunction  # noqa: E501
 
         :return: The type of this OneOfComponentVectorFunctionZ.  # noqa: E501
         :rtype: str
@@ -139,6 +140,7 @@ class OneOfComponentVectorFunctionZ(object):
     def type(self, type):
         """Sets the type of this OneOfComponentVectorFunctionZ.
 
+        Schema name: TableDefinedFunction  # noqa: E501
 
         :param type: The type of this OneOfComponentVectorFunctionZ.  # noqa: E501
         :type: str

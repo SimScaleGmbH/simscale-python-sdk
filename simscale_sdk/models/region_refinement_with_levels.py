@@ -73,6 +73,7 @@ class RegionRefinementWithLevels(object):
     def type(self):
         """Gets the type of this RegionRefinementWithLevels.  # noqa: E501
 
+        A <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#region-refinement' target='_blank'><b>region refinement</b></a> can be used to refine the mesh in a given area. The refinement area needs to be defined either via a geometry primitive or an existing solid (Hex-dominant only).  Schema name: RegionRefinementWithLevels  # noqa: E501
 
         :return: The type of this RegionRefinementWithLevels.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class RegionRefinementWithLevels(object):
     def type(self, type):
         """Sets the type of this RegionRefinementWithLevels.
 
+        A <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#region-refinement' target='_blank'><b>region refinement</b></a> can be used to refine the mesh in a given area. The refinement area needs to be defined either via a geometry primitive or an existing solid (Hex-dominant only).  Schema name: RegionRefinementWithLevels  # noqa: E501
 
         :param type: The type of this RegionRefinementWithLevels.  # noqa: E501
         :type: str

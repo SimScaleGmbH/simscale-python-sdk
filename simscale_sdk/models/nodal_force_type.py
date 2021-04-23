@@ -58,6 +58,7 @@ class NodalForceType(object):
     def type(self):
         """Gets the type of this NodalForceType.  # noqa: E501
 
+        Schema name: NodalForceType  # noqa: E501
 
         :return: The type of this NodalForceType.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class NodalForceType(object):
     def type(self, type):
         """Sets the type of this NodalForceType.
 
+        Schema name: NodalForceType  # noqa: E501
 
         :param type: The type of this NodalForceType.  # noqa: E501
         :type: str

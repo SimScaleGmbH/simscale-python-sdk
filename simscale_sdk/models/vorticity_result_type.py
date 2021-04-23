@@ -53,6 +53,7 @@ class VorticityResultType(object):
     def type(self):
         """Gets the type of this VorticityResultType.  # noqa: E501
 
+        Schema name: VorticityResultType  # noqa: E501
 
         :return: The type of this VorticityResultType.  # noqa: E501
         :rtype: str
@@ -63,6 +64,7 @@ class VorticityResultType(object):
     def type(self, type):
         """Sets the type of this VorticityResultType.
 
+        Schema name: VorticityResultType  # noqa: E501
 
         :param type: The type of this VorticityResultType.  # noqa: E501
         :type: str

@@ -103,6 +103,7 @@ class Compressible(object):
     def type(self):
         """Gets the type of this Compressible.  # noqa: E501
 
+        Schema name: Compressible  # noqa: E501
 
         :return: The type of this Compressible.  # noqa: E501
         :rtype: str
@@ -113,6 +114,7 @@ class Compressible(object):
     def type(self, type):
         """Sets the type of this Compressible.
 
+        Schema name: Compressible  # noqa: E501
 
         :param type: The type of this Compressible.  # noqa: E501
         :type: str

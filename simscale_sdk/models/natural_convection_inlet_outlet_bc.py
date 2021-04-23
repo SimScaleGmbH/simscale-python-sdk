@@ -83,6 +83,7 @@ class NaturalConvectionInletOutletBC(object):
     def type(self):
         """Gets the type of this NaturalConvectionInletOutletBC.  # noqa: E501
 
+        <p>This boundary condition is suitable for an <b>open boundary</b> where the air can enter or exit freely from or to the <b>atmosphere<b>. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/natural-convection-inlet-outlet/' target='_blank'>Learn more</a>.</P>  Schema name: NaturalConvectionInletOutletBC  # noqa: E501
 
         :return: The type of this NaturalConvectionInletOutletBC.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class NaturalConvectionInletOutletBC(object):
     def type(self, type):
         """Sets the type of this NaturalConvectionInletOutletBC.
 
+        <p>This boundary condition is suitable for an <b>open boundary</b> where the air can enter or exit freely from or to the <b>atmosphere<b>. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/natural-convection-inlet-outlet/' target='_blank'>Learn more</a>.</P>  Schema name: NaturalConvectionInletOutletBC  # noqa: E501
 
         :param type: The type of this NaturalConvectionInletOutletBC.  # noqa: E501
         :type: str

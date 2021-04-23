@@ -78,6 +78,7 @@ class OneOfSolarCalculatorSunDirection(object):
     def type(self):
         """Gets the type of this OneOfSolarCalculatorSunDirection.  # noqa: E501
 
+        Schema name: CustomSunDirection  # noqa: E501
 
         :return: The type of this OneOfSolarCalculatorSunDirection.  # noqa: E501
         :rtype: str
@@ -88,6 +89,7 @@ class OneOfSolarCalculatorSunDirection(object):
     def type(self, type):
         """Sets the type of this OneOfSolarCalculatorSunDirection.
 
+        Schema name: CustomSunDirection  # noqa: E501
 
         :param type: The type of this OneOfSolarCalculatorSunDirection.  # noqa: E501
         :type: str

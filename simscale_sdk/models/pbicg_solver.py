@@ -68,6 +68,7 @@ class PBICGSolver(object):
     def type(self):
         """Gets the type of this PBICGSolver.  # noqa: E501
 
+        Schema name: PBICGSolver  # noqa: E501
 
         :return: The type of this PBICGSolver.  # noqa: E501
         :rtype: str
@@ -78,6 +79,7 @@ class PBICGSolver(object):
     def type(self, type):
         """Sets the type of this PBICGSolver.
 
+        Schema name: PBICGSolver  # noqa: E501
 
         :param type: The type of this PBICGSolver.  # noqa: E501
         :type: str

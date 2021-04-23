@@ -63,6 +63,7 @@ class ConstIsoTransport(object):
     def type(self):
         """Gets the type of this ConstIsoTransport.  # noqa: E501
 
+        <p>The thermal conductivity of a material is a measure of its ability to conduct heat.<ul><li><strong>Isotropic</strong>: the thermal conductivity &kappa; is the same in all directions.</li><li><strong>Orthotropic</strong>: the thermal conductivity is unique and independent in three orthogonal directions. It is defined by &kappa;<sub>x</sub>, &kappa;<sub>y</sub>, and &kappa;<sub>z</sub>.</li><li><strong>Cross-plane orthotropic</strong>: it is defined by an <em>in-plane</em> conductivity, which is an isotropic conductivity on a given plane, and a <em>cross-plane<strong>&nbsp;</strong></em>conductivity, which acts in the direction normal to the aforementioned plane.</li></ul></p>  Schema name: ConstIsoTransport  # noqa: E501
 
         :return: The type of this ConstIsoTransport.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class ConstIsoTransport(object):
     def type(self, type):
         """Sets the type of this ConstIsoTransport.
 
+        <p>The thermal conductivity of a material is a measure of its ability to conduct heat.<ul><li><strong>Isotropic</strong>: the thermal conductivity &kappa; is the same in all directions.</li><li><strong>Orthotropic</strong>: the thermal conductivity is unique and independent in three orthogonal directions. It is defined by &kappa;<sub>x</sub>, &kappa;<sub>y</sub>, and &kappa;<sub>z</sub>.</li><li><strong>Cross-plane orthotropic</strong>: it is defined by an <em>in-plane</em> conductivity, which is an isotropic conductivity on a given plane, and a <em>cross-plane<strong>&nbsp;</strong></em>conductivity, which acts in the direction normal to the aforementioned plane.</li></ul></p>  Schema name: ConstIsoTransport  # noqa: E501
 
         :param type: The type of this ConstIsoTransport.  # noqa: E501
         :type: str

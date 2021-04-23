@@ -70,6 +70,7 @@ class OneOfSolidSimulationControlWriteControlDefinition(object):
     def type(self):
         """Gets the type of this OneOfSolidSimulationControlWriteControlDefinition.  # noqa: E501
 
+        <p>Define how frequently intermediate results should be saved. With the selection of <b>initial time steps</b> only the user defined time steps are stored in the result and by selecting <b>all computed time steps</b> also intermediate results that were created by the automatic time stepping are saved. With the selection of <b>write interval</b> a specific write frequency can be chosen which reduces the result size. Finally using <b>user defined time steps</b> there can either be a constant time increment for result storage given or a table with varying time intervals analogous to the <b>time step length</b> definition.</p>  Schema name: UserDefinedWriteControl  # noqa: E501
 
         :return: The type of this OneOfSolidSimulationControlWriteControlDefinition.  # noqa: E501
         :rtype: str
@@ -80,6 +81,7 @@ class OneOfSolidSimulationControlWriteControlDefinition(object):
     def type(self, type):
         """Sets the type of this OneOfSolidSimulationControlWriteControlDefinition.
 
+        <p>Define how frequently intermediate results should be saved. With the selection of <b>initial time steps</b> only the user defined time steps are stored in the result and by selecting <b>all computed time steps</b> also intermediate results that were created by the automatic time stepping are saved. With the selection of <b>write interval</b> a specific write frequency can be chosen which reduces the result size. Finally using <b>user defined time steps</b> there can either be a constant time increment for result storage given or a table with varying time intervals analogous to the <b>time step length</b> definition.</p>  Schema name: UserDefinedWriteControl  # noqa: E501
 
         :param type: The type of this OneOfSolidSimulationControlWriteControlDefinition.  # noqa: E501
         :type: str

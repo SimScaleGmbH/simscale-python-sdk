@@ -73,6 +73,7 @@ class RegionRefinementWithLength(object):
     def type(self):
         """Gets the type of this RegionRefinementWithLength.  # noqa: E501
 
+        A <b>region refinement</b> can be used to refine the mesh in a given area. The refinement area needs to be defined either via an existing solid or a geometry primitive.  Schema name: RegionRefinementWithLength  # noqa: E501
 
         :return: The type of this RegionRefinementWithLength.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class RegionRefinementWithLength(object):
     def type(self, type):
         """Sets the type of this RegionRefinementWithLength.
 
+        A <b>region refinement</b> can be used to refine the mesh in a given area. The refinement area needs to be defined either via an existing solid or a geometry primitive.  Schema name: RegionRefinementWithLength  # noqa: E501
 
         :param type: The type of this RegionRefinementWithLength.  # noqa: E501
         :type: str

@@ -63,6 +63,7 @@ class OneOfDivergenceSchemesDivPhiR(object):
     def type(self):
         """Gets the type of this OneOfDivergenceSchemesDivPhiR.  # noqa: E501
 
+        Schema name: GaussVanleerDivergenceScheme  # noqa: E501
 
         :return: The type of this OneOfDivergenceSchemesDivPhiR.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class OneOfDivergenceSchemesDivPhiR(object):
     def type(self, type):
         """Sets the type of this OneOfDivergenceSchemesDivPhiR.
 
+        Schema name: GaussVanleerDivergenceScheme  # noqa: E501
 
         :param type: The type of this OneOfDivergenceSchemesDivPhiR.  # noqa: E501
         :type: str

@@ -58,6 +58,7 @@ class CauchyStressType(object):
     def type(self):
         """Gets the type of this CauchyStressType.  # noqa: E501
 
+        Schema name: CauchyStressType  # noqa: E501
 
         :return: The type of this CauchyStressType.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class CauchyStressType(object):
     def type(self, type):
         """Sets the type of this CauchyStressType.
 
+        Schema name: CauchyStressType  # noqa: E501
 
         :param type: The type of this CauchyStressType.  # noqa: E501
         :type: str

@@ -79,6 +79,7 @@ class OneOfHyperElasticMaterialBehaviorHyperElasticModel(object):
     def type(self):
         """Gets the type of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
 
+        <p>Choose the hyperelastic material model that should be used. All models derive the stress-strain relation from a strain energy function defined by the material model parameters.</p>  Schema name: SignoriniHyperElasticModel  # noqa: E501
 
         :return: The type of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
         :rtype: str
@@ -89,6 +90,7 @@ class OneOfHyperElasticMaterialBehaviorHyperElasticModel(object):
     def type(self, type):
         """Sets the type of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.
 
+        <p>Choose the hyperelastic material model that should be used. All models derive the stress-strain relation from a strain energy function defined by the material model parameters.</p>  Schema name: SignoriniHyperElasticModel  # noqa: E501
 
         :param type: The type of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
         :type: str

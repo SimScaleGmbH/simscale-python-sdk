@@ -63,6 +63,7 @@ class SpecieDefault(object):
     def type(self):
         """Gets the type of this SpecieDefault.  # noqa: E501
 
+        <p><b>Specie:</b> defines the molecular composition of the fluid material. Currently a single specie is available.</p>  Schema name: SpecieDefault  # noqa: E501
 
         :return: The type of this SpecieDefault.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class SpecieDefault(object):
     def type(self, type):
         """Sets the type of this SpecieDefault.
 
+        <p><b>Specie:</b> defines the molecular composition of the fluid material. Currently a single specie is available.</p>  Schema name: SpecieDefault  # noqa: E501
 
         :param type: The type of this SpecieDefault.  # noqa: E501
         :type: str

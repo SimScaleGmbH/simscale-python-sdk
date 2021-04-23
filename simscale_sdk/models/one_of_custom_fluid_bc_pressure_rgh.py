@@ -95,6 +95,7 @@ class OneOfCustomFluidBCPressureRgh(object):
     def type(self):
         """Gets the type of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
 
+        Schema name: TotalPBC  # noqa: E501
 
         :return: The type of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
         :rtype: str
@@ -105,6 +106,7 @@ class OneOfCustomFluidBCPressureRgh(object):
     def type(self, type):
         """Sets the type of this OneOfCustomFluidBCPressureRgh.
 
+        Schema name: TotalPBC  # noqa: E501
 
         :param type: The type of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
         :type: str

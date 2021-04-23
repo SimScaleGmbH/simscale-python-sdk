@@ -93,6 +93,7 @@ class PressureOutletBC(object):
     def type(self):
         """Gets the type of this PressureOutletBC.  # noqa: E501
 
+        This boundary condition allows to specify a pressure value at an outlet boundary. For Incompressible and Passive Scalar Transport analysis the specific Pressure i.e. Pressure/Density is used.  Schema name: PressureOutletBC  # noqa: E501
 
         :return: The type of this PressureOutletBC.  # noqa: E501
         :rtype: str
@@ -103,6 +104,7 @@ class PressureOutletBC(object):
     def type(self, type):
         """Sets the type of this PressureOutletBC.
 
+        This boundary condition allows to specify a pressure value at an outlet boundary. For Incompressible and Passive Scalar Transport analysis the specific Pressure i.e. Pressure/Density is used.  Schema name: PressureOutletBC  # noqa: E501
 
         :param type: The type of this PressureOutletBC.  # noqa: E501
         :type: str

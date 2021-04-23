@@ -58,6 +58,7 @@ class HyperElasticMaterialBehavior(object):
     def type(self):
         """Gets the type of this HyperElasticMaterialBehavior.  # noqa: E501
 
+        <p>Choose the material behavior for your problem. </p> <br /><br />Important remarks:<br /> <ul><li>Choose <b>Linear elastic</b> if the stress-strain relationship of your material is linear.</li><li>Choose <b>Elasto-plastic</b> if the stress-strain relationship of your material is non-linear after some point e.g. yielding point.</li><li>Choose <b>Hyperelastic</b> if your material responds elastically even at higher deformations.</li></ul>   Schema name: HyperElasticMaterialBehavior  # noqa: E501
 
         :return: The type of this HyperElasticMaterialBehavior.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class HyperElasticMaterialBehavior(object):
     def type(self, type):
         """Sets the type of this HyperElasticMaterialBehavior.
 
+        <p>Choose the material behavior for your problem. </p> <br /><br />Important remarks:<br /> <ul><li>Choose <b>Linear elastic</b> if the stress-strain relationship of your material is linear.</li><li>Choose <b>Elasto-plastic</b> if the stress-strain relationship of your material is non-linear after some point e.g. yielding point.</li><li>Choose <b>Hyperelastic</b> if your material responds elastically even at higher deformations.</li></ul>   Schema name: HyperElasticMaterialBehavior  # noqa: E501
 
         :param type: The type of this HyperElasticMaterialBehavior.  # noqa: E501
         :type: str

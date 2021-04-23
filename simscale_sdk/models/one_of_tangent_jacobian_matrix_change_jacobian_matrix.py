@@ -73,6 +73,7 @@ class OneOfTangentJacobianMatrixChangeJacobianMatrix(object):
     def type(self):
         """Gets the type of this OneOfTangentJacobianMatrixChangeJacobianMatrix.  # noqa: E501
 
+        <p>Choose if the Jacobian matrix should automatically change from tangent stiffnes matrix to elastic matrix if the time increment is falling below a given threshold. On the assumption that below a given time increment value the nonlinearities are not evolving within the time step one can strongly save computation time by switching to the elastic matrix.</p>  Schema name: FalseChangeJacobianMatrix  # noqa: E501
 
         :return: The type of this OneOfTangentJacobianMatrixChangeJacobianMatrix.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class OneOfTangentJacobianMatrixChangeJacobianMatrix(object):
     def type(self, type):
         """Sets the type of this OneOfTangentJacobianMatrixChangeJacobianMatrix.
 
+        <p>Choose if the Jacobian matrix should automatically change from tangent stiffnes matrix to elastic matrix if the time increment is falling below a given threshold. On the assumption that below a given time increment value the nonlinearities are not evolving within the time step one can strongly save computation time by switching to the elastic matrix.</p>  Schema name: FalseChangeJacobianMatrix  # noqa: E501
 
         :param type: The type of this OneOfTangentJacobianMatrixChangeJacobianMatrix.  # noqa: E501
         :type: str

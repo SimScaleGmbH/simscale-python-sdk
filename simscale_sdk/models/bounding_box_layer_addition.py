@@ -83,6 +83,7 @@ class BoundingBoxLayerAddition(object):
     def type(self):
         """Gets the type of this BoundingBoxLayerAddition.  # noqa: E501
 
+        This option enables layer refinement on the faces of the bounding box. This refinement is useful if the bounding box itself provides walls of the flow domain. It is often used for external aerodynamic cases where the floor is considered as a wall and hence the mesh should be refined with layers in the vicinity.  Schema name: BoundingBoxLayerAddition  # noqa: E501
 
         :return: The type of this BoundingBoxLayerAddition.  # noqa: E501
         :rtype: str
@@ -93,6 +94,7 @@ class BoundingBoxLayerAddition(object):
     def type(self, type):
         """Sets the type of this BoundingBoxLayerAddition.
 
+        This option enables layer refinement on the faces of the bounding box. This refinement is useful if the bounding box itself provides walls of the flow domain. It is often used for external aerodynamic cases where the floor is considered as a wall and hence the mesh should be refined with layers in the vicinity.  Schema name: BoundingBoxLayerAddition  # noqa: E501
 
         :param type: The type of this BoundingBoxLayerAddition.  # noqa: E501
         :type: str

@@ -74,6 +74,7 @@ class OneOfVelocityOutletBCRadiativeIntensityRay(object):
     def type(self):
         """Gets the type of this OneOfVelocityOutletBCRadiativeIntensityRay.  # noqa: E501
 
+        Schema name: SemiOpenBoundaryRayBC  # noqa: E501
 
         :return: The type of this OneOfVelocityOutletBCRadiativeIntensityRay.  # noqa: E501
         :rtype: str
@@ -84,6 +85,7 @@ class OneOfVelocityOutletBCRadiativeIntensityRay(object):
     def type(self, type):
         """Sets the type of this OneOfVelocityOutletBCRadiativeIntensityRay.
 
+        Schema name: SemiOpenBoundaryRayBC  # noqa: E501
 
         :param type: The type of this OneOfVelocityOutletBCRadiativeIntensityRay.  # noqa: E501
         :type: str

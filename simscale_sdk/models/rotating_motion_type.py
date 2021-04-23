@@ -58,6 +58,7 @@ class RotatingMotionType(object):
     def type(self):
         """Gets the type of this RotatingMotionType.  # noqa: E501
 
+        Schema name: RotatingMotionType  # noqa: E501
 
         :return: The type of this RotatingMotionType.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class RotatingMotionType(object):
     def type(self, type):
         """Sets the type of this RotatingMotionType.
 
+        Schema name: RotatingMotionType  # noqa: E501
 
         :param type: The type of this RotatingMotionType.  # noqa: E501
         :type: str

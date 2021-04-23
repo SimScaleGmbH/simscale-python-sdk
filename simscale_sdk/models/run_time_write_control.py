@@ -58,6 +58,7 @@ class RunTimeWriteControl(object):
     def type(self):
         """Gets the type of this RunTimeWriteControl.  # noqa: E501
 
+        This option controls how the simulation results are written and how frequently.  Schema name: RunTimeWriteControl  # noqa: E501
 
         :return: The type of this RunTimeWriteControl.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class RunTimeWriteControl(object):
     def type(self, type):
         """Sets the type of this RunTimeWriteControl.
 
+        This option controls how the simulation results are written and how frequently.  Schema name: RunTimeWriteControl  # noqa: E501
 
         :param type: The type of this RunTimeWriteControl.  # noqa: E501
         :type: str

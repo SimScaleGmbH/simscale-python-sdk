@@ -58,6 +58,7 @@ class DisplacementField(object):
     def type(self):
         """Gets the type of this DisplacementField.  # noqa: E501
 
+        <p>Select the field which should have a limited de-/increase within one increment.</p>  Schema name: DisplacementField  # noqa: E501
 
         :return: The type of this DisplacementField.  # noqa: E501
         :rtype: str
@@ -68,6 +69,7 @@ class DisplacementField(object):
     def type(self, type):
         """Sets the type of this DisplacementField.
 
+        <p>Select the field which should have a limited de-/increase within one increment.</p>  Schema name: DisplacementField  # noqa: E501
 
         :param type: The type of this DisplacementField.  # noqa: E501
         :type: str

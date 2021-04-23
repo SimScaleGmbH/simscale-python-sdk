@@ -63,6 +63,7 @@ class RotatingWallVBC(object):
     def type(self):
         """Gets the type of this RotatingWallVBC.  # noqa: E501
 
+        Schema name: RotatingWallVBC  # noqa: E501
 
         :return: The type of this RotatingWallVBC.  # noqa: E501
         :rtype: str
@@ -73,6 +74,7 @@ class RotatingWallVBC(object):
     def type(self, type):
         """Sets the type of this RotatingWallVBC.
 
+        Schema name: RotatingWallVBC  # noqa: E501
 
         :param type: The type of this RotatingWallVBC.  # noqa: E501
         :type: str

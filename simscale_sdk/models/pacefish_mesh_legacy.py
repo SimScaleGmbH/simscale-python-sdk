@@ -73,6 +73,7 @@ class PacefishMeshLegacy(object):
     def type(self):
         """Gets the type of this PacefishMeshLegacy.  # noqa: E501
 
+        Schema name: PacefishMeshLegacy  # noqa: E501
 
         :return: The type of this PacefishMeshLegacy.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class PacefishMeshLegacy(object):
     def type(self, type):
         """Sets the type of this PacefishMeshLegacy.
 
+        Schema name: PacefishMeshLegacy  # noqa: E501
 
         :param type: The type of this PacefishMeshLegacy.  # noqa: E501
         :type: str

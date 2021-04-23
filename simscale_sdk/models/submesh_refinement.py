@@ -73,6 +73,7 @@ class SubmeshRefinement(object):
     def type(self):
         """Gets the type of this SubmeshRefinement.  # noqa: E501
 
+        <p>The refinement type <a href='https://www.simscale.com/docs/simulation-setup/meshing/tet-dominant/#local-element-size' target='_blank'><b>local element size</b></a> allows the definition of local mesh sizings on particular faces or solids. This can be used to increase the mesh efficiency by using smaller elements only where needed, for example on contact surfaces, fillets or other regions with potentially large stress gradients.</p><p><img src=\"/spec/resources/help/imgs/local_element_size.png\" class=\"helpPopupImage\"/> The figure shows a mesh of a bolted connection with local refinements on the contact surfaces.</p>  Schema name: SubmeshRefinement  # noqa: E501
 
         :return: The type of this SubmeshRefinement.  # noqa: E501
         :rtype: str
@@ -83,6 +84,7 @@ class SubmeshRefinement(object):
     def type(self, type):
         """Sets the type of this SubmeshRefinement.
 
+        <p>The refinement type <a href='https://www.simscale.com/docs/simulation-setup/meshing/tet-dominant/#local-element-size' target='_blank'><b>local element size</b></a> allows the definition of local mesh sizings on particular faces or solids. This can be used to increase the mesh efficiency by using smaller elements only where needed, for example on contact surfaces, fillets or other regions with potentially large stress gradients.</p><p><img src=\"/spec/resources/help/imgs/local_element_size.png\" class=\"helpPopupImage\"/> The figure shows a mesh of a bolted connection with local refinements on the contact surfaces.</p>  Schema name: SubmeshRefinement  # noqa: E501
 
         :param type: The type of this SubmeshRefinement.  # noqa: E501
         :type: str
