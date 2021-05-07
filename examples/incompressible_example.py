@@ -13,7 +13,7 @@ if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
 # API client configuration
 api_key_header = "X-API-KEY"
 api_key = os.getenv("SIMSCALE_API_KEY")
-configuration = Configuration()"
+configuration = Configuration()
 configuration.host = os.getenv("SIMSCALE_API_URL") + "/v0"
 configuration.api_key = {
     api_key_header: api_key,
