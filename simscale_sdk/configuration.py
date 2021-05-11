@@ -350,7 +350,7 @@ conf = simscale_sdk.Configuration(
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 0.0.0\n"\
-               "SDK Package Version: 0.0.14".\
+               "SDK Package Version: 0.0.15".\
                format(env=sys.platform, pyversion=sys.version)
 
     def get_host_settings(self):

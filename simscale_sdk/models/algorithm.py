@@ -32,8 +32,8 @@ class Algorithm(object):
     """
     openapi_types = {
         'type': 'str',
-        'sizing': 'OneOfSimmetrixMeshingSolidSizing',
-        'refinements': 'list[OneOfSimmetrixMeshingSolidRefinements]',
+        'sizing': 'OneOfHexDominantSnappySizing',
+        'refinements': 'list[OneOfHexDominantSnappyRefinements]',
         'cell_zones': 'list[SimmetrixCellZones]',
         'automatic_layer_settings': 'OneOfSimmetrixMeshingFluidAutomaticLayerSettings',
         'physics_based_meshing': 'bool',
@@ -42,7 +42,8 @@ class Algorithm(object):
         'advanced_simmetrix_settings': 'AdvancedSimmetrixSolidSettings',
         'second_order': 'bool',
         'enable_shell_meshing': 'bool',
-        'surface_element_type': 'str'
+        'surface_element_type': 'str',
+        'meshing_mode': 'str'
     }
 
     attribute_map = {
@@ -57,15 +58,17 @@ class Algorithm(object):
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings',
         'second_order': 'secondOrder',
         'enable_shell_meshing': 'enableShellMeshing',
-        'surface_element_type': 'surfaceElementType'
+        'surface_element_type': 'surfaceElementType',
+        'meshing_mode': 'meshingMode'
     }
 
     discriminator_value_class_map = {
         'SIMMETRIX_MESHING_FLUID_V16': 'SimmetrixMeshingFluid',
-        'SIMMETRIX_MESHING_SOLID': 'SimmetrixMeshingSolid'
+        'SIMMETRIX_MESHING_SOLID': 'SimmetrixMeshingSolid',
+        'HEX_DOMINANT_SNAPPY_V5': 'HexDominantSnappy'
     }
 
-    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, advanced_simmetrix_settings=None, second_order=None, enable_shell_meshing=None, surface_element_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, advanced_simmetrix_settings=None, second_order=None, enable_shell_meshing=None, surface_element_type=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
         """Algorithm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +86,7 @@ class Algorithm(object):
         self._second_order = None
         self._enable_shell_meshing = None
         self._surface_element_type = None
+        self._meshing_mode = None
         self.discriminator = 'type'
 
         self.type = type
@@ -108,12 +112,14 @@ class Algorithm(object):
             self.enable_shell_meshing = enable_shell_meshing
         if surface_element_type is not None:
             self.surface_element_type = surface_element_type
+        if meshing_mode is not None:
+            self.meshing_mode = meshing_mode
 
     @property
     def type(self):
         """Gets the type of this Algorithm.  # noqa: E501
 
-        Schema name: SimmetrixMeshingSolid  # noqa: E501
+        Schema name: HexDominantSnappy  # noqa: E501
 
         :return: The type of this Algorithm.  # noqa: E501
         :rtype: str
@@ -124,7 +130,7 @@ class Algorithm(object):
     def type(self, type):
         """Sets the type of this Algorithm.
 
-        Schema name: SimmetrixMeshingSolid  # noqa: E501
+        Schema name: HexDominantSnappy  # noqa: E501
 
         :param type: The type of this Algorithm.  # noqa: E501
         :type: str
@@ -140,7 +146,7 @@ class Algorithm(object):
 
 
         :return: The sizing of this Algorithm.  # noqa: E501
-        :rtype: OneOfSimmetrixMeshingSolidSizing
+        :rtype: OneOfHexDominantSnappySizing
         """
         return self._sizing
 
@@ -150,7 +156,7 @@ class Algorithm(object):
 
 
         :param sizing: The sizing of this Algorithm.  # noqa: E501
-        :type: OneOfSimmetrixMeshingSolidSizing
+        :type: OneOfHexDominantSnappySizing
         """
 
         self._sizing = sizing
@@ -161,7 +167,7 @@ class Algorithm(object):
 
 
         :return: The refinements of this Algorithm.  # noqa: E501
-        :rtype: list[OneOfSimmetrixMeshingSolidRefinements]
+        :rtype: list[OneOfHexDominantSnappyRefinements]
         """
         return self._refinements
 
@@ -171,7 +177,7 @@ class Algorithm(object):
 
 
         :param refinements: The refinements of this Algorithm.  # noqa: E501
-        :type: list[OneOfSimmetrixMeshingSolidRefinements]
+        :type: list[OneOfHexDominantSnappyRefinements]
         """
 
         self._refinements = refinements
@@ -384,6 +390,35 @@ class Algorithm(object):
             )
 
         self._surface_element_type = surface_element_type
+
+    @property
+    def meshing_mode(self):
+        """Gets the meshing_mode of this Algorithm.  # noqa: E501
+
+        <p>The <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#meshing-mode' target='_blank'>meshing mode</a> defines how the mesher should generate the mesh.</p><ul><li>The <b>Internal</b> mode will create the mesh <u>inside</u> of the geometry body. If the CAD consists of multiple solids, the mesher will attempt to create a multiregion mesh which is suitable for conjugate heat transfer analyses. Use this mode if the CAD model already represents the final fluid domain.</li><li><b>External</b> meshing will create the mesh <u>outside</u> of the bodies. The absolute dimensions of the mesh are determined by the <i>Background Mesh Box</i>. Use this mode in case you want to extract the fluid domain around your model.</li><li>The option <b>Material point</b> allows you to define a point inside the domain where the mesh will be placed. It can be used to select which part (or enclosed volume) of the model or should be meshed. The mesh will surround the material point and extend until the boundaries of the body. The location of the material point is defined by the <i>Material Point</i> geometry primitive.</li></ul>  # noqa: E501
+
+        :return: The meshing_mode of this Algorithm.  # noqa: E501
+        :rtype: str
+        """
+        return self._meshing_mode
+
+    @meshing_mode.setter
+    def meshing_mode(self, meshing_mode):
+        """Sets the meshing_mode of this Algorithm.
+
+        <p>The <a href='https://www.simscale.com/docs/simulation-setup/meshing/hex-dominant/#meshing-mode' target='_blank'>meshing mode</a> defines how the mesher should generate the mesh.</p><ul><li>The <b>Internal</b> mode will create the mesh <u>inside</u> of the geometry body. If the CAD consists of multiple solids, the mesher will attempt to create a multiregion mesh which is suitable for conjugate heat transfer analyses. Use this mode if the CAD model already represents the final fluid domain.</li><li><b>External</b> meshing will create the mesh <u>outside</u> of the bodies. The absolute dimensions of the mesh are determined by the <i>Background Mesh Box</i>. Use this mode in case you want to extract the fluid domain around your model.</li><li>The option <b>Material point</b> allows you to define a point inside the domain where the mesh will be placed. It can be used to select which part (or enclosed volume) of the model or should be meshed. The mesh will surround the material point and extend until the boundaries of the body. The location of the material point is defined by the <i>Material Point</i> geometry primitive.</li></ul>  # noqa: E501
+
+        :param meshing_mode: The meshing_mode of this Algorithm.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["INTERNAL"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and meshing_mode not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `meshing_mode` ({0}), must be one of {1}"  # noqa: E501
+                .format(meshing_mode, allowed_values)
+            )
+
+        self._meshing_mode = meshing_mode
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

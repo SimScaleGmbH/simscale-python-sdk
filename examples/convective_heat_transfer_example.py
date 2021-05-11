@@ -79,11 +79,11 @@ def get_single_entity_name(project_id, geometry_id, **kwargs):
         return entities[0].name
     else:
         raise Exception(f"Found {len(entities)} entities instead of 1: {entities}") 
-material_entity = get_single_entity_name(project_id, geometry_id, _class="region")
-bc1_entity = get_single_entity_name(project_id, geometry_id, _class="face", attributes=["SDL/TYSA_NAME"], values=["Face Junction"])
-bc2_entity = get_single_entity_name(project_id, geometry_id, _class="face", attributes=["SDL/TYSA_NAME"], values=["Face YMAX"])
-bc3_entity = get_single_entity_name(project_id, geometry_id, _class="face", attributes=["SDL/TYSA_NAME"], values=["Face ZMAX"])
-bc4_entity = get_single_entity_name(project_id, geometry_id, _class="face", attributes=["SDL/TYSA_NAME"], values=["Wall 1"])
+material_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Fluid Region"])
+bc1_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Face Junction"])
+bc2_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Face YMAX"])
+bc3_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Face ZMAX"])
+bc4_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Wall 1"])
 
 geometry_primitive_point = Point(
     name="Point 1",

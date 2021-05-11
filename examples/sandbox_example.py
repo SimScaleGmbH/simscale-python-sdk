@@ -6,6 +6,9 @@ import time
 from pprint import pprint
 from simscale_sdk import *
 
+if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
+    raise Exception("Either `SIMSCALE_API_KEY` or `SIMSCALE_API_URL` environment variable is missing.")
+
 # API client configuration
 configuration = Configuration()
 configuration.host = os.getenv('SIMSCALE_API_URL') + '/sandbox/v0'

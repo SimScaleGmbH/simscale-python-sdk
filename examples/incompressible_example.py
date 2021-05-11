@@ -81,10 +81,10 @@ def get_single_entity_name(project_id, geometry_id, **kwargs):
         return entities[0].name
     else:
         raise Exception(f"Found {len(entities)} entities instead of 1: {entities}") 
-material_entity = get_single_entity_name(project_id, geometry_id, _class="region")
-inlet1_entity = get_single_entity_name(project_id, geometry_id, _class="face", attributes=["SDL/TYSA_NAME"], values=["Face ZMAX"])
-inlet2_entity = get_single_entity_name(project_id, geometry_id, _class="face", attributes=["SDL/TYSA_NAME"], values=["Face Junction"])
-outlet_entity = get_single_entity_name(project_id, geometry_id, _class="face", attributes=["SDL/TYSA_NAME"], values=["Face YMAX"])
+material_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Fluid Region"])
+inlet1_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Face ZMAX"])
+inlet2_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Face Junction"])
+outlet_entity = get_single_entity_name(project_id, geometry_id, attributes=["SDL/TYSA_NAME"], values=["Face YMAX"])
 
 geometry_primitive_point = Point(
     name="Point 1",

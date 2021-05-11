@@ -81,11 +81,11 @@ def get_entity_names(project_id, geometry_id, num, **kwargs):
         return [e.name for e in entities]
     else:
         raise Exception(f"Found {len(entities)} entities instead of {num}: {entities}") 
-material_entities = get_entity_names(project_id, geometry_id, 1, _class="region")
-bc1_entities = get_entity_names(project_id, geometry_id, 1, _class="face", attributes=["SDL/TYSA_NAME"], values=["Box ZMAX"])
-bc2_entities = get_entity_names(project_id, geometry_id, 1, _class="face", attributes=["SDL/TYSA_NAME"], values=["Box ZMIN"])
-bc3_entities = get_entity_names(project_id, geometry_id, 4, _class="face", attributes=["SDL/TYSA_NAME"], values=["Box XMIN", "Box XMAX","Box YMIN","Box YMAX"])
-bc4_entities = get_entity_names(project_id, geometry_id, 2, _class="face", attributes=["SDL/TYSA_NAME"], values=["Sphere"])
+material_entities = get_entity_names(project_id, geometry_id, 1, attributes=["SDL/TYSA_NAME"], values=["box"])
+bc1_entities = get_entity_names(project_id, geometry_id, 1, attributes=["SDL/TYSA_NAME"], values=["Box ZMAX"])
+bc2_entities = get_entity_names(project_id, geometry_id, 1, attributes=["SDL/TYSA_NAME"], values=["Box ZMIN"])
+bc3_entities = get_entity_names(project_id, geometry_id, 4, attributes=["SDL/TYSA_NAME"], values=["Box XMIN", "Box XMAX","Box YMIN","Box YMAX"])
+bc4_entities = get_entity_names(project_id, geometry_id, 2, attributes=["SDL/TYSA_NAME"], values=["Sphere"])
 
 # create simulation spec first to pass as reference to mesh operation for physics based meshing
 model = Compressible(

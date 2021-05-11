@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.0.14"
+__version__ = "0.0.15"
 
 # import apis into sdk package
 from simscale_sdk.api.geometries_api import GeometriesApi
@@ -455,6 +455,7 @@ from simscale_sdk.models.heat_flux_field_selection import HeatFluxFieldSelection
 from simscale_sdk.models.heat_flux_result_control_item import HeatFluxResultControlItem
 from simscale_sdk.models.heat_transfer import HeatTransfer
 from simscale_sdk.models.herschel_bulkley_viscosity_model import HerschelBulkleyViscosityModel
+from simscale_sdk.models.hex_dominant_snappy import HexDominantSnappy
 from simscale_sdk.models.hht_time_integration_scheme import HhtTimeIntegrationScheme
 from simscale_sdk.models.hierarchical_decompose_algorithm import HierarchicalDecomposeAlgorithm
 from simscale_sdk.models.high_resolution import HighResolution
@@ -775,6 +776,8 @@ from simscale_sdk.models.one_of_harmonic_analysis_boundary_conditions import One
 from simscale_sdk.models.one_of_harmonic_response_result_control_item_field_selection import OneOfHarmonicResponseResultControlItemFieldSelection
 from simscale_sdk.models.one_of_heat_transfer_boundary_conditions import OneOfHeatTransferBoundaryConditions
 from simscale_sdk.models.one_of_heat_transfer_time_dependency import OneOfHeatTransferTimeDependency
+from simscale_sdk.models.one_of_hex_dominant_snappy_refinements import OneOfHexDominantSnappyRefinements
+from simscale_sdk.models.one_of_hex_dominant_snappy_sizing import OneOfHexDominantSnappySizing
 from simscale_sdk.models.one_of_hyper_elastic_material_behavior_hyper_elastic_model import OneOfHyperElasticMaterialBehaviorHyperElasticModel
 from simscale_sdk.models.one_of_implicit_time_integration_type_scheme import OneOfImplicitTimeIntegrationTypeScheme
 from simscale_sdk.models.one_of_incompressible_boundary_conditions import OneOfIncompressibleBoundaryConditions
