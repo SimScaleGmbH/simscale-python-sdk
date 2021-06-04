@@ -20,7 +20,7 @@ pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git
 To install a specific version:
 
 ```sh
-pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git@0.0.13
+pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git@0.1.0
 ```
 
 Then import the package:

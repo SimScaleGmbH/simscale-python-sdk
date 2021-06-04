@@ -31,7 +31,6 @@ class SolidCompressibleMaterial(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'type': 'str',
         'name': 'str',
         'specie': 'SpecieDefault',
         'transport': 'OneOfSolidCompressibleMaterialTransport',
@@ -41,7 +40,6 @@ class SolidCompressibleMaterial(object):
     }
 
     attribute_map = {
-        'type': 'type',
         'name': 'name',
         'specie': 'specie',
         'transport': 'transport',
@@ -50,13 +48,12 @@ class SolidCompressibleMaterial(object):
         'built_in_material': 'builtInMaterial'
     }
 
-    def __init__(self, type=None, name=None, specie=None, transport=None, emissivity=None, topological_reference=None, built_in_material=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, specie=None, transport=None, emissivity=None, topological_reference=None, built_in_material=None, local_vars_configuration=None):  # noqa: E501
         """SolidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._type = None
         self._name = None
         self._specie = None
         self._transport = None
@@ -65,8 +62,6 @@ class SolidCompressibleMaterial(object):
         self._built_in_material = None
         self.discriminator = None
 
-        if type is not None:
-            self.type = type
         if name is not None:
             self.name = name
         if specie is not None:
@@ -79,29 +74,6 @@ class SolidCompressibleMaterial(object):
             self.topological_reference = topological_reference
         if built_in_material is not None:
             self.built_in_material = built_in_material
-
-    @property
-    def type(self):
-        """Gets the type of this SolidCompressibleMaterial.  # noqa: E501
-
-        Schema name: SolidCompressibleMaterial  # noqa: E501
-
-        :return: The type of this SolidCompressibleMaterial.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this SolidCompressibleMaterial.
-
-        Schema name: SolidCompressibleMaterial  # noqa: E501
-
-        :param type: The type of this SolidCompressibleMaterial.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type
 
     @property
     def name(self):

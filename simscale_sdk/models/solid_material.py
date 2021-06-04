@@ -34,7 +34,7 @@ class SolidMaterial(object):
         'name': 'str',
         'material_behavior': 'OneOfSolidMaterialMaterialBehavior',
         'density': 'DimensionalFunctionDensity',
-        'expansion': 'Expansion',
+        'expansion': 'IsotropicExpansion',
         'conductivity': 'OneOfSolidMaterialConductivity',
         'specific_heat': 'DimensionalFunctionSpecificHeat',
         'topological_reference': 'TopologicalReference',
@@ -154,7 +154,7 @@ class SolidMaterial(object):
 
 
         :return: The expansion of this SolidMaterial.  # noqa: E501
-        :rtype: Expansion
+        :rtype: IsotropicExpansion
         """
         return self._expansion
 
@@ -164,7 +164,7 @@ class SolidMaterial(object):
 
 
         :param expansion: The expansion of this SolidMaterial.  # noqa: E501
-        :type: Expansion
+        :type: IsotropicExpansion
         """
 
         self._expansion = expansion

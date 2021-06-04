@@ -52,7 +52,8 @@ class RefinementLevel(object):
 
         if distance is not None:
             self.distance = distance
-        self.level = level
+        if level is not None:
+            self.level = level
 
     @property
     def distance(self):
@@ -93,8 +94,9 @@ class RefinementLevel(object):
         :param level: The level of this RefinementLevel.  # noqa: E501
         :type: int
         """
-        if self.local_vars_configuration.client_side_validation and level is None:  # noqa: E501
-            raise ValueError("Invalid value for `level`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                level is not None and level < 0):  # noqa: E501
+            raise ValueError("Invalid value for `level`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._level = level
 

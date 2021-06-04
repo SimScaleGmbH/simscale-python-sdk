@@ -4,6 +4,7 @@ import isodate
 import os
 import time
 import zipfile
+import urllib3
 from simscale_sdk import *
 
 if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
@@ -18,6 +19,8 @@ configuration.api_key = {
     api_key_header: api_key,
 }
 api_client = ApiClient(configuration)
+retry_policy = urllib3.Retry(connect=5, read=5, redirect=0, status=5, backoff_factor=0.2)
+api_client.rest_client.pool_manager.connection_pool_kw['retries'] = retry_policy
 
 # API clients
 project_api = ProjectsApi(api_client)
@@ -120,7 +123,7 @@ model = WindComfort(
     ),
     mesh_settings=WindComfortMesh(wind_comfort_fineness=PacefishFinenessVeryCoarse())
 )
-simulation_spec = SimulationSpec(name='Pedestrian Wind Comfort', geometry_id=geometry_id, model=model)
+simulation_spec = SimulationSpec(name='Pedestrian Wind Comfort via Python SDK', geometry_id=geometry_id, model=model)
 
 # Create simulation
 simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id
@@ -146,7 +149,7 @@ try:
     if too_expensive:
         raise Exception('Too expensive', estimation)
     max_runtime = isodate.parse_duration(estimation.duration.interval_max).total_seconds()
-    max_runtime = max_runtime + 600 # 10 min buffer
+    max_runtime = max(3600, max_runtime * 2)
 except ApiException as ae:
     if ae.status == 422:
         max_runtime = 36000

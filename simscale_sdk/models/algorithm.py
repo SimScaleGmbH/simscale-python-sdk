@@ -228,7 +228,7 @@ class Algorithm(object):
     def physics_based_meshing(self):
         """Gets the physics_based_meshing of this Algorithm.  # noqa: E501
 
-        Physics-based meshing takes setup information like materials, boundary conditions, and source terms into account to size the mesh accordingly. When enabled, the following adaptations will be made:</p><ul><li>Refinements on inlets and outlets</li><li>Boundary layer addition on walls</li></ul> <br>When toggled on users don’t have to worry about creating a <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>separate cell zone</a>.  # noqa: E501
+        Physics-based meshing takes setup information like materials, boundary conditions, and source terms into account to size the mesh accordingly. When enabled, the following adaptations will be made:</p><ul><li>Refinements on inlets and outlets</li><li>Different sizing for solid and fluid regions in CHT simulations</li></ul> <br>When toggled on users don’t have to worry about creating a <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>separate cell zone</a>.  # noqa: E501
 
         :return: The physics_based_meshing of this Algorithm.  # noqa: E501
         :rtype: bool
@@ -239,7 +239,7 @@ class Algorithm(object):
     def physics_based_meshing(self, physics_based_meshing):
         """Sets the physics_based_meshing of this Algorithm.
 
-        Physics-based meshing takes setup information like materials, boundary conditions, and source terms into account to size the mesh accordingly. When enabled, the following adaptations will be made:</p><ul><li>Refinements on inlets and outlets</li><li>Boundary layer addition on walls</li></ul> <br>When toggled on users don’t have to worry about creating a <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>separate cell zone</a>.  # noqa: E501
+        Physics-based meshing takes setup information like materials, boundary conditions, and source terms into account to size the mesh accordingly. When enabled, the following adaptations will be made:</p><ul><li>Refinements on inlets and outlets</li><li>Different sizing for solid and fluid regions in CHT simulations</li></ul> <br>When toggled on users don’t have to worry about creating a <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>separate cell zone</a>.  # noqa: E501
 
         :param physics_based_meshing: The physics_based_meshing of this Algorithm.  # noqa: E501
         :type: bool

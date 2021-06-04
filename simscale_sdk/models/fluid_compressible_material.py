@@ -36,6 +36,7 @@ class FluidCompressibleMaterial(object):
         'specie': 'SpecieDefault',
         'transport': 'OneOfFluidCompressibleMaterialTransport',
         'topological_reference': 'TopologicalReference',
+        'geometry_primitive_uuids': 'list[str]',
         'built_in_material': 'str'
     }
 
@@ -45,10 +46,11 @@ class FluidCompressibleMaterial(object):
         'specie': 'specie',
         'transport': 'transport',
         'topological_reference': 'topologicalReference',
+        'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'built_in_material': 'builtInMaterial'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, specie=None, transport=None, topological_reference=None, built_in_material=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, specie=None, transport=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, local_vars_configuration=None):  # noqa: E501
         """FluidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class FluidCompressibleMaterial(object):
         self._specie = None
         self._transport = None
         self._topological_reference = None
+        self._geometry_primitive_uuids = None
         self._built_in_material = None
         self.discriminator = None
 
@@ -71,6 +74,8 @@ class FluidCompressibleMaterial(object):
             self.transport = transport
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if geometry_primitive_uuids is not None:
+            self.geometry_primitive_uuids = geometry_primitive_uuids
         if built_in_material is not None:
             self.built_in_material = built_in_material
 
@@ -182,6 +187,27 @@ class FluidCompressibleMaterial(object):
         """
 
         self._topological_reference = topological_reference
+
+    @property
+    def geometry_primitive_uuids(self):
+        """Gets the geometry_primitive_uuids of this FluidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The geometry_primitive_uuids of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._geometry_primitive_uuids
+
+    @geometry_primitive_uuids.setter
+    def geometry_primitive_uuids(self, geometry_primitive_uuids):
+        """Sets the geometry_primitive_uuids of this FluidCompressibleMaterial.
+
+
+        :param geometry_primitive_uuids: The geometry_primitive_uuids of this FluidCompressibleMaterial.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._geometry_primitive_uuids = geometry_primitive_uuids
 
     @property
     def built_in_material(self):

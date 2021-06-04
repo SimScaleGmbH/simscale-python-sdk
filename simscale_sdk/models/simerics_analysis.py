@@ -37,7 +37,7 @@ class SimericsAnalysis(object):
         'turbulence_model': 'str',
         'boundary_conditions': 'list[OneOfSimericsAnalysisBoundaryConditions]',
         'simulation_control': 'FluidSimulationControl',
-        'mesh_settings': 'ManualSimericsMeshSettings',
+        'mesh_settings': 'OneOfSimericsAnalysisMeshSettings',
         'result_control': 'FluidResultControls',
         'advanced_concepts': 'AdvancedConcepts'
     }
@@ -231,7 +231,7 @@ class SimericsAnalysis(object):
 
 
         :return: The mesh_settings of this SimericsAnalysis.  # noqa: E501
-        :rtype: ManualSimericsMeshSettings
+        :rtype: OneOfSimericsAnalysisMeshSettings
         """
         return self._mesh_settings
 
@@ -241,7 +241,7 @@ class SimericsAnalysis(object):
 
 
         :param mesh_settings: The mesh_settings of this SimericsAnalysis.  # noqa: E501
-        :type: ManualSimericsMeshSettings
+        :type: OneOfSimericsAnalysisMeshSettings
         """
 
         self._mesh_settings = mesh_settings

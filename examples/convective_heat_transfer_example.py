@@ -4,8 +4,8 @@ import isodate
 import os
 import time
 import zipfile
+import urllib3
 from simscale_sdk import *
-
 
 if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
     raise Exception("Either `SIMSCALE_API_KEY` or `SIMSCALE_API_URL` environment variable is missing.")
@@ -20,6 +20,8 @@ configuration.api_key = {
 }
 configuration.debug = True
 api_client = ApiClient(configuration)
+retry_policy = urllib3.Retry(connect=5, read=5, redirect=0, status=5, backoff_factor=0.2)
+api_client.rest_client.pool_manager.connection_pool_kw['retries'] = retry_policy
 
 # API clients
 project_api = ProjectsApi(api_client)
@@ -31,7 +33,7 @@ simulation_api = SimulationsApi(api_client)
 simulation_run_api = SimulationRunsApi(api_client)
 
 # Create project
-project = Project(name="Convective via Python SDK", description="Convective via Python SDK", measurement_system="SI")
+project = Project(name="Convective Heat Transfer via Python SDK", description="Convective Heat Transfer via Python SDK", measurement_system="SI")
 project = project_api.create_project(project)
 project_id = project.project_id
 print(f"project_id: {project_id}")
@@ -234,7 +236,7 @@ try:
     if too_expensive:
         raise Exception("Too expensive", mesh_estimation)
     mesh_max_runtime = isodate.parse_duration(mesh_estimation.duration.interval_max).total_seconds()
-    mesh_max_runtime = mesh_max_runtime + 600  # 10 min buffer
+    mesh_max_runtime = max(3600, mesh_max_runtime * 2)
 except ApiException as ae:
     if ae.status == 422:
         mesh_max_runtime = 36000
@@ -278,7 +280,7 @@ try:
     if too_expensive:
         raise Exception("Too expensive", estimation)
     max_runtime = isodate.parse_duration(estimation.duration.interval_max).total_seconds()
-    max_runtime = max_runtime + 600  # 10 min buffer
+    max_runtime = max(3600, max_runtime * 2)
 except ApiException as ae:
     if ae.status == 422:
         max_runtime = 36000

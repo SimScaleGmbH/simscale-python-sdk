@@ -31,7 +31,6 @@ class ScalarTransportResultControl(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'type': 'str',
         'name': 'str',
         'diffusion_coefficient': 'float',
         'volume_mode': 'str',
@@ -42,7 +41,6 @@ class ScalarTransportResultControl(object):
     }
 
     attribute_map = {
-        'type': 'type',
         'name': 'name',
         'diffusion_coefficient': 'diffusionCoefficient',
         'volume_mode': 'volumeMode',
@@ -52,13 +50,12 @@ class ScalarTransportResultControl(object):
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type=None, name=None, diffusion_coefficient=None, volume_mode=None, su=None, sp=None, write_control=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, diffusion_coefficient=None, volume_mode=None, su=None, sp=None, write_control=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """ScalarTransportResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._type = None
         self._name = None
         self._diffusion_coefficient = None
         self._volume_mode = None
@@ -68,8 +65,6 @@ class ScalarTransportResultControl(object):
         self._geometry_primitive_uuids = None
         self.discriminator = None
 
-        if type is not None:
-            self.type = type
         if name is not None:
             self.name = name
         if diffusion_coefficient is not None:
@@ -84,29 +79,6 @@ class ScalarTransportResultControl(object):
             self.write_control = write_control
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
-
-    @property
-    def type(self):
-        """Gets the type of this ScalarTransportResultControl.  # noqa: E501
-
-        Schema name: ScalarTransportResultControl  # noqa: E501
-
-        :return: The type of this ScalarTransportResultControl.  # noqa: E501
-        :rtype: str
-        """
-        return self._type
-
-    @type.setter
-    def type(self, type):
-        """Sets the type of this ScalarTransportResultControl.
-
-        Schema name: ScalarTransportResultControl  # noqa: E501
-
-        :param type: The type of this ScalarTransportResultControl.  # noqa: E501
-        :type: str
-        """
-
-        self._type = type
 
     @property
     def name(self):

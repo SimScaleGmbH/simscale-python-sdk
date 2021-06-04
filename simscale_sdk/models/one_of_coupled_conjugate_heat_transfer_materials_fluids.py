@@ -43,6 +43,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'specific_heat': 'DimensionalSpecificHeat',
         'molar_weight': 'DimensionalMolarMass',
         'topological_reference': 'TopologicalReference',
+        'geometry_primitive_uuids': 'list[str]',
         'built_in_material': 'str',
         'specie': 'SpecieDefault',
         'transport': 'OneOfFluidCompressibleMaterialTransport'
@@ -61,6 +62,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'specific_heat': 'specificHeat',
         'molar_weight': 'molarWeight',
         'topological_reference': 'topologicalReference',
+        'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'built_in_material': 'builtInMaterial',
         'specie': 'specie',
         'transport': 'transport'
@@ -71,7 +73,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'COMPRESSIBLE': 'FluidCompressibleMaterial'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, topological_reference=None, built_in_material=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferMaterialsFluids - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -89,6 +91,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         self._specific_heat = None
         self._molar_weight = None
         self._topological_reference = None
+        self._geometry_primitive_uuids = None
         self._built_in_material = None
         self._specie = None
         self._transport = None
@@ -117,6 +120,8 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
             self.molar_weight = molar_weight
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if geometry_primitive_uuids is not None:
+            self.geometry_primitive_uuids = geometry_primitive_uuids
         if built_in_material is not None:
             self.built_in_material = built_in_material
         if specie is not None:
@@ -391,6 +396,27 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         """
 
         self._topological_reference = topological_reference
+
+    @property
+    def geometry_primitive_uuids(self):
+        """Gets the geometry_primitive_uuids of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+
+
+        :return: The geometry_primitive_uuids of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._geometry_primitive_uuids
+
+    @geometry_primitive_uuids.setter
+    def geometry_primitive_uuids(self, geometry_primitive_uuids):
+        """Sets the geometry_primitive_uuids of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
+
+
+        :param geometry_primitive_uuids: The geometry_primitive_uuids of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._geometry_primitive_uuids = geometry_primitive_uuids
 
     @property
     def built_in_material(self):

@@ -32,15 +32,17 @@ class AdvancedSimmetrixFluidSettings(object):
     """
     openapi_types = {
         'small_feature_tolerance': 'DimensionalLength',
-        'gap_elements': 'float'
+        'gap_elements': 'float',
+        'global_gradation_rate': 'float'
     }
 
     attribute_map = {
         'small_feature_tolerance': 'smallFeatureTolerance',
-        'gap_elements': 'gapElements'
+        'gap_elements': 'gapElements',
+        'global_gradation_rate': 'globalGradationRate'
     }
 
-    def __init__(self, small_feature_tolerance=None, gap_elements=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, small_feature_tolerance=None, gap_elements=None, global_gradation_rate=None, local_vars_configuration=None):  # noqa: E501
         """AdvancedSimmetrixFluidSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,12 +50,15 @@ class AdvancedSimmetrixFluidSettings(object):
 
         self._small_feature_tolerance = None
         self._gap_elements = None
+        self._global_gradation_rate = None
         self.discriminator = None
 
         if small_feature_tolerance is not None:
             self.small_feature_tolerance = small_feature_tolerance
         if gap_elements is not None:
             self.gap_elements = gap_elements
+        if global_gradation_rate is not None:
+            self.global_gradation_rate = global_gradation_rate
 
     @property
     def small_feature_tolerance(self):
@@ -104,6 +109,35 @@ class AdvancedSimmetrixFluidSettings(object):
             raise ValueError("Invalid value for `gap_elements`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._gap_elements = gap_elements
+
+    @property
+    def global_gradation_rate(self):
+        """Gets the global_gradation_rate of this AdvancedSimmetrixFluidSettings.  # noqa: E501
+
+        <p>Adjust the transition from small to large cells. This value is the ratio between the size of two adjacent cells. The allowed range is 1.0 - 3.0. 1.0 would produce a uniform mesh with the smallest size everywhere. This is generally not recommended, as it may produce very large meshes.</p>  # noqa: E501
+
+        :return: The global_gradation_rate of this AdvancedSimmetrixFluidSettings.  # noqa: E501
+        :rtype: float
+        """
+        return self._global_gradation_rate
+
+    @global_gradation_rate.setter
+    def global_gradation_rate(self, global_gradation_rate):
+        """Sets the global_gradation_rate of this AdvancedSimmetrixFluidSettings.
+
+        <p>Adjust the transition from small to large cells. This value is the ratio between the size of two adjacent cells. The allowed range is 1.0 - 3.0. 1.0 would produce a uniform mesh with the smallest size everywhere. This is generally not recommended, as it may produce very large meshes.</p>  # noqa: E501
+
+        :param global_gradation_rate: The global_gradation_rate of this AdvancedSimmetrixFluidSettings.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                global_gradation_rate is not None and global_gradation_rate > 3):  # noqa: E501
+            raise ValueError("Invalid value for `global_gradation_rate`, must be a value less than or equal to `3`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                global_gradation_rate is not None and global_gradation_rate < 1):  # noqa: E501
+            raise ValueError("Invalid value for `global_gradation_rate`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._global_gradation_rate = global_gradation_rate
 
     def to_dict(self):
         """Returns the model properties as a dict"""

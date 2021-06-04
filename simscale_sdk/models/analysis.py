@@ -55,7 +55,7 @@ class Analysis(object):
         'advanced_modelling': 'AdvancedModelling',
         'mesh_settings_new': 'OneOfIncompressiblePacefishMeshSettingsNew',
         'is_compressible': 'bool',
-        'mesh_settings': 'WindComfortMesh',
+        'mesh_settings': 'BasicEmbeddedBoundaryMeshing',
         'region_of_interest': 'RegionOfInterest',
         'wind_conditions': 'WindConditions',
         'pedestrian_comfort_map': 'list[PedestrianComfortSurface]',
@@ -117,6 +117,7 @@ class Analysis(object):
         'CONVECTIVE_HEAT_TRANSFER': 'ConvectiveHeatTransfer',
         'CONJUGATE_HEAT_TRANSFER': 'ConjugateHeatTransfer',
         'COUPLED_CONJUGATE_HEAT_TRANSFER': 'CoupledConjugateHeatTransfer',
+        'EMBEDDED_BOUNDARY': 'EmbeddedBoundary',
         'MULTIPHASE': 'Multiphase',
         'HARMONIC_ANALYSIS': 'HarmonicAnalysis',
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
@@ -774,7 +775,7 @@ class Analysis(object):
 
 
         :return: The mesh_settings of this Analysis.  # noqa: E501
-        :rtype: WindComfortMesh
+        :rtype: BasicEmbeddedBoundaryMeshing
         """
         return self._mesh_settings
 
@@ -784,7 +785,7 @@ class Analysis(object):
 
 
         :param mesh_settings: The mesh_settings of this Analysis.  # noqa: E501
-        :type: WindComfortMesh
+        :type: BasicEmbeddedBoundaryMeshing
         """
 
         self._mesh_settings = mesh_settings
