@@ -243,6 +243,9 @@ class OneOfSimericsAnalysisMeshSettings(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
+                growth_rate is not None and growth_rate > 8):  # noqa: E501
+            raise ValueError("Invalid value for `growth_rate`, must be a value less than or equal to `8`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
                 growth_rate is not None and growth_rate < 1):  # noqa: E501
             raise ValueError("Invalid value for `growth_rate`, must be a value greater than or equal to `1`")  # noqa: E501
 

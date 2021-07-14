@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
 
 # import apis into sdk package
 from simscale_sdk.api.geometries_api import GeometriesApi
@@ -172,7 +172,6 @@ from simscale_sdk.models.dimensional_amount_of_substance import DimensionalAmoun
 from simscale_sdk.models.dimensional_angle import DimensionalAngle
 from simscale_sdk.models.dimensional_area import DimensionalArea
 from simscale_sdk.models.dimensional_contact_resistance import DimensionalContactResistance
-from simscale_sdk.models.dimensional_damping_coefficient import DimensionalDampingCoefficient
 from simscale_sdk.models.dimensional_density import DimensionalDensity
 from simscale_sdk.models.dimensional_dimensionless import DimensionalDimensionless
 from simscale_sdk.models.dimensional_dynamic_viscosity import DimensionalDynamicViscosity
@@ -906,6 +905,7 @@ from simscale_sdk.models.one_of_solid_numerics_mechanical_resolution_type import
 from simscale_sdk.models.one_of_solid_numerics_mechanical_time_integration_type import OneOfSolidNumericsMechanicalTimeIntegrationType
 from simscale_sdk.models.one_of_solid_numerics_solver import OneOfSolidNumericsSolver
 from simscale_sdk.models.one_of_solid_numerics_thermal_line_search import OneOfSolidNumericsThermalLineSearch
+from simscale_sdk.models.one_of_solid_numerics_thermal_resolution_type import OneOfSolidNumericsThermalResolutionType
 from simscale_sdk.models.one_of_solid_result_control_area_calculation import OneOfSolidResultControlAreaCalculation
 from simscale_sdk.models.one_of_solid_result_control_edge_calculation import OneOfSolidResultControlEdgeCalculation
 from simscale_sdk.models.one_of_solid_result_control_point_data import OneOfSolidResultControlPointData

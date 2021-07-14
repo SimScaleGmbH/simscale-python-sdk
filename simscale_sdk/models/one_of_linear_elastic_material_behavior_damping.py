@@ -32,15 +32,15 @@ class OneOfLinearElasticMaterialBehaviorDamping(object):
     """
     openapi_types = {
         'type': 'str',
-        'alpha_coefficient': 'DimensionalDampingCoefficient',
-        'beta_damping': 'DimensionalTime',
+        'stiffness_proportional_coefficient': 'DimensionalTime',
+        'mass_proportional_coefficient': 'DimensionalFrequency',
         'hysteretic_coefficient': 'float'
     }
 
     attribute_map = {
         'type': 'type',
-        'alpha_coefficient': 'alphaCoefficient',
-        'beta_damping': 'betaDamping',
+        'stiffness_proportional_coefficient': 'stiffnessProportionalCoefficient',
+        'mass_proportional_coefficient': 'massProportionalCoefficient',
         'hysteretic_coefficient': 'hystereticCoefficient'
     }
 
@@ -50,23 +50,23 @@ class OneOfLinearElasticMaterialBehaviorDamping(object):
         'HYSTERETIC': 'HystereticDamping'
     }
 
-    def __init__(self, type='HYSTERETIC', alpha_coefficient=None, beta_damping=None, hysteretic_coefficient=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HYSTERETIC', stiffness_proportional_coefficient=None, mass_proportional_coefficient=None, hysteretic_coefficient=None, local_vars_configuration=None):  # noqa: E501
         """OneOfLinearElasticMaterialBehaviorDamping - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._alpha_coefficient = None
-        self._beta_damping = None
+        self._stiffness_proportional_coefficient = None
+        self._mass_proportional_coefficient = None
         self._hysteretic_coefficient = None
         self.discriminator = 'type'
 
         self.type = type
-        if alpha_coefficient is not None:
-            self.alpha_coefficient = alpha_coefficient
-        if beta_damping is not None:
-            self.beta_damping = beta_damping
+        if stiffness_proportional_coefficient is not None:
+            self.stiffness_proportional_coefficient = stiffness_proportional_coefficient
+        if mass_proportional_coefficient is not None:
+            self.mass_proportional_coefficient = mass_proportional_coefficient
         if hysteretic_coefficient is not None:
             self.hysteretic_coefficient = hysteretic_coefficient
 
@@ -96,46 +96,46 @@ class OneOfLinearElasticMaterialBehaviorDamping(object):
         self._type = type
 
     @property
-    def alpha_coefficient(self):
-        """Gets the alpha_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+    def stiffness_proportional_coefficient(self):
+        """Gets the stiffness_proportional_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
 
 
-        :return: The alpha_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
-        :rtype: DimensionalDampingCoefficient
-        """
-        return self._alpha_coefficient
-
-    @alpha_coefficient.setter
-    def alpha_coefficient(self, alpha_coefficient):
-        """Sets the alpha_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.
-
-
-        :param alpha_coefficient: The alpha_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
-        :type: DimensionalDampingCoefficient
-        """
-
-        self._alpha_coefficient = alpha_coefficient
-
-    @property
-    def beta_damping(self):
-        """Gets the beta_damping of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
-
-
-        :return: The beta_damping of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+        :return: The stiffness_proportional_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
         :rtype: DimensionalTime
         """
-        return self._beta_damping
+        return self._stiffness_proportional_coefficient
 
-    @beta_damping.setter
-    def beta_damping(self, beta_damping):
-        """Sets the beta_damping of this OneOfLinearElasticMaterialBehaviorDamping.
+    @stiffness_proportional_coefficient.setter
+    def stiffness_proportional_coefficient(self, stiffness_proportional_coefficient):
+        """Sets the stiffness_proportional_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.
 
 
-        :param beta_damping: The beta_damping of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+        :param stiffness_proportional_coefficient: The stiffness_proportional_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
         :type: DimensionalTime
         """
 
-        self._beta_damping = beta_damping
+        self._stiffness_proportional_coefficient = stiffness_proportional_coefficient
+
+    @property
+    def mass_proportional_coefficient(self):
+        """Gets the mass_proportional_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+
+
+        :return: The mass_proportional_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+        :rtype: DimensionalFrequency
+        """
+        return self._mass_proportional_coefficient
+
+    @mass_proportional_coefficient.setter
+    def mass_proportional_coefficient(self, mass_proportional_coefficient):
+        """Sets the mass_proportional_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.
+
+
+        :param mass_proportional_coefficient: The mass_proportional_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+        :type: DimensionalFrequency
+        """
+
+        self._mass_proportional_coefficient = mass_proportional_coefficient
 
     @property
     def hysteretic_coefficient(self):

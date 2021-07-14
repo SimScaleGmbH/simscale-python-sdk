@@ -32,32 +32,32 @@ class RayleighDamping(object):
     """
     openapi_types = {
         'type': 'str',
-        'alpha_coefficient': 'DimensionalDampingCoefficient',
-        'beta_damping': 'DimensionalTime'
+        'stiffness_proportional_coefficient': 'DimensionalTime',
+        'mass_proportional_coefficient': 'DimensionalFrequency'
     }
 
     attribute_map = {
         'type': 'type',
-        'alpha_coefficient': 'alphaCoefficient',
-        'beta_damping': 'betaDamping'
+        'stiffness_proportional_coefficient': 'stiffnessProportionalCoefficient',
+        'mass_proportional_coefficient': 'massProportionalCoefficient'
     }
 
-    def __init__(self, type='RAYLEIGH', alpha_coefficient=None, beta_damping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='RAYLEIGH', stiffness_proportional_coefficient=None, mass_proportional_coefficient=None, local_vars_configuration=None):  # noqa: E501
         """RayleighDamping - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._alpha_coefficient = None
-        self._beta_damping = None
+        self._stiffness_proportional_coefficient = None
+        self._mass_proportional_coefficient = None
         self.discriminator = None
 
         self.type = type
-        if alpha_coefficient is not None:
-            self.alpha_coefficient = alpha_coefficient
-        if beta_damping is not None:
-            self.beta_damping = beta_damping
+        if stiffness_proportional_coefficient is not None:
+            self.stiffness_proportional_coefficient = stiffness_proportional_coefficient
+        if mass_proportional_coefficient is not None:
+            self.mass_proportional_coefficient = mass_proportional_coefficient
 
     @property
     def type(self):
@@ -85,46 +85,46 @@ class RayleighDamping(object):
         self._type = type
 
     @property
-    def alpha_coefficient(self):
-        """Gets the alpha_coefficient of this RayleighDamping.  # noqa: E501
+    def stiffness_proportional_coefficient(self):
+        """Gets the stiffness_proportional_coefficient of this RayleighDamping.  # noqa: E501
 
 
-        :return: The alpha_coefficient of this RayleighDamping.  # noqa: E501
-        :rtype: DimensionalDampingCoefficient
-        """
-        return self._alpha_coefficient
-
-    @alpha_coefficient.setter
-    def alpha_coefficient(self, alpha_coefficient):
-        """Sets the alpha_coefficient of this RayleighDamping.
-
-
-        :param alpha_coefficient: The alpha_coefficient of this RayleighDamping.  # noqa: E501
-        :type: DimensionalDampingCoefficient
-        """
-
-        self._alpha_coefficient = alpha_coefficient
-
-    @property
-    def beta_damping(self):
-        """Gets the beta_damping of this RayleighDamping.  # noqa: E501
-
-
-        :return: The beta_damping of this RayleighDamping.  # noqa: E501
+        :return: The stiffness_proportional_coefficient of this RayleighDamping.  # noqa: E501
         :rtype: DimensionalTime
         """
-        return self._beta_damping
+        return self._stiffness_proportional_coefficient
 
-    @beta_damping.setter
-    def beta_damping(self, beta_damping):
-        """Sets the beta_damping of this RayleighDamping.
+    @stiffness_proportional_coefficient.setter
+    def stiffness_proportional_coefficient(self, stiffness_proportional_coefficient):
+        """Sets the stiffness_proportional_coefficient of this RayleighDamping.
 
 
-        :param beta_damping: The beta_damping of this RayleighDamping.  # noqa: E501
+        :param stiffness_proportional_coefficient: The stiffness_proportional_coefficient of this RayleighDamping.  # noqa: E501
         :type: DimensionalTime
         """
 
-        self._beta_damping = beta_damping
+        self._stiffness_proportional_coefficient = stiffness_proportional_coefficient
+
+    @property
+    def mass_proportional_coefficient(self):
+        """Gets the mass_proportional_coefficient of this RayleighDamping.  # noqa: E501
+
+
+        :return: The mass_proportional_coefficient of this RayleighDamping.  # noqa: E501
+        :rtype: DimensionalFrequency
+        """
+        return self._mass_proportional_coefficient
+
+    @mass_proportional_coefficient.setter
+    def mass_proportional_coefficient(self, mass_proportional_coefficient):
+        """Sets the mass_proportional_coefficient of this RayleighDamping.
+
+
+        :param mass_proportional_coefficient: The mass_proportional_coefficient of this RayleighDamping.  # noqa: E501
+        :type: DimensionalFrequency
+        """
+
+        self._mass_proportional_coefficient = mass_proportional_coefficient
 
     def to_dict(self):
         """Returns the model properties as a dict"""

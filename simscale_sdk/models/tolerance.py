@@ -59,7 +59,7 @@ class Tolerance(object):
     def absolute_tolerance(self):
         """Gets the absolute_tolerance of this Tolerance.  # noqa: E501
 
-        Absolute Tolerance is the measure of residual (or error) in the solution after the current iteration is solved. The iteration is stopped when the absolute residual falls below this value.  # noqa: E501
+        Absolute tolerance is the measure of residual in the solution after the current iteration is solved. The solution is stopped when the absolute residual falls below this value.  # noqa: E501
 
         :return: The absolute_tolerance of this Tolerance.  # noqa: E501
         :rtype: float
@@ -70,7 +70,7 @@ class Tolerance(object):
     def absolute_tolerance(self, absolute_tolerance):
         """Sets the absolute_tolerance of this Tolerance.
 
-        Absolute Tolerance is the measure of residual (or error) in the solution after the current iteration is solved. The iteration is stopped when the absolute residual falls below this value.  # noqa: E501
+        Absolute tolerance is the measure of residual in the solution after the current iteration is solved. The solution is stopped when the absolute residual falls below this value.  # noqa: E501
 
         :param absolute_tolerance: The absolute_tolerance of this Tolerance.  # noqa: E501
         :type: float
@@ -88,7 +88,7 @@ class Tolerance(object):
     def relative_tolerance(self):
         """Gets the relative_tolerance of this Tolerance.  # noqa: E501
 
-        Relative tolerance is the ratio of current residual to initial residual. The iteration is stopped when the relative residual falls below this value.  # noqa: E501
+        Relative tolerance is the ratio of current residual to the initial residual. The solution is stopped when the relative residual falls below this value.  # noqa: E501
 
         :return: The relative_tolerance of this Tolerance.  # noqa: E501
         :rtype: float
@@ -99,7 +99,7 @@ class Tolerance(object):
     def relative_tolerance(self, relative_tolerance):
         """Sets the relative_tolerance of this Tolerance.
 
-        Relative tolerance is the ratio of current residual to initial residual. The iteration is stopped when the relative residual falls below this value.  # noqa: E501
+        Relative tolerance is the ratio of current residual to the initial residual. The solution is stopped when the relative residual falls below this value.  # noqa: E501
 
         :param relative_tolerance: The relative_tolerance of this Tolerance.  # noqa: E501
         :type: float

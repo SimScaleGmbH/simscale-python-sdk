@@ -37,8 +37,7 @@ class ConnectionSettingsV36(object):
         'convergence_stabilization': 'bool',
         'contact_smoothing': 'bool',
         'stop_if_interpenetration': 'bool',
-        'verify_norms': 'bool',
-        'enable_heat_transfer': 'bool'
+        'verify_norms': 'bool'
     }
 
     attribute_map = {
@@ -48,11 +47,10 @@ class ConnectionSettingsV36(object):
         'convergence_stabilization': 'convergenceStabilization',
         'contact_smoothing': 'contactSmoothing',
         'stop_if_interpenetration': 'stopIfInterpenetration',
-        'verify_norms': 'verifyNorms',
-        'enable_heat_transfer': 'enableHeatTransfer'
+        'verify_norms': 'verifyNorms'
     }
 
-    def __init__(self, nonlinearity_resolution=None, friction=None, contact_non_linearity_resolution=None, convergence_stabilization=None, contact_smoothing=None, stop_if_interpenetration=None, verify_norms=None, enable_heat_transfer=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, nonlinearity_resolution=None, friction=None, contact_non_linearity_resolution=None, convergence_stabilization=None, contact_smoothing=None, stop_if_interpenetration=None, verify_norms=None, local_vars_configuration=None):  # noqa: E501
         """ConnectionSettingsV36 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,7 +63,6 @@ class ConnectionSettingsV36(object):
         self._contact_smoothing = None
         self._stop_if_interpenetration = None
         self._verify_norms = None
-        self._enable_heat_transfer = None
         self.discriminator = None
 
         if nonlinearity_resolution is not None:
@@ -82,8 +79,6 @@ class ConnectionSettingsV36(object):
             self.stop_if_interpenetration = stop_if_interpenetration
         if verify_norms is not None:
             self.verify_norms = verify_norms
-        if enable_heat_transfer is not None:
-            self.enable_heat_transfer = enable_heat_transfer
 
     @property
     def nonlinearity_resolution(self):
@@ -231,27 +226,6 @@ class ConnectionSettingsV36(object):
         """
 
         self._verify_norms = verify_norms
-
-    @property
-    def enable_heat_transfer(self):
-        """Gets the enable_heat_transfer of this ConnectionSettingsV36.  # noqa: E501
-
-
-        :return: The enable_heat_transfer of this ConnectionSettingsV36.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_heat_transfer
-
-    @enable_heat_transfer.setter
-    def enable_heat_transfer(self, enable_heat_transfer):
-        """Sets the enable_heat_transfer of this ConnectionSettingsV36.
-
-
-        :param enable_heat_transfer: The enable_heat_transfer of this ConnectionSettingsV36.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_heat_transfer = enable_heat_transfer
 
     def to_dict(self):
         """Returns the model properties as a dict"""

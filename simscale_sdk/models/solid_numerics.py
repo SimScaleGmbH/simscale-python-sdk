@@ -40,7 +40,7 @@ class SolidNumerics(object):
         'mechanical_resolution_type': 'OneOfSolidNumericsMechanicalResolutionType',
         'mechanical_line_search': 'OneOfSolidNumericsMechanicalLineSearch',
         'thermal_time_integration_type': 'ThetaMethodTimeIntegrationType',
-        'thermal_resolution_type': 'NewtonResolutionType',
+        'thermal_resolution_type': 'OneOfSolidNumericsThermalResolutionType',
         'thermal_line_search': 'OneOfSolidNumericsThermalLineSearch'
     }
 
@@ -295,7 +295,7 @@ class SolidNumerics(object):
 
 
         :return: The thermal_resolution_type of this SolidNumerics.  # noqa: E501
-        :rtype: NewtonResolutionType
+        :rtype: OneOfSolidNumericsThermalResolutionType
         """
         return self._thermal_resolution_type
 
@@ -305,7 +305,7 @@ class SolidNumerics(object):
 
 
         :param thermal_resolution_type: The thermal_resolution_type of this SolidNumerics.  # noqa: E501
-        :type: NewtonResolutionType
+        :type: OneOfSolidNumericsThermalResolutionType
         """
 
         self._thermal_resolution_type = thermal_resolution_type

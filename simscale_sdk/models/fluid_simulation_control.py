@@ -39,7 +39,8 @@ class FluidSimulationControl(object):
         'num_processors': 'int',
         'max_run_time': 'DimensionalTime',
         'potential_foam_initialization': 'bool',
-        'decompose_algorithm': 'OneOfFluidSimulationControlDecomposeAlgorithm'
+        'decompose_algorithm': 'OneOfFluidSimulationControlDecomposeAlgorithm',
+        'relative_convergence_criteria': 'float'
     }
 
     attribute_map = {
@@ -51,10 +52,11 @@ class FluidSimulationControl(object):
         'num_processors': 'numProcessors',
         'max_run_time': 'maxRunTime',
         'potential_foam_initialization': 'potentialFoamInitialization',
-        'decompose_algorithm': 'decomposeAlgorithm'
+        'decompose_algorithm': 'decomposeAlgorithm',
+        'relative_convergence_criteria': 'relativeConvergenceCriteria'
     }
 
-    def __init__(self, end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, num_processors=None, max_run_time=None, potential_foam_initialization=None, decompose_algorithm=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, num_processors=None, max_run_time=None, potential_foam_initialization=None, decompose_algorithm=None, relative_convergence_criteria=None, local_vars_configuration=None):  # noqa: E501
         """FluidSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class FluidSimulationControl(object):
         self._max_run_time = None
         self._potential_foam_initialization = None
         self._decompose_algorithm = None
+        self._relative_convergence_criteria = None
         self.discriminator = None
 
         if end_time is not None:
@@ -89,6 +92,8 @@ class FluidSimulationControl(object):
             self.potential_foam_initialization = potential_foam_initialization
         if decompose_algorithm is not None:
             self.decompose_algorithm = decompose_algorithm
+        if relative_convergence_criteria is not None:
+            self.relative_convergence_criteria = relative_convergence_criteria
 
     @property
     def end_time(self):
@@ -293,6 +298,35 @@ class FluidSimulationControl(object):
         """
 
         self._decompose_algorithm = decompose_algorithm
+
+    @property
+    def relative_convergence_criteria(self):
+        """Gets the relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
+
+        The simulation is assumed to be converged and will stop if the relative residuals for all equations fall below this number. Relative residual is defined as the residual in the current iteration divided by the initial residual.  # noqa: E501
+
+        :return: The relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
+        :rtype: float
+        """
+        return self._relative_convergence_criteria
+
+    @relative_convergence_criteria.setter
+    def relative_convergence_criteria(self, relative_convergence_criteria):
+        """Sets the relative_convergence_criteria of this FluidSimulationControl.
+
+        The simulation is assumed to be converged and will stop if the relative residuals for all equations fall below this number. Relative residual is defined as the residual in the current iteration divided by the initial residual.  # noqa: E501
+
+        :param relative_convergence_criteria: The relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                relative_convergence_criteria is not None and relative_convergence_criteria > 1):  # noqa: E501
+            raise ValueError("Invalid value for `relative_convergence_criteria`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                relative_convergence_criteria is not None and relative_convergence_criteria < 0):  # noqa: E501
+            raise ValueError("Invalid value for `relative_convergence_criteria`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._relative_convergence_criteria = relative_convergence_criteria
 
     def to_dict(self):
         """Returns the model properties as a dict"""

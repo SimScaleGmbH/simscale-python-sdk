@@ -32,6 +32,7 @@ class OneOfSimulationRunResult(object):
     """
     openapi_types = {
         'type': 'str',
+        'result_id': 'str',
         'category': 'str',
         'direction': 'float',
         'modified_at': 'datetime',
@@ -42,6 +43,7 @@ class OneOfSimulationRunResult(object):
 
     attribute_map = {
         'type': 'type',
+        'result_id': 'resultId',
         'category': 'category',
         'direction': 'direction',
         'modified_at': 'modifiedAt',
@@ -57,13 +59,14 @@ class OneOfSimulationRunResult(object):
         'TABLE': 'SimulationRunResultTable'
     }
 
-    def __init__(self, type='TABLE', category=None, direction=None, modified_at=None, download=None, quantity=None, name=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TABLE', result_id=None, category=None, direction=None, modified_at=None, download=None, quantity=None, name=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimulationRunResult - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._result_id = None
         self._category = None
         self._direction = None
         self._modified_at = None
@@ -73,6 +76,8 @@ class OneOfSimulationRunResult(object):
         self.discriminator = 'type'
 
         self.type = type
+        if result_id is not None:
+            self.result_id = result_id
         if category is not None:
             self.category = category
         if direction is not None:
@@ -108,6 +113,29 @@ class OneOfSimulationRunResult(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def result_id(self):
+        """Gets the result_id of this OneOfSimulationRunResult.  # noqa: E501
+
+        The result ID  # noqa: E501
+
+        :return: The result_id of this OneOfSimulationRunResult.  # noqa: E501
+        :rtype: str
+        """
+        return self._result_id
+
+    @result_id.setter
+    def result_id(self, result_id):
+        """Sets the result_id of this OneOfSimulationRunResult.
+
+        The result ID  # noqa: E501
+
+        :param result_id: The result_id of this OneOfSimulationRunResult.  # noqa: E501
+        :type: str
+        """
+
+        self._result_id = result_id
 
     @property
     def category(self):
