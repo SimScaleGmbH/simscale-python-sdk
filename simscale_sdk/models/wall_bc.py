@@ -88,7 +88,7 @@ class WallBC(object):
     def type(self):
         """Gets the type of this WallBC.  # noqa: E501
 
-        <p>This boundary provides several Solid Wall conditions.</P>The default <b>no-slip</b> corresponds to friction wall with no movement. The <b>slip wall</b> models a surface with no friction. The <b>rotating wall</b> and <b>moving wall</b> models rotation and translation by prescribing velocities at the wall. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/wall/' target='_blank'>Learn more</a>.  Schema name: WallBC  # noqa: E501
+        <p>This boundary provides several Solid Wall conditions.</P>The default <b>no-slip</b> corresponds to friction wall with no movement. The <b>slip wall</b> models a surface with no friction. The <b>rotating/moving wall</b> model wall movement by prescribing velocities. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/wall/' target='_blank'>Learn more</a>.  Schema name: WallBC  # noqa: E501
 
         :return: The type of this WallBC.  # noqa: E501
         :rtype: str
@@ -99,7 +99,7 @@ class WallBC(object):
     def type(self, type):
         """Sets the type of this WallBC.
 
-        <p>This boundary provides several Solid Wall conditions.</P>The default <b>no-slip</b> corresponds to friction wall with no movement. The <b>slip wall</b> models a surface with no friction. The <b>rotating wall</b> and <b>moving wall</b> models rotation and translation by prescribing velocities at the wall. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/wall/' target='_blank'>Learn more</a>.  Schema name: WallBC  # noqa: E501
+        <p>This boundary provides several Solid Wall conditions.</P>The default <b>no-slip</b> corresponds to friction wall with no movement. The <b>slip wall</b> models a surface with no friction. The <b>rotating/moving wall</b> model wall movement by prescribing velocities. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/wall/' target='_blank'>Learn more</a>.  Schema name: WallBC  # noqa: E501
 
         :param type: The type of this WallBC.  # noqa: E501
         :type: str

@@ -187,7 +187,7 @@ class ManualSimericsMeshSettings(object):
     def growth_rate(self):
         """Gets the growth_rate of this ManualSimericsMeshSettings.  # noqa: E501
 
-        The <i>Growth rate</i> defines the cell size ratio between adjacent cells. It needs to be <b>a whole number</b> always greater than 1, such that the cell size increases towards the interior of the mesh. <img src=\"/spec/resources/help/imgs/simerics-mesh-growth-rate.png\" class=\"helpPopupImage\"/>Example of each cell being 2 times thicker than its adjacent.  # noqa: E501
+        The <i>Growth rate</i> defines the cell size ratio between interior cell size and surface cell size. It needs to be <b>a whole number</b> always greater than 1 and smaller or equal to 8, such that the cell size increases towards the interior of the mesh.  # noqa: E501
 
         :return: The growth_rate of this ManualSimericsMeshSettings.  # noqa: E501
         :rtype: int
@@ -198,7 +198,7 @@ class ManualSimericsMeshSettings(object):
     def growth_rate(self, growth_rate):
         """Sets the growth_rate of this ManualSimericsMeshSettings.
 
-        The <i>Growth rate</i> defines the cell size ratio between adjacent cells. It needs to be <b>a whole number</b> always greater than 1, such that the cell size increases towards the interior of the mesh. <img src=\"/spec/resources/help/imgs/simerics-mesh-growth-rate.png\" class=\"helpPopupImage\"/>Example of each cell being 2 times thicker than its adjacent.  # noqa: E501
+        The <i>Growth rate</i> defines the cell size ratio between interior cell size and surface cell size. It needs to be <b>a whole number</b> always greater than 1 and smaller or equal to 8, such that the cell size increases towards the interior of the mesh.  # noqa: E501
 
         :param growth_rate: The growth_rate of this ManualSimericsMeshSettings.  # noqa: E501
         :type: int

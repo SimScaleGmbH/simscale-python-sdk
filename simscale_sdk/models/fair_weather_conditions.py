@@ -36,7 +36,7 @@ class FairWeatherConditions(object):
         'ground_reflectivity': 'float',
         'apparent_solar_irradiation': 'DimensionalHeatFlux',
         'atmospheric_extinction_coefficient': 'float',
-        'diffusive_radiation_factor': 'float'
+        'diffuse_radiation_factor': 'float'
     }
 
     attribute_map = {
@@ -45,10 +45,10 @@ class FairWeatherConditions(object):
         'ground_reflectivity': 'groundReflectivity',
         'apparent_solar_irradiation': 'apparentSolarIrradiation',
         'atmospheric_extinction_coefficient': 'atmosphericExtinctionCoefficient',
-        'diffusive_radiation_factor': 'diffusiveRadiationFactor'
+        'diffuse_radiation_factor': 'diffuseRadiationFactor'
     }
 
-    def __init__(self, type='FAIR_WEATHER_CONDITIONS', sky_cloud_cover_fraction=None, ground_reflectivity=None, apparent_solar_irradiation=None, atmospheric_extinction_coefficient=None, diffusive_radiation_factor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FAIR_WEATHER_CONDITIONS', sky_cloud_cover_fraction=None, ground_reflectivity=None, apparent_solar_irradiation=None, atmospheric_extinction_coefficient=None, diffuse_radiation_factor=None, local_vars_configuration=None):  # noqa: E501
         """FairWeatherConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,7 +59,7 @@ class FairWeatherConditions(object):
         self._ground_reflectivity = None
         self._apparent_solar_irradiation = None
         self._atmospheric_extinction_coefficient = None
-        self._diffusive_radiation_factor = None
+        self._diffuse_radiation_factor = None
         self.discriminator = None
 
         self.type = type
@@ -71,8 +71,8 @@ class FairWeatherConditions(object):
             self.apparent_solar_irradiation = apparent_solar_irradiation
         if atmospheric_extinction_coefficient is not None:
             self.atmospheric_extinction_coefficient = atmospheric_extinction_coefficient
-        if diffusive_radiation_factor is not None:
-            self.diffusive_radiation_factor = diffusive_radiation_factor
+        if diffuse_radiation_factor is not None:
+            self.diffuse_radiation_factor = diffuse_radiation_factor
 
     @property
     def type(self):
@@ -201,33 +201,33 @@ class FairWeatherConditions(object):
         self._atmospheric_extinction_coefficient = atmospheric_extinction_coefficient
 
     @property
-    def diffusive_radiation_factor(self):
-        """Gets the diffusive_radiation_factor of this FairWeatherConditions.  # noqa: E501
+    def diffuse_radiation_factor(self):
+        """Gets the diffuse_radiation_factor of this FairWeatherConditions.  # noqa: E501
 
-        Diffusive radiation factor (C)  # noqa: E501
+        Diffuse radiation factor (C)  # noqa: E501
 
-        :return: The diffusive_radiation_factor of this FairWeatherConditions.  # noqa: E501
+        :return: The diffuse_radiation_factor of this FairWeatherConditions.  # noqa: E501
         :rtype: float
         """
-        return self._diffusive_radiation_factor
+        return self._diffuse_radiation_factor
 
-    @diffusive_radiation_factor.setter
-    def diffusive_radiation_factor(self, diffusive_radiation_factor):
-        """Sets the diffusive_radiation_factor of this FairWeatherConditions.
+    @diffuse_radiation_factor.setter
+    def diffuse_radiation_factor(self, diffuse_radiation_factor):
+        """Sets the diffuse_radiation_factor of this FairWeatherConditions.
 
-        Diffusive radiation factor (C)  # noqa: E501
+        Diffuse radiation factor (C)  # noqa: E501
 
-        :param diffusive_radiation_factor: The diffusive_radiation_factor of this FairWeatherConditions.  # noqa: E501
+        :param diffuse_radiation_factor: The diffuse_radiation_factor of this FairWeatherConditions.  # noqa: E501
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                diffusive_radiation_factor is not None and diffusive_radiation_factor > 1):  # noqa: E501
-            raise ValueError("Invalid value for `diffusive_radiation_factor`, must be a value less than or equal to `1`")  # noqa: E501
+                diffuse_radiation_factor is not None and diffuse_radiation_factor > 1):  # noqa: E501
+            raise ValueError("Invalid value for `diffuse_radiation_factor`, must be a value less than or equal to `1`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                diffusive_radiation_factor is not None and diffusive_radiation_factor < 0):  # noqa: E501
-            raise ValueError("Invalid value for `diffusive_radiation_factor`, must be a value greater than or equal to `0`")  # noqa: E501
+                diffuse_radiation_factor is not None and diffuse_radiation_factor < 0):  # noqa: E501
+            raise ValueError("Invalid value for `diffuse_radiation_factor`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._diffusive_radiation_factor = diffusive_radiation_factor
+        self._diffuse_radiation_factor = diffuse_radiation_factor
 
     def to_dict(self):
         """Returns the model properties as a dict"""

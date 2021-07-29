@@ -103,7 +103,7 @@ class VelocityInletBC(object):
     def type(self):
         """Gets the type of this VelocityInletBC.  # noqa: E501
 
-        <br>This boundary condition imposes a known flow rate or velocity at an inlet.<p>The sub-types for a <b>Velocity Inlet</b> boundary are as follows:</p><ul><li><b>Fixed value:</b> defines a constant or time/space dependent velocity values. The flow direction is based on input values.</li><li><b>Mean value:</b> defines a mean or time/space dependent velocity values across the surface(s) selected. The flow direction is based on input values.</li><li><b>Flow rate:</b> defines the inlet velocity based on flow rate and area. <b>Value must be positive.</b></li><li><b>Mean flow rate:</b> defines the inlet velocity based on the mean flow rate and area. <b>Value must be positive.</b></li><li><b>Free stream:</b> defines a Inflow/Outflow condition at boundaries far away from the object. The flow direction is based on input values.</li></ul>  Schema name: VelocityInletBC  # noqa: E501
+        This boundary condition imposes a known <b>velocity</b>-based constraint at an inlet.  Schema name: VelocityInletBC  # noqa: E501
 
         :return: The type of this VelocityInletBC.  # noqa: E501
         :rtype: str
@@ -114,7 +114,7 @@ class VelocityInletBC(object):
     def type(self, type):
         """Sets the type of this VelocityInletBC.
 
-        <br>This boundary condition imposes a known flow rate or velocity at an inlet.<p>The sub-types for a <b>Velocity Inlet</b> boundary are as follows:</p><ul><li><b>Fixed value:</b> defines a constant or time/space dependent velocity values. The flow direction is based on input values.</li><li><b>Mean value:</b> defines a mean or time/space dependent velocity values across the surface(s) selected. The flow direction is based on input values.</li><li><b>Flow rate:</b> defines the inlet velocity based on flow rate and area. <b>Value must be positive.</b></li><li><b>Mean flow rate:</b> defines the inlet velocity based on the mean flow rate and area. <b>Value must be positive.</b></li><li><b>Free stream:</b> defines a Inflow/Outflow condition at boundaries far away from the object. The flow direction is based on input values.</li></ul>  Schema name: VelocityInletBC  # noqa: E501
+        This boundary condition imposes a known <b>velocity</b>-based constraint at an inlet.  Schema name: VelocityInletBC  # noqa: E501
 
         :param type: The type of this VelocityInletBC.  # noqa: E501
         :type: str

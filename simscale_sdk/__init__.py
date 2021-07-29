@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.2.0"
+__version__ = "0.3.0"
 
 # import apis into sdk package
 from simscale_sdk.api.geometries_api import GeometriesApi
@@ -508,7 +508,7 @@ from simscale_sdk.models.layer_addition_hex_dominant_snappy import LayerAddition
 from simscale_sdk.models.layer_refinement import LayerRefinement
 from simscale_sdk.models.layer_wall_thermal import LayerWallThermal
 from simscale_sdk.models.leastsquares_gradient_scheme import LeastsquaresGradientScheme
-from simscale_sdk.models.limited_corrected_surface_normal_gradient_scheme import LimitedCorrectedSurfaceNormalGradientScheme
+from simscale_sdk.models.limited_surface_normal_gradient_scheme import LimitedSurfaceNormalGradientScheme
 from simscale_sdk.models.linear_elastic_material_behavior import LinearElasticMaterialBehavior
 from simscale_sdk.models.linear_interpolation_scheme import LinearInterpolationScheme
 from simscale_sdk.models.linear_sbm import LinearSBM
@@ -597,7 +597,6 @@ from simscale_sdk.models.one_of_auto_timestep_definition_retiming_event import O
 from simscale_sdk.models.one_of_automatic_layer_on_layer_type import OneOfAutomaticLayerOnLayerType
 from simscale_sdk.models.one_of_average_fields_calculation_result_control_item_field_selection import OneOfAverageFieldsCalculationResultControlItemFieldSelection
 from simscale_sdk.models.one_of_bonded_contact_position_tolerance import OneOfBondedContactPositionTolerance
-from simscale_sdk.models.one_of_collision_retiming_event_timestep_calculation_type import OneOfCollisionRetimingEventTimestepCalculationType
 from simscale_sdk.models.one_of_component_vector_function_x import OneOfComponentVectorFunctionX
 from simscale_sdk.models.one_of_component_vector_function_y import OneOfComponentVectorFunctionY
 from simscale_sdk.models.one_of_component_vector_function_z import OneOfComponentVectorFunctionZ

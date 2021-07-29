@@ -32,32 +32,32 @@ class CustomSolarLoad(object):
     """
     openapi_types = {
         'type': 'str',
-        'directed_solar_load': 'DimensionalHeatFlux',
-        'diffusive_solar_load': 'DimensionalHeatFlux'
+        'direct_solar_load': 'DimensionalHeatFlux',
+        'diffuse_solar_load': 'DimensionalHeatFlux'
     }
 
     attribute_map = {
         'type': 'type',
-        'directed_solar_load': 'directedSolarLoad',
-        'diffusive_solar_load': 'diffusiveSolarLoad'
+        'direct_solar_load': 'directSolarLoad',
+        'diffuse_solar_load': 'diffuseSolarLoad'
     }
 
-    def __init__(self, type='CUSTOM_SOLAR_LOAD', directed_solar_load=None, diffusive_solar_load=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CUSTOM_SOLAR_LOAD', direct_solar_load=None, diffuse_solar_load=None, local_vars_configuration=None):  # noqa: E501
         """CustomSolarLoad - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._directed_solar_load = None
-        self._diffusive_solar_load = None
+        self._direct_solar_load = None
+        self._diffuse_solar_load = None
         self.discriminator = None
 
         self.type = type
-        if directed_solar_load is not None:
-            self.directed_solar_load = directed_solar_load
-        if diffusive_solar_load is not None:
-            self.diffusive_solar_load = diffusive_solar_load
+        if direct_solar_load is not None:
+            self.direct_solar_load = direct_solar_load
+        if diffuse_solar_load is not None:
+            self.diffuse_solar_load = diffuse_solar_load
 
     @property
     def type(self):
@@ -85,46 +85,46 @@ class CustomSolarLoad(object):
         self._type = type
 
     @property
-    def directed_solar_load(self):
-        """Gets the directed_solar_load of this CustomSolarLoad.  # noqa: E501
+    def direct_solar_load(self):
+        """Gets the direct_solar_load of this CustomSolarLoad.  # noqa: E501
 
 
-        :return: The directed_solar_load of this CustomSolarLoad.  # noqa: E501
+        :return: The direct_solar_load of this CustomSolarLoad.  # noqa: E501
         :rtype: DimensionalHeatFlux
         """
-        return self._directed_solar_load
+        return self._direct_solar_load
 
-    @directed_solar_load.setter
-    def directed_solar_load(self, directed_solar_load):
-        """Sets the directed_solar_load of this CustomSolarLoad.
+    @direct_solar_load.setter
+    def direct_solar_load(self, direct_solar_load):
+        """Sets the direct_solar_load of this CustomSolarLoad.
 
 
-        :param directed_solar_load: The directed_solar_load of this CustomSolarLoad.  # noqa: E501
+        :param direct_solar_load: The direct_solar_load of this CustomSolarLoad.  # noqa: E501
         :type: DimensionalHeatFlux
         """
 
-        self._directed_solar_load = directed_solar_load
+        self._direct_solar_load = direct_solar_load
 
     @property
-    def diffusive_solar_load(self):
-        """Gets the diffusive_solar_load of this CustomSolarLoad.  # noqa: E501
+    def diffuse_solar_load(self):
+        """Gets the diffuse_solar_load of this CustomSolarLoad.  # noqa: E501
 
 
-        :return: The diffusive_solar_load of this CustomSolarLoad.  # noqa: E501
+        :return: The diffuse_solar_load of this CustomSolarLoad.  # noqa: E501
         :rtype: DimensionalHeatFlux
         """
-        return self._diffusive_solar_load
+        return self._diffuse_solar_load
 
-    @diffusive_solar_load.setter
-    def diffusive_solar_load(self, diffusive_solar_load):
-        """Sets the diffusive_solar_load of this CustomSolarLoad.
+    @diffuse_solar_load.setter
+    def diffuse_solar_load(self, diffuse_solar_load):
+        """Sets the diffuse_solar_load of this CustomSolarLoad.
 
 
-        :param diffusive_solar_load: The diffusive_solar_load of this CustomSolarLoad.  # noqa: E501
+        :param diffuse_solar_load: The diffuse_solar_load of this CustomSolarLoad.  # noqa: E501
         :type: DimensionalHeatFlux
         """
 
-        self._diffusive_solar_load = diffusive_solar_load
+        self._diffuse_solar_load = diffuse_solar_load
 
     def to_dict(self):
         """Returns the model properties as a dict"""

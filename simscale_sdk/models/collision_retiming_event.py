@@ -32,7 +32,7 @@ class CollisionRetimingEvent(object):
     """
     openapi_types = {
         'type': 'str',
-        'timestep_calculation_type': 'OneOfCollisionRetimingEventTimestepCalculationType'
+        'timestep_calculation_type': 'ManualTimestepCalculationType'
     }
 
     attribute_map = {
@@ -85,7 +85,7 @@ class CollisionRetimingEvent(object):
 
 
         :return: The timestep_calculation_type of this CollisionRetimingEvent.  # noqa: E501
-        :rtype: OneOfCollisionRetimingEventTimestepCalculationType
+        :rtype: ManualTimestepCalculationType
         """
         return self._timestep_calculation_type
 
@@ -95,7 +95,7 @@ class CollisionRetimingEvent(object):
 
 
         :param timestep_calculation_type: The timestep_calculation_type of this CollisionRetimingEvent.  # noqa: E501
-        :type: OneOfCollisionRetimingEventTimestepCalculationType
+        :type: ManualTimestepCalculationType
         """
 
         self._timestep_calculation_type = timestep_calculation_type

@@ -43,7 +43,7 @@ class OneOfSurfaceNormalGradientSchemesSurfaceNormalGradientRho(object):
     discriminator_value_class_map = {
         'CORRECTED': 'CorrectedSurfaceNormalGradientScheme',
         'UNCORRECTED': 'UncorrectedSurfaceNormalGradientScheme',
-        'LIMITED': 'LimitedCorrectedSurfaceNormalGradientScheme'
+        'LIMITED': 'LimitedSurfaceNormalGradientScheme'
     }
 
     def __init__(self, type='LIMITED', limiter_coefficient=None, local_vars_configuration=None):  # noqa: E501
@@ -64,7 +64,7 @@ class OneOfSurfaceNormalGradientSchemesSurfaceNormalGradientRho(object):
     def type(self):
         """Gets the type of this OneOfSurfaceNormalGradientSchemesSurfaceNormalGradientRho.  # noqa: E501
 
-        Schema name: LimitedCorrectedSurfaceNormalGradientScheme  # noqa: E501
+        Schema name: LimitedSurfaceNormalGradientScheme  # noqa: E501
 
         :return: The type of this OneOfSurfaceNormalGradientSchemesSurfaceNormalGradientRho.  # noqa: E501
         :rtype: str
@@ -75,7 +75,7 @@ class OneOfSurfaceNormalGradientSchemesSurfaceNormalGradientRho(object):
     def type(self, type):
         """Sets the type of this OneOfSurfaceNormalGradientSchemesSurfaceNormalGradientRho.
 
-        Schema name: LimitedCorrectedSurfaceNormalGradientScheme  # noqa: E501
+        Schema name: LimitedSurfaceNormalGradientScheme  # noqa: E501
 
         :param type: The type of this OneOfSurfaceNormalGradientSchemesSurfaceNormalGradientRho.  # noqa: E501
         :type: str
