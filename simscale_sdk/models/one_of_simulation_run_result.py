@@ -141,7 +141,7 @@ class OneOfSimulationRunResult(object):
     def category(self):
         """Gets the category of this OneOfSimulationRunResult.  # noqa: E501
 
-        The result category. For solution fields values include `SOLUTION`, `AVERAGED_SOLUTION`, `TRANSIENT_SOLUTION`, `STATISTICAL_SURFACE_SOLUTION`, etc. For convergence plots values include `RESIDUALS_PLOT`, `NUMBER_OF_NEWTON_ITERATIONS`, etc. For plots values include `FORCE_PLOT`, `FORCE_COEFFICIENTS_PLOT`, `PROBE_POINT_PLOT`, `AREA_AVERAGE`, `FACE_CALC`, etc.   # noqa: E501
+        The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc.   # noqa: E501
 
         :return: The category of this OneOfSimulationRunResult.  # noqa: E501
         :rtype: str
@@ -152,7 +152,7 @@ class OneOfSimulationRunResult(object):
     def category(self, category):
         """Sets the category of this OneOfSimulationRunResult.
 
-        The result category. For solution fields values include `SOLUTION`, `AVERAGED_SOLUTION`, `TRANSIENT_SOLUTION`, `STATISTICAL_SURFACE_SOLUTION`, etc. For convergence plots values include `RESIDUALS_PLOT`, `NUMBER_OF_NEWTON_ITERATIONS`, etc. For plots values include `FORCE_PLOT`, `FORCE_COEFFICIENTS_PLOT`, `PROBE_POINT_PLOT`, `AREA_AVERAGE`, `FACE_CALC`, etc.   # noqa: E501
+        The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc.   # noqa: E501
 
         :param category: The category of this OneOfSimulationRunResult.  # noqa: E501
         :type: str
@@ -231,7 +231,7 @@ class OneOfSimulationRunResult(object):
     def quantity(self):
         """Gets the quantity of this OneOfSimulationRunResult.  # noqa: E501
 
-        The result quantity, only applies to plot result types. Valid values include `Ux`, `Uy`, `Uz`, `p`, `k`, `omega`, `T`, `displacement`, `von Mises stress`, etc.   # noqa: E501
+        The result quantity, only applies to plot result types. Valid values include 'Ux', 'Uy', 'Uz', 'p', 'k', 'omega', 'T', 'displacement', 'von Mises stress', etc.   # noqa: E501
 
         :return: The quantity of this OneOfSimulationRunResult.  # noqa: E501
         :rtype: str
@@ -242,7 +242,7 @@ class OneOfSimulationRunResult(object):
     def quantity(self, quantity):
         """Sets the quantity of this OneOfSimulationRunResult.
 
-        The result quantity, only applies to plot result types. Valid values include `Ux`, `Uy`, `Uz`, `p`, `k`, `omega`, `T`, `displacement`, `von Mises stress`, etc.   # noqa: E501
+        The result quantity, only applies to plot result types. Valid values include 'Ux', 'Uy', 'Uz', 'p', 'k', 'omega', 'T', 'displacement', 'von Mises stress', etc.   # noqa: E501
 
         :param quantity: The quantity of this OneOfSimulationRunResult.  # noqa: E501
         :type: str

@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.3.0"
+__version__ = "0.3.1"
 
 # import apis into sdk package
 from simscale_sdk.api.geometries_api import GeometriesApi
@@ -1077,7 +1077,6 @@ from simscale_sdk.models.simulation_run_result_download import SimulationRunResu
 from simscale_sdk.models.simulation_run_result_plot import SimulationRunResultPlot
 from simscale_sdk.models.simulation_run_result_solution import SimulationRunResultSolution
 from simscale_sdk.models.simulation_run_result_table import SimulationRunResultTable
-from simscale_sdk.models.simulation_run_result_type import SimulationRunResultType
 from simscale_sdk.models.simulation_run_results import SimulationRunResults
 from simscale_sdk.models.simulation_runs import SimulationRuns
 from simscale_sdk.models.simulation_spec import SimulationSpec

@@ -574,11 +574,11 @@ class SimulationRunsApi(object):
         :param str run_id: The simulation run ID (required)
         :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
-        :param SimulationRunResultType type:
-        :param str category:
-        :param str quantity:
-        :param str name:
-        :param float direction:
+        :param str type: The result type. The possible values are 'SOLUTION_FIELD', 'CONVERGENCE_PLOT', 'PLOT', 'TABLE'. 
+        :param str category: The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc. 
+        :param str quantity: The result quantity, only applies to plot result types. Valid values include 'Ux', 'Uy', 'Uz', 'p', 'k', 'omega', 'T', 'displacement', 'von Mises stress', etc. 
+        :param str name: The name that was defined for extra simulation result outputs.
+        :param float direction: The result direction, only applies to Pedestrian Wind Comfort analysis.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -607,11 +607,11 @@ class SimulationRunsApi(object):
         :param str run_id: The simulation run ID (required)
         :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
-        :param SimulationRunResultType type:
-        :param str category:
-        :param str quantity:
-        :param str name:
-        :param float direction:
+        :param str type: The result type. The possible values are 'SOLUTION_FIELD', 'CONVERGENCE_PLOT', 'PLOT', 'TABLE'. 
+        :param str category: The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc. 
+        :param str quantity: The result quantity, only applies to plot result types. Valid values include 'Ux', 'Uy', 'Uz', 'p', 'k', 'omega', 'T', 'displacement', 'von Mises stress', etc. 
+        :param str name: The name that was defined for extra simulation result outputs.
+        :param float direction: The result direction, only applies to Pedestrian Wind Comfort analysis.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
