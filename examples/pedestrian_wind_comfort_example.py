@@ -123,13 +123,14 @@ model = WindComfort(
     ),
     mesh_settings=WindComfortMesh(wind_comfort_fineness=PacefishFinenessVeryCoarse())
 )
+
 simulation_spec = SimulationSpec(name='Pedestrian Wind Comfort via Python SDK', geometry_id=geometry_id, model=model)
 
 # Create simulation
 simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id
 print(f'simulationId: {simulation_id}')
 
-# # Read simulation spec and update with the deserialized model
+# Read simulation spec and update with the deserialized model
 simulation_spec = simulation_api.get_simulation(project_id, simulation_id)
 simulation_api.update_simulation(project_id, simulation_id, simulation_spec)
 
@@ -181,6 +182,43 @@ while simulation_run.status not in ('FINISHED', 'CANCELED', 'FAILED'):
 # Get result metadata and download results
 results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, run_id)
 statistical_surface_solution_info = [r for r in results._embedded if r.category == 'STATISTICAL_SURFACE_SOLUTION'][0]
+statistical_surface_solution_response = api_client.rest_client.GET(url=statistical_surface_solution_info.download.url, headers={api_key_header: api_key}, _preload_content=False)
+with open('statistical_surface_solution.zip', 'wb') as file:
+    file.write(statistical_surface_solution_response.data)
+zip = zipfile.ZipFile('statistical_surface_solution.zip')
+print(f'Statistical surface solution solution ZIP file content: {zip.namelist()}')
+
+# The following sections show a use case of the "additional wind data" functionality. This part is optional when
+# running a simple PWC simulation, but it can be helpful when running the same simulation multiple times with different
+# wind data. In this case, the directional results will be reused from the original simulation run, only the statistical
+# surface solution will be re-calculated.
+
+# Update the simulation spec
+model = simulation_api.get_simulation(project_id, simulation_id).model
+model.pedestrian_comfort_map[0].height_above_ground = DimensionalLength(1.8, "m")
+
+updated_simulation_spec = SimulationSpec(name='Pedestrian Wind Comfort with additional data', geometry_id=geometry_id, model=model)
+simulation_api.update_simulation(project_id, simulation_id, updated_simulation_spec)
+
+# Create a simulation run based on the updated spec and the previous run
+wind_data = WindData("Additional wind rose run")
+additional_run = simulation_run_api.add_wind_data_to_simulation_run(project_id, simulation_id, simulation_run.run_id, wind_data)
+additional_run_id = additional_run.run_id
+
+# Start additional simulation run and wait until it's finished
+additional_run = simulation_run_api.get_simulation_run(project_id, simulation_id, additional_run_id)
+simulation_run_start = time.time()
+while additional_run.status not in ('FINISHED', 'CANCELED', 'FAILED'):
+    if time.time() > simulation_run_start + max_runtime:
+        raise TimeoutError()
+    time.sleep(30)
+    additional_run = simulation_run_api.get_simulation_run(project_id, simulation_id, additional_run_id)
+    print(f'Simulation run status: {additional_run.status} - {additional_run.progress}')
+
+# Get result metadata and download results
+new_results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, additional_run_id)
+
+statistical_surface_solution_info = [r for r in new_results._embedded if r.category == 'STATISTICAL_SURFACE_SOLUTION'][0]
 statistical_surface_solution_response = api_client.rest_client.GET(url=statistical_surface_solution_info.download.url, headers={api_key_header: api_key}, _preload_content=False)
 with open('statistical_surface_solution.zip', 'wb') as file:
     file.write(statistical_surface_solution_response.data)

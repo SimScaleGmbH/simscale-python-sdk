@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.3.1"
+__version__ = "0.4.0"
 
 # import apis into sdk package
 from simscale_sdk.api.geometries_api import GeometriesApi
@@ -1038,6 +1038,8 @@ from simscale_sdk.models.relative_convergence_criteria import RelativeConvergenc
 from simscale_sdk.models.relaxation_factor import RelaxationFactor
 from simscale_sdk.models.remote_displacement_load_bc import RemoteDisplacementLoadBC
 from simscale_sdk.models.remote_force_load_bc import RemoteForceLoadBC
+from simscale_sdk.models.report_request import ReportRequest
+from simscale_sdk.models.report_response import ReportResponse
 from simscale_sdk.models.residual_controls import ResidualControls
 from simscale_sdk.models.resolution import Resolution
 from simscale_sdk.models.restricted_dimensional_function_frequency import RestrictedDimensionalFunctionFrequency
@@ -1259,6 +1261,7 @@ from simscale_sdk.models.wind_comfort import WindComfort
 from simscale_sdk.models.wind_comfort_mesh import WindComfortMesh
 from simscale_sdk.models.wind_comfort_simulation_control import WindComfortSimulationControl
 from simscale_sdk.models.wind_conditions import WindConditions
+from simscale_sdk.models.wind_data import WindData
 from simscale_sdk.models.wind_rose import WindRose
 from simscale_sdk.models.wind_rose_velocity_bucket import WindRoseVelocityBucket
 from simscale_sdk.models.wind_tunnel_size_custom import WindTunnelSizeCustom
