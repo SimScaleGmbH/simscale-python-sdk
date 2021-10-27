@@ -63,7 +63,7 @@ class FixedSupportBC(object):
     def type(self):
         """Gets the type of this FixedSupportBC.  # noqa: E501
 
-        <p>If a <b>fixed support</b> constraint is used, all degrees of freedom of the selected entities are fixed at zero. This constraint is often used to model a fixation to the ground or an undeformable part.</p>  Schema name: FixedSupportBC  # noqa: E501
+        <p>If a <b>fixed support</b> boundary condition is used, all degrees of freedom of the selected entities are fixed at zero. This constraint is often used to model a fixation to the ground or an undeformable part.<br><a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/fixed-support-constraint-type/' target'blank'>Learn more</a>.</p>  Schema name: FixedSupportBC  # noqa: E501
 
         :return: The type of this FixedSupportBC.  # noqa: E501
         :rtype: str
@@ -74,7 +74,7 @@ class FixedSupportBC(object):
     def type(self, type):
         """Sets the type of this FixedSupportBC.
 
-        <p>If a <b>fixed support</b> constraint is used, all degrees of freedom of the selected entities are fixed at zero. This constraint is often used to model a fixation to the ground or an undeformable part.</p>  Schema name: FixedSupportBC  # noqa: E501
+        <p>If a <b>fixed support</b> boundary condition is used, all degrees of freedom of the selected entities are fixed at zero. This constraint is often used to model a fixation to the ground or an undeformable part.<br><a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/fixed-support-constraint-type/' target'blank'>Learn more</a>.</p>  Schema name: FixedSupportBC  # noqa: E501
 
         :param type: The type of this FixedSupportBC.  # noqa: E501
         :type: str

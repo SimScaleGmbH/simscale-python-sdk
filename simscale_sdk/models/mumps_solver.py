@@ -212,7 +212,7 @@ class MUMPSSolver(object):
     def matrix_type(self):
         """Gets the matrix_type of this MUMPSSolver.  # noqa: E501
 
-        <p>Choose the type of your system matrix either by directly selecting the appropriate type or using the <b>automatic detection</b>. With the selection <b>automatic detection</b> the matrix type <b>symmetric positive indifinite</b> is selected if a symmetric system matrix is detected, and <b>asymmetric</b> else.  # noqa: E501
+        <p>Choose the type of your system matrix by directly selecting the appropriate type or using the <b>automatic detection</b>. With the selection <b>automatic detection</b> the matrix type <b>symmetric positive indefinite</b> is selected if a symmetric system matrix is detected, and <b>asymmetric</b> otherwise.  # noqa: E501
 
         :return: The matrix_type of this MUMPSSolver.  # noqa: E501
         :rtype: str
@@ -223,7 +223,7 @@ class MUMPSSolver(object):
     def matrix_type(self, matrix_type):
         """Sets the matrix_type of this MUMPSSolver.
 
-        <p>Choose the type of your system matrix either by directly selecting the appropriate type or using the <b>automatic detection</b>. With the selection <b>automatic detection</b> the matrix type <b>symmetric positive indifinite</b> is selected if a symmetric system matrix is detected, and <b>asymmetric</b> else.  # noqa: E501
+        <p>Choose the type of your system matrix by directly selecting the appropriate type or using the <b>automatic detection</b>. With the selection <b>automatic detection</b> the matrix type <b>symmetric positive indefinite</b> is selected if a symmetric system matrix is detected, and <b>asymmetric</b> otherwise.  # noqa: E501
 
         :param matrix_type: The matrix_type of this MUMPSSolver.  # noqa: E501
         :type: str
@@ -264,7 +264,7 @@ class MUMPSSolver(object):
     def linear_system_relative_residual(self):
         """Gets the linear_system_relative_residual of this MUMPSSolver.  # noqa: E501
 
-        Choose a value for the maximum relative residual for each linear system resolution compared to the exact solution. In a nonlinear calculation the user can deactivate this check by selecting a negative value (for example -1.0, since the qualitiy of the solution is controlled within the Newton loop.  # noqa: E501
+        Choose a value for the maximum relative residual for each linear system resolution compared to the exact solution. In a nonlinear calculation the user can deactivate this check by selecting a negative value (for example, -1.0) since the quality of the solution is controlled within the Newton loop.  # noqa: E501
 
         :return: The linear_system_relative_residual of this MUMPSSolver.  # noqa: E501
         :rtype: float
@@ -275,7 +275,7 @@ class MUMPSSolver(object):
     def linear_system_relative_residual(self, linear_system_relative_residual):
         """Sets the linear_system_relative_residual of this MUMPSSolver.
 
-        Choose a value for the maximum relative residual for each linear system resolution compared to the exact solution. In a nonlinear calculation the user can deactivate this check by selecting a negative value (for example -1.0, since the qualitiy of the solution is controlled within the Newton loop.  # noqa: E501
+        Choose a value for the maximum relative residual for each linear system resolution compared to the exact solution. In a nonlinear calculation the user can deactivate this check by selecting a negative value (for example, -1.0) since the quality of the solution is controlled within the Newton loop.  # noqa: E501
 
         :param linear_system_relative_residual: The linear_system_relative_residual of this MUMPSSolver.  # noqa: E501
         :type: float

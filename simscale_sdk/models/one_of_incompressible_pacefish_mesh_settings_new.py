@@ -94,7 +94,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
     def type(self):
         """Gets the type of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
 
-        Schema name: PacefishAutomesh  # noqa: E501
+        <p>Choose between <i>Automatic</i> and <i>Manual</i> mesh settings. <a href='https://www.simscale.com/docs/analysis-types/incompressible-lbm/#mesh' target='_blank'>Learn more.</a></p><p><b>Note:</b> Mesh fineness impacts the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  Schema name: PacefishAutomesh  # noqa: E501
 
         :return: The type of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
         :rtype: str
@@ -105,7 +105,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
     def type(self, type):
         """Sets the type of this OneOfIncompressiblePacefishMeshSettingsNew.
 
-        Schema name: PacefishAutomesh  # noqa: E501
+        <p>Choose between <i>Automatic</i> and <i>Manual</i> mesh settings. <a href='https://www.simscale.com/docs/analysis-types/incompressible-lbm/#mesh' target='_blank'>Learn more.</a></p><p><b>Note:</b> Mesh fineness impacts the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  Schema name: PacefishAutomesh  # noqa: E501
 
         :param type: The type of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
         :type: str
@@ -167,7 +167,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
     def reynolds_scaling(self):
         """Gets the reynolds_scaling of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
 
-        Use this factor to scale the Reynolds number of your simulation. For example, to change the Reynolds number from 10<sup>8</sup> to 10<sup>6</sup>, set this factor to 0.01.  # noqa: E501
+        Use this factor to scale the Reynolds number of your simulation. For example, to change the Reynolds number from 10<sup>8</sup> to 10<sup>6</sup>, set this factor to 0.01. <a href= https://www.simscale.com/docs/incompressible-lbm-lattice-boltzmann-advanced/#reynolds-scaling-factor' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The reynolds_scaling of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
         :rtype: float
@@ -178,7 +178,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
     def reynolds_scaling(self, reynolds_scaling):
         """Sets the reynolds_scaling of this OneOfIncompressiblePacefishMeshSettingsNew.
 
-        Use this factor to scale the Reynolds number of your simulation. For example, to change the Reynolds number from 10<sup>8</sup> to 10<sup>6</sup>, set this factor to 0.01.  # noqa: E501
+        Use this factor to scale the Reynolds number of your simulation. For example, to change the Reynolds number from 10<sup>8</sup> to 10<sup>6</sup>, set this factor to 0.01. <a href= https://www.simscale.com/docs/incompressible-lbm-lattice-boltzmann-advanced/#reynolds-scaling-factor' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param reynolds_scaling: The reynolds_scaling of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
         :type: float

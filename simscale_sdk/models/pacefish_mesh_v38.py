@@ -73,7 +73,7 @@ class PacefishMeshV38(object):
     def type(self):
         """Gets the type of this PacefishMeshV38.  # noqa: E501
 
-        Schema name: PacefishMeshV38  # noqa: E501
+        <p>Choose between <i>Automatic</i> and <i>Manual</i> mesh settings. <a href='https://www.simscale.com/docs/analysis-types/incompressible-lbm/#mesh' target='_blank'>Learn more.</a></p><p><b>Note:</b> Mesh fineness impacts the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  Schema name: PacefishMeshV38  # noqa: E501
 
         :return: The type of this PacefishMeshV38.  # noqa: E501
         :rtype: str
@@ -84,7 +84,7 @@ class PacefishMeshV38(object):
     def type(self, type):
         """Sets the type of this PacefishMeshV38.
 
-        Schema name: PacefishMeshV38  # noqa: E501
+        <p>Choose between <i>Automatic</i> and <i>Manual</i> mesh settings. <a href='https://www.simscale.com/docs/analysis-types/incompressible-lbm/#mesh' target='_blank'>Learn more.</a></p><p><b>Note:</b> Mesh fineness impacts the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  Schema name: PacefishMeshV38  # noqa: E501
 
         :param type: The type of this PacefishMeshV38.  # noqa: E501
         :type: str

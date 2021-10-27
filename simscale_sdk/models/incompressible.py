@@ -36,6 +36,7 @@ class Incompressible(object):
         'time_dependency': 'OneOfIncompressibleTimeDependency',
         'algorithm': 'str',
         'num_of_passive_species': 'int',
+        'enable_adjoint_optimization': 'bool',
         'model': 'FluidModel',
         'materials': 'IncompressibleFluidMaterials',
         'initial_conditions': 'FluidInitialConditions',
@@ -52,6 +53,7 @@ class Incompressible(object):
         'time_dependency': 'timeDependency',
         'algorithm': 'algorithm',
         'num_of_passive_species': 'numOfPassiveSpecies',
+        'enable_adjoint_optimization': 'enableAdjointOptimization',
         'model': 'model',
         'materials': 'materials',
         'initial_conditions': 'initialConditions',
@@ -62,7 +64,7 @@ class Incompressible(object):
         'result_control': 'resultControl'
     }
 
-    def __init__(self, type='INCOMPRESSIBLE', turbulence_model=None, time_dependency=None, algorithm=None, num_of_passive_species=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INCOMPRESSIBLE', turbulence_model=None, time_dependency=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
         """Incompressible - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class Incompressible(object):
         self._time_dependency = None
         self._algorithm = None
         self._num_of_passive_species = None
+        self._enable_adjoint_optimization = None
         self._model = None
         self._materials = None
         self._initial_conditions = None
@@ -92,6 +95,8 @@ class Incompressible(object):
             self.algorithm = algorithm
         if num_of_passive_species is not None:
             self.num_of_passive_species = num_of_passive_species
+        if enable_adjoint_optimization is not None:
+            self.enable_adjoint_optimization = enable_adjoint_optimization
         if model is not None:
             self.model = model
         if materials is not None:
@@ -233,6 +238,27 @@ class Incompressible(object):
             )
 
         self._num_of_passive_species = num_of_passive_species
+
+    @property
+    def enable_adjoint_optimization(self):
+        """Gets the enable_adjoint_optimization of this Incompressible.  # noqa: E501
+
+
+        :return: The enable_adjoint_optimization of this Incompressible.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_adjoint_optimization
+
+    @enable_adjoint_optimization.setter
+    def enable_adjoint_optimization(self, enable_adjoint_optimization):
+        """Sets the enable_adjoint_optimization of this Incompressible.
+
+
+        :param enable_adjoint_optimization: The enable_adjoint_optimization of this Incompressible.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_adjoint_optimization = enable_adjoint_optimization
 
     @property
     def model(self):

@@ -34,22 +34,27 @@ class OneOfFluidResultControlsSurfaceData(object):
         'type': 'str',
         'name': 'str',
         'write_control': 'OneOfAreaIntegralResultControlWriteControl',
-        'topological_reference': 'TopologicalReference'
+        'topological_reference': 'TopologicalReference',
+        'inlet_face_topological_reference': 'TopologicalReference',
+        'outlet_face_topological_reference': 'TopologicalReference'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
         'write_control': 'writeControl',
-        'topological_reference': 'topologicalReference'
+        'topological_reference': 'topologicalReference',
+        'inlet_face_topological_reference': 'inletFaceTopologicalReference',
+        'outlet_face_topological_reference': 'outletFaceTopologicalReference'
     }
 
     discriminator_value_class_map = {
         'AREA_AVERAGE': 'AreaAverageResultControl',
-        'AREA_INTEGRAL': 'AreaIntegralResultControl'
+        'AREA_INTEGRAL': 'AreaIntegralResultControl',
+        'PRESSURE_DIFFERENCE': 'PressureDifferenceResultControl'
     }
 
-    def __init__(self, type='AREA_INTEGRAL', name=None, write_control=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, write_control=None, topological_reference=None, inlet_face_topological_reference=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidResultControlsSurfaceData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +64,8 @@ class OneOfFluidResultControlsSurfaceData(object):
         self._name = None
         self._write_control = None
         self._topological_reference = None
+        self._inlet_face_topological_reference = None
+        self._outlet_face_topological_reference = None
         self.discriminator = 'type'
 
         self.type = type
@@ -68,12 +75,16 @@ class OneOfFluidResultControlsSurfaceData(object):
             self.write_control = write_control
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if inlet_face_topological_reference is not None:
+            self.inlet_face_topological_reference = inlet_face_topological_reference
+        if outlet_face_topological_reference is not None:
+            self.outlet_face_topological_reference = outlet_face_topological_reference
 
     @property
     def type(self):
         """Gets the type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
 
-        Schema name: AreaIntegralResultControl  # noqa: E501
+        Schema name: PressureDifferenceResultControl  # noqa: E501
 
         :return: The type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
         :rtype: str
@@ -84,7 +95,7 @@ class OneOfFluidResultControlsSurfaceData(object):
     def type(self, type):
         """Sets the type of this OneOfFluidResultControlsSurfaceData.
 
-        Schema name: AreaIntegralResultControl  # noqa: E501
+        Schema name: PressureDifferenceResultControl  # noqa: E501
 
         :param type: The type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
         :type: str
@@ -159,6 +170,48 @@ class OneOfFluidResultControlsSurfaceData(object):
         """
 
         self._topological_reference = topological_reference
+
+    @property
+    def inlet_face_topological_reference(self):
+        """Gets the inlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+
+
+        :return: The inlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._inlet_face_topological_reference
+
+    @inlet_face_topological_reference.setter
+    def inlet_face_topological_reference(self, inlet_face_topological_reference):
+        """Sets the inlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.
+
+
+        :param inlet_face_topological_reference: The inlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._inlet_face_topological_reference = inlet_face_topological_reference
+
+    @property
+    def outlet_face_topological_reference(self):
+        """Gets the outlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+
+
+        :return: The outlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._outlet_face_topological_reference
+
+    @outlet_face_topological_reference.setter
+    def outlet_face_topological_reference(self, outlet_face_topological_reference):
+        """Sets the outlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.
+
+
+        :param outlet_face_topological_reference: The outlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._outlet_face_topological_reference = outlet_face_topological_reference
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

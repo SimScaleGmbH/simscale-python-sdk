@@ -80,7 +80,7 @@ class WindComfortSimulationControl(object):
     def number_of_fluid_passes(self):
         """Gets the number_of_fluid_passes of this WindComfortSimulationControl.  # noqa: E501
 
-        <p>Set how many times the fluid (air) passes over the domain during the simulation. <b>Warning</b>: Values below 2.0 might produce invalid results while higher numbers will require more simulation time and consequently more GPU hours. Recommended value is 3.0. <a href='https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/simulation-control/' target='_blank'>Learn more</a>.</p>  # noqa: E501
+        <p>Set how many times the fluid (air) passes over the domain during the simulation.</p><p> <b>Warning</b>: Values below 2.0 might produce invalid results while higher numbers will require more simulation time and consequently more GPU hours. Recommended value is 3.0. <a href='https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/simulation-control/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :return: The number_of_fluid_passes of this WindComfortSimulationControl.  # noqa: E501
         :rtype: float
@@ -91,7 +91,7 @@ class WindComfortSimulationControl(object):
     def number_of_fluid_passes(self, number_of_fluid_passes):
         """Sets the number_of_fluid_passes of this WindComfortSimulationControl.
 
-        <p>Set how many times the fluid (air) passes over the domain during the simulation. <b>Warning</b>: Values below 2.0 might produce invalid results while higher numbers will require more simulation time and consequently more GPU hours. Recommended value is 3.0. <a href='https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/simulation-control/' target='_blank'>Learn more</a>.</p>  # noqa: E501
+        <p>Set how many times the fluid (air) passes over the domain during the simulation.</p><p> <b>Warning</b>: Values below 2.0 might produce invalid results while higher numbers will require more simulation time and consequently more GPU hours. Recommended value is 3.0. <a href='https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/simulation-control/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :param number_of_fluid_passes: The number_of_fluid_passes of this WindComfortSimulationControl.  # noqa: E501
         :type: float

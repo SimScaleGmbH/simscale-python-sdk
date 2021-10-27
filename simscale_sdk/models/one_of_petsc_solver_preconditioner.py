@@ -50,7 +50,6 @@ class OneOfPETSCSolverPreconditioner(object):
 
     discriminator_value_class_map = {
         'MUMPS_LDLT': 'MUMPSPreconditoner',
-        'INCOMPLETE_LDLT': 'IncompletePreconditioner',
         'INCOMPLETE_LDLT_V33': 'IncompletePreconditionerV33',
         'JACOBI': 'JacobiPreconditioner',
         'SOR': 'SorPreconditioner',

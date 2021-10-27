@@ -91,7 +91,6 @@ class OneOfConjugateHeatTransferBoundaryConditions(object):
         'PRESSURE_OUTLET_V30': 'PressureOutletBC',
         'WALL_V34': 'WallBC',
         'SYMMETRY': 'SymmetryBC',
-        'PERIODIC': 'PeriodicBC',
         'WEDGE': 'WedgeBC',
         'CUSTOM_V37': 'CustomFluidBC',
         'EMPTY_2D': 'Empty2DBC',

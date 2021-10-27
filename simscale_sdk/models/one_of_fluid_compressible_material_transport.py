@@ -33,6 +33,7 @@ class OneOfFluidCompressibleMaterialTransport(object):
     openapi_types = {
         'type': 'str',
         'dynamic_viscosity': 'DimensionalDynamicViscosity',
+        'dynamic_viscosity_function': 'DimensionalFunctionDynamicViscosity',
         'prandtl_number': 'float',
         'turbulent_prandtl_number': 'float',
         'thermo': 'OneOfSutherlandTransportThermo',
@@ -44,6 +45,7 @@ class OneOfFluidCompressibleMaterialTransport(object):
     attribute_map = {
         'type': 'type',
         'dynamic_viscosity': 'dynamicViscosity',
+        'dynamic_viscosity_function': 'dynamicViscosityFunction',
         'prandtl_number': 'prandtlNumber',
         'turbulent_prandtl_number': 'turbulentPrandtlNumber',
         'thermo': 'thermo',
@@ -57,7 +59,7 @@ class OneOfFluidCompressibleMaterialTransport(object):
         'SUTHERLAND': 'SutherlandTransport'
     }
 
-    def __init__(self, type='SUTHERLAND', dynamic_viscosity=None, prandtl_number=None, turbulent_prandtl_number=None, thermo=None, reference_viscosity=None, reference_temperature=None, ts=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SUTHERLAND', dynamic_viscosity=None, dynamic_viscosity_function=None, prandtl_number=None, turbulent_prandtl_number=None, thermo=None, reference_viscosity=None, reference_temperature=None, ts=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidCompressibleMaterialTransport - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class OneOfFluidCompressibleMaterialTransport(object):
 
         self._type = None
         self._dynamic_viscosity = None
+        self._dynamic_viscosity_function = None
         self._prandtl_number = None
         self._turbulent_prandtl_number = None
         self._thermo = None
@@ -76,6 +79,8 @@ class OneOfFluidCompressibleMaterialTransport(object):
         self.type = type
         if dynamic_viscosity is not None:
             self.dynamic_viscosity = dynamic_viscosity
+        if dynamic_viscosity_function is not None:
+            self.dynamic_viscosity_function = dynamic_viscosity_function
         if prandtl_number is not None:
             self.prandtl_number = prandtl_number
         if turbulent_prandtl_number is not None:
@@ -136,6 +141,27 @@ class OneOfFluidCompressibleMaterialTransport(object):
         self._dynamic_viscosity = dynamic_viscosity
 
     @property
+    def dynamic_viscosity_function(self):
+        """Gets the dynamic_viscosity_function of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
+
+
+        :return: The dynamic_viscosity_function of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
+        :rtype: DimensionalFunctionDynamicViscosity
+        """
+        return self._dynamic_viscosity_function
+
+    @dynamic_viscosity_function.setter
+    def dynamic_viscosity_function(self, dynamic_viscosity_function):
+        """Sets the dynamic_viscosity_function of this OneOfFluidCompressibleMaterialTransport.
+
+
+        :param dynamic_viscosity_function: The dynamic_viscosity_function of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
+        :type: DimensionalFunctionDynamicViscosity
+        """
+
+        self._dynamic_viscosity_function = dynamic_viscosity_function
+
+    @property
     def prandtl_number(self):
         """Gets the prandtl_number of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
 
@@ -155,6 +181,9 @@ class OneOfFluidCompressibleMaterialTransport(object):
         :param prandtl_number: The prandtl_number of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                prandtl_number is not None and prandtl_number <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `prandtl_number`, must be a value greater than `0`")  # noqa: E501
 
         self._prandtl_number = prandtl_number
 
@@ -178,6 +207,9 @@ class OneOfFluidCompressibleMaterialTransport(object):
         :param turbulent_prandtl_number: The turbulent_prandtl_number of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                turbulent_prandtl_number is not None and turbulent_prandtl_number <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_prandtl_number`, must be a value greater than `0`")  # noqa: E501
 
         self._turbulent_prandtl_number = turbulent_prandtl_number
 

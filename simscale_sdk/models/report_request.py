@@ -34,19 +34,17 @@ class ReportRequest(object):
         'name': 'str',
         'description': 'str',
         'result_ids': 'list[str]',
-        'report_id': 'str',
-        'report_properties': 'object'
+        'report_properties': 'OneOfReportProperties'
     }
 
     attribute_map = {
         'name': 'name',
         'description': 'description',
         'result_ids': 'resultIds',
-        'report_id': 'reportId',
         'report_properties': 'reportProperties'
     }
 
-    def __init__(self, name=None, description=None, result_ids=None, report_id=None, report_properties=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, description=None, result_ids=None, report_properties=None, local_vars_configuration=None):  # noqa: E501
         """ReportRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,21 +53,20 @@ class ReportRequest(object):
         self._name = None
         self._description = None
         self._result_ids = None
-        self._report_id = None
         self._report_properties = None
         self.discriminator = None
 
         self.name = name
-        self.description = description
+        if description is not None:
+            self.description = description
         self.result_ids = result_ids
-        if report_id is not None:
-            self.report_id = report_id
         self.report_properties = report_properties
 
     @property
     def name(self):
         """Gets the name of this ReportRequest.  # noqa: E501
 
+        The name of the report.  # noqa: E501
 
         :return: The name of this ReportRequest.  # noqa: E501
         :rtype: str
@@ -80,12 +77,19 @@ class ReportRequest(object):
     def name(self, name):
         """Sets the name of this ReportRequest.
 
+        The name of the report.  # noqa: E501
 
         :param name: The name of this ReportRequest.  # noqa: E501
         :type: str
         """
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                name is not None and len(name) > 20):
+            raise ValueError("Invalid value for `name`, length must be less than or equal to `20`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                name is not None and len(name) < 1):
+            raise ValueError("Invalid value for `name`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._name = name
 
@@ -93,6 +97,7 @@ class ReportRequest(object):
     def description(self):
         """Gets the description of this ReportRequest.  # noqa: E501
 
+        The description of the report.  # noqa: E501
 
         :return: The description of this ReportRequest.  # noqa: E501
         :rtype: str
@@ -103,12 +108,17 @@ class ReportRequest(object):
     def description(self, description):
         """Sets the description of this ReportRequest.
 
+        The description of the report.  # noqa: E501
 
         :param description: The description of this ReportRequest.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and description is None:  # noqa: E501
-            raise ValueError("Invalid value for `description`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                description is not None and len(description) > 150):
+            raise ValueError("Invalid value for `description`, length must be less than or equal to `150`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                description is not None and len(description) < 1):
+            raise ValueError("Invalid value for `description`, length must be greater than or equal to `1`")  # noqa: E501
 
         self._description = description
 
@@ -116,6 +126,7 @@ class ReportRequest(object):
     def result_ids(self):
         """Gets the result_ids of this ReportRequest.  # noqa: E501
 
+        The resultIds the report should be created for.  # noqa: E501
 
         :return: The result_ids of this ReportRequest.  # noqa: E501
         :rtype: list[str]
@@ -126,6 +137,7 @@ class ReportRequest(object):
     def result_ids(self, result_ids):
         """Sets the result_ids of this ReportRequest.
 
+        The resultIds the report should be created for.  # noqa: E501
 
         :param result_ids: The result_ids of this ReportRequest.  # noqa: E501
         :type: list[str]
@@ -136,34 +148,12 @@ class ReportRequest(object):
         self._result_ids = result_ids
 
     @property
-    def report_id(self):
-        """Gets the report_id of this ReportRequest.  # noqa: E501
-
-
-        :return: The report_id of this ReportRequest.  # noqa: E501
-        :rtype: str
-        """
-        return self._report_id
-
-    @report_id.setter
-    def report_id(self, report_id):
-        """Sets the report_id of this ReportRequest.
-
-
-        :param report_id: The report_id of this ReportRequest.  # noqa: E501
-        :type: str
-        """
-
-        self._report_id = report_id
-
-    @property
     def report_properties(self):
         """Gets the report_properties of this ReportRequest.  # noqa: E501
 
-        Note: This object is replaced at runtime with the actual report model schema which is fetched from reporting service.   # noqa: E501
 
         :return: The report_properties of this ReportRequest.  # noqa: E501
-        :rtype: object
+        :rtype: OneOfReportProperties
         """
         return self._report_properties
 
@@ -171,10 +161,9 @@ class ReportRequest(object):
     def report_properties(self, report_properties):
         """Sets the report_properties of this ReportRequest.
 
-        Note: This object is replaced at runtime with the actual report model schema which is fetched from reporting service.   # noqa: E501
 
         :param report_properties: The report_properties of this ReportRequest.  # noqa: E501
-        :type: object
+        :type: OneOfReportProperties
         """
         if self.local_vars_configuration.client_side_validation and report_properties is None:  # noqa: E501
             raise ValueError("Invalid value for `report_properties`, must not be `None`")  # noqa: E501

@@ -35,6 +35,7 @@ class SimericsAnalysis(object):
         'materials': 'SimericsFluidMaterials',
         'is_compressible': 'bool',
         'turbulence_model': 'str',
+        'time_dependency': 'OneOfSimericsAnalysisTimeDependency',
         'boundary_conditions': 'list[OneOfSimericsAnalysisBoundaryConditions]',
         'simulation_control': 'FluidSimulationControl',
         'mesh_settings': 'OneOfSimericsAnalysisMeshSettings',
@@ -47,6 +48,7 @@ class SimericsAnalysis(object):
         'materials': 'materials',
         'is_compressible': 'isCompressible',
         'turbulence_model': 'turbulenceModel',
+        'time_dependency': 'timeDependency',
         'boundary_conditions': 'boundaryConditions',
         'simulation_control': 'simulationControl',
         'mesh_settings': 'meshSettings',
@@ -54,7 +56,7 @@ class SimericsAnalysis(object):
         'advanced_concepts': 'advancedConcepts'
     }
 
-    def __init__(self, type='SIMERICS_ANALYSIS', materials=None, is_compressible=None, turbulence_model=None, boundary_conditions=None, simulation_control=None, mesh_settings=None, result_control=None, advanced_concepts=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMERICS_ANALYSIS', materials=None, is_compressible=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, simulation_control=None, mesh_settings=None, result_control=None, advanced_concepts=None, local_vars_configuration=None):  # noqa: E501
         """SimericsAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,6 +66,7 @@ class SimericsAnalysis(object):
         self._materials = None
         self._is_compressible = None
         self._turbulence_model = None
+        self._time_dependency = None
         self._boundary_conditions = None
         self._simulation_control = None
         self._mesh_settings = None
@@ -78,6 +81,8 @@ class SimericsAnalysis(object):
             self.is_compressible = is_compressible
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
+        if time_dependency is not None:
+            self.time_dependency = time_dependency
         if boundary_conditions is not None:
             self.boundary_conditions = boundary_conditions
         if simulation_control is not None:
@@ -160,6 +165,7 @@ class SimericsAnalysis(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this SimericsAnalysis.  # noqa: E501
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :return: The turbulence_model of this SimericsAnalysis.  # noqa: E501
         :rtype: str
@@ -170,6 +176,7 @@ class SimericsAnalysis(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this SimericsAnalysis.
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this SimericsAnalysis.  # noqa: E501
         :type: str
@@ -182,6 +189,27 @@ class SimericsAnalysis(object):
             )
 
         self._turbulence_model = turbulence_model
+
+    @property
+    def time_dependency(self):
+        """Gets the time_dependency of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The time_dependency of this SimericsAnalysis.  # noqa: E501
+        :rtype: OneOfSimericsAnalysisTimeDependency
+        """
+        return self._time_dependency
+
+    @time_dependency.setter
+    def time_dependency(self, time_dependency):
+        """Sets the time_dependency of this SimericsAnalysis.
+
+
+        :param time_dependency: The time_dependency of this SimericsAnalysis.  # noqa: E501
+        :type: OneOfSimericsAnalysisTimeDependency
+        """
+
+        self._time_dependency = time_dependency
 
     @property
     def boundary_conditions(self):

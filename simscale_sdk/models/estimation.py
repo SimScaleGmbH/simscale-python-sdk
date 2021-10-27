@@ -33,16 +33,18 @@ class Estimation(object):
     openapi_types = {
         'duration': 'Duration',
         'compute_resource': 'ComputeResource',
-        'cell_count': 'CellCount'
+        'cell_count': 'CellCount',
+        'total_run_count': 'int'
     }
 
     attribute_map = {
         'duration': 'duration',
         'compute_resource': 'computeResource',
-        'cell_count': 'cellCount'
+        'cell_count': 'cellCount',
+        'total_run_count': 'totalRunCount'
     }
 
-    def __init__(self, duration=None, compute_resource=None, cell_count=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, duration=None, compute_resource=None, cell_count=None, total_run_count=None, local_vars_configuration=None):  # noqa: E501
         """Estimation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class Estimation(object):
         self._duration = None
         self._compute_resource = None
         self._cell_count = None
+        self._total_run_count = None
         self.discriminator = None
 
         if duration is not None:
@@ -59,6 +62,8 @@ class Estimation(object):
             self.compute_resource = compute_resource
         if cell_count is not None:
             self.cell_count = cell_count
+        if total_run_count is not None:
+            self.total_run_count = total_run_count
 
     @property
     def duration(self):
@@ -122,6 +127,29 @@ class Estimation(object):
         """
 
         self._cell_count = cell_count
+
+    @property
+    def total_run_count(self):
+        """Gets the total_run_count of this Estimation.  # noqa: E501
+
+        The total number of jobs that will be triggered for this simulation run or mesh operation.  # noqa: E501
+
+        :return: The total_run_count of this Estimation.  # noqa: E501
+        :rtype: int
+        """
+        return self._total_run_count
+
+    @total_run_count.setter
+    def total_run_count(self, total_run_count):
+        """Sets the total_run_count of this Estimation.
+
+        The total number of jobs that will be triggered for this simulation run or mesh operation.  # noqa: E501
+
+        :param total_run_count: The total_run_count of this Estimation.  # noqa: E501
+        :type: int
+        """
+
+        self._total_run_count = total_run_count
 
     def to_dict(self):
         """Returns the model properties as a dict"""

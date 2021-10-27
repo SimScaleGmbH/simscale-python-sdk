@@ -37,11 +37,11 @@ class ReportResponse(object):
         'created_at': 'datetime',
         'started_at': 'datetime',
         'finished_at': 'datetime',
-        'status': 'Status',
+        'status': 'str',
         'result_ids': 'list[str]',
-        'report_properties': 'object',
-        'failure_reason': 'LogEntry',
-        'download': 'object'
+        'report_properties': 'OneOfReportProperties',
+        'download': 'DownloadInfo',
+        'failure_reason': 'ReportResponseFailureReason'
     }
 
     attribute_map = {
@@ -54,11 +54,11 @@ class ReportResponse(object):
         'status': 'status',
         'result_ids': 'resultIds',
         'report_properties': 'reportProperties',
-        'failure_reason': 'failureReason',
-        'download': 'download'
+        'download': 'download',
+        'failure_reason': 'failureReason'
     }
 
-    def __init__(self, report_id=None, name=None, description=None, created_at=None, started_at=None, finished_at=None, status=None, result_ids=None, report_properties=None, failure_reason=None, download=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, report_id=None, name=None, description=None, created_at=None, started_at=None, finished_at=None, status=None, result_ids=None, report_properties=None, download=None, failure_reason=None, local_vars_configuration=None):  # noqa: E501
         """ReportResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,32 +73,27 @@ class ReportResponse(object):
         self._status = None
         self._result_ids = None
         self._report_properties = None
-        self._failure_reason = None
         self._download = None
+        self._failure_reason = None
         self.discriminator = None
 
-        if report_id is not None:
-            self.report_id = report_id
-        if name is not None:
-            self.name = name
-        if description is not None:
-            self.description = description
-        if created_at is not None:
-            self.created_at = created_at
+        self.report_id = report_id
+        self.name = name
+        self.description = description
+        self.created_at = created_at
         if started_at is not None:
             self.started_at = started_at
         if finished_at is not None:
             self.finished_at = finished_at
-        if status is not None:
-            self.status = status
+        self.status = status
         if result_ids is not None:
             self.result_ids = result_ids
         if report_properties is not None:
             self.report_properties = report_properties
-        if failure_reason is not None:
-            self.failure_reason = failure_reason
         if download is not None:
             self.download = download
+        if failure_reason is not None:
+            self.failure_reason = failure_reason
 
     @property
     def report_id(self):
@@ -120,6 +115,8 @@ class ReportResponse(object):
         :param report_id: The report_id of this ReportResponse.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and report_id is None:  # noqa: E501
+            raise ValueError("Invalid value for `report_id`, must not be `None`")  # noqa: E501
 
         self._report_id = report_id
 
@@ -143,6 +140,8 @@ class ReportResponse(object):
         :param name: The name of this ReportResponse.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
 
         self._name = name
 
@@ -166,6 +165,8 @@ class ReportResponse(object):
         :param description: The description of this ReportResponse.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and description is None:  # noqa: E501
+            raise ValueError("Invalid value for `description`, must not be `None`")  # noqa: E501
 
         self._description = description
 
@@ -189,6 +190,8 @@ class ReportResponse(object):
         :param created_at: The created_at of this ReportResponse.  # noqa: E501
         :type: datetime
         """
+        if self.local_vars_configuration.client_side_validation and created_at is None:  # noqa: E501
+            raise ValueError("Invalid value for `created_at`, must not be `None`")  # noqa: E501
 
         self._created_at = created_at
 
@@ -242,9 +245,10 @@ class ReportResponse(object):
     def status(self):
         """Gets the status of this ReportResponse.  # noqa: E501
 
+        Status of the report operation.  # noqa: E501
 
         :return: The status of this ReportResponse.  # noqa: E501
-        :rtype: Status
+        :rtype: str
         """
         return self._status
 
@@ -252,10 +256,19 @@ class ReportResponse(object):
     def status(self, status):
         """Sets the status of this ReportResponse.
 
+        Status of the report operation.  # noqa: E501
 
         :param status: The status of this ReportResponse.  # noqa: E501
-        :type: Status
+        :type: str
         """
+        if self.local_vars_configuration.client_side_validation and status is None:  # noqa: E501
+            raise ValueError("Invalid value for `status`, must not be `None`")  # noqa: E501
+        allowed_values = ["READY", "QUEUED", "RUNNING", "FINISHED", "CANCELED", "FAILED"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and status not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `status` ({0}), must be one of {1}"  # noqa: E501
+                .format(status, allowed_values)
+            )
 
         self._status = status
 
@@ -286,10 +299,9 @@ class ReportResponse(object):
     def report_properties(self):
         """Gets the report_properties of this ReportResponse.  # noqa: E501
 
-        Note: This object is replaced at runtime with the actual report model schema which is fetched from reporting service.   # noqa: E501
 
         :return: The report_properties of this ReportResponse.  # noqa: E501
-        :rtype: object
+        :rtype: OneOfReportProperties
         """
         return self._report_properties
 
@@ -297,13 +309,33 @@ class ReportResponse(object):
     def report_properties(self, report_properties):
         """Sets the report_properties of this ReportResponse.
 
-        Note: This object is replaced at runtime with the actual report model schema which is fetched from reporting service.   # noqa: E501
 
         :param report_properties: The report_properties of this ReportResponse.  # noqa: E501
-        :type: object
+        :type: OneOfReportProperties
         """
 
         self._report_properties = report_properties
+
+    @property
+    def download(self):
+        """Gets the download of this ReportResponse.  # noqa: E501
+
+
+        :return: The download of this ReportResponse.  # noqa: E501
+        :rtype: DownloadInfo
+        """
+        return self._download
+
+    @download.setter
+    def download(self, download):
+        """Sets the download of this ReportResponse.
+
+
+        :param download: The download of this ReportResponse.  # noqa: E501
+        :type: DownloadInfo
+        """
+
+        self._download = download
 
     @property
     def failure_reason(self):
@@ -311,7 +343,7 @@ class ReportResponse(object):
 
 
         :return: The failure_reason of this ReportResponse.  # noqa: E501
-        :rtype: LogEntry
+        :rtype: ReportResponseFailureReason
         """
         return self._failure_reason
 
@@ -321,33 +353,10 @@ class ReportResponse(object):
 
 
         :param failure_reason: The failure_reason of this ReportResponse.  # noqa: E501
-        :type: LogEntry
+        :type: ReportResponseFailureReason
         """
 
         self._failure_reason = failure_reason
-
-    @property
-    def download(self):
-        """Gets the download of this ReportResponse.  # noqa: E501
-
-        Note: This object is replaced at runtime with the actual report model schema which is fetched from reporting service.   # noqa: E501
-
-        :return: The download of this ReportResponse.  # noqa: E501
-        :rtype: object
-        """
-        return self._download
-
-    @download.setter
-    def download(self, download):
-        """Sets the download of this ReportResponse.
-
-        Note: This object is replaced at runtime with the actual report model schema which is fetched from reporting service.   # noqa: E501
-
-        :param download: The download of this ReportResponse.  # noqa: E501
-        :type: object
-        """
-
-        self._download = download
 
     def to_dict(self):
         """Returns the model properties as a dict"""

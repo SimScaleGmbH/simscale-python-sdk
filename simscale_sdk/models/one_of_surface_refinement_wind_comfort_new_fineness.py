@@ -67,7 +67,7 @@ class OneOfSurfaceRefinementWindComfortNewFineness(object):
     def type(self):
         """Gets the type of this OneOfSurfaceRefinementWindComfortNewFineness.  # noqa: E501
 
-        Schema name: PacefishFinenessTargetSize  # noqa: E501
+        <p>This parameter determines the <b>fineness of the mesh</b> and affects the overall number of cells. It is recommended to start with the <i>coarse</i> setting. <a href='https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/mesh-settings/' target='_blank'>Find out more.</a></p><p><b>Note:</b> This setting will impact the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  Schema name: PacefishFinenessTargetSize  # noqa: E501
 
         :return: The type of this OneOfSurfaceRefinementWindComfortNewFineness.  # noqa: E501
         :rtype: str
@@ -78,7 +78,7 @@ class OneOfSurfaceRefinementWindComfortNewFineness(object):
     def type(self, type):
         """Sets the type of this OneOfSurfaceRefinementWindComfortNewFineness.
 
-        Schema name: PacefishFinenessTargetSize  # noqa: E501
+        <p>This parameter determines the <b>fineness of the mesh</b> and affects the overall number of cells. It is recommended to start with the <i>coarse</i> setting. <a href='https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/mesh-settings/' target='_blank'>Find out more.</a></p><p><b>Note:</b> This setting will impact the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  Schema name: PacefishFinenessTargetSize  # noqa: E501
 
         :param type: The type of this OneOfSurfaceRefinementWindComfortNewFineness.  # noqa: E501
         :type: str

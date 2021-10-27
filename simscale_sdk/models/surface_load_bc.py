@@ -78,7 +78,7 @@ class SurfaceLoadBC(object):
     def type(self):
         """Gets the type of this SurfaceLoadBC.  # noqa: E501
 
-        This is a <b>surface traction</b> boundary condition representing a distributed load on the selection. It is applied as surface traction in the global coordinate system.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection</li></ul>  Schema name: SurfaceLoadBC  # noqa: E501
+        This is a <b>surface load</b> boundary condition representing a distributed load on the selection. It is applied as surface traction in the global coordinate system.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/surface-load/' target='_blank'>Learn more</a>.  Schema name: SurfaceLoadBC  # noqa: E501
 
         :return: The type of this SurfaceLoadBC.  # noqa: E501
         :rtype: str
@@ -89,7 +89,7 @@ class SurfaceLoadBC(object):
     def type(self, type):
         """Sets the type of this SurfaceLoadBC.
 
-        This is a <b>surface traction</b> boundary condition representing a distributed load on the selection. It is applied as surface traction in the global coordinate system.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection</li></ul>  Schema name: SurfaceLoadBC  # noqa: E501
+        This is a <b>surface load</b> boundary condition representing a distributed load on the selection. It is applied as surface traction in the global coordinate system.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/surface-load/' target='_blank'>Learn more</a>.  Schema name: SurfaceLoadBC  # noqa: E501
 
         :param type: The type of this SurfaceLoadBC.  # noqa: E501
         :type: str

@@ -37,7 +37,10 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'result_type': 'WallShearStressResultType',
         'clothing_coefficient_factor': 'float',
         'metabolic_rate_factor': 'float',
-        'relative_humidity_factor': 'float'
+        'relative_humidity_factor': 'float',
+        'compute_sensitivities_to': 'str',
+        'optimization_force_direction': 'DecimalVector',
+        'topological_reference': 'TopologicalReference'
     }
 
     attribute_map = {
@@ -47,7 +50,10 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'result_type': 'resultType',
         'clothing_coefficient_factor': 'clothingCoefficientFactor',
         'metabolic_rate_factor': 'metabolicRateFactor',
-        'relative_humidity_factor': 'relativeHumidityFactor'
+        'relative_humidity_factor': 'relativeHumidityFactor',
+        'compute_sensitivities_to': 'computeSensitivitiesTo',
+        'optimization_force_direction': 'optimizationForceDirection',
+        'topological_reference': 'topologicalReference'
     }
 
     discriminator_value_class_map = {
@@ -57,10 +63,11 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'FRICTION_VELOCITY_U_TAU': 'FieldCalculationsFrictionVelocityResultControl',
         'SURFACE_NORMALS': 'FieldCalculationsSurfaceNormalsResultControl',
         'WALL_FLUXES': 'FieldCalculationsWallFluxesResultControl',
-        'THERMAL_COMFORT': 'FieldCalculationsThermalComfortResultControl'
+        'THERMAL_COMFORT': 'FieldCalculationsThermalComfortResultControl',
+        'ADJOINT_SENSITIVITIES': 'FieldCalculationsAdjointSensitivitiesResultControl'
     }
 
-    def __init__(self, type='THERMAL_COMFORT', name=None, pressure_type=None, result_type=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ADJOINT_SENSITIVITIES', name=None, pressure_type=None, result_type=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidResultControlsFieldCalculations - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +80,9 @@ class OneOfFluidResultControlsFieldCalculations(object):
         self._clothing_coefficient_factor = None
         self._metabolic_rate_factor = None
         self._relative_humidity_factor = None
+        self._compute_sensitivities_to = None
+        self._optimization_force_direction = None
+        self._topological_reference = None
         self.discriminator = 'type'
 
         self.type = type
@@ -88,12 +98,18 @@ class OneOfFluidResultControlsFieldCalculations(object):
             self.metabolic_rate_factor = metabolic_rate_factor
         if relative_humidity_factor is not None:
             self.relative_humidity_factor = relative_humidity_factor
+        if compute_sensitivities_to is not None:
+            self.compute_sensitivities_to = compute_sensitivities_to
+        if optimization_force_direction is not None:
+            self.optimization_force_direction = optimization_force_direction
+        if topological_reference is not None:
+            self.topological_reference = topological_reference
 
     @property
     def type(self):
         """Gets the type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
 
-        Schema name: FieldCalculationsThermalComfortResultControl  # noqa: E501
+        Schema name: FieldCalculationsAdjointSensitivitiesResultControl  # noqa: E501
 
         :return: The type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
         :rtype: str
@@ -104,7 +120,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
     def type(self, type):
         """Sets the type of this OneOfFluidResultControlsFieldCalculations.
 
-        Schema name: FieldCalculationsThermalComfortResultControl  # noqa: E501
+        Schema name: FieldCalculationsAdjointSensitivitiesResultControl  # noqa: E501
 
         :param type: The type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
         :type: str
@@ -260,6 +276,75 @@ class OneOfFluidResultControlsFieldCalculations(object):
             raise ValueError("Invalid value for `relative_humidity_factor`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._relative_humidity_factor = relative_humidity_factor
+
+    @property
+    def compute_sensitivities_to(self):
+        """Gets the compute_sensitivities_to of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The compute_sensitivities_to of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: str
+        """
+        return self._compute_sensitivities_to
+
+    @compute_sensitivities_to.setter
+    def compute_sensitivities_to(self, compute_sensitivities_to):
+        """Sets the compute_sensitivities_to of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param compute_sensitivities_to: The compute_sensitivities_to of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["MAXIMIZE_FORCE", "MINIMIZE_FORCE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and compute_sensitivities_to not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `compute_sensitivities_to` ({0}), must be one of {1}"  # noqa: E501
+                .format(compute_sensitivities_to, allowed_values)
+            )
+
+        self._compute_sensitivities_to = compute_sensitivities_to
+
+    @property
+    def optimization_force_direction(self):
+        """Gets the optimization_force_direction of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The optimization_force_direction of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: DecimalVector
+        """
+        return self._optimization_force_direction
+
+    @optimization_force_direction.setter
+    def optimization_force_direction(self, optimization_force_direction):
+        """Sets the optimization_force_direction of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param optimization_force_direction: The optimization_force_direction of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: DecimalVector
+        """
+
+        self._optimization_force_direction = optimization_force_direction
+
+    @property
+    def topological_reference(self):
+        """Gets the topological_reference of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The topological_reference of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._topological_reference
+
+    @topological_reference.setter
+    def topological_reference(self, topological_reference):
+        """Sets the topological_reference of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param topological_reference: The topological_reference of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._topological_reference = topological_reference
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

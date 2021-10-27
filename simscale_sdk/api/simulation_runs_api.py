@@ -309,6 +309,145 @@ class SimulationRunsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
+    def cancel_simulation_run_sub_run(self, project_id, simulation_id, run_id, sub_run_id, **kwargs): # noqa: E501
+        """Cancel the sub-run of a parametric run  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_simulation_run_sub_run(project_id, simulation_id, run_id, sub_run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param str sub_run_id: The simulation sub-run ID (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.cancel_simulation_run_sub_run_with_http_info(project_id, simulation_id, run_id, sub_run_id, **kwargs)  # noqa: E501
+
+    def cancel_simulation_run_sub_run_with_http_info(self, project_id, simulation_id, run_id, sub_run_id, **kwargs):  # noqa: E501
+        """Cancel the sub-run of a parametric run  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.cancel_simulation_run_sub_run_with_http_info(project_id, simulation_id, run_id, sub_run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param str sub_run_id: The simulation sub-run ID (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'project_id',
+            'simulation_id',
+            'run_id',
+            'sub_run_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method cancel_simulation_run_sub_run" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'project_id' is set
+        if self.api_client.client_side_validation and ('project_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['project_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `project_id` when calling `cancel_simulation_run_sub_run`")  # noqa: E501
+        # verify the required parameter 'simulation_id' is set
+        if self.api_client.client_side_validation and ('simulation_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['simulation_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `simulation_id` when calling `cancel_simulation_run_sub_run`")  # noqa: E501
+        # verify the required parameter 'run_id' is set
+        if self.api_client.client_side_validation and ('run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `run_id` when calling `cancel_simulation_run_sub_run`")  # noqa: E501
+        # verify the required parameter 'sub_run_id' is set
+        if self.api_client.client_side_validation and ('sub_run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_run_id` when calling `cancel_simulation_run_sub_run`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'project_id' in local_var_params:
+            path_params['projectId'] = local_var_params['project_id']  # noqa: E501
+        if 'simulation_id' in local_var_params:
+            path_params['simulationId'] = local_var_params['simulation_id']  # noqa: E501
+        if 'run_id' in local_var_params:
+            path_params['runId'] = local_var_params['run_id']  # noqa: E501
+        if 'sub_run_id' in local_var_params:
+            path_params['subRunId'] = local_var_params['sub_run_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/projects/{projectId}/simulations/{simulationId}/runs/{runId}/subruns/{subRunId}/cancel', 'POST',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
     def create_simulation_run(self, project_id, simulation_id, simulation_run, **kwargs): # noqa: E501
         """Create a simulation run  # noqa: E501
 
@@ -438,6 +577,145 @@ class SimulationRunsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='SimulationRun',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def delete_simulation_run_sub_run(self, project_id, simulation_id, run_id, sub_run_id, **kwargs): # noqa: E501
+        """Delete the sub-run of a parametric run  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_simulation_run_sub_run(project_id, simulation_id, run_id, sub_run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param str sub_run_id: The simulation sub-run ID (required)
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.delete_simulation_run_sub_run_with_http_info(project_id, simulation_id, run_id, sub_run_id, **kwargs)  # noqa: E501
+
+    def delete_simulation_run_sub_run_with_http_info(self, project_id, simulation_id, run_id, sub_run_id, **kwargs):  # noqa: E501
+        """Delete the sub-run of a parametric run  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.delete_simulation_run_sub_run_with_http_info(project_id, simulation_id, run_id, sub_run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param str sub_run_id: The simulation sub-run ID (required)
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: None
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'project_id',
+            'simulation_id',
+            'run_id',
+            'sub_run_id'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method delete_simulation_run_sub_run" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'project_id' is set
+        if self.api_client.client_side_validation and ('project_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['project_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `project_id` when calling `delete_simulation_run_sub_run`")  # noqa: E501
+        # verify the required parameter 'simulation_id' is set
+        if self.api_client.client_side_validation and ('simulation_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['simulation_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `simulation_id` when calling `delete_simulation_run_sub_run`")  # noqa: E501
+        # verify the required parameter 'run_id' is set
+        if self.api_client.client_side_validation and ('run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `run_id` when calling `delete_simulation_run_sub_run`")  # noqa: E501
+        # verify the required parameter 'sub_run_id' is set
+        if self.api_client.client_side_validation and ('sub_run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_run_id` when calling `delete_simulation_run_sub_run`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'project_id' in local_var_params:
+            path_params['projectId'] = local_var_params['project_id']  # noqa: E501
+        if 'simulation_id' in local_var_params:
+            path_params['simulationId'] = local_var_params['simulation_id']  # noqa: E501
+        if 'run_id' in local_var_params:
+            path_params['runId'] = local_var_params['run_id']  # noqa: E501
+        if 'sub_run_id' in local_var_params:
+            path_params['subRunId'] = local_var_params['sub_run_id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/projects/{projectId}/simulations/{simulationId}/runs/{runId}/subruns/{subRunId}', 'DELETE',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type=None,  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
@@ -1148,6 +1426,475 @@ class SimulationRunsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='SimulationSpec',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_simulation_run_sub_run_results(self, project_id, simulation_id, run_id, sub_run_id, **kwargs): # noqa: E501
+        """Get the simulation sub-run results  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_simulation_run_sub_run_results(project_id, simulation_id, run_id, sub_run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param str sub_run_id: The simulation sub-run ID (required)
+        :param int limit: The number of items to return.
+        :param int page: The page number. Use in combination with limit.
+        :param str type: The result type. The possible values are 'SOLUTION_FIELD', 'CONVERGENCE_PLOT', 'PLOT', 'TABLE'. 
+        :param str category: The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc. 
+        :param str quantity: The result quantity, only applies to plot result types. Valid values include 'Ux', 'Uy', 'Uz', 'p', 'k', 'omega', 'T', 'displacement', 'von Mises stress', etc. 
+        :param str name: The name that was defined for extra simulation result outputs.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SimulationRunResults
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_simulation_run_sub_run_results_with_http_info(project_id, simulation_id, run_id, sub_run_id, **kwargs)  # noqa: E501
+
+    def get_simulation_run_sub_run_results_with_http_info(self, project_id, simulation_id, run_id, sub_run_id, **kwargs):  # noqa: E501
+        """Get the simulation sub-run results  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_simulation_run_sub_run_results_with_http_info(project_id, simulation_id, run_id, sub_run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param str sub_run_id: The simulation sub-run ID (required)
+        :param int limit: The number of items to return.
+        :param int page: The page number. Use in combination with limit.
+        :param str type: The result type. The possible values are 'SOLUTION_FIELD', 'CONVERGENCE_PLOT', 'PLOT', 'TABLE'. 
+        :param str category: The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc. 
+        :param str quantity: The result quantity, only applies to plot result types. Valid values include 'Ux', 'Uy', 'Uz', 'p', 'k', 'omega', 'T', 'displacement', 'von Mises stress', etc. 
+        :param str name: The name that was defined for extra simulation result outputs.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SimulationRunResults, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'project_id',
+            'simulation_id',
+            'run_id',
+            'sub_run_id',
+            'limit',
+            'page',
+            'type',
+            'category',
+            'quantity',
+            'name'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_simulation_run_sub_run_results" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'project_id' is set
+        if self.api_client.client_side_validation and ('project_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['project_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `project_id` when calling `get_simulation_run_sub_run_results`")  # noqa: E501
+        # verify the required parameter 'simulation_id' is set
+        if self.api_client.client_side_validation and ('simulation_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['simulation_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `simulation_id` when calling `get_simulation_run_sub_run_results`")  # noqa: E501
+        # verify the required parameter 'run_id' is set
+        if self.api_client.client_side_validation and ('run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run_sub_run_results`")  # noqa: E501
+        # verify the required parameter 'sub_run_id' is set
+        if self.api_client.client_side_validation and ('sub_run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_run_id` when calling `get_simulation_run_sub_run_results`")  # noqa: E501
+
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_simulation_run_sub_run_results`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_simulation_run_sub_run_results`, must be a value greater than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `get_simulation_run_sub_run_results`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `get_simulation_run_sub_run_results`, must be a value greater than or equal to `1`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'project_id' in local_var_params:
+            path_params['projectId'] = local_var_params['project_id']  # noqa: E501
+        if 'simulation_id' in local_var_params:
+            path_params['simulationId'] = local_var_params['simulation_id']  # noqa: E501
+        if 'run_id' in local_var_params:
+            path_params['runId'] = local_var_params['run_id']  # noqa: E501
+        if 'sub_run_id' in local_var_params:
+            path_params['subRunId'] = local_var_params['sub_run_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
+        if 'type' in local_var_params and local_var_params['type'] is not None:  # noqa: E501
+            query_params.append(('type', local_var_params['type']))  # noqa: E501
+        if 'category' in local_var_params and local_var_params['category'] is not None:  # noqa: E501
+            query_params.append(('category', local_var_params['category']))  # noqa: E501
+        if 'quantity' in local_var_params and local_var_params['quantity'] is not None:  # noqa: E501
+            query_params.append(('quantity', local_var_params['quantity']))  # noqa: E501
+        if 'name' in local_var_params and local_var_params['name'] is not None:  # noqa: E501
+            query_params.append(('name', local_var_params['name']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/projects/{projectId}/simulations/{simulationId}/runs/{runId}/subruns/{subRunId}/results', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SimulationRunResults',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_simulation_run_sub_run_spec(self, project_id, simulation_id, run_id, sub_run_id, **kwargs): # noqa: E501
+        """Get the simulation sub-run spec  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_simulation_run_sub_run_spec(project_id, simulation_id, run_id, sub_run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param str sub_run_id: The simulation sub-run ID (required)
+        :param str simulation_spec_schema_version: Version of the schema the simulation spec should conform to
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SimulationSpec
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_simulation_run_sub_run_spec_with_http_info(project_id, simulation_id, run_id, sub_run_id, **kwargs)  # noqa: E501
+
+    def get_simulation_run_sub_run_spec_with_http_info(self, project_id, simulation_id, run_id, sub_run_id, **kwargs):  # noqa: E501
+        """Get the simulation sub-run spec  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_simulation_run_sub_run_spec_with_http_info(project_id, simulation_id, run_id, sub_run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param str sub_run_id: The simulation sub-run ID (required)
+        :param str simulation_spec_schema_version: Version of the schema the simulation spec should conform to
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SimulationSpec, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'project_id',
+            'simulation_id',
+            'run_id',
+            'sub_run_id',
+            'simulation_spec_schema_version'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_simulation_run_sub_run_spec" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'project_id' is set
+        if self.api_client.client_side_validation and ('project_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['project_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `project_id` when calling `get_simulation_run_sub_run_spec`")  # noqa: E501
+        # verify the required parameter 'simulation_id' is set
+        if self.api_client.client_side_validation and ('simulation_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['simulation_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `simulation_id` when calling `get_simulation_run_sub_run_spec`")  # noqa: E501
+        # verify the required parameter 'run_id' is set
+        if self.api_client.client_side_validation and ('run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run_sub_run_spec`")  # noqa: E501
+        # verify the required parameter 'sub_run_id' is set
+        if self.api_client.client_side_validation and ('sub_run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['sub_run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `sub_run_id` when calling `get_simulation_run_sub_run_spec`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'project_id' in local_var_params:
+            path_params['projectId'] = local_var_params['project_id']  # noqa: E501
+        if 'simulation_id' in local_var_params:
+            path_params['simulationId'] = local_var_params['simulation_id']  # noqa: E501
+        if 'run_id' in local_var_params:
+            path_params['runId'] = local_var_params['run_id']  # noqa: E501
+        if 'sub_run_id' in local_var_params:
+            path_params['subRunId'] = local_var_params['sub_run_id']  # noqa: E501
+
+        query_params = []
+        if 'simulation_spec_schema_version' in local_var_params and local_var_params['simulation_spec_schema_version'] is not None:  # noqa: E501
+            query_params.append(('simulationSpecSchemaVersion', local_var_params['simulation_spec_schema_version']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/projects/{projectId}/simulations/{simulationId}/runs/{runId}/subruns/{subRunId}/spec', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SimulationSpec',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=local_var_params.get('async_req'),
+            _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501
+            _preload_content=local_var_params.get('_preload_content', True),
+            _request_timeout=local_var_params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def get_simulation_run_sub_runs(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
+        """List of subruns of parametric runs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_simulation_run_sub_runs(project_id, simulation_id, run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param int limit: The number of items to return.
+        :param int page: The page number. Use in combination with limit.
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: SimulationRuns
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        return self.get_simulation_run_sub_runs_with_http_info(project_id, simulation_id, run_id, **kwargs)  # noqa: E501
+
+    def get_simulation_run_sub_runs_with_http_info(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
+        """List of subruns of parametric runs  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.get_simulation_run_sub_runs_with_http_info(project_id, simulation_id, run_id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool: execute request asynchronously
+        :param str project_id: The project ID (required)
+        :param str simulation_id: The simulation ID (required)
+        :param str run_id: The simulation run ID (required)
+        :param int limit: The number of items to return.
+        :param int page: The page number. Use in combination with limit.
+        :param _return_http_data_only: response data without head status code
+                                       and headers
+        :param _preload_content: if False, the urllib3.HTTPResponse object will
+                                 be returned without reading/decoding response
+                                 data. Default is True.
+        :param _request_timeout: timeout setting for this request. If one
+                                 number provided, it will be total request
+                                 timeout. It can also be a pair (tuple) of
+                                 (connection, read) timeouts.
+        :return: tuple(SimulationRuns, status_code(int), headers(HTTPHeaderDict))
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        local_var_params = locals()
+
+        all_params = [
+            'project_id',
+            'simulation_id',
+            'run_id',
+            'limit',
+            'page'
+        ]
+        all_params.extend(
+            [
+                'async_req',
+                '_return_http_data_only',
+                '_preload_content',
+                '_request_timeout'
+            ]
+        )
+
+        for key, val in six.iteritems(local_var_params['kwargs']):
+            if key not in all_params:
+                raise ApiTypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method get_simulation_run_sub_runs" % key
+                )
+            local_var_params[key] = val
+        del local_var_params['kwargs']
+        # verify the required parameter 'project_id' is set
+        if self.api_client.client_side_validation and ('project_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['project_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `project_id` when calling `get_simulation_run_sub_runs`")  # noqa: E501
+        # verify the required parameter 'simulation_id' is set
+        if self.api_client.client_side_validation and ('simulation_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['simulation_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `simulation_id` when calling `get_simulation_run_sub_runs`")  # noqa: E501
+        # verify the required parameter 'run_id' is set
+        if self.api_client.client_side_validation and ('run_id' not in local_var_params or  # noqa: E501
+                                                        local_var_params['run_id'] is None):  # noqa: E501
+            raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run_sub_runs`")  # noqa: E501
+
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_simulation_run_sub_runs`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_simulation_run_sub_runs`, must be a value greater than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] > 1000:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `get_simulation_run_sub_runs`, must be a value less than or equal to `1000`")  # noqa: E501
+        if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `page` when calling `get_simulation_run_sub_runs`, must be a value greater than or equal to `1`")  # noqa: E501
+        collection_formats = {}
+
+        path_params = {}
+        if 'project_id' in local_var_params:
+            path_params['projectId'] = local_var_params['project_id']  # noqa: E501
+        if 'simulation_id' in local_var_params:
+            path_params['simulationId'] = local_var_params['simulation_id']  # noqa: E501
+        if 'run_id' in local_var_params:
+            path_params['runId'] = local_var_params['run_id']  # noqa: E501
+
+        query_params = []
+        if 'limit' in local_var_params and local_var_params['limit'] is not None:  # noqa: E501
+            query_params.append(('limit', local_var_params['limit']))  # noqa: E501
+        if 'page' in local_var_params and local_var_params['page'] is not None:  # noqa: E501
+            query_params.append(('page', local_var_params['page']))  # noqa: E501
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = ['apiKey']  # noqa: E501
+
+        return self.api_client.call_api(
+            '/projects/{projectId}/simulations/{simulationId}/runs/{runId}/subruns', 'GET',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='SimulationRuns',  # noqa: E501
             auth_settings=auth_settings,
             async_req=local_var_params.get('async_req'),
             _return_http_data_only=local_var_params.get('_return_http_data_only'),  # noqa: E501

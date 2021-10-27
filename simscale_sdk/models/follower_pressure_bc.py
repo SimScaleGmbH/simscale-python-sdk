@@ -68,7 +68,7 @@ class FollowerPressureBC(object):
     def type(self):
         """Gets the type of this FollowerPressureBC.  # noqa: E501
 
-        This is a <b>pressure</b> boundary condition representing a distributed load on the selection. It is applied normal to the surface of all face elements in the deformed configuration.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection</li><li>This is a nonlinear boundary condition as the update of the geometry is only possible for nonlinear analyses. In a linear analysis it becomes a simple <b>pressure</b> boundary condition</li></ul>  Schema name: FollowerPressureBC  # noqa: E501
+        In contrast to ordinary pressure, the <b>follower pressure</b> boundary condition is applied normal to the surface of all face elements in the <b>deformed state</b>. This is a nonlinear boundary condition as the update of the geometry is required. In a linear analysis it becomes a simple <b>pressure</b> boundary condition.<br /><br />The following conditions are taken into account: <br /><ul><li>The current deformed state of the surface.</li><li>Any changes in the direction of the normals of assigned entities.</li><li>Changes in the surface area of the assigned faces.</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/follower-pressure/' target='_blank'>Learn more</a>.  Schema name: FollowerPressureBC  # noqa: E501
 
         :return: The type of this FollowerPressureBC.  # noqa: E501
         :rtype: str
@@ -79,7 +79,7 @@ class FollowerPressureBC(object):
     def type(self, type):
         """Sets the type of this FollowerPressureBC.
 
-        This is a <b>pressure</b> boundary condition representing a distributed load on the selection. It is applied normal to the surface of all face elements in the deformed configuration.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection</li><li>This is a nonlinear boundary condition as the update of the geometry is only possible for nonlinear analyses. In a linear analysis it becomes a simple <b>pressure</b> boundary condition</li></ul>  Schema name: FollowerPressureBC  # noqa: E501
+        In contrast to ordinary pressure, the <b>follower pressure</b> boundary condition is applied normal to the surface of all face elements in the <b>deformed state</b>. This is a nonlinear boundary condition as the update of the geometry is required. In a linear analysis it becomes a simple <b>pressure</b> boundary condition.<br /><br />The following conditions are taken into account: <br /><ul><li>The current deformed state of the surface.</li><li>Any changes in the direction of the normals of assigned entities.</li><li>Changes in the surface area of the assigned faces.</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/follower-pressure/' target='_blank'>Learn more</a>.  Schema name: FollowerPressureBC  # noqa: E501
 
         :param type: The type of this FollowerPressureBC.  # noqa: E501
         :type: str

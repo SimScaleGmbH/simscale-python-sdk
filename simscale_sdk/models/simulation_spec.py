@@ -38,7 +38,8 @@ class SimulationSpec(object):
         'modified_at': 'datetime',
         'geometry_id': 'str',
         'mesh_id': 'str',
-        'model': 'Analysis'
+        'model': 'Analysis',
+        'parameters': 'dict(str, OneOfParameters)'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class SimulationSpec(object):
         'modified_at': 'modifiedAt',
         'geometry_id': 'geometryId',
         'mesh_id': 'meshId',
-        'model': 'model'
+        'model': 'model',
+        'parameters': 'parameters'
     }
 
-    def __init__(self, simulation_id=None, name=None, version='3.0', created_at=None, modified_at=None, geometry_id=None, mesh_id=None, model=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, simulation_id=None, name=None, version='4.0', created_at=None, modified_at=None, geometry_id=None, mesh_id=None, model=None, parameters=None, local_vars_configuration=None):  # noqa: E501
         """SimulationSpec - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class SimulationSpec(object):
         self._geometry_id = None
         self._mesh_id = None
         self._model = None
+        self._parameters = None
         self.discriminator = None
 
         if simulation_id is not None:
@@ -80,6 +83,8 @@ class SimulationSpec(object):
         if mesh_id is not None:
             self.mesh_id = mesh_id
         self.model = model
+        if parameters is not None:
+            self.parameters = parameters
 
     @property
     def simulation_id(self):
@@ -258,6 +263,27 @@ class SimulationSpec(object):
             raise ValueError("Invalid value for `model`, must not be `None`")  # noqa: E501
 
         self._model = model
+
+    @property
+    def parameters(self):
+        """Gets the parameters of this SimulationSpec.  # noqa: E501
+
+
+        :return: The parameters of this SimulationSpec.  # noqa: E501
+        :rtype: dict(str, OneOfParameters)
+        """
+        return self._parameters
+
+    @parameters.setter
+    def parameters(self, parameters):
+        """Sets the parameters of this SimulationSpec.
+
+
+        :param parameters: The parameters of this SimulationSpec.  # noqa: E501
+        :type: dict(str, OneOfParameters)
+        """
+
+        self._parameters = parameters
 
     def to_dict(self):
         """Returns the model properties as a dict"""

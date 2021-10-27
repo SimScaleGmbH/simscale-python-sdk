@@ -32,6 +32,7 @@ class FluidSimulationControl(object):
     """
     openapi_types = {
         'end_time': 'DimensionalTime',
+        'adjoint_end_time': 'DimensionalTime',
         'number_of_iterations': 'int',
         'delta_t': 'DimensionalTime',
         'adjustable_timestep': 'OneOfFluidSimulationControlAdjustableTimestep',
@@ -45,6 +46,7 @@ class FluidSimulationControl(object):
 
     attribute_map = {
         'end_time': 'endTime',
+        'adjoint_end_time': 'adjointEndTime',
         'number_of_iterations': 'numberOfIterations',
         'delta_t': 'deltaT',
         'adjustable_timestep': 'adjustableTimestep',
@@ -56,13 +58,14 @@ class FluidSimulationControl(object):
         'relative_convergence_criteria': 'relativeConvergenceCriteria'
     }
 
-    def __init__(self, end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, num_processors=None, max_run_time=None, potential_foam_initialization=None, decompose_algorithm=None, relative_convergence_criteria=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, end_time=None, adjoint_end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, num_processors=None, max_run_time=None, potential_foam_initialization=None, decompose_algorithm=None, relative_convergence_criteria=None, local_vars_configuration=None):  # noqa: E501
         """FluidSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._end_time = None
+        self._adjoint_end_time = None
         self._number_of_iterations = None
         self._delta_t = None
         self._adjustable_timestep = None
@@ -76,6 +79,8 @@ class FluidSimulationControl(object):
 
         if end_time is not None:
             self.end_time = end_time
+        if adjoint_end_time is not None:
+            self.adjoint_end_time = adjoint_end_time
         if number_of_iterations is not None:
             self.number_of_iterations = number_of_iterations
         if delta_t is not None:
@@ -117,10 +122,31 @@ class FluidSimulationControl(object):
         self._end_time = end_time
 
     @property
+    def adjoint_end_time(self):
+        """Gets the adjoint_end_time of this FluidSimulationControl.  # noqa: E501
+
+
+        :return: The adjoint_end_time of this FluidSimulationControl.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._adjoint_end_time
+
+    @adjoint_end_time.setter
+    def adjoint_end_time(self, adjoint_end_time):
+        """Sets the adjoint_end_time of this FluidSimulationControl.
+
+
+        :param adjoint_end_time: The adjoint_end_time of this FluidSimulationControl.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._adjoint_end_time = adjoint_end_time
+
+    @property
     def number_of_iterations(self):
         """Gets the number_of_iterations of this FluidSimulationControl.  # noqa: E501
 
-        This represents the amount of iterations at which the termination of simulation happens. No more iterations will be executed. </br> <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>Learn more</a>.  # noqa: E501
+        <b>Steady-state simulation:</b> This represents the number of total iterations at which the termination of simulation happens. No more iterations will be executed beyond that. <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>Learn more</a>.<br> <b>Transient simulation:</b> This represents the number of iterations per time step. The recommended value is 25. The larger the <i>Delta t</i> value is, the larger the <i>Number of iterations</i> has to be, in order to obtain more stable, converged solution. The simulation will terminate only when the <i>End time</i> is reached.</br>  # noqa: E501
 
         :return: The number_of_iterations of this FluidSimulationControl.  # noqa: E501
         :rtype: int
@@ -131,7 +157,7 @@ class FluidSimulationControl(object):
     def number_of_iterations(self, number_of_iterations):
         """Sets the number_of_iterations of this FluidSimulationControl.
 
-        This represents the amount of iterations at which the termination of simulation happens. No more iterations will be executed. </br> <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>Learn more</a>.  # noqa: E501
+        <b>Steady-state simulation:</b> This represents the number of total iterations at which the termination of simulation happens. No more iterations will be executed beyond that. <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>Learn more</a>.<br> <b>Transient simulation:</b> This represents the number of iterations per time step. The recommended value is 25. The larger the <i>Delta t</i> value is, the larger the <i>Number of iterations</i> has to be, in order to obtain more stable, converged solution. The simulation will terminate only when the <i>End time</i> is reached.</br>  # noqa: E501
 
         :param number_of_iterations: The number_of_iterations of this FluidSimulationControl.  # noqa: E501
         :type: int
@@ -303,7 +329,7 @@ class FluidSimulationControl(object):
     def relative_convergence_criteria(self):
         """Gets the relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
 
-        The simulation is assumed to be converged and will stop if the relative residuals for all equations fall below this number. Relative residual is defined as the residual in the current iteration divided by the initial residual.  # noqa: E501
+        <b>Steady-state simulation:</b> This represents the relative error residuals that once attained by the solver the simulation is considered to be converged and will stop. The recommended value is 0.001.<br> <b>Transient simulation:</b> This represents the relative error residuals that once attained by the solver the simulation will move to the next time-step regardless of the <i>Number of iterations</i>. The recommended value is 0.1.</br> <br> <b>Please note: </b>Relative residual is defined as the residual in the current iteration divided by the initial residual.</br> <br> <b>Please note: </b>Lower convergence criterion is demanded for <b>Steady-state simulations</b> because the initial guess is typically farther from the correct solution.</br>  # noqa: E501
 
         :return: The relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
         :rtype: float
@@ -314,7 +340,7 @@ class FluidSimulationControl(object):
     def relative_convergence_criteria(self, relative_convergence_criteria):
         """Sets the relative_convergence_criteria of this FluidSimulationControl.
 
-        The simulation is assumed to be converged and will stop if the relative residuals for all equations fall below this number. Relative residual is defined as the residual in the current iteration divided by the initial residual.  # noqa: E501
+        <b>Steady-state simulation:</b> This represents the relative error residuals that once attained by the solver the simulation is considered to be converged and will stop. The recommended value is 0.001.<br> <b>Transient simulation:</b> This represents the relative error residuals that once attained by the solver the simulation will move to the next time-step regardless of the <i>Number of iterations</i>. The recommended value is 0.1.</br> <br> <b>Please note: </b>Relative residual is defined as the residual in the current iteration divided by the initial residual.</br> <br> <b>Please note: </b>Lower convergence criterion is demanded for <b>Steady-state simulations</b> because the initial guess is typically farther from the correct solution.</br>  # noqa: E501
 
         :param relative_convergence_criteria: The relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
         :type: float

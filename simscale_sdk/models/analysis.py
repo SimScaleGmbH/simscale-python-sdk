@@ -48,6 +48,7 @@ class Analysis(object):
         'turbulence_model': 'str',
         'algorithm': 'str',
         'num_of_passive_species': 'int',
+        'enable_adjoint_optimization': 'bool',
         'advanced_concepts': 'AdvancedConcepts',
         'bounding_box_uuid': 'str',
         'material': 'IncompressibleMaterial',
@@ -85,6 +86,7 @@ class Analysis(object):
         'turbulence_model': 'turbulenceModel',
         'algorithm': 'algorithm',
         'num_of_passive_species': 'numOfPassiveSpecies',
+        'enable_adjoint_optimization': 'enableAdjointOptimization',
         'advanced_concepts': 'advancedConcepts',
         'bounding_box_uuid': 'boundingBoxUuid',
         'material': 'material',
@@ -123,7 +125,7 @@ class Analysis(object):
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, solar_calculator=None, enable_solar_load=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, solar_calculator=None, enable_solar_load=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -146,6 +148,7 @@ class Analysis(object):
         self._turbulence_model = None
         self._algorithm = None
         self._num_of_passive_species = None
+        self._enable_adjoint_optimization = None
         self._advanced_concepts = None
         self._bounding_box_uuid = None
         self._material = None
@@ -198,6 +201,8 @@ class Analysis(object):
             self.algorithm = algorithm
         if num_of_passive_species is not None:
             self.num_of_passive_species = num_of_passive_species
+        if enable_adjoint_optimization is not None:
+            self.enable_adjoint_optimization = enable_adjoint_optimization
         if advanced_concepts is not None:
             self.advanced_concepts = advanced_concepts
         if bounding_box_uuid is not None:
@@ -621,6 +626,27 @@ class Analysis(object):
         self._num_of_passive_species = num_of_passive_species
 
     @property
+    def enable_adjoint_optimization(self):
+        """Gets the enable_adjoint_optimization of this Analysis.  # noqa: E501
+
+
+        :return: The enable_adjoint_optimization of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_adjoint_optimization
+
+    @enable_adjoint_optimization.setter
+    def enable_adjoint_optimization(self, enable_adjoint_optimization):
+        """Sets the enable_adjoint_optimization of this Analysis.
+
+
+        :param enable_adjoint_optimization: The enable_adjoint_optimization of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_adjoint_optimization = enable_adjoint_optimization
+
+    @property
     def advanced_concepts(self):
         """Gets the advanced_concepts of this Analysis.  # noqa: E501
 
@@ -949,7 +975,7 @@ class Analysis(object):
     def enable_solar_load(self):
         """Gets the enable_solar_load of this Analysis.  # noqa: E501
 
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul>  # noqa: E501
+        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_solar_load of this Analysis.  # noqa: E501
         :rtype: bool
@@ -960,7 +986,7 @@ class Analysis(object):
     def enable_solar_load(self, enable_solar_load):
         """Sets the enable_solar_load of this Analysis.
 
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul>  # noqa: E501
+        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_solar_load: The enable_solar_load of this Analysis.  # noqa: E501
         :type: bool

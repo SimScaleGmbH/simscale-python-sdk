@@ -1,11 +1,18 @@
 #!/usr/bin/env python
 
-import isodate
 import os
 import time
-import zipfile
-from simscale_sdk import *
 
+from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, GeometryImportsApi, GeometriesApi, \
+    MeshOperationsApi, SimulationsApi, Project, GeometryImportRequest
+from simscale_sdk import DimensionalTime, FluidResultControls
+from simscale_sdk import GeometryImportRequestLocation, GeometryImportRequestOptions
+from simscale_sdk import SimulationSpec
+from simscale_sdk import WindComfort, RegionOfInterest, DimensionalLength, DimensionalVector2dLength, DecimalVector2d, \
+    DimensionalAngle, AdvancedROISettings, WindTunnelSizeModerate, WindConditions, GeographicalLocation, WindRose, \
+    WindRoseVelocityBucket, PedestrianComfortSurface, GroundAbsolute, WindComfortSimulationControl, AdvancedModelling, \
+    TransientResultControl, CoarseResolution, StatisticalAveragingResultControlV2, PacefishFinenessVeryCoarse, \
+    WindComfortMesh
 
 if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
     raise Exception("Either `SIMSCALE_API_KEY` or `SIMSCALE_API_URL` environment variable is missing.")
@@ -75,6 +82,7 @@ print(f"geometry_id: {geometry_id}")
 geometry = geometry_api.get_geometry(project_id, geometry_id)
 geometry_api.update_geometry(project_id, geometry_id, geometry)
 
+
 # Populate the project with some simulations
 # This example creates the simulations to not depend on an existing project, but
 # a more useful purpose would be to generate SDK code for Workbench-generated projects
@@ -85,55 +93,54 @@ def create_simulation(name):
             center_point=DimensionalVector2dLength(DecimalVector2d(0, 0), "m"),
             ground_height=DimensionalLength(0, "m"),
             north_angle=DimensionalAngle(0, "°"),
-            advanced_settings=AdvancedROISettings(WindTunnelSizeModerate())
+            advanced_settings=AdvancedROISettings(WindTunnelSizeModerate()),
         ),
         wind_conditions=WindConditions(
-            geographical_location=GeographicalLocation(latitude=DimensionalAngle(48.135125, "°"),
-                                                       longitude=DimensionalAngle(11.581981, "°")),
+            geographical_location=GeographicalLocation(
+                latitude=DimensionalAngle(48.135125, "°"), longitude=DimensionalAngle(11.581981, "°")
+            ),
             wind_rose=WindRose(
                 num_directions=4,
                 velocity_buckets=[
-                    WindRoseVelocityBucket(_from=None,  to=1.234, fractions=[0.1, 0.1, 0.1, 0.1]),
+                    WindRoseVelocityBucket(_from=None, to=1.234, fractions=[0.1, 0.1, 0.1, 0.1]),
                     WindRoseVelocityBucket(_from=1.234, to=2.345, fractions=[0.0, 0.1, 0.1, 0.1]),
                     WindRoseVelocityBucket(_from=2.345, to=3.456, fractions=[0.0, 0.0, 0.1, 0.1]),
-                    WindRoseVelocityBucket(_from=3.456, to=None,  fractions=[0.0, 0.0, 0.0, 0.1]),
+                    WindRoseVelocityBucket(_from=3.456, to=None, fractions=[0.0, 0.0, 0.0, 0.1]),
                 ],
                 velocity_unit="m/s",
                 exposure_categories=["EC4", "EC4", "EC4", "EC4"],
                 wind_engineering_standard="EU",
                 wind_data_source="USER_UPLOAD",
-                add_surface_roughness=False
-            )
+                add_surface_roughness=False,
+            ),
         ),
         pedestrian_comfort_map=[
             PedestrianComfortSurface(
-                name="Pedestrian level 1",
-                height_above_ground=DimensionalLength(1.5, "m"),
-                ground=GroundAbsolute()
+                name="Pedestrian level 1", height_above_ground=DimensionalLength(1.5, "m"), ground=GroundAbsolute()
             )
         ],
         simulation_control=WindComfortSimulationControl(
-            max_direction_run_time=DimensionalTime(10000, "s"),
-            number_of_fluid_passes=0.2
-    ),
+            max_direction_run_time=DimensionalTime(10000, "s"), number_of_fluid_passes=0.2
+        ),
         advanced_modelling=AdvancedModelling(),
         additional_result_export=FluidResultControls(
             transient_result_control=TransientResultControl(
                 write_control=CoarseResolution(),
-            fraction_from_end=0.1,
+                fraction_from_end=0.1,
             ),
             statistical_averaging_result_control=StatisticalAveragingResultControlV2(
                 sampling_interval=CoarseResolution(),
                 fraction_from_end=0.1,
             ),
         ),
-        mesh_settings=WindComfortMesh(wind_comfort_fineness=PacefishFinenessVeryCoarse())
+        mesh_settings=WindComfortMesh(wind_comfort_fineness=PacefishFinenessVeryCoarse()),
     )
-    simulation_spec = SimulationSpec(name=f'Pedestrian Wind Comfort {name}', geometry_id=geometry_id, model=model)
+    simulation_spec = SimulationSpec(name=f"Pedestrian Wind Comfort {name}", geometry_id=geometry_id, model=model)
 
     # Create simulation
     simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id
-    print(f'simulationId: {simulation_id}')
+    print(f"simulationId: {simulation_id}")
+
 
 for name in range(3):
     create_simulation(name)

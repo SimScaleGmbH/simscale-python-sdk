@@ -73,7 +73,7 @@ class PressureBC(object):
     def type(self):
         """Gets the type of this PressureBC.  # noqa: E501
 
-        This is a <b>pressure</b> boundary condition representing a distributed load on the selection. It is applied normal to the surface of all face elements in the deformed configuration.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection</li><li>This is a nonlinear boundary condition as the update of the geometry is only possible for nonlinear analyses. In a linear analysis it becomes a simple <b>pressure</b> boundary condition</li></ul>  Schema name: PressureBC  # noqa: E501
+        This is a <b>pressure</b> boundary condition representing a distributed load on the selection. It is applied normal to the surface of all face elements.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection.</li><li>The normal direction of the faces is computed only in the undeformed state and not updated for large deformations.</li><li>For transient analyses you may define a <b>time dependent</b> value by uploading a table (csv-file).</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/pressure/' target='_blank'>Learn more</a>.  Schema name: PressureBC  # noqa: E501
 
         :return: The type of this PressureBC.  # noqa: E501
         :rtype: str
@@ -84,7 +84,7 @@ class PressureBC(object):
     def type(self, type):
         """Sets the type of this PressureBC.
 
-        This is a <b>pressure</b> boundary condition representing a distributed load on the selection. It is applied normal to the surface of all face elements in the deformed configuration.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection</li><li>This is a nonlinear boundary condition as the update of the geometry is only possible for nonlinear analyses. In a linear analysis it becomes a simple <b>pressure</b> boundary condition</li></ul>  Schema name: PressureBC  # noqa: E501
+        This is a <b>pressure</b> boundary condition representing a distributed load on the selection. It is applied normal to the surface of all face elements.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the surface area of the selection.</li><li>The normal direction of the faces is computed only in the undeformed state and not updated for large deformations.</li><li>For transient analyses you may define a <b>time dependent</b> value by uploading a table (csv-file).</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/pressure/' target='_blank'>Learn more</a>.  Schema name: PressureBC  # noqa: E501
 
         :param type: The type of this PressureBC.  # noqa: E501
         :type: str

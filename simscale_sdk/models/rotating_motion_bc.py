@@ -78,7 +78,7 @@ class RotatingMotionBC(object):
     def type(self):
         """Gets the type of this RotatingMotionBC.  # noqa: E501
 
-        <p>The rotating motion constraint applies a predefined rigid body rotation to the assigned entities. All seven user defined components may be defined also as function or table value and also the movement of the base point during rotation is taken into account.<br /><br />Important remarks: <br /><ul><li>If functions or tables are used for the rotation axis, make sure that the axis vector never has zero length during rotation.</li></p>  Schema name: RotatingMotionBC  # noqa: E501
+        <p>The <b>rotating motion</b> constraint applies a predefined rigid body rotation to the assigned entities. The rotation axis, the base point, and the rotation angle needs to be specified. Each component can be defined with a formula or table input.<br /><br />Important remarks: <br /><ul><li>If a component of the rotation axis is input via formula or table, then ensure that the length of the axis vector is always positive.</li><li>If a continuous, transient rotation is required, then the rotation angle has to be given either as a formula or table value.</li></ul></p><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/rotating-motion/' target='_blank'>Learn more</a>.  Schema name: RotatingMotionBC  # noqa: E501
 
         :return: The type of this RotatingMotionBC.  # noqa: E501
         :rtype: str
@@ -89,7 +89,7 @@ class RotatingMotionBC(object):
     def type(self, type):
         """Sets the type of this RotatingMotionBC.
 
-        <p>The rotating motion constraint applies a predefined rigid body rotation to the assigned entities. All seven user defined components may be defined also as function or table value and also the movement of the base point during rotation is taken into account.<br /><br />Important remarks: <br /><ul><li>If functions or tables are used for the rotation axis, make sure that the axis vector never has zero length during rotation.</li></p>  Schema name: RotatingMotionBC  # noqa: E501
+        <p>The <b>rotating motion</b> constraint applies a predefined rigid body rotation to the assigned entities. The rotation axis, the base point, and the rotation angle needs to be specified. Each component can be defined with a formula or table input.<br /><br />Important remarks: <br /><ul><li>If a component of the rotation axis is input via formula or table, then ensure that the length of the axis vector is always positive.</li><li>If a continuous, transient rotation is required, then the rotation angle has to be given either as a formula or table value.</li></ul></p><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/rotating-motion/' target='_blank'>Learn more</a>.  Schema name: RotatingMotionBC  # noqa: E501
 
         :param type: The type of this RotatingMotionBC.  # noqa: E501
         :type: str

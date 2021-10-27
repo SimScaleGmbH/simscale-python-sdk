@@ -78,7 +78,7 @@ class OneOfAdvancedConceptsPowerSources(object):
     def type(self):
         """Gets the type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
 
-        Schema name: SpecificPowerSource  # noqa: E501
+        <i>Power sources</i> can be used to simulate heat generation from a volume. Two types are available:<br><li><b>Absolute</b></li>: Used when total power emitted by the assigned volume is known.<li><b>Specific</b></li>: Used when power density of the assigned volume is known. <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: SpecificPowerSource  # noqa: E501
 
         :return: The type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
         :rtype: str
@@ -89,7 +89,7 @@ class OneOfAdvancedConceptsPowerSources(object):
     def type(self, type):
         """Sets the type of this OneOfAdvancedConceptsPowerSources.
 
-        Schema name: SpecificPowerSource  # noqa: E501
+        <i>Power sources</i> can be used to simulate heat generation from a volume. Two types are available:<br><li><b>Absolute</b></li>: Used when total power emitted by the assigned volume is known.<li><b>Specific</b></li>: Used when power density of the assigned volume is known. <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: SpecificPowerSource  # noqa: E501
 
         :param type: The type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
         :type: str

@@ -1,11 +1,27 @@
 #!/usr/bin/env python
 
-import isodate
 import os
 import time
 import zipfile
+
+import isodate
 import urllib3
-from simscale_sdk import *
+from simscale_sdk import Compressible, FluidModel, FluidInitialConditions, \
+    AdvancedConcepts, TopologicalReference, FluidResultControls, AreaAverageResultControl, ScotchDecomposeAlgorithm, \
+    FluidNumerics, RelaxationFactor, DimensionalPressure, ResidualControls, Tolerance, TimeStepWriteControl, \
+    FluidSolvers, Schemes, TimeDifferentiationSchemes, GradientSchemes, DivergenceSchemes, LaplacianSchemes, \
+    InterpolationSchemes, SurfaceNormalGradientSchemes, VelocityInletBC, FixedValueVBC, DimensionalVectorFunctionSpeed, \
+    ComponentVectorFunction, ConstantFunction, FixedValueTBC, DimensionalFunctionTemperature, PressureOutletBC, \
+    FixedValuePBC, DimensionalFunctionPressure, WallBC, NoSlipVBC, FluidSimulationControl, DimensionalTime, \
+    CompressibleFluidMaterials, FluidCompressibleMaterial, SpecieDefault, DimensionalMolarMass, ConstTransport, \
+    DimensionalDynamicViscosity, HConstThermo, PerfectGasEquationOfState, ForcesMomentsResultControl, AdiabaticTBC, \
+    SlipVBC
+from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, GeometryImportsApi, GeometriesApi, \
+    MeshOperationsApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException
+from simscale_sdk import GeometryImportRequestLocation, GeometryImportRequestOptions
+from simscale_sdk import SimulationSpec, MeshOperation, SimmetrixMeshingFluid, AutomaticLayerOn, SimulationRun
+from simscale_sdk import UserInputCameraSettings, ProjectionType, Vector3D, ModelSettings, Part, ScalarField, \
+    ScreenshotOutputSettings, Color, ResolutionInfo, ScreenshotReportProperties, ReportRequest
 
 if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
     raise Exception("Either `SIMSCALE_API_KEY` or `SIMSCALE_API_URL` environment variable is missing.")
@@ -21,7 +37,7 @@ configuration.api_key = {
 configuration.debug = True
 api_client = ApiClient(configuration)
 retry_policy = urllib3.Retry(connect=5, read=5, redirect=0, status=5, backoff_factor=0.2)
-api_client.rest_client.pool_manager.connection_pool_kw['retries'] = retry_policy
+api_client.rest_client.pool_manager.connection_pool_kw["retries"] = retry_policy
 
 # API clients
 project_api = ProjectsApi(api_client)
@@ -31,6 +47,7 @@ geometry_api = GeometriesApi(api_client)
 mesh_operation_api = MeshOperationsApi(api_client)
 simulation_api = SimulationsApi(api_client)
 simulation_run_api = SimulationRunsApi(api_client)
+reports_api = ReportsApi(api_client)
 
 # Create project
 project = Project(
@@ -47,7 +64,11 @@ project_api.update_project(project_id, project)
 # Upload CAD
 storage = storage_api.create_storage()
 with open("fixtures/flow-around-sphere-v3.x_t", "rb") as file:
-    api_client.rest_client.PUT(url=storage.url, headers={"Content-Type": "application/octet-stream"}, body=file.read())
+    api_client.rest_client.PUT(
+        url=storage.url,
+        headers={"Content-Type": "application/octet-stream"},
+        body=file.read(),
+    )
 storage_id = storage.storage_id
 print(f"storageId: {storage_id}")
 
@@ -76,17 +97,26 @@ print(f"geometryId: {geometry_id}")
 geometry = geometry_api.get_geometry(project_id, geometry_id)
 geometry_api.update_geometry(project_id, geometry_id, geometry)
 
+
 # Get geometry mappings
 def get_entity_names(project_id, geometry_id, num, **kwargs):
     entities = geometry_api.get_geometry_mappings(project_id, geometry_id, **kwargs)._embedded
     if len(entities) == num:
         return [e.name for e in entities]
     else:
-        raise Exception(f"Found {len(entities)} entities instead of {num}: {entities}") 
+        raise Exception(f"Found {len(entities)} entities instead of {num}: {entities}")
+
+
 material_entities = get_entity_names(project_id, geometry_id, 1, attributes=["SDL/TYSA_NAME"], values=["box"])
 bc1_entities = get_entity_names(project_id, geometry_id, 1, attributes=["SDL/TYSA_NAME"], values=["Box ZMAX"])
 bc2_entities = get_entity_names(project_id, geometry_id, 1, attributes=["SDL/TYSA_NAME"], values=["Box ZMIN"])
-bc3_entities = get_entity_names(project_id, geometry_id, 4, attributes=["SDL/TYSA_NAME"], values=["Box XMIN", "Box XMAX","Box YMIN","Box YMAX"])
+bc3_entities = get_entity_names(
+    project_id,
+    geometry_id,
+    4,
+    attributes=["SDL/TYSA_NAME"],
+    values=["Box XMIN", "Box XMAX", "Box YMIN", "Box YMAX"],
+)
 bc4_entities = get_entity_names(project_id, geometry_id, 2, attributes=["SDL/TYSA_NAME"], values=["Sphere"])
 
 # create simulation spec first to pass as reference to mesh operation for physics based meshing
@@ -134,7 +164,9 @@ model = Compressible(
             velocity=FixedValueVBC(
                 value=DimensionalVectorFunctionSpeed(
                     value=ComponentVectorFunction(
-                        x=ConstantFunction(value=0), y=ConstantFunction(value=0), z=ConstantFunction(value=-1)
+                        x=ConstantFunction(value=0),
+                        y=ConstantFunction(value=0),
+                        z=ConstantFunction(value=-1),
                     )
                 )
             ),
@@ -211,19 +243,24 @@ errors = [entry for entry in mesh_check.entries if entry.severity == "ERROR"]
 if errors:
     raise Exception("Meshing check failed", mesh_check)
 
-# Estimate Meshing
+# Estimate Mesh operation
 try:
     mesh_estimation = mesh_operation_api.estimate_mesh_operation(project_id, mesh_operation_id)
-    print(f"Meshing estimation: {mesh_estimation}")
-    too_expensive = mesh_estimation.compute_resource.value > 10.0
-    if too_expensive:
+    print(f"Mesh operation estimation: {mesh_estimation}")
+
+    if mesh_estimation.compute_resource is not None and mesh_estimation.compute_resource.value > 10.0:
         raise Exception("Too expensive", mesh_estimation)
-    mesh_max_runtime = isodate.parse_duration(mesh_estimation.duration.interval_max).total_seconds()
-    mesh_max_runtime = max(3600, mesh_max_runtime * 2)
+
+    if mesh_estimation.duration is not None:
+        mesh_max_runtime = isodate.parse_duration(mesh_estimation.duration.interval_max).total_seconds()
+        mesh_max_runtime = max(3600, mesh_max_runtime * 2)
+    else:
+        mesh_max_runtime = 36000
+        print(f"Mesh operation estimated duration not available, assuming max runtime of {mesh_max_runtime} seconds")
 except ApiException as ae:
     if ae.status == 422:
         mesh_max_runtime = 36000
-        print(f"Meshing estimation not available, assuming max runtime of {mesh_max_runtime} seconds")
+        print(f"Mesh operation estimation not available, assuming max runtime of {mesh_max_runtime} seconds")
     else:
         raise ae
 
@@ -242,7 +279,7 @@ while mesh_operation.status not in ("FINISHED", "CANCELED", "FAILED"):
 mesh_operation = mesh_operation_api.get_mesh_operation(project_id, mesh_operation_id)
 print(f"final mesh_operation: {mesh_operation}")
 
-# # Get the simulation spec and update it with mesh_id from the previous mesh operation
+# Get the simulation spec and update it with mesh_id from the previous mesh operation
 simulation_spec = simulation_api.get_simulation(project_id, simulation_id)
 simulation_spec.mesh_id = mesh_operation.mesh_id
 simulation_api.update_simulation(project_id, simulation_id, simulation_spec)
@@ -259,11 +296,16 @@ if errors:
 try:
     estimation = simulation_api.estimate_simulation_setup(project_id, simulation_id)
     print(f"Simulation estimation: {estimation}")
-    too_expensive = estimation.compute_resource.value > 10.0
-    if too_expensive:
+
+    if estimation.compute_resource is not None and estimation.compute_resource.value > 10.0:
         raise Exception("Too expensive", estimation)
-    max_runtime = isodate.parse_duration(estimation.duration.interval_max).total_seconds()
-    max_runtime = max(3600, max_runtime * 2)
+
+    if estimation.duration is not None:
+        max_runtime = isodate.parse_duration(estimation.duration.interval_max).total_seconds()
+        max_runtime = max(3600, max_runtime * 2)
+    else:
+        max_runtime = 36000
+        print(f"Simulation estimated duration not available, assuming max runtime of {max_runtime} seconds")
 except ApiException as ae:
     if ae.status == 422:
         max_runtime = 36000
@@ -292,13 +334,19 @@ while simulation_run.status not in ("FINISHED", "CANCELED", "FAILED"):
     simulation_run = simulation_run_api.get_simulation_run(project_id, simulation_id, run_id)
     print(f"Simulation run status: {simulation_run.status} - {simulation_run.progress}")
 
+# project_id = "7855756650780177291"
+# simulation_id = "d6b25d41-0329-4195-b3d3-df5485b8b155"
+# run_id = "bbe9dec4-de0a-4c16-8866-ca4351b00f9c"
+
 # Get result metadata and download results
 results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, run_id)
 print(f"results: {results}")
 
 area_average_info = [r for r in results._embedded if r.category == "AREA_AVERAGE"][0]
 area_average_data_response = api_client.rest_client.GET(
-    url=area_average_info.download.url, headers={api_key_header: api_key}, _preload_content=False
+    url=area_average_info.download.url,
+    headers={api_key_header: api_key},
+    _preload_content=False,
 )
 area_average_data_csv = area_average_data_response.data.decode("utf-8")
 print(f"Area average data as CSV: {area_average_data_csv}")
@@ -309,9 +357,73 @@ with open("area_average.csv", "w") as file:
 
 solution_info = [r for r in results._embedded if r.category == "SOLUTION"][0]
 solution_response = api_client.rest_client.GET(
-    url=solution_info.download.url, headers={api_key_header: api_key}, _preload_content=False
+    url=solution_info.download.url,
+    headers={api_key_header: api_key},
+    _preload_content=False,
 )
 with open("solution.zip", "wb") as file:
     file.write(solution_response.data)
 zip = zipfile.ZipFile("solution.zip")
 print(f"Averaged solution ZIP file content: {zip.namelist()}")
+
+# Generating simulation run report
+camera_settings = UserInputCameraSettings(
+    projection_type=ProjectionType.ORTHOGONAL,
+    up=Vector3D(0.5, 0.3, 0.2),
+    direction=Vector3D(0.0, 5.0, 10.0),
+    center=Vector3D(10.0, 12.0, 1.0),
+    front_plane_frustum_height=0.5,
+)
+model_settings = ModelSettings(
+    parts=[Part(part_identifier="default_region", solid_color=Color(0.8, 0.2, 0.4))],
+    scalar_field=ScalarField(field_name="Velocity", component="X", data_type="CELL"),
+)
+output_settings = ScreenshotOutputSettings(
+    name="Output 1",
+    format="PNG",
+    resolution=ResolutionInfo(x=800, y=800),
+    frame_index=0
+)
+report_properties = ScreenshotReportProperties(
+    model_settings=model_settings,
+    filters=None,
+    camera_settings=camera_settings,
+    output_settings=output_settings,
+)
+report_request = ReportRequest(
+    name="Report 1",
+    description="Simulation report",
+    result_ids=[solution_info.result_id],
+    report_properties=report_properties
+)
+
+create_report_response = reports_api.create_report(project_id, report_request)
+report_id = create_report_response.report_id
+
+# Start report job
+print(f"Starting report with ID {report_id}")
+report_job = reports_api.start_report_job(project_id, report_id)
+
+report = reports_api.get_report(project_id, report_id)
+
+while report.status not in ("FINISHED", "CANCELED", "FAILED"):
+    time.sleep(30)
+    report = reports_api.get_report(project_id, report_id)
+
+print(f"Report finished with status {report.status}")
+
+if report.status == "FINISHED":
+    # Download the report
+    print("Downloading report result")
+    report_response = api_client.rest_client.GET(
+        url=report.download.url,
+        headers={api_key_header: api_key},
+        _preload_content=False,
+    )
+
+    file_name = f"report.{report.download.format}"
+    with open(file_name, "wb") as file:
+        file.write(report_response.data)
+        print(f"Finished downloading report with name {file_name}")
+elif report.status == "FAILED":
+    raise Exception("Report generation failed", report.failure_reason)
