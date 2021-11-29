@@ -34,7 +34,7 @@ class UserInputCameraSettings(object):
         'setting_type': 'str',
         'projection_type': 'ProjectionType',
         'up': 'Vector3D',
-        'direction': 'Vector3D',
+        'eye': 'Vector3D',
         'center': 'Vector3D',
         'front_plane_frustum_height': 'float'
     }
@@ -43,12 +43,12 @@ class UserInputCameraSettings(object):
         'setting_type': 'settingType',
         'projection_type': 'projectionType',
         'up': 'up',
-        'direction': 'direction',
+        'eye': 'eye',
         'center': 'center',
         'front_plane_frustum_height': 'frontPlaneFrustumHeight'
     }
 
-    def __init__(self, setting_type='USER_INPUT', projection_type=None, up=None, direction=None, center=None, front_plane_frustum_height=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, setting_type='USER_INPUT', projection_type=None, up=None, eye=None, center=None, front_plane_frustum_height=None, local_vars_configuration=None):  # noqa: E501
         """UserInputCameraSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,7 +57,7 @@ class UserInputCameraSettings(object):
         self._setting_type = None
         self._projection_type = None
         self._up = None
-        self._direction = None
+        self._eye = None
         self._center = None
         self._front_plane_frustum_height = None
         self.discriminator = None
@@ -65,7 +65,7 @@ class UserInputCameraSettings(object):
         self.setting_type = setting_type
         self.projection_type = projection_type
         self.up = up
-        self.direction = direction
+        self.eye = eye
         self.center = center
         if front_plane_frustum_height is not None:
             self.front_plane_frustum_height = front_plane_frustum_height
@@ -140,27 +140,27 @@ class UserInputCameraSettings(object):
         self._up = up
 
     @property
-    def direction(self):
-        """Gets the direction of this UserInputCameraSettings.  # noqa: E501
+    def eye(self):
+        """Gets the eye of this UserInputCameraSettings.  # noqa: E501
 
 
-        :return: The direction of this UserInputCameraSettings.  # noqa: E501
+        :return: The eye of this UserInputCameraSettings.  # noqa: E501
         :rtype: Vector3D
         """
-        return self._direction
+        return self._eye
 
-    @direction.setter
-    def direction(self, direction):
-        """Sets the direction of this UserInputCameraSettings.
+    @eye.setter
+    def eye(self, eye):
+        """Sets the eye of this UserInputCameraSettings.
 
 
-        :param direction: The direction of this UserInputCameraSettings.  # noqa: E501
+        :param eye: The eye of this UserInputCameraSettings.  # noqa: E501
         :type: Vector3D
         """
-        if self.local_vars_configuration.client_side_validation and direction is None:  # noqa: E501
-            raise ValueError("Invalid value for `direction`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and eye is None:  # noqa: E501
+            raise ValueError("Invalid value for `eye`, must not be `None`")  # noqa: E501
 
-        self._direction = direction
+        self._eye = eye
 
     @property
     def center(self):

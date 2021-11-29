@@ -214,7 +214,7 @@ print(f"Statistical surface solution solution ZIP file content: {zip.namelist()}
 camera_settings = UserInputCameraSettings(
     projection_type=ProjectionType.ORTHOGONAL,
     up=Vector3D(0.5, 0.3, 0.2),
-    direction=Vector3D(0.0, 5.0, 10.0),
+    eye=Vector3D(0.0, 5.0, 10.0),
     center=Vector3D(10.0, 12.0, 1.0),
     front_plane_frustum_height=0.5,
 )

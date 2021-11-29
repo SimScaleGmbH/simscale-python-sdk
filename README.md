@@ -52,3 +52,7 @@ In order to run them the following environment variables need to be set:
 export SIMSCALE_API_URL="https://api.simscale.com"
 export SIMSCALE_API_KEY="your-api-key"
 ```
+
+## Documentation
+
+SDK documentation can be found in https://simscalegmbh.github.io/simscale-python-sdk/

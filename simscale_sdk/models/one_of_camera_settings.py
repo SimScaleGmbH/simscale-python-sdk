@@ -34,7 +34,7 @@ class OneOfCameraSettings(object):
         'setting_type': 'str',
         'projection_type': 'ProjectionType',
         'up': 'Vector3D',
-        'direction': 'Vector3D',
+        'eye': 'Vector3D',
         'center': 'Vector3D',
         'front_plane_frustum_height': 'float',
         'direction_specifier': 'str'
@@ -44,7 +44,7 @@ class OneOfCameraSettings(object):
         'setting_type': 'settingType',
         'projection_type': 'projectionType',
         'up': 'up',
-        'direction': 'direction',
+        'eye': 'eye',
         'center': 'center',
         'front_plane_frustum_height': 'frontPlaneFrustumHeight',
         'direction_specifier': 'directionSpecifier'
@@ -56,7 +56,7 @@ class OneOfCameraSettings(object):
         'FORTY_FIVE_FORTY_FIVE_VIEW': 'FortyFiveViewPredefinedCameraSettings'
     }
 
-    def __init__(self, setting_type='FORTY_FIVE_FORTY_FIVE_VIEW', projection_type=None, up=None, direction=None, center=None, front_plane_frustum_height=None, direction_specifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, setting_type='FORTY_FIVE_FORTY_FIVE_VIEW', projection_type=None, up=None, eye=None, center=None, front_plane_frustum_height=None, direction_specifier=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCameraSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,7 +65,7 @@ class OneOfCameraSettings(object):
         self._setting_type = None
         self._projection_type = None
         self._up = None
-        self._direction = None
+        self._eye = None
         self._center = None
         self._front_plane_frustum_height = None
         self._direction_specifier = None
@@ -74,7 +74,7 @@ class OneOfCameraSettings(object):
         self.setting_type = setting_type
         self.projection_type = projection_type
         self.up = up
-        self.direction = direction
+        self.eye = eye
         self.center = center
         if front_plane_frustum_height is not None:
             self.front_plane_frustum_height = front_plane_frustum_height
@@ -150,27 +150,27 @@ class OneOfCameraSettings(object):
         self._up = up
 
     @property
-    def direction(self):
-        """Gets the direction of this OneOfCameraSettings.  # noqa: E501
+    def eye(self):
+        """Gets the eye of this OneOfCameraSettings.  # noqa: E501
 
 
-        :return: The direction of this OneOfCameraSettings.  # noqa: E501
+        :return: The eye of this OneOfCameraSettings.  # noqa: E501
         :rtype: Vector3D
         """
-        return self._direction
+        return self._eye
 
-    @direction.setter
-    def direction(self, direction):
-        """Sets the direction of this OneOfCameraSettings.
+    @eye.setter
+    def eye(self, eye):
+        """Sets the eye of this OneOfCameraSettings.
 
 
-        :param direction: The direction of this OneOfCameraSettings.  # noqa: E501
+        :param eye: The eye of this OneOfCameraSettings.  # noqa: E501
         :type: Vector3D
         """
-        if self.local_vars_configuration.client_side_validation and direction is None:  # noqa: E501
-            raise ValueError("Invalid value for `direction`, must not be `None`")  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and eye is None:  # noqa: E501
+            raise ValueError("Invalid value for `eye`, must not be `None`")  # noqa: E501
 
-        self._direction = direction
+        self._eye = eye
 
     @property
     def center(self):

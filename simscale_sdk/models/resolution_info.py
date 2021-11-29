@@ -74,6 +74,9 @@ class ResolutionInfo(object):
         if self.local_vars_configuration.client_side_validation and x is None:  # noqa: E501
             raise ValueError("Invalid value for `x`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
+                x is not None and x > 8000):  # noqa: E501
+            raise ValueError("Invalid value for `x`, must be a value less than or equal to `8000`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
                 x is not None and x < 1):  # noqa: E501
             raise ValueError("Invalid value for `x`, must be a value greater than or equal to `1`")  # noqa: E501
 
@@ -99,6 +102,9 @@ class ResolutionInfo(object):
         """
         if self.local_vars_configuration.client_side_validation and y is None:  # noqa: E501
             raise ValueError("Invalid value for `y`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                y is not None and y > 8000):  # noqa: E501
+            raise ValueError("Invalid value for `y`, must be a value less than or equal to `8000`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 y is not None and y < 1):  # noqa: E501
             raise ValueError("Invalid value for `y`, must be a value greater than or equal to `1`")  # noqa: E501
