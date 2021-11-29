@@ -33,14 +33,6 @@ simscale\_sdk.models.absolute\_power\_source module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.absolute\_sizing module
---------------------------------------------
-
-.. automodule:: simscale_sdk.models.absolute_sizing
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.acceleration\_field\_selection module
 ----------------------------------------------------------
 
@@ -1113,14 +1105,6 @@ simscale\_sdk.models.decimal\_vector2d module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.deprecated\_simmetrix\_boundary\_layer\_refinement module
-------------------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.deprecated_simmetrix_boundary_layer_refinement
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.derived\_heat\_flux module
 -----------------------------------------------
 
@@ -1189,14 +1173,6 @@ simscale\_sdk.models.dimensional\_contact\_resistance module
 ------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_contact_resistance
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.dimensional\_damping\_coefficient module
--------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.dimensional_damping_coefficient
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2165,14 +2141,6 @@ simscale\_sdk.models.event\_log\_response module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.event_log_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.expansion module
--------------------------------------
-
-.. automodule:: simscale_sdk.models.expansion
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3609,14 +3577,6 @@ simscale\_sdk.models.inactive\_preconditioner module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.incomplete\_preconditioner module
-------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.incomplete_preconditioner
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.incomplete\_preconditioner\_v33 module
 -----------------------------------------------------------
 
@@ -3881,14 +3841,6 @@ simscale\_sdk.models.jacobi\_preconditioner module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.krenk\_time\_integration\_scheme module
-------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.krenk_time_integration_scheme
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.kurganov\_flux\_scheme module
 --------------------------------------------------
 
@@ -3965,14 +3917,6 @@ simscale\_sdk.models.leastsquares\_gradient\_scheme module
 ----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.leastsquares_gradient_scheme
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.limited\_corrected\_surface\_normal\_gradient\_scheme module
----------------------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.limited_corrected_surface_normal_gradient_scheme
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4857,14 +4801,6 @@ simscale\_sdk.models.perfect\_gas\_equation\_of\_state module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.perfect\_gas\_equation\_of\_state\_e\_const\_thermo module
--------------------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.perfect_gas_equation_of_state_e_const_thermo
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.perforated\_plate module
 ---------------------------------------------
 
@@ -5221,14 +5157,6 @@ simscale\_sdk.models.relative\_convergence\_criteria module
 -----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.relative_convergence_criteria
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.relative\_sizing module
---------------------------------------------
-
-.. automodule:: simscale_sdk.models.relative_sizing
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5617,14 +5545,6 @@ simscale\_sdk.models.simulation module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.simulation\_check\_response module
--------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.simulation_check_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.simulation\_run module
 -------------------------------------------
 
@@ -5677,14 +5597,6 @@ simscale\_sdk.models.simulation\_run\_result\_table module
 ----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.simulation_run_result_table
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.simulation\_run\_result\_type module
----------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.simulation_run_result_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6533,14 +6445,6 @@ simscale\_sdk.models.theta\_method\_time\_integration\_type module
 ------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.theta_method_time_integration_type
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.theta\_time\_integration\_scheme module
-------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.theta_time_integration_scheme
    :members:
    :undoc-members:
    :show-inheritance:
