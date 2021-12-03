@@ -37,9 +37,11 @@ class OneOfStaticAnalysisBoundaryConditions(object):
         'topological_reference': 'TopologicalReference',
         'spring_stiffness': 'OneOfElasticSupportBCSpringStiffness',
         'displacement': 'DimensionalPartialVectorFunctionLength',
-        'rotation': 'AngularRotation',
+        'mass': 'DimensionalMass',
+        'mass_moment_of_inertia': 'DimensionalVectorMomentOfInertia',
         'external_point': 'DimensionalVectorLength',
         'deformation_behavior': 'str',
+        'rotation': 'AngularRotation',
         'rotation_origin': 'DimensionalVectorFunctionLength',
         'rotation_axis': 'DimensionalVectorFunctionLength',
         'omega': 'DimensionalFunctionAngle',
@@ -59,9 +61,11 @@ class OneOfStaticAnalysisBoundaryConditions(object):
         'topological_reference': 'topologicalReference',
         'spring_stiffness': 'springStiffness',
         'displacement': 'displacement',
-        'rotation': 'rotation',
+        'mass': 'mass',
+        'mass_moment_of_inertia': 'massMomentOfInertia',
         'external_point': 'externalPoint',
         'deformation_behavior': 'deformationBehavior',
+        'rotation': 'rotation',
         'rotation_origin': 'rotationOrigin',
         'rotation_axis': 'rotationAxis',
         'omega': 'omega',
@@ -79,6 +83,7 @@ class OneOfStaticAnalysisBoundaryConditions(object):
         'ELASTIC_SUPPORT': 'ElasticSupportBC',
         'FIXED_SUPPORT': 'FixedSupportBC',
         'FIXED_VALUE': 'FixedValueBC',
+        'POINT_MASS': 'PointMassBC',
         'REMOTE_DISPLACEMENT_LOAD': 'RemoteDisplacementLoadBC',
         'ROTATING_MOTION': 'RotatingMotionBC',
         'SYMMETRY_PLANE': 'SymmetryPlaneBC',
@@ -92,7 +97,7 @@ class OneOfStaticAnalysisBoundaryConditions(object):
         'VOLUME_LOAD': 'VolumeLoadBC'
     }
 
-    def __init__(self, type='VOLUME_LOAD', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, rotation=None, external_point=None, deformation_behavior=None, rotation_origin=None, rotation_axis=None, omega=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLUME_LOAD', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
         """OneOfStaticAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -104,9 +109,11 @@ class OneOfStaticAnalysisBoundaryConditions(object):
         self._topological_reference = None
         self._spring_stiffness = None
         self._displacement = None
-        self._rotation = None
+        self._mass = None
+        self._mass_moment_of_inertia = None
         self._external_point = None
         self._deformation_behavior = None
+        self._rotation = None
         self._rotation_origin = None
         self._rotation_axis = None
         self._omega = None
@@ -130,12 +137,16 @@ class OneOfStaticAnalysisBoundaryConditions(object):
             self.spring_stiffness = spring_stiffness
         if displacement is not None:
             self.displacement = displacement
-        if rotation is not None:
-            self.rotation = rotation
+        if mass is not None:
+            self.mass = mass
+        if mass_moment_of_inertia is not None:
+            self.mass_moment_of_inertia = mass_moment_of_inertia
         if external_point is not None:
             self.external_point = external_point
         if deformation_behavior is not None:
             self.deformation_behavior = deformation_behavior
+        if rotation is not None:
+            self.rotation = rotation
         if rotation_origin is not None:
             self.rotation_origin = rotation_origin
         if rotation_axis is not None:
@@ -288,25 +299,46 @@ class OneOfStaticAnalysisBoundaryConditions(object):
         self._displacement = displacement
 
     @property
-    def rotation(self):
-        """Gets the rotation of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+    def mass(self):
+        """Gets the mass of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
 
 
-        :return: The rotation of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
-        :rtype: AngularRotation
+        :return: The mass of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalMass
         """
-        return self._rotation
+        return self._mass
 
-    @rotation.setter
-    def rotation(self, rotation):
-        """Sets the rotation of this OneOfStaticAnalysisBoundaryConditions.
+    @mass.setter
+    def mass(self, mass):
+        """Sets the mass of this OneOfStaticAnalysisBoundaryConditions.
 
 
-        :param rotation: The rotation of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
-        :type: AngularRotation
+        :param mass: The mass of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalMass
         """
 
-        self._rotation = rotation
+        self._mass = mass
+
+    @property
+    def mass_moment_of_inertia(self):
+        """Gets the mass_moment_of_inertia of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The mass_moment_of_inertia of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalVectorMomentOfInertia
+        """
+        return self._mass_moment_of_inertia
+
+    @mass_moment_of_inertia.setter
+    def mass_moment_of_inertia(self, mass_moment_of_inertia):
+        """Sets the mass_moment_of_inertia of this OneOfStaticAnalysisBoundaryConditions.
+
+
+        :param mass_moment_of_inertia: The mass_moment_of_inertia of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalVectorMomentOfInertia
+        """
+
+        self._mass_moment_of_inertia = mass_moment_of_inertia
 
     @property
     def external_point(self):
@@ -357,6 +389,27 @@ class OneOfStaticAnalysisBoundaryConditions(object):
             )
 
         self._deformation_behavior = deformation_behavior
+
+    @property
+    def rotation(self):
+        """Gets the rotation of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The rotation of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: AngularRotation
+        """
+        return self._rotation
+
+    @rotation.setter
+    def rotation(self, rotation):
+        """Sets the rotation of this OneOfStaticAnalysisBoundaryConditions.
+
+
+        :param rotation: The rotation of this OneOfStaticAnalysisBoundaryConditions.  # noqa: E501
+        :type: AngularRotation
+        """
+
+        self._rotation = rotation
 
     @property
     def rotation_origin(self):

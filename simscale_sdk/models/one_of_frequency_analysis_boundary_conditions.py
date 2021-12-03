@@ -37,9 +37,11 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         'topological_reference': 'TopologicalReference',
         'spring_stiffness': 'OneOfElasticSupportBCSpringStiffness',
         'displacement': 'DimensionalPartialVectorFunctionLength',
-        'rotation': 'DimensionalPartialVectorFunctionAngle',
+        'mass': 'DimensionalMass',
+        'mass_moment_of_inertia': 'DimensionalVectorMomentOfInertia',
         'external_point': 'DimensionalVectorLength',
-        'deformation_behavior': 'str'
+        'deformation_behavior': 'str',
+        'rotation': 'DimensionalPartialVectorFunctionAngle'
     }
 
     attribute_map = {
@@ -49,9 +51,11 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         'topological_reference': 'topologicalReference',
         'spring_stiffness': 'springStiffness',
         'displacement': 'displacement',
-        'rotation': 'rotation',
+        'mass': 'mass',
+        'mass_moment_of_inertia': 'massMomentOfInertia',
         'external_point': 'externalPoint',
-        'deformation_behavior': 'deformationBehavior'
+        'deformation_behavior': 'deformationBehavior',
+        'rotation': 'rotation'
     }
 
     discriminator_value_class_map = {
@@ -59,11 +63,12 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         'ELASTIC_SUPPORT': 'ElasticSupportBC',
         'FIXED_SUPPORT': 'FixedSupportBC',
         'FIXED_VALUE': 'FixedValueBC',
+        'POINT_MASS': 'PointMassBC',
         'REMOTE_DISPLACEMENT_LOAD': 'RemoteDisplacementLoadBC',
         'SYMMETRY_PLANE': 'SymmetryPlaneBC'
     }
 
-    def __init__(self, type='SYMMETRY_PLANE', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, rotation=None, external_point=None, deformation_behavior=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SYMMETRY_PLANE', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFrequencyAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,9 +80,11 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         self._topological_reference = None
         self._spring_stiffness = None
         self._displacement = None
-        self._rotation = None
+        self._mass = None
+        self._mass_moment_of_inertia = None
         self._external_point = None
         self._deformation_behavior = None
+        self._rotation = None
         self.discriminator = 'type'
 
         self.type = type
@@ -91,12 +98,16 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
             self.spring_stiffness = spring_stiffness
         if displacement is not None:
             self.displacement = displacement
-        if rotation is not None:
-            self.rotation = rotation
+        if mass is not None:
+            self.mass = mass
+        if mass_moment_of_inertia is not None:
+            self.mass_moment_of_inertia = mass_moment_of_inertia
         if external_point is not None:
             self.external_point = external_point
         if deformation_behavior is not None:
             self.deformation_behavior = deformation_behavior
+        if rotation is not None:
+            self.rotation = rotation
 
     @property
     def type(self):
@@ -229,25 +240,46 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         self._displacement = displacement
 
     @property
-    def rotation(self):
-        """Gets the rotation of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+    def mass(self):
+        """Gets the mass of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
 
 
-        :return: The rotation of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
-        :rtype: DimensionalPartialVectorFunctionAngle
+        :return: The mass of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalMass
         """
-        return self._rotation
+        return self._mass
 
-    @rotation.setter
-    def rotation(self, rotation):
-        """Sets the rotation of this OneOfFrequencyAnalysisBoundaryConditions.
+    @mass.setter
+    def mass(self, mass):
+        """Sets the mass of this OneOfFrequencyAnalysisBoundaryConditions.
 
 
-        :param rotation: The rotation of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
-        :type: DimensionalPartialVectorFunctionAngle
+        :param mass: The mass of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalMass
         """
 
-        self._rotation = rotation
+        self._mass = mass
+
+    @property
+    def mass_moment_of_inertia(self):
+        """Gets the mass_moment_of_inertia of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The mass_moment_of_inertia of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalVectorMomentOfInertia
+        """
+        return self._mass_moment_of_inertia
+
+    @mass_moment_of_inertia.setter
+    def mass_moment_of_inertia(self, mass_moment_of_inertia):
+        """Sets the mass_moment_of_inertia of this OneOfFrequencyAnalysisBoundaryConditions.
+
+
+        :param mass_moment_of_inertia: The mass_moment_of_inertia of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalVectorMomentOfInertia
+        """
+
+        self._mass_moment_of_inertia = mass_moment_of_inertia
 
     @property
     def external_point(self):
@@ -274,7 +306,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
     def deformation_behavior(self):
         """Gets the deformation_behavior of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
 
-        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entitiy is allowed to deform, selecting <b>undeformable</b> leads to a rigid entity.</p>  # noqa: E501
+        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entity is allowed to deform, selecting <b>undeformable</b> leads to a rigid entity.</p>  # noqa: E501
 
         :return: The deformation_behavior of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -285,7 +317,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
     def deformation_behavior(self, deformation_behavior):
         """Sets the deformation_behavior of this OneOfFrequencyAnalysisBoundaryConditions.
 
-        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entitiy is allowed to deform, selecting <b>undeformable</b> leads to a rigid entity.</p>  # noqa: E501
+        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entity is allowed to deform, selecting <b>undeformable</b> leads to a rigid entity.</p>  # noqa: E501
 
         :param deformation_behavior: The deformation_behavior of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
         :type: str
@@ -298,6 +330,27 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
             )
 
         self._deformation_behavior = deformation_behavior
+
+    @property
+    def rotation(self):
+        """Gets the rotation of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The rotation of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalPartialVectorFunctionAngle
+        """
+        return self._rotation
+
+    @rotation.setter
+    def rotation(self, rotation):
+        """Sets the rotation of this OneOfFrequencyAnalysisBoundaryConditions.
+
+
+        :param rotation: The rotation of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalPartialVectorFunctionAngle
+        """
+
+        self._rotation = rotation
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

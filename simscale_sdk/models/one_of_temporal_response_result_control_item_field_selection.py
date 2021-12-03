@@ -34,6 +34,8 @@ class OneOfTemporalResponseResultControlItemFieldSelection(object):
         'type': 'str',
         'component_selection': 'str',
         'force_type': 'OneOfForceFieldSelectionForceType',
+        'moment_type': 'OneOfMomentFieldSelectionMomentType',
+        'reference_point': 'DimensionalVectorLength',
         'strain_type': 'OneOfStrainFieldSelectionStrainType',
         'stress_type': 'OneOfStressFieldSelectionStressType'
     }
@@ -42,6 +44,8 @@ class OneOfTemporalResponseResultControlItemFieldSelection(object):
         'type': 'type',
         'component_selection': 'componentSelection',
         'force_type': 'forceType',
+        'moment_type': 'momentType',
+        'reference_point': 'referencePoint',
         'strain_type': 'strainType',
         'stress_type': 'stressType'
     }
@@ -49,6 +53,7 @@ class OneOfTemporalResponseResultControlItemFieldSelection(object):
     discriminator_value_class_map = {
         'DISPLACEMENT': 'DisplacementFieldSelection',
         'FORCE': 'ForceFieldSelection',
+        'MOMENT': 'MomentFieldSelection',
         'STRAIN': 'StrainFieldSelection',
         'STRESS': 'StressFieldSelection',
         'VELOCITY': 'VelocityFieldSelection',
@@ -57,7 +62,7 @@ class OneOfTemporalResponseResultControlItemFieldSelection(object):
         'HEAT_FLUX': 'HeatFluxFieldSelection'
     }
 
-    def __init__(self, type='HEAT_FLUX', component_selection=None, force_type=None, strain_type=None, stress_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEAT_FLUX', component_selection=None, force_type=None, moment_type=None, reference_point=None, strain_type=None, stress_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfTemporalResponseResultControlItemFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +71,8 @@ class OneOfTemporalResponseResultControlItemFieldSelection(object):
         self._type = None
         self._component_selection = None
         self._force_type = None
+        self._moment_type = None
+        self._reference_point = None
         self._strain_type = None
         self._stress_type = None
         self.discriminator = 'type'
@@ -75,6 +82,10 @@ class OneOfTemporalResponseResultControlItemFieldSelection(object):
             self.component_selection = component_selection
         if force_type is not None:
             self.force_type = force_type
+        if moment_type is not None:
+            self.moment_type = moment_type
+        if reference_point is not None:
+            self.reference_point = reference_point
         if strain_type is not None:
             self.strain_type = strain_type
         if stress_type is not None:
@@ -152,6 +163,48 @@ class OneOfTemporalResponseResultControlItemFieldSelection(object):
         """
 
         self._force_type = force_type
+
+    @property
+    def moment_type(self):
+        """Gets the moment_type of this OneOfTemporalResponseResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The moment_type of this OneOfTemporalResponseResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfMomentFieldSelectionMomentType
+        """
+        return self._moment_type
+
+    @moment_type.setter
+    def moment_type(self, moment_type):
+        """Sets the moment_type of this OneOfTemporalResponseResultControlItemFieldSelection.
+
+
+        :param moment_type: The moment_type of this OneOfTemporalResponseResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfMomentFieldSelectionMomentType
+        """
+
+        self._moment_type = moment_type
+
+    @property
+    def reference_point(self):
+        """Gets the reference_point of this OneOfTemporalResponseResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The reference_point of this OneOfTemporalResponseResultControlItemFieldSelection.  # noqa: E501
+        :rtype: DimensionalVectorLength
+        """
+        return self._reference_point
+
+    @reference_point.setter
+    def reference_point(self, reference_point):
+        """Sets the reference_point of this OneOfTemporalResponseResultControlItemFieldSelection.
+
+
+        :param reference_point: The reference_point of this OneOfTemporalResponseResultControlItemFieldSelection.  # noqa: E501
+        :type: DimensionalVectorLength
+        """
+
+        self._reference_point = reference_point
 
     @property
     def strain_type(self):

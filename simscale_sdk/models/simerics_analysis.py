@@ -32,49 +32,54 @@ class SimericsAnalysis(object):
     """
     openapi_types = {
         'type': 'str',
+        'model': 'FluidModel',
         'materials': 'SimericsFluidMaterials',
         'is_compressible': 'bool',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfSimericsAnalysisTimeDependency',
         'boundary_conditions': 'list[OneOfSimericsAnalysisBoundaryConditions]',
+        'advanced_concepts': 'AdvancedConcepts',
         'simulation_control': 'FluidSimulationControl',
-        'mesh_settings': 'OneOfSimericsAnalysisMeshSettings',
         'result_control': 'FluidResultControls',
-        'advanced_concepts': 'AdvancedConcepts'
+        'mesh_settings': 'OneOfSimericsAnalysisMeshSettings'
     }
 
     attribute_map = {
         'type': 'type',
+        'model': 'model',
         'materials': 'materials',
         'is_compressible': 'isCompressible',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
         'boundary_conditions': 'boundaryConditions',
+        'advanced_concepts': 'advancedConcepts',
         'simulation_control': 'simulationControl',
-        'mesh_settings': 'meshSettings',
         'result_control': 'resultControl',
-        'advanced_concepts': 'advancedConcepts'
+        'mesh_settings': 'meshSettings'
     }
 
-    def __init__(self, type='SIMERICS_ANALYSIS', materials=None, is_compressible=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, simulation_control=None, mesh_settings=None, result_control=None, advanced_concepts=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMERICS_ANALYSIS', model=None, materials=None, is_compressible=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, advanced_concepts=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimericsAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._model = None
         self._materials = None
         self._is_compressible = None
         self._turbulence_model = None
         self._time_dependency = None
         self._boundary_conditions = None
-        self._simulation_control = None
-        self._mesh_settings = None
-        self._result_control = None
         self._advanced_concepts = None
+        self._simulation_control = None
+        self._result_control = None
+        self._mesh_settings = None
         self.discriminator = None
 
         self.type = type
+        if model is not None:
+            self.model = model
         if materials is not None:
             self.materials = materials
         if is_compressible is not None:
@@ -85,14 +90,14 @@ class SimericsAnalysis(object):
             self.time_dependency = time_dependency
         if boundary_conditions is not None:
             self.boundary_conditions = boundary_conditions
-        if simulation_control is not None:
-            self.simulation_control = simulation_control
-        if mesh_settings is not None:
-            self.mesh_settings = mesh_settings
-        if result_control is not None:
-            self.result_control = result_control
         if advanced_concepts is not None:
             self.advanced_concepts = advanced_concepts
+        if simulation_control is not None:
+            self.simulation_control = simulation_control
+        if result_control is not None:
+            self.result_control = result_control
+        if mesh_settings is not None:
+            self.mesh_settings = mesh_settings
 
     @property
     def type(self):
@@ -118,6 +123,27 @@ class SimericsAnalysis(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def model(self):
+        """Gets the model of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The model of this SimericsAnalysis.  # noqa: E501
+        :rtype: FluidModel
+        """
+        return self._model
+
+    @model.setter
+    def model(self, model):
+        """Sets the model of this SimericsAnalysis.
+
+
+        :param model: The model of this SimericsAnalysis.  # noqa: E501
+        :type: FluidModel
+        """
+
+        self._model = model
 
     @property
     def materials(self):
@@ -233,6 +259,27 @@ class SimericsAnalysis(object):
         self._boundary_conditions = boundary_conditions
 
     @property
+    def advanced_concepts(self):
+        """Gets the advanced_concepts of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The advanced_concepts of this SimericsAnalysis.  # noqa: E501
+        :rtype: AdvancedConcepts
+        """
+        return self._advanced_concepts
+
+    @advanced_concepts.setter
+    def advanced_concepts(self, advanced_concepts):
+        """Sets the advanced_concepts of this SimericsAnalysis.
+
+
+        :param advanced_concepts: The advanced_concepts of this SimericsAnalysis.  # noqa: E501
+        :type: AdvancedConcepts
+        """
+
+        self._advanced_concepts = advanced_concepts
+
+    @property
     def simulation_control(self):
         """Gets the simulation_control of this SimericsAnalysis.  # noqa: E501
 
@@ -252,27 +299,6 @@ class SimericsAnalysis(object):
         """
 
         self._simulation_control = simulation_control
-
-    @property
-    def mesh_settings(self):
-        """Gets the mesh_settings of this SimericsAnalysis.  # noqa: E501
-
-
-        :return: The mesh_settings of this SimericsAnalysis.  # noqa: E501
-        :rtype: OneOfSimericsAnalysisMeshSettings
-        """
-        return self._mesh_settings
-
-    @mesh_settings.setter
-    def mesh_settings(self, mesh_settings):
-        """Sets the mesh_settings of this SimericsAnalysis.
-
-
-        :param mesh_settings: The mesh_settings of this SimericsAnalysis.  # noqa: E501
-        :type: OneOfSimericsAnalysisMeshSettings
-        """
-
-        self._mesh_settings = mesh_settings
 
     @property
     def result_control(self):
@@ -296,25 +322,25 @@ class SimericsAnalysis(object):
         self._result_control = result_control
 
     @property
-    def advanced_concepts(self):
-        """Gets the advanced_concepts of this SimericsAnalysis.  # noqa: E501
+    def mesh_settings(self):
+        """Gets the mesh_settings of this SimericsAnalysis.  # noqa: E501
 
 
-        :return: The advanced_concepts of this SimericsAnalysis.  # noqa: E501
-        :rtype: AdvancedConcepts
+        :return: The mesh_settings of this SimericsAnalysis.  # noqa: E501
+        :rtype: OneOfSimericsAnalysisMeshSettings
         """
-        return self._advanced_concepts
+        return self._mesh_settings
 
-    @advanced_concepts.setter
-    def advanced_concepts(self, advanced_concepts):
-        """Sets the advanced_concepts of this SimericsAnalysis.
+    @mesh_settings.setter
+    def mesh_settings(self, mesh_settings):
+        """Sets the mesh_settings of this SimericsAnalysis.
 
 
-        :param advanced_concepts: The advanced_concepts of this SimericsAnalysis.  # noqa: E501
-        :type: AdvancedConcepts
+        :param mesh_settings: The mesh_settings of this SimericsAnalysis.  # noqa: E501
+        :type: OneOfSimericsAnalysisMeshSettings
         """
 
-        self._advanced_concepts = advanced_concepts
+        self._mesh_settings = mesh_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

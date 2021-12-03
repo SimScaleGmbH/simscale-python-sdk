@@ -37,9 +37,11 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'topological_reference': 'TopologicalReference',
         'spring_stiffness': 'OneOfElasticSupportBCSpringStiffness',
         'displacement': 'DimensionalPartialVectorFunctionLength',
-        'rotation': 'AngularRotation',
+        'mass': 'DimensionalMass',
+        'mass_moment_of_inertia': 'DimensionalVectorMomentOfInertia',
         'external_point': 'DimensionalVectorLength',
         'deformation_behavior': 'str',
+        'rotation': 'AngularRotation',
         'force': 'DimensionalVectorFunctionForce',
         'scaling': 'DimensionalFunctionDimensionless',
         'phase_angle': 'DimensionalAngle',
@@ -56,9 +58,11 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'topological_reference': 'topologicalReference',
         'spring_stiffness': 'springStiffness',
         'displacement': 'displacement',
-        'rotation': 'rotation',
+        'mass': 'mass',
+        'mass_moment_of_inertia': 'massMomentOfInertia',
         'external_point': 'externalPoint',
         'deformation_behavior': 'deformationBehavior',
+        'rotation': 'rotation',
         'force': 'force',
         'scaling': 'scaling',
         'phase_angle': 'phaseAngle',
@@ -73,6 +77,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'ELASTIC_SUPPORT': 'ElasticSupportBC',
         'FIXED_SUPPORT': 'FixedSupportBC',
         'FIXED_VALUE': 'FixedValueBC',
+        'POINT_MASS': 'PointMassBC',
         'REMOTE_DISPLACEMENT_LOAD': 'RemoteDisplacementLoadBC',
         'SYMMETRY_PLANE': 'SymmetryPlaneBC',
         'CENTRIFUGAL_FORCE': 'CentrifugalForceBC',
@@ -84,7 +89,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'VOLUME_LOAD': 'VolumeLoadBC'
     }
 
-    def __init__(self, type='VOLUME_LOAD', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, rotation=None, external_point=None, deformation_behavior=None, force=None, scaling=None, phase_angle=None, pressure=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLUME_LOAD', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, force=None, scaling=None, phase_angle=None, pressure=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHarmonicAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,9 +101,11 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         self._topological_reference = None
         self._spring_stiffness = None
         self._displacement = None
-        self._rotation = None
+        self._mass = None
+        self._mass_moment_of_inertia = None
         self._external_point = None
         self._deformation_behavior = None
+        self._rotation = None
         self._force = None
         self._scaling = None
         self._phase_angle = None
@@ -119,12 +126,16 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
             self.spring_stiffness = spring_stiffness
         if displacement is not None:
             self.displacement = displacement
-        if rotation is not None:
-            self.rotation = rotation
+        if mass is not None:
+            self.mass = mass
+        if mass_moment_of_inertia is not None:
+            self.mass_moment_of_inertia = mass_moment_of_inertia
         if external_point is not None:
             self.external_point = external_point
         if deformation_behavior is not None:
             self.deformation_behavior = deformation_behavior
+        if rotation is not None:
+            self.rotation = rotation
         if force is not None:
             self.force = force
         if scaling is not None:
@@ -271,25 +282,46 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         self._displacement = displacement
 
     @property
-    def rotation(self):
-        """Gets the rotation of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+    def mass(self):
+        """Gets the mass of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
 
 
-        :return: The rotation of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
-        :rtype: AngularRotation
+        :return: The mass of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalMass
         """
-        return self._rotation
+        return self._mass
 
-    @rotation.setter
-    def rotation(self, rotation):
-        """Sets the rotation of this OneOfHarmonicAnalysisBoundaryConditions.
+    @mass.setter
+    def mass(self, mass):
+        """Sets the mass of this OneOfHarmonicAnalysisBoundaryConditions.
 
 
-        :param rotation: The rotation of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
-        :type: AngularRotation
+        :param mass: The mass of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalMass
         """
 
-        self._rotation = rotation
+        self._mass = mass
+
+    @property
+    def mass_moment_of_inertia(self):
+        """Gets the mass_moment_of_inertia of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The mass_moment_of_inertia of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalVectorMomentOfInertia
+        """
+        return self._mass_moment_of_inertia
+
+    @mass_moment_of_inertia.setter
+    def mass_moment_of_inertia(self, mass_moment_of_inertia):
+        """Sets the mass_moment_of_inertia of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param mass_moment_of_inertia: The mass_moment_of_inertia of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalVectorMomentOfInertia
+        """
+
+        self._mass_moment_of_inertia = mass_moment_of_inertia
 
     @property
     def external_point(self):
@@ -340,6 +372,27 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
             )
 
         self._deformation_behavior = deformation_behavior
+
+    @property
+    def rotation(self):
+        """Gets the rotation of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The rotation of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: AngularRotation
+        """
+        return self._rotation
+
+    @rotation.setter
+    def rotation(self, rotation):
+        """Sets the rotation of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param rotation: The rotation of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: AngularRotation
+        """
+
+        self._rotation = rotation
 
     @property
     def force(self):

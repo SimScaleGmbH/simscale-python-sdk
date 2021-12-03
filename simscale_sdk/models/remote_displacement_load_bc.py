@@ -192,7 +192,7 @@ class RemoteDisplacementLoadBC(object):
     def deformation_behavior(self):
         """Gets the deformation_behavior of this RemoteDisplacementLoadBC.  # noqa: E501
 
-        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entitiy is allowed to deform, selecting <b>undeformable</b> leads to a rigid entity.</p>  # noqa: E501
+        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entity is allowed to deform, selecting <b>undeformable</b> leads to a rigid entity.</p>  # noqa: E501
 
         :return: The deformation_behavior of this RemoteDisplacementLoadBC.  # noqa: E501
         :rtype: str
@@ -203,7 +203,7 @@ class RemoteDisplacementLoadBC(object):
     def deformation_behavior(self, deformation_behavior):
         """Sets the deformation_behavior of this RemoteDisplacementLoadBC.
 
-        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entitiy is allowed to deform, selecting <b>undeformable</b> leads to a rigid entity.</p>  # noqa: E501
+        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entity is allowed to deform, selecting <b>undeformable</b> leads to a rigid entity.</p>  # noqa: E501
 
         :param deformation_behavior: The deformation_behavior of this RemoteDisplacementLoadBC.  # noqa: E501
         :type: str

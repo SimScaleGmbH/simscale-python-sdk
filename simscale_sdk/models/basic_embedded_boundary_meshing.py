@@ -33,18 +33,18 @@ class BasicEmbeddedBoundaryMeshing(object):
     openapi_types = {
         'type': 'str',
         'num_cells_per_direction': 'NumberOfCellsPerDirection',
-        'refinement_distance': 'DimensionalLength',
+        'refinement_strategy': 'OneOfBasicEmbeddedBoundaryMeshingRefinementStrategy',
         'num_refinement_levels': 'int'
     }
 
     attribute_map = {
         'type': 'type',
         'num_cells_per_direction': 'numCellsPerDirection',
-        'refinement_distance': 'refinementDistance',
+        'refinement_strategy': 'refinementStrategy',
         'num_refinement_levels': 'numRefinementLevels'
     }
 
-    def __init__(self, type='BASIC_MESH_SETTINGS', num_cells_per_direction=None, refinement_distance=None, num_refinement_levels=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='BASIC_MESH_SETTINGS', num_cells_per_direction=None, refinement_strategy=None, num_refinement_levels=None, local_vars_configuration=None):  # noqa: E501
         """BasicEmbeddedBoundaryMeshing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -52,15 +52,15 @@ class BasicEmbeddedBoundaryMeshing(object):
 
         self._type = None
         self._num_cells_per_direction = None
-        self._refinement_distance = None
+        self._refinement_strategy = None
         self._num_refinement_levels = None
         self.discriminator = None
 
         self.type = type
         if num_cells_per_direction is not None:
             self.num_cells_per_direction = num_cells_per_direction
-        if refinement_distance is not None:
-            self.refinement_distance = refinement_distance
+        if refinement_strategy is not None:
+            self.refinement_strategy = refinement_strategy
         if num_refinement_levels is not None:
             self.num_refinement_levels = num_refinement_levels
 
@@ -111,25 +111,25 @@ class BasicEmbeddedBoundaryMeshing(object):
         self._num_cells_per_direction = num_cells_per_direction
 
     @property
-    def refinement_distance(self):
-        """Gets the refinement_distance of this BasicEmbeddedBoundaryMeshing.  # noqa: E501
+    def refinement_strategy(self):
+        """Gets the refinement_strategy of this BasicEmbeddedBoundaryMeshing.  # noqa: E501
 
 
-        :return: The refinement_distance of this BasicEmbeddedBoundaryMeshing.  # noqa: E501
-        :rtype: DimensionalLength
+        :return: The refinement_strategy of this BasicEmbeddedBoundaryMeshing.  # noqa: E501
+        :rtype: OneOfBasicEmbeddedBoundaryMeshingRefinementStrategy
         """
-        return self._refinement_distance
+        return self._refinement_strategy
 
-    @refinement_distance.setter
-    def refinement_distance(self, refinement_distance):
-        """Sets the refinement_distance of this BasicEmbeddedBoundaryMeshing.
+    @refinement_strategy.setter
+    def refinement_strategy(self, refinement_strategy):
+        """Sets the refinement_strategy of this BasicEmbeddedBoundaryMeshing.
 
 
-        :param refinement_distance: The refinement_distance of this BasicEmbeddedBoundaryMeshing.  # noqa: E501
-        :type: DimensionalLength
+        :param refinement_strategy: The refinement_strategy of this BasicEmbeddedBoundaryMeshing.  # noqa: E501
+        :type: OneOfBasicEmbeddedBoundaryMeshingRefinementStrategy
         """
 
-        self._refinement_distance = refinement_distance
+        self._refinement_strategy = refinement_strategy
 
     @property
     def num_refinement_levels(self):

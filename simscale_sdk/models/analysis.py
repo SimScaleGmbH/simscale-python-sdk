@@ -65,6 +65,7 @@ class Analysis(object):
         'contact_handling_mode': 'str',
         'solar_calculator': 'SolarCalculator',
         'enable_solar_load': 'bool',
+        'is_internal_flow': 'bool',
         'use_local_time_stepping': 'bool'
     }
 
@@ -103,6 +104,7 @@ class Analysis(object):
         'contact_handling_mode': 'contactHandlingMode',
         'solar_calculator': 'solarCalculator',
         'enable_solar_load': 'enableSolarLoad',
+        'is_internal_flow': 'isInternalFlow',
         'use_local_time_stepping': 'useLocalTimeStepping'
     }
 
@@ -125,7 +127,7 @@ class Analysis(object):
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, solar_calculator=None, enable_solar_load=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, solar_calculator=None, enable_solar_load=None, is_internal_flow=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -165,6 +167,7 @@ class Analysis(object):
         self._contact_handling_mode = None
         self._solar_calculator = None
         self._enable_solar_load = None
+        self._is_internal_flow = None
         self._use_local_time_stepping = None
         self.discriminator = 'type'
 
@@ -235,6 +238,8 @@ class Analysis(object):
             self.solar_calculator = solar_calculator
         if enable_solar_load is not None:
             self.enable_solar_load = enable_solar_load
+        if is_internal_flow is not None:
+            self.is_internal_flow = is_internal_flow
         if use_local_time_stepping is not None:
             self.use_local_time_stepping = use_local_time_stepping
 
@@ -527,7 +532,7 @@ class Analysis(object):
     def inertia_effect(self):
         """Gets the inertia_effect of this Analysis.  # noqa: E501
 
-        <p>Select if inertia effects should be considered in the analysis. If high loading velocities or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
+        <p>Select if inertia effects should be considered in the analysis. If high loading accelerations or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
 
         :return: The inertia_effect of this Analysis.  # noqa: E501
         :rtype: str
@@ -538,7 +543,7 @@ class Analysis(object):
     def inertia_effect(self, inertia_effect):
         """Sets the inertia_effect of this Analysis.
 
-        <p>Select if inertia effects should be considered in the analysis. If high loading velocities or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
+        <p>Select if inertia effects should be considered in the analysis. If high loading accelerations or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
 
         :param inertia_effect: The inertia_effect of this Analysis.  # noqa: E501
         :type: str
@@ -993,6 +998,29 @@ class Analysis(object):
         """
 
         self._enable_solar_load = enable_solar_load
+
+    @property
+    def is_internal_flow(self):
+        """Gets the is_internal_flow of this Analysis.  # noqa: E501
+
+        If active it indicates that the fluid region is contained within the uploaded geometry.  # noqa: E501
+
+        :return: The is_internal_flow of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_internal_flow
+
+    @is_internal_flow.setter
+    def is_internal_flow(self, is_internal_flow):
+        """Sets the is_internal_flow of this Analysis.
+
+        If active it indicates that the fluid region is contained within the uploaded geometry.  # noqa: E501
+
+        :param is_internal_flow: The is_internal_flow of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_internal_flow = is_internal_flow
 
     @property
     def use_local_time_stepping(self):

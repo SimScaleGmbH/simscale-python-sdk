@@ -164,7 +164,7 @@ class ThermalMechanical(object):
     def inertia_effect(self):
         """Gets the inertia_effect of this ThermalMechanical.  # noqa: E501
 
-        <p>Select if inertia effects should be considered in the analysis. If high loading velocities or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
+        <p>Select if inertia effects should be considered in the analysis. If high loading accelerations or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
 
         :return: The inertia_effect of this ThermalMechanical.  # noqa: E501
         :rtype: str
@@ -175,7 +175,7 @@ class ThermalMechanical(object):
     def inertia_effect(self, inertia_effect):
         """Sets the inertia_effect of this ThermalMechanical.
 
-        <p>Select if inertia effects should be considered in the analysis. If high loading velocities or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
+        <p>Select if inertia effects should be considered in the analysis. If high loading accelerations or impacts are present then <b>dynamic</b> is the right choice for this parameter. If the dynamic effects are negligible, <b>static</b> should be selected.</p>  # noqa: E501
 
         :param inertia_effect: The inertia_effect of this ThermalMechanical.  # noqa: E501
         :type: str
