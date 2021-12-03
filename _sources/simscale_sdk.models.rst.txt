@@ -1537,6 +1537,14 @@ simscale\_sdk.models.dimensional\_length module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensional\_mass module
+---------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_mass
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dimensional\_molar\_mass module
 ----------------------------------------------------
 
@@ -1841,6 +1849,14 @@ simscale\_sdk.models.dimensional\_vector\_length module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensional\_vector\_moment\_of\_inertia module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_vector_moment_of_inertia
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dimensional\_vector\_reciprocal\_permeability module
 -------------------------------------------------------------------------
 
@@ -2077,6 +2093,22 @@ simscale\_sdk.models.embedded\_boundary module
 ----------------------------------------------
 
 .. automodule:: simscale_sdk.models.embedded_boundary
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.embedded\_distance\_refinement module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.embedded_distance_refinement
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.embedded\_number\_of\_cells\_refinement module
+-------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.embedded_number_of_cells_refinement
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4217,6 +4249,14 @@ simscale\_sdk.models.moderate\_resolution module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.moment\_field\_selection module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.moment_field_selection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.mooney\_rivlin\_hyper\_elastic\_model module
 -----------------------------------------------------------------
 
@@ -4453,6 +4493,14 @@ simscale\_sdk.models.nodal\_load\_bc module
 -------------------------------------------
 
 .. automodule:: simscale_sdk.models.nodal_load_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.nodal\_moment\_type module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.nodal_moment_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4865,6 +4913,14 @@ simscale\_sdk.models.point module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.point\_mass\_bc module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.point_mass_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.polynomial\_function module
 ------------------------------------------------
 
@@ -5069,6 +5125,14 @@ simscale\_sdk.models.reaction\_force\_type module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.reaction_force_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.reaction\_moment\_type module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.reaction_moment_type
    :members:
    :undoc-members:
    :show-inheritance:
