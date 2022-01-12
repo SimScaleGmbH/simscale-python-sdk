@@ -43,7 +43,6 @@ class OneOfCustomFluidBCNuTilda(object):
     }
 
     discriminator_value_class_map = {
-        'CALCULATED': 'CalculatedNBC',
         'SYMMETRY': 'SymmetryNBC',
         'FIXED_GRADIENT': 'FixedGradientNBC',
         'FIXED_VALUE': 'FixedValueNBC',

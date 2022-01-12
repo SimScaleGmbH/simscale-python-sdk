@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.7.0"
+__version__ = "0.8.0"
 
 # import apis into sdk package
 from simscale_sdk.api.geometries_api import GeometriesApi
@@ -66,6 +66,7 @@ from simscale_sdk.models.animation_report_properties import AnimationReportPrope
 from simscale_sdk.models.any_of_parameter_with_values_values import AnyOfParameterWithValuesValues
 from simscale_sdk.models.area_average_result_control import AreaAverageResultControl
 from simscale_sdk.models.area_integral_result_control import AreaIntegralResultControl
+from simscale_sdk.models.atmospheric_boundary_layer_inlet_bc import AtmosphericBoundaryLayerInletBC
 from simscale_sdk.models.augmented_lagrange_method import AugmentedLagrangeMethod
 from simscale_sdk.models.auto_timestep_definition import AutoTimestepDefinition
 from simscale_sdk.models.automatic_layer_off import AutomaticLayerOff
@@ -95,7 +96,6 @@ from simscale_sdk.models.calculate_frequency import CalculateFrequency
 from simscale_sdk.models.calculated_dvbc import CalculatedDVBC
 from simscale_sdk.models.calculated_evbc import CalculatedEVBC
 from simscale_sdk.models.calculated_evcbc import CalculatedEVCBC
-from simscale_sdk.models.calculated_nbc import CalculatedNBC
 from simscale_sdk.models.calculated_tdbc import CalculatedTDBC
 from simscale_sdk.models.calculated_tdcbc import CalculatedTDCBC
 from simscale_sdk.models.cartesian_box import CartesianBox
@@ -451,6 +451,7 @@ from simscale_sdk.models.global_acceleration_type import GlobalAccelerationType
 from simscale_sdk.models.global_cauchy_stress_type import GlobalCauchyStressType
 from simscale_sdk.models.global_displacement_type import GlobalDisplacementType
 from simscale_sdk.models.global_nodal_force_type import GlobalNodalForceType
+from simscale_sdk.models.global_principal_green_lagrange_strain_type import GlobalPrincipalGreenLagrangeStrainType
 from simscale_sdk.models.global_principal_strain_type import GlobalPrincipalStrainType
 from simscale_sdk.models.global_principal_stress_type import GlobalPrincipalStressType
 from simscale_sdk.models.global_reaction_force_type import GlobalReactionForceType
@@ -554,6 +555,7 @@ from simscale_sdk.models.manual_surface_sizing_pacefish import ManualSurfaceSizi
 from simscale_sdk.models.manual_timestep_calculation_type import ManualTimestepCalculationType
 from simscale_sdk.models.manual_timestep_definition import ManualTimestepDefinition
 from simscale_sdk.models.mass_flow import MassFlow
+from simscale_sdk.models.material_library_reference import MaterialLibraryReference
 from simscale_sdk.models.maximum_number_iteration_control import MaximumNumberIterationControl
 from simscale_sdk.models.mean_value_outlet_vbc import MeanValueOutletVBC
 from simscale_sdk.models.mean_value_pbc import MeanValuePBC
@@ -1057,6 +1059,7 @@ from simscale_sdk.models.pressure_loss_curve import PressureLossCurve
 from simscale_sdk.models.pressure_loss_data import PressureLossData
 from simscale_sdk.models.pressure_outlet_bc import PressureOutletBC
 from simscale_sdk.models.pressure_value_result_type import PressureValueResultType
+from simscale_sdk.models.principal_green_lagrange_strain_type import PrincipalGreenLagrangeStrainType
 from simscale_sdk.models.principal_strain_type import PrincipalStrainType
 from simscale_sdk.models.principal_stress_type import PrincipalStressType
 from simscale_sdk.models.probe_points_result_control import ProbePointsResultControl

@@ -33,16 +33,18 @@ class SemiOpenBoundaryRayBC(object):
     openapi_types = {
         'type': 'str',
         'emissivity': 'float',
-        'transmissivity': 'float'
+        'transmissivity': 'float',
+        'farfield_black_body_temperature': 'DimensionalTemperature'
     }
 
     attribute_map = {
         'type': 'type',
         'emissivity': 'emissivity',
-        'transmissivity': 'transmissivity'
+        'transmissivity': 'transmissivity',
+        'farfield_black_body_temperature': 'farfieldBlackBodyTemperature'
     }
 
-    def __init__(self, type='SEMI_OPEN_BOUNDARY_RAY', emissivity=None, transmissivity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SEMI_OPEN_BOUNDARY_RAY', emissivity=None, transmissivity=None, farfield_black_body_temperature=None, local_vars_configuration=None):  # noqa: E501
         """SemiOpenBoundaryRayBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class SemiOpenBoundaryRayBC(object):
         self._type = None
         self._emissivity = None
         self._transmissivity = None
+        self._farfield_black_body_temperature = None
         self.discriminator = None
 
         self.type = type
@@ -58,6 +61,8 @@ class SemiOpenBoundaryRayBC(object):
             self.emissivity = emissivity
         if transmissivity is not None:
             self.transmissivity = transmissivity
+        if farfield_black_body_temperature is not None:
+            self.farfield_black_body_temperature = farfield_black_body_temperature
 
     @property
     def type(self):
@@ -137,6 +142,27 @@ class SemiOpenBoundaryRayBC(object):
             raise ValueError("Invalid value for `transmissivity`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._transmissivity = transmissivity
+
+    @property
+    def farfield_black_body_temperature(self):
+        """Gets the farfield_black_body_temperature of this SemiOpenBoundaryRayBC.  # noqa: E501
+
+
+        :return: The farfield_black_body_temperature of this SemiOpenBoundaryRayBC.  # noqa: E501
+        :rtype: DimensionalTemperature
+        """
+        return self._farfield_black_body_temperature
+
+    @farfield_black_body_temperature.setter
+    def farfield_black_body_temperature(self, farfield_black_body_temperature):
+        """Sets the farfield_black_body_temperature of this SemiOpenBoundaryRayBC.
+
+
+        :param farfield_black_body_temperature: The farfield_black_body_temperature of this SemiOpenBoundaryRayBC.  # noqa: E501
+        :type: DimensionalTemperature
+        """
+
+        self._farfield_black_body_temperature = farfield_black_body_temperature
 
     def to_dict(self):
         """Returns the model properties as a dict"""

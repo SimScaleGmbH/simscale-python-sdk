@@ -45,7 +45,10 @@ class OneOfFlowDomainBoundariesYMAX(object):
         'pressure': 'OneOfPressureOutletBCPressure',
         'pressure_rgh': 'OneOfPressureOutletBCPressureRgh',
         'gauge_pressure': 'OneOfPressureOutletBCGaugePressure',
-        'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh'
+        'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh',
+        'reference_velocity': 'DimensionalSpeed',
+        'reference_height': 'DimensionalLength',
+        'ground_roughness': 'DimensionalLength'
     }
 
     attribute_map = {
@@ -63,17 +66,21 @@ class OneOfFlowDomainBoundariesYMAX(object):
         'pressure': 'pressure',
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
-        'gauge_pressure_rgh': 'gaugePressureRgh'
+        'gauge_pressure_rgh': 'gaugePressureRgh',
+        'reference_velocity': 'referenceVelocity',
+        'reference_height': 'referenceHeight',
+        'ground_roughness': 'groundRoughness'
     }
 
     discriminator_value_class_map = {
         'VELOCITY_INLET_V3': 'VelocityInletBC',
         'PRESSURE_OUTLET_V30': 'PressureOutletBC',
         'WALL_V34': 'WallBC',
-        'PERIODIC': 'PeriodicBC'
+        'PERIODIC': 'PeriodicBC',
+        'ATMOSPHERIC_BOUNDARY_LAYER_INLET': 'AtmosphericBoundaryLayerInletBC'
     }
 
-    def __init__(self, type='PERIODIC', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ATMOSPHERIC_BOUNDARY_LAYER_INLET', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, reference_velocity=None, reference_height=None, ground_roughness=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFlowDomainBoundariesYMAX - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +101,9 @@ class OneOfFlowDomainBoundariesYMAX(object):
         self._pressure_rgh = None
         self._gauge_pressure = None
         self._gauge_pressure_rgh = None
+        self._reference_velocity = None
+        self._reference_height = None
+        self._ground_roughness = None
         self.discriminator = 'type'
 
         self.type = type
@@ -125,12 +135,18 @@ class OneOfFlowDomainBoundariesYMAX(object):
             self.gauge_pressure = gauge_pressure
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
+        if reference_velocity is not None:
+            self.reference_velocity = reference_velocity
+        if reference_height is not None:
+            self.reference_height = reference_height
+        if ground_roughness is not None:
+            self.ground_roughness = ground_roughness
 
     @property
     def type(self):
         """Gets the type of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
 
-        This boundary condition should be used on two faces of a system as if they are physically connected. It is required that the two faces are of same size and shape and the face elements of the mesh are congruent on both sides. Works for uploaded meshes only. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/periodic-boundary-condition/' target='_blank'>Learn more</a>.  Schema name: PeriodicBC  # noqa: E501
+        The atmospheric boundary layer boundary condition implements the standard logarithmic profile for the stream-wise wind velocity component with corresponding profiles for turbulence kinetic energy and specific dissipation rate, where the ground roughness effects are taken into account.  Schema name: AtmosphericBoundaryLayerInletBC  # noqa: E501
 
         :return: The type of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
         :rtype: str
@@ -141,7 +157,7 @@ class OneOfFlowDomainBoundariesYMAX(object):
     def type(self, type):
         """Sets the type of this OneOfFlowDomainBoundariesYMAX.
 
-        This boundary condition should be used on two faces of a system as if they are physically connected. It is required that the two faces are of same size and shape and the face elements of the mesh are congruent on both sides. Works for uploaded meshes only. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/periodic-boundary-condition/' target='_blank'>Learn more</a>.  Schema name: PeriodicBC  # noqa: E501
+        The atmospheric boundary layer boundary condition implements the standard logarithmic profile for the stream-wise wind velocity component with corresponding profiles for turbulence kinetic energy and specific dissipation rate, where the ground roughness effects are taken into account.  Schema name: AtmosphericBoundaryLayerInletBC  # noqa: E501
 
         :param type: The type of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
         :type: str
@@ -446,6 +462,69 @@ class OneOfFlowDomainBoundariesYMAX(object):
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh
+
+    @property
+    def reference_velocity(self):
+        """Gets the reference_velocity of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+
+
+        :return: The reference_velocity of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+        :rtype: DimensionalSpeed
+        """
+        return self._reference_velocity
+
+    @reference_velocity.setter
+    def reference_velocity(self, reference_velocity):
+        """Sets the reference_velocity of this OneOfFlowDomainBoundariesYMAX.
+
+
+        :param reference_velocity: The reference_velocity of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+        :type: DimensionalSpeed
+        """
+
+        self._reference_velocity = reference_velocity
+
+    @property
+    def reference_height(self):
+        """Gets the reference_height of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+
+
+        :return: The reference_height of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+        :rtype: DimensionalLength
+        """
+        return self._reference_height
+
+    @reference_height.setter
+    def reference_height(self, reference_height):
+        """Sets the reference_height of this OneOfFlowDomainBoundariesYMAX.
+
+
+        :param reference_height: The reference_height of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+        :type: DimensionalLength
+        """
+
+        self._reference_height = reference_height
+
+    @property
+    def ground_roughness(self):
+        """Gets the ground_roughness of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+
+
+        :return: The ground_roughness of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+        :rtype: DimensionalLength
+        """
+        return self._ground_roughness
+
+    @ground_roughness.setter
+    def ground_roughness(self, ground_roughness):
+        """Sets the ground_roughness of this OneOfFlowDomainBoundariesYMAX.
+
+
+        :param ground_roughness: The ground_roughness of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
+        :type: DimensionalLength
+        """
+
+        self._ground_roughness = ground_roughness
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

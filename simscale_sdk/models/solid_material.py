@@ -38,7 +38,8 @@ class SolidMaterial(object):
         'conductivity': 'OneOfSolidMaterialConductivity',
         'specific_heat': 'DimensionalFunctionSpecificHeat',
         'topological_reference': 'TopologicalReference',
-        'built_in_material': 'str'
+        'built_in_material': 'str',
+        'material_library_reference': 'MaterialLibraryReference'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class SolidMaterial(object):
         'conductivity': 'conductivity',
         'specific_heat': 'specificHeat',
         'topological_reference': 'topologicalReference',
-        'built_in_material': 'builtInMaterial'
+        'built_in_material': 'builtInMaterial',
+        'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, name=None, material_behavior=None, density=None, expansion=None, conductivity=None, specific_heat=None, topological_reference=None, built_in_material=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, material_behavior=None, density=None, expansion=None, conductivity=None, specific_heat=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """SolidMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class SolidMaterial(object):
         self._specific_heat = None
         self._topological_reference = None
         self._built_in_material = None
+        self._material_library_reference = None
         self.discriminator = None
 
         if name is not None:
@@ -84,6 +87,8 @@ class SolidMaterial(object):
             self.topological_reference = topological_reference
         if built_in_material is not None:
             self.built_in_material = built_in_material
+        if material_library_reference is not None:
+            self.material_library_reference = material_library_reference
 
     @property
     def name(self):
@@ -252,6 +257,27 @@ class SolidMaterial(object):
         """
 
         self._built_in_material = built_in_material
+
+    @property
+    def material_library_reference(self):
+        """Gets the material_library_reference of this SolidMaterial.  # noqa: E501
+
+
+        :return: The material_library_reference of this SolidMaterial.  # noqa: E501
+        :rtype: MaterialLibraryReference
+        """
+        return self._material_library_reference
+
+    @material_library_reference.setter
+    def material_library_reference(self, material_library_reference):
+        """Sets the material_library_reference of this SolidMaterial.
+
+
+        :param material_library_reference: The material_library_reference of this SolidMaterial.  # noqa: E501
+        :type: MaterialLibraryReference
+        """
+
+        self._material_library_reference = material_library_reference
 
     def to_dict(self):
         """Returns the model properties as a dict"""

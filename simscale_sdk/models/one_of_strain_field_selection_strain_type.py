@@ -45,10 +45,11 @@ class OneOfStrainFieldSelectionStrainType(object):
         'TOTAL_NONLINEAR': 'TotalNonLinearStrainType',
         'TOTAL_EQUI_PLASTIC': 'TotalEquivalentPlasticStrainType',
         'UNELASTIC': 'UnelasticStrainType',
-        'PRINCIPAL': 'PrincipalStrainType'
+        'PRINCIPAL': 'PrincipalStrainType',
+        'PRINCIPAL_GREEN_LAGRANGE': 'PrincipalGreenLagrangeStrainType'
     }
 
-    def __init__(self, type='PRINCIPAL', component_selection=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRINCIPAL_GREEN_LAGRANGE', component_selection=None, local_vars_configuration=None):  # noqa: E501
         """OneOfStrainFieldSelectionStrainType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,7 +67,7 @@ class OneOfStrainFieldSelectionStrainType(object):
     def type(self):
         """Gets the type of this OneOfStrainFieldSelectionStrainType.  # noqa: E501
 
-        Schema name: PrincipalStrainType  # noqa: E501
+        Schema name: PrincipalGreenLagrangeStrainType  # noqa: E501
 
         :return: The type of this OneOfStrainFieldSelectionStrainType.  # noqa: E501
         :rtype: str
@@ -77,7 +78,7 @@ class OneOfStrainFieldSelectionStrainType(object):
     def type(self, type):
         """Sets the type of this OneOfStrainFieldSelectionStrainType.
 
-        Schema name: PrincipalStrainType  # noqa: E501
+        Schema name: PrincipalGreenLagrangeStrainType  # noqa: E501
 
         :param type: The type of this OneOfStrainFieldSelectionStrainType.  # noqa: E501
         :type: str

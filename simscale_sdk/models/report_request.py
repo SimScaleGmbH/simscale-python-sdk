@@ -85,8 +85,8 @@ class ReportRequest(object):
         if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
             raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                name is not None and len(name) > 20):
-            raise ValueError("Invalid value for `name`, length must be less than or equal to `20`")  # noqa: E501
+                name is not None and len(name) > 200):
+            raise ValueError("Invalid value for `name`, length must be less than or equal to `200`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 name is not None and len(name) < 1):
             raise ValueError("Invalid value for `name`, length must be greater than or equal to `1`")  # noqa: E501
@@ -114,8 +114,8 @@ class ReportRequest(object):
         :type: str
         """
         if (self.local_vars_configuration.client_side_validation and
-                description is not None and len(description) > 150):
-            raise ValueError("Invalid value for `description`, length must be less than or equal to `150`")  # noqa: E501
+                description is not None and len(description) > 1000):
+            raise ValueError("Invalid value for `description`, length must be less than or equal to `1000`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 description is not None and len(description) < 1):
             raise ValueError("Invalid value for `description`, length must be greater than or equal to `1`")  # noqa: E501

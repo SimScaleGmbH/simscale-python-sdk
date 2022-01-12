@@ -257,6 +257,14 @@ simscale\_sdk.models.area\_integral\_result\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.atmospheric\_boundary\_layer\_inlet\_bc module
+-------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.atmospheric_boundary_layer_inlet_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.augmented\_lagrange\_method module
 -------------------------------------------------------
 
@@ -485,14 +493,6 @@ simscale\_sdk.models.calculated\_evcbc module
 ---------------------------------------------
 
 .. automodule:: simscale_sdk.models.calculated_evcbc
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.calculated\_nbc module
--------------------------------------------
-
-.. automodule:: simscale_sdk.models.calculated_nbc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3337,6 +3337,14 @@ simscale\_sdk.models.global\_nodal\_force\_type module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.global\_principal\_green\_lagrange\_strain\_type module
+----------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.global_principal_green_lagrange_strain_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.global\_principal\_strain\_type module
 -----------------------------------------------------------
 
@@ -4125,6 +4133,14 @@ simscale\_sdk.models.mass\_flow module
 --------------------------------------
 
 .. automodule:: simscale_sdk.models.mass_flow
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_library\_reference module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_library_reference
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5053,6 +5069,14 @@ simscale\_sdk.models.pressure\_value\_result\_type module
 ---------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.pressure_value_result_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.principal\_green\_lagrange\_strain\_type module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.principal_green_lagrange_strain_type
    :members:
    :undoc-members:
    :show-inheritance:

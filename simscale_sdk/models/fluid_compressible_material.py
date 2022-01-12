@@ -37,7 +37,8 @@ class FluidCompressibleMaterial(object):
         'transport': 'OneOfFluidCompressibleMaterialTransport',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
-        'built_in_material': 'str'
+        'built_in_material': 'str',
+        'material_library_reference': 'MaterialLibraryReference'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class FluidCompressibleMaterial(object):
         'transport': 'transport',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
-        'built_in_material': 'builtInMaterial'
+        'built_in_material': 'builtInMaterial',
+        'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, specie=None, transport=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, specie=None, transport=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """FluidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class FluidCompressibleMaterial(object):
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._built_in_material = None
+        self._material_library_reference = None
         self.discriminator = None
 
         self.type = type
@@ -78,6 +81,8 @@ class FluidCompressibleMaterial(object):
             self.geometry_primitive_uuids = geometry_primitive_uuids
         if built_in_material is not None:
             self.built_in_material = built_in_material
+        if material_library_reference is not None:
+            self.material_library_reference = material_library_reference
 
     @property
     def type(self):
@@ -229,6 +234,27 @@ class FluidCompressibleMaterial(object):
         """
 
         self._built_in_material = built_in_material
+
+    @property
+    def material_library_reference(self):
+        """Gets the material_library_reference of this FluidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The material_library_reference of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: MaterialLibraryReference
+        """
+        return self._material_library_reference
+
+    @material_library_reference.setter
+    def material_library_reference(self, material_library_reference):
+        """Sets the material_library_reference of this FluidCompressibleMaterial.
+
+
+        :param material_library_reference: The material_library_reference of this FluidCompressibleMaterial.  # noqa: E501
+        :type: MaterialLibraryReference
+        """
+
+        self._material_library_reference = material_library_reference
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -98,8 +98,8 @@ class AugmentedLagrangeMethod(object):
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                augmented_lagrange_coefficient is not None and augmented_lagrange_coefficient > 1.0E+308):  # noqa: E501
-            raise ValueError("Invalid value for `augmented_lagrange_coefficient`, must be a value less than or equal to `1.0E+308`")  # noqa: E501
+                augmented_lagrange_coefficient is not None and augmented_lagrange_coefficient > 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000):  # noqa: E501
+            raise ValueError("Invalid value for `augmented_lagrange_coefficient`, must be a value less than or equal to `100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 augmented_lagrange_coefficient is not None and augmented_lagrange_coefficient < 0):  # noqa: E501
             raise ValueError("Invalid value for `augmented_lagrange_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501

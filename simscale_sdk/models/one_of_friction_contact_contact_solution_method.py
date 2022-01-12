@@ -108,8 +108,8 @@ class OneOfFrictionContactContactSolutionMethod(object):
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                augmented_lagrange_coefficient is not None and augmented_lagrange_coefficient > 1.0E+308):  # noqa: E501
-            raise ValueError("Invalid value for `augmented_lagrange_coefficient`, must be a value less than or equal to `1.0E+308`")  # noqa: E501
+                augmented_lagrange_coefficient is not None and augmented_lagrange_coefficient > 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000):  # noqa: E501
+            raise ValueError("Invalid value for `augmented_lagrange_coefficient`, must be a value less than or equal to `100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 augmented_lagrange_coefficient is not None and augmented_lagrange_coefficient < 0):  # noqa: E501
             raise ValueError("Invalid value for `augmented_lagrange_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
@@ -135,8 +135,8 @@ class OneOfFrictionContactContactSolutionMethod(object):
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                penalty_coefficient is not None and penalty_coefficient > 1.0E+308):  # noqa: E501
-            raise ValueError("Invalid value for `penalty_coefficient`, must be a value less than or equal to `1.0E+308`")  # noqa: E501
+                penalty_coefficient is not None and penalty_coefficient > 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000):  # noqa: E501
+            raise ValueError("Invalid value for `penalty_coefficient`, must be a value less than or equal to `100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 penalty_coefficient is not None and penalty_coefficient < 0):  # noqa: E501
             raise ValueError("Invalid value for `penalty_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501

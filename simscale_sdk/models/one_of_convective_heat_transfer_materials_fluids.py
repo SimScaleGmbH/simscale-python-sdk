@@ -45,6 +45,7 @@ class OneOfConvectiveHeatTransferMaterialsFluids(object):
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'built_in_material': 'str',
+        'material_library_reference': 'MaterialLibraryReference',
         'specie': 'SpecieDefault',
         'transport': 'OneOfFluidCompressibleMaterialTransport'
     }
@@ -64,6 +65,7 @@ class OneOfConvectiveHeatTransferMaterialsFluids(object):
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'built_in_material': 'builtInMaterial',
+        'material_library_reference': 'materialLibraryReference',
         'specie': 'specie',
         'transport': 'transport'
     }
@@ -73,7 +75,7 @@ class OneOfConvectiveHeatTransferMaterialsFluids(object):
         'COMPRESSIBLE': 'FluidCompressibleMaterial'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
         """OneOfConvectiveHeatTransferMaterialsFluids - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class OneOfConvectiveHeatTransferMaterialsFluids(object):
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._built_in_material = None
+        self._material_library_reference = None
         self._specie = None
         self._transport = None
         self.discriminator = 'type'
@@ -124,6 +127,8 @@ class OneOfConvectiveHeatTransferMaterialsFluids(object):
             self.geometry_primitive_uuids = geometry_primitive_uuids
         if built_in_material is not None:
             self.built_in_material = built_in_material
+        if material_library_reference is not None:
+            self.material_library_reference = material_library_reference
         if specie is not None:
             self.specie = specie
         if transport is not None:
@@ -438,6 +443,27 @@ class OneOfConvectiveHeatTransferMaterialsFluids(object):
         """
 
         self._built_in_material = built_in_material
+
+    @property
+    def material_library_reference(self):
+        """Gets the material_library_reference of this OneOfConvectiveHeatTransferMaterialsFluids.  # noqa: E501
+
+
+        :return: The material_library_reference of this OneOfConvectiveHeatTransferMaterialsFluids.  # noqa: E501
+        :rtype: MaterialLibraryReference
+        """
+        return self._material_library_reference
+
+    @material_library_reference.setter
+    def material_library_reference(self, material_library_reference):
+        """Sets the material_library_reference of this OneOfConvectiveHeatTransferMaterialsFluids.
+
+
+        :param material_library_reference: The material_library_reference of this OneOfConvectiveHeatTransferMaterialsFluids.  # noqa: E501
+        :type: MaterialLibraryReference
+        """
+
+        self._material_library_reference = material_library_reference
 
     @property
     def specie(self):
