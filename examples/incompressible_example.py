@@ -7,12 +7,13 @@ import zipfile
 import isodate
 import urllib3
 from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, GeometryImportsApi, GeometriesApi, \
-    MeshOperationsApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException
+    MeshOperationsApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException, \
+    MaterialsApi, MaterialGroupType, MaterialUpdateRequest, MaterialUpdateOperation, MaterialUpdateOperationReference
 from simscale_sdk import GeometryImportRequestLocation, GeometryImportRequestOptions, Point, DimensionalVectorLength, \
     DecimalVector
 from simscale_sdk import Incompressible, IncompressibleFluidMaterials, FluidModel, FluidInitialConditions, \
-    AdvancedConcepts, IncompressibleMaterial, TopologicalReference, DimensionalKinematicViscosity, DimensionalDensity, \
-    FluidNumerics, RelaxationFactor, DimensionalPressure, NewtonianViscosityModel, ProbePointsResultControl, \
+    AdvancedConcepts, TopologicalReference, FluidNumerics, RelaxationFactor, DimensionalPressure, \
+    ProbePointsResultControl, \
     ResidualControls, Tolerance, FluidSolvers, Schemes, TimeDifferentiationSchemes, GradientSchemes, DivergenceSchemes, \
     LaplacianSchemes, InterpolationSchemes, SurfaceNormalGradientSchemes, VelocityInletBC, FixedValueVBC, \
     ComponentVectorFunction, ConstantFunction, PressureOutletBC, FixedValuePBC, DimensionalFunctionPressure, \
@@ -47,6 +48,7 @@ mesh_operation_api = MeshOperationsApi(api_client)
 simulation_api = SimulationsApi(api_client)
 simulation_run_api = SimulationRunsApi(api_client)
 reports_api = ReportsApi(api_client)
+materials_api = MaterialsApi(api_client)
 
 # Create project
 project = Project(
@@ -123,18 +125,7 @@ model = Incompressible(
     model=FluidModel(),
     initial_conditions=FluidInitialConditions(),
     advanced_concepts=AdvancedConcepts(),
-    materials=IncompressibleFluidMaterials(
-        fluids=[
-            IncompressibleMaterial(
-                name="Water",
-                viscosity_model=NewtonianViscosityModel(
-                    kinematic_viscosity=DimensionalKinematicViscosity(value=9.3379e-7, unit="m²/s")
-                ),
-                density=DimensionalDensity(value=997.33, unit="kg/m³"),
-                topological_reference=TopologicalReference(entities=[material_entity]),
-            )
-        ]
-    ),
+    materials=IncompressibleFluidMaterials(),
     numerics=FluidNumerics(
         relaxation_factor=RelaxationFactor(),
         pressure_reference_value=DimensionalPressure(value=0, unit="Pa"),
@@ -206,7 +197,41 @@ simulation_spec = SimulationSpec(name="Incompressible via Python SDK", geometry_
 simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id
 print(f"simulation_id: {simulation_id}")
 
-# start of mesh operation
+# Add a material to the simulation
+material_groups = materials_api.get_material_groups().embedded
+default_material_group = next((group for group in material_groups if group.group_type == MaterialGroupType.SIMSCALE_DEFAULT), None)
+if not default_material_group:
+    raise Exception(f"Couldn't find default material group in {material_groups}")
+
+default_materials = materials_api.get_materials(material_group_id=default_material_group.material_group_id).embedded
+material_water = next((material for material in default_materials if material.name == "Water"), None)
+if not material_water:
+    raise Exception(f"Couldn't find default Water material in {default_materials}")
+
+material_data = materials_api.get_material_data(
+    material_group_id=default_material_group.material_group_id,
+    material_id=material_water.id
+)
+material_update_request = MaterialUpdateRequest(
+    operations=[
+        MaterialUpdateOperation(
+            path="/materials/fluids",
+            material_data=material_data,
+            reference=MaterialUpdateOperationReference(
+                material_group_id=default_material_group.material_group_id,
+                material_id=material_water.id
+            )
+        )
+    ]
+)
+material_update_response = simulation_api.update_simulation_materials(project_id, simulation_id, material_update_request)
+
+# Add assignments to the new material
+simulation_spec = simulation_api.get_simulation(project_id, simulation_id)
+simulation_spec.model.materials.fluids[0].topological_reference = TopologicalReference(entities=[material_entity])
+simulation_api.update_simulation(project_id, simulation_id, simulation_spec)
+
+# Start of mesh operation
 mesh_operation = mesh_operation_api.create_mesh_operation(
     project_id,
     MeshOperation(

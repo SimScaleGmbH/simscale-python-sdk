@@ -34,6 +34,7 @@ class ScalarSettings(object):
         'scalar_field': 'ScalarField',
         'minimum_range': 'float',
         'maximum_range': 'float',
+        'node_average_value': 'bool',
         'number_of_divisions': 'int',
         'color_scheme': 'str'
     }
@@ -42,11 +43,12 @@ class ScalarSettings(object):
         'scalar_field': 'scalarField',
         'minimum_range': 'minimumRange',
         'maximum_range': 'maximumRange',
+        'node_average_value': 'nodeAverageValue',
         'number_of_divisions': 'numberOfDivisions',
         'color_scheme': 'colorScheme'
     }
 
-    def __init__(self, scalar_field=None, minimum_range=None, maximum_range=None, number_of_divisions=None, color_scheme=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, scalar_field=None, minimum_range=None, maximum_range=None, node_average_value=None, number_of_divisions=None, color_scheme=None, local_vars_configuration=None):  # noqa: E501
         """ScalarSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,6 +57,7 @@ class ScalarSettings(object):
         self._scalar_field = None
         self._minimum_range = None
         self._maximum_range = None
+        self._node_average_value = None
         self._number_of_divisions = None
         self._color_scheme = None
         self.discriminator = None
@@ -64,6 +67,8 @@ class ScalarSettings(object):
             self.minimum_range = minimum_range
         if maximum_range is not None:
             self.maximum_range = maximum_range
+        if node_average_value is not None:
+            self.node_average_value = node_average_value
         if number_of_divisions is not None:
             self.number_of_divisions = number_of_divisions
         if color_scheme is not None:
@@ -139,10 +144,33 @@ class ScalarSettings(object):
         self._maximum_range = maximum_range
 
     @property
+    def node_average_value(self):
+        """Gets the node_average_value of this ScalarSettings.  # noqa: E501
+
+        Specify if the scalar result should be shown as a node averaged result or not.  # noqa: E501
+
+        :return: The node_average_value of this ScalarSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._node_average_value
+
+    @node_average_value.setter
+    def node_average_value(self, node_average_value):
+        """Sets the node_average_value of this ScalarSettings.
+
+        Specify if the scalar result should be shown as a node averaged result or not.  # noqa: E501
+
+        :param node_average_value: The node_average_value of this ScalarSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._node_average_value = node_average_value
+
+    @property
     def number_of_divisions(self):
         """Gets the number_of_divisions of this ScalarSettings.  # noqa: E501
 
-        The number of divisions in the legend.  # noqa: E501
+        The number of divisions in the legend. If set to 0, this will create a continuous (gradient) legend with a smooth interpolation between the colors.  # noqa: E501
 
         :return: The number_of_divisions of this ScalarSettings.  # noqa: E501
         :rtype: int
@@ -153,11 +181,17 @@ class ScalarSettings(object):
     def number_of_divisions(self, number_of_divisions):
         """Sets the number_of_divisions of this ScalarSettings.
 
-        The number of divisions in the legend.  # noqa: E501
+        The number of divisions in the legend. If set to 0, this will create a continuous (gradient) legend with a smooth interpolation between the colors.  # noqa: E501
 
         :param number_of_divisions: The number_of_divisions of this ScalarSettings.  # noqa: E501
         :type: int
         """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_divisions is not None and number_of_divisions > 75):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_divisions`, must be a value less than or equal to `75`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_divisions is not None and number_of_divisions < 0):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_divisions`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._number_of_divisions = number_of_divisions
 

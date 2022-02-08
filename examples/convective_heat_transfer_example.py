@@ -7,17 +7,17 @@ import zipfile
 import isodate
 import urllib3
 from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, GeometryImportsApi, GeometriesApi, \
-    MeshOperationsApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException
+    MeshOperationsApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException, \
+    MaterialsApi, MaterialGroupType, MaterialUpdateRequest, MaterialUpdateOperation, MaterialUpdateOperationReference
 from simscale_sdk import ConvectiveHeatTransfer, FluidModel, DimensionalVectorAcceleration, FluidInitialConditions, \
-    AdvancedConcepts, ConvectiveHeatTransferMaterials, IncompressibleMaterial, TopologicalReference, \
-    DimensionalKinematicViscosity, DimensionalDensity, DimensionalThermalExpansionRate, DimensionalTemperature, \
-    DimensionalSpecificHeat, FluidNumerics, RelaxationFactor, DimensionalPressure, ResidualControls, Tolerance, \
+    AdvancedConcepts, ConvectiveHeatTransferMaterials, TopologicalReference, \
+    FluidNumerics, RelaxationFactor, DimensionalPressure, ResidualControls, Tolerance, \
     FluidSolvers, Schemes, TimeDifferentiationSchemes, GradientSchemes, DivergenceSchemes, LaplacianSchemes, \
     InterpolationSchemes, SurfaceNormalGradientSchemes, VelocityInletBC, FixedValueVBC, DimensionalVectorFunctionSpeed, \
     ComponentVectorFunction, ConstantFunction, FixedValueTBC, DimensionalFunctionTemperature, PressureOutletBC, \
     FixedValuePBC, DimensionalFunctionPressure, WallBC, NoSlipVBC, FluidSimulationControl, DimensionalTime, \
     TimeStepWriteControl, ScotchDecomposeAlgorithm, FluidResultControls, AreaAverageResultControl, \
-    ProbePointsResultControl, NewtonianViscosityModel
+    ProbePointsResultControl
 from simscale_sdk import GeometryImportRequestLocation, GeometryImportRequestOptions, Point, DimensionalVectorLength, \
     DecimalVector
 from simscale_sdk import SimulationSpec, MeshOperation, SimmetrixMeshingFluid, AutomaticLayerOn, SimulationRun
@@ -49,6 +49,7 @@ mesh_operation_api = MeshOperationsApi(api_client)
 simulation_api = SimulationsApi(api_client)
 simulation_run_api = SimulationRunsApi(api_client)
 reports_api = ReportsApi(api_client)
+materials_api = MaterialsApi(api_client)
 
 # Create project
 project = Project(
@@ -128,23 +129,7 @@ model = ConvectiveHeatTransfer(
     model=FluidModel(gravity=DimensionalVectorAcceleration(value=DecimalVector(x=0, y=0, z=9.81), unit="m")),
     initial_conditions=FluidInitialConditions(),
     advanced_concepts=AdvancedConcepts(),
-    materials=ConvectiveHeatTransferMaterials(
-        fluids=[
-            IncompressibleMaterial(
-                name="Air",
-                topological_reference=TopologicalReference(entities=[material_entity]),
-                viscosity_model=NewtonianViscosityModel(
-                    kinematic_viscosity=DimensionalKinematicViscosity(value="0.000015295", unit="m²/s")
-                ),
-                density=DimensionalDensity(value=1.1965, unit="kg/m³"),
-                thermal_expansion_coefficient=DimensionalThermalExpansionRate(value=0.00343, unit="1/K"),
-                reference_temperature=DimensionalTemperature(value=273.15, unit="K"),
-                laminar_prandtl_number=0.713,
-                turbulent_prandtl_number=0.85,
-                specific_heat=DimensionalSpecificHeat(value=1004, unit="J/(kg·K)"),
-            )
-        ]
-    ),
+    materials=ConvectiveHeatTransferMaterials(),
     numerics=FluidNumerics(
         relaxation_factor=RelaxationFactor(),
         pressure_reference_value=DimensionalPressure(value=0, unit="Pa"),
@@ -234,7 +219,41 @@ simulation_spec = SimulationSpec(name="Convective Heat Transfer via Python SDK",
 simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id
 print(f"simulation_id: {simulation_id}")
 
-# start of mesh operation
+# Add a material to the simulation
+material_groups = materials_api.get_material_groups().embedded
+default_material_group = next((group for group in material_groups if group.group_type == MaterialGroupType.SIMSCALE_DEFAULT), None)
+if not default_material_group:
+    raise Exception(f"Couldn't find default material group in {material_groups}")
+
+default_materials = materials_api.get_materials(material_group_id=default_material_group.material_group_id).embedded
+material_air = next((material for material in default_materials if material.name == "Air"), None)
+if not material_air:
+    raise Exception(f"Couldn't find default Air material in {default_materials}")
+
+material_data = materials_api.get_material_data(
+    material_group_id=default_material_group.material_group_id,
+    material_id=material_air.id
+)
+material_update_request = MaterialUpdateRequest(
+    operations=[
+        MaterialUpdateOperation(
+            path="/materials/fluids",
+            material_data=material_data,
+            reference=MaterialUpdateOperationReference(
+                material_group_id=default_material_group.material_group_id,
+                material_id=material_air.id
+            )
+        )
+    ]
+)
+material_update_response = simulation_api.update_simulation_materials(project_id, simulation_id, material_update_request)
+
+# Add assignments to the new material
+simulation_spec = simulation_api.get_simulation(project_id, simulation_id)
+simulation_spec.model.materials.fluids[0].topological_reference = TopologicalReference(entities=[material_entity])
+simulation_api.update_simulation(project_id, simulation_id, simulation_spec)
+
+# Start of mesh operation
 mesh_operation = mesh_operation_api.create_mesh_operation(
     project_id,
     MeshOperation(

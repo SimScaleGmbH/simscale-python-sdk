@@ -33,14 +33,12 @@ class OneOfSutherlandTransportThermo(object):
     openapi_types = {
         'type': 'str',
         'specific_heat': 'DimensionalSpecificHeat',
-        'heat_of_formation': 'DimensionalSpecificEnergy',
         'equation_of_state': 'OneOfHConstThermoEquationOfState'
     }
 
     attribute_map = {
         'type': 'type',
         'specific_heat': 'specificHeat',
-        'heat_of_formation': 'heatOfFormation',
         'equation_of_state': 'equationOfState'
     }
 
@@ -49,7 +47,7 @@ class OneOfSutherlandTransportThermo(object):
         'HCONST': 'HConstThermo'
     }
 
-    def __init__(self, type='HCONST', specific_heat=None, heat_of_formation=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HCONST', specific_heat=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSutherlandTransportThermo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,15 +55,12 @@ class OneOfSutherlandTransportThermo(object):
 
         self._type = None
         self._specific_heat = None
-        self._heat_of_formation = None
         self._equation_of_state = None
         self.discriminator = 'type'
 
         self.type = type
         if specific_heat is not None:
             self.specific_heat = specific_heat
-        if heat_of_formation is not None:
-            self.heat_of_formation = heat_of_formation
         if equation_of_state is not None:
             self.equation_of_state = equation_of_state
 
@@ -114,27 +109,6 @@ class OneOfSutherlandTransportThermo(object):
         """
 
         self._specific_heat = specific_heat
-
-    @property
-    def heat_of_formation(self):
-        """Gets the heat_of_formation of this OneOfSutherlandTransportThermo.  # noqa: E501
-
-
-        :return: The heat_of_formation of this OneOfSutherlandTransportThermo.  # noqa: E501
-        :rtype: DimensionalSpecificEnergy
-        """
-        return self._heat_of_formation
-
-    @heat_of_formation.setter
-    def heat_of_formation(self, heat_of_formation):
-        """Sets the heat_of_formation of this OneOfSutherlandTransportThermo.
-
-
-        :param heat_of_formation: The heat_of_formation of this OneOfSutherlandTransportThermo.  # noqa: E501
-        :type: DimensionalSpecificEnergy
-        """
-
-        self._heat_of_formation = heat_of_formation
 
     @property
     def equation_of_state(self):

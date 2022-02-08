@@ -937,6 +937,30 @@ simscale\_sdk.models.cpu\_time\_write\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.create\_material\_group\_request module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.create_material_group_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.create\_material\_request module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.create_material_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.create\_nested\_material\_group\_request module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.create_nested_material_group_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.cross\_plane\_custom\_orientation module
 -------------------------------------------------------------
 
@@ -1605,14 +1629,6 @@ simscale\_sdk.models.dimensional\_rotation\_speed module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_rotation_speed
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.dimensional\_specific\_energy module
----------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.dimensional_specific_energy
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2501,6 +2517,14 @@ simscale\_sdk.models.fixed\_magnitude\_vbc module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.fixed_magnitude_vbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.fixed\_material\_property module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.fixed_material_property
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3793,6 +3817,14 @@ simscale\_sdk.models.intern\_variables\_field module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.interpolation\_parameter module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.interpolation_parameter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.interpolation\_schemes module
 --------------------------------------------------
 
@@ -4137,10 +4169,90 @@ simscale\_sdk.models.mass\_flow module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.material\_group\_list\_response module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_group_list_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_group\_response module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_group_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_group\_type module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_group_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.material\_library\_reference module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.material_library_reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_list\_response module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_list_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_property\_parameter module
+---------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_property_parameter
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_response module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_update\_operation module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_update_operation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_update\_operation\_reference module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_update_operation_reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_update\_request module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_update_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.material\_update\_response module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.material_update_response
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4769,6 +4881,14 @@ simscale\_sdk.models.parameter\_with\_values module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.parametric\_material\_property module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.parametric_material_property
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.part module
 --------------------------------
 
@@ -5125,6 +5245,14 @@ simscale\_sdk.models.projects module
 ------------------------------------
 
 .. automodule:: simscale_sdk.models.projects
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.property\_data\_type module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.property_data_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6853,6 +6981,14 @@ simscale\_sdk.models.unit\_volumetric\_flow\_rate module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.unit_volumetric_flow_rate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.update\_material\_group\_request module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.update_material_group_request
    :members:
    :undoc-members:
    :show-inheritance:

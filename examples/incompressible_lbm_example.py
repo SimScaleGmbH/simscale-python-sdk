@@ -10,17 +10,16 @@ from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, Geom
     SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException, TableImportsApi
 from simscale_sdk import GeometryImportRequestLocation, GeometryImportRequestOptions, DimensionalVectorLength, \
     DecimalVector, TableImportRequest, TableImportRequestLocation
-from simscale_sdk import IncompressibleMaterial, TopologicalReference, DimensionalKinematicViscosity, \
-    DimensionalDensity, DimensionalTemperature, VelocityInletBC, ConstantFunction, PressureOutletBC, WallBC, NoSlipVBC, \
-    FluidSimulationControl, DimensionalTime, FluidResultControls, ProbePointsResultControl, NewtonianViscosityModel, \
-    RotatableCartesianBox, DimensionalVectorAngle, LocalCartesianBox, IncompressiblePacefish, DimensionalMolarMass, \
-    FlowDomainBoundaries, FixedMagnitudeVBC, DimensionalFunctionSpeed, TableDefinedFunction, TableFunctionParameter, \
+from simscale_sdk import SimulationSpec, SimulationRun
+from simscale_sdk import TopologicalReference, VelocityInletBC, ConstantFunction, PressureOutletBC, WallBC, NoSlipVBC, \
+    FluidSimulationControl, DimensionalTime, FluidResultControls, ProbePointsResultControl, RotatableCartesianBox, \
+    DimensionalVectorAngle, LocalCartesianBox, IncompressiblePacefish, FlowDomainBoundaries, FixedMagnitudeVBC, \
+    DimensionalFunctionSpeed, TableDefinedFunction, TableFunctionParameter, \
     TurbulenceIntensityTIBC, DimensionalFunctionDimensionless, CustomOmegaDissipation, \
     DimensionalFunctionSpecificTurbulenceDissipationRate, SlipVBC, DimensionalLength, AdvancedModelling, \
     ForcesMomentsResultControl, HighResolution, ModerateResolution, TableDefinedProbeLocations, TransientResultControl, \
     CoarseResolution, StatisticalAveragingResultControlV2, SnapshotResultControl, PacefishFinenessCoarse, \
     PacefishAutomesh, AutomaticReferenceLength, Region
-from simscale_sdk import SimulationSpec, SimulationRun
 from simscale_sdk import UserInputCameraSettings, ProjectionType, Vector3D, ModelSettings, Part, ScalarField, \
     ScreenshotOutputSettings, Color, ResolutionInfo, ScreenshotReportProperties, ReportRequest
 
@@ -150,15 +149,6 @@ mesh_region_uuid = simulation_api.create_geometry_primitive(project_id, mesh_reg
 # Define simulation spec
 model = IncompressiblePacefish(
     bounding_box_uuid=external_flow_domain_uuid,
-    material=IncompressibleMaterial(
-        name="Air",
-        viscosity_model=NewtonianViscosityModel(
-            kinematic_viscosity=DimensionalKinematicViscosity(value=0.00001529, unit="m²/s")
-        ),
-        density=DimensionalDensity(value=1.1965, unit="kg/m³"),
-        reference_temperature=DimensionalTemperature(value=293.15, unit="K"),
-        molar_weight=DimensionalMolarMass(value=28.97, unit="kg/kmol"),
-    ),
     flow_domain_boundaries=FlowDomainBoundaries(
         xmin=VelocityInletBC(
             name="Velocity inlet (A)",

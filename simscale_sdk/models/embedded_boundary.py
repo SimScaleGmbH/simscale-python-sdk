@@ -36,6 +36,7 @@ class EmbeddedBoundary(object):
         'model': 'FluidModel',
         'materials': 'CoupledConjugateHeatTransferMaterials',
         'initial_conditions': 'FluidInitialConditions',
+        'boundary_conditions': 'list[OneOfEmbeddedBoundaryBoundaryConditions]',
         'advanced_concepts': 'AdvancedConcepts',
         'numerics': 'FluidNumerics',
         'simulation_control': 'FluidSimulationControl',
@@ -52,6 +53,7 @@ class EmbeddedBoundary(object):
         'model': 'model',
         'materials': 'materials',
         'initial_conditions': 'initialConditions',
+        'boundary_conditions': 'boundaryConditions',
         'advanced_concepts': 'advancedConcepts',
         'numerics': 'numerics',
         'simulation_control': 'simulationControl',
@@ -62,7 +64,7 @@ class EmbeddedBoundary(object):
         'turbulence_model': 'turbulenceModel'
     }
 
-    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, model=None, materials=None, initial_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, is_compressible=None, enable_radiation=None, turbulence_model=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, is_compressible=None, enable_radiation=None, turbulence_model=None, local_vars_configuration=None):  # noqa: E501
         """EmbeddedBoundary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class EmbeddedBoundary(object):
         self._model = None
         self._materials = None
         self._initial_conditions = None
+        self._boundary_conditions = None
         self._advanced_concepts = None
         self._numerics = None
         self._simulation_control = None
@@ -92,6 +95,8 @@ class EmbeddedBoundary(object):
             self.materials = materials
         if initial_conditions is not None:
             self.initial_conditions = initial_conditions
+        if boundary_conditions is not None:
+            self.boundary_conditions = boundary_conditions
         if advanced_concepts is not None:
             self.advanced_concepts = advanced_concepts
         if numerics is not None:
@@ -219,6 +224,27 @@ class EmbeddedBoundary(object):
         """
 
         self._initial_conditions = initial_conditions
+
+    @property
+    def boundary_conditions(self):
+        """Gets the boundary_conditions of this EmbeddedBoundary.  # noqa: E501
+
+
+        :return: The boundary_conditions of this EmbeddedBoundary.  # noqa: E501
+        :rtype: list[OneOfEmbeddedBoundaryBoundaryConditions]
+        """
+        return self._boundary_conditions
+
+    @boundary_conditions.setter
+    def boundary_conditions(self, boundary_conditions):
+        """Sets the boundary_conditions of this EmbeddedBoundary.
+
+
+        :param boundary_conditions: The boundary_conditions of this EmbeddedBoundary.  # noqa: E501
+        :type: list[OneOfEmbeddedBoundaryBoundaryConditions]
+        """
+
+        self._boundary_conditions = boundary_conditions
 
     @property
     def advanced_concepts(self):

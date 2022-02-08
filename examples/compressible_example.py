@@ -13,11 +13,12 @@ from simscale_sdk import Compressible, FluidModel, FluidInitialConditions, \
     InterpolationSchemes, SurfaceNormalGradientSchemes, VelocityInletBC, FixedValueVBC, DimensionalVectorFunctionSpeed, \
     ComponentVectorFunction, ConstantFunction, FixedValueTBC, DimensionalFunctionTemperature, PressureOutletBC, \
     FixedValuePBC, DimensionalFunctionPressure, WallBC, NoSlipVBC, FluidSimulationControl, DimensionalTime, \
-    CompressibleFluidMaterials, FluidCompressibleMaterial, SpecieDefault, DimensionalMolarMass, ConstTransport, \
-    DimensionalDynamicViscosity, HConstThermo, PerfectGasEquationOfState, ForcesMomentsResultControl, AdiabaticTBC, \
-    SlipVBC
+    CompressibleFluidMaterials, ForcesMomentsResultControl, AdiabaticTBC, \
+    SlipVBC, MaterialGroupType, MaterialUpdateRequest, \
+    MaterialUpdateOperation, MaterialUpdateOperationReference
 from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, GeometryImportsApi, GeometriesApi, \
-    MeshOperationsApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException
+    MeshOperationsApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException, \
+    MaterialsApi
 from simscale_sdk import GeometryImportRequestLocation, GeometryImportRequestOptions
 from simscale_sdk import SimulationSpec, MeshOperation, SimmetrixMeshingFluid, AutomaticLayerOn, SimulationRun
 from simscale_sdk import UserInputCameraSettings, ProjectionType, Vector3D, ModelSettings, Part, ScalarField, \
@@ -48,6 +49,7 @@ mesh_operation_api = MeshOperationsApi(api_client)
 simulation_api = SimulationsApi(api_client)
 simulation_run_api = SimulationRunsApi(api_client)
 reports_api = ReportsApi(api_client)
+materials_api = MaterialsApi(api_client)
 
 # Create project
 project = Project(
@@ -125,20 +127,7 @@ model = Compressible(
     model=FluidModel(),
     initial_conditions=FluidInitialConditions(),
     advanced_concepts=AdvancedConcepts(),
-    materials=CompressibleFluidMaterials(
-        fluids=[
-            FluidCompressibleMaterial(
-                name="Air",
-                topological_reference=TopologicalReference(entities=material_entities),
-                specie=SpecieDefault(molar_weight=DimensionalMolarMass(value=28.97, unit="kg/kmol")),
-                transport=ConstTransport(
-                    dynamic_viscosity=DimensionalDynamicViscosity(value=0.0000183, unit="kg/(s·m)"),
-                    prandtl_number=0.713,
-                    thermo=HConstThermo(equation_of_state=PerfectGasEquationOfState()),
-                ),
-            )
-        ]
-    ),
+    materials=CompressibleFluidMaterials(),
     numerics=FluidNumerics(
         relaxation_factor=RelaxationFactor(),
         pressure_reference_value=DimensionalPressure(value=0, unit="Pa"),
@@ -224,7 +213,41 @@ simulation_spec = SimulationSpec(name="Compressible via Python SDK", geometry_id
 simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id
 print(f"simulation_id: {simulation_id}")
 
-# start of mesh operation
+# Add a material to the simulation
+material_groups = materials_api.get_material_groups().embedded
+default_material_group = next((group for group in material_groups if group.group_type == MaterialGroupType.SIMSCALE_DEFAULT), None)
+if not default_material_group:
+    raise Exception(f"Couldn't find default material group in {material_groups}")
+
+default_materials = materials_api.get_materials(material_group_id=default_material_group.material_group_id).embedded
+material_air = next((material for material in default_materials if material.name == "Air"), None)
+if not material_air:
+    raise Exception(f"Couldn't find default Air material in {default_materials}")
+
+material_data = materials_api.get_material_data(
+    material_group_id=default_material_group.material_group_id,
+    material_id=material_air.id
+)
+material_update_request = MaterialUpdateRequest(
+    operations=[
+        MaterialUpdateOperation(
+            path="/materials/fluids",
+            material_data=material_data,
+            reference=MaterialUpdateOperationReference(
+                material_group_id=default_material_group.material_group_id,
+                material_id=material_air.id
+            )
+        )
+    ]
+)
+material_update_response = simulation_api.update_simulation_materials(project_id, simulation_id, material_update_request)
+
+# Add assignments to the new material
+simulation_spec = simulation_api.get_simulation(project_id, simulation_id)
+simulation_spec.model.materials.fluids[0].topological_reference = TopologicalReference(entities=material_entities)
+simulation_api.update_simulation(project_id, simulation_id, simulation_spec)
+
+# Start of mesh operation
 mesh_operation = mesh_operation_api.create_mesh_operation(
     project_id,
     MeshOperation(
@@ -333,10 +356,6 @@ while simulation_run.status not in ("FINISHED", "CANCELED", "FAILED"):
     time.sleep(30)
     simulation_run = simulation_run_api.get_simulation_run(project_id, simulation_id, run_id)
     print(f"Simulation run status: {simulation_run.status} - {simulation_run.progress}")
-
-# project_id = "7855756650780177291"
-# simulation_id = "d6b25d41-0329-4195-b3d3-df5485b8b155"
-# run_id = "bbe9dec4-de0a-4c16-8866-ca4351b00f9c"
 
 # Get result metadata and download results
 results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, run_id)
