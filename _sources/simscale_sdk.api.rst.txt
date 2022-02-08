@@ -25,6 +25,14 @@ simscale\_sdk.api.geometry\_imports\_api module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.api.materials\_api module
+---------------------------------------
+
+.. automodule:: simscale_sdk.api.materials_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.api.mesh\_operations\_api module
 ----------------------------------------------
 
