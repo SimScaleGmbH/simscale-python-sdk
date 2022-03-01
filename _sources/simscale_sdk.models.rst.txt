@@ -385,6 +385,14 @@ simscale\_sdk.models.backward\_time\_differentiation\_scheme module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.base\_excitation\_bc module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.base_excitation_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.basic\_embedded\_boundary\_meshing module
 --------------------------------------------------------------
 
@@ -1765,6 +1773,14 @@ simscale\_sdk.models.dimensional\_vector\_angle module
 ------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_vector_angle
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_vector\_dimensionless module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_vector_dimensionless
    :members:
    :undoc-members:
    :show-inheritance:
