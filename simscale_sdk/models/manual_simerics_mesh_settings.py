@@ -166,6 +166,7 @@ class ManualSimericsMeshSettings(object):
     def enable_growth_rate(self):
         """Gets the enable_growth_rate of this ManualSimericsMeshSettings.  # noqa: E501
 
+        <p><b>Specify growth rate</b>: Define the cell size growth rate between interior cells and surface cells.</p>  # noqa: E501
 
         :return: The enable_growth_rate of this ManualSimericsMeshSettings.  # noqa: E501
         :rtype: bool
@@ -176,6 +177,7 @@ class ManualSimericsMeshSettings(object):
     def enable_growth_rate(self, enable_growth_rate):
         """Sets the enable_growth_rate of this ManualSimericsMeshSettings.
 
+        <p><b>Specify growth rate</b>: Define the cell size growth rate between interior cells and surface cells.</p>  # noqa: E501
 
         :param enable_growth_rate: The enable_growth_rate of this ManualSimericsMeshSettings.  # noqa: E501
         :type: bool

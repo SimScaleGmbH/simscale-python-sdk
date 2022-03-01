@@ -33,6 +33,9 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'direction': 'DimensionalVectorDimensionless',
+        'acceleration': 'DimensionalFunctionAcceleration',
+        'phase_angle': 'DimensionalAngle',
         'preload': 'ForcePreload',
         'topological_reference': 'TopologicalReference',
         'spring_stiffness': 'OneOfElasticSupportBCSpringStiffness',
@@ -44,7 +47,6 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'rotation': 'AngularRotation',
         'force': 'DimensionalVectorFunctionForce',
         'scaling': 'DimensionalFunctionDimensionless',
-        'phase_angle': 'DimensionalAngle',
         'pressure': 'DimensionalFunctionPressure',
         'moment': 'DimensionalVectorFunctionTorque',
         'remote_point': 'DimensionalVectorLength',
@@ -54,6 +56,9 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'direction': 'direction',
+        'acceleration': 'acceleration',
+        'phase_angle': 'phaseAngle',
         'preload': 'preload',
         'topological_reference': 'topologicalReference',
         'spring_stiffness': 'springStiffness',
@@ -65,7 +70,6 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'rotation': 'rotation',
         'force': 'force',
         'scaling': 'scaling',
-        'phase_angle': 'phaseAngle',
         'pressure': 'pressure',
         'moment': 'moment',
         'remote_point': 'remotePoint',
@@ -73,6 +77,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
     }
 
     discriminator_value_class_map = {
+        'BASE_EXCITATION': 'BaseExcitationBC',
         'BOLT_PRELOAD': 'BoltPreloadBC',
         'ELASTIC_SUPPORT': 'ElasticSupportBC',
         'FIXED_SUPPORT': 'FixedSupportBC',
@@ -89,7 +94,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'VOLUME_LOAD': 'VolumeLoadBC'
     }
 
-    def __init__(self, type='VOLUME_LOAD', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, force=None, scaling=None, phase_angle=None, pressure=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLUME_LOAD', name=None, direction=None, acceleration=None, phase_angle=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, force=None, scaling=None, pressure=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHarmonicAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -97,6 +102,9 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
 
         self._type = None
         self._name = None
+        self._direction = None
+        self._acceleration = None
+        self._phase_angle = None
         self._preload = None
         self._topological_reference = None
         self._spring_stiffness = None
@@ -108,7 +116,6 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         self._rotation = None
         self._force = None
         self._scaling = None
-        self._phase_angle = None
         self._pressure = None
         self._moment = None
         self._remote_point = None
@@ -118,6 +125,12 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         self.type = type
         if name is not None:
             self.name = name
+        if direction is not None:
+            self.direction = direction
+        if acceleration is not None:
+            self.acceleration = acceleration
+        if phase_angle is not None:
+            self.phase_angle = phase_angle
         if preload is not None:
             self.preload = preload
         if topological_reference is not None:
@@ -140,8 +153,6 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
             self.force = force
         if scaling is not None:
             self.scaling = scaling
-        if phase_angle is not None:
-            self.phase_angle = phase_angle
         if pressure is not None:
             self.pressure = pressure
         if moment is not None:
@@ -196,6 +207,69 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         """
 
         self._name = name
+
+    @property
+    def direction(self):
+        """Gets the direction of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The direction of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalVectorDimensionless
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction):
+        """Sets the direction of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param direction: The direction of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalVectorDimensionless
+        """
+
+        self._direction = direction
+
+    @property
+    def acceleration(self):
+        """Gets the acceleration of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The acceleration of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalFunctionAcceleration
+        """
+        return self._acceleration
+
+    @acceleration.setter
+    def acceleration(self, acceleration):
+        """Sets the acceleration of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param acceleration: The acceleration of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalFunctionAcceleration
+        """
+
+        self._acceleration = acceleration
+
+    @property
+    def phase_angle(self):
+        """Gets the phase_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The phase_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalAngle
+        """
+        return self._phase_angle
+
+    @phase_angle.setter
+    def phase_angle(self, phase_angle):
+        """Sets the phase_angle of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param phase_angle: The phase_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalAngle
+        """
+
+        self._phase_angle = phase_angle
 
     @property
     def preload(self):
@@ -435,27 +509,6 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         """
 
         self._scaling = scaling
-
-    @property
-    def phase_angle(self):
-        """Gets the phase_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
-
-
-        :return: The phase_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
-        :rtype: DimensionalAngle
-        """
-        return self._phase_angle
-
-    @phase_angle.setter
-    def phase_angle(self, phase_angle):
-        """Sets the phase_angle of this OneOfHarmonicAnalysisBoundaryConditions.
-
-
-        :param phase_angle: The phase_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
-        :type: DimensionalAngle
-        """
-
-        self._phase_angle = phase_angle
 
     @property
     def pressure(self):
