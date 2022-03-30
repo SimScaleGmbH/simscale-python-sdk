@@ -222,16 +222,20 @@ model = IncompressiblePacefish(
         ],
         transient_result_control=TransientResultControl(
             write_control=CoarseResolution(),
-            export_surface=True,
+            export_fluid=True,
             geometry_primitive_uuids=[external_flow_domain_uuid],
         ),
         statistical_averaging_result_control=StatisticalAveragingResultControlV2(
             sampling_interval=CoarseResolution(),
-            export_surface=True,
+            export_fluid=True,
             geometry_primitive_uuids=[external_flow_domain_uuid],
+            export_surface=True,
+            topological_reference=TopologicalReference(
+                entities=entities,
+            )
         ),
         snapshot_result_control=SnapshotResultControl(
-            export_surface=True,
+            export_fluid=True,
             geometry_primitive_uuids=[external_flow_domain_uuid],
         ),
     ),
@@ -343,9 +347,17 @@ camera_settings = UserInputCameraSettings(
 model_settings = ModelSettings(
     parts=[
         Part(
-            part_identifier="data - mesh_solid-volume-reference-of-all-face-topo-entities",
+            part_identifier="data - surface-export-1",
             solid_color=Color(0.8, 0.2, 0.4),
-        )
+        ),
+        Part(
+            part_identifier="data - surface-export-2",
+            solid_color=Color(0.2, 0.4, 0.8),
+        ),
+        Part(
+            part_identifier="data - surface-export-3",
+            solid_color=Color(0.4, 0.8, 0.2),
+        ),
     ],
     scalar_field=ScalarField(field_name="Velocity", component="X", data_type="CELL"),
 )

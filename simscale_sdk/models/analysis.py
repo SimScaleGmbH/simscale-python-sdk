@@ -56,6 +56,7 @@ class Analysis(object):
         'advanced_modelling': 'AdvancedModelling',
         'mesh_settings_new': 'OneOfIncompressiblePacefishMeshSettingsNew',
         'is_compressible': 'bool',
+        'cavitation_model': 'str',
         'mesh_settings': 'BasicEmbeddedBoundaryMeshing',
         'region_of_interest': 'RegionOfInterest',
         'wind_conditions': 'WindConditions',
@@ -63,8 +64,8 @@ class Analysis(object):
         'additional_result_export': 'FluidResultControls',
         'enable_radiation': 'bool',
         'contact_handling_mode': 'str',
-        'solar_calculator': 'SolarCalculator',
         'enable_solar_load': 'bool',
+        'solar_calculator': 'SolarCalculator',
         'is_internal_flow': 'bool',
         'use_local_time_stepping': 'bool'
     }
@@ -95,6 +96,7 @@ class Analysis(object):
         'advanced_modelling': 'advancedModelling',
         'mesh_settings_new': 'meshSettingsNew',
         'is_compressible': 'isCompressible',
+        'cavitation_model': 'cavitationModel',
         'mesh_settings': 'meshSettings',
         'region_of_interest': 'regionOfInterest',
         'wind_conditions': 'windConditions',
@@ -102,8 +104,8 @@ class Analysis(object):
         'additional_result_export': 'additionalResultExport',
         'enable_radiation': 'enableRadiation',
         'contact_handling_mode': 'contactHandlingMode',
-        'solar_calculator': 'solarCalculator',
         'enable_solar_load': 'enableSolarLoad',
+        'solar_calculator': 'solarCalculator',
         'is_internal_flow': 'isInternalFlow',
         'use_local_time_stepping': 'useLocalTimeStepping'
     }
@@ -127,7 +129,7 @@ class Analysis(object):
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, solar_calculator=None, enable_solar_load=None, is_internal_flow=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, enable_solar_load=None, solar_calculator=None, is_internal_flow=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -158,6 +160,7 @@ class Analysis(object):
         self._advanced_modelling = None
         self._mesh_settings_new = None
         self._is_compressible = None
+        self._cavitation_model = None
         self._mesh_settings = None
         self._region_of_interest = None
         self._wind_conditions = None
@@ -165,8 +168,8 @@ class Analysis(object):
         self._additional_result_export = None
         self._enable_radiation = None
         self._contact_handling_mode = None
-        self._solar_calculator = None
         self._enable_solar_load = None
+        self._solar_calculator = None
         self._is_internal_flow = None
         self._use_local_time_stepping = None
         self.discriminator = 'type'
@@ -220,6 +223,8 @@ class Analysis(object):
             self.mesh_settings_new = mesh_settings_new
         if is_compressible is not None:
             self.is_compressible = is_compressible
+        if cavitation_model is not None:
+            self.cavitation_model = cavitation_model
         if mesh_settings is not None:
             self.mesh_settings = mesh_settings
         if region_of_interest is not None:
@@ -234,10 +239,10 @@ class Analysis(object):
             self.enable_radiation = enable_radiation
         if contact_handling_mode is not None:
             self.contact_handling_mode = contact_handling_mode
-        if solar_calculator is not None:
-            self.solar_calculator = solar_calculator
         if enable_solar_load is not None:
             self.enable_solar_load = enable_solar_load
+        if solar_calculator is not None:
+            self.solar_calculator = solar_calculator
         if is_internal_flow is not None:
             self.is_internal_flow = is_internal_flow
         if use_local_time_stepping is not None:
@@ -801,6 +806,33 @@ class Analysis(object):
         self._is_compressible = is_compressible
 
     @property
+    def cavitation_model(self):
+        """Gets the cavitation_model of this Analysis.  # noqa: E501
+
+
+        :return: The cavitation_model of this Analysis.  # noqa: E501
+        :rtype: str
+        """
+        return self._cavitation_model
+
+    @cavitation_model.setter
+    def cavitation_model(self, cavitation_model):
+        """Sets the cavitation_model of this Analysis.
+
+
+        :param cavitation_model: The cavitation_model of this Analysis.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["CONSTANT_GAS_MASS_FRACTION", "NONE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and cavitation_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `cavitation_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(cavitation_model, allowed_values)
+            )
+
+        self._cavitation_model = cavitation_model
+
+    @property
     def mesh_settings(self):
         """Gets the mesh_settings of this Analysis.  # noqa: E501
 
@@ -956,27 +988,6 @@ class Analysis(object):
         self._contact_handling_mode = contact_handling_mode
 
     @property
-    def solar_calculator(self):
-        """Gets the solar_calculator of this Analysis.  # noqa: E501
-
-
-        :return: The solar_calculator of this Analysis.  # noqa: E501
-        :rtype: SolarCalculator
-        """
-        return self._solar_calculator
-
-    @solar_calculator.setter
-    def solar_calculator(self, solar_calculator):
-        """Sets the solar_calculator of this Analysis.
-
-
-        :param solar_calculator: The solar_calculator of this Analysis.  # noqa: E501
-        :type: SolarCalculator
-        """
-
-        self._solar_calculator = solar_calculator
-
-    @property
     def enable_solar_load(self):
         """Gets the enable_solar_load of this Analysis.  # noqa: E501
 
@@ -998,6 +1009,27 @@ class Analysis(object):
         """
 
         self._enable_solar_load = enable_solar_load
+
+    @property
+    def solar_calculator(self):
+        """Gets the solar_calculator of this Analysis.  # noqa: E501
+
+
+        :return: The solar_calculator of this Analysis.  # noqa: E501
+        :rtype: SolarCalculator
+        """
+        return self._solar_calculator
+
+    @solar_calculator.setter
+    def solar_calculator(self, solar_calculator):
+        """Sets the solar_calculator of this Analysis.
+
+
+        :param solar_calculator: The solar_calculator of this Analysis.  # noqa: E501
+        :type: SolarCalculator
+        """
+
+        self._solar_calculator = solar_calculator
 
     @property
     def is_internal_flow(self):

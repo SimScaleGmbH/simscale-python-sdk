@@ -36,7 +36,7 @@ class ParametricMaterialProperty(object):
         'value_type': 'str',
         'data_type': 'PropertyDataType',
         'parameters': 'list[MaterialPropertyParameter]',
-        'parametric_values': 'list[object]'
+        'parametric_values': 'list[dict(str, object)]'
     }
 
     attribute_map = {
@@ -69,8 +69,7 @@ class ParametricMaterialProperty(object):
         self.value_type = value_type
         if data_type is not None:
             self.data_type = data_type
-        if parameters is not None:
-            self.parameters = parameters
+        self.parameters = parameters
         if parametric_values is not None:
             self.parametric_values = parametric_values
 
@@ -184,6 +183,8 @@ class ParametricMaterialProperty(object):
         :param parameters: The parameters of this ParametricMaterialProperty.  # noqa: E501
         :type: list[MaterialPropertyParameter]
         """
+        if self.local_vars_configuration.client_side_validation and parameters is None:  # noqa: E501
+            raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
 
         self._parameters = parameters
 
@@ -193,7 +194,7 @@ class ParametricMaterialProperty(object):
 
 
         :return: The parametric_values of this ParametricMaterialProperty.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[dict(str, object)]
         """
         return self._parametric_values
 
@@ -203,7 +204,7 @@ class ParametricMaterialProperty(object):
 
 
         :param parametric_values: The parametric_values of this ParametricMaterialProperty.  # noqa: E501
-        :type: list[object]
+        :type: list[dict(str, object)]
         """
 
         self._parametric_values = parametric_values

@@ -35,7 +35,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
         'name': 'str',
         'coefficient_d': 'DimensionalVectorReciprocalPermeability',
         'coefficient_f': 'DimensionalVectorAbsorptivity',
-        'orientation': 'OneOfPowerLawMediumOrientation',
+        'orientation': 'OneOfFixedCoeffMediumOrientation',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'alpha': 'DimensionalVectorSpecificTurbulenceDissipationRate',
@@ -226,7 +226,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
 
 
         :return: The orientation of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
-        :rtype: OneOfPowerLawMediumOrientation
+        :rtype: OneOfFixedCoeffMediumOrientation
         """
         return self._orientation
 
@@ -236,7 +236,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
 
 
         :param orientation: The orientation of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
-        :type: OneOfPowerLawMediumOrientation
+        :type: OneOfFixedCoeffMediumOrientation
         """
 
         self._orientation = orientation
@@ -364,6 +364,9 @@ class OneOfAdvancedConceptsPorousMediums(object):
         :param linear_coefficient: The linear_coefficient of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                linear_coefficient is not None and linear_coefficient < 0):  # noqa: E501
+            raise ValueError("Invalid value for `linear_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._linear_coefficient = linear_coefficient
 
@@ -385,6 +388,9 @@ class OneOfAdvancedConceptsPorousMediums(object):
         :param exponent_coefficient: The exponent_coefficient of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                exponent_coefficient is not None and exponent_coefficient < 0):  # noqa: E501
+            raise ValueError("Invalid value for `exponent_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._exponent_coefficient = exponent_coefficient
 

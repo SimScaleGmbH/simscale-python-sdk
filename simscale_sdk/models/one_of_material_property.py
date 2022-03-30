@@ -37,7 +37,7 @@ class OneOfMaterialProperty(object):
         'data_type': 'PropertyDataType',
         'value': 'object',
         'parameters': 'list[MaterialPropertyParameter]',
-        'parametric_values': 'list[object]'
+        'parametric_values': 'list[dict(str, object)]'
     }
 
     attribute_map = {
@@ -77,10 +77,8 @@ class OneOfMaterialProperty(object):
         self.value_type = value_type
         if data_type is not None:
             self.data_type = data_type
-        if value is not None:
-            self.value = value
-        if parameters is not None:
-            self.parameters = parameters
+        self.value = value
+        self.parameters = parameters
         if parametric_values is not None:
             self.parametric_values = parametric_values
 
@@ -194,6 +192,8 @@ class OneOfMaterialProperty(object):
         :param value: The value of this OneOfMaterialProperty.  # noqa: E501
         :type: object
         """
+        if self.local_vars_configuration.client_side_validation and value is None:  # noqa: E501
+            raise ValueError("Invalid value for `value`, must not be `None`")  # noqa: E501
 
         self._value = value
 
@@ -217,6 +217,8 @@ class OneOfMaterialProperty(object):
         :param parameters: The parameters of this OneOfMaterialProperty.  # noqa: E501
         :type: list[MaterialPropertyParameter]
         """
+        if self.local_vars_configuration.client_side_validation and parameters is None:  # noqa: E501
+            raise ValueError("Invalid value for `parameters`, must not be `None`")  # noqa: E501
 
         self._parameters = parameters
 
@@ -226,7 +228,7 @@ class OneOfMaterialProperty(object):
 
 
         :return: The parametric_values of this OneOfMaterialProperty.  # noqa: E501
-        :rtype: list[object]
+        :rtype: list[dict(str, object)]
         """
         return self._parametric_values
 
@@ -236,7 +238,7 @@ class OneOfMaterialProperty(object):
 
 
         :param parametric_values: The parametric_values of this OneOfMaterialProperty.  # noqa: E501
-        :type: list[object]
+        :type: list[dict(str, object)]
         """
 
         self._parametric_values = parametric_values

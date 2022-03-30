@@ -32,6 +32,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
     """
     openapi_types = {
         'type': 'str',
+        'refinements': 'list[RegionRefinementSimerics]',
         'fineness': 'float',
         'minimum_cell_size': 'DimensionalLength',
         'maximum_cell_size': 'DimensionalLength',
@@ -42,6 +43,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
 
     attribute_map = {
         'type': 'type',
+        'refinements': 'refinements',
         'fineness': 'fineness',
         'minimum_cell_size': 'minimumCellSize',
         'maximum_cell_size': 'maximumCellSize',
@@ -55,13 +57,14 @@ class OneOfSimericsAnalysisMeshSettings(object):
         'MANUAL_SETTINGS': 'ManualSimericsMeshSettings'
     }
 
-    def __init__(self, type='MANUAL_SETTINGS', fineness=None, minimum_cell_size=None, maximum_cell_size=None, cell_size_on_surfaces=None, enable_growth_rate=None, growth_rate=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MANUAL_SETTINGS', refinements=None, fineness=None, minimum_cell_size=None, maximum_cell_size=None, cell_size_on_surfaces=None, enable_growth_rate=None, growth_rate=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimericsAnalysisMeshSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._refinements = None
         self._fineness = None
         self._minimum_cell_size = None
         self._maximum_cell_size = None
@@ -71,6 +74,8 @@ class OneOfSimericsAnalysisMeshSettings(object):
         self.discriminator = 'type'
 
         self.type = type
+        if refinements is not None:
+            self.refinements = refinements
         if fineness is not None:
             self.fineness = fineness
         if minimum_cell_size is not None:
@@ -108,6 +113,27 @@ class OneOfSimericsAnalysisMeshSettings(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def refinements(self):
+        """Gets the refinements of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+
+
+        :return: The refinements of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+        :rtype: list[RegionRefinementSimerics]
+        """
+        return self._refinements
+
+    @refinements.setter
+    def refinements(self, refinements):
+        """Sets the refinements of this OneOfSimericsAnalysisMeshSettings.
+
+
+        :param refinements: The refinements of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+        :type: list[RegionRefinementSimerics]
+        """
+
+        self._refinements = refinements
 
     @property
     def fineness(self):

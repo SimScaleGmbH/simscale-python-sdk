@@ -35,7 +35,6 @@ class PowerLawMedium(object):
         'name': 'str',
         'linear_coefficient': 'float',
         'exponent_coefficient': 'float',
-        'orientation': 'OneOfPowerLawMediumOrientation',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
@@ -45,12 +44,11 @@ class PowerLawMedium(object):
         'name': 'name',
         'linear_coefficient': 'linearCoefficient',
         'exponent_coefficient': 'exponentCoefficient',
-        'orientation': 'orientation',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='POWER_LAW', name=None, linear_coefficient=None, exponent_coefficient=None, orientation=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='POWER_LAW', name=None, linear_coefficient=None, exponent_coefficient=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """PowerLawMedium - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,7 +58,6 @@ class PowerLawMedium(object):
         self._name = None
         self._linear_coefficient = None
         self._exponent_coefficient = None
-        self._orientation = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
@@ -72,8 +69,6 @@ class PowerLawMedium(object):
             self.linear_coefficient = linear_coefficient
         if exponent_coefficient is not None:
             self.exponent_coefficient = exponent_coefficient
-        if orientation is not None:
-            self.orientation = orientation
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -143,6 +138,9 @@ class PowerLawMedium(object):
         :param linear_coefficient: The linear_coefficient of this PowerLawMedium.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                linear_coefficient is not None and linear_coefficient < 0):  # noqa: E501
+            raise ValueError("Invalid value for `linear_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._linear_coefficient = linear_coefficient
 
@@ -164,29 +162,11 @@ class PowerLawMedium(object):
         :param exponent_coefficient: The exponent_coefficient of this PowerLawMedium.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                exponent_coefficient is not None and exponent_coefficient < 0):  # noqa: E501
+            raise ValueError("Invalid value for `exponent_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._exponent_coefficient = exponent_coefficient
-
-    @property
-    def orientation(self):
-        """Gets the orientation of this PowerLawMedium.  # noqa: E501
-
-
-        :return: The orientation of this PowerLawMedium.  # noqa: E501
-        :rtype: OneOfPowerLawMediumOrientation
-        """
-        return self._orientation
-
-    @orientation.setter
-    def orientation(self, orientation):
-        """Sets the orientation of this PowerLawMedium.
-
-
-        :param orientation: The orientation of this PowerLawMedium.  # noqa: E501
-        :type: OneOfPowerLawMediumOrientation
-        """
-
-        self._orientation = orientation
 
     @property
     def topological_reference(self):

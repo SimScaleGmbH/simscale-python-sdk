@@ -33,9 +33,9 @@ class ConvectiveHeatTransfer(object):
     openapi_types = {
         'type': 'str',
         'is_compressible': 'bool',
-        'enable_radiation': 'bool',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfConvectiveHeatTransferTimeDependency',
+        'enable_radiation': 'bool',
         'num_of_passive_species': 'int',
         'model': 'FluidModel',
         'materials': 'ConvectiveHeatTransferMaterials',
@@ -50,9 +50,9 @@ class ConvectiveHeatTransfer(object):
     attribute_map = {
         'type': 'type',
         'is_compressible': 'isCompressible',
-        'enable_radiation': 'enableRadiation',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
+        'enable_radiation': 'enableRadiation',
         'num_of_passive_species': 'numOfPassiveSpecies',
         'model': 'model',
         'materials': 'materials',
@@ -64,7 +64,7 @@ class ConvectiveHeatTransfer(object):
         'result_control': 'resultControl'
     }
 
-    def __init__(self, type='CONVECTIVE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONVECTIVE_HEAT_TRANSFER', is_compressible=None, turbulence_model=None, time_dependency=None, enable_radiation=None, num_of_passive_species=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
         """ConvectiveHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,9 +72,9 @@ class ConvectiveHeatTransfer(object):
 
         self._type = None
         self._is_compressible = None
-        self._enable_radiation = None
         self._turbulence_model = None
         self._time_dependency = None
+        self._enable_radiation = None
         self._num_of_passive_species = None
         self._model = None
         self._materials = None
@@ -89,12 +89,12 @@ class ConvectiveHeatTransfer(object):
         self.type = type
         if is_compressible is not None:
             self.is_compressible = is_compressible
-        if enable_radiation is not None:
-            self.enable_radiation = enable_radiation
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
             self.time_dependency = time_dependency
+        if enable_radiation is not None:
+            self.enable_radiation = enable_radiation
         if num_of_passive_species is not None:
             self.num_of_passive_species = num_of_passive_species
         if model is not None:
@@ -163,29 +163,6 @@ class ConvectiveHeatTransfer(object):
         self._is_compressible = is_compressible
 
     @property
-    def enable_radiation(self):
-        """Gets the enable_radiation of this ConvectiveHeatTransfer.  # noqa: E501
-
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
-
-        :return: The enable_radiation of this ConvectiveHeatTransfer.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_radiation
-
-    @enable_radiation.setter
-    def enable_radiation(self, enable_radiation):
-        """Sets the enable_radiation of this ConvectiveHeatTransfer.
-
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
-
-        :param enable_radiation: The enable_radiation of this ConvectiveHeatTransfer.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_radiation = enable_radiation
-
-    @property
     def turbulence_model(self):
         """Gets the turbulence_model of this ConvectiveHeatTransfer.  # noqa: E501
 
@@ -234,6 +211,29 @@ class ConvectiveHeatTransfer(object):
         """
 
         self._time_dependency = time_dependency
+
+    @property
+    def enable_radiation(self):
+        """Gets the enable_radiation of this ConvectiveHeatTransfer.  # noqa: E501
+
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :return: The enable_radiation of this ConvectiveHeatTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_radiation
+
+    @enable_radiation.setter
+    def enable_radiation(self, enable_radiation):
+        """Sets the enable_radiation of this ConvectiveHeatTransfer.
+
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :param enable_radiation: The enable_radiation of this ConvectiveHeatTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_radiation = enable_radiation
 
     @property
     def num_of_passive_species(self):

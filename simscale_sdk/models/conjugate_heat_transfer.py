@@ -32,9 +32,9 @@ class ConjugateHeatTransfer(object):
     """
     openapi_types = {
         'type': 'str',
-        'enable_radiation': 'bool',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfConjugateHeatTransferTimeDependency',
+        'enable_radiation': 'bool',
         'connection_groups': 'list[FluidInterface]',
         'model': 'FluidModel',
         'materials': 'ConjugateHeatTransferMaterials',
@@ -49,9 +49,9 @@ class ConjugateHeatTransfer(object):
 
     attribute_map = {
         'type': 'type',
-        'enable_radiation': 'enableRadiation',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
+        'enable_radiation': 'enableRadiation',
         'connection_groups': 'connectionGroups',
         'model': 'model',
         'materials': 'materials',
@@ -64,16 +64,16 @@ class ConjugateHeatTransfer(object):
         'contact_handling_mode': 'contactHandlingMode'
     }
 
-    def __init__(self, type='CONJUGATE_HEAT_TRANSFER', enable_radiation=None, turbulence_model=None, time_dependency=None, connection_groups=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONJUGATE_HEAT_TRANSFER', turbulence_model=None, time_dependency=None, enable_radiation=None, connection_groups=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
         """ConjugateHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._enable_radiation = None
         self._turbulence_model = None
         self._time_dependency = None
+        self._enable_radiation = None
         self._connection_groups = None
         self._model = None
         self._materials = None
@@ -87,12 +87,12 @@ class ConjugateHeatTransfer(object):
         self.discriminator = None
 
         self.type = type
-        if enable_radiation is not None:
-            self.enable_radiation = enable_radiation
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
             self.time_dependency = time_dependency
+        if enable_radiation is not None:
+            self.enable_radiation = enable_radiation
         if connection_groups is not None:
             self.connection_groups = connection_groups
         if model is not None:
@@ -138,29 +138,6 @@ class ConjugateHeatTransfer(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def enable_radiation(self):
-        """Gets the enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
-
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
-
-        :return: The enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_radiation
-
-    @enable_radiation.setter
-    def enable_radiation(self, enable_radiation):
-        """Sets the enable_radiation of this ConjugateHeatTransfer.
-
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
-
-        :param enable_radiation: The enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_radiation = enable_radiation
 
     @property
     def turbulence_model(self):
@@ -211,6 +188,29 @@ class ConjugateHeatTransfer(object):
         """
 
         self._time_dependency = time_dependency
+
+    @property
+    def enable_radiation(self):
+        """Gets the enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
+
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :return: The enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_radiation
+
+    @enable_radiation.setter
+    def enable_radiation(self, enable_radiation):
+        """Sets the enable_radiation of this ConjugateHeatTransfer.
+
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :param enable_radiation: The enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_radiation = enable_radiation
 
     @property
     def connection_groups(self):

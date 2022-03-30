@@ -34,6 +34,7 @@ class SnapshotResultControl(object):
         'type': 'str',
         'export_fluid': 'bool',
         'export_surface': 'bool',
+        'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
 
@@ -41,10 +42,11 @@ class SnapshotResultControl(object):
         'type': 'type',
         'export_fluid': 'exportFluid',
         'export_surface': 'exportSurface',
+        'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='SNAPSHOT', export_fluid=None, export_surface=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SNAPSHOT', export_fluid=None, export_surface=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """SnapshotResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class SnapshotResultControl(object):
         self._type = None
         self._export_fluid = None
         self._export_surface = None
+        self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
 
@@ -61,6 +64,8 @@ class SnapshotResultControl(object):
             self.export_fluid = export_fluid
         if export_surface is not None:
             self.export_surface = export_surface
+        if topological_reference is not None:
+            self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
 
@@ -134,6 +139,27 @@ class SnapshotResultControl(object):
         """
 
         self._export_surface = export_surface
+
+    @property
+    def topological_reference(self):
+        """Gets the topological_reference of this SnapshotResultControl.  # noqa: E501
+
+
+        :return: The topological_reference of this SnapshotResultControl.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._topological_reference
+
+    @topological_reference.setter
+    def topological_reference(self, topological_reference):
+        """Sets the topological_reference of this SnapshotResultControl.
+
+
+        :param topological_reference: The topological_reference of this SnapshotResultControl.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._topological_reference = topological_reference
 
     @property
     def geometry_primitive_uuids(self):

@@ -53,12 +53,10 @@ class CreateMaterialRequest(object):
         self._properties = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
+        self.name = name
         if metadata is not None:
             self.metadata = metadata
-        if properties is not None:
-            self.properties = properties
+        self.properties = properties
 
     @property
     def name(self):
@@ -80,6 +78,11 @@ class CreateMaterialRequest(object):
         :param name: The name of this CreateMaterialRequest.  # noqa: E501
         :type: str
         """
+        if self.local_vars_configuration.client_side_validation and name is None:  # noqa: E501
+            raise ValueError("Invalid value for `name`, must not be `None`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                name is not None and not re.search(r'^(?!\s*$).+', name)):  # noqa: E501
+            raise ValueError(r"Invalid value for `name`, must be a follow pattern or equal to `/^(?!\s*$).+/`")  # noqa: E501
 
         self._name = name
 
@@ -124,6 +127,8 @@ class CreateMaterialRequest(object):
         :param properties: The properties of this CreateMaterialRequest.  # noqa: E501
         :type: dict(str, OneOfMaterialProperty)
         """
+        if self.local_vars_configuration.client_side_validation and properties is None:  # noqa: E501
+            raise ValueError("Invalid value for `properties`, must not be `None`")  # noqa: E501
 
         self._properties = properties
 

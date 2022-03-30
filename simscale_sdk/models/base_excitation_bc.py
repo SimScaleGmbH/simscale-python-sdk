@@ -73,7 +73,7 @@ class BaseExcitationBC(object):
     def type(self):
         """Gets the type of this BaseExcitationBC.  # noqa: E501
 
-        Schema name: BaseExcitationBC  # noqa: E501
+        <p><b>Base excitation</b> boundary condition applies a uniform acceleration to all fixed surfaces in the model (zero displacement), e.g. faces assigned to the <i>Fixed support</i> boundary condition. Specify the direction vector, the acceleration magnitude and the delay in terms of a harmonic phase angle, from the load to the reference harmonic excitation.<a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/base-excitation/' target='_blank'>Learn more</a></p>  Schema name: BaseExcitationBC  # noqa: E501
 
         :return: The type of this BaseExcitationBC.  # noqa: E501
         :rtype: str
@@ -84,7 +84,7 @@ class BaseExcitationBC(object):
     def type(self, type):
         """Sets the type of this BaseExcitationBC.
 
-        Schema name: BaseExcitationBC  # noqa: E501
+        <p><b>Base excitation</b> boundary condition applies a uniform acceleration to all fixed surfaces in the model (zero displacement), e.g. faces assigned to the <i>Fixed support</i> boundary condition. Specify the direction vector, the acceleration magnitude and the delay in terms of a harmonic phase angle, from the load to the reference harmonic excitation.<a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/base-excitation/' target='_blank'>Learn more</a></p>  Schema name: BaseExcitationBC  # noqa: E501
 
         :param type: The type of this BaseExcitationBC.  # noqa: E501
         :type: str

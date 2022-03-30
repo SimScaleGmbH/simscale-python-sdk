@@ -35,6 +35,7 @@ class SimericsAnalysis(object):
         'model': 'FluidModel',
         'materials': 'SimericsFluidMaterials',
         'is_compressible': 'bool',
+        'cavitation_model': 'str',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfSimericsAnalysisTimeDependency',
         'boundary_conditions': 'list[OneOfSimericsAnalysisBoundaryConditions]',
@@ -49,6 +50,7 @@ class SimericsAnalysis(object):
         'model': 'model',
         'materials': 'materials',
         'is_compressible': 'isCompressible',
+        'cavitation_model': 'cavitationModel',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
         'boundary_conditions': 'boundaryConditions',
@@ -58,7 +60,7 @@ class SimericsAnalysis(object):
         'mesh_settings': 'meshSettings'
     }
 
-    def __init__(self, type='SIMERICS_ANALYSIS', model=None, materials=None, is_compressible=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, advanced_concepts=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMERICS_ANALYSIS', model=None, materials=None, is_compressible=None, cavitation_model=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, advanced_concepts=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimericsAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class SimericsAnalysis(object):
         self._model = None
         self._materials = None
         self._is_compressible = None
+        self._cavitation_model = None
         self._turbulence_model = None
         self._time_dependency = None
         self._boundary_conditions = None
@@ -84,6 +87,8 @@ class SimericsAnalysis(object):
             self.materials = materials
         if is_compressible is not None:
             self.is_compressible = is_compressible
+        if cavitation_model is not None:
+            self.cavitation_model = cavitation_model
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
@@ -186,6 +191,33 @@ class SimericsAnalysis(object):
         """
 
         self._is_compressible = is_compressible
+
+    @property
+    def cavitation_model(self):
+        """Gets the cavitation_model of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The cavitation_model of this SimericsAnalysis.  # noqa: E501
+        :rtype: str
+        """
+        return self._cavitation_model
+
+    @cavitation_model.setter
+    def cavitation_model(self, cavitation_model):
+        """Sets the cavitation_model of this SimericsAnalysis.
+
+
+        :param cavitation_model: The cavitation_model of this SimericsAnalysis.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["CONSTANT_GAS_MASS_FRACTION", "NONE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and cavitation_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `cavitation_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(cavitation_model, allowed_values)
+            )
+
+        self._cavitation_model = cavitation_model
 
     @property
     def turbulence_model(self):

@@ -34,17 +34,17 @@ class CreateMaterialGroupRequest(object):
         'name': 'str',
         'metadata': 'object',
         'public': 'bool',
-        'owner_group_id': 'int'
+        'team_group_id': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'metadata': 'metadata',
         'public': 'public',
-        'owner_group_id': 'ownerGroupId'
+        'team_group_id': 'teamGroupId'
     }
 
-    def __init__(self, name=None, metadata=None, public=None, owner_group_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, metadata=None, public=None, team_group_id=None, local_vars_configuration=None):  # noqa: E501
         """CreateMaterialGroupRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,7 +53,7 @@ class CreateMaterialGroupRequest(object):
         self._name = None
         self._metadata = None
         self._public = None
-        self._owner_group_id = None
+        self._team_group_id = None
         self.discriminator = None
 
         self.name = name
@@ -61,8 +61,8 @@ class CreateMaterialGroupRequest(object):
             self.metadata = metadata
         if public is not None:
             self.public = public
-        if owner_group_id is not None:
-            self.owner_group_id = owner_group_id
+        if team_group_id is not None:
+            self.team_group_id = team_group_id
 
     @property
     def name(self):
@@ -138,27 +138,27 @@ class CreateMaterialGroupRequest(object):
         self._public = public
 
     @property
-    def owner_group_id(self):
-        """Gets the owner_group_id of this CreateMaterialGroupRequest.  # noqa: E501
+    def team_group_id(self):
+        """Gets the team_group_id of this CreateMaterialGroupRequest.  # noqa: E501
 
-        The material group will be assigned to this owner group. This field can only be used by support group members.  # noqa: E501
+        The material group will be assigned to this team group id. This field can only be used by support group members.  # noqa: E501
 
-        :return: The owner_group_id of this CreateMaterialGroupRequest.  # noqa: E501
+        :return: The team_group_id of this CreateMaterialGroupRequest.  # noqa: E501
         :rtype: int
         """
-        return self._owner_group_id
+        return self._team_group_id
 
-    @owner_group_id.setter
-    def owner_group_id(self, owner_group_id):
-        """Sets the owner_group_id of this CreateMaterialGroupRequest.
+    @team_group_id.setter
+    def team_group_id(self, team_group_id):
+        """Sets the team_group_id of this CreateMaterialGroupRequest.
 
-        The material group will be assigned to this owner group. This field can only be used by support group members.  # noqa: E501
+        The material group will be assigned to this team group id. This field can only be used by support group members.  # noqa: E501
 
-        :param owner_group_id: The owner_group_id of this CreateMaterialGroupRequest.  # noqa: E501
+        :param team_group_id: The team_group_id of this CreateMaterialGroupRequest.  # noqa: E501
         :type: int
         """
 
-        self._owner_group_id = owner_group_id
+        self._team_group_id = team_group_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

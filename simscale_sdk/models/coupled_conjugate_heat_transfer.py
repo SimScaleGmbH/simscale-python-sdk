@@ -32,6 +32,10 @@ class CoupledConjugateHeatTransfer(object):
     """
     openapi_types = {
         'type': 'str',
+        'is_compressible': 'bool',
+        'enable_radiation': 'bool',
+        'enable_solar_load': 'bool',
+        'turbulence_model': 'str',
         'connection_groups': 'list[FluidInterface]',
         'model': 'FluidModel',
         'solar_calculator': 'SolarCalculator',
@@ -42,15 +46,15 @@ class CoupledConjugateHeatTransfer(object):
         'numerics': 'FluidNumerics',
         'simulation_control': 'FluidSimulationControl',
         'result_control': 'FluidResultControls',
-        'contact_handling_mode': 'str',
-        'is_compressible': 'bool',
-        'enable_radiation': 'bool',
-        'enable_solar_load': 'bool',
-        'turbulence_model': 'str'
+        'contact_handling_mode': 'str'
     }
 
     attribute_map = {
         'type': 'type',
+        'is_compressible': 'isCompressible',
+        'enable_radiation': 'enableRadiation',
+        'enable_solar_load': 'enableSolarLoad',
+        'turbulence_model': 'turbulenceModel',
         'connection_groups': 'connectionGroups',
         'model': 'model',
         'solar_calculator': 'solarCalculator',
@@ -61,20 +65,20 @@ class CoupledConjugateHeatTransfer(object):
         'numerics': 'numerics',
         'simulation_control': 'simulationControl',
         'result_control': 'resultControl',
-        'contact_handling_mode': 'contactHandlingMode',
-        'is_compressible': 'isCompressible',
-        'enable_radiation': 'enableRadiation',
-        'enable_solar_load': 'enableSolarLoad',
-        'turbulence_model': 'turbulenceModel'
+        'contact_handling_mode': 'contactHandlingMode'
     }
 
-    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, is_compressible=None, enable_radiation=None, enable_solar_load=None, turbulence_model=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, enable_solar_load=None, turbulence_model=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
         """CoupledConjugateHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._is_compressible = None
+        self._enable_radiation = None
+        self._enable_solar_load = None
+        self._turbulence_model = None
         self._connection_groups = None
         self._model = None
         self._solar_calculator = None
@@ -86,13 +90,17 @@ class CoupledConjugateHeatTransfer(object):
         self._simulation_control = None
         self._result_control = None
         self._contact_handling_mode = None
-        self._is_compressible = None
-        self._enable_radiation = None
-        self._enable_solar_load = None
-        self._turbulence_model = None
         self.discriminator = None
 
         self.type = type
+        if is_compressible is not None:
+            self.is_compressible = is_compressible
+        if enable_radiation is not None:
+            self.enable_radiation = enable_radiation
+        if enable_solar_load is not None:
+            self.enable_solar_load = enable_solar_load
+        if turbulence_model is not None:
+            self.turbulence_model = turbulence_model
         if connection_groups is not None:
             self.connection_groups = connection_groups
         if model is not None:
@@ -115,14 +123,6 @@ class CoupledConjugateHeatTransfer(object):
             self.result_control = result_control
         if contact_handling_mode is not None:
             self.contact_handling_mode = contact_handling_mode
-        if is_compressible is not None:
-            self.is_compressible = is_compressible
-        if enable_radiation is not None:
-            self.enable_radiation = enable_radiation
-        if enable_solar_load is not None:
-            self.enable_solar_load = enable_solar_load
-        if turbulence_model is not None:
-            self.turbulence_model = turbulence_model
 
     @property
     def type(self):
@@ -148,6 +148,104 @@ class CoupledConjugateHeatTransfer(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def is_compressible(self):
+        """Gets the is_compressible of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+        <ul><li>Toggle off <em>Compressible</em> for small temperature variations within the domain, for example, in natural convection simulations (Boussinesq approximation). Use Gauge pressure (0 Pa). </li><li>Toggle on <em>Compressible</em> to calculate resulting density variations within the domain based on pressure and temperature. Use Absolute pressure (for example, 101325 Pa at sea level)</li></ul>  # noqa: E501
+
+        :return: The is_compressible of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_compressible
+
+    @is_compressible.setter
+    def is_compressible(self, is_compressible):
+        """Sets the is_compressible of this CoupledConjugateHeatTransfer.
+
+        <ul><li>Toggle off <em>Compressible</em> for small temperature variations within the domain, for example, in natural convection simulations (Boussinesq approximation). Use Gauge pressure (0 Pa). </li><li>Toggle on <em>Compressible</em> to calculate resulting density variations within the domain based on pressure and temperature. Use Absolute pressure (for example, 101325 Pa at sea level)</li></ul>  # noqa: E501
+
+        :param is_compressible: The is_compressible of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_compressible = is_compressible
+
+    @property
+    def enable_radiation(self):
+        """Gets the enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :return: The enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_radiation
+
+    @enable_radiation.setter
+    def enable_radiation(self, enable_radiation):
+        """Sets the enable_radiation of this CoupledConjugateHeatTransfer.
+
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :param enable_radiation: The enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_radiation = enable_radiation
+
+    @property
+    def enable_solar_load(self):
+        """Gets the enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :return: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_solar_load
+
+    @enable_solar_load.setter
+    def enable_solar_load(self, enable_solar_load):
+        """Sets the enable_solar_load of this CoupledConjugateHeatTransfer.
+
+        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :param enable_solar_load: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_solar_load = enable_solar_load
+
+    @property
+    def turbulence_model(self):
+        """Gets the turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
+
+        :return: The turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._turbulence_model
+
+    @turbulence_model.setter
+    def turbulence_model(self, turbulence_model):
+        """Sets the turbulence_model of this CoupledConjugateHeatTransfer.
+
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
+
+        :param turbulence_model: The turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["NONE", "KOMEGASST"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and turbulence_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `turbulence_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(turbulence_model, allowed_values)
+            )
+
+        self._turbulence_model = turbulence_model
 
     @property
     def connection_groups(self):
@@ -385,104 +483,6 @@ class CoupledConjugateHeatTransfer(object):
             )
 
         self._contact_handling_mode = contact_handling_mode
-
-    @property
-    def is_compressible(self):
-        """Gets the is_compressible of this CoupledConjugateHeatTransfer.  # noqa: E501
-
-        <ul><li>Toggle off <em>Compressible</em> for small temperature variations within the domain, for example, in natural convection simulations (Boussinesq approximation). Use Gauge pressure (0 Pa). </li><li>Toggle on <em>Compressible</em> to calculate resulting density variations within the domain based on pressure and temperature. Use Absolute pressure (for example, 101325 Pa at sea level)</li></ul>  # noqa: E501
-
-        :return: The is_compressible of this CoupledConjugateHeatTransfer.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_compressible
-
-    @is_compressible.setter
-    def is_compressible(self, is_compressible):
-        """Sets the is_compressible of this CoupledConjugateHeatTransfer.
-
-        <ul><li>Toggle off <em>Compressible</em> for small temperature variations within the domain, for example, in natural convection simulations (Boussinesq approximation). Use Gauge pressure (0 Pa). </li><li>Toggle on <em>Compressible</em> to calculate resulting density variations within the domain based on pressure and temperature. Use Absolute pressure (for example, 101325 Pa at sea level)</li></ul>  # noqa: E501
-
-        :param is_compressible: The is_compressible of this CoupledConjugateHeatTransfer.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_compressible = is_compressible
-
-    @property
-    def enable_radiation(self):
-        """Gets the enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
-
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
-
-        :return: The enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_radiation
-
-    @enable_radiation.setter
-    def enable_radiation(self, enable_radiation):
-        """Sets the enable_radiation of this CoupledConjugateHeatTransfer.
-
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
-
-        :param enable_radiation: The enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_radiation = enable_radiation
-
-    @property
-    def enable_solar_load(self):
-        """Gets the enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
-
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
-
-        :return: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_solar_load
-
-    @enable_solar_load.setter
-    def enable_solar_load(self, enable_solar_load):
-        """Sets the enable_solar_load of this CoupledConjugateHeatTransfer.
-
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
-
-        :param enable_solar_load: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_solar_load = enable_solar_load
-
-    @property
-    def turbulence_model(self):
-        """Gets the turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
-
-        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
-
-        :return: The turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
-        :rtype: str
-        """
-        return self._turbulence_model
-
-    @turbulence_model.setter
-    def turbulence_model(self, turbulence_model):
-        """Sets the turbulence_model of this CoupledConjugateHeatTransfer.
-
-        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
-
-        :param turbulence_model: The turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["NONE", "KOMEGASST"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and turbulence_model not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `turbulence_model` ({0}), must be one of {1}"  # noqa: E501
-                .format(turbulence_model, allowed_values)
-            )
-
-        self._turbulence_model = turbulence_model
 
     def to_dict(self):
         """Returns the model properties as a dict"""

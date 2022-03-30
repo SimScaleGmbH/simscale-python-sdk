@@ -561,6 +561,14 @@ simscale\_sdk.models.cauchy\_stress\_type module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.cavitation module
+--------------------------------------
+
+.. automodule:: simscale_sdk.models.cavitation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.cell\_count module
 ---------------------------------------
 
@@ -5017,6 +5025,14 @@ simscale\_sdk.models.periodic\_bc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.permission\_dto module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.permission_dto
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.petsc\_solver module
 -----------------------------------------
 
@@ -5357,6 +5373,14 @@ simscale\_sdk.models.region\_refinement\_pacefish module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.region_refinement_pacefish
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.region\_refinement\_simerics module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.region_refinement_simerics
    :members:
    :undoc-members:
    :show-inheritance:

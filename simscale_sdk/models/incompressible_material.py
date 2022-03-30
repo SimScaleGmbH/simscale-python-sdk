@@ -42,6 +42,7 @@ class IncompressibleMaterial(object):
         'turbulent_prandtl_number': 'float',
         'specific_heat': 'DimensionalSpecificHeat',
         'molar_weight': 'DimensionalMolarMass',
+        'cavitation': 'Cavitation',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'built_in_material': 'str',
@@ -60,13 +61,14 @@ class IncompressibleMaterial(object):
         'turbulent_prandtl_number': 'turbulentPrandtlNumber',
         'specific_heat': 'specificHeat',
         'molar_weight': 'molarWeight',
+        'cavitation': 'cavitation',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, type='INCOMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INCOMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """IncompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class IncompressibleMaterial(object):
         self._turbulent_prandtl_number = None
         self._specific_heat = None
         self._molar_weight = None
+        self._cavitation = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._built_in_material = None
@@ -110,6 +113,8 @@ class IncompressibleMaterial(object):
             self.specific_heat = specific_heat
         if molar_weight is not None:
             self.molar_weight = molar_weight
+        if cavitation is not None:
+            self.cavitation = cavitation
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -365,6 +370,27 @@ class IncompressibleMaterial(object):
         """
 
         self._molar_weight = molar_weight
+
+    @property
+    def cavitation(self):
+        """Gets the cavitation of this IncompressibleMaterial.  # noqa: E501
+
+
+        :return: The cavitation of this IncompressibleMaterial.  # noqa: E501
+        :rtype: Cavitation
+        """
+        return self._cavitation
+
+    @cavitation.setter
+    def cavitation(self, cavitation):
+        """Sets the cavitation of this IncompressibleMaterial.
+
+
+        :param cavitation: The cavitation of this IncompressibleMaterial.  # noqa: E501
+        :type: Cavitation
+        """
+
+        self._cavitation = cavitation
 
     @property
     def topological_reference(self):
