@@ -41,7 +41,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         'mass_moment_of_inertia': 'DimensionalVectorMomentOfInertia',
         'external_point': 'DimensionalVectorLength',
         'deformation_behavior': 'str',
-        'rotation': 'DimensionalPartialVectorFunctionAngle'
+        'rotation': 'AngularRotation'
     }
 
     attribute_map = {
@@ -65,10 +65,11 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         'FIXED_VALUE': 'FixedValueBC',
         'POINT_MASS': 'PointMassBC',
         'REMOTE_DISPLACEMENT_LOAD': 'RemoteDisplacementLoadBC',
-        'SYMMETRY_PLANE': 'SymmetryPlaneBC'
+        'SYMMETRY_PLANE': 'SymmetryPlaneBC',
+        'CENTRIFUGAL_FORCE': 'CentrifugalForceBC'
     }
 
-    def __init__(self, type='SYMMETRY_PLANE', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CENTRIFUGAL_FORCE', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFrequencyAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,7 +114,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
     def type(self):
         """Gets the type of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
 
-        This boundary condition restrains the displacement of a face in its normal direction in order to represent a symmetry plane of the structure. Use this boundary condition to reduce the model size significantly if the geometry and the loading conditions are symmetric.<br /><br />Important remarks: <br /><ul><li>The solver uses linear relations between all three DOFs to constrian the normal movement, thus overcontraint conditions may appear if the edges of the selected faces are constrained by other displacement boundary conditions.</li><li>If the assigned faces are orthogonal to a global coordinate axes, it is recommended to directly specifiy the symmetry conditions with a <b>Fixed value</b> boundary condition.</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/#symmetry-plane-boundary-condition-fea' target='_blank'>Learn more</a>.  Schema name: SymmetryPlaneBC  # noqa: E501
+        <p>This is a <b>centrifugal force</b> boundary condition. Each volume element of the selection is loaded with a centrifugal force which is calculated depending on its volume, the density of the assigned material, its distance from the axis of rotation and the defined rotational velocity.<br /><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/centrifugal-force/' target='_blank'>Learn more</a>.</p>  Schema name: CentrifugalForceBC  # noqa: E501
 
         :return: The type of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -124,7 +125,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfFrequencyAnalysisBoundaryConditions.
 
-        This boundary condition restrains the displacement of a face in its normal direction in order to represent a symmetry plane of the structure. Use this boundary condition to reduce the model size significantly if the geometry and the loading conditions are symmetric.<br /><br />Important remarks: <br /><ul><li>The solver uses linear relations between all three DOFs to constrian the normal movement, thus overcontraint conditions may appear if the edges of the selected faces are constrained by other displacement boundary conditions.</li><li>If the assigned faces are orthogonal to a global coordinate axes, it is recommended to directly specifiy the symmetry conditions with a <b>Fixed value</b> boundary condition.</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/#symmetry-plane-boundary-condition-fea' target='_blank'>Learn more</a>.  Schema name: SymmetryPlaneBC  # noqa: E501
+        <p>This is a <b>centrifugal force</b> boundary condition. Each volume element of the selection is loaded with a centrifugal force which is calculated depending on its volume, the density of the assigned material, its distance from the axis of rotation and the defined rotational velocity.<br /><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/centrifugal-force/' target='_blank'>Learn more</a>.</p>  Schema name: CentrifugalForceBC  # noqa: E501
 
         :param type: The type of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
         :type: str
@@ -337,7 +338,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
 
 
         :return: The rotation of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
-        :rtype: DimensionalPartialVectorFunctionAngle
+        :rtype: AngularRotation
         """
         return self._rotation
 
@@ -347,7 +348,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
 
 
         :param rotation: The rotation of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
-        :type: DimensionalPartialVectorFunctionAngle
+        :type: AngularRotation
         """
 
         self._rotation = rotation

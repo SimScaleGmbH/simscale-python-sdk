@@ -593,6 +593,14 @@ simscale\_sdk.models.celllimited\_least\_squares\_gradient\_scheme module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.center\_frequency module
+---------------------------------------------
+
+.. automodule:: simscale_sdk.models.center_frequency
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.central\_diff\_time\_integration\_scheme module
 --------------------------------------------------------------------
 
@@ -2277,6 +2285,14 @@ simscale\_sdk.models.fan\_pbc module
 ------------------------------------
 
 .. automodule:: simscale_sdk.models.fan_pbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.fan\_pressure\_drop\_momentum\_source module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.fan_pressure_drop_momentum_source
    :members:
    :undoc-members:
    :show-inheritance:

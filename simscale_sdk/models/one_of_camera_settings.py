@@ -37,6 +37,7 @@ class OneOfCameraSettings(object):
         'eye': 'Vector3D',
         'center': 'Vector3D',
         'front_plane_frustum_height': 'float',
+        'field_of_view_y_degrees': 'float',
         'direction_specifier': 'str'
     }
 
@@ -47,6 +48,7 @@ class OneOfCameraSettings(object):
         'eye': 'eye',
         'center': 'center',
         'front_plane_frustum_height': 'frontPlaneFrustumHeight',
+        'field_of_view_y_degrees': 'fieldOfViewYDegrees',
         'direction_specifier': 'directionSpecifier'
     }
 
@@ -56,7 +58,7 @@ class OneOfCameraSettings(object):
         'FORTY_FIVE_FORTY_FIVE_VIEW': 'FortyFiveViewPredefinedCameraSettings'
     }
 
-    def __init__(self, setting_type='FORTY_FIVE_FORTY_FIVE_VIEW', projection_type=None, up=None, eye=None, center=None, front_plane_frustum_height=None, direction_specifier=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, setting_type='FORTY_FIVE_FORTY_FIVE_VIEW', projection_type=None, up=None, eye=None, center=None, front_plane_frustum_height=None, field_of_view_y_degrees=None, direction_specifier=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCameraSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class OneOfCameraSettings(object):
         self._eye = None
         self._center = None
         self._front_plane_frustum_height = None
+        self._field_of_view_y_degrees = None
         self._direction_specifier = None
         self.discriminator = 'setting_type'
 
@@ -78,6 +81,8 @@ class OneOfCameraSettings(object):
         self.center = center
         if front_plane_frustum_height is not None:
             self.front_plane_frustum_height = front_plane_frustum_height
+        if field_of_view_y_degrees is not None:
+            self.field_of_view_y_degrees = field_of_view_y_degrees
         self.direction_specifier = direction_specifier
 
     @property
@@ -199,7 +204,7 @@ class OneOfCameraSettings(object):
     def front_plane_frustum_height(self):
         """Gets the front_plane_frustum_height of this OneOfCameraSettings.  # noqa: E501
 
-        required only for orthogonal projection type  # noqa: E501
+        required only for orthogonal projection type.  # noqa: E501
 
         :return: The front_plane_frustum_height of this OneOfCameraSettings.  # noqa: E501
         :rtype: float
@@ -210,7 +215,7 @@ class OneOfCameraSettings(object):
     def front_plane_frustum_height(self, front_plane_frustum_height):
         """Sets the front_plane_frustum_height of this OneOfCameraSettings.
 
-        required only for orthogonal projection type  # noqa: E501
+        required only for orthogonal projection type.  # noqa: E501
 
         :param front_plane_frustum_height: The front_plane_frustum_height of this OneOfCameraSettings.  # noqa: E501
         :type: float
@@ -220,6 +225,32 @@ class OneOfCameraSettings(object):
             raise ValueError("Invalid value for `front_plane_frustum_height`, must be a value greater than or equal to `0.0`")  # noqa: E501
 
         self._front_plane_frustum_height = front_plane_frustum_height
+
+    @property
+    def field_of_view_y_degrees(self):
+        """Gets the field_of_view_y_degrees of this OneOfCameraSettings.  # noqa: E501
+
+        The total field of view in Y direction in degrees. Required onlyf for perspective projection type.  # noqa: E501
+
+        :return: The field_of_view_y_degrees of this OneOfCameraSettings.  # noqa: E501
+        :rtype: float
+        """
+        return self._field_of_view_y_degrees
+
+    @field_of_view_y_degrees.setter
+    def field_of_view_y_degrees(self, field_of_view_y_degrees):
+        """Sets the field_of_view_y_degrees of this OneOfCameraSettings.
+
+        The total field of view in Y direction in degrees. Required onlyf for perspective projection type.  # noqa: E501
+
+        :param field_of_view_y_degrees: The field_of_view_y_degrees of this OneOfCameraSettings.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                field_of_view_y_degrees is not None and field_of_view_y_degrees < 0.0):  # noqa: E501
+            raise ValueError("Invalid value for `field_of_view_y_degrees`, must be a value greater than or equal to `0.0`")  # noqa: E501
+
+        self._field_of_view_y_degrees = field_of_view_y_degrees
 
     @property
     def direction_specifier(self):

@@ -34,22 +34,25 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
         'type': 'str',
         'number_of_modes': 'int',
         'start_frequency': 'DimensionalFrequency',
-        'end_frequency': 'DimensionalFrequency'
+        'end_frequency': 'DimensionalFrequency',
+        'center_frequency': 'DimensionalFrequency'
     }
 
     attribute_map = {
         'type': 'type',
         'number_of_modes': 'numberOfModes',
         'start_frequency': 'startFrequency',
-        'end_frequency': 'endFrequency'
+        'end_frequency': 'endFrequency',
+        'center_frequency': 'centerFrequency'
     }
 
     discriminator_value_class_map = {
         'FIRSTMODE': 'FirstMode',
-        'RANGE': 'FrequencyRange'
+        'RANGE': 'FrequencyRange',
+        'CENTER': 'CenterFrequency'
     }
 
-    def __init__(self, type='RANGE', number_of_modes=None, start_frequency=None, end_frequency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CENTER', number_of_modes=None, start_frequency=None, end_frequency=None, center_frequency=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidSimulationControlEigenfrequencyScope - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +62,7 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
         self._number_of_modes = None
         self._start_frequency = None
         self._end_frequency = None
+        self._center_frequency = None
         self.discriminator = 'type'
 
         self.type = type
@@ -68,12 +72,14 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
             self.start_frequency = start_frequency
         if end_frequency is not None:
             self.end_frequency = end_frequency
+        if center_frequency is not None:
+            self.center_frequency = center_frequency
 
     @property
     def type(self):
         """Gets the type of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
 
-        <p>Select how you want to control natural frequencies to be computed:</p> <li><i>First modes</i>: The first <i>Number of modes</i> will be searched and computed, in the order of low to high frequency.</li><li><i>Frequency range</i>: All the modes within the range of frequencies will be searched and computed. The frequency range is specified by a <i>Start frequency</i> and an <i>End frequency</i>.</li>  Schema name: FrequencyRange  # noqa: E501
+        Schema name: CenterFrequency  # noqa: E501
 
         :return: The type of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
         :rtype: str
@@ -84,7 +90,7 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
     def type(self, type):
         """Sets the type of this OneOfSolidSimulationControlEigenfrequencyScope.
 
-        <p>Select how you want to control natural frequencies to be computed:</p> <li><i>First modes</i>: The first <i>Number of modes</i> will be searched and computed, in the order of low to high frequency.</li><li><i>Frequency range</i>: All the modes within the range of frequencies will be searched and computed. The frequency range is specified by a <i>Start frequency</i> and an <i>End frequency</i>.</li>  Schema name: FrequencyRange  # noqa: E501
+        Schema name: CenterFrequency  # noqa: E501
 
         :param type: The type of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
         :type: str
@@ -98,6 +104,7 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
     def number_of_modes(self):
         """Gets the number_of_modes of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
 
+        <p>Define the maximum number of eigenfrequencies/eigenmodes, that should be calculated.</p>  # noqa: E501
 
         :return: The number_of_modes of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
         :rtype: int
@@ -108,10 +115,14 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
     def number_of_modes(self, number_of_modes):
         """Sets the number_of_modes of this OneOfSolidSimulationControlEigenfrequencyScope.
 
+        <p>Define the maximum number of eigenfrequencies/eigenmodes, that should be calculated.</p>  # noqa: E501
 
         :param number_of_modes: The number_of_modes of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
         :type: int
         """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_modes is not None and number_of_modes < 1):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_modes`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._number_of_modes = number_of_modes
 
@@ -156,6 +167,27 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
         """
 
         self._end_frequency = end_frequency
+
+    @property
+    def center_frequency(self):
+        """Gets the center_frequency of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+
+
+        :return: The center_frequency of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+        :rtype: DimensionalFrequency
+        """
+        return self._center_frequency
+
+    @center_frequency.setter
+    def center_frequency(self, center_frequency):
+        """Sets the center_frequency of this OneOfSolidSimulationControlEigenfrequencyScope.
+
+
+        :param center_frequency: The center_frequency of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+        :type: DimensionalFrequency
+        """
+
+        self._center_frequency = center_frequency
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

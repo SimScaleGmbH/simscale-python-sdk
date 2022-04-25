@@ -58,7 +58,7 @@ class FirstMode(object):
     def type(self):
         """Gets the type of this FirstMode.  # noqa: E501
 
-        <p>Select how you want to control natural frequencies to be computed:</p> <li><i>First modes</i>: The first <i>Number of modes</i> will be searched and computed, in the order of low to high frequency.</li><li><i>Frequency range</i>: All the modes within the range of frequencies will be searched and computed. The frequency range is specified by a <i>Start frequency</i> and an <i>End frequency</i>.</li>  Schema name: FirstMode  # noqa: E501
+        Schema name: FirstMode  # noqa: E501
 
         :return: The type of this FirstMode.  # noqa: E501
         :rtype: str
@@ -69,7 +69,7 @@ class FirstMode(object):
     def type(self, type):
         """Sets the type of this FirstMode.
 
-        <p>Select how you want to control natural frequencies to be computed:</p> <li><i>First modes</i>: The first <i>Number of modes</i> will be searched and computed, in the order of low to high frequency.</li><li><i>Frequency range</i>: All the modes within the range of frequencies will be searched and computed. The frequency range is specified by a <i>Start frequency</i> and an <i>End frequency</i>.</li>  Schema name: FirstMode  # noqa: E501
+        Schema name: FirstMode  # noqa: E501
 
         :param type: The type of this FirstMode.  # noqa: E501
         :type: str
@@ -83,6 +83,7 @@ class FirstMode(object):
     def number_of_modes(self):
         """Gets the number_of_modes of this FirstMode.  # noqa: E501
 
+        <p>Define the maximum number of eigenfrequencies/eigenmodes, that should be calculated.</p>  # noqa: E501
 
         :return: The number_of_modes of this FirstMode.  # noqa: E501
         :rtype: int
@@ -93,10 +94,14 @@ class FirstMode(object):
     def number_of_modes(self, number_of_modes):
         """Sets the number_of_modes of this FirstMode.
 
+        <p>Define the maximum number of eigenfrequencies/eigenmodes, that should be calculated.</p>  # noqa: E501
 
         :param number_of_modes: The number_of_modes of this FirstMode.  # noqa: E501
         :type: int
         """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_modes is not None and number_of_modes < 1):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_modes`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._number_of_modes = number_of_modes
 

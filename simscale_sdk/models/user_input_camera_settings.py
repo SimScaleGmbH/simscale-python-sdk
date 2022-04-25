@@ -36,7 +36,8 @@ class UserInputCameraSettings(object):
         'up': 'Vector3D',
         'eye': 'Vector3D',
         'center': 'Vector3D',
-        'front_plane_frustum_height': 'float'
+        'front_plane_frustum_height': 'float',
+        'field_of_view_y_degrees': 'float'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class UserInputCameraSettings(object):
         'up': 'up',
         'eye': 'eye',
         'center': 'center',
-        'front_plane_frustum_height': 'frontPlaneFrustumHeight'
+        'front_plane_frustum_height': 'frontPlaneFrustumHeight',
+        'field_of_view_y_degrees': 'fieldOfViewYDegrees'
     }
 
-    def __init__(self, setting_type='USER_INPUT', projection_type=None, up=None, eye=None, center=None, front_plane_frustum_height=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, setting_type='USER_INPUT', projection_type=None, up=None, eye=None, center=None, front_plane_frustum_height=None, field_of_view_y_degrees=None, local_vars_configuration=None):  # noqa: E501
         """UserInputCameraSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class UserInputCameraSettings(object):
         self._eye = None
         self._center = None
         self._front_plane_frustum_height = None
+        self._field_of_view_y_degrees = None
         self.discriminator = None
 
         self.setting_type = setting_type
@@ -69,6 +72,8 @@ class UserInputCameraSettings(object):
         self.center = center
         if front_plane_frustum_height is not None:
             self.front_plane_frustum_height = front_plane_frustum_height
+        if field_of_view_y_degrees is not None:
+            self.field_of_view_y_degrees = field_of_view_y_degrees
 
     @property
     def setting_type(self):
@@ -189,7 +194,7 @@ class UserInputCameraSettings(object):
     def front_plane_frustum_height(self):
         """Gets the front_plane_frustum_height of this UserInputCameraSettings.  # noqa: E501
 
-        required only for orthogonal projection type  # noqa: E501
+        required only for orthogonal projection type.  # noqa: E501
 
         :return: The front_plane_frustum_height of this UserInputCameraSettings.  # noqa: E501
         :rtype: float
@@ -200,7 +205,7 @@ class UserInputCameraSettings(object):
     def front_plane_frustum_height(self, front_plane_frustum_height):
         """Sets the front_plane_frustum_height of this UserInputCameraSettings.
 
-        required only for orthogonal projection type  # noqa: E501
+        required only for orthogonal projection type.  # noqa: E501
 
         :param front_plane_frustum_height: The front_plane_frustum_height of this UserInputCameraSettings.  # noqa: E501
         :type: float
@@ -210,6 +215,32 @@ class UserInputCameraSettings(object):
             raise ValueError("Invalid value for `front_plane_frustum_height`, must be a value greater than or equal to `0.0`")  # noqa: E501
 
         self._front_plane_frustum_height = front_plane_frustum_height
+
+    @property
+    def field_of_view_y_degrees(self):
+        """Gets the field_of_view_y_degrees of this UserInputCameraSettings.  # noqa: E501
+
+        The total field of view in Y direction in degrees. Required onlyf for perspective projection type.  # noqa: E501
+
+        :return: The field_of_view_y_degrees of this UserInputCameraSettings.  # noqa: E501
+        :rtype: float
+        """
+        return self._field_of_view_y_degrees
+
+    @field_of_view_y_degrees.setter
+    def field_of_view_y_degrees(self, field_of_view_y_degrees):
+        """Sets the field_of_view_y_degrees of this UserInputCameraSettings.
+
+        The total field of view in Y direction in degrees. Required onlyf for perspective projection type.  # noqa: E501
+
+        :param field_of_view_y_degrees: The field_of_view_y_degrees of this UserInputCameraSettings.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                field_of_view_y_degrees is not None and field_of_view_y_degrees < 0.0):  # noqa: E501
+            raise ValueError("Invalid value for `field_of_view_y_degrees`, must be a value greater than or equal to `0.0`")  # noqa: E501
+
+        self._field_of_view_y_degrees = field_of_view_y_degrees
 
     def to_dict(self):
         """Returns the model properties as a dict"""

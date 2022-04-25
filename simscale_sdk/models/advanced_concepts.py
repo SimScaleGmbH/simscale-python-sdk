@@ -35,7 +35,7 @@ class AdvancedConcepts(object):
         'porous_mediums': 'list[OneOfAdvancedConceptsPorousMediums]',
         'solid_body_motions': 'list[OneOfAdvancedConceptsSolidBodyMotions]',
         'power_sources': 'list[OneOfAdvancedConceptsPowerSources]',
-        'momentum_sources': 'list[AverageVelocityMomentumSource]',
+        'momentum_sources': 'list[OneOfAdvancedConceptsMomentumSources]',
         'passive_scalar_sources': 'list[OneOfAdvancedConceptsPassiveScalarSources]',
         'thermal_resistance_networks': 'list[OneOfAdvancedConceptsThermalResistanceNetworks]'
     }
@@ -170,7 +170,7 @@ class AdvancedConcepts(object):
 
 
         :return: The momentum_sources of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[AverageVelocityMomentumSource]
+        :rtype: list[OneOfAdvancedConceptsMomentumSources]
         """
         return self._momentum_sources
 
@@ -180,7 +180,7 @@ class AdvancedConcepts(object):
 
 
         :param momentum_sources: The momentum_sources of this AdvancedConcepts.  # noqa: E501
-        :type: list[AverageVelocityMomentumSource]
+        :type: list[OneOfAdvancedConceptsMomentumSources]
         """
 
         self._momentum_sources = momentum_sources
