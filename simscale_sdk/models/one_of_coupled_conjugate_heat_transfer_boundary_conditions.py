@@ -42,10 +42,10 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'net_radiative_heat_flux': 'OneOfNaturalConvectionInletOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OpenBoundaryRayBC',
         'topological_reference': 'TopologicalReference',
-        'pressure': 'OneOfPressureOutletBCPressure',
+        'pressure': 'FanPBC',
         'pressure_rgh': 'AmbientPBC',
-        'gauge_pressure': 'OneOfPressureOutletBCGaugePressure',
-        'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh'
+        'gauge_pressure': 'FanPBC',
+        'gauge_pressure_rgh': 'FanPBC'
     }
 
     attribute_map = {
@@ -70,6 +70,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'VELOCITY_INLET_V3': 'VelocityInletBC',
         'PRESSURE_OUTLET_V30': 'PressureOutletBC',
         'WALL_V34': 'WallBC',
+        'FAN': 'FanBC',
         'SYMMETRY': 'SymmetryBC',
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
@@ -370,7 +371,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
 
         :return: The pressure of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: OneOfPressureOutletBCPressure
+        :rtype: FanPBC
         """
         return self._pressure
 
@@ -380,7 +381,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
 
         :param pressure: The pressure of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :type: OneOfPressureOutletBCPressure
+        :type: FanPBC
         """
 
         self._pressure = pressure
@@ -412,7 +413,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
 
         :return: The gauge_pressure of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: OneOfPressureOutletBCGaugePressure
+        :rtype: FanPBC
         """
         return self._gauge_pressure
 
@@ -422,7 +423,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
 
         :param gauge_pressure: The gauge_pressure of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :type: OneOfPressureOutletBCGaugePressure
+        :type: FanPBC
         """
 
         self._gauge_pressure = gauge_pressure
@@ -433,7 +434,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
 
         :return: The gauge_pressure_rgh of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: OneOfPressureOutletBCGaugePressureRgh
+        :rtype: FanPBC
         """
         return self._gauge_pressure_rgh
 
@@ -443,7 +444,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
 
         :param gauge_pressure_rgh: The gauge_pressure_rgh of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :type: OneOfPressureOutletBCGaugePressureRgh
+        :type: FanPBC
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh

@@ -71,10 +71,11 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         'VELOCITY_OUTLET_V7': 'VelocityOutletBC',
         'PRESSURE_INLET_V31': 'PressureInletBC',
         'PRESSURE_OUTLET_V30': 'PressureOutletBC',
-        'WALL_V34': 'WallBC'
+        'WALL_V34': 'WallBC',
+        'SYMMETRY': 'SymmetryBC'
     }
 
-    def __init__(self, type='WALL_V34', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SYMMETRY', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimericsAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -131,7 +132,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
     def type(self):
         """Gets the type of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
 
-        <p>This boundary provides several Solid Wall conditions.</P>The default <b>no-slip</b> corresponds to friction wall with no movement. The <b>slip wall</b> models a surface with no friction. The <b>rotating/moving wall</b> model wall movement by prescribing velocities. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/wall/' target='_blank'>Learn more</a>.  Schema name: WallBC  # noqa: E501
+        This boundary condition provides a symmetry condition on any face by applying a mirror effect. The fluxes and the normal components across the symmetry face are set to zero. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/' target='_blank'>Learn more</a>.  Schema name: SymmetryBC  # noqa: E501
 
         :return: The type of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -142,7 +143,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfSimericsAnalysisBoundaryConditions.
 
-        <p>This boundary provides several Solid Wall conditions.</P>The default <b>no-slip</b> corresponds to friction wall with no movement. The <b>slip wall</b> models a surface with no friction. The <b>rotating/moving wall</b> model wall movement by prescribing velocities. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/wall/' target='_blank'>Learn more</a>.  Schema name: WallBC  # noqa: E501
+        This boundary condition provides a symmetry condition on any face by applying a mirror effect. The fluxes and the normal components across the symmetry face are set to zero. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/symmetry/' target='_blank'>Learn more</a>.  Schema name: SymmetryBC  # noqa: E501
 
         :param type: The type of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
         :type: str

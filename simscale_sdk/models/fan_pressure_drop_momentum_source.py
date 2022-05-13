@@ -35,6 +35,7 @@ class FanPressureDropMomentumSource(object):
         'name': 'str',
         'fan_direction': 'DimensionalVectorDimensionless',
         'fan_pressure': 'DimensionalFunctionPressure',
+        'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
 
@@ -43,10 +44,11 @@ class FanPressureDropMomentumSource(object):
         'name': 'name',
         'fan_direction': 'fanDirection',
         'fan_pressure': 'fanPressure',
+        'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='FAN_PRESSURE_DROP', name=None, fan_direction=None, fan_pressure=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FAN_PRESSURE_DROP', name=None, fan_direction=None, fan_pressure=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """FanPressureDropMomentumSource - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class FanPressureDropMomentumSource(object):
         self._name = None
         self._fan_direction = None
         self._fan_pressure = None
+        self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
 
@@ -66,6 +69,8 @@ class FanPressureDropMomentumSource(object):
             self.fan_direction = fan_direction
         if fan_pressure is not None:
             self.fan_pressure = fan_pressure
+        if topological_reference is not None:
+            self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
 
@@ -156,6 +161,27 @@ class FanPressureDropMomentumSource(object):
         """
 
         self._fan_pressure = fan_pressure
+
+    @property
+    def topological_reference(self):
+        """Gets the topological_reference of this FanPressureDropMomentumSource.  # noqa: E501
+
+
+        :return: The topological_reference of this FanPressureDropMomentumSource.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._topological_reference
+
+    @topological_reference.setter
+    def topological_reference(self, topological_reference):
+        """Sets the topological_reference of this FanPressureDropMomentumSource.
+
+
+        :param topological_reference: The topological_reference of this FanPressureDropMomentumSource.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._topological_reference = topological_reference
 
     @property
     def geometry_primitive_uuids(self):

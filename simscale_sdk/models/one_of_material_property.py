@@ -32,6 +32,7 @@ class OneOfMaterialProperty(object):
     """
     openapi_types = {
         'name': 'str',
+        'label': 'str',
         'unit': 'str',
         'value_type': 'str',
         'data_type': 'PropertyDataType',
@@ -42,6 +43,7 @@ class OneOfMaterialProperty(object):
 
     attribute_map = {
         'name': 'name',
+        'label': 'label',
         'unit': 'unit',
         'value_type': 'valueType',
         'data_type': 'dataType',
@@ -55,13 +57,14 @@ class OneOfMaterialProperty(object):
         'parametric': 'ParametricMaterialProperty'
     }
 
-    def __init__(self, name=None, unit=None, value_type='parametric', data_type=None, value=None, parameters=None, parametric_values=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, label=None, unit=None, value_type='parametric', data_type=None, value=None, parameters=None, parametric_values=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMaterialProperty - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
+        self._label = None
         self._unit = None
         self._value_type = None
         self._data_type = None
@@ -72,6 +75,8 @@ class OneOfMaterialProperty(object):
 
         if name is not None:
             self.name = name
+        if label is not None:
+            self.label = label
         if unit is not None:
             self.unit = unit
         self.value_type = value_type
@@ -104,6 +109,29 @@ class OneOfMaterialProperty(object):
         """
 
         self._name = name
+
+    @property
+    def label(self):
+        """Gets the label of this OneOfMaterialProperty.  # noqa: E501
+
+        The material property label to support internationalization. The content of this field is a i18n key. If this field is not present, the name field can be used as a fallback for English language.  # noqa: E501
+
+        :return: The label of this OneOfMaterialProperty.  # noqa: E501
+        :rtype: str
+        """
+        return self._label
+
+    @label.setter
+    def label(self, label):
+        """Sets the label of this OneOfMaterialProperty.
+
+        The material property label to support internationalization. The content of this field is a i18n key. If this field is not present, the name field can be used as a fallback for English language.  # noqa: E501
+
+        :param label: The label of this OneOfMaterialProperty.  # noqa: E501
+        :type: str
+        """
+
+        self._label = label
 
     @property
     def unit(self):

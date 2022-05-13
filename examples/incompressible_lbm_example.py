@@ -23,18 +23,24 @@ from simscale_sdk import TopologicalReference, VelocityInletBC, ConstantFunction
 from simscale_sdk import UserInputCameraSettings, ProjectionType, Vector3D, ModelSettings, Part, ScalarField, \
     ScreenshotOutputSettings, Color, ResolutionInfo, ScreenshotReportProperties, ReportRequest
 
+# Check that the environment variables are set
 if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
     raise Exception("Either `SIMSCALE_API_KEY` or `SIMSCALE_API_URL` environment variable is missing.")
 
 # API client configuration
-api_key_header = "X-API-KEY"
 api_key = os.getenv("SIMSCALE_API_KEY")
+api_url = os.getenv("SIMSCALE_API_URL")
+api_key_header = "X-API-KEY"
+
 configuration = Configuration()
-configuration.host = os.getenv("SIMSCALE_API_URL") + "/v0"
+configuration.debug = True
+configuration.host = api_url + "/v0"
 configuration.api_key = {
-    api_key_header: api_key,
+    api_key_header: api_key
 }
+
 api_client = ApiClient(configuration)
+
 retry_policy = urllib3.Retry(connect=5, read=5, redirect=0, status=5, backoff_factor=0.2)
 api_client.rest_client.pool_manager.connection_pool_kw["retries"] = retry_policy
 

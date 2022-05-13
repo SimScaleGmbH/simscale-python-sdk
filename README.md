@@ -6,12 +6,12 @@ API access is currently part of our paid Enterprise plan. However, if you have a
 
 Python >= 3.6
 
-## Installation & Usage
+## Installation
 ### pip install
 
 You can install the Python package directly from the hosted git repository.
 
-To install the lastest version:
+To install the latest version:
 
 ```sh
 pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git
@@ -42,17 +42,80 @@ Then import the package:
 import simscale_sdk
 ```
 
+## Usage
+### API client configuration
+
+Authentication with the SimScale API is done using the `X-API-KEY` request header. You must initialize and configure a
+`simscale_sdk.ApiClient` object with the correct host, headers and API key information.
+
+As reference, the following snippet shows how to configure the API client using environment variables to store the API
+key and the target URL.
+
+```python
+import os
+from simscale_sdk import Configuration, ApiClient
+
+# API client configuration
+api_key = os.getenv("SIMSCALE_API_KEY")
+api_url = os.getenv("SIMSCALE_API_URL")
+api_key_header = "X-API-KEY"
+
+configuration = Configuration()
+configuration.host = api_url + "/v0"
+configuration.api_key = {
+    api_key_header: api_key
+}
+
+api_client = ApiClient(configuration)
+```
+
+You must then pass this object to initialize the domain-specific clients that will perform the API operations. For example:
+
+```python
+# API clients
+project_api = ProjectsApi(api_client)
+geometry_api = GeometriesApi(api_client)
+mesh_operation_api = MeshOperationsApi(api_client)
+simulation_api = SimulationsApi(api_client)
+```
+
 ## Examples
 
 The `examples` folder contains executable code examples to demonstrate how the SDK can be used.
 
-In order to run them the following environment variables need to be set:
+In order to run them, the following environment variables need to be set:
 
-```
+| Name               | Value                      |
+|--------------------|----------------------------|
+| `SIMSCALE_API_URL` | `https://api.simscale.com` |
+| `SIMSCALE_API_KEY` | `your-api-key`             |
+
+### Set environment variables
+
+This section explains how to set environment variables for the current terminal session only. This means that the
+variables will not be accessible if you use a different terminal to run the examples.
+
+#### Linux/macOS
+Run:
+```sh
 export SIMSCALE_API_URL="https://api.simscale.com"
 export SIMSCALE_API_KEY="your-api-key"
 ```
 
-## Documentation
+#### Windows CMD
+Run:
+```console
+set SIMSCALE_API_URL="https://api.simscale.com"
+set SIMSCALE_API_KEY="your-api-key"
+```
+
+#### Windows PowerShell
+Run:
+```powershell
+$env:SIMSCALE_API_URL="https://api.simscale.com"
+$env:SIMSCALE_API_KEY="your-api-key"
+```
+
+## SDK Documentation
 
 SDK documentation can be found in https://simscalegmbh.github.io/simscale-python-sdk/

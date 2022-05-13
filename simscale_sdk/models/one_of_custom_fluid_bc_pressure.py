@@ -35,8 +35,8 @@ class OneOfCustomFluidBCPressure(object):
         'relax_boundary': 'bool',
         'far_field_value': 'DimensionalPressure',
         'relaxation_length_scale': 'DimensionalLength',
-        'fan_pressure': 'DimensionalFunctionPressure',
         'direction': 'str',
+        'fan_pressure': 'DimensionalFunctionPressure',
         'environmental_total_pressure': 'DimensionalPressure',
         'gradient': 'DimensionalForceDensity',
         'value': 'DimensionalPressure',
@@ -49,8 +49,8 @@ class OneOfCustomFluidBCPressure(object):
         'relax_boundary': 'relaxBoundary',
         'far_field_value': 'farFieldValue',
         'relaxation_length_scale': 'relaxationLengthScale',
-        'fan_pressure': 'fanPressure',
         'direction': 'direction',
+        'fan_pressure': 'fanPressure',
         'environmental_total_pressure': 'environmentalTotalPressure',
         'gradient': 'gradient',
         'value': 'value',
@@ -71,7 +71,7 @@ class OneOfCustomFluidBCPressure(object):
         'WAVE_TRANSMISSIVE': 'WaveTransmissivePBC'
     }
 
-    def __init__(self, type='WAVE_TRANSMISSIVE', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, fan_pressure=None, direction=None, environmental_total_pressure=None, gradient=None, value=None, total_pressure=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='WAVE_TRANSMISSIVE', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, direction=None, fan_pressure=None, environmental_total_pressure=None, gradient=None, value=None, total_pressure=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCPressure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,8 +81,8 @@ class OneOfCustomFluidBCPressure(object):
         self._relax_boundary = None
         self._far_field_value = None
         self._relaxation_length_scale = None
-        self._fan_pressure = None
         self._direction = None
+        self._fan_pressure = None
         self._environmental_total_pressure = None
         self._gradient = None
         self._value = None
@@ -97,10 +97,10 @@ class OneOfCustomFluidBCPressure(object):
             self.far_field_value = far_field_value
         if relaxation_length_scale is not None:
             self.relaxation_length_scale = relaxation_length_scale
-        if fan_pressure is not None:
-            self.fan_pressure = fan_pressure
         if direction is not None:
             self.direction = direction
+        if fan_pressure is not None:
+            self.fan_pressure = fan_pressure
         if environmental_total_pressure is not None:
             self.environmental_total_pressure = environmental_total_pressure
         if gradient is not None:
@@ -201,27 +201,6 @@ class OneOfCustomFluidBCPressure(object):
         self._relaxation_length_scale = relaxation_length_scale
 
     @property
-    def fan_pressure(self):
-        """Gets the fan_pressure of this OneOfCustomFluidBCPressure.  # noqa: E501
-
-
-        :return: The fan_pressure of this OneOfCustomFluidBCPressure.  # noqa: E501
-        :rtype: DimensionalFunctionPressure
-        """
-        return self._fan_pressure
-
-    @fan_pressure.setter
-    def fan_pressure(self, fan_pressure):
-        """Sets the fan_pressure of this OneOfCustomFluidBCPressure.
-
-
-        :param fan_pressure: The fan_pressure of this OneOfCustomFluidBCPressure.  # noqa: E501
-        :type: DimensionalFunctionPressure
-        """
-
-        self._fan_pressure = fan_pressure
-
-    @property
     def direction(self):
         """Gets the direction of this OneOfCustomFluidBCPressure.  # noqa: E501
 
@@ -247,6 +226,27 @@ class OneOfCustomFluidBCPressure(object):
             )
 
         self._direction = direction
+
+    @property
+    def fan_pressure(self):
+        """Gets the fan_pressure of this OneOfCustomFluidBCPressure.  # noqa: E501
+
+
+        :return: The fan_pressure of this OneOfCustomFluidBCPressure.  # noqa: E501
+        :rtype: DimensionalFunctionPressure
+        """
+        return self._fan_pressure
+
+    @fan_pressure.setter
+    def fan_pressure(self, fan_pressure):
+        """Sets the fan_pressure of this OneOfCustomFluidBCPressure.
+
+
+        :param fan_pressure: The fan_pressure of this OneOfCustomFluidBCPressure.  # noqa: E501
+        :type: DimensionalFunctionPressure
+        """
+
+        self._fan_pressure = fan_pressure
 
     @property
     def environmental_total_pressure(self):

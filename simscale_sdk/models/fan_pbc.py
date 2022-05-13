@@ -32,35 +32,35 @@ class FanPBC(object):
     """
     openapi_types = {
         'type': 'str',
-        'fan_pressure': 'DimensionalFunctionPressure',
         'direction': 'str',
+        'fan_pressure': 'DimensionalFunctionPressure',
         'environmental_total_pressure': 'DimensionalPressure'
     }
 
     attribute_map = {
         'type': 'type',
-        'fan_pressure': 'fanPressure',
         'direction': 'direction',
+        'fan_pressure': 'fanPressure',
         'environmental_total_pressure': 'environmentalTotalPressure'
     }
 
-    def __init__(self, type='FAN_PRESSURE', fan_pressure=None, direction=None, environmental_total_pressure=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FAN_PRESSURE', direction=None, fan_pressure=None, environmental_total_pressure=None, local_vars_configuration=None):  # noqa: E501
         """FanPBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._fan_pressure = None
         self._direction = None
+        self._fan_pressure = None
         self._environmental_total_pressure = None
         self.discriminator = None
 
         self.type = type
-        if fan_pressure is not None:
-            self.fan_pressure = fan_pressure
         if direction is not None:
             self.direction = direction
+        if fan_pressure is not None:
+            self.fan_pressure = fan_pressure
         if environmental_total_pressure is not None:
             self.environmental_total_pressure = environmental_total_pressure
 
@@ -90,27 +90,6 @@ class FanPBC(object):
         self._type = type
 
     @property
-    def fan_pressure(self):
-        """Gets the fan_pressure of this FanPBC.  # noqa: E501
-
-
-        :return: The fan_pressure of this FanPBC.  # noqa: E501
-        :rtype: DimensionalFunctionPressure
-        """
-        return self._fan_pressure
-
-    @fan_pressure.setter
-    def fan_pressure(self, fan_pressure):
-        """Sets the fan_pressure of this FanPBC.
-
-
-        :param fan_pressure: The fan_pressure of this FanPBC.  # noqa: E501
-        :type: DimensionalFunctionPressure
-        """
-
-        self._fan_pressure = fan_pressure
-
-    @property
     def direction(self):
         """Gets the direction of this FanPBC.  # noqa: E501
 
@@ -136,6 +115,27 @@ class FanPBC(object):
             )
 
         self._direction = direction
+
+    @property
+    def fan_pressure(self):
+        """Gets the fan_pressure of this FanPBC.  # noqa: E501
+
+
+        :return: The fan_pressure of this FanPBC.  # noqa: E501
+        :rtype: DimensionalFunctionPressure
+        """
+        return self._fan_pressure
+
+    @fan_pressure.setter
+    def fan_pressure(self, fan_pressure):
+        """Sets the fan_pressure of this FanPBC.
+
+
+        :param fan_pressure: The fan_pressure of this FanPBC.  # noqa: E501
+        :type: DimensionalFunctionPressure
+        """
+
+        self._fan_pressure = fan_pressure
 
     @property
     def environmental_total_pressure(self):

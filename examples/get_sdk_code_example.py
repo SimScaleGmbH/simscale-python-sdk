@@ -14,18 +14,22 @@ from simscale_sdk import WindComfort, RegionOfInterest, DimensionalLength, Dimen
     TransientResultControl, CoarseResolution, StatisticalAveragingResultControlV2, PacefishFinenessVeryCoarse, \
     WindComfortMesh
 
+# Check that the environment variables are set
 if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
     raise Exception("Either `SIMSCALE_API_KEY` or `SIMSCALE_API_URL` environment variable is missing.")
 
 # API client configuration
-api_key_header = "X-API-KEY"
 api_key = os.getenv("SIMSCALE_API_KEY")
+api_url = os.getenv("SIMSCALE_API_URL")
+api_key_header = "X-API-KEY"
+
 configuration = Configuration()
-configuration.host = os.getenv("SIMSCALE_API_URL") + "/v0"
-configuration.api_key = {
-    api_key_header: api_key,
-}
 configuration.debug = True
+configuration.host = api_url + "/v0"
+configuration.api_key = {
+    api_key_header: api_key
+}
+
 api_client = ApiClient(configuration)
 
 # API clients
@@ -135,7 +139,7 @@ def create_simulation(name):
         ),
         mesh_settings=WindComfortMesh(wind_comfort_fineness=PacefishFinenessVeryCoarse()),
     )
-    simulation_spec = SimulationSpec(name=f"Pedestrian Wind Comfort {name}", geometry_id=geometry_id, model=model)
+    simulation_spec = SimulationSpec(name=f"Pedestrian Wind Comfort {name}", version="10.0", geometry_id=geometry_id, model=model)
 
     # Create simulation
     simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id

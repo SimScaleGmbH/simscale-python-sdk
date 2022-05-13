@@ -34,6 +34,7 @@ class PacefishAutomesh(object):
         'type': 'str',
         'new_fineness': 'OneOfPacefishAutomeshNewFineness',
         'reference_length_computation': 'OneOfPacefishAutomeshReferenceLengthComputation',
+        'reynolds_scaling_type': 'OneOfPacefishAutomeshReynoldsScalingType',
         'primary_topology': 'OneOfPacefishAutomeshPrimaryTopology',
         'refinements': 'list[OneOfPacefishAutomeshRefinements]'
     }
@@ -42,11 +43,12 @@ class PacefishAutomesh(object):
         'type': 'type',
         'new_fineness': 'newFineness',
         'reference_length_computation': 'referenceLengthComputation',
+        'reynolds_scaling_type': 'reynoldsScalingType',
         'primary_topology': 'primaryTopology',
         'refinements': 'refinements'
     }
 
-    def __init__(self, type='PACEFISH_AUTOMESH', new_fineness=None, reference_length_computation=None, primary_topology=None, refinements=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PACEFISH_AUTOMESH', new_fineness=None, reference_length_computation=None, reynolds_scaling_type=None, primary_topology=None, refinements=None, local_vars_configuration=None):  # noqa: E501
         """PacefishAutomesh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,6 +57,7 @@ class PacefishAutomesh(object):
         self._type = None
         self._new_fineness = None
         self._reference_length_computation = None
+        self._reynolds_scaling_type = None
         self._primary_topology = None
         self._refinements = None
         self.discriminator = None
@@ -64,6 +67,8 @@ class PacefishAutomesh(object):
             self.new_fineness = new_fineness
         if reference_length_computation is not None:
             self.reference_length_computation = reference_length_computation
+        if reynolds_scaling_type is not None:
+            self.reynolds_scaling_type = reynolds_scaling_type
         if primary_topology is not None:
             self.primary_topology = primary_topology
         if refinements is not None:
@@ -135,6 +140,27 @@ class PacefishAutomesh(object):
         """
 
         self._reference_length_computation = reference_length_computation
+
+    @property
+    def reynolds_scaling_type(self):
+        """Gets the reynolds_scaling_type of this PacefishAutomesh.  # noqa: E501
+
+
+        :return: The reynolds_scaling_type of this PacefishAutomesh.  # noqa: E501
+        :rtype: OneOfPacefishAutomeshReynoldsScalingType
+        """
+        return self._reynolds_scaling_type
+
+    @reynolds_scaling_type.setter
+    def reynolds_scaling_type(self, reynolds_scaling_type):
+        """Sets the reynolds_scaling_type of this PacefishAutomesh.
+
+
+        :param reynolds_scaling_type: The reynolds_scaling_type of this PacefishAutomesh.  # noqa: E501
+        :type: OneOfPacefishAutomeshReynoldsScalingType
+        """
+
+        self._reynolds_scaling_type = reynolds_scaling_type
 
     @property
     def primary_topology(self):

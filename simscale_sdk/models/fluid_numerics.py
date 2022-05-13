@@ -43,15 +43,14 @@ class FluidNumerics(object):
         'damping_coefficient': 'float',
         'num_alpha_spread_iterations': 'int',
         'num_alpha_sweep_iterations': 'int',
-        'min_density': 'DimensionalDensity',
-        'max_density': 'DimensionalDensity',
         'evaluate_turbulence_only_on_final_iteration': 'bool',
         'pressure_reference_cell': 'int',
         'pressure_reference_value': 'DimensionalPressure',
         'velocity_limit': 'DimensionalSpeed',
         'residual_controls': 'ResidualControls',
         'solvers': 'FluidSolvers',
-        'schemes': 'Schemes'
+        'schemes': 'Schemes',
+        'stabilization': 'Stabilization'
     }
 
     attribute_map = {
@@ -67,18 +66,17 @@ class FluidNumerics(object):
         'damping_coefficient': 'dampingCoefficient',
         'num_alpha_spread_iterations': 'numAlphaSpreadIterations',
         'num_alpha_sweep_iterations': 'numAlphaSweepIterations',
-        'min_density': 'minDensity',
-        'max_density': 'maxDensity',
         'evaluate_turbulence_only_on_final_iteration': 'evaluateTurbulenceOnlyOnFinalIteration',
         'pressure_reference_cell': 'pressureReferenceCell',
         'pressure_reference_value': 'pressureReferenceValue',
         'velocity_limit': 'velocityLimit',
         'residual_controls': 'residualControls',
         'solvers': 'solvers',
-        'schemes': 'schemes'
+        'schemes': 'schemes',
+        'stabilization': 'stabilization'
     }
 
-    def __init__(self, relaxation_type=None, relaxation_factor=None, radiation_resolution=None, momentum_predictor=None, transonic=None, num_outer_correctors=None, num_correctors=None, num_non_orthogonal_correctors=None, smoothing_parameter=None, damping_coefficient=None, num_alpha_spread_iterations=None, num_alpha_sweep_iterations=None, min_density=None, max_density=None, evaluate_turbulence_only_on_final_iteration=None, pressure_reference_cell=None, pressure_reference_value=None, velocity_limit=None, residual_controls=None, solvers=None, schemes=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, relaxation_type=None, relaxation_factor=None, radiation_resolution=None, momentum_predictor=None, transonic=None, num_outer_correctors=None, num_correctors=None, num_non_orthogonal_correctors=None, smoothing_parameter=None, damping_coefficient=None, num_alpha_spread_iterations=None, num_alpha_sweep_iterations=None, evaluate_turbulence_only_on_final_iteration=None, pressure_reference_cell=None, pressure_reference_value=None, velocity_limit=None, residual_controls=None, solvers=None, schemes=None, stabilization=None, local_vars_configuration=None):  # noqa: E501
         """FluidNumerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,8 +94,6 @@ class FluidNumerics(object):
         self._damping_coefficient = None
         self._num_alpha_spread_iterations = None
         self._num_alpha_sweep_iterations = None
-        self._min_density = None
-        self._max_density = None
         self._evaluate_turbulence_only_on_final_iteration = None
         self._pressure_reference_cell = None
         self._pressure_reference_value = None
@@ -105,6 +101,7 @@ class FluidNumerics(object):
         self._residual_controls = None
         self._solvers = None
         self._schemes = None
+        self._stabilization = None
         self.discriminator = None
 
         if relaxation_type is not None:
@@ -131,10 +128,6 @@ class FluidNumerics(object):
             self.num_alpha_spread_iterations = num_alpha_spread_iterations
         if num_alpha_sweep_iterations is not None:
             self.num_alpha_sweep_iterations = num_alpha_sweep_iterations
-        if min_density is not None:
-            self.min_density = min_density
-        if max_density is not None:
-            self.max_density = max_density
         if evaluate_turbulence_only_on_final_iteration is not None:
             self.evaluate_turbulence_only_on_final_iteration = evaluate_turbulence_only_on_final_iteration
         if pressure_reference_cell is not None:
@@ -149,6 +142,8 @@ class FluidNumerics(object):
             self.solvers = solvers
         if schemes is not None:
             self.schemes = schemes
+        if stabilization is not None:
+            self.stabilization = stabilization
 
     @property
     def relaxation_type(self):
@@ -444,48 +439,6 @@ class FluidNumerics(object):
         self._num_alpha_sweep_iterations = num_alpha_sweep_iterations
 
     @property
-    def min_density(self):
-        """Gets the min_density of this FluidNumerics.  # noqa: E501
-
-
-        :return: The min_density of this FluidNumerics.  # noqa: E501
-        :rtype: DimensionalDensity
-        """
-        return self._min_density
-
-    @min_density.setter
-    def min_density(self, min_density):
-        """Sets the min_density of this FluidNumerics.
-
-
-        :param min_density: The min_density of this FluidNumerics.  # noqa: E501
-        :type: DimensionalDensity
-        """
-
-        self._min_density = min_density
-
-    @property
-    def max_density(self):
-        """Gets the max_density of this FluidNumerics.  # noqa: E501
-
-
-        :return: The max_density of this FluidNumerics.  # noqa: E501
-        :rtype: DimensionalDensity
-        """
-        return self._max_density
-
-    @max_density.setter
-    def max_density(self, max_density):
-        """Sets the max_density of this FluidNumerics.
-
-
-        :param max_density: The max_density of this FluidNumerics.  # noqa: E501
-        :type: DimensionalDensity
-        """
-
-        self._max_density = max_density
-
-    @property
     def evaluate_turbulence_only_on_final_iteration(self):
         """Gets the evaluate_turbulence_only_on_final_iteration of this FluidNumerics.  # noqa: E501
 
@@ -636,6 +589,27 @@ class FluidNumerics(object):
         """
 
         self._schemes = schemes
+
+    @property
+    def stabilization(self):
+        """Gets the stabilization of this FluidNumerics.  # noqa: E501
+
+
+        :return: The stabilization of this FluidNumerics.  # noqa: E501
+        :rtype: Stabilization
+        """
+        return self._stabilization
+
+    @stabilization.setter
+    def stabilization(self, stabilization):
+        """Sets the stabilization of this FluidNumerics.
+
+
+        :param stabilization: The stabilization of this FluidNumerics.  # noqa: E501
+        :type: Stabilization
+        """
+
+        self._stabilization = stabilization
 
     def to_dict(self):
         """Returns the model properties as a dict"""

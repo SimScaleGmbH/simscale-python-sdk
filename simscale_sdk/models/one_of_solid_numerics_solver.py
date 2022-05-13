@@ -33,9 +33,6 @@ class OneOfSolidNumericsSolver(object):
     openapi_types = {
         'type': 'str',
         'force_symmetric': 'bool',
-        'preconditioner': 'OneOfPETSCSolverPreconditioner',
-        'max_iterations': 'int',
-        'convergence_threshold': 'float',
         'precision_singularity_detection': 'int',
         'stop_if_singular': 'bool',
         'matrix_type': 'str',
@@ -49,15 +46,15 @@ class OneOfSolidNumericsSolver(object):
         'distributed_matrix_storage': 'bool',
         'memory_management': 'str',
         'eliminate_lagrange_multipliers': 'bool',
-        'algorithm': 'str'
+        'algorithm': 'str',
+        'preconditioner': 'OneOfPETSCSolverPreconditioner',
+        'max_iterations': 'int',
+        'convergence_threshold': 'float'
     }
 
     attribute_map = {
         'type': 'type',
         'force_symmetric': 'forceSymmetric',
-        'preconditioner': 'preconditioner',
-        'max_iterations': 'maxIterations',
-        'convergence_threshold': 'convergenceThreshold',
         'precision_singularity_detection': 'precisionSingularityDetection',
         'stop_if_singular': 'stopIfSingular',
         'matrix_type': 'matrixType',
@@ -71,18 +68,20 @@ class OneOfSolidNumericsSolver(object):
         'distributed_matrix_storage': 'distributedMatrixStorage',
         'memory_management': 'memoryManagement',
         'eliminate_lagrange_multipliers': 'eliminateLagrangeMultipliers',
-        'algorithm': 'algorithm'
+        'algorithm': 'algorithm',
+        'preconditioner': 'preconditioner',
+        'max_iterations': 'maxIterations',
+        'convergence_threshold': 'convergenceThreshold'
     }
 
     discriminator_value_class_map = {
-        'GCPC': 'GCPCSolver',
         'LDLT_V33': 'LDLTSolverV33',
         'MUMPS': 'MUMPSSolver',
         'MULTIFRONT': 'MultifrontalSolver',
         'PETSC': 'PETSCSolver'
     }
 
-    def __init__(self, type='PETSC', force_symmetric=None, preconditioner=None, max_iterations=None, convergence_threshold=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, distributed_matrix_storage=None, memory_management=None, eliminate_lagrange_multipliers=None, algorithm=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PETSC', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, distributed_matrix_storage=None, memory_management=None, eliminate_lagrange_multipliers=None, algorithm=None, preconditioner=None, max_iterations=None, convergence_threshold=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidNumericsSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,9 +89,6 @@ class OneOfSolidNumericsSolver(object):
 
         self._type = None
         self._force_symmetric = None
-        self._preconditioner = None
-        self._max_iterations = None
-        self._convergence_threshold = None
         self._precision_singularity_detection = None
         self._stop_if_singular = None
         self._matrix_type = None
@@ -107,17 +103,14 @@ class OneOfSolidNumericsSolver(object):
         self._memory_management = None
         self._eliminate_lagrange_multipliers = None
         self._algorithm = None
+        self._preconditioner = None
+        self._max_iterations = None
+        self._convergence_threshold = None
         self.discriminator = 'type'
 
         self.type = type
         if force_symmetric is not None:
             self.force_symmetric = force_symmetric
-        if preconditioner is not None:
-            self.preconditioner = preconditioner
-        if max_iterations is not None:
-            self.max_iterations = max_iterations
-        if convergence_threshold is not None:
-            self.convergence_threshold = convergence_threshold
         if precision_singularity_detection is not None:
             self.precision_singularity_detection = precision_singularity_detection
         if stop_if_singular is not None:
@@ -146,6 +139,12 @@ class OneOfSolidNumericsSolver(object):
             self.eliminate_lagrange_multipliers = eliminate_lagrange_multipliers
         if algorithm is not None:
             self.algorithm = algorithm
+        if preconditioner is not None:
+            self.preconditioner = preconditioner
+        if max_iterations is not None:
+            self.max_iterations = max_iterations
+        if convergence_threshold is not None:
+            self.convergence_threshold = convergence_threshold
 
     @property
     def type(self):
@@ -194,79 +193,6 @@ class OneOfSolidNumericsSolver(object):
         """
 
         self._force_symmetric = force_symmetric
-
-    @property
-    def preconditioner(self):
-        """Gets the preconditioner of this OneOfSolidNumericsSolver.  # noqa: E501
-
-
-        :return: The preconditioner of this OneOfSolidNumericsSolver.  # noqa: E501
-        :rtype: OneOfPETSCSolverPreconditioner
-        """
-        return self._preconditioner
-
-    @preconditioner.setter
-    def preconditioner(self, preconditioner):
-        """Sets the preconditioner of this OneOfSolidNumericsSolver.
-
-
-        :param preconditioner: The preconditioner of this OneOfSolidNumericsSolver.  # noqa: E501
-        :type: OneOfPETSCSolverPreconditioner
-        """
-
-        self._preconditioner = preconditioner
-
-    @property
-    def max_iterations(self):
-        """Gets the max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
-
-        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
-
-        :return: The max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
-        :rtype: int
-        """
-        return self._max_iterations
-
-    @max_iterations.setter
-    def max_iterations(self, max_iterations):
-        """Sets the max_iterations of this OneOfSolidNumericsSolver.
-
-        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
-
-        :param max_iterations: The max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                max_iterations is not None and max_iterations < 0):  # noqa: E501
-            raise ValueError("Invalid value for `max_iterations`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._max_iterations = max_iterations
-
-    @property
-    def convergence_threshold(self):
-        """Gets the convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
-
-        Set the threshold value for convergence detection for the relative convergence criteria.  # noqa: E501
-
-        :return: The convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
-        :rtype: float
-        """
-        return self._convergence_threshold
-
-    @convergence_threshold.setter
-    def convergence_threshold(self, convergence_threshold):
-        """Sets the convergence_threshold of this OneOfSolidNumericsSolver.
-
-        Set the threshold value for convergence detection for the relative convergence criteria.  # noqa: E501
-
-        :param convergence_threshold: The convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
-        :type: float
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                convergence_threshold is not None and convergence_threshold < 0):  # noqa: E501
-            raise ValueError("Invalid value for `convergence_threshold`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._convergence_threshold = convergence_threshold
 
     @property
     def precision_singularity_detection(self):
@@ -370,7 +296,7 @@ class OneOfSolidNumericsSolver(object):
     def linear_system_relative_residual(self):
         """Gets the linear_system_relative_residual of this OneOfSolidNumericsSolver.  # noqa: E501
 
-        Choose a value for the maximum relative residual for each linear system resolution compared to the exact solution. In a nonlinear calculation the user can deactivate this check by selecting a negative value (for example, -1.0) since the quality of the solution is controlled within the Newton loop.  # noqa: E501
+        Set the maximum allowable numerical error in solving the linear equation system. Use -1 if you do not wish to carry out a check on the solution error (not recommended).  # noqa: E501
 
         :return: The linear_system_relative_residual of this OneOfSolidNumericsSolver.  # noqa: E501
         :rtype: float
@@ -381,7 +307,7 @@ class OneOfSolidNumericsSolver(object):
     def linear_system_relative_residual(self, linear_system_relative_residual):
         """Sets the linear_system_relative_residual of this OneOfSolidNumericsSolver.
 
-        Choose a value for the maximum relative residual for each linear system resolution compared to the exact solution. In a nonlinear calculation the user can deactivate this check by selecting a negative value (for example, -1.0) since the quality of the solution is controlled within the Newton loop.  # noqa: E501
+        Set the maximum allowable numerical error in solving the linear equation system. Use -1 if you do not wish to carry out a check on the solution error (not recommended).  # noqa: E501
 
         :param linear_system_relative_residual: The linear_system_relative_residual of this OneOfSolidNumericsSolver.  # noqa: E501
         :type: float
@@ -619,6 +545,79 @@ class OneOfSolidNumericsSolver(object):
             )
 
         self._algorithm = algorithm
+
+    @property
+    def preconditioner(self):
+        """Gets the preconditioner of this OneOfSolidNumericsSolver.  # noqa: E501
+
+
+        :return: The preconditioner of this OneOfSolidNumericsSolver.  # noqa: E501
+        :rtype: OneOfPETSCSolverPreconditioner
+        """
+        return self._preconditioner
+
+    @preconditioner.setter
+    def preconditioner(self, preconditioner):
+        """Sets the preconditioner of this OneOfSolidNumericsSolver.
+
+
+        :param preconditioner: The preconditioner of this OneOfSolidNumericsSolver.  # noqa: E501
+        :type: OneOfPETSCSolverPreconditioner
+        """
+
+        self._preconditioner = preconditioner
+
+    @property
+    def max_iterations(self):
+        """Gets the max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
+
+        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
+
+        :return: The max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
+        :rtype: int
+        """
+        return self._max_iterations
+
+    @max_iterations.setter
+    def max_iterations(self, max_iterations):
+        """Sets the max_iterations of this OneOfSolidNumericsSolver.
+
+        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
+
+        :param max_iterations: The max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                max_iterations is not None and max_iterations < 0):  # noqa: E501
+            raise ValueError("Invalid value for `max_iterations`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._max_iterations = max_iterations
+
+    @property
+    def convergence_threshold(self):
+        """Gets the convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
+
+        Set the threshold value for convergence detection for the relative convergence criteria.  # noqa: E501
+
+        :return: The convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
+        :rtype: float
+        """
+        return self._convergence_threshold
+
+    @convergence_threshold.setter
+    def convergence_threshold(self, convergence_threshold):
+        """Sets the convergence_threshold of this OneOfSolidNumericsSolver.
+
+        Set the threshold value for convergence detection for the relative convergence criteria.  # noqa: E501
+
+        :param convergence_threshold: The convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                convergence_threshold is not None and convergence_threshold < 0):  # noqa: E501
+            raise ValueError("Invalid value for `convergence_threshold`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._convergence_threshold = convergence_threshold
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

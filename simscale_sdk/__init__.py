@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.12.0"
+__version__ = "0.13.0"
 
 # import apis into sdk package
 from simscale_sdk.api.geometries_api import GeometriesApi
@@ -79,6 +79,7 @@ from simscale_sdk.models.automatic_mesh_sizing_simmetrix import AutomaticMeshSiz
 from simscale_sdk.models.automatic_omega_dissipation import AutomaticOmegaDissipation
 from simscale_sdk.models.automatic_reactualization import AutomaticReactualization
 from simscale_sdk.models.automatic_reference_length import AutomaticReferenceLength
+from simscale_sdk.models.automatic_reynolds_scaling import AutomaticReynoldsScaling
 from simscale_sdk.models.automatic_simerics_mesh_settings import AutomaticSimericsMeshSettings
 from simscale_sdk.models.average_fields_calculation_result_control_item import AverageFieldsCalculationResultControlItem
 from simscale_sdk.models.average_velocity_momentum_source import AverageVelocityMomentumSource
@@ -320,6 +321,7 @@ from simscale_sdk.models.fair_weather_conditions import FairWeatherConditions
 from simscale_sdk.models.false_change_jacobian_matrix import FalseChangeJacobianMatrix
 from simscale_sdk.models.false_line_search import FalseLineSearch
 from simscale_sdk.models.false_semi_implicit import FalseSemiImplicit
+from simscale_sdk.models.fan_bc import FanBC
 from simscale_sdk.models.fan_pbc import FanPBC
 from simscale_sdk.models.fan_pressure_drop_momentum_source import FanPressureDropMomentumSource
 from simscale_sdk.models.feature_refinement import FeatureRefinement
@@ -334,6 +336,7 @@ from simscale_sdk.models.field_calculations_velocity_result_control import Field
 from simscale_sdk.models.field_calculations_wall_fluxes_result_control import FieldCalculationsWallFluxesResultControl
 from simscale_sdk.models.field_change_retiming_event import FieldChangeRetimingEvent
 from simscale_sdk.models.field_change_target_calculation_type import FieldChangeTargetCalculationType
+from simscale_sdk.models.field_limits import FieldLimits
 from simscale_sdk.models.filters import Filters
 from simscale_sdk.models.first_mode import FirstMode
 from simscale_sdk.models.fixed_augmentation import FixedAugmentation
@@ -427,7 +430,6 @@ from simscale_sdk.models.full_resolution_tdcbc import FullResolutionTDCBC
 from simscale_sdk.models.full_resolution_tkebc import FullResolutionTKEBC
 from simscale_sdk.models.function_parameter import FunctionParameter
 from simscale_sdk.models.gamg_solver import GAMGSolver
-from simscale_sdk.models.gcpc_solver import GCPCSolver
 from simscale_sdk.models.garofalo_creep_formulation import GarofaloCreepFormulation
 from simscale_sdk.models.gauss_interface_compression_divergence_scheme import GaussInterfaceCompressionDivergenceScheme
 from simscale_sdk.models.gauss_limited_linear1_divergence_scheme import GaussLimitedLinear1DivergenceScheme
@@ -560,6 +562,7 @@ from simscale_sdk.models.manual_mesh_sizing_simmetrix import ManualMeshSizingSim
 from simscale_sdk.models.manual_reactualization import ManualReactualization
 from simscale_sdk.models.manual_reference_length import ManualReferenceLength
 from simscale_sdk.models.manual_region_sizing_pacefish import ManualRegionSizingPacefish
+from simscale_sdk.models.manual_reynolds_scaling import ManualReynoldsScaling
 from simscale_sdk.models.manual_simerics_mesh_settings import ManualSimericsMeshSettings
 from simscale_sdk.models.manual_surface_sizing_pacefish import ManualSurfaceSizingPacefish
 from simscale_sdk.models.manual_timestep_calculation_type import ManualTimestepCalculationType
@@ -810,7 +813,6 @@ from simscale_sdk.models.one_of_friction_contact_fictitious_clearance import One
 from simscale_sdk.models.one_of_friction_contact_friction_coefficient import OneOfFrictionContactFrictionCoefficient
 from simscale_sdk.models.one_of_frictionless_contact_contact_solution_method import OneOfFrictionlessContactContactSolutionMethod
 from simscale_sdk.models.one_of_frictionless_contact_fictitious_clearance import OneOfFrictionlessContactFictitiousClearance
-from simscale_sdk.models.one_of_gcpc_solver_preconditioner import OneOfGCPCSolverPreconditioner
 from simscale_sdk.models.one_of_general_darcy_forchheimer_pacefish_darcy_forchheimer_type import OneOfGeneralDarcyForchheimerPacefishDarcyForchheimerType
 from simscale_sdk.models.one_of_gradient_schemes_for_default import OneOfGradientSchemesForDefault
 from simscale_sdk.models.one_of_gradient_schemes_grad_density import OneOfGradientSchemesGradDensity
@@ -903,6 +905,7 @@ from simscale_sdk.models.one_of_pacefish_automesh_new_fineness import OneOfPacef
 from simscale_sdk.models.one_of_pacefish_automesh_primary_topology import OneOfPacefishAutomeshPrimaryTopology
 from simscale_sdk.models.one_of_pacefish_automesh_reference_length_computation import OneOfPacefishAutomeshReferenceLengthComputation
 from simscale_sdk.models.one_of_pacefish_automesh_refinements import OneOfPacefishAutomeshRefinements
+from simscale_sdk.models.one_of_pacefish_automesh_reynolds_scaling_type import OneOfPacefishAutomeshReynoldsScalingType
 from simscale_sdk.models.one_of_pacefish_mesh_legacy_refinements import OneOfPacefishMeshLegacyRefinements
 from simscale_sdk.models.one_of_pacefish_mesh_v38_primary_topology import OneOfPacefishMeshV38PrimaryTopology
 from simscale_sdk.models.one_of_pacefish_mesh_v38_refinements import OneOfPacefishMeshV38Refinements
@@ -1020,6 +1023,7 @@ from simscale_sdk.models.one_of_wall_bc_radiative_intensity_ray import OneOfWall
 from simscale_sdk.models.one_of_wall_bc_temperature import OneOfWallBCTemperature
 from simscale_sdk.models.one_of_wall_bc_velocity import OneOfWallBCVelocity
 from simscale_sdk.models.one_of_wind_comfort_mesh_refinements import OneOfWindComfortMeshRefinements
+from simscale_sdk.models.one_of_wind_comfort_mesh_reynolds_scaling_type import OneOfWindComfortMeshReynoldsScalingType
 from simscale_sdk.models.one_of_wind_comfort_mesh_wind_comfort_fineness import OneOfWindComfortMeshWindComfortFineness
 from simscale_sdk.models.open_boundary_ray_bc import OpenBoundaryRayBC
 from simscale_sdk.models.open_window_rsbc import OpenWindowRSBC
@@ -1193,6 +1197,7 @@ from simscale_sdk.models.specific_passive_scalar_source import SpecificPassiveSc
 from simscale_sdk.models.specific_power_source import SpecificPowerSource
 from simscale_sdk.models.sphere import Sphere
 from simscale_sdk.models.spheres_visualization_style import SpheresVisualizationStyle
+from simscale_sdk.models.stabilization import Stabilization
 from simscale_sdk.models.star_thermal_resistance_network import StarThermalResistanceNetwork
 from simscale_sdk.models.static_analysis import StaticAnalysis
 from simscale_sdk.models.static_pressure_pressure_type import StaticPressurePressureType
@@ -1304,7 +1309,6 @@ from simscale_sdk.models.unelastic_strain_type import UnelasticStrainType
 from simscale_sdk.models.unit_dimensionless import UnitDimensionless
 from simscale_sdk.models.unit_frequency import UnitFrequency
 from simscale_sdk.models.unit_length import UnitLength
-from simscale_sdk.models.unit_mass_flow_rate import UnitMassFlowRate
 from simscale_sdk.models.unit_temperature import UnitTemperature
 from simscale_sdk.models.unit_time import UnitTime
 from simscale_sdk.models.unit_volumetric_flow_rate import UnitVolumetricFlowRate
@@ -1313,7 +1317,6 @@ from simscale_sdk.models.user_defined_write_control import UserDefinedWriteContr
 from simscale_sdk.models.user_input_camera_settings import UserInputCameraSettings
 from simscale_sdk.models.variable_group_f import VariableGroupF
 from simscale_sdk.models.variable_group_height import VariableGroupHEIGHT
-from simscale_sdk.models.variable_group_q import VariableGroupQ
 from simscale_sdk.models.variable_group_strain import VariableGroupSTRAIN
 from simscale_sdk.models.variable_group_temp import VariableGroupTEMP
 from simscale_sdk.models.variable_group_tempstrain import VariableGroupTEMPSTRAIN

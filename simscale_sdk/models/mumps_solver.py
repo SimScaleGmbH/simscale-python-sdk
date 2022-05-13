@@ -264,7 +264,7 @@ class MUMPSSolver(object):
     def linear_system_relative_residual(self):
         """Gets the linear_system_relative_residual of this MUMPSSolver.  # noqa: E501
 
-        Choose a value for the maximum relative residual for each linear system resolution compared to the exact solution. In a nonlinear calculation the user can deactivate this check by selecting a negative value (for example, -1.0) since the quality of the solution is controlled within the Newton loop.  # noqa: E501
+        Set the maximum allowable numerical error in solving the linear equation system. Use -1 if you do not wish to carry out a check on the solution error (not recommended).  # noqa: E501
 
         :return: The linear_system_relative_residual of this MUMPSSolver.  # noqa: E501
         :rtype: float
@@ -275,7 +275,7 @@ class MUMPSSolver(object):
     def linear_system_relative_residual(self, linear_system_relative_residual):
         """Sets the linear_system_relative_residual of this MUMPSSolver.
 
-        Choose a value for the maximum relative residual for each linear system resolution compared to the exact solution. In a nonlinear calculation the user can deactivate this check by selecting a negative value (for example, -1.0) since the quality of the solution is controlled within the Newton loop.  # noqa: E501
+        Set the maximum allowable numerical error in solving the linear equation system. Use -1 if you do not wish to carry out a check on the solution error (not recommended).  # noqa: E501
 
         :param linear_system_relative_residual: The linear_system_relative_residual of this MUMPSSolver.  # noqa: E501
         :type: float

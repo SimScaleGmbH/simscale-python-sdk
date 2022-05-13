@@ -36,6 +36,7 @@ class CoupledConjugateHeatTransfer(object):
         'enable_radiation': 'bool',
         'enable_solar_load': 'bool',
         'turbulence_model': 'str',
+        'num_of_passive_species': 'int',
         'connection_groups': 'list[FluidInterface]',
         'model': 'FluidModel',
         'solar_calculator': 'SolarCalculator',
@@ -55,6 +56,7 @@ class CoupledConjugateHeatTransfer(object):
         'enable_radiation': 'enableRadiation',
         'enable_solar_load': 'enableSolarLoad',
         'turbulence_model': 'turbulenceModel',
+        'num_of_passive_species': 'numOfPassiveSpecies',
         'connection_groups': 'connectionGroups',
         'model': 'model',
         'solar_calculator': 'solarCalculator',
@@ -68,7 +70,7 @@ class CoupledConjugateHeatTransfer(object):
         'contact_handling_mode': 'contactHandlingMode'
     }
 
-    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, enable_solar_load=None, turbulence_model=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, enable_solar_load=None, turbulence_model=None, num_of_passive_species=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
         """CoupledConjugateHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -79,6 +81,7 @@ class CoupledConjugateHeatTransfer(object):
         self._enable_radiation = None
         self._enable_solar_load = None
         self._turbulence_model = None
+        self._num_of_passive_species = None
         self._connection_groups = None
         self._model = None
         self._solar_calculator = None
@@ -101,6 +104,8 @@ class CoupledConjugateHeatTransfer(object):
             self.enable_solar_load = enable_solar_load
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
+        if num_of_passive_species is not None:
+            self.num_of_passive_species = num_of_passive_species
         if connection_groups is not None:
             self.connection_groups = connection_groups
         if model is not None:
@@ -199,7 +204,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_solar_load(self):
         """Gets the enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
 
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+        <b>Solar load</b> on boundary patches. It heats boundaries externally or, if solar rays enter the domain through transparent or semi-transparent boundaries, it heats boundaries also internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>It can also be combined with surface to surface radiation.</li><li>It can only be used with convective heat transfer.</li><li>Reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: bool
@@ -210,7 +215,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_solar_load(self, enable_solar_load):
         """Sets the enable_solar_load of this CoupledConjugateHeatTransfer.
 
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+        <b>Solar load</b> on boundary patches. It heats boundaries externally or, if solar rays enter the domain through transparent or semi-transparent boundaries, it heats boundaries also internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>It can also be combined with surface to surface radiation.</li><li>It can only be used with convective heat transfer.</li><li>Reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_solar_load: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: bool
@@ -246,6 +251,35 @@ class CoupledConjugateHeatTransfer(object):
             )
 
         self._turbulence_model = turbulence_model
+
+    @property
+    def num_of_passive_species(self):
+        """Gets the num_of_passive_species of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+        Select the number of passive species involved in the simulation. Passive species allow you to simulate the transport of a scalar quantity within a fluid flow without affecting it. <a href='https://www.simscale.com/docs/simulation-setup/global-settings/#passive-species' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :return: The num_of_passive_species of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: int
+        """
+        return self._num_of_passive_species
+
+    @num_of_passive_species.setter
+    def num_of_passive_species(self, num_of_passive_species):
+        """Sets the num_of_passive_species of this CoupledConjugateHeatTransfer.
+
+        Select the number of passive species involved in the simulation. Passive species allow you to simulate the transport of a scalar quantity within a fluid flow without affecting it. <a href='https://www.simscale.com/docs/simulation-setup/global-settings/#passive-species' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :param num_of_passive_species: The num_of_passive_species of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: int
+        """
+        allowed_values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and num_of_passive_species not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `num_of_passive_species` ({0}), must be one of {1}"  # noqa: E501
+                .format(num_of_passive_species, allowed_values)
+            )
+
+        self._num_of_passive_species = num_of_passive_species
 
     @property
     def connection_groups(self):

@@ -34,7 +34,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'type': 'str',
         'fineness': 'str',
         'reference_length': 'DimensionalLength',
-        'reynolds_scaling': 'float',
+        'reynolds_scaling_type': 'OneOfPacefishAutomeshReynoldsScalingType',
         'refinements': 'list[OneOfPacefishAutomeshRefinements]',
         'primary_topology': 'OneOfPacefishAutomeshPrimaryTopology',
         'new_fineness': 'OneOfPacefishAutomeshNewFineness',
@@ -45,7 +45,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'type': 'type',
         'fineness': 'fineness',
         'reference_length': 'referenceLength',
-        'reynolds_scaling': 'reynoldsScaling',
+        'reynolds_scaling_type': 'reynoldsScalingType',
         'refinements': 'refinements',
         'primary_topology': 'primaryTopology',
         'new_fineness': 'newFineness',
@@ -58,7 +58,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'PACEFISH_AUTOMESH': 'PacefishAutomesh'
     }
 
-    def __init__(self, type='PACEFISH_AUTOMESH', fineness=None, reference_length=None, reynolds_scaling=None, refinements=None, primary_topology=None, new_fineness=None, reference_length_computation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PACEFISH_AUTOMESH', fineness=None, reference_length=None, reynolds_scaling_type=None, refinements=None, primary_topology=None, new_fineness=None, reference_length_computation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfIncompressiblePacefishMeshSettingsNew - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,7 +67,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         self._type = None
         self._fineness = None
         self._reference_length = None
-        self._reynolds_scaling = None
+        self._reynolds_scaling_type = None
         self._refinements = None
         self._primary_topology = None
         self._new_fineness = None
@@ -79,8 +79,8 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
             self.fineness = fineness
         if reference_length is not None:
             self.reference_length = reference_length
-        if reynolds_scaling is not None:
-            self.reynolds_scaling = reynolds_scaling
+        if reynolds_scaling_type is not None:
+            self.reynolds_scaling_type = reynolds_scaling_type
         if refinements is not None:
             self.refinements = refinements
         if primary_topology is not None:
@@ -164,30 +164,25 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         self._reference_length = reference_length
 
     @property
-    def reynolds_scaling(self):
-        """Gets the reynolds_scaling of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+    def reynolds_scaling_type(self):
+        """Gets the reynolds_scaling_type of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
 
-        Use this factor to scale the Reynolds number of your simulation. For example, to change the Reynolds number from 10<sup>8</sup> to 10<sup>6</sup>, set this factor to 0.01. <a href= https://www.simscale.com/docs/incompressible-lbm-lattice-boltzmann-advanced/#reynolds-scaling-factor' target='_blank'>Learn more</a>.  # noqa: E501
 
-        :return: The reynolds_scaling of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
-        :rtype: float
+        :return: The reynolds_scaling_type of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+        :rtype: OneOfPacefishAutomeshReynoldsScalingType
         """
-        return self._reynolds_scaling
+        return self._reynolds_scaling_type
 
-    @reynolds_scaling.setter
-    def reynolds_scaling(self, reynolds_scaling):
-        """Sets the reynolds_scaling of this OneOfIncompressiblePacefishMeshSettingsNew.
+    @reynolds_scaling_type.setter
+    def reynolds_scaling_type(self, reynolds_scaling_type):
+        """Sets the reynolds_scaling_type of this OneOfIncompressiblePacefishMeshSettingsNew.
 
-        Use this factor to scale the Reynolds number of your simulation. For example, to change the Reynolds number from 10<sup>8</sup> to 10<sup>6</sup>, set this factor to 0.01. <a href= https://www.simscale.com/docs/incompressible-lbm-lattice-boltzmann-advanced/#reynolds-scaling-factor' target='_blank'>Learn more</a>.  # noqa: E501
 
-        :param reynolds_scaling: The reynolds_scaling of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
-        :type: float
+        :param reynolds_scaling_type: The reynolds_scaling_type of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+        :type: OneOfPacefishAutomeshReynoldsScalingType
         """
-        if (self.local_vars_configuration.client_side_validation and
-                reynolds_scaling is not None and reynolds_scaling < 0):  # noqa: E501
-            raise ValueError("Invalid value for `reynolds_scaling`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._reynolds_scaling = reynolds_scaling
+        self._reynolds_scaling_type = reynolds_scaling_type
 
     @property
     def refinements(self):

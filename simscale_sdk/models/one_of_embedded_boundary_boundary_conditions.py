@@ -42,10 +42,10 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
         'net_radiative_heat_flux': 'OneOfNaturalConvectionInletOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OpenBoundaryRayBC',
         'topological_reference': 'TopologicalReference',
-        'pressure': 'OneOfPressureOutletBCPressure',
+        'pressure': 'FanPBC',
         'pressure_rgh': 'AmbientPBC',
-        'gauge_pressure': 'OneOfPressureOutletBCGaugePressure',
-        'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh'
+        'gauge_pressure': 'FanPBC',
+        'gauge_pressure_rgh': 'FanPBC'
     }
 
     attribute_map = {
@@ -70,6 +70,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
         'VELOCITY_INLET_V3': 'VelocityInletBC',
         'PRESSURE_OUTLET_V30': 'PressureOutletBC',
         'WALL_V34': 'WallBC',
+        'FAN': 'FanBC',
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
 
@@ -369,7 +370,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
 
 
         :return: The pressure of this OneOfEmbeddedBoundaryBoundaryConditions.  # noqa: E501
-        :rtype: OneOfPressureOutletBCPressure
+        :rtype: FanPBC
         """
         return self._pressure
 
@@ -379,7 +380,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
 
 
         :param pressure: The pressure of this OneOfEmbeddedBoundaryBoundaryConditions.  # noqa: E501
-        :type: OneOfPressureOutletBCPressure
+        :type: FanPBC
         """
 
         self._pressure = pressure
@@ -411,7 +412,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
 
 
         :return: The gauge_pressure of this OneOfEmbeddedBoundaryBoundaryConditions.  # noqa: E501
-        :rtype: OneOfPressureOutletBCGaugePressure
+        :rtype: FanPBC
         """
         return self._gauge_pressure
 
@@ -421,7 +422,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
 
 
         :param gauge_pressure: The gauge_pressure of this OneOfEmbeddedBoundaryBoundaryConditions.  # noqa: E501
-        :type: OneOfPressureOutletBCGaugePressure
+        :type: FanPBC
         """
 
         self._gauge_pressure = gauge_pressure
@@ -432,7 +433,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
 
 
         :return: The gauge_pressure_rgh of this OneOfEmbeddedBoundaryBoundaryConditions.  # noqa: E501
-        :rtype: OneOfPressureOutletBCGaugePressureRgh
+        :rtype: FanPBC
         """
         return self._gauge_pressure_rgh
 
@@ -442,7 +443,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
 
 
         :param gauge_pressure_rgh: The gauge_pressure_rgh of this OneOfEmbeddedBoundaryBoundaryConditions.  # noqa: E501
-        :type: OneOfPressureOutletBCGaugePressureRgh
+        :type: FanPBC
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh
