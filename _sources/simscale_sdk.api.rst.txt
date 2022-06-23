@@ -96,3 +96,11 @@ simscale\_sdk.api.table\_imports\_api module
    :members:
    :undoc-members:
    :show-inheritance:
+
+simscale\_sdk.api.wind\_api module
+----------------------------------
+
+.. automodule:: simscale_sdk.api.wind_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
