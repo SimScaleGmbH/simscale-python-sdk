@@ -44,7 +44,7 @@ class Part(object):
         'solid_color': 'solidColor'
     }
 
-    def __init__(self, part_identifier=None, opacity=1.0, render_mode=None, solid_color=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, part_identifier=None, opacity=None, render_mode=None, solid_color=None, local_vars_configuration=None):  # noqa: E501
         """Part - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,8 +57,10 @@ class Part(object):
         self.discriminator = None
 
         self.part_identifier = part_identifier
-        self.opacity = opacity
-        self.render_mode = render_mode
+        if opacity is not None:
+            self.opacity = opacity
+        if render_mode is not None:
+            self.render_mode = render_mode
         if solid_color is not None:
             self.solid_color = solid_color
 
@@ -105,8 +107,6 @@ class Part(object):
         :param opacity: The opacity of this Part.  # noqa: E501
         :type: float
         """
-        if self.local_vars_configuration.client_side_validation and opacity is None:  # noqa: E501
-            raise ValueError("Invalid value for `opacity`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 opacity is not None and opacity > 1.0):  # noqa: E501
             raise ValueError("Invalid value for `opacity`, must be a value less than or equal to `1.0`")  # noqa: E501
@@ -134,8 +134,6 @@ class Part(object):
         :param render_mode: The render_mode of this Part.  # noqa: E501
         :type: RenderMode
         """
-        if self.local_vars_configuration.client_side_validation and render_mode is None:  # noqa: E501
-            raise ValueError("Invalid value for `render_mode`, must not be `None`")  # noqa: E501
 
         self._render_mode = render_mode
 

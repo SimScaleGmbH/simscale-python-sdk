@@ -33,18 +33,20 @@ class RegionRefinementSimerics(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'refinement_cell_size': 'DimensionalLength',
+        'refinement_cell_size_absolute': 'DimensionalLength',
+        'refinement_cell_size_relative': 'float',
         'geometry_primitive_uuids': 'list[str]'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
-        'refinement_cell_size': 'refinementCellSize',
+        'refinement_cell_size_absolute': 'refinementCellSizeAbsolute',
+        'refinement_cell_size_relative': 'refinementCellSizeRelative',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='REGION_REFINEMENT_SIMERICS', name=None, refinement_cell_size=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='REGION_REFINEMENT_SIMERICS', name=None, refinement_cell_size_absolute=None, refinement_cell_size_relative=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """RegionRefinementSimerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -52,15 +54,18 @@ class RegionRefinementSimerics(object):
 
         self._type = None
         self._name = None
-        self._refinement_cell_size = None
+        self._refinement_cell_size_absolute = None
+        self._refinement_cell_size_relative = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
 
         self.type = type
         if name is not None:
             self.name = name
-        if refinement_cell_size is not None:
-            self.refinement_cell_size = refinement_cell_size
+        if refinement_cell_size_absolute is not None:
+            self.refinement_cell_size_absolute = refinement_cell_size_absolute
+        if refinement_cell_size_relative is not None:
+            self.refinement_cell_size_relative = refinement_cell_size_relative
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
 
@@ -111,25 +116,54 @@ class RegionRefinementSimerics(object):
         self._name = name
 
     @property
-    def refinement_cell_size(self):
-        """Gets the refinement_cell_size of this RegionRefinementSimerics.  # noqa: E501
+    def refinement_cell_size_absolute(self):
+        """Gets the refinement_cell_size_absolute of this RegionRefinementSimerics.  # noqa: E501
 
 
-        :return: The refinement_cell_size of this RegionRefinementSimerics.  # noqa: E501
+        :return: The refinement_cell_size_absolute of this RegionRefinementSimerics.  # noqa: E501
         :rtype: DimensionalLength
         """
-        return self._refinement_cell_size
+        return self._refinement_cell_size_absolute
 
-    @refinement_cell_size.setter
-    def refinement_cell_size(self, refinement_cell_size):
-        """Sets the refinement_cell_size of this RegionRefinementSimerics.
+    @refinement_cell_size_absolute.setter
+    def refinement_cell_size_absolute(self, refinement_cell_size_absolute):
+        """Sets the refinement_cell_size_absolute of this RegionRefinementSimerics.
 
 
-        :param refinement_cell_size: The refinement_cell_size of this RegionRefinementSimerics.  # noqa: E501
+        :param refinement_cell_size_absolute: The refinement_cell_size_absolute of this RegionRefinementSimerics.  # noqa: E501
         :type: DimensionalLength
         """
 
-        self._refinement_cell_size = refinement_cell_size
+        self._refinement_cell_size_absolute = refinement_cell_size_absolute
+
+    @property
+    def refinement_cell_size_relative(self):
+        """Gets the refinement_cell_size_relative of this RegionRefinementSimerics.  # noqa: E501
+
+        This parameter defines the length scale to which the entire region enclosed by the refinement zone needs to be resolved. Due to the binary-tree mesh generation approach applied, the actual cell size might be equal or smaller than the target cell size specified. Choosing a finer resolution will resolve the enclosed region to a greater level of detail, but will result in a larger mesh. This typically means longer runtimes and bigger sizes of results.  # noqa: E501
+
+        :return: The refinement_cell_size_relative of this RegionRefinementSimerics.  # noqa: E501
+        :rtype: float
+        """
+        return self._refinement_cell_size_relative
+
+    @refinement_cell_size_relative.setter
+    def refinement_cell_size_relative(self, refinement_cell_size_relative):
+        """Sets the refinement_cell_size_relative of this RegionRefinementSimerics.
+
+        This parameter defines the length scale to which the entire region enclosed by the refinement zone needs to be resolved. Due to the binary-tree mesh generation approach applied, the actual cell size might be equal or smaller than the target cell size specified. Choosing a finer resolution will resolve the enclosed region to a greater level of detail, but will result in a larger mesh. This typically means longer runtimes and bigger sizes of results.  # noqa: E501
+
+        :param refinement_cell_size_relative: The refinement_cell_size_relative of this RegionRefinementSimerics.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                refinement_cell_size_relative is not None and refinement_cell_size_relative > 1):  # noqa: E501
+            raise ValueError("Invalid value for `refinement_cell_size_relative`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                refinement_cell_size_relative is not None and refinement_cell_size_relative <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `refinement_cell_size_relative`, must be a value greater than `0`")  # noqa: E501
+
+        self._refinement_cell_size_relative = refinement_cell_size_relative
 
     @property
     def geometry_primitive_uuids(self):

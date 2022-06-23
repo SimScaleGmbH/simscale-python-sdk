@@ -14,3 +14,4 @@ from simscale_sdk.api.simulation_runs_api import SimulationRunsApi
 from simscale_sdk.api.simulations_api import SimulationsApi
 from simscale_sdk.api.storage_api import StorageApi
 from simscale_sdk.api.table_imports_api import TableImportsApi
+from simscale_sdk.api.wind_api import WindApi

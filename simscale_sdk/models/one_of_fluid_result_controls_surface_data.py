@@ -35,7 +35,9 @@ class OneOfFluidResultControlsSurfaceData(object):
         'name': 'str',
         'write_control': 'OneOfAreaIntegralResultControlWriteControl',
         'topological_reference': 'TopologicalReference',
+        'inlet_face_pressure_difference_type': 'str',
         'inlet_face_topological_reference': 'TopologicalReference',
+        'outlet_face_pressure_difference_type': 'str',
         'outlet_face_topological_reference': 'TopologicalReference'
     }
 
@@ -44,7 +46,9 @@ class OneOfFluidResultControlsSurfaceData(object):
         'name': 'name',
         'write_control': 'writeControl',
         'topological_reference': 'topologicalReference',
+        'inlet_face_pressure_difference_type': 'inletFacePressureDifferenceType',
         'inlet_face_topological_reference': 'inletFaceTopologicalReference',
+        'outlet_face_pressure_difference_type': 'outletFacePressureDifferenceType',
         'outlet_face_topological_reference': 'outletFaceTopologicalReference'
     }
 
@@ -54,7 +58,7 @@ class OneOfFluidResultControlsSurfaceData(object):
         'PRESSURE_DIFFERENCE': 'PressureDifferenceResultControl'
     }
 
-    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, write_control=None, topological_reference=None, inlet_face_topological_reference=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, write_control=None, topological_reference=None, inlet_face_pressure_difference_type=None, inlet_face_topological_reference=None, outlet_face_pressure_difference_type=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidResultControlsSurfaceData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,7 +68,9 @@ class OneOfFluidResultControlsSurfaceData(object):
         self._name = None
         self._write_control = None
         self._topological_reference = None
+        self._inlet_face_pressure_difference_type = None
         self._inlet_face_topological_reference = None
+        self._outlet_face_pressure_difference_type = None
         self._outlet_face_topological_reference = None
         self.discriminator = 'type'
 
@@ -75,8 +81,12 @@ class OneOfFluidResultControlsSurfaceData(object):
             self.write_control = write_control
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if inlet_face_pressure_difference_type is not None:
+            self.inlet_face_pressure_difference_type = inlet_face_pressure_difference_type
         if inlet_face_topological_reference is not None:
             self.inlet_face_topological_reference = inlet_face_topological_reference
+        if outlet_face_pressure_difference_type is not None:
+            self.outlet_face_pressure_difference_type = outlet_face_pressure_difference_type
         if outlet_face_topological_reference is not None:
             self.outlet_face_topological_reference = outlet_face_topological_reference
 
@@ -172,6 +182,35 @@ class OneOfFluidResultControlsSurfaceData(object):
         self._topological_reference = topological_reference
 
     @property
+    def inlet_face_pressure_difference_type(self):
+        """Gets the inlet_face_pressure_difference_type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+
+        <p>The total pressure is the sum of the static pressure and the dynamic pressure.</p>  # noqa: E501
+
+        :return: The inlet_face_pressure_difference_type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :rtype: str
+        """
+        return self._inlet_face_pressure_difference_type
+
+    @inlet_face_pressure_difference_type.setter
+    def inlet_face_pressure_difference_type(self, inlet_face_pressure_difference_type):
+        """Sets the inlet_face_pressure_difference_type of this OneOfFluidResultControlsSurfaceData.
+
+        <p>The total pressure is the sum of the static pressure and the dynamic pressure.</p>  # noqa: E501
+
+        :param inlet_face_pressure_difference_type: The inlet_face_pressure_difference_type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STATIC_PRESSURE", "TOTAL_PRESSURE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and inlet_face_pressure_difference_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `inlet_face_pressure_difference_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(inlet_face_pressure_difference_type, allowed_values)
+            )
+
+        self._inlet_face_pressure_difference_type = inlet_face_pressure_difference_type
+
+    @property
     def inlet_face_topological_reference(self):
         """Gets the inlet_face_topological_reference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
 
@@ -191,6 +230,35 @@ class OneOfFluidResultControlsSurfaceData(object):
         """
 
         self._inlet_face_topological_reference = inlet_face_topological_reference
+
+    @property
+    def outlet_face_pressure_difference_type(self):
+        """Gets the outlet_face_pressure_difference_type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+
+        <p>The total pressure is the sum of the static pressure and the dynamic pressure.</p>  # noqa: E501
+
+        :return: The outlet_face_pressure_difference_type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :rtype: str
+        """
+        return self._outlet_face_pressure_difference_type
+
+    @outlet_face_pressure_difference_type.setter
+    def outlet_face_pressure_difference_type(self, outlet_face_pressure_difference_type):
+        """Sets the outlet_face_pressure_difference_type of this OneOfFluidResultControlsSurfaceData.
+
+        <p>The total pressure is the sum of the static pressure and the dynamic pressure.</p>  # noqa: E501
+
+        :param outlet_face_pressure_difference_type: The outlet_face_pressure_difference_type of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STATIC_PRESSURE", "TOTAL_PRESSURE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and outlet_face_pressure_difference_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `outlet_face_pressure_difference_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(outlet_face_pressure_difference_type, allowed_values)
+            )
+
+        self._outlet_face_pressure_difference_type = outlet_face_pressure_difference_type
 
     @property
     def outlet_face_topological_reference(self):

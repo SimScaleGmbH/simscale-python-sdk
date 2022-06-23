@@ -33,18 +33,22 @@ class PressureDifferenceResultControl(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'inlet_face_pressure_difference_type': 'str',
         'inlet_face_topological_reference': 'TopologicalReference',
+        'outlet_face_pressure_difference_type': 'str',
         'outlet_face_topological_reference': 'TopologicalReference'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'inlet_face_pressure_difference_type': 'inletFacePressureDifferenceType',
         'inlet_face_topological_reference': 'inletFaceTopologicalReference',
+        'outlet_face_pressure_difference_type': 'outletFacePressureDifferenceType',
         'outlet_face_topological_reference': 'outletFaceTopologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, inlet_face_topological_reference=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, inlet_face_pressure_difference_type=None, inlet_face_topological_reference=None, outlet_face_pressure_difference_type=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureDifferenceResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -52,15 +56,21 @@ class PressureDifferenceResultControl(object):
 
         self._type = None
         self._name = None
+        self._inlet_face_pressure_difference_type = None
         self._inlet_face_topological_reference = None
+        self._outlet_face_pressure_difference_type = None
         self._outlet_face_topological_reference = None
         self.discriminator = None
 
         self.type = type
         if name is not None:
             self.name = name
+        if inlet_face_pressure_difference_type is not None:
+            self.inlet_face_pressure_difference_type = inlet_face_pressure_difference_type
         if inlet_face_topological_reference is not None:
             self.inlet_face_topological_reference = inlet_face_topological_reference
+        if outlet_face_pressure_difference_type is not None:
+            self.outlet_face_pressure_difference_type = outlet_face_pressure_difference_type
         if outlet_face_topological_reference is not None:
             self.outlet_face_topological_reference = outlet_face_topological_reference
 
@@ -114,6 +124,35 @@ class PressureDifferenceResultControl(object):
         self._name = name
 
     @property
+    def inlet_face_pressure_difference_type(self):
+        """Gets the inlet_face_pressure_difference_type of this PressureDifferenceResultControl.  # noqa: E501
+
+        <p>The total pressure is the sum of the static pressure and the dynamic pressure.</p>  # noqa: E501
+
+        :return: The inlet_face_pressure_difference_type of this PressureDifferenceResultControl.  # noqa: E501
+        :rtype: str
+        """
+        return self._inlet_face_pressure_difference_type
+
+    @inlet_face_pressure_difference_type.setter
+    def inlet_face_pressure_difference_type(self, inlet_face_pressure_difference_type):
+        """Sets the inlet_face_pressure_difference_type of this PressureDifferenceResultControl.
+
+        <p>The total pressure is the sum of the static pressure and the dynamic pressure.</p>  # noqa: E501
+
+        :param inlet_face_pressure_difference_type: The inlet_face_pressure_difference_type of this PressureDifferenceResultControl.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STATIC_PRESSURE", "TOTAL_PRESSURE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and inlet_face_pressure_difference_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `inlet_face_pressure_difference_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(inlet_face_pressure_difference_type, allowed_values)
+            )
+
+        self._inlet_face_pressure_difference_type = inlet_face_pressure_difference_type
+
+    @property
     def inlet_face_topological_reference(self):
         """Gets the inlet_face_topological_reference of this PressureDifferenceResultControl.  # noqa: E501
 
@@ -133,6 +172,35 @@ class PressureDifferenceResultControl(object):
         """
 
         self._inlet_face_topological_reference = inlet_face_topological_reference
+
+    @property
+    def outlet_face_pressure_difference_type(self):
+        """Gets the outlet_face_pressure_difference_type of this PressureDifferenceResultControl.  # noqa: E501
+
+        <p>The total pressure is the sum of the static pressure and the dynamic pressure.</p>  # noqa: E501
+
+        :return: The outlet_face_pressure_difference_type of this PressureDifferenceResultControl.  # noqa: E501
+        :rtype: str
+        """
+        return self._outlet_face_pressure_difference_type
+
+    @outlet_face_pressure_difference_type.setter
+    def outlet_face_pressure_difference_type(self, outlet_face_pressure_difference_type):
+        """Sets the outlet_face_pressure_difference_type of this PressureDifferenceResultControl.
+
+        <p>The total pressure is the sum of the static pressure and the dynamic pressure.</p>  # noqa: E501
+
+        :param outlet_face_pressure_difference_type: The outlet_face_pressure_difference_type of this PressureDifferenceResultControl.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STATIC_PRESSURE", "TOTAL_PRESSURE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and outlet_face_pressure_difference_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `outlet_face_pressure_difference_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(outlet_face_pressure_difference_type, allowed_values)
+            )
+
+        self._outlet_face_pressure_difference_type = outlet_face_pressure_difference_type
 
     @property
     def outlet_face_topological_reference(self):

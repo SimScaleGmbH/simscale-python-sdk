@@ -33,6 +33,14 @@ simscale\_sdk.models.absolute\_power\_source module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.absolute\_to\_all\_cad\_surfaces\_settings module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_to_all_cad_surfaces_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.acceleration\_field\_selection module
 ----------------------------------------------------------
 
@@ -277,6 +285,14 @@ simscale\_sdk.models.auto\_timestep\_definition module
 ------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.auto_timestep_definition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.automatic\_axis\_definition module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_axis_definition
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1033,6 +1049,14 @@ simscale\_sdk.models.cubic\_interpolation\_scheme module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.custom\_axis\_definition module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.custom_axis_definition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.custom\_fluid\_bc module
 ---------------------------------------------
 
@@ -1397,6 +1421,14 @@ simscale\_sdk.models.dimensional\_function\_rotation\_speed module
 ------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_function_rotation_speed
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_function\_specific\_energy module
+-------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_specific_energy
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2393,6 +2425,14 @@ simscale\_sdk.models.field\_calculations\_wall\_fluxes\_result\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.field\_calculations\_wall\_heat\_flux\_result\_control module
+----------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_wall_heat_flux_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.field\_change\_retiming\_event module
 ----------------------------------------------------------
 
@@ -2637,6 +2677,14 @@ simscale\_sdk.models.fixed\_support\_bc module
 ----------------------------------------------
 
 .. automodule:: simscale_sdk.models.fixed_support_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.fixed\_temperature\_heat\_transfer\_coefficient\_result\_type module
+-----------------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.fixed_temperature_heat_transfer_coefficient_result_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3585,6 +3633,14 @@ simscale\_sdk.models.harmonic\_response\_result\_control\_item module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.heat\_flow\_calculation\_result\_control\_item module
+--------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.heat_flow_calculation_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.heat\_flux\_field\_selection module
 --------------------------------------------------------
 
@@ -3645,6 +3701,14 @@ simscale\_sdk.models.high\_resolution module
 --------------------------------------------
 
 .. automodule:: simscale_sdk.models.high_resolution
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.hinge\_constraint\_bc module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.hinge_constraint_bc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5361,6 +5425,14 @@ simscale\_sdk.models.reaction\_moment\_type module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.real\_gas\_equation\_of\_state module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.real_gas_equation_of_state
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.rectifying\_darcy\_forchheimer module
 ----------------------------------------------------------
 
@@ -5453,6 +5525,14 @@ simscale\_sdk.models.relative\_convergence\_criteria module
 -----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.relative_convergence_criteria
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_to\_all\_cad\_surfaces\_settings module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_to_all_cad_surfaces_settings
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7041,6 +7121,14 @@ simscale\_sdk.models.unit\_length module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.unit\_pressure module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.unit_pressure
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.unit\_temperature module
 ---------------------------------------------
 
@@ -7117,6 +7205,14 @@ simscale\_sdk.models.variable\_group\_temp module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.variable_group_temp
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.variable\_group\_temppressure module
+---------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.variable_group_temppressure
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7353,10 +7449,26 @@ simscale\_sdk.models.wall\_function\_tkebc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.wall\_heat\_flux\_result\_type module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.wall_heat_flux_result_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.wall\_heat\_transfer\_tbc module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.wall_heat_transfer_tbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.wall\_next\_cell\_heat\_transfer\_coefficient\_result\_type module
+---------------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.wall_next_cell_heat_transfer_coefficient_result_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7429,6 +7541,14 @@ simscale\_sdk.models.wind\_rose module
 --------------------------------------
 
 .. automodule:: simscale_sdk.models.wind_rose
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.wind\_rose\_response module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.wind_rose_response
    :members:
    :undoc-members:
    :show-inheritance:

@@ -48,7 +48,7 @@ class IsoSurface(object):
         'opacity': 'opacity'
     }
 
-    def __init__(self, iso_scalar=None, iso_value=None, scalar_field=None, solid_color=None, vector_field=None, opacity=1.0, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, iso_scalar=None, iso_value=None, scalar_field=None, solid_color=None, vector_field=None, opacity=None, local_vars_configuration=None):  # noqa: E501
         """IsoSurface - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,7 +72,8 @@ class IsoSurface(object):
             self.solid_color = solid_color
         if vector_field is not None:
             self.vector_field = vector_field
-        self.opacity = opacity
+        if opacity is not None:
+            self.opacity = opacity
 
     @property
     def iso_scalar(self):
@@ -199,8 +200,6 @@ class IsoSurface(object):
         :param opacity: The opacity of this IsoSurface.  # noqa: E501
         :type: float
         """
-        if self.local_vars_configuration.client_side_validation and opacity is None:  # noqa: E501
-            raise ValueError("Invalid value for `opacity`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 opacity is not None and opacity > 1.0):  # noqa: E501
             raise ValueError("Invalid value for `opacity`, must be a value less than or equal to `1.0`")  # noqa: E501

@@ -36,7 +36,10 @@ class ModelSettings(object):
         'show_volumes': 'bool',
         'scalar_field': 'ScalarField',
         'scalar_settings': 'list[ScalarSettings]',
-        'vector_settings': 'list[VectorSettings]'
+        'vector_settings': 'list[VectorSettings]',
+        'opacity': 'float',
+        'render_mode': 'RenderMode',
+        'solid_color': 'Color'
     }
 
     attribute_map = {
@@ -45,10 +48,13 @@ class ModelSettings(object):
         'show_volumes': 'showVolumes',
         'scalar_field': 'scalarField',
         'scalar_settings': 'scalarSettings',
-        'vector_settings': 'vectorSettings'
+        'vector_settings': 'vectorSettings',
+        'opacity': 'opacity',
+        'render_mode': 'renderMode',
+        'solid_color': 'solidColor'
     }
 
-    def __init__(self, parts=None, hide_selected_parts=False, show_volumes=None, scalar_field=None, scalar_settings=None, vector_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, parts=None, hide_selected_parts=False, show_volumes=None, scalar_field=None, scalar_settings=None, vector_settings=None, opacity=None, render_mode=None, solid_color=None, local_vars_configuration=None):  # noqa: E501
         """ModelSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +66,9 @@ class ModelSettings(object):
         self._scalar_field = None
         self._scalar_settings = None
         self._vector_settings = None
+        self._opacity = None
+        self._render_mode = None
+        self._solid_color = None
         self.discriminator = None
 
         if parts is not None:
@@ -73,6 +82,12 @@ class ModelSettings(object):
             self.scalar_settings = scalar_settings
         if vector_settings is not None:
             self.vector_settings = vector_settings
+        if opacity is not None:
+            self.opacity = opacity
+        if render_mode is not None:
+            self.render_mode = render_mode
+        if solid_color is not None:
+            self.solid_color = solid_color
 
     @property
     def parts(self):
@@ -209,6 +224,75 @@ class ModelSettings(object):
         """
 
         self._vector_settings = vector_settings
+
+    @property
+    def opacity(self):
+        """Gets the opacity of this ModelSettings.  # noqa: E501
+
+
+        :return: The opacity of this ModelSettings.  # noqa: E501
+        :rtype: float
+        """
+        return self._opacity
+
+    @opacity.setter
+    def opacity(self, opacity):
+        """Sets the opacity of this ModelSettings.
+
+
+        :param opacity: The opacity of this ModelSettings.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                opacity is not None and opacity > 1.0):  # noqa: E501
+            raise ValueError("Invalid value for `opacity`, must be a value less than or equal to `1.0`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                opacity is not None and opacity < 0.0):  # noqa: E501
+            raise ValueError("Invalid value for `opacity`, must be a value greater than or equal to `0.0`")  # noqa: E501
+
+        self._opacity = opacity
+
+    @property
+    def render_mode(self):
+        """Gets the render_mode of this ModelSettings.  # noqa: E501
+
+
+        :return: The render_mode of this ModelSettings.  # noqa: E501
+        :rtype: RenderMode
+        """
+        return self._render_mode
+
+    @render_mode.setter
+    def render_mode(self, render_mode):
+        """Sets the render_mode of this ModelSettings.
+
+
+        :param render_mode: The render_mode of this ModelSettings.  # noqa: E501
+        :type: RenderMode
+        """
+
+        self._render_mode = render_mode
+
+    @property
+    def solid_color(self):
+        """Gets the solid_color of this ModelSettings.  # noqa: E501
+
+
+        :return: The solid_color of this ModelSettings.  # noqa: E501
+        :rtype: Color
+        """
+        return self._solid_color
+
+    @solid_color.setter
+    def solid_color(self, solid_color):
+        """Sets the solid_color of this ModelSettings.
+
+
+        :param solid_color: The solid_color of this ModelSettings.  # noqa: E501
+        :type: Color
+        """
+
+        self._solid_color = solid_color
 
     def to_dict(self):
         """Returns the model properties as a dict"""

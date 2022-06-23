@@ -34,22 +34,14 @@ class OneOfSimericsAnalysisMeshSettings(object):
         'type': 'str',
         'refinements': 'list[RegionRefinementSimerics]',
         'fineness': 'float',
-        'minimum_cell_size': 'DimensionalLength',
-        'maximum_cell_size': 'DimensionalLength',
-        'cell_size_on_surfaces': 'DimensionalLength',
-        'enable_growth_rate': 'bool',
-        'growth_rate': 'int'
+        'cell_size_specification': 'OneOfManualSimericsMeshSettingsCellSizeSpecification'
     }
 
     attribute_map = {
         'type': 'type',
         'refinements': 'refinements',
         'fineness': 'fineness',
-        'minimum_cell_size': 'minimumCellSize',
-        'maximum_cell_size': 'maximumCellSize',
-        'cell_size_on_surfaces': 'cellSizeOnSurfaces',
-        'enable_growth_rate': 'enableGrowthRate',
-        'growth_rate': 'growthRate'
+        'cell_size_specification': 'cellSizeSpecification'
     }
 
     discriminator_value_class_map = {
@@ -57,7 +49,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
         'MANUAL_SETTINGS': 'ManualSimericsMeshSettings'
     }
 
-    def __init__(self, type='MANUAL_SETTINGS', refinements=None, fineness=None, minimum_cell_size=None, maximum_cell_size=None, cell_size_on_surfaces=None, enable_growth_rate=None, growth_rate=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MANUAL_SETTINGS', refinements=None, fineness=None, cell_size_specification=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimericsAnalysisMeshSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,11 +58,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
         self._type = None
         self._refinements = None
         self._fineness = None
-        self._minimum_cell_size = None
-        self._maximum_cell_size = None
-        self._cell_size_on_surfaces = None
-        self._enable_growth_rate = None
-        self._growth_rate = None
+        self._cell_size_specification = None
         self.discriminator = 'type'
 
         self.type = type
@@ -78,16 +66,8 @@ class OneOfSimericsAnalysisMeshSettings(object):
             self.refinements = refinements
         if fineness is not None:
             self.fineness = fineness
-        if minimum_cell_size is not None:
-            self.minimum_cell_size = minimum_cell_size
-        if maximum_cell_size is not None:
-            self.maximum_cell_size = maximum_cell_size
-        if cell_size_on_surfaces is not None:
-            self.cell_size_on_surfaces = cell_size_on_surfaces
-        if enable_growth_rate is not None:
-            self.enable_growth_rate = enable_growth_rate
-        if growth_rate is not None:
-            self.growth_rate = growth_rate
+        if cell_size_specification is not None:
+            self.cell_size_specification = cell_size_specification
 
     @property
     def type(self):
@@ -165,119 +145,25 @@ class OneOfSimericsAnalysisMeshSettings(object):
         self._fineness = fineness
 
     @property
-    def minimum_cell_size(self):
-        """Gets the minimum_cell_size of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+    def cell_size_specification(self):
+        """Gets the cell_size_specification of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
 
 
-        :return: The minimum_cell_size of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :rtype: DimensionalLength
+        :return: The cell_size_specification of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+        :rtype: OneOfManualSimericsMeshSettingsCellSizeSpecification
         """
-        return self._minimum_cell_size
+        return self._cell_size_specification
 
-    @minimum_cell_size.setter
-    def minimum_cell_size(self, minimum_cell_size):
-        """Sets the minimum_cell_size of this OneOfSimericsAnalysisMeshSettings.
-
-
-        :param minimum_cell_size: The minimum_cell_size of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :type: DimensionalLength
-        """
-
-        self._minimum_cell_size = minimum_cell_size
-
-    @property
-    def maximum_cell_size(self):
-        """Gets the maximum_cell_size of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+    @cell_size_specification.setter
+    def cell_size_specification(self, cell_size_specification):
+        """Sets the cell_size_specification of this OneOfSimericsAnalysisMeshSettings.
 
 
-        :return: The maximum_cell_size of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :rtype: DimensionalLength
-        """
-        return self._maximum_cell_size
-
-    @maximum_cell_size.setter
-    def maximum_cell_size(self, maximum_cell_size):
-        """Sets the maximum_cell_size of this OneOfSimericsAnalysisMeshSettings.
-
-
-        :param maximum_cell_size: The maximum_cell_size of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :type: DimensionalLength
+        :param cell_size_specification: The cell_size_specification of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+        :type: OneOfManualSimericsMeshSettingsCellSizeSpecification
         """
 
-        self._maximum_cell_size = maximum_cell_size
-
-    @property
-    def cell_size_on_surfaces(self):
-        """Gets the cell_size_on_surfaces of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-
-
-        :return: The cell_size_on_surfaces of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :rtype: DimensionalLength
-        """
-        return self._cell_size_on_surfaces
-
-    @cell_size_on_surfaces.setter
-    def cell_size_on_surfaces(self, cell_size_on_surfaces):
-        """Sets the cell_size_on_surfaces of this OneOfSimericsAnalysisMeshSettings.
-
-
-        :param cell_size_on_surfaces: The cell_size_on_surfaces of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :type: DimensionalLength
-        """
-
-        self._cell_size_on_surfaces = cell_size_on_surfaces
-
-    @property
-    def enable_growth_rate(self):
-        """Gets the enable_growth_rate of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-
-        <p><b>Specify growth rate</b>: Define the cell size growth rate between interior cells and surface cells.</p>  # noqa: E501
-
-        :return: The enable_growth_rate of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_growth_rate
-
-    @enable_growth_rate.setter
-    def enable_growth_rate(self, enable_growth_rate):
-        """Sets the enable_growth_rate of this OneOfSimericsAnalysisMeshSettings.
-
-        <p><b>Specify growth rate</b>: Define the cell size growth rate between interior cells and surface cells.</p>  # noqa: E501
-
-        :param enable_growth_rate: The enable_growth_rate of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_growth_rate = enable_growth_rate
-
-    @property
-    def growth_rate(self):
-        """Gets the growth_rate of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-
-        The <i>Growth rate</i> defines the cell size ratio between interior cell size and surface cell size. It needs to be <b>a whole number</b> always greater than 1 and smaller or equal to 8, such that the cell size increases towards the interior of the mesh.  # noqa: E501
-
-        :return: The growth_rate of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :rtype: int
-        """
-        return self._growth_rate
-
-    @growth_rate.setter
-    def growth_rate(self, growth_rate):
-        """Sets the growth_rate of this OneOfSimericsAnalysisMeshSettings.
-
-        The <i>Growth rate</i> defines the cell size ratio between interior cell size and surface cell size. It needs to be <b>a whole number</b> always greater than 1 and smaller or equal to 8, such that the cell size increases towards the interior of the mesh.  # noqa: E501
-
-        :param growth_rate: The growth_rate of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                growth_rate is not None and growth_rate > 8):  # noqa: E501
-            raise ValueError("Invalid value for `growth_rate`, must be a value less than or equal to `8`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                growth_rate is not None and growth_rate < 1):  # noqa: E501
-            raise ValueError("Invalid value for `growth_rate`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._growth_rate = growth_rate
+        self._cell_size_specification = cell_size_specification
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

@@ -34,6 +34,7 @@ class OneOfHConstThermoEquationOfState(object):
         'type': 'str',
         'energy': 'str',
         'density': 'DimensionalDensity',
+        'specific_enthalpy': 'DimensionalFunctionSpecificEnergy',
         'fluid_constant': 'DimensionalSpecificHeat',
         'reference_density': 'DimensionalDensity',
         'reference_pressure': 'DimensionalPressure',
@@ -49,6 +50,7 @@ class OneOfHConstThermoEquationOfState(object):
         'type': 'type',
         'energy': 'energy',
         'density': 'density',
+        'specific_enthalpy': 'specificEnthalpy',
         'fluid_constant': 'fluidConstant',
         'reference_density': 'referenceDensity',
         'reference_pressure': 'referencePressure',
@@ -62,6 +64,7 @@ class OneOfHConstThermoEquationOfState(object):
 
     discriminator_value_class_map = {
         'PERFECT_GAS': 'PerfectGasEquationOfState',
+        'REAL_GAS': 'RealGasEquationOfState',
         'RHO_CONST': 'RhoConstEquationOfState',
         'PERFECT_FLUID': 'PerfectFluidEquationOfState',
         'INCOMPRESSIBLE_PERFECT_GAS': 'IncompressiblePerfectGasEquationOfState',
@@ -69,7 +72,7 @@ class OneOfHConstThermoEquationOfState(object):
         'PENG_ROBINSON_GAS': 'PengRobinsonGasEquationOfState'
     }
 
-    def __init__(self, type='PENG_ROBINSON_GAS', energy=None, density=None, fluid_constant=None, reference_density=None, reference_pressure=None, isentropic_exponent=None, pressure_offset=None, critical_temperature=None, critical_volume=None, critical_pressure=None, acentric_factor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PENG_ROBINSON_GAS', energy=None, density=None, specific_enthalpy=None, fluid_constant=None, reference_density=None, reference_pressure=None, isentropic_exponent=None, pressure_offset=None, critical_temperature=None, critical_volume=None, critical_pressure=None, acentric_factor=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHConstThermoEquationOfState - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +81,7 @@ class OneOfHConstThermoEquationOfState(object):
         self._type = None
         self._energy = None
         self._density = None
+        self._specific_enthalpy = None
         self._fluid_constant = None
         self._reference_density = None
         self._reference_pressure = None
@@ -94,6 +98,8 @@ class OneOfHConstThermoEquationOfState(object):
             self.energy = energy
         if density is not None:
             self.density = density
+        if specific_enthalpy is not None:
+            self.specific_enthalpy = specific_enthalpy
         if fluid_constant is not None:
             self.fluid_constant = fluid_constant
         if reference_density is not None:
@@ -187,6 +193,27 @@ class OneOfHConstThermoEquationOfState(object):
         """
 
         self._density = density
+
+    @property
+    def specific_enthalpy(self):
+        """Gets the specific_enthalpy of this OneOfHConstThermoEquationOfState.  # noqa: E501
+
+
+        :return: The specific_enthalpy of this OneOfHConstThermoEquationOfState.  # noqa: E501
+        :rtype: DimensionalFunctionSpecificEnergy
+        """
+        return self._specific_enthalpy
+
+    @specific_enthalpy.setter
+    def specific_enthalpy(self, specific_enthalpy):
+        """Sets the specific_enthalpy of this OneOfHConstThermoEquationOfState.
+
+
+        :param specific_enthalpy: The specific_enthalpy of this OneOfHConstThermoEquationOfState.  # noqa: E501
+        :type: DimensionalFunctionSpecificEnergy
+        """
+
+        self._specific_enthalpy = specific_enthalpy
 
     @property
     def fluid_constant(self):

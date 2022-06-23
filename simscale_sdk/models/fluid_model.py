@@ -89,8 +89,8 @@ class FluidModel(object):
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                turbulent_schmidt_number is not None and turbulent_schmidt_number < 0):  # noqa: E501
-            raise ValueError("Invalid value for `turbulent_schmidt_number`, must be a value greater than or equal to `0`")  # noqa: E501
+                turbulent_schmidt_number is not None and turbulent_schmidt_number <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_schmidt_number`, must be a value greater than `0`")  # noqa: E501
 
         self._turbulent_schmidt_number = turbulent_schmidt_number
 

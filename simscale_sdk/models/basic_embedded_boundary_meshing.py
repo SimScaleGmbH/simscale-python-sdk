@@ -152,8 +152,8 @@ class BasicEmbeddedBoundaryMeshing(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
-                num_refinement_levels is not None and num_refinement_levels > 10):  # noqa: E501
-            raise ValueError("Invalid value for `num_refinement_levels`, must be a value less than or equal to `10`")  # noqa: E501
+                num_refinement_levels is not None and num_refinement_levels > 7):  # noqa: E501
+            raise ValueError("Invalid value for `num_refinement_levels`, must be a value less than or equal to `7`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 num_refinement_levels is not None and num_refinement_levels < 0):  # noqa: E501
             raise ValueError("Invalid value for `num_refinement_levels`, must be a value greater than or equal to `0`")  # noqa: E501

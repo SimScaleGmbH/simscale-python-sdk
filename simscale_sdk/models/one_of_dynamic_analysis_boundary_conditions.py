@@ -51,7 +51,8 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'phase_angle': 'DimensionalAngle',
         'moment': 'DimensionalVectorFunctionTorque',
         'remote_point': 'DimensionalVectorLength',
-        'load': 'DimensionalVectorFunctionVolumeForce'
+        'load': 'DimensionalVectorFunctionVolumeForce',
+        'axis_definition': 'OneOfHingeConstraintBCAxisDefinition'
     }
 
     attribute_map = {
@@ -75,7 +76,8 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'phase_angle': 'phaseAngle',
         'moment': 'moment',
         'remote_point': 'remotePoint',
-        'load': 'load'
+        'load': 'load',
+        'axis_definition': 'axisDefinition'
     }
 
     discriminator_value_class_map = {
@@ -94,10 +96,11 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'PRESSURE': 'PressureBC',
         'REMOTE_FORCE_LOAD': 'RemoteForceLoadBC',
         'SURFACE_LOAD': 'SurfaceLoadBC',
-        'VOLUME_LOAD': 'VolumeLoadBC'
+        'VOLUME_LOAD': 'VolumeLoadBC',
+        'HINGE_CONSTRAINT': 'HingeConstraintBC'
     }
 
-    def __init__(self, type='VOLUME_LOAD', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HINGE_CONSTRAINT', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, axis_definition=None, local_vars_configuration=None):  # noqa: E501
         """OneOfDynamicAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -124,6 +127,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         self._moment = None
         self._remote_point = None
         self._load = None
+        self._axis_definition = None
         self.discriminator = 'type'
 
         self.type = type
@@ -167,12 +171,14 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
             self.remote_point = remote_point
         if load is not None:
             self.load = load
+        if axis_definition is not None:
+            self.axis_definition = axis_definition
 
     @property
     def type(self):
         """Gets the type of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
 
-        This is a <b>volume load</b> boundary condition representing a distributed load on the selected volumes applied in the global coordinate system and each element of the assignment is loaded with a volume force depending on the volume of the element.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the volume of the selection.</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/volume-load/' target='_blank'>Learn more</a>.  Schema name: VolumeLoadBC  # noqa: E501
+        Schema name: HingeConstraintBC  # noqa: E501
 
         :return: The type of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -183,7 +189,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfDynamicAnalysisBoundaryConditions.
 
-        This is a <b>volume load</b> boundary condition representing a distributed load on the selected volumes applied in the global coordinate system and each element of the assignment is loaded with a volume force depending on the volume of the element.<br /><br />Important remarks: <br /><ul><li>The applied total force depends on the volume of the selection.</li></ul><a href= https://www.simscale.com/docs/simulation-setup/boundary-conditions/volume-load/' target='_blank'>Learn more</a>.  Schema name: VolumeLoadBC  # noqa: E501
+        Schema name: HingeConstraintBC  # noqa: E501
 
         :param type: The type of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
         :type: str
@@ -620,6 +626,27 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         """
 
         self._load = load
+
+    @property
+    def axis_definition(self):
+        """Gets the axis_definition of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The axis_definition of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: OneOfHingeConstraintBCAxisDefinition
+        """
+        return self._axis_definition
+
+    @axis_definition.setter
+    def axis_definition(self, axis_definition):
+        """Sets the axis_definition of this OneOfDynamicAnalysisBoundaryConditions.
+
+
+        :param axis_definition: The axis_definition of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+        :type: OneOfHingeConstraintBCAxisDefinition
+        """
+
+        self._axis_definition = axis_definition
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

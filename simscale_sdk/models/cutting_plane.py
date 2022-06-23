@@ -56,7 +56,7 @@ class CuttingPlane(object):
         'render_mode': 'renderMode'
     }
 
-    def __init__(self, name=None, center=None, normal=None, opacity=1.0, clipping=True, vector_grid_spacing=None, scalar_field=None, vector_field=None, project_vectors_onto_plane=False, render_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, center=None, normal=None, opacity=None, clipping=True, vector_grid_spacing=None, scalar_field=None, vector_field=None, project_vectors_onto_plane=False, render_mode=None, local_vars_configuration=None):  # noqa: E501
         """CuttingPlane - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,7 +77,8 @@ class CuttingPlane(object):
         self.name = name
         self.center = center
         self.normal = normal
-        self.opacity = opacity
+        if opacity is not None:
+            self.opacity = opacity
         self.clipping = clipping
         if vector_grid_spacing is not None:
             self.vector_grid_spacing = vector_grid_spacing
@@ -86,7 +87,8 @@ class CuttingPlane(object):
         if vector_field is not None:
             self.vector_field = vector_field
         self.project_vectors_onto_plane = project_vectors_onto_plane
-        self.render_mode = render_mode
+        if render_mode is not None:
+            self.render_mode = render_mode
 
     @property
     def name(self):
@@ -175,8 +177,6 @@ class CuttingPlane(object):
         :param opacity: The opacity of this CuttingPlane.  # noqa: E501
         :type: float
         """
-        if self.local_vars_configuration.client_side_validation and opacity is None:  # noqa: E501
-            raise ValueError("Invalid value for `opacity`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 opacity is not None and opacity > 1.0):  # noqa: E501
             raise ValueError("Invalid value for `opacity`, must be a value less than or equal to `1.0`")  # noqa: E501
@@ -323,8 +323,6 @@ class CuttingPlane(object):
         :param render_mode: The render_mode of this CuttingPlane.  # noqa: E501
         :type: RenderMode
         """
-        if self.local_vars_configuration.client_side_validation and render_mode is None:  # noqa: E501
-            raise ValueError("Invalid value for `render_mode`, must not be `None`")  # noqa: E501
 
         self._render_mode = render_mode
 

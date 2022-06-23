@@ -34,13 +34,17 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'type': 'str',
         'name': 'str',
         'pressure_type': 'OneOfFieldCalculationsPressureResultControlPressureType',
-        'result_type': 'WallShearStressResultType',
+        'result_type': 'WallHeatFluxResultType',
         'clothing_coefficient_factor': 'float',
         'metabolic_rate_factor': 'float',
         'relative_humidity_factor': 'float',
         'compute_sensitivities_to': 'str',
         'optimization_force_direction': 'DecimalVector',
-        'topological_reference': 'TopologicalReference'
+        'topological_reference': 'TopologicalReference',
+        'compute_heat_transfer_coefficient': 'bool',
+        'reference_temperature_result_type': 'OneOfFieldCalculationsWallHeatFluxResultControlReferenceTemperatureResultType',
+        'compute_nusselt_number': 'bool',
+        'reference_nusselt_number_length': 'DimensionalLength'
     }
 
     attribute_map = {
@@ -53,7 +57,11 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'relative_humidity_factor': 'relativeHumidityFactor',
         'compute_sensitivities_to': 'computeSensitivitiesTo',
         'optimization_force_direction': 'optimizationForceDirection',
-        'topological_reference': 'topologicalReference'
+        'topological_reference': 'topologicalReference',
+        'compute_heat_transfer_coefficient': 'computeHeatTransferCoefficient',
+        'reference_temperature_result_type': 'referenceTemperatureResultType',
+        'compute_nusselt_number': 'computeNusseltNumber',
+        'reference_nusselt_number_length': 'referenceNusseltNumberLength'
     }
 
     discriminator_value_class_map = {
@@ -64,10 +72,11 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'SURFACE_NORMALS': 'FieldCalculationsSurfaceNormalsResultControl',
         'WALL_FLUXES': 'FieldCalculationsWallFluxesResultControl',
         'THERMAL_COMFORT': 'FieldCalculationsThermalComfortResultControl',
-        'ADJOINT_SENSITIVITIES': 'FieldCalculationsAdjointSensitivitiesResultControl'
+        'ADJOINT_SENSITIVITIES': 'FieldCalculationsAdjointSensitivitiesResultControl',
+        'WALL_HEAT_FLUX': 'FieldCalculationsWallHeatFluxResultControl'
     }
 
-    def __init__(self, type='ADJOINT_SENSITIVITIES', name=None, pressure_type=None, result_type=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='WALL_HEAT_FLUX', name=None, pressure_type=None, result_type=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, compute_heat_transfer_coefficient=None, reference_temperature_result_type=None, compute_nusselt_number=None, reference_nusselt_number_length=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidResultControlsFieldCalculations - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +92,10 @@ class OneOfFluidResultControlsFieldCalculations(object):
         self._compute_sensitivities_to = None
         self._optimization_force_direction = None
         self._topological_reference = None
+        self._compute_heat_transfer_coefficient = None
+        self._reference_temperature_result_type = None
+        self._compute_nusselt_number = None
+        self._reference_nusselt_number_length = None
         self.discriminator = 'type'
 
         self.type = type
@@ -104,12 +117,20 @@ class OneOfFluidResultControlsFieldCalculations(object):
             self.optimization_force_direction = optimization_force_direction
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if compute_heat_transfer_coefficient is not None:
+            self.compute_heat_transfer_coefficient = compute_heat_transfer_coefficient
+        if reference_temperature_result_type is not None:
+            self.reference_temperature_result_type = reference_temperature_result_type
+        if compute_nusselt_number is not None:
+            self.compute_nusselt_number = compute_nusselt_number
+        if reference_nusselt_number_length is not None:
+            self.reference_nusselt_number_length = reference_nusselt_number_length
 
     @property
     def type(self):
         """Gets the type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
 
-        Schema name: FieldCalculationsAdjointSensitivitiesResultControl  # noqa: E501
+        Schema name: FieldCalculationsWallHeatFluxResultControl  # noqa: E501
 
         :return: The type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
         :rtype: str
@@ -120,7 +141,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
     def type(self, type):
         """Sets the type of this OneOfFluidResultControlsFieldCalculations.
 
-        Schema name: FieldCalculationsAdjointSensitivitiesResultControl  # noqa: E501
+        Schema name: FieldCalculationsWallHeatFluxResultControl  # noqa: E501
 
         :param type: The type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
         :type: str
@@ -181,7 +202,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
 
 
         :return: The result_type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
-        :rtype: WallShearStressResultType
+        :rtype: WallHeatFluxResultType
         """
         return self._result_type
 
@@ -191,7 +212,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
 
 
         :param result_type: The result_type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
-        :type: WallShearStressResultType
+        :type: WallHeatFluxResultType
         """
 
         self._result_type = result_type
@@ -345,6 +366,90 @@ class OneOfFluidResultControlsFieldCalculations(object):
         """
 
         self._topological_reference = topological_reference
+
+    @property
+    def compute_heat_transfer_coefficient(self):
+        """Gets the compute_heat_transfer_coefficient of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The compute_heat_transfer_coefficient of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: bool
+        """
+        return self._compute_heat_transfer_coefficient
+
+    @compute_heat_transfer_coefficient.setter
+    def compute_heat_transfer_coefficient(self, compute_heat_transfer_coefficient):
+        """Sets the compute_heat_transfer_coefficient of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param compute_heat_transfer_coefficient: The compute_heat_transfer_coefficient of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: bool
+        """
+
+        self._compute_heat_transfer_coefficient = compute_heat_transfer_coefficient
+
+    @property
+    def reference_temperature_result_type(self):
+        """Gets the reference_temperature_result_type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The reference_temperature_result_type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: OneOfFieldCalculationsWallHeatFluxResultControlReferenceTemperatureResultType
+        """
+        return self._reference_temperature_result_type
+
+    @reference_temperature_result_type.setter
+    def reference_temperature_result_type(self, reference_temperature_result_type):
+        """Sets the reference_temperature_result_type of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param reference_temperature_result_type: The reference_temperature_result_type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: OneOfFieldCalculationsWallHeatFluxResultControlReferenceTemperatureResultType
+        """
+
+        self._reference_temperature_result_type = reference_temperature_result_type
+
+    @property
+    def compute_nusselt_number(self):
+        """Gets the compute_nusselt_number of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The compute_nusselt_number of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: bool
+        """
+        return self._compute_nusselt_number
+
+    @compute_nusselt_number.setter
+    def compute_nusselt_number(self, compute_nusselt_number):
+        """Sets the compute_nusselt_number of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param compute_nusselt_number: The compute_nusselt_number of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: bool
+        """
+
+        self._compute_nusselt_number = compute_nusselt_number
+
+    @property
+    def reference_nusselt_number_length(self):
+        """Gets the reference_nusselt_number_length of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The reference_nusselt_number_length of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: DimensionalLength
+        """
+        return self._reference_nusselt_number_length
+
+    @reference_nusselt_number_length.setter
+    def reference_nusselt_number_length(self, reference_nusselt_number_length):
+        """Sets the reference_nusselt_number_length of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param reference_nusselt_number_length: The reference_nusselt_number_length of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: DimensionalLength
+        """
+
+        self._reference_nusselt_number_length = reference_nusselt_number_length
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
