@@ -43,8 +43,8 @@ class WindApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str latitude: Latitude coordinate (required)
-        :param str longitude: Longitude coordinate (required)
+        :param str latitude: Latitude coordinate in WGS84 format (required)
+        :param str longitude: Longitude coordinate in WGS84 format (required)
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -68,8 +68,8 @@ class WindApi(object):
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
-        :param str latitude: Latitude coordinate (required)
-        :param str longitude: Longitude coordinate (required)
+        :param str latitude: Latitude coordinate in WGS84 format (required)
+        :param str longitude: Longitude coordinate in WGS84 format (required)
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

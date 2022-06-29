@@ -7,7 +7,7 @@ import zipfile
 import isodate
 import urllib3
 from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, GeometryImportsApi, GeometriesApi, \
-    SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException, WindData
+    WindApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException, WindData
 from simscale_sdk import GeometryImportRequestLocation, GeometryImportRequestOptions
 from simscale_sdk import SimulationSpec, SimulationRun
 from simscale_sdk import UserInputCameraSettings, ProjectionType, Vector3D, ModelSettings, Part, \
@@ -43,6 +43,7 @@ project_api = ProjectsApi(api_client)
 storage_api = StorageApi(api_client)
 geometry_import_api = GeometryImportsApi(api_client)
 geometry_api = GeometriesApi(api_client)
+wind_api = WindApi(api_client)
 simulation_api = SimulationsApi(api_client)
 simulation_run_api = SimulationRunsApi(api_client)
 reports_api = ReportsApi(api_client)
@@ -93,6 +94,40 @@ print(f"geometryId: {geometry_id}")
 geometry = geometry_api.get_geometry(project_id, geometry_id)
 geometry_api.update_geometry(project_id, geometry_id, geometry)
 
+# The wind data can be user-defined or obtained from the WindApi, as shown in the following two examples:
+
+# 1. User-defined wind data for simulation spec
+wind_rose = WindRose(
+    num_directions=4,
+    velocity_buckets=[
+        WindRoseVelocityBucket(_from=None, to=1.234, fractions=[0.1, 0.1, 0.1, 0.1]),
+        WindRoseVelocityBucket(_from=1.234, to=2.345, fractions=[0.0, 0.1, 0.1, 0.1]),
+        WindRoseVelocityBucket(_from=2.345, to=3.456, fractions=[0.0, 0.0, 0.1, 0.1]),
+        WindRoseVelocityBucket(_from=3.456, to=None, fractions=[0.0, 0.0, 0.0, 0.1]),
+    ],
+    velocity_unit="m/s",
+    exposure_categories=["EC4", "EC4", "EC4", "EC4"],
+    wind_engineering_standard="EU",
+    wind_data_source="USER_UPLOAD",
+    add_surface_roughness=False,
+)
+
+# 2. Get wind data from the WindApi for simulation spec
+try:
+    wind_rose_response = wind_api.get_wind_data("48.135125", "11.581981")
+    wind_rose = wind_rose_response.wind_rose
+    wind_rose.num_directions = 4
+    wind_rose.exposure_categories = ["EC4"] * wind_rose.num_directions
+    wind_rose.wind_engineering_standard = "EU"
+    wind_rose.add_surface_roughness = False
+except ApiException as ae:
+    if ae.status == 429:
+        print(
+            f"Exceeded max amount requests, please retry in {ae.headers.get('X-Rate-Limit-Retry-After-Minutes')} minutes")
+        raise ApiException(ae)
+    else:
+        raise ae
+
 # Define simulation spec
 model = WindComfort(
     region_of_interest=RegionOfInterest(
@@ -106,20 +141,7 @@ model = WindComfort(
         geographical_location=GeographicalLocation(
             latitude=DimensionalAngle(48.135125, "°"), longitude=DimensionalAngle(11.581981, "°")
         ),
-        wind_rose=WindRose(
-            num_directions=4,
-            velocity_buckets=[
-                WindRoseVelocityBucket(_from=None, to=1.234, fractions=[0.1, 0.1, 0.1, 0.1]),
-                WindRoseVelocityBucket(_from=1.234, to=2.345, fractions=[0.0, 0.1, 0.1, 0.1]),
-                WindRoseVelocityBucket(_from=2.345, to=3.456, fractions=[0.0, 0.0, 0.1, 0.1]),
-                WindRoseVelocityBucket(_from=3.456, to=None, fractions=[0.0, 0.0, 0.0, 0.1]),
-            ],
-            velocity_unit="m/s",
-            exposure_categories=["EC4", "EC4", "EC4", "EC4"],
-            wind_engineering_standard="EU",
-            wind_data_source="USER_UPLOAD",
-            add_surface_roughness=False,
-        ),
+        wind_rose=wind_rose,
     ),
     pedestrian_comfort_map=[
         PedestrianComfortSurface(
