@@ -85,7 +85,7 @@ class AdvancedSimmetrixSolidSettings(object):
     def gap_elements(self):
         """Gets the gap_elements of this AdvancedSimmetrixSolidSettings.  # noqa: E501
 
-        <p>Define a target number of elements across the thickness of thin gaps. <a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#gap-refinement-factor' target='_blank'>Learn more</a>.<img src=\"/spec/resources/help/imgs/simmetrix-gap-elements.png\" class=\"helpPopupImage\"/>Example of gap refinements applied with a target of 4 elements across the thickness</p>  # noqa: E501
+        <p>Define a target number of elements across thin gaps. The <i>Gap refinement factor</i> is the ratio between gap thickness and the cell longest edge in that gap. <a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#gap-refinement-factor' target='_blank'>Learn more</a>.<img src=\"/spec/resources/help/imgs/simmetrix-gap-elements.png\" class=\"helpPopupImage\"/>Example of gap refinements applied with a target of 4 elements across the thickness</p>  # noqa: E501
 
         :return: The gap_elements of this AdvancedSimmetrixSolidSettings.  # noqa: E501
         :rtype: float
@@ -96,7 +96,7 @@ class AdvancedSimmetrixSolidSettings(object):
     def gap_elements(self, gap_elements):
         """Sets the gap_elements of this AdvancedSimmetrixSolidSettings.
 
-        <p>Define a target number of elements across the thickness of thin gaps. <a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#gap-refinement-factor' target='_blank'>Learn more</a>.<img src=\"/spec/resources/help/imgs/simmetrix-gap-elements.png\" class=\"helpPopupImage\"/>Example of gap refinements applied with a target of 4 elements across the thickness</p>  # noqa: E501
+        <p>Define a target number of elements across thin gaps. The <i>Gap refinement factor</i> is the ratio between gap thickness and the cell longest edge in that gap. <a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#gap-refinement-factor' target='_blank'>Learn more</a>.<img src=\"/spec/resources/help/imgs/simmetrix-gap-elements.png\" class=\"helpPopupImage\"/>Example of gap refinements applied with a target of 4 elements across the thickness</p>  # noqa: E501
 
         :param gap_elements: The gap_elements of this AdvancedSimmetrixSolidSettings.  # noqa: E501
         :type: float

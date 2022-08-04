@@ -62,7 +62,7 @@ class MeshOperation(object):
         'mesh_id': 'meshId'
     }
 
-    def __init__(self, mesh_operation_id=None, name=None, version='0.5', geometry_id=None, model=None, created_at=None, modified_at=None, started_at=None, finished_at=None, compute_resource=None, status=None, progress=None, mesh_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mesh_operation_id=None, name=None, version='1.0', geometry_id=None, model=None, created_at=None, modified_at=None, started_at=None, finished_at=None, compute_resource=None, status=None, progress=None, mesh_id=None, local_vars_configuration=None):  # noqa: E501
         """MeshOperation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()

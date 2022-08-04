@@ -34,7 +34,6 @@ class SimmetrixMeshingSolid(object):
         'type': 'str',
         'sizing': 'OneOfSimmetrixMeshingSolidSizing',
         'refinements': 'list[OneOfSimmetrixMeshingSolidRefinements]',
-        'second_order': 'bool',
         'enable_shell_meshing': 'bool',
         'surface_element_type': 'str',
         'num_of_processors': 'int',
@@ -45,14 +44,13 @@ class SimmetrixMeshingSolid(object):
         'type': 'type',
         'sizing': 'sizing',
         'refinements': 'refinements',
-        'second_order': 'secondOrder',
         'enable_shell_meshing': 'enableShellMeshing',
         'surface_element_type': 'surfaceElementType',
         'num_of_processors': 'numOfProcessors',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings'
     }
 
-    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, second_order=None, enable_shell_meshing=None, surface_element_type=None, num_of_processors=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, enable_shell_meshing=None, surface_element_type=None, num_of_processors=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixMeshingSolid - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,7 +59,6 @@ class SimmetrixMeshingSolid(object):
         self._type = None
         self._sizing = None
         self._refinements = None
-        self._second_order = None
         self._enable_shell_meshing = None
         self._surface_element_type = None
         self._num_of_processors = None
@@ -73,8 +70,6 @@ class SimmetrixMeshingSolid(object):
             self.sizing = sizing
         if refinements is not None:
             self.refinements = refinements
-        if second_order is not None:
-            self.second_order = second_order
         if enable_shell_meshing is not None:
             self.enable_shell_meshing = enable_shell_meshing
         if surface_element_type is not None:
@@ -150,29 +145,6 @@ class SimmetrixMeshingSolid(object):
         """
 
         self._refinements = refinements
-
-    @property
-    def second_order(self):
-        """Gets the second_order of this SimmetrixMeshingSolid.  # noqa: E501
-
-        <p>The <a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#order' target='_blank'><b>mesh order</b></a> defines the shape and the number of nodes of the mesh elements. For a fast, rough analysis choose <i>first order</i> only. Activate <i>2nd order elements</i> for higher quality results</p>  # noqa: E501
-
-        :return: The second_order of this SimmetrixMeshingSolid.  # noqa: E501
-        :rtype: bool
-        """
-        return self._second_order
-
-    @second_order.setter
-    def second_order(self, second_order):
-        """Sets the second_order of this SimmetrixMeshingSolid.
-
-        <p>The <a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#order' target='_blank'><b>mesh order</b></a> defines the shape and the number of nodes of the mesh elements. For a fast, rough analysis choose <i>first order</i> only. Activate <i>2nd order elements</i> for higher quality results</p>  # noqa: E501
-
-        :param second_order: The second_order of this SimmetrixMeshingSolid.  # noqa: E501
-        :type: bool
-        """
-
-        self._second_order = second_order
 
     @property
     def enable_shell_meshing(self):

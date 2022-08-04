@@ -32,36 +32,36 @@ class ElementTechnologyDefinition(object):
     """
     openapi_types = {
         'name': 'str',
-        'mechanical_element_type': 'str',
-        'thermal_element_type': 'str',
+        'reduced_integration': 'bool',
+        'lumped_mass': 'bool',
         'topological_reference': 'TopologicalReference'
     }
 
     attribute_map = {
         'name': 'name',
-        'mechanical_element_type': 'mechanicalElementType',
-        'thermal_element_type': 'thermalElementType',
+        'reduced_integration': 'reducedIntegration',
+        'lumped_mass': 'lumpedMass',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, name=None, mechanical_element_type=None, thermal_element_type=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, reduced_integration=None, lumped_mass=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """ElementTechnologyDefinition - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
-        self._mechanical_element_type = None
-        self._thermal_element_type = None
+        self._reduced_integration = None
+        self._lumped_mass = None
         self._topological_reference = None
         self.discriminator = None
 
         if name is not None:
             self.name = name
-        if mechanical_element_type is not None:
-            self.mechanical_element_type = mechanical_element_type
-        if thermal_element_type is not None:
-            self.thermal_element_type = thermal_element_type
+        if reduced_integration is not None:
+            self.reduced_integration = reduced_integration
+        if lumped_mass is not None:
+            self.lumped_mass = lumped_mass
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -87,58 +87,46 @@ class ElementTechnologyDefinition(object):
         self._name = name
 
     @property
-    def mechanical_element_type(self):
-        """Gets the mechanical_element_type of this ElementTechnologyDefinition.  # noqa: E501
+    def reduced_integration(self):
+        """Gets the reduced_integration of this ElementTechnologyDefinition.  # noqa: E501
 
 
-        :return: The mechanical_element_type of this ElementTechnologyDefinition.  # noqa: E501
-        :rtype: str
+        :return: The reduced_integration of this ElementTechnologyDefinition.  # noqa: E501
+        :rtype: bool
         """
-        return self._mechanical_element_type
+        return self._reduced_integration
 
-    @mechanical_element_type.setter
-    def mechanical_element_type(self, mechanical_element_type):
-        """Sets the mechanical_element_type of this ElementTechnologyDefinition.
+    @reduced_integration.setter
+    def reduced_integration(self, reduced_integration):
+        """Sets the reduced_integration of this ElementTechnologyDefinition.
 
 
-        :param mechanical_element_type: The mechanical_element_type of this ElementTechnologyDefinition.  # noqa: E501
-        :type: str
+        :param reduced_integration: The reduced_integration of this ElementTechnologyDefinition.  # noqa: E501
+        :type: bool
         """
-        allowed_values = ["STANDARD", "REDUCED_INTEGRATION"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and mechanical_element_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `mechanical_element_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(mechanical_element_type, allowed_values)
-            )
 
-        self._mechanical_element_type = mechanical_element_type
+        self._reduced_integration = reduced_integration
 
     @property
-    def thermal_element_type(self):
-        """Gets the thermal_element_type of this ElementTechnologyDefinition.  # noqa: E501
+    def lumped_mass(self):
+        """Gets the lumped_mass of this ElementTechnologyDefinition.  # noqa: E501
 
 
-        :return: The thermal_element_type of this ElementTechnologyDefinition.  # noqa: E501
-        :rtype: str
+        :return: The lumped_mass of this ElementTechnologyDefinition.  # noqa: E501
+        :rtype: bool
         """
-        return self._thermal_element_type
+        return self._lumped_mass
 
-    @thermal_element_type.setter
-    def thermal_element_type(self, thermal_element_type):
-        """Sets the thermal_element_type of this ElementTechnologyDefinition.
+    @lumped_mass.setter
+    def lumped_mass(self, lumped_mass):
+        """Sets the lumped_mass of this ElementTechnologyDefinition.
 
 
-        :param thermal_element_type: The thermal_element_type of this ElementTechnologyDefinition.  # noqa: E501
-        :type: str
+        :param lumped_mass: The lumped_mass of this ElementTechnologyDefinition.  # noqa: E501
+        :type: bool
         """
-        allowed_values = ["STANDARD", "LUMPED_THERMAL_MASS"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and thermal_element_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `thermal_element_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(thermal_element_type, allowed_values)
-            )
 
-        self._thermal_element_type = thermal_element_type
+        self._lumped_mass = lumped_mass
 
     @property
     def topological_reference(self):

@@ -41,7 +41,6 @@ class OneOfTimeDifferentiationSchemesForDefault(object):
     discriminator_value_class_map = {
         'EULER': 'EulerTimeDifferentiationScheme',
         'LOCAL_EULER': 'LocalEulerTimeDifferentiationScheme',
-        'BACKWARD': 'BackwardTimeDifferentiationScheme',
         'STEADYSTATE': 'SteadystateTimeDifferentiationScheme'
     }
 

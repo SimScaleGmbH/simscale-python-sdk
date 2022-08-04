@@ -40,7 +40,6 @@ class Algorithm(object):
         'hex_core': 'bool',
         'num_of_processors': 'int',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixSolidSettings',
-        'second_order': 'bool',
         'enable_shell_meshing': 'bool',
         'surface_element_type': 'str',
         'meshing_mode': 'str'
@@ -56,7 +55,6 @@ class Algorithm(object):
         'hex_core': 'hexCore',
         'num_of_processors': 'numOfProcessors',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings',
-        'second_order': 'secondOrder',
         'enable_shell_meshing': 'enableShellMeshing',
         'surface_element_type': 'surfaceElementType',
         'meshing_mode': 'meshingMode'
@@ -68,7 +66,7 @@ class Algorithm(object):
         'HEX_DOMINANT_SNAPPY_V5': 'HexDominantSnappy'
     }
 
-    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, advanced_simmetrix_settings=None, second_order=None, enable_shell_meshing=None, surface_element_type=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, advanced_simmetrix_settings=None, enable_shell_meshing=None, surface_element_type=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
         """Algorithm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,7 +81,6 @@ class Algorithm(object):
         self._hex_core = None
         self._num_of_processors = None
         self._advanced_simmetrix_settings = None
-        self._second_order = None
         self._enable_shell_meshing = None
         self._surface_element_type = None
         self._meshing_mode = None
@@ -106,8 +103,6 @@ class Algorithm(object):
             self.num_of_processors = num_of_processors
         if advanced_simmetrix_settings is not None:
             self.advanced_simmetrix_settings = advanced_simmetrix_settings
-        if second_order is not None:
-            self.second_order = second_order
         if enable_shell_meshing is not None:
             self.enable_shell_meshing = enable_shell_meshing
         if surface_element_type is not None:
@@ -228,7 +223,7 @@ class Algorithm(object):
     def physics_based_meshing(self):
         """Gets the physics_based_meshing of this Algorithm.  # noqa: E501
 
-        Physics-based meshing takes setup information like materials, boundary conditions, and source terms into account to size the mesh accordingly. When enabled, the following adaptations will be made:</p><ul><li>Refinements on inlets and outlets</li><li>Different sizing for solid and fluid regions in CHT simulations</li></ul> <br>When toggled on users don’t have to worry about creating a <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>separate cell zone</a>.  # noqa: E501
+        This toggle enables the automatic creation of boundary layers at no-slip walls. When toggled on, the meshing is started together with the simulation run.  # noqa: E501
 
         :return: The physics_based_meshing of this Algorithm.  # noqa: E501
         :rtype: bool
@@ -239,7 +234,7 @@ class Algorithm(object):
     def physics_based_meshing(self, physics_based_meshing):
         """Sets the physics_based_meshing of this Algorithm.
 
-        Physics-based meshing takes setup information like materials, boundary conditions, and source terms into account to size the mesh accordingly. When enabled, the following adaptations will be made:</p><ul><li>Refinements on inlets and outlets</li><li>Different sizing for solid and fluid regions in CHT simulations</li></ul> <br>When toggled on users don’t have to worry about creating a <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>separate cell zone</a>.  # noqa: E501
+        This toggle enables the automatic creation of boundary layers at no-slip walls. When toggled on, the meshing is started together with the simulation run.  # noqa: E501
 
         :param physics_based_meshing: The physics_based_meshing of this Algorithm.  # noqa: E501
         :type: bool
@@ -319,29 +314,6 @@ class Algorithm(object):
         """
 
         self._advanced_simmetrix_settings = advanced_simmetrix_settings
-
-    @property
-    def second_order(self):
-        """Gets the second_order of this Algorithm.  # noqa: E501
-
-        <p>The <a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#order' target='_blank'><b>mesh order</b></a> defines the shape and the number of nodes of the mesh elements. For a fast, rough analysis choose <i>first order</i> only. Activate <i>2nd order elements</i> for higher quality results</p>  # noqa: E501
-
-        :return: The second_order of this Algorithm.  # noqa: E501
-        :rtype: bool
-        """
-        return self._second_order
-
-    @second_order.setter
-    def second_order(self, second_order):
-        """Sets the second_order of this Algorithm.
-
-        <p>The <a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#order' target='_blank'><b>mesh order</b></a> defines the shape and the number of nodes of the mesh elements. For a fast, rough analysis choose <i>first order</i> only. Activate <i>2nd order elements</i> for higher quality results</p>  # noqa: E501
-
-        :param second_order: The second_order of this Algorithm.  # noqa: E501
-        :type: bool
-        """
-
-        self._second_order = second_order
 
     @property
     def enable_shell_meshing(self):

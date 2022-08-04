@@ -83,7 +83,7 @@ class FieldCalculationsWallHeatFluxResultControl(object):
     def type(self):
         """Gets the type of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
 
-        Schema name: FieldCalculationsWallHeatFluxResultControl  # noqa: E501
+        Computes the <b>heat flux</b> [W/m²] at every <b>wall</b> based on the surface normal gradient of the temperature. Radiation effects are not included.  Schema name: FieldCalculationsWallHeatFluxResultControl  # noqa: E501
 
         :return: The type of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
         :rtype: str
@@ -94,7 +94,7 @@ class FieldCalculationsWallHeatFluxResultControl(object):
     def type(self, type):
         """Sets the type of this FieldCalculationsWallHeatFluxResultControl.
 
-        Schema name: FieldCalculationsWallHeatFluxResultControl  # noqa: E501
+        Computes the <b>heat flux</b> [W/m²] at every <b>wall</b> based on the surface normal gradient of the temperature. Radiation effects are not included.  Schema name: FieldCalculationsWallHeatFluxResultControl  # noqa: E501
 
         :param type: The type of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
         :type: str
@@ -153,6 +153,7 @@ class FieldCalculationsWallHeatFluxResultControl(object):
     def compute_heat_transfer_coefficient(self):
         """Gets the compute_heat_transfer_coefficient of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
 
+        Computes the <b>heat transfer coefficient</b> [W/(m²K)] at every wall. Radiation effects are not included. Two modes are available for the <b>reference temperature</b> calculation: <ul><li> <b>Wall adjacent cell</b>: Uses the temperature of the first adjacent cell. </li> <li><b>Fixed</b>: Uses a custom value.</li></ul>  # noqa: E501
 
         :return: The compute_heat_transfer_coefficient of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
         :rtype: bool
@@ -163,6 +164,7 @@ class FieldCalculationsWallHeatFluxResultControl(object):
     def compute_heat_transfer_coefficient(self, compute_heat_transfer_coefficient):
         """Sets the compute_heat_transfer_coefficient of this FieldCalculationsWallHeatFluxResultControl.
 
+        Computes the <b>heat transfer coefficient</b> [W/(m²K)] at every wall. Radiation effects are not included. Two modes are available for the <b>reference temperature</b> calculation: <ul><li> <b>Wall adjacent cell</b>: Uses the temperature of the first adjacent cell. </li> <li><b>Fixed</b>: Uses a custom value.</li></ul>  # noqa: E501
 
         :param compute_heat_transfer_coefficient: The compute_heat_transfer_coefficient of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
         :type: bool
@@ -195,6 +197,7 @@ class FieldCalculationsWallHeatFluxResultControl(object):
     def compute_nusselt_number(self):
         """Gets the compute_nusselt_number of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
 
+        Computes the <b>Nusselt Number</b> at every wall. The specified heat transfer coefficient mode will be used.  # noqa: E501
 
         :return: The compute_nusselt_number of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
         :rtype: bool
@@ -205,6 +208,7 @@ class FieldCalculationsWallHeatFluxResultControl(object):
     def compute_nusselt_number(self, compute_nusselt_number):
         """Sets the compute_nusselt_number of this FieldCalculationsWallHeatFluxResultControl.
 
+        Computes the <b>Nusselt Number</b> at every wall. The specified heat transfer coefficient mode will be used.  # noqa: E501
 
         :param compute_nusselt_number: The compute_nusselt_number of this FieldCalculationsWallHeatFluxResultControl.  # noqa: E501
         :type: bool

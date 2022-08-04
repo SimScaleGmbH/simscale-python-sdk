@@ -33,21 +33,13 @@ class OneOfHingeConstraintBCAxisDefinition(object):
     openapi_types = {
         'type': 'str',
         'axis_origin': 'DimensionalVectorLength',
-        'axis_direction': 'DimensionalVectorDimensionless',
-        'beam_radius': 'DimensionalLength',
-        'beam_stiffness': 'DimensionalPressure',
-        'beam_poisson_ratio': 'DimensionalDimensionless',
-        'beam_density': 'DimensionalDensity'
+        'axis_direction': 'DimensionalVectorDimensionless'
     }
 
     attribute_map = {
         'type': 'type',
         'axis_origin': 'axisOrigin',
-        'axis_direction': 'axisDirection',
-        'beam_radius': 'beamRadius',
-        'beam_stiffness': 'beamStiffness',
-        'beam_poisson_ratio': 'beamPoissonRatio',
-        'beam_density': 'beamDensity'
+        'axis_direction': 'axisDirection'
     }
 
     discriminator_value_class_map = {
@@ -55,7 +47,7 @@ class OneOfHingeConstraintBCAxisDefinition(object):
         'AUTOMATIC': 'AutomaticAxisDefinition'
     }
 
-    def __init__(self, type='AUTOMATIC', axis_origin=None, axis_direction=None, beam_radius=None, beam_stiffness=None, beam_poisson_ratio=None, beam_density=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='AUTOMATIC', axis_origin=None, axis_direction=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHingeConstraintBCAxisDefinition - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,10 +56,6 @@ class OneOfHingeConstraintBCAxisDefinition(object):
         self._type = None
         self._axis_origin = None
         self._axis_direction = None
-        self._beam_radius = None
-        self._beam_stiffness = None
-        self._beam_poisson_ratio = None
-        self._beam_density = None
         self.discriminator = 'type'
 
         self.type = type
@@ -75,14 +63,6 @@ class OneOfHingeConstraintBCAxisDefinition(object):
             self.axis_origin = axis_origin
         if axis_direction is not None:
             self.axis_direction = axis_direction
-        if beam_radius is not None:
-            self.beam_radius = beam_radius
-        if beam_stiffness is not None:
-            self.beam_stiffness = beam_stiffness
-        if beam_poisson_ratio is not None:
-            self.beam_poisson_ratio = beam_poisson_ratio
-        if beam_density is not None:
-            self.beam_density = beam_density
 
     @property
     def type(self):
@@ -150,90 +130,6 @@ class OneOfHingeConstraintBCAxisDefinition(object):
         """
 
         self._axis_direction = axis_direction
-
-    @property
-    def beam_radius(self):
-        """Gets the beam_radius of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-
-
-        :return: The beam_radius of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-        :rtype: DimensionalLength
-        """
-        return self._beam_radius
-
-    @beam_radius.setter
-    def beam_radius(self, beam_radius):
-        """Sets the beam_radius of this OneOfHingeConstraintBCAxisDefinition.
-
-
-        :param beam_radius: The beam_radius of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-        :type: DimensionalLength
-        """
-
-        self._beam_radius = beam_radius
-
-    @property
-    def beam_stiffness(self):
-        """Gets the beam_stiffness of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-
-
-        :return: The beam_stiffness of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-        :rtype: DimensionalPressure
-        """
-        return self._beam_stiffness
-
-    @beam_stiffness.setter
-    def beam_stiffness(self, beam_stiffness):
-        """Sets the beam_stiffness of this OneOfHingeConstraintBCAxisDefinition.
-
-
-        :param beam_stiffness: The beam_stiffness of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-        :type: DimensionalPressure
-        """
-
-        self._beam_stiffness = beam_stiffness
-
-    @property
-    def beam_poisson_ratio(self):
-        """Gets the beam_poisson_ratio of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-
-
-        :return: The beam_poisson_ratio of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-        :rtype: DimensionalDimensionless
-        """
-        return self._beam_poisson_ratio
-
-    @beam_poisson_ratio.setter
-    def beam_poisson_ratio(self, beam_poisson_ratio):
-        """Sets the beam_poisson_ratio of this OneOfHingeConstraintBCAxisDefinition.
-
-
-        :param beam_poisson_ratio: The beam_poisson_ratio of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-        :type: DimensionalDimensionless
-        """
-
-        self._beam_poisson_ratio = beam_poisson_ratio
-
-    @property
-    def beam_density(self):
-        """Gets the beam_density of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-
-
-        :return: The beam_density of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-        :rtype: DimensionalDensity
-        """
-        return self._beam_density
-
-    @beam_density.setter
-    def beam_density(self, beam_density):
-        """Sets the beam_density of this OneOfHingeConstraintBCAxisDefinition.
-
-
-        :param beam_density: The beam_density of this OneOfHingeConstraintBCAxisDefinition.  # noqa: E501
-        :type: DimensionalDensity
-        """
-
-        self._beam_density = beam_density
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

@@ -93,7 +93,7 @@ class OneOfNewRegionRefinementPacefishV38MeshSizing(object):
     def fineness(self):
         """Gets the fineness of this OneOfNewRegionRefinementPacefishV38MeshSizing.  # noqa: E501
 
-        <p>This parameter determines the <b>fineness of the mesh</b> and affects the overall number of cells. It is recommended to start with the <i>coarse</i> setting. <a href='https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/mesh-settings/#local-mesh-refinements' target='_blank'>Find out more.</a></p><p><b>Note:</b> This setting will impact the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  # noqa: E501
+        <p>Choose between <i>Automatic</i> and <i>Manual</i> mesh settings. <a href='https://www.simscale.com/docs/analysis-types/incompressible-lbm/#mesh' target='_blank'>Learn more.</a></p><p><b>Note:</b> Mesh fineness impacts the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  # noqa: E501
 
         :return: The fineness of this OneOfNewRegionRefinementPacefishV38MeshSizing.  # noqa: E501
         :rtype: str
@@ -104,7 +104,7 @@ class OneOfNewRegionRefinementPacefishV38MeshSizing(object):
     def fineness(self, fineness):
         """Sets the fineness of this OneOfNewRegionRefinementPacefishV38MeshSizing.
 
-        <p>This parameter determines the <b>fineness of the mesh</b> and affects the overall number of cells. It is recommended to start with the <i>coarse</i> setting. <a href='https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/mesh-settings/#local-mesh-refinements' target='_blank'>Find out more.</a></p><p><b>Note:</b> This setting will impact the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  # noqa: E501
+        <p>Choose between <i>Automatic</i> and <i>Manual</i> mesh settings. <a href='https://www.simscale.com/docs/analysis-types/incompressible-lbm/#mesh' target='_blank'>Learn more.</a></p><p><b>Note:</b> Mesh fineness impacts the accuracy of your results as well as computing time and result size. A finer mesh will be more demanding in terms of machine size and memory but lead to more accurate results in most cases.</p>  # noqa: E501
 
         :param fineness: The fineness of this OneOfNewRegionRefinementPacefishV38MeshSizing.  # noqa: E501
         :type: str

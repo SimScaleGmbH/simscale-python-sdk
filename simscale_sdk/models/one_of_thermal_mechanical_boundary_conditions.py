@@ -55,8 +55,7 @@ class OneOfThermalMechanicalBoundaryConditions(object):
         'load': 'DimensionalVectorFunctionVolumeForce',
         'heatflux_value': 'DimensionalFunctionVolumetricPower',
         'reference_temperature': 'DimensionalFunctionTemperature',
-        'heat_transfer_coefficient': 'DimensionalFunctionThermalTransmittance',
-        'axis_definition': 'OneOfHingeConstraintBCAxisDefinition'
+        'heat_transfer_coefficient': 'DimensionalFunctionThermalTransmittance'
     }
 
     attribute_map = {
@@ -84,8 +83,7 @@ class OneOfThermalMechanicalBoundaryConditions(object):
         'load': 'load',
         'heatflux_value': 'heatfluxValue',
         'reference_temperature': 'referenceTemperature',
-        'heat_transfer_coefficient': 'heatTransferCoefficient',
-        'axis_definition': 'axisDefinition'
+        'heat_transfer_coefficient': 'heatTransferCoefficient'
     }
 
     discriminator_value_class_map = {
@@ -108,11 +106,10 @@ class OneOfThermalMechanicalBoundaryConditions(object):
         'VOLUME_LOAD': 'VolumeLoadBC',
         'SURFACE_HEAT_FLUX': 'SurfaceHeatFluxBC',
         'CONVECTIVE_HEAT_FLUX': 'ConvectiveHeatFluxBC',
-        'VOLUME_HEAT_FLUX': 'VolumeHeatFluxBC',
-        'HINGE_CONSTRAINT': 'HingeConstraintBC'
+        'VOLUME_HEAT_FLUX': 'VolumeHeatFluxBC'
     }
 
-    def __init__(self, type='HINGE_CONSTRAINT', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, temperature_value=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, heatflux_value=None, reference_temperature=None, heat_transfer_coefficient=None, axis_definition=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLUME_HEAT_FLUX', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, temperature_value=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, heatflux_value=None, reference_temperature=None, heat_transfer_coefficient=None, local_vars_configuration=None):  # noqa: E501
         """OneOfThermalMechanicalBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -143,7 +140,6 @@ class OneOfThermalMechanicalBoundaryConditions(object):
         self._heatflux_value = None
         self._reference_temperature = None
         self._heat_transfer_coefficient = None
-        self._axis_definition = None
         self.discriminator = 'type'
 
         self.type = type
@@ -195,14 +191,12 @@ class OneOfThermalMechanicalBoundaryConditions(object):
             self.reference_temperature = reference_temperature
         if heat_transfer_coefficient is not None:
             self.heat_transfer_coefficient = heat_transfer_coefficient
-        if axis_definition is not None:
-            self.axis_definition = axis_definition
 
     @property
     def type(self):
         """Gets the type of this OneOfThermalMechanicalBoundaryConditions.  # noqa: E501
 
-        Schema name: HingeConstraintBC  # noqa: E501
+        This is a <b>volume heat source</b> boundary condition. It is applied to the <b>volume elements</b> in the selected volumes or volume groups.<br /><br />Important remarks: <br /><ul><li>The total heat generated depends on the volume of the selection as the value is given as Watt per cubic meter.</li><li>For positive values heat is generated, for negative values the bc represents a heat sink.</li><li>You may define a <b>parameter dependent (x,y,z,t)</b> value by defining a formula or uploading a table (csv-file)</li></ul>  Schema name: VolumeHeatFluxBC  # noqa: E501
 
         :return: The type of this OneOfThermalMechanicalBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -213,7 +207,7 @@ class OneOfThermalMechanicalBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfThermalMechanicalBoundaryConditions.
 
-        Schema name: HingeConstraintBC  # noqa: E501
+        This is a <b>volume heat source</b> boundary condition. It is applied to the <b>volume elements</b> in the selected volumes or volume groups.<br /><br />Important remarks: <br /><ul><li>The total heat generated depends on the volume of the selection as the value is given as Watt per cubic meter.</li><li>For positive values heat is generated, for negative values the bc represents a heat sink.</li><li>You may define a <b>parameter dependent (x,y,z,t)</b> value by defining a formula or uploading a table (csv-file)</li></ul>  Schema name: VolumeHeatFluxBC  # noqa: E501
 
         :param type: The type of this OneOfThermalMechanicalBoundaryConditions.  # noqa: E501
         :type: str
@@ -734,27 +728,6 @@ class OneOfThermalMechanicalBoundaryConditions(object):
         """
 
         self._heat_transfer_coefficient = heat_transfer_coefficient
-
-    @property
-    def axis_definition(self):
-        """Gets the axis_definition of this OneOfThermalMechanicalBoundaryConditions.  # noqa: E501
-
-
-        :return: The axis_definition of this OneOfThermalMechanicalBoundaryConditions.  # noqa: E501
-        :rtype: OneOfHingeConstraintBCAxisDefinition
-        """
-        return self._axis_definition
-
-    @axis_definition.setter
-    def axis_definition(self, axis_definition):
-        """Sets the axis_definition of this OneOfThermalMechanicalBoundaryConditions.
-
-
-        :param axis_definition: The axis_definition of this OneOfThermalMechanicalBoundaryConditions.  # noqa: E501
-        :type: OneOfHingeConstraintBCAxisDefinition
-        """
-
-        self._axis_definition = axis_definition
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

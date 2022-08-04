@@ -39,7 +39,11 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         'max_element_size': 'DimensionalLength',
         'number_of_layers': 'int',
         'total_relative_thickness': 'float',
-        'layer_type': 'OneOfSimmetrixBoundaryLayerRefinementLayerType'
+        'layer_type': 'OneOfSimmetrixBoundaryLayerRefinementLayerType',
+        'number_of_elements': 'int',
+        'surface_element_type': 'str',
+        'source_topological_reference': 'TopologicalReference',
+        'destination_topological_reference': 'TopologicalReference'
     }
 
     attribute_map = {
@@ -51,16 +55,21 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         'max_element_size': 'maxElementSize',
         'number_of_layers': 'numberOfLayers',
         'total_relative_thickness': 'totalRelativeThickness',
-        'layer_type': 'layerType'
+        'layer_type': 'layerType',
+        'number_of_elements': 'numberOfElements',
+        'surface_element_type': 'surfaceElementType',
+        'source_topological_reference': 'sourceTopologicalReference',
+        'destination_topological_reference': 'destinationTopologicalReference'
     }
 
     discriminator_value_class_map = {
         'REGION_LENGTH': 'RegionRefinementWithLength',
         'SIMMETRIX_LOCAL_SIZING_V10': 'SimmetrixLocalSizingRefinement',
-        'SIMMETRIX_BOUNDARY_LAYER_V13': 'SimmetrixBoundaryLayerRefinement'
+        'SIMMETRIX_BOUNDARY_LAYER_V13': 'SimmetrixBoundaryLayerRefinement',
+        'SIMMETRIX_SWEPT_MESH_REFINEMENT': 'SimmetrixSweptMeshRefinement'
     }
 
-    def __init__(self, type='SIMMETRIX_BOUNDARY_LAYER_V13', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_SWEPT_MESH_REFINEMENT', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, number_of_elements=None, surface_element_type=None, source_topological_reference=None, destination_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixMeshingSolidRefinements - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +84,10 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         self._number_of_layers = None
         self._total_relative_thickness = None
         self._layer_type = None
+        self._number_of_elements = None
+        self._surface_element_type = None
+        self._source_topological_reference = None
+        self._destination_topological_reference = None
         self.discriminator = 'type'
 
         self.type = type
@@ -94,12 +107,20 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
             self.total_relative_thickness = total_relative_thickness
         if layer_type is not None:
             self.layer_type = layer_type
+        if number_of_elements is not None:
+            self.number_of_elements = number_of_elements
+        if surface_element_type is not None:
+            self.surface_element_type = surface_element_type
+        if source_topological_reference is not None:
+            self.source_topological_reference = source_topological_reference
+        if destination_topological_reference is not None:
+            self.destination_topological_reference = destination_topological_reference
 
     @property
     def type(self):
         """Gets the type of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
 
-        <p><a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#layer-inflation' target='_blank'><b>Layer inflation</b></a> allows the creation of prismatic boundary layers for certain mesh regions.</p><p>Prismatic layers are mostly used in CFD simulations on no-slip walls in order to efficiently capture the boundary layer velocity profile, but they may be also used in certain structural simulations like stamping or deep-drawing processes.</p><p><img src=\"/spec/resources/help/imgs/simmetrix-layers.png\" class=\"helpPopupImage\"/> The figure shows a sample mesh with boundary layers added.</p>  Schema name: SimmetrixBoundaryLayerRefinement  # noqa: E501
+        Schema name: SimmetrixSweptMeshRefinement  # noqa: E501
 
         :return: The type of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
         :rtype: str
@@ -110,7 +131,7 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
     def type(self, type):
         """Sets the type of this OneOfSimmetrixMeshingSolidRefinements.
 
-        <p><a href='https://www.simscale.com/docs/simulation-setup/meshing/standard/#layer-inflation' target='_blank'><b>Layer inflation</b></a> allows the creation of prismatic boundary layers for certain mesh regions.</p><p>Prismatic layers are mostly used in CFD simulations on no-slip walls in order to efficiently capture the boundary layer velocity profile, but they may be also used in certain structural simulations like stamping or deep-drawing processes.</p><p><img src=\"/spec/resources/help/imgs/simmetrix-layers.png\" class=\"helpPopupImage\"/> The figure shows a sample mesh with boundary layers added.</p>  Schema name: SimmetrixBoundaryLayerRefinement  # noqa: E501
+        Schema name: SimmetrixSweptMeshRefinement  # noqa: E501
 
         :param type: The type of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
         :type: str
@@ -297,6 +318,102 @@ class OneOfSimmetrixMeshingSolidRefinements(object):
         """
 
         self._layer_type = layer_type
+
+    @property
+    def number_of_elements(self):
+        """Gets the number_of_elements of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+
+
+        :return: The number_of_elements of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_elements
+
+    @number_of_elements.setter
+    def number_of_elements(self, number_of_elements):
+        """Sets the number_of_elements of this OneOfSimmetrixMeshingSolidRefinements.
+
+
+        :param number_of_elements: The number_of_elements of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_elements is not None and number_of_elements > 100000):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_elements`, must be a value less than or equal to `100000`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_elements is not None and number_of_elements < 1):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_elements`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._number_of_elements = number_of_elements
+
+    @property
+    def surface_element_type(self):
+        """Gets the surface_element_type of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+
+
+        :return: The surface_element_type of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :rtype: str
+        """
+        return self._surface_element_type
+
+    @surface_element_type.setter
+    def surface_element_type(self, surface_element_type):
+        """Sets the surface_element_type of this OneOfSimmetrixMeshingSolidRefinements.
+
+
+        :param surface_element_type: The surface_element_type of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["TRIANGULAR", "QUADDOMINANT"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and surface_element_type not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `surface_element_type` ({0}), must be one of {1}"  # noqa: E501
+                .format(surface_element_type, allowed_values)
+            )
+
+        self._surface_element_type = surface_element_type
+
+    @property
+    def source_topological_reference(self):
+        """Gets the source_topological_reference of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+
+
+        :return: The source_topological_reference of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._source_topological_reference
+
+    @source_topological_reference.setter
+    def source_topological_reference(self, source_topological_reference):
+        """Sets the source_topological_reference of this OneOfSimmetrixMeshingSolidRefinements.
+
+
+        :param source_topological_reference: The source_topological_reference of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._source_topological_reference = source_topological_reference
+
+    @property
+    def destination_topological_reference(self):
+        """Gets the destination_topological_reference of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+
+
+        :return: The destination_topological_reference of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._destination_topological_reference
+
+    @destination_topological_reference.setter
+    def destination_topological_reference(self, destination_topological_reference):
+        """Sets the destination_topological_reference of this OneOfSimmetrixMeshingSolidRefinements.
+
+
+        :param destination_topological_reference: The destination_topological_reference of this OneOfSimmetrixMeshingSolidRefinements.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._destination_topological_reference = destination_topological_reference
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

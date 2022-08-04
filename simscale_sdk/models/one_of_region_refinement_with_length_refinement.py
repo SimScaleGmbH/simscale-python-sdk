@@ -115,7 +115,7 @@ class OneOfRegionRefinementWithLengthRefinement(object):
     def distance_refinement_lengths(self):
         """Gets the distance_refinement_lengths of this OneOfRegionRefinementWithLengthRefinement.  # noqa: E501
 
-        Define the desired cell edge length based on the distance to the surface of the assigned volumes. The distances need to be specified in <u>descending order</u> from top to bottom in the table.  # noqa: E501
+        Define the desired cell size based on the distance to the surface of the assigned volumes. The distances need to be specified in <u>increasing order</u>, while the sizes must be in <u>decreasing order</u>. When the distance is 0, the corresponding size is applied inside the specified volumes.  # noqa: E501
 
         :return: The distance_refinement_lengths of this OneOfRegionRefinementWithLengthRefinement.  # noqa: E501
         :rtype: list[RefinementLength]
@@ -126,7 +126,7 @@ class OneOfRegionRefinementWithLengthRefinement(object):
     def distance_refinement_lengths(self, distance_refinement_lengths):
         """Sets the distance_refinement_lengths of this OneOfRegionRefinementWithLengthRefinement.
 
-        Define the desired cell edge length based on the distance to the surface of the assigned volumes. The distances need to be specified in <u>descending order</u> from top to bottom in the table.  # noqa: E501
+        Define the desired cell size based on the distance to the surface of the assigned volumes. The distances need to be specified in <u>increasing order</u>, while the sizes must be in <u>decreasing order</u>. When the distance is 0, the corresponding size is applied inside the specified volumes.  # noqa: E501
 
         :param distance_refinement_lengths: The distance_refinement_lengths of this OneOfRegionRefinementWithLengthRefinement.  # noqa: E501
         :type: list[RefinementLength]

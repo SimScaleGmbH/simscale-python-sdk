@@ -297,6 +297,14 @@ simscale\_sdk.models.automatic\_axis\_definition module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.automatic\_element\_definition\_method module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_element_definition_method
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.automatic\_layer\_off module
 -------------------------------------------------
 
@@ -397,14 +405,6 @@ simscale\_sdk.models.average\_velocity\_momentum\_source module
 ---------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.average_velocity_momentum_source
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.backward\_time\_differentiation\_scheme module
--------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.backward_time_differentiation_scheme
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1057,6 +1057,14 @@ simscale\_sdk.models.custom\_axis\_definition module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.custom\_element\_definition\_method module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.custom_element_definition_method
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.custom\_fluid\_bc module
 ---------------------------------------------
 
@@ -1285,6 +1293,22 @@ simscale\_sdk.models.dimensional\_eddy\_viscosity\_gradient module
 ------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_eddy_viscosity_gradient
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_electric\_conductivity module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_electric_conductivity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_electric\_current module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_electric_current
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1621,6 +1645,14 @@ simscale\_sdk.models.dimensional\_length module
 -----------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_length
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_magnetic\_permeability module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_magnetic_permeability
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2157,6 +2189,14 @@ simscale\_sdk.models.elastic\_support\_bc module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.elastic_support_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_material module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_material
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5905,6 +5945,14 @@ simscale\_sdk.models.simmetrix\_meshing\_solid module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.simmetrix\_swept\_mesh\_refinement module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.simmetrix_swept_mesh_refinement
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.simple\_decompose\_algorithm module
 --------------------------------------------------------
 
@@ -6093,6 +6141,14 @@ simscale\_sdk.models.solar\_calculator module
 ---------------------------------------------
 
 .. automodule:: simscale_sdk.models.solar_calculator
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.solid\_coil module
+---------------------------------------
+
+.. automodule:: simscale_sdk.models.solid_coil
    :members:
    :undoc-members:
    :show-inheritance:
