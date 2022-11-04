@@ -45,7 +45,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'pressure': 'FanPBC',
         'pressure_rgh': 'AmbientPBC',
         'gauge_pressure': 'FanPBC',
-        'gauge_pressure_rgh': 'FanPBC'
+        'gauge_pressure_rgh': 'AmbientPBC'
     }
 
     attribute_map = {
@@ -68,6 +68,8 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
     discriminator_value_class_map = {
         'VELOCITY_INLET_V3': 'VelocityInletBC',
+        'VELOCITY_OUTLET_V7': 'VelocityOutletBC',
+        'PRESSURE_INLET_V31': 'PressureInletBC',
         'PRESSURE_OUTLET_V30': 'PressureOutletBC',
         'WALL_V34': 'WallBC',
         'FAN': 'FanBC',
@@ -434,7 +436,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
 
         :return: The gauge_pressure_rgh of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: FanPBC
+        :rtype: AmbientPBC
         """
         return self._gauge_pressure_rgh
 
@@ -444,7 +446,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
 
 
         :param gauge_pressure_rgh: The gauge_pressure_rgh of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :type: FanPBC
+        :type: AmbientPBC
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh

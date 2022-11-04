@@ -35,11 +35,13 @@ class SimericsAnalysis(object):
         'model': 'FluidModel',
         'materials': 'SimericsFluidMaterials',
         'is_compressible': 'bool',
+        'is_multiphase': 'bool',
         'cavitation_model': 'str',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfSimericsAnalysisTimeDependency',
         'boundary_conditions': 'list[OneOfSimericsAnalysisBoundaryConditions]',
         'advanced_concepts': 'AdvancedConcepts',
+        'numerics': 'FluidNumerics',
         'simulation_control': 'FluidSimulationControl',
         'result_control': 'FluidResultControls',
         'mesh_settings': 'OneOfSimericsAnalysisMeshSettings'
@@ -50,17 +52,19 @@ class SimericsAnalysis(object):
         'model': 'model',
         'materials': 'materials',
         'is_compressible': 'isCompressible',
+        'is_multiphase': 'isMultiphase',
         'cavitation_model': 'cavitationModel',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
         'boundary_conditions': 'boundaryConditions',
         'advanced_concepts': 'advancedConcepts',
+        'numerics': 'numerics',
         'simulation_control': 'simulationControl',
         'result_control': 'resultControl',
         'mesh_settings': 'meshSettings'
     }
 
-    def __init__(self, type='SIMERICS_ANALYSIS', model=None, materials=None, is_compressible=None, cavitation_model=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, advanced_concepts=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMERICS_ANALYSIS', model=None, materials=None, is_compressible=None, is_multiphase=None, cavitation_model=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimericsAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,11 +74,13 @@ class SimericsAnalysis(object):
         self._model = None
         self._materials = None
         self._is_compressible = None
+        self._is_multiphase = None
         self._cavitation_model = None
         self._turbulence_model = None
         self._time_dependency = None
         self._boundary_conditions = None
         self._advanced_concepts = None
+        self._numerics = None
         self._simulation_control = None
         self._result_control = None
         self._mesh_settings = None
@@ -87,6 +93,8 @@ class SimericsAnalysis(object):
             self.materials = materials
         if is_compressible is not None:
             self.is_compressible = is_compressible
+        if is_multiphase is not None:
+            self.is_multiphase = is_multiphase
         if cavitation_model is not None:
             self.cavitation_model = cavitation_model
         if turbulence_model is not None:
@@ -97,6 +105,8 @@ class SimericsAnalysis(object):
             self.boundary_conditions = boundary_conditions
         if advanced_concepts is not None:
             self.advanced_concepts = advanced_concepts
+        if numerics is not None:
+            self.numerics = numerics
         if simulation_control is not None:
             self.simulation_control = simulation_control
         if result_control is not None:
@@ -191,6 +201,27 @@ class SimericsAnalysis(object):
         """
 
         self._is_compressible = is_compressible
+
+    @property
+    def is_multiphase(self):
+        """Gets the is_multiphase of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The is_multiphase of this SimericsAnalysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_multiphase
+
+    @is_multiphase.setter
+    def is_multiphase(self, is_multiphase):
+        """Sets the is_multiphase of this SimericsAnalysis.
+
+
+        :param is_multiphase: The is_multiphase of this SimericsAnalysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_multiphase = is_multiphase
 
     @property
     def cavitation_model(self):
@@ -310,6 +341,27 @@ class SimericsAnalysis(object):
         """
 
         self._advanced_concepts = advanced_concepts
+
+    @property
+    def numerics(self):
+        """Gets the numerics of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The numerics of this SimericsAnalysis.  # noqa: E501
+        :rtype: FluidNumerics
+        """
+        return self._numerics
+
+    @numerics.setter
+    def numerics(self, numerics):
+        """Sets the numerics of this SimericsAnalysis.
+
+
+        :param numerics: The numerics of this SimericsAnalysis.  # noqa: E501
+        :type: FluidNumerics
+        """
+
+        self._numerics = numerics
 
     @property
     def simulation_control(self):

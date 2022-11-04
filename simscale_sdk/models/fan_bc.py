@@ -38,6 +38,7 @@ class FanBC(object):
         'gauge_pressure': 'FanPBC',
         'gauge_pressure_rgh': 'FanPBC',
         'temperature': 'FixedValueTBC',
+        'radiative_intensity_ray': 'OneOfFanBCRadiativeIntensityRay',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -49,10 +50,11 @@ class FanBC(object):
         'gauge_pressure': 'gaugePressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
         'temperature': 'temperature',
+        'radiative_intensity_ray': 'radiativeIntensityRay',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='FAN', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, temperature=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FAN', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, temperature=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """FanBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class FanBC(object):
         self._gauge_pressure = None
         self._gauge_pressure_rgh = None
         self._temperature = None
+        self._radiative_intensity_ray = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -81,6 +84,8 @@ class FanBC(object):
             self.gauge_pressure_rgh = gauge_pressure_rgh
         if temperature is not None:
             self.temperature = temperature
+        if radiative_intensity_ray is not None:
+            self.radiative_intensity_ray = radiative_intensity_ray
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -234,6 +239,27 @@ class FanBC(object):
         """
 
         self._temperature = temperature
+
+    @property
+    def radiative_intensity_ray(self):
+        """Gets the radiative_intensity_ray of this FanBC.  # noqa: E501
+
+
+        :return: The radiative_intensity_ray of this FanBC.  # noqa: E501
+        :rtype: OneOfFanBCRadiativeIntensityRay
+        """
+        return self._radiative_intensity_ray
+
+    @radiative_intensity_ray.setter
+    def radiative_intensity_ray(self, radiative_intensity_ray):
+        """Sets the radiative_intensity_ray of this FanBC.
+
+
+        :param radiative_intensity_ray: The radiative_intensity_ray of this FanBC.  # noqa: E501
+        :type: OneOfFanBCRadiativeIntensityRay
+        """
+
+        self._radiative_intensity_ray = radiative_intensity_ray
 
     @property
     def topological_reference(self):

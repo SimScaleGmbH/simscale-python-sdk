@@ -40,6 +40,7 @@ class OneOfCustomFluidBCVelocity(object):
         'flow_rate': 'OneOfFlowRateMeanInletVBCFlowRate',
         'turbulence_wall': 'str',
         'orientation_reference': 'str',
+        'enable_surface_roughness': 'bool',
         'surface_roughness': 'DimensionalLength',
         'phase': 'str',
         'mean_velocity': 'DimensionalSpeed',
@@ -60,6 +61,7 @@ class OneOfCustomFluidBCVelocity(object):
         'flow_rate': 'flowRate',
         'turbulence_wall': 'turbulenceWall',
         'orientation_reference': 'orientationReference',
+        'enable_surface_roughness': 'enableSurfaceRoughness',
         'surface_roughness': 'surfaceRoughness',
         'phase': 'phase',
         'mean_velocity': 'meanVelocity',
@@ -91,7 +93,7 @@ class OneOfCustomFluidBCVelocity(object):
         'TURBULENT_DFSEM_INLET': 'TurbulentDFSEMInletVBC'
     }
 
-    def __init__(self, type='TURBULENT_DFSEM_INLET', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, surface_roughness=None, phase=None, mean_velocity=None, rotation=None, domain_length_scale=None, eddy_length_scale=None, velocity=None, reynolds_stress_tensor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TURBULENT_DFSEM_INLET', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, enable_surface_roughness=None, surface_roughness=None, phase=None, mean_velocity=None, rotation=None, domain_length_scale=None, eddy_length_scale=None, velocity=None, reynolds_stress_tensor=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +108,7 @@ class OneOfCustomFluidBCVelocity(object):
         self._flow_rate = None
         self._turbulence_wall = None
         self._orientation_reference = None
+        self._enable_surface_roughness = None
         self._surface_roughness = None
         self._phase = None
         self._mean_velocity = None
@@ -133,6 +136,8 @@ class OneOfCustomFluidBCVelocity(object):
             self.turbulence_wall = turbulence_wall
         if orientation_reference is not None:
             self.orientation_reference = orientation_reference
+        if enable_surface_roughness is not None:
+            self.enable_surface_roughness = enable_surface_roughness
         if surface_roughness is not None:
             self.surface_roughness = surface_roughness
         if phase is not None:
@@ -354,6 +359,29 @@ class OneOfCustomFluidBCVelocity(object):
             )
 
         self._orientation_reference = orientation_reference
+
+    @property
+    def enable_surface_roughness(self):
+        """Gets the enable_surface_roughness of this OneOfCustomFluidBCVelocity.  # noqa: E501
+
+        When turned <em>ON</em>, this wall's is no longer considered to be <em>smooth</em>. Its roughness may be then be specified.  # noqa: E501
+
+        :return: The enable_surface_roughness of this OneOfCustomFluidBCVelocity.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_surface_roughness
+
+    @enable_surface_roughness.setter
+    def enable_surface_roughness(self, enable_surface_roughness):
+        """Sets the enable_surface_roughness of this OneOfCustomFluidBCVelocity.
+
+        When turned <em>ON</em>, this wall's is no longer considered to be <em>smooth</em>. Its roughness may be then be specified.  # noqa: E501
+
+        :param enable_surface_roughness: The enable_surface_roughness of this OneOfCustomFluidBCVelocity.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_surface_roughness = enable_surface_roughness
 
     @property
     def surface_roughness(self):

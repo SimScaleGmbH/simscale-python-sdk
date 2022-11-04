@@ -35,6 +35,9 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'name': 'str',
         'pressure_type': 'OneOfFieldCalculationsPressureResultControlPressureType',
         'result_type': 'WallHeatFluxResultType',
+        'age_of_fluid_diffusion': 'bool',
+        'turbulent_schmidt_number': 'float',
+        'diffusion_coefficient': 'DimensionalKinematicViscosity',
         'clothing_coefficient_factor': 'float',
         'metabolic_rate_factor': 'float',
         'relative_humidity_factor': 'float',
@@ -52,6 +55,9 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'name': 'name',
         'pressure_type': 'pressureType',
         'result_type': 'resultType',
+        'age_of_fluid_diffusion': 'ageOfFluidDiffusion',
+        'turbulent_schmidt_number': 'turbulentSchmidtNumber',
+        'diffusion_coefficient': 'diffusionCoefficient',
         'clothing_coefficient_factor': 'clothingCoefficientFactor',
         'metabolic_rate_factor': 'metabolicRateFactor',
         'relative_humidity_factor': 'relativeHumidityFactor',
@@ -71,12 +77,13 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'FRICTION_VELOCITY_U_TAU': 'FieldCalculationsFrictionVelocityResultControl',
         'SURFACE_NORMALS': 'FieldCalculationsSurfaceNormalsResultControl',
         'WALL_FLUXES': 'FieldCalculationsWallFluxesResultControl',
+        'AGE_OF_FLUID': 'FieldCalculationsMeanAgeOfFluidResultControl',
         'THERMAL_COMFORT': 'FieldCalculationsThermalComfortResultControl',
         'ADJOINT_SENSITIVITIES': 'FieldCalculationsAdjointSensitivitiesResultControl',
         'WALL_HEAT_FLUX': 'FieldCalculationsWallHeatFluxResultControl'
     }
 
-    def __init__(self, type='WALL_HEAT_FLUX', name=None, pressure_type=None, result_type=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, compute_heat_transfer_coefficient=None, reference_temperature_result_type=None, compute_nusselt_number=None, reference_nusselt_number_length=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='WALL_HEAT_FLUX', name=None, pressure_type=None, result_type=None, age_of_fluid_diffusion=None, turbulent_schmidt_number=None, diffusion_coefficient=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, compute_heat_transfer_coefficient=None, reference_temperature_result_type=None, compute_nusselt_number=None, reference_nusselt_number_length=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidResultControlsFieldCalculations - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +93,9 @@ class OneOfFluidResultControlsFieldCalculations(object):
         self._name = None
         self._pressure_type = None
         self._result_type = None
+        self._age_of_fluid_diffusion = None
+        self._turbulent_schmidt_number = None
+        self._diffusion_coefficient = None
         self._clothing_coefficient_factor = None
         self._metabolic_rate_factor = None
         self._relative_humidity_factor = None
@@ -105,6 +115,12 @@ class OneOfFluidResultControlsFieldCalculations(object):
             self.pressure_type = pressure_type
         if result_type is not None:
             self.result_type = result_type
+        if age_of_fluid_diffusion is not None:
+            self.age_of_fluid_diffusion = age_of_fluid_diffusion
+        if turbulent_schmidt_number is not None:
+            self.turbulent_schmidt_number = turbulent_schmidt_number
+        if diffusion_coefficient is not None:
+            self.diffusion_coefficient = diffusion_coefficient
         if clothing_coefficient_factor is not None:
             self.clothing_coefficient_factor = clothing_coefficient_factor
         if metabolic_rate_factor is not None:
@@ -216,6 +232,76 @@ class OneOfFluidResultControlsFieldCalculations(object):
         """
 
         self._result_type = result_type
+
+    @property
+    def age_of_fluid_diffusion(self):
+        """Gets the age_of_fluid_diffusion of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+        <p>Enable or disable the diffusion term in the age of fluid equation. The exclusion of the diffusion term can be valid for laminar flows but tends to overestimate the age of fluid for turbulent flows.</p>  # noqa: E501
+
+        :return: The age_of_fluid_diffusion of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: bool
+        """
+        return self._age_of_fluid_diffusion
+
+    @age_of_fluid_diffusion.setter
+    def age_of_fluid_diffusion(self, age_of_fluid_diffusion):
+        """Sets the age_of_fluid_diffusion of this OneOfFluidResultControlsFieldCalculations.
+
+        <p>Enable or disable the diffusion term in the age of fluid equation. The exclusion of the diffusion term can be valid for laminar flows but tends to overestimate the age of fluid for turbulent flows.</p>  # noqa: E501
+
+        :param age_of_fluid_diffusion: The age_of_fluid_diffusion of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: bool
+        """
+
+        self._age_of_fluid_diffusion = age_of_fluid_diffusion
+
+    @property
+    def turbulent_schmidt_number(self):
+        """Gets the turbulent_schmidt_number of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+        <p>The <b>turbulent Schmidt number</b> characteristic of the flow. For HVAC applications it is recommended to maintain the default value of 0.7.</p>  # noqa: E501
+
+        :return: The turbulent_schmidt_number of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: float
+        """
+        return self._turbulent_schmidt_number
+
+    @turbulent_schmidt_number.setter
+    def turbulent_schmidt_number(self, turbulent_schmidt_number):
+        """Sets the turbulent_schmidt_number of this OneOfFluidResultControlsFieldCalculations.
+
+        <p>The <b>turbulent Schmidt number</b> characteristic of the flow. For HVAC applications it is recommended to maintain the default value of 0.7.</p>  # noqa: E501
+
+        :param turbulent_schmidt_number: The turbulent_schmidt_number of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                turbulent_schmidt_number is not None and turbulent_schmidt_number <= 1.0E-12):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_schmidt_number`, must be a value greater than `1.0E-12`")  # noqa: E501
+
+        self._turbulent_schmidt_number = turbulent_schmidt_number
+
+    @property
+    def diffusion_coefficient(self):
+        """Gets the diffusion_coefficient of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The diffusion_coefficient of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: DimensionalKinematicViscosity
+        """
+        return self._diffusion_coefficient
+
+    @diffusion_coefficient.setter
+    def diffusion_coefficient(self, diffusion_coefficient):
+        """Sets the diffusion_coefficient of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param diffusion_coefficient: The diffusion_coefficient of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: DimensionalKinematicViscosity
+        """
+
+        self._diffusion_coefficient = diffusion_coefficient
 
     @property
     def clothing_coefficient_factor(self):

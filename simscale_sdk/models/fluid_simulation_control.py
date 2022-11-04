@@ -39,6 +39,7 @@ class FluidSimulationControl(object):
         'write_control': 'OneOfFluidSimulationControlWriteControl',
         'num_processors': 'int',
         'max_run_time': 'DimensionalTime',
+        'velocity_scaling': 'float',
         'potential_foam_initialization': 'bool',
         'decompose_algorithm': 'OneOfFluidSimulationControlDecomposeAlgorithm',
         'relative_convergence_criteria': 'float'
@@ -53,12 +54,13 @@ class FluidSimulationControl(object):
         'write_control': 'writeControl',
         'num_processors': 'numProcessors',
         'max_run_time': 'maxRunTime',
+        'velocity_scaling': 'velocityScaling',
         'potential_foam_initialization': 'potentialFoamInitialization',
         'decompose_algorithm': 'decomposeAlgorithm',
         'relative_convergence_criteria': 'relativeConvergenceCriteria'
     }
 
-    def __init__(self, end_time=None, adjoint_end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, num_processors=None, max_run_time=None, potential_foam_initialization=None, decompose_algorithm=None, relative_convergence_criteria=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, end_time=None, adjoint_end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, num_processors=None, max_run_time=None, velocity_scaling=None, potential_foam_initialization=None, decompose_algorithm=None, relative_convergence_criteria=None, local_vars_configuration=None):  # noqa: E501
         """FluidSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class FluidSimulationControl(object):
         self._write_control = None
         self._num_processors = None
         self._max_run_time = None
+        self._velocity_scaling = None
         self._potential_foam_initialization = None
         self._decompose_algorithm = None
         self._relative_convergence_criteria = None
@@ -93,6 +96,8 @@ class FluidSimulationControl(object):
             self.num_processors = num_processors
         if max_run_time is not None:
             self.max_run_time = max_run_time
+        if velocity_scaling is not None:
+            self.velocity_scaling = velocity_scaling
         if potential_foam_initialization is not None:
             self.potential_foam_initialization = potential_foam_initialization
         if decompose_algorithm is not None:
@@ -280,6 +285,35 @@ class FluidSimulationControl(object):
         """
 
         self._max_run_time = max_run_time
+
+    @property
+    def velocity_scaling(self):
+        """Gets the velocity_scaling of this FluidSimulationControl.  # noqa: E501
+
+        <p>It affects the stability of the simulation. The default value of 0.1 is a good compromise between accuracy and computational requirements. Lower values of this parameter might increase the stability of the simulation at the cost of higher computational time.</p>  # noqa: E501
+
+        :return: The velocity_scaling of this FluidSimulationControl.  # noqa: E501
+        :rtype: float
+        """
+        return self._velocity_scaling
+
+    @velocity_scaling.setter
+    def velocity_scaling(self, velocity_scaling):
+        """Sets the velocity_scaling of this FluidSimulationControl.
+
+        <p>It affects the stability of the simulation. The default value of 0.1 is a good compromise between accuracy and computational requirements. Lower values of this parameter might increase the stability of the simulation at the cost of higher computational time.</p>  # noqa: E501
+
+        :param velocity_scaling: The velocity_scaling of this FluidSimulationControl.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                velocity_scaling is not None and velocity_scaling > 0.25):  # noqa: E501
+            raise ValueError("Invalid value for `velocity_scaling`, must be a value less than or equal to `0.25`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                velocity_scaling is not None and velocity_scaling < 0.025):  # noqa: E501
+            raise ValueError("Invalid value for `velocity_scaling`, must be a value greater than or equal to `0.025`")  # noqa: E501
+
+        self._velocity_scaling = velocity_scaling
 
     @property
     def potential_foam_initialization(self):

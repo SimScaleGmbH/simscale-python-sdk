@@ -98,7 +98,7 @@ class OneOfFluidSimulationControlAdjustableTimestep(object):
     def maximal_courant_number(self):
         """Gets the maximal_courant_number of this OneOfFluidSimulationControlAdjustableTimestep.  # noqa: E501
 
-        This option defines a maximum Courant number. When using explicit time integration schemes, it may not be greater than 1. Values of 0.5-0.7 are recommended for many cases.  # noqa: E501
+        This option defines a maximum Courant number. The resulting time step should resolve relevant transient effects with at least 100 steps. <br><b>Transient multiphase simulations</b>: Maximum Courant number may not be greater than 1. Values of 0.5-0.7 are recommended for many cases.  # noqa: E501
 
         :return: The maximal_courant_number of this OneOfFluidSimulationControlAdjustableTimestep.  # noqa: E501
         :rtype: float
@@ -109,7 +109,7 @@ class OneOfFluidSimulationControlAdjustableTimestep(object):
     def maximal_courant_number(self, maximal_courant_number):
         """Sets the maximal_courant_number of this OneOfFluidSimulationControlAdjustableTimestep.
 
-        This option defines a maximum Courant number. When using explicit time integration schemes, it may not be greater than 1. Values of 0.5-0.7 are recommended for many cases.  # noqa: E501
+        This option defines a maximum Courant number. The resulting time step should resolve relevant transient effects with at least 100 steps. <br><b>Transient multiphase simulations</b>: Maximum Courant number may not be greater than 1. Values of 0.5-0.7 are recommended for many cases.  # noqa: E501
 
         :param maximal_courant_number: The maximal_courant_number of this OneOfFluidSimulationControlAdjustableTimestep.  # noqa: E501
         :type: float

@@ -43,7 +43,7 @@ class Analysis(object):
         'simulation_control': 'SolidSimulationControl',
         'result_control': 'SolidResultControl',
         'mesh_order': 'str',
-        'time_dependency': 'OneOfConjugateHeatTransferTimeDependency',
+        'time_dependency': 'OneOfEmbeddedBoundaryTimeDependency',
         'inertia_effect': 'str',
         'turbulence_model': 'str',
         'algorithm': 'str',
@@ -56,6 +56,7 @@ class Analysis(object):
         'advanced_modelling': 'AdvancedModelling',
         'mesh_settings_new': 'OneOfIncompressiblePacefishMeshSettingsNew',
         'is_compressible': 'bool',
+        'is_multiphase': 'bool',
         'cavitation_model': 'str',
         'mesh_settings': 'BasicEmbeddedBoundaryMeshing',
         'region_of_interest': 'RegionOfInterest',
@@ -96,6 +97,7 @@ class Analysis(object):
         'advanced_modelling': 'advancedModelling',
         'mesh_settings_new': 'meshSettingsNew',
         'is_compressible': 'isCompressible',
+        'is_multiphase': 'isMultiphase',
         'cavitation_model': 'cavitationModel',
         'mesh_settings': 'meshSettings',
         'region_of_interest': 'regionOfInterest',
@@ -129,7 +131,7 @@ class Analysis(object):
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, enable_solar_load=None, solar_calculator=None, is_internal_flow=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, enable_solar_load=None, solar_calculator=None, is_internal_flow=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -160,6 +162,7 @@ class Analysis(object):
         self._advanced_modelling = None
         self._mesh_settings_new = None
         self._is_compressible = None
+        self._is_multiphase = None
         self._cavitation_model = None
         self._mesh_settings = None
         self._region_of_interest = None
@@ -223,6 +226,8 @@ class Analysis(object):
             self.mesh_settings_new = mesh_settings_new
         if is_compressible is not None:
             self.is_compressible = is_compressible
+        if is_multiphase is not None:
+            self.is_multiphase = is_multiphase
         if cavitation_model is not None:
             self.cavitation_model = cavitation_model
         if mesh_settings is not None:
@@ -518,7 +523,7 @@ class Analysis(object):
 
 
         :return: The time_dependency of this Analysis.  # noqa: E501
-        :rtype: OneOfConjugateHeatTransferTimeDependency
+        :rtype: OneOfEmbeddedBoundaryTimeDependency
         """
         return self._time_dependency
 
@@ -528,7 +533,7 @@ class Analysis(object):
 
 
         :param time_dependency: The time_dependency of this Analysis.  # noqa: E501
-        :type: OneOfConjugateHeatTransferTimeDependency
+        :type: OneOfEmbeddedBoundaryTimeDependency
         """
 
         self._time_dependency = time_dependency
@@ -804,6 +809,27 @@ class Analysis(object):
         """
 
         self._is_compressible = is_compressible
+
+    @property
+    def is_multiphase(self):
+        """Gets the is_multiphase of this Analysis.  # noqa: E501
+
+
+        :return: The is_multiphase of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_multiphase
+
+    @is_multiphase.setter
+    def is_multiphase(self, is_multiphase):
+        """Sets the is_multiphase of this Analysis.
+
+
+        :param is_multiphase: The is_multiphase of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_multiphase = is_multiphase
 
     @property
     def cavitation_model(self):

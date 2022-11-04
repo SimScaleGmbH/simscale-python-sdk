@@ -45,7 +45,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
         'pressure': 'OneOfCustomFluidBCPressure',
         'pressure_rgh': 'AmbientPBC',
         'gauge_pressure': 'OneOfCustomFluidBCGaugePressure',
-        'gauge_pressure_rgh': 'OneOfCustomFluidBCGaugePressureRgh',
+        'gauge_pressure_rgh': 'AmbientPBC',
         'turbulent_kinetic_energy': 'OneOfCustomFluidBCTurbulentKineticEnergy',
         'omega_dissipation_rate': 'OneOfCustomFluidBCOmegaDissipationRate',
         'epsilon_dissipation_rate': 'OneOfCustomFluidBCEpsilonDissipationRate',
@@ -484,7 +484,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
 
 
         :return: The gauge_pressure_rgh of this OneOfConvectiveHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: OneOfCustomFluidBCGaugePressureRgh
+        :rtype: AmbientPBC
         """
         return self._gauge_pressure_rgh
 
@@ -494,7 +494,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
 
 
         :param gauge_pressure_rgh: The gauge_pressure_rgh of this OneOfConvectiveHeatTransferBoundaryConditions.  # noqa: E501
-        :type: OneOfCustomFluidBCGaugePressureRgh
+        :type: AmbientPBC
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh

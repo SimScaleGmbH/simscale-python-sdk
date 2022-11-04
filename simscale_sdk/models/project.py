@@ -32,6 +32,8 @@ class Project(object):
     """
     openapi_types = {
         'project_id': 'str',
+        'space_id': 'str',
+        'parent_folder_id': 'str',
         'created_at': 'datetime',
         'name': 'str',
         'description': 'str',
@@ -41,6 +43,8 @@ class Project(object):
 
     attribute_map = {
         'project_id': 'projectId',
+        'space_id': 'spaceId',
+        'parent_folder_id': 'parentFolderId',
         'created_at': 'createdAt',
         'name': 'name',
         'description': 'description',
@@ -48,13 +52,15 @@ class Project(object):
         'tags': 'tags'
     }
 
-    def __init__(self, project_id=None, created_at=None, name=None, description=None, measurement_system='SI', tags=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, project_id=None, space_id=None, parent_folder_id=None, created_at=None, name=None, description=None, measurement_system='SI', tags=None, local_vars_configuration=None):  # noqa: E501
         """Project - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._project_id = None
+        self._space_id = None
+        self._parent_folder_id = None
         self._created_at = None
         self._name = None
         self._description = None
@@ -64,6 +70,10 @@ class Project(object):
 
         if project_id is not None:
             self.project_id = project_id
+        if space_id is not None:
+            self.space_id = space_id
+        if parent_folder_id is not None:
+            self.parent_folder_id = parent_folder_id
         if created_at is not None:
             self.created_at = created_at
         self.name = name
@@ -92,6 +102,52 @@ class Project(object):
         """
 
         self._project_id = project_id
+
+    @property
+    def space_id(self):
+        """Gets the space_id of this Project.  # noqa: E501
+
+        Always returned by the backend. Optional at project creation. If missing, the project will be created in the Personal Space of the user.  # noqa: E501
+
+        :return: The space_id of this Project.  # noqa: E501
+        :rtype: str
+        """
+        return self._space_id
+
+    @space_id.setter
+    def space_id(self, space_id):
+        """Sets the space_id of this Project.
+
+        Always returned by the backend. Optional at project creation. If missing, the project will be created in the Personal Space of the user.  # noqa: E501
+
+        :param space_id: The space_id of this Project.  # noqa: E501
+        :type: str
+        """
+
+        self._space_id = space_id
+
+    @property
+    def parent_folder_id(self):
+        """Gets the parent_folder_id of this Project.  # noqa: E501
+
+        If missing, the project is located at the root level of the Space.  # noqa: E501
+
+        :return: The parent_folder_id of this Project.  # noqa: E501
+        :rtype: str
+        """
+        return self._parent_folder_id
+
+    @parent_folder_id.setter
+    def parent_folder_id(self, parent_folder_id):
+        """Sets the parent_folder_id of this Project.
+
+        If missing, the project is located at the root level of the Space.  # noqa: E501
+
+        :param parent_folder_id: The parent_folder_id of this Project.  # noqa: E501
+        :type: str
+        """
+
+        self._parent_folder_id = parent_folder_id
 
     @property
     def created_at(self):

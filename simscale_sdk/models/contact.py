@@ -32,15 +32,17 @@ class Contact(object):
     """
     openapi_types = {
         'type': 'str',
-        'connections': 'list[OneOfContactConnections]'
+        'connections': 'list[OneOfContactConnections]',
+        'node_merging_bonded': 'bool'
     }
 
     attribute_map = {
         'type': 'type',
-        'connections': 'connections'
+        'connections': 'connections',
+        'node_merging_bonded': 'nodeMergingBonded'
     }
 
-    def __init__(self, type='CONTACT', connections=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONTACT', connections=None, node_merging_bonded=None, local_vars_configuration=None):  # noqa: E501
         """Contact - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class Contact(object):
 
         self._type = None
         self._connections = None
+        self._node_merging_bonded = None
         self.discriminator = None
 
         self.type = type
         if connections is not None:
             self.connections = connections
+        if node_merging_bonded is not None:
+            self.node_merging_bonded = node_merging_bonded
 
     @property
     def type(self):
@@ -99,6 +104,29 @@ class Contact(object):
         """
 
         self._connections = connections
+
+    @property
+    def node_merging_bonded(self):
+        """Gets the node_merging_bonded of this Contact.  # noqa: E501
+
+        <p>Allow node merging where possible to increase contact accuracy and solution efficiency. For contact pairs where nodes cannot be merged, linear relations will be used with the defined position tolerance.</p>  # noqa: E501
+
+        :return: The node_merging_bonded of this Contact.  # noqa: E501
+        :rtype: bool
+        """
+        return self._node_merging_bonded
+
+    @node_merging_bonded.setter
+    def node_merging_bonded(self, node_merging_bonded):
+        """Sets the node_merging_bonded of this Contact.
+
+        <p>Allow node merging where possible to increase contact accuracy and solution efficiency. For contact pairs where nodes cannot be merged, linear relations will be used with the defined position tolerance.</p>  # noqa: E501
+
+        :param node_merging_bonded: The node_merging_bonded of this Contact.  # noqa: E501
+        :type: bool
+        """
+
+        self._node_merging_bonded = node_merging_bonded
 
     def to_dict(self):
         """Returns the model properties as a dict"""

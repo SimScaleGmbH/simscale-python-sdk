@@ -33,6 +33,7 @@ class FluidCompressibleMaterial(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'associated_phase': 'str',
         'specie': 'SpecieDefault',
         'transport': 'OneOfFluidCompressibleMaterialTransport',
         'topological_reference': 'TopologicalReference',
@@ -44,6 +45,7 @@ class FluidCompressibleMaterial(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'associated_phase': 'associatedPhase',
         'specie': 'specie',
         'transport': 'transport',
         'topological_reference': 'topologicalReference',
@@ -52,7 +54,7 @@ class FluidCompressibleMaterial(object):
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, specie=None, transport=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, specie=None, transport=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """FluidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class FluidCompressibleMaterial(object):
 
         self._type = None
         self._name = None
+        self._associated_phase = None
         self._specie = None
         self._transport = None
         self._topological_reference = None
@@ -71,6 +74,8 @@ class FluidCompressibleMaterial(object):
         self.type = type
         if name is not None:
             self.name = name
+        if associated_phase is not None:
+            self.associated_phase = associated_phase
         if specie is not None:
             self.specie = specie
         if transport is not None:
@@ -129,6 +134,35 @@ class FluidCompressibleMaterial(object):
         """
 
         self._name = name
+
+    @property
+    def associated_phase(self):
+        """Gets the associated_phase of this FluidCompressibleMaterial.  # noqa: E501
+
+        <p>Select the corresponding phase for this material:</p><p><b>Phase 0</b> would mean this material is represented by the phase fraction value of 0. Hence, a phase fraction of '0' in your setup corresponds to 100% of this fluid material.</p><p><b>Phase 1</b> would mean this material is represented by the phase fraction value of 1. Hence, a phase fraction of '1' in your setup corresponds to 100% of this fluid material.</p>  # noqa: E501
+
+        :return: The associated_phase of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: str
+        """
+        return self._associated_phase
+
+    @associated_phase.setter
+    def associated_phase(self, associated_phase):
+        """Sets the associated_phase of this FluidCompressibleMaterial.
+
+        <p>Select the corresponding phase for this material:</p><p><b>Phase 0</b> would mean this material is represented by the phase fraction value of 0. Hence, a phase fraction of '0' in your setup corresponds to 100% of this fluid material.</p><p><b>Phase 1</b> would mean this material is represented by the phase fraction value of 1. Hence, a phase fraction of '1' in your setup corresponds to 100% of this fluid material.</p>  # noqa: E501
+
+        :param associated_phase: The associated_phase of this FluidCompressibleMaterial.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["PHASE_0", "PHASE_1"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and associated_phase not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `associated_phase` ({0}), must be one of {1}"  # noqa: E501
+                .format(associated_phase, allowed_values)
+            )
+
+        self._associated_phase = associated_phase
 
     @property
     def specie(self):

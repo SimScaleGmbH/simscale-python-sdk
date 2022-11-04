@@ -31,6 +31,7 @@ class FluidResultControls(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'custom_comfort_criteria': 'list[CustomComfortCriterionResultControl]',
         'forces_moments': 'list[OneOfFluidResultControlsForcesMoments]',
         'surface_data': 'list[OneOfFluidResultControlsSurfaceData]',
         'scalar_transport': 'list[ScalarTransportResultControl]',
@@ -42,6 +43,7 @@ class FluidResultControls(object):
     }
 
     attribute_map = {
+        'custom_comfort_criteria': 'customComfortCriteria',
         'forces_moments': 'forcesMoments',
         'surface_data': 'surfaceData',
         'scalar_transport': 'scalarTransport',
@@ -52,12 +54,13 @@ class FluidResultControls(object):
         'snapshot_result_control': 'snapshotResultControl'
     }
 
-    def __init__(self, forces_moments=None, surface_data=None, scalar_transport=None, probe_points=None, field_calculations=None, transient_result_control=None, statistical_averaging_result_control=None, snapshot_result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, custom_comfort_criteria=None, forces_moments=None, surface_data=None, scalar_transport=None, probe_points=None, field_calculations=None, transient_result_control=None, statistical_averaging_result_control=None, snapshot_result_control=None, local_vars_configuration=None):  # noqa: E501
         """FluidResultControls - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._custom_comfort_criteria = None
         self._forces_moments = None
         self._surface_data = None
         self._scalar_transport = None
@@ -68,6 +71,8 @@ class FluidResultControls(object):
         self._snapshot_result_control = None
         self.discriminator = None
 
+        if custom_comfort_criteria is not None:
+            self.custom_comfort_criteria = custom_comfort_criteria
         if forces_moments is not None:
             self.forces_moments = forces_moments
         if surface_data is not None:
@@ -84,6 +89,27 @@ class FluidResultControls(object):
             self.statistical_averaging_result_control = statistical_averaging_result_control
         if snapshot_result_control is not None:
             self.snapshot_result_control = snapshot_result_control
+
+    @property
+    def custom_comfort_criteria(self):
+        """Gets the custom_comfort_criteria of this FluidResultControls.  # noqa: E501
+
+
+        :return: The custom_comfort_criteria of this FluidResultControls.  # noqa: E501
+        :rtype: list[CustomComfortCriterionResultControl]
+        """
+        return self._custom_comfort_criteria
+
+    @custom_comfort_criteria.setter
+    def custom_comfort_criteria(self, custom_comfort_criteria):
+        """Sets the custom_comfort_criteria of this FluidResultControls.
+
+
+        :param custom_comfort_criteria: The custom_comfort_criteria of this FluidResultControls.  # noqa: E501
+        :type: list[CustomComfortCriterionResultControl]
+        """
+
+        self._custom_comfort_criteria = custom_comfort_criteria
 
     @property
     def forces_moments(self):

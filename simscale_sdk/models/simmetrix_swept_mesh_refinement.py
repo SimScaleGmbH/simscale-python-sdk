@@ -33,8 +33,10 @@ class SimmetrixSweptMeshRefinement(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'number_of_elements': 'int',
+        'sizing_type': 'OneOfSimmetrixSweptMeshRefinementSizingType',
         'surface_element_type': 'str',
+        'specify_local_size': 'bool',
+        'max_element_size': 'DimensionalLength',
         'source_topological_reference': 'TopologicalReference',
         'destination_topological_reference': 'TopologicalReference'
     }
@@ -42,13 +44,15 @@ class SimmetrixSweptMeshRefinement(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
-        'number_of_elements': 'numberOfElements',
+        'sizing_type': 'sizingType',
         'surface_element_type': 'surfaceElementType',
+        'specify_local_size': 'specifyLocalSize',
+        'max_element_size': 'maxElementSize',
         'source_topological_reference': 'sourceTopologicalReference',
         'destination_topological_reference': 'destinationTopologicalReference'
     }
 
-    def __init__(self, type='SIMMETRIX_SWEPT_MESH_REFINEMENT', name=None, number_of_elements=None, surface_element_type=None, source_topological_reference=None, destination_topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_SWEPT_MESH_REFINEMENT', name=None, sizing_type=None, surface_element_type=None, specify_local_size=None, max_element_size=None, source_topological_reference=None, destination_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixSweptMeshRefinement - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,8 +60,10 @@ class SimmetrixSweptMeshRefinement(object):
 
         self._type = None
         self._name = None
-        self._number_of_elements = None
+        self._sizing_type = None
         self._surface_element_type = None
+        self._specify_local_size = None
+        self._max_element_size = None
         self._source_topological_reference = None
         self._destination_topological_reference = None
         self.discriminator = None
@@ -65,10 +71,14 @@ class SimmetrixSweptMeshRefinement(object):
         self.type = type
         if name is not None:
             self.name = name
-        if number_of_elements is not None:
-            self.number_of_elements = number_of_elements
+        if sizing_type is not None:
+            self.sizing_type = sizing_type
         if surface_element_type is not None:
             self.surface_element_type = surface_element_type
+        if specify_local_size is not None:
+            self.specify_local_size = specify_local_size
+        if max_element_size is not None:
+            self.max_element_size = max_element_size
         if source_topological_reference is not None:
             self.source_topological_reference = source_topological_reference
         if destination_topological_reference is not None:
@@ -121,31 +131,25 @@ class SimmetrixSweptMeshRefinement(object):
         self._name = name
 
     @property
-    def number_of_elements(self):
-        """Gets the number_of_elements of this SimmetrixSweptMeshRefinement.  # noqa: E501
+    def sizing_type(self):
+        """Gets the sizing_type of this SimmetrixSweptMeshRefinement.  # noqa: E501
 
 
-        :return: The number_of_elements of this SimmetrixSweptMeshRefinement.  # noqa: E501
-        :rtype: int
+        :return: The sizing_type of this SimmetrixSweptMeshRefinement.  # noqa: E501
+        :rtype: OneOfSimmetrixSweptMeshRefinementSizingType
         """
-        return self._number_of_elements
+        return self._sizing_type
 
-    @number_of_elements.setter
-    def number_of_elements(self, number_of_elements):
-        """Sets the number_of_elements of this SimmetrixSweptMeshRefinement.
+    @sizing_type.setter
+    def sizing_type(self, sizing_type):
+        """Sets the sizing_type of this SimmetrixSweptMeshRefinement.
 
 
-        :param number_of_elements: The number_of_elements of this SimmetrixSweptMeshRefinement.  # noqa: E501
-        :type: int
+        :param sizing_type: The sizing_type of this SimmetrixSweptMeshRefinement.  # noqa: E501
+        :type: OneOfSimmetrixSweptMeshRefinementSizingType
         """
-        if (self.local_vars_configuration.client_side_validation and
-                number_of_elements is not None and number_of_elements > 100000):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_elements`, must be a value less than or equal to `100000`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                number_of_elements is not None and number_of_elements < 1):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_elements`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._number_of_elements = number_of_elements
+        self._sizing_type = sizing_type
 
     @property
     def surface_element_type(self):
@@ -173,6 +177,48 @@ class SimmetrixSweptMeshRefinement(object):
             )
 
         self._surface_element_type = surface_element_type
+
+    @property
+    def specify_local_size(self):
+        """Gets the specify_local_size of this SimmetrixSweptMeshRefinement.  # noqa: E501
+
+
+        :return: The specify_local_size of this SimmetrixSweptMeshRefinement.  # noqa: E501
+        :rtype: bool
+        """
+        return self._specify_local_size
+
+    @specify_local_size.setter
+    def specify_local_size(self, specify_local_size):
+        """Sets the specify_local_size of this SimmetrixSweptMeshRefinement.
+
+
+        :param specify_local_size: The specify_local_size of this SimmetrixSweptMeshRefinement.  # noqa: E501
+        :type: bool
+        """
+
+        self._specify_local_size = specify_local_size
+
+    @property
+    def max_element_size(self):
+        """Gets the max_element_size of this SimmetrixSweptMeshRefinement.  # noqa: E501
+
+
+        :return: The max_element_size of this SimmetrixSweptMeshRefinement.  # noqa: E501
+        :rtype: DimensionalLength
+        """
+        return self._max_element_size
+
+    @max_element_size.setter
+    def max_element_size(self, max_element_size):
+        """Sets the max_element_size of this SimmetrixSweptMeshRefinement.
+
+
+        :param max_element_size: The max_element_size of this SimmetrixSweptMeshRefinement.  # noqa: E501
+        :type: DimensionalLength
+        """
+
+        self._max_element_size = max_element_size
 
     @property
     def source_topological_reference(self):

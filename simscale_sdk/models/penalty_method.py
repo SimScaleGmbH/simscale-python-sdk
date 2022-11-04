@@ -32,27 +32,27 @@ class PenaltyMethod(object):
     """
     openapi_types = {
         'type': 'str',
-        'penalty_coefficient': 'float'
+        'contact_stiffness': 'OneOfPenaltyMethodContactStiffness'
     }
 
     attribute_map = {
         'type': 'type',
-        'penalty_coefficient': 'penaltyCoefficient'
+        'contact_stiffness': 'contactStiffness'
     }
 
-    def __init__(self, type='PENALTY_METHOD', penalty_coefficient=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PENALTY_METHOD', contact_stiffness=None, local_vars_configuration=None):  # noqa: E501
         """PenaltyMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._penalty_coefficient = None
+        self._contact_stiffness = None
         self.discriminator = None
 
         self.type = type
-        if penalty_coefficient is not None:
-            self.penalty_coefficient = penalty_coefficient
+        if contact_stiffness is not None:
+            self.contact_stiffness = contact_stiffness
 
     @property
     def type(self):
@@ -80,31 +80,25 @@ class PenaltyMethod(object):
         self._type = type
 
     @property
-    def penalty_coefficient(self):
-        """Gets the penalty_coefficient of this PenaltyMethod.  # noqa: E501
+    def contact_stiffness(self):
+        """Gets the contact_stiffness of this PenaltyMethod.  # noqa: E501
 
 
-        :return: The penalty_coefficient of this PenaltyMethod.  # noqa: E501
-        :rtype: float
+        :return: The contact_stiffness of this PenaltyMethod.  # noqa: E501
+        :rtype: OneOfPenaltyMethodContactStiffness
         """
-        return self._penalty_coefficient
+        return self._contact_stiffness
 
-    @penalty_coefficient.setter
-    def penalty_coefficient(self, penalty_coefficient):
-        """Sets the penalty_coefficient of this PenaltyMethod.
+    @contact_stiffness.setter
+    def contact_stiffness(self, contact_stiffness):
+        """Sets the contact_stiffness of this PenaltyMethod.
 
 
-        :param penalty_coefficient: The penalty_coefficient of this PenaltyMethod.  # noqa: E501
-        :type: float
+        :param contact_stiffness: The contact_stiffness of this PenaltyMethod.  # noqa: E501
+        :type: OneOfPenaltyMethodContactStiffness
         """
-        if (self.local_vars_configuration.client_side_validation and
-                penalty_coefficient is not None and penalty_coefficient > 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000):  # noqa: E501
-            raise ValueError("Invalid value for `penalty_coefficient`, must be a value less than or equal to `100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                penalty_coefficient is not None and penalty_coefficient < 0):  # noqa: E501
-            raise ValueError("Invalid value for `penalty_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._penalty_coefficient = penalty_coefficient
+        self._contact_stiffness = contact_stiffness
 
     def to_dict(self):
         """Returns the model properties as a dict"""

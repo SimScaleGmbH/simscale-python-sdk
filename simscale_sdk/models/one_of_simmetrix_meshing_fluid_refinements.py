@@ -40,10 +40,13 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         'number_of_layers': 'int',
         'total_relative_thickness': 'float',
         'layer_type': 'OneOfSimmetrixBoundaryLayerRefinementLayerType',
-        'number_of_elements': 'int',
+        'sizing_type': 'OneOfSimmetrixSweptMeshRefinementSizingType',
         'surface_element_type': 'str',
+        'specify_local_size': 'bool',
         'source_topological_reference': 'TopologicalReference',
-        'destination_topological_reference': 'TopologicalReference'
+        'destination_topological_reference': 'TopologicalReference',
+        'distance_type': 'OneOfSimmetrixThinSectionMeshRefinementDistanceType',
+        'number_of_elements': 'int'
     }
 
     attribute_map = {
@@ -56,20 +59,24 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         'number_of_layers': 'numberOfLayers',
         'total_relative_thickness': 'totalRelativeThickness',
         'layer_type': 'layerType',
-        'number_of_elements': 'numberOfElements',
+        'sizing_type': 'sizingType',
         'surface_element_type': 'surfaceElementType',
+        'specify_local_size': 'specifyLocalSize',
         'source_topological_reference': 'sourceTopologicalReference',
-        'destination_topological_reference': 'destinationTopologicalReference'
+        'destination_topological_reference': 'destinationTopologicalReference',
+        'distance_type': 'distanceType',
+        'number_of_elements': 'numberOfElements'
     }
 
     discriminator_value_class_map = {
         'REGION_LENGTH': 'RegionRefinementWithLength',
         'SIMMETRIX_LOCAL_SIZING_V10': 'SimmetrixLocalSizingRefinement',
         'SIMMETRIX_BOUNDARY_LAYER_V13': 'SimmetrixBoundaryLayerRefinement',
-        'SIMMETRIX_SWEPT_MESH_REFINEMENT': 'SimmetrixSweptMeshRefinement'
+        'SIMMETRIX_SWEPT_MESH_REFINEMENT': 'SimmetrixSweptMeshRefinement',
+        'SIMMETRIX_THIN_SECTION_MESH_REFINEMENT': 'SimmetrixThinSectionMeshRefinement'
     }
 
-    def __init__(self, type='SIMMETRIX_SWEPT_MESH_REFINEMENT', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, number_of_elements=None, surface_element_type=None, source_topological_reference=None, destination_topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_THIN_SECTION_MESH_REFINEMENT', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, sizing_type=None, surface_element_type=None, specify_local_size=None, source_topological_reference=None, destination_topological_reference=None, distance_type=None, number_of_elements=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixMeshingFluidRefinements - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,10 +91,13 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         self._number_of_layers = None
         self._total_relative_thickness = None
         self._layer_type = None
-        self._number_of_elements = None
+        self._sizing_type = None
         self._surface_element_type = None
+        self._specify_local_size = None
         self._source_topological_reference = None
         self._destination_topological_reference = None
+        self._distance_type = None
+        self._number_of_elements = None
         self.discriminator = 'type'
 
         self.type = type
@@ -107,20 +117,26 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
             self.total_relative_thickness = total_relative_thickness
         if layer_type is not None:
             self.layer_type = layer_type
-        if number_of_elements is not None:
-            self.number_of_elements = number_of_elements
+        if sizing_type is not None:
+            self.sizing_type = sizing_type
         if surface_element_type is not None:
             self.surface_element_type = surface_element_type
+        if specify_local_size is not None:
+            self.specify_local_size = specify_local_size
         if source_topological_reference is not None:
             self.source_topological_reference = source_topological_reference
         if destination_topological_reference is not None:
             self.destination_topological_reference = destination_topological_reference
+        if distance_type is not None:
+            self.distance_type = distance_type
+        if number_of_elements is not None:
+            self.number_of_elements = number_of_elements
 
     @property
     def type(self):
         """Gets the type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
 
-        Schema name: SimmetrixSweptMeshRefinement  # noqa: E501
+        Schema name: SimmetrixThinSectionMeshRefinement  # noqa: E501
 
         :return: The type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
         :rtype: str
@@ -131,7 +147,7 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
     def type(self, type):
         """Sets the type of this OneOfSimmetrixMeshingFluidRefinements.
 
-        Schema name: SimmetrixSweptMeshRefinement  # noqa: E501
+        Schema name: SimmetrixThinSectionMeshRefinement  # noqa: E501
 
         :param type: The type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
         :type: str
@@ -320,31 +336,25 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         self._layer_type = layer_type
 
     @property
-    def number_of_elements(self):
-        """Gets the number_of_elements of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+    def sizing_type(self):
+        """Gets the sizing_type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
 
 
-        :return: The number_of_elements of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
-        :rtype: int
+        :return: The sizing_type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :rtype: OneOfSimmetrixSweptMeshRefinementSizingType
         """
-        return self._number_of_elements
+        return self._sizing_type
 
-    @number_of_elements.setter
-    def number_of_elements(self, number_of_elements):
-        """Sets the number_of_elements of this OneOfSimmetrixMeshingFluidRefinements.
+    @sizing_type.setter
+    def sizing_type(self, sizing_type):
+        """Sets the sizing_type of this OneOfSimmetrixMeshingFluidRefinements.
 
 
-        :param number_of_elements: The number_of_elements of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
-        :type: int
+        :param sizing_type: The sizing_type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :type: OneOfSimmetrixSweptMeshRefinementSizingType
         """
-        if (self.local_vars_configuration.client_side_validation and
-                number_of_elements is not None and number_of_elements > 100000):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_elements`, must be a value less than or equal to `100000`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                number_of_elements is not None and number_of_elements < 1):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_elements`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._number_of_elements = number_of_elements
+        self._sizing_type = sizing_type
 
     @property
     def surface_element_type(self):
@@ -372,6 +382,27 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
             )
 
         self._surface_element_type = surface_element_type
+
+    @property
+    def specify_local_size(self):
+        """Gets the specify_local_size of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+
+
+        :return: The specify_local_size of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :rtype: bool
+        """
+        return self._specify_local_size
+
+    @specify_local_size.setter
+    def specify_local_size(self, specify_local_size):
+        """Sets the specify_local_size of this OneOfSimmetrixMeshingFluidRefinements.
+
+
+        :param specify_local_size: The specify_local_size of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :type: bool
+        """
+
+        self._specify_local_size = specify_local_size
 
     @property
     def source_topological_reference(self):
@@ -414,6 +445,56 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         """
 
         self._destination_topological_reference = destination_topological_reference
+
+    @property
+    def distance_type(self):
+        """Gets the distance_type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+
+
+        :return: The distance_type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :rtype: OneOfSimmetrixThinSectionMeshRefinementDistanceType
+        """
+        return self._distance_type
+
+    @distance_type.setter
+    def distance_type(self, distance_type):
+        """Sets the distance_type of this OneOfSimmetrixMeshingFluidRefinements.
+
+
+        :param distance_type: The distance_type of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :type: OneOfSimmetrixThinSectionMeshRefinementDistanceType
+        """
+
+        self._distance_type = distance_type
+
+    @property
+    def number_of_elements(self):
+        """Gets the number_of_elements of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+
+        <b>Number of elements</b> defines the number of cells that will be created across the thin sections of a model region.  # noqa: E501
+
+        :return: The number_of_elements of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_elements
+
+    @number_of_elements.setter
+    def number_of_elements(self, number_of_elements):
+        """Sets the number_of_elements of this OneOfSimmetrixMeshingFluidRefinements.
+
+        <b>Number of elements</b> defines the number of cells that will be created across the thin sections of a model region.  # noqa: E501
+
+        :param number_of_elements: The number_of_elements of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_elements is not None and number_of_elements > 100000):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_elements`, must be a value less than or equal to `100000`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_elements is not None and number_of_elements < 1):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_elements`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._number_of_elements = number_of_elements
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

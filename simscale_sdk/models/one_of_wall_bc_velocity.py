@@ -35,6 +35,7 @@ class OneOfWallBCVelocity(object):
         'value': 'DimensionalVectorSpeed',
         'turbulence_wall': 'str',
         'orientation_reference': 'str',
+        'enable_surface_roughness': 'bool',
         'surface_roughness': 'DimensionalLength',
         'rotation': 'AngularRotation'
     }
@@ -44,6 +45,7 @@ class OneOfWallBCVelocity(object):
         'value': 'value',
         'turbulence_wall': 'turbulenceWall',
         'orientation_reference': 'orientationReference',
+        'enable_surface_roughness': 'enableSurfaceRoughness',
         'surface_roughness': 'surfaceRoughness',
         'rotation': 'rotation'
     }
@@ -55,7 +57,7 @@ class OneOfWallBCVelocity(object):
         'SLIP': 'SlipVBC'
     }
 
-    def __init__(self, type='SLIP', value=None, turbulence_wall=None, orientation_reference=None, surface_roughness=None, rotation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SLIP', value=None, turbulence_wall=None, orientation_reference=None, enable_surface_roughness=None, surface_roughness=None, rotation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfWallBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class OneOfWallBCVelocity(object):
         self._value = None
         self._turbulence_wall = None
         self._orientation_reference = None
+        self._enable_surface_roughness = None
         self._surface_roughness = None
         self._rotation = None
         self.discriminator = 'type'
@@ -76,6 +79,8 @@ class OneOfWallBCVelocity(object):
             self.turbulence_wall = turbulence_wall
         if orientation_reference is not None:
             self.orientation_reference = orientation_reference
+        if enable_surface_roughness is not None:
+            self.enable_surface_roughness = enable_surface_roughness
         if surface_roughness is not None:
             self.surface_roughness = surface_roughness
         if rotation is not None:
@@ -180,6 +185,29 @@ class OneOfWallBCVelocity(object):
             )
 
         self._orientation_reference = orientation_reference
+
+    @property
+    def enable_surface_roughness(self):
+        """Gets the enable_surface_roughness of this OneOfWallBCVelocity.  # noqa: E501
+
+        When turned <em>ON</em>, this wall's is no longer considered to be <em>smooth</em>. Its roughness may be then be specified.  # noqa: E501
+
+        :return: The enable_surface_roughness of this OneOfWallBCVelocity.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_surface_roughness
+
+    @enable_surface_roughness.setter
+    def enable_surface_roughness(self, enable_surface_roughness):
+        """Sets the enable_surface_roughness of this OneOfWallBCVelocity.
+
+        When turned <em>ON</em>, this wall's is no longer considered to be <em>smooth</em>. Its roughness may be then be specified.  # noqa: E501
+
+        :param enable_surface_roughness: The enable_surface_roughness of this OneOfWallBCVelocity.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_surface_roughness = enable_surface_roughness
 
     @property
     def surface_roughness(self):

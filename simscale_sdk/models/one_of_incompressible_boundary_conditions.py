@@ -40,7 +40,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfCustomFluidBCNetRadiativeHeatFlux',
-        'radiative_intensity_ray': 'OneOfWallBCRadiativeIntensityRay',
+        'radiative_intensity_ray': 'OneOfFanBCRadiativeIntensityRay',
         'topological_reference': 'TopologicalReference',
         'pressure': 'OneOfCustomFluidBCPressure',
         'pressure_rgh': 'OneOfCustomFluidBCPressureRgh',
@@ -379,7 +379,7 @@ class OneOfIncompressibleBoundaryConditions(object):
 
 
         :return: The radiative_intensity_ray of this OneOfIncompressibleBoundaryConditions.  # noqa: E501
-        :rtype: OneOfWallBCRadiativeIntensityRay
+        :rtype: OneOfFanBCRadiativeIntensityRay
         """
         return self._radiative_intensity_ray
 
@@ -389,7 +389,7 @@ class OneOfIncompressibleBoundaryConditions(object):
 
 
         :param radiative_intensity_ray: The radiative_intensity_ray of this OneOfIncompressibleBoundaryConditions.  # noqa: E501
-        :type: OneOfWallBCRadiativeIntensityRay
+        :type: OneOfFanBCRadiativeIntensityRay
         """
 
         self._radiative_intensity_ray = radiative_intensity_ray

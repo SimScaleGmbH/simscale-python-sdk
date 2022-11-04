@@ -33,12 +33,14 @@ class OneOfDynamicAnalysisConnectionGroups(object):
     openapi_types = {
         'type': 'str',
         'connections': 'list[OneOfPhysicalContactConnections]',
+        'node_merging_bonded': 'bool',
         'settings': 'ConnectionSettingsV36'
     }
 
     attribute_map = {
         'type': 'type',
         'connections': 'connections',
+        'node_merging_bonded': 'nodeMergingBonded',
         'settings': 'settings'
     }
 
@@ -47,7 +49,7 @@ class OneOfDynamicAnalysisConnectionGroups(object):
         'PHYSICAL_CONTACT_V36': 'PhysicalContact'
     }
 
-    def __init__(self, type='PHYSICAL_CONTACT_V36', connections=None, settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PHYSICAL_CONTACT_V36', connections=None, node_merging_bonded=None, settings=None, local_vars_configuration=None):  # noqa: E501
         """OneOfDynamicAnalysisConnectionGroups - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,12 +57,15 @@ class OneOfDynamicAnalysisConnectionGroups(object):
 
         self._type = None
         self._connections = None
+        self._node_merging_bonded = None
         self._settings = None
         self.discriminator = 'type'
 
         self.type = type
         if connections is not None:
             self.connections = connections
+        if node_merging_bonded is not None:
+            self.node_merging_bonded = node_merging_bonded
         if settings is not None:
             self.settings = settings
 
@@ -109,6 +114,29 @@ class OneOfDynamicAnalysisConnectionGroups(object):
         """
 
         self._connections = connections
+
+    @property
+    def node_merging_bonded(self):
+        """Gets the node_merging_bonded of this OneOfDynamicAnalysisConnectionGroups.  # noqa: E501
+
+        <p>Allow node merging where possible to increase contact accuracy and solution efficiency. For contact pairs where nodes cannot be merged, linear relations will be used with the defined position tolerance.</p>  # noqa: E501
+
+        :return: The node_merging_bonded of this OneOfDynamicAnalysisConnectionGroups.  # noqa: E501
+        :rtype: bool
+        """
+        return self._node_merging_bonded
+
+    @node_merging_bonded.setter
+    def node_merging_bonded(self, node_merging_bonded):
+        """Sets the node_merging_bonded of this OneOfDynamicAnalysisConnectionGroups.
+
+        <p>Allow node merging where possible to increase contact accuracy and solution efficiency. For contact pairs where nodes cannot be merged, linear relations will be used with the defined position tolerance.</p>  # noqa: E501
+
+        :param node_merging_bonded: The node_merging_bonded of this OneOfDynamicAnalysisConnectionGroups.  # noqa: E501
+        :type: bool
+        """
+
+        self._node_merging_bonded = node_merging_bonded
 
     @property
     def settings(self):

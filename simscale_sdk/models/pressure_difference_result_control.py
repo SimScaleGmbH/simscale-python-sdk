@@ -33,6 +33,7 @@ class PressureDifferenceResultControl(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'absolute_value_of_pressure_difference': 'bool',
         'inlet_face_pressure_difference_type': 'str',
         'inlet_face_topological_reference': 'TopologicalReference',
         'outlet_face_pressure_difference_type': 'str',
@@ -42,13 +43,14 @@ class PressureDifferenceResultControl(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'absolute_value_of_pressure_difference': 'absoluteValueOfPressureDifference',
         'inlet_face_pressure_difference_type': 'inletFacePressureDifferenceType',
         'inlet_face_topological_reference': 'inletFaceTopologicalReference',
         'outlet_face_pressure_difference_type': 'outletFacePressureDifferenceType',
         'outlet_face_topological_reference': 'outletFaceTopologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, inlet_face_pressure_difference_type=None, inlet_face_topological_reference=None, outlet_face_pressure_difference_type=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, absolute_value_of_pressure_difference=None, inlet_face_pressure_difference_type=None, inlet_face_topological_reference=None, outlet_face_pressure_difference_type=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureDifferenceResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class PressureDifferenceResultControl(object):
 
         self._type = None
         self._name = None
+        self._absolute_value_of_pressure_difference = None
         self._inlet_face_pressure_difference_type = None
         self._inlet_face_topological_reference = None
         self._outlet_face_pressure_difference_type = None
@@ -65,6 +68,8 @@ class PressureDifferenceResultControl(object):
         self.type = type
         if name is not None:
             self.name = name
+        if absolute_value_of_pressure_difference is not None:
+            self.absolute_value_of_pressure_difference = absolute_value_of_pressure_difference
         if inlet_face_pressure_difference_type is not None:
             self.inlet_face_pressure_difference_type = inlet_face_pressure_difference_type
         if inlet_face_topological_reference is not None:
@@ -122,6 +127,29 @@ class PressureDifferenceResultControl(object):
             raise ValueError(r"Invalid value for `name`, must be a follow pattern or equal to `/^[A-Za-z()][-+0-9a-zA-Z_()\h]{0,199}$/`")  # noqa: E501
 
         self._name = name
+
+    @property
+    def absolute_value_of_pressure_difference(self):
+        """Gets the absolute_value_of_pressure_difference of this PressureDifferenceResultControl.  # noqa: E501
+
+        Ensure a non-negative pressure difference result. Useful for many applications in which the pressure difference is assumed to be a <i>pressure drop</i>. However, leaving this on may yield <b>non-physical</b> results for some combinations of static/total pressure.  # noqa: E501
+
+        :return: The absolute_value_of_pressure_difference of this PressureDifferenceResultControl.  # noqa: E501
+        :rtype: bool
+        """
+        return self._absolute_value_of_pressure_difference
+
+    @absolute_value_of_pressure_difference.setter
+    def absolute_value_of_pressure_difference(self, absolute_value_of_pressure_difference):
+        """Sets the absolute_value_of_pressure_difference of this PressureDifferenceResultControl.
+
+        Ensure a non-negative pressure difference result. Useful for many applications in which the pressure difference is assumed to be a <i>pressure drop</i>. However, leaving this on may yield <b>non-physical</b> results for some combinations of static/total pressure.  # noqa: E501
+
+        :param absolute_value_of_pressure_difference: The absolute_value_of_pressure_difference of this PressureDifferenceResultControl.  # noqa: E501
+        :type: bool
+        """
+
+        self._absolute_value_of_pressure_difference = absolute_value_of_pressure_difference
 
     @property
     def inlet_face_pressure_difference_type(self):

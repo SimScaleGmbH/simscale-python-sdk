@@ -33,7 +33,7 @@ class ElectromagneticMaterial(object):
     openapi_types = {
         'name': 'str',
         'electric_conductivity': 'DimensionalElectricConductivity',
-        'magnetic_permeability': 'DimensionalMagneticPermeability',
+        'relative_magnetic_permeability': 'float',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
         'material_library_reference': 'MaterialLibraryReference'
@@ -42,13 +42,13 @@ class ElectromagneticMaterial(object):
     attribute_map = {
         'name': 'name',
         'electric_conductivity': 'electricConductivity',
-        'magnetic_permeability': 'magneticPermeability',
+        'relative_magnetic_permeability': 'relativeMagneticPermeability',
         'topological_reference': 'topologicalReference',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, name=None, electric_conductivity=None, magnetic_permeability=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, electric_conductivity=None, relative_magnetic_permeability=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,7 +56,7 @@ class ElectromagneticMaterial(object):
 
         self._name = None
         self._electric_conductivity = None
-        self._magnetic_permeability = None
+        self._relative_magnetic_permeability = None
         self._topological_reference = None
         self._built_in_material = None
         self._material_library_reference = None
@@ -66,8 +66,8 @@ class ElectromagneticMaterial(object):
             self.name = name
         if electric_conductivity is not None:
             self.electric_conductivity = electric_conductivity
-        if magnetic_permeability is not None:
-            self.magnetic_permeability = magnetic_permeability
+        if relative_magnetic_permeability is not None:
+            self.relative_magnetic_permeability = relative_magnetic_permeability
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if built_in_material is not None:
@@ -118,25 +118,28 @@ class ElectromagneticMaterial(object):
         self._electric_conductivity = electric_conductivity
 
     @property
-    def magnetic_permeability(self):
-        """Gets the magnetic_permeability of this ElectromagneticMaterial.  # noqa: E501
+    def relative_magnetic_permeability(self):
+        """Gets the relative_magnetic_permeability of this ElectromagneticMaterial.  # noqa: E501
 
 
-        :return: The magnetic_permeability of this ElectromagneticMaterial.  # noqa: E501
-        :rtype: DimensionalMagneticPermeability
+        :return: The relative_magnetic_permeability of this ElectromagneticMaterial.  # noqa: E501
+        :rtype: float
         """
-        return self._magnetic_permeability
+        return self._relative_magnetic_permeability
 
-    @magnetic_permeability.setter
-    def magnetic_permeability(self, magnetic_permeability):
-        """Sets the magnetic_permeability of this ElectromagneticMaterial.
+    @relative_magnetic_permeability.setter
+    def relative_magnetic_permeability(self, relative_magnetic_permeability):
+        """Sets the relative_magnetic_permeability of this ElectromagneticMaterial.
 
 
-        :param magnetic_permeability: The magnetic_permeability of this ElectromagneticMaterial.  # noqa: E501
-        :type: DimensionalMagneticPermeability
+        :param relative_magnetic_permeability: The relative_magnetic_permeability of this ElectromagneticMaterial.  # noqa: E501
+        :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                relative_magnetic_permeability is not None and relative_magnetic_permeability < 0):  # noqa: E501
+            raise ValueError("Invalid value for `relative_magnetic_permeability`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._magnetic_permeability = magnetic_permeability
+        self._relative_magnetic_permeability = relative_magnetic_permeability
 
     @property
     def topological_reference(self):

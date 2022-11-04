@@ -34,6 +34,7 @@ class NaturalConvectionInletOutletBC(object):
         'type': 'str',
         'name': 'str',
         'pressure_rgh': 'AmbientPBC',
+        'gauge_pressure_rgh': 'AmbientPBC',
         'temperature': 'AmbientTBC',
         'net_radiative_heat_flux': 'OneOfNaturalConvectionInletOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OpenBoundaryRayBC',
@@ -44,13 +45,14 @@ class NaturalConvectionInletOutletBC(object):
         'type': 'type',
         'name': 'name',
         'pressure_rgh': 'pressureRgh',
+        'gauge_pressure_rgh': 'gaugePressureRgh',
         'temperature': 'temperature',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, pressure_rgh=None, temperature=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, pressure_rgh=None, gauge_pressure_rgh=None, temperature=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """NaturalConvectionInletOutletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class NaturalConvectionInletOutletBC(object):
         self._type = None
         self._name = None
         self._pressure_rgh = None
+        self._gauge_pressure_rgh = None
         self._temperature = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
@@ -70,6 +73,8 @@ class NaturalConvectionInletOutletBC(object):
             self.name = name
         if pressure_rgh is not None:
             self.pressure_rgh = pressure_rgh
+        if gauge_pressure_rgh is not None:
+            self.gauge_pressure_rgh = gauge_pressure_rgh
         if temperature is not None:
             self.temperature = temperature
         if net_radiative_heat_flux is not None:
@@ -145,6 +150,27 @@ class NaturalConvectionInletOutletBC(object):
         """
 
         self._pressure_rgh = pressure_rgh
+
+    @property
+    def gauge_pressure_rgh(self):
+        """Gets the gauge_pressure_rgh of this NaturalConvectionInletOutletBC.  # noqa: E501
+
+
+        :return: The gauge_pressure_rgh of this NaturalConvectionInletOutletBC.  # noqa: E501
+        :rtype: AmbientPBC
+        """
+        return self._gauge_pressure_rgh
+
+    @gauge_pressure_rgh.setter
+    def gauge_pressure_rgh(self, gauge_pressure_rgh):
+        """Sets the gauge_pressure_rgh of this NaturalConvectionInletOutletBC.
+
+
+        :param gauge_pressure_rgh: The gauge_pressure_rgh of this NaturalConvectionInletOutletBC.  # noqa: E501
+        :type: AmbientPBC
+        """
+
+        self._gauge_pressure_rgh = gauge_pressure_rgh
 
     @property
     def temperature(self):

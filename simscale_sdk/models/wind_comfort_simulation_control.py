@@ -32,15 +32,17 @@ class WindComfortSimulationControl(object):
     """
     openapi_types = {
         'max_direction_run_time': 'DimensionalTime',
-        'number_of_fluid_passes': 'float'
+        'number_of_fluid_passes': 'float',
+        'velocity_scaling': 'float'
     }
 
     attribute_map = {
         'max_direction_run_time': 'maxDirectionRunTime',
-        'number_of_fluid_passes': 'numberOfFluidPasses'
+        'number_of_fluid_passes': 'numberOfFluidPasses',
+        'velocity_scaling': 'velocityScaling'
     }
 
-    def __init__(self, max_direction_run_time=None, number_of_fluid_passes=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, max_direction_run_time=None, number_of_fluid_passes=None, velocity_scaling=None, local_vars_configuration=None):  # noqa: E501
         """WindComfortSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,12 +50,15 @@ class WindComfortSimulationControl(object):
 
         self._max_direction_run_time = None
         self._number_of_fluid_passes = None
+        self._velocity_scaling = None
         self.discriminator = None
 
         if max_direction_run_time is not None:
             self.max_direction_run_time = max_direction_run_time
         if number_of_fluid_passes is not None:
             self.number_of_fluid_passes = number_of_fluid_passes
+        if velocity_scaling is not None:
+            self.velocity_scaling = velocity_scaling
 
     @property
     def max_direction_run_time(self):
@@ -104,6 +109,35 @@ class WindComfortSimulationControl(object):
             raise ValueError("Invalid value for `number_of_fluid_passes`, must be a value greater than `0`")  # noqa: E501
 
         self._number_of_fluid_passes = number_of_fluid_passes
+
+    @property
+    def velocity_scaling(self):
+        """Gets the velocity_scaling of this WindComfortSimulationControl.  # noqa: E501
+
+        <p>It affects the stability of the simulation. The default value of 0.1 is a good compromise between accuracy and computational requirements. Lower values of this parameter might increase the stability of the simulation at the cost of higher computational time.</p>  # noqa: E501
+
+        :return: The velocity_scaling of this WindComfortSimulationControl.  # noqa: E501
+        :rtype: float
+        """
+        return self._velocity_scaling
+
+    @velocity_scaling.setter
+    def velocity_scaling(self, velocity_scaling):
+        """Sets the velocity_scaling of this WindComfortSimulationControl.
+
+        <p>It affects the stability of the simulation. The default value of 0.1 is a good compromise between accuracy and computational requirements. Lower values of this parameter might increase the stability of the simulation at the cost of higher computational time.</p>  # noqa: E501
+
+        :param velocity_scaling: The velocity_scaling of this WindComfortSimulationControl.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                velocity_scaling is not None and velocity_scaling > 0.25):  # noqa: E501
+            raise ValueError("Invalid value for `velocity_scaling`, must be a value less than or equal to `0.25`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                velocity_scaling is not None and velocity_scaling < 0.025):  # noqa: E501
+            raise ValueError("Invalid value for `velocity_scaling`, must be a value greater than or equal to `0.025`")  # noqa: E501
+
+        self._velocity_scaling = velocity_scaling
 
     def to_dict(self):
         """Returns the model properties as a dict"""

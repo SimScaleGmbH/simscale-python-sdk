@@ -33,16 +33,18 @@ class NoSlipVBC(object):
     openapi_types = {
         'type': 'str',
         'turbulence_wall': 'str',
+        'enable_surface_roughness': 'bool',
         'surface_roughness': 'DimensionalLength'
     }
 
     attribute_map = {
         'type': 'type',
         'turbulence_wall': 'turbulenceWall',
+        'enable_surface_roughness': 'enableSurfaceRoughness',
         'surface_roughness': 'surfaceRoughness'
     }
 
-    def __init__(self, type='NO_SLIP', turbulence_wall=None, surface_roughness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NO_SLIP', turbulence_wall=None, enable_surface_roughness=None, surface_roughness=None, local_vars_configuration=None):  # noqa: E501
         """NoSlipVBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,12 +52,15 @@ class NoSlipVBC(object):
 
         self._type = None
         self._turbulence_wall = None
+        self._enable_surface_roughness = None
         self._surface_roughness = None
         self.discriminator = None
 
         self.type = type
         if turbulence_wall is not None:
             self.turbulence_wall = turbulence_wall
+        if enable_surface_roughness is not None:
+            self.enable_surface_roughness = enable_surface_roughness
         if surface_roughness is not None:
             self.surface_roughness = surface_roughness
 
@@ -110,6 +115,29 @@ class NoSlipVBC(object):
             )
 
         self._turbulence_wall = turbulence_wall
+
+    @property
+    def enable_surface_roughness(self):
+        """Gets the enable_surface_roughness of this NoSlipVBC.  # noqa: E501
+
+        When turned <em>ON</em>, this wall's is no longer considered to be <em>smooth</em>. Its roughness may be then be specified.  # noqa: E501
+
+        :return: The enable_surface_roughness of this NoSlipVBC.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_surface_roughness
+
+    @enable_surface_roughness.setter
+    def enable_surface_roughness(self, enable_surface_roughness):
+        """Sets the enable_surface_roughness of this NoSlipVBC.
+
+        When turned <em>ON</em>, this wall's is no longer considered to be <em>smooth</em>. Its roughness may be then be specified.  # noqa: E501
+
+        :param enable_surface_roughness: The enable_surface_roughness of this NoSlipVBC.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_surface_roughness = enable_surface_roughness
 
     @property
     def surface_roughness(self):

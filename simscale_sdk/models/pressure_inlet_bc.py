@@ -41,6 +41,7 @@ class PressureInletBC(object):
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'FixedValuePFBC',
         'net_radiative_heat_flux': 'OneOfPressureInletBCNetRadiativeHeatFlux',
+        'radiative_intensity_ray': 'OneOfPressureInletBCRadiativeIntensityRay',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -55,10 +56,11 @@ class PressureInletBC(object):
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
+        'radiative_intensity_ray': 'radiativeIntensityRay',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_INLET_V31', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, temperature=None, passive_scalars=None, phase_fraction=None, net_radiative_heat_flux=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_INLET_V31', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, temperature=None, passive_scalars=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureInletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +76,7 @@ class PressureInletBC(object):
         self._passive_scalars = None
         self._phase_fraction = None
         self._net_radiative_heat_flux = None
+        self._radiative_intensity_ray = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -96,6 +99,8 @@ class PressureInletBC(object):
             self.phase_fraction = phase_fraction
         if net_radiative_heat_flux is not None:
             self.net_radiative_heat_flux = net_radiative_heat_flux
+        if radiative_intensity_ray is not None:
+            self.radiative_intensity_ray = radiative_intensity_ray
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -314,6 +319,27 @@ class PressureInletBC(object):
         """
 
         self._net_radiative_heat_flux = net_radiative_heat_flux
+
+    @property
+    def radiative_intensity_ray(self):
+        """Gets the radiative_intensity_ray of this PressureInletBC.  # noqa: E501
+
+
+        :return: The radiative_intensity_ray of this PressureInletBC.  # noqa: E501
+        :rtype: OneOfPressureInletBCRadiativeIntensityRay
+        """
+        return self._radiative_intensity_ray
+
+    @radiative_intensity_ray.setter
+    def radiative_intensity_ray(self, radiative_intensity_ray):
+        """Sets the radiative_intensity_ray of this PressureInletBC.
+
+
+        :param radiative_intensity_ray: The radiative_intensity_ray of this PressureInletBC.  # noqa: E501
+        :type: OneOfPressureInletBCRadiativeIntensityRay
+        """
+
+        self._radiative_intensity_ray = radiative_intensity_ray
 
     @property
     def topological_reference(self):

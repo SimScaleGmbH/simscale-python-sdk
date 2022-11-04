@@ -79,7 +79,8 @@ class ReportResponse(object):
 
         self.report_id = report_id
         self.name = name
-        self.description = description
+        if description is not None:
+            self.description = description
         self.created_at = created_at
         if started_at is not None:
             self.started_at = started_at
@@ -165,8 +166,6 @@ class ReportResponse(object):
         :param description: The description of this ReportResponse.  # noqa: E501
         :type: str
         """
-        if self.local_vars_configuration.client_side_validation and description is None:  # noqa: E501
-            raise ValueError("Invalid value for `description`, must not be `None`")  # noqa: E501
 
         self._description = description
 

@@ -44,7 +44,8 @@ class EmbeddedBoundary(object):
         'mesh_settings': 'BasicEmbeddedBoundaryMeshing',
         'is_compressible': 'bool',
         'enable_radiation': 'bool',
-        'turbulence_model': 'str'
+        'turbulence_model': 'str',
+        'time_dependency': 'OneOfEmbeddedBoundaryTimeDependency'
     }
 
     attribute_map = {
@@ -61,10 +62,11 @@ class EmbeddedBoundary(object):
         'mesh_settings': 'meshSettings',
         'is_compressible': 'isCompressible',
         'enable_radiation': 'enableRadiation',
-        'turbulence_model': 'turbulenceModel'
+        'turbulence_model': 'turbulenceModel',
+        'time_dependency': 'timeDependency'
     }
 
-    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, is_compressible=None, enable_radiation=None, turbulence_model=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, is_compressible=None, enable_radiation=None, turbulence_model=None, time_dependency=None, local_vars_configuration=None):  # noqa: E501
         """EmbeddedBoundary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class EmbeddedBoundary(object):
         self._is_compressible = None
         self._enable_radiation = None
         self._turbulence_model = None
+        self._time_dependency = None
         self.discriminator = None
 
         self.type = type
@@ -113,6 +116,8 @@ class EmbeddedBoundary(object):
             self.enable_radiation = enable_radiation
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
+        if time_dependency is not None:
+            self.time_dependency = time_dependency
 
     @property
     def type(self):
@@ -425,6 +430,27 @@ class EmbeddedBoundary(object):
             )
 
         self._turbulence_model = turbulence_model
+
+    @property
+    def time_dependency(self):
+        """Gets the time_dependency of this EmbeddedBoundary.  # noqa: E501
+
+
+        :return: The time_dependency of this EmbeddedBoundary.  # noqa: E501
+        :rtype: OneOfEmbeddedBoundaryTimeDependency
+        """
+        return self._time_dependency
+
+    @time_dependency.setter
+    def time_dependency(self, time_dependency):
+        """Sets the time_dependency of this EmbeddedBoundary.
+
+
+        :param time_dependency: The time_dependency of this EmbeddedBoundary.  # noqa: E501
+        :type: OneOfEmbeddedBoundaryTimeDependency
+        """
+
+        self._time_dependency = time_dependency
 
     def to_dict(self):
         """Returns the model properties as a dict"""

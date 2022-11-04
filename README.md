@@ -79,6 +79,19 @@ mesh_operation_api = MeshOperationsApi(api_client)
 simulation_api = SimulationsApi(api_client)
 ```
 
+### HTTP Proxy
+
+To use the API client with an HTTP proxy, you must set `configuration.proxy` with the proxy URL. You can use `configuration.proxy_headers`
+to set up authentication.
+```python
+configuration.proxy = "http://myProxyUrl:myProxyPort/"
+configuration.proxy_headers = urllib3.util.make_headers(proxy_basic_auth='username:password') # Optional - example with Basic authentication
+
+api_client = ApiClient(configuration)
+```
+
+For more details check https://urllib3.readthedocs.io/en/stable/advanced-usage.html#proxies.
+
 ## Examples
 
 The `examples` folder contains executable code examples to demonstrate how the SDK can be used.

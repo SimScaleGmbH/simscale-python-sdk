@@ -17,6 +17,14 @@ simscale\_sdk.models.absolute\_convergence\_criteria module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.absolute\_distance module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_distance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.absolute\_passive\_scalar\_source module
 -------------------------------------------------------------
 
@@ -109,6 +117,14 @@ simscale\_sdk.models.adjustable\_runtime\_write\_control module
 ---------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.adjustable_runtime_write_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.advanced\_comfort\_criterion\_settings module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.advanced_comfort_criterion_settings
    :members:
    :undoc-members:
    :show-inheritance:
@@ -357,6 +373,14 @@ simscale\_sdk.models.automatic\_omega\_dissipation module
 ---------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.automatic_omega_dissipation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.automatic\_penetration\_control module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_penetration_control
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1057,6 +1081,22 @@ simscale\_sdk.models.custom\_axis\_definition module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.custom\_comfort\_criterion\_result\_control module
+-----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.custom_comfort_criterion_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.custom\_contact\_stiffness module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.custom_contact_stiffness
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.custom\_element\_definition\_method module
 ---------------------------------------------------------------
 
@@ -1645,14 +1685,6 @@ simscale\_sdk.models.dimensional\_length module
 -----------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_length
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.dimensional\_magnetic\_permeability module
----------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.dimensional_magnetic_permeability
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2417,6 +2449,14 @@ simscale\_sdk.models.field\_calculations\_friction\_velocity\_result\_control mo
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.field\_calculations\_mean\_age\_of\_fluid\_result\_control module
+--------------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_mean_age_of_fluid_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.field\_calculations\_pressure\_result\_control module
 --------------------------------------------------------------------------
 
@@ -2989,6 +3029,22 @@ simscale\_sdk.models.flux\_schemes module
 -----------------------------------------
 
 .. automodule:: simscale_sdk.models.flux_schemes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.folder module
+----------------------------------
+
+.. automodule:: simscale_sdk.models.folder
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.folders module
+-----------------------------------
+
+.. automodule:: simscale_sdk.models.folders
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3737,6 +3793,14 @@ simscale\_sdk.models.hierarchical\_decompose\_algorithm module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.high\_contact\_stiffness module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.high_contact_stiffness
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.high\_resolution module
 --------------------------------------------
 
@@ -4233,6 +4297,14 @@ simscale\_sdk.models.log\_severity module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.low\_contact\_stiffness module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.low_contact_stiffness
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.manual\_mesh\_grading module
 -------------------------------------------------
 
@@ -4433,6 +4505,14 @@ simscale\_sdk.models.maximum\_number\_iteration\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.mean\_age\_of\_fluid\_result\_type module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.mean_age_of_fluid_result_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.mean\_value\_outlet\_vbc module
 ----------------------------------------------------
 
@@ -4537,6 +4617,14 @@ simscale\_sdk.models.model\_settings module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.moderate\_contact\_stiffness module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.moderate_contact_stiffness
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.moderate\_resolution module
 ------------------------------------------------
 
@@ -4557,6 +4645,22 @@ simscale\_sdk.models.mooney\_rivlin\_hyper\_elastic\_model module
 -----------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.mooney_rivlin_hyper_elastic_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.mortar\_method module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.mortar_method
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.move\_content\_request module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.move_content_request
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5569,6 +5673,14 @@ simscale\_sdk.models.relative\_convergence\_criteria module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.relative\_distance module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_distance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.relative\_to\_all\_cad\_surfaces\_settings module
 ----------------------------------------------------------------------
 
@@ -5661,6 +5773,22 @@ simscale\_sdk.models.resolution\_info module
 --------------------------------------------
 
 .. automodule:: simscale_sdk.models.resolution_info
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.resource\_location module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.resource_location
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.resource\_to\_move module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.resource_to_move
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5953,6 +6081,14 @@ simscale\_sdk.models.simmetrix\_swept\_mesh\_refinement module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.simmetrix\_thin\_section\_mesh\_refinement module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.simmetrix_thin_section_mesh_refinement
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.simple\_decompose\_algorithm module
 --------------------------------------------------------
 
@@ -6221,6 +6357,22 @@ simscale\_sdk.models.sor\_preconditioner module
 -----------------------------------------------
 
 .. automodule:: simscale_sdk.models.sor_preconditioner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.space module
+---------------------------------
+
+.. automodule:: simscale_sdk.models.space
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.spaces module
+----------------------------------
+
+.. automodule:: simscale_sdk.models.spaces
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6625,6 +6777,22 @@ simscale\_sdk.models.sutherland\_transport module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.sweep\_meshing\_absolute\_size module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.sweep_meshing_absolute_size
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.sweep\_meshing\_number\_of\_elements module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.sweep_meshing_number_of_elements
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.sycamore module
 ------------------------------------
 
@@ -6769,6 +6937,14 @@ simscale\_sdk.models.synchronize\_with\_field\_output\_write\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.table\_defined\_comfort\_criterion\_definition module
+--------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.table_defined_comfort_criterion_definition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.table\_defined\_function module
 ----------------------------------------------------
 
@@ -6885,6 +7061,14 @@ simscale\_sdk.models.theta\_method\_time\_integration\_type module
 ------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.theta_method_time_integration_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.thin\_resistance\_layer module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.thin_resistance_layer
    :members:
    :undoc-members:
    :show-inheritance:

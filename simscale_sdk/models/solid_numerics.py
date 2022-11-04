@@ -36,6 +36,7 @@ class SolidNumerics(object):
         'eigen_solver': 'OneOfSolidNumericsEigenSolver',
         'calculate_frequency': 'CalculateFrequency',
         'eigen_mode': 'EigenModeVerification',
+        'enhanced_accuracy': 'bool',
         'mechanical_time_integration_type': 'OneOfSolidNumericsMechanicalTimeIntegrationType',
         'mechanical_resolution_type': 'OneOfSolidNumericsMechanicalResolutionType',
         'mechanical_line_search': 'OneOfSolidNumericsMechanicalLineSearch',
@@ -50,6 +51,7 @@ class SolidNumerics(object):
         'eigen_solver': 'eigenSolver',
         'calculate_frequency': 'calculateFrequency',
         'eigen_mode': 'eigenMode',
+        'enhanced_accuracy': 'enhancedAccuracy',
         'mechanical_time_integration_type': 'mechanicalTimeIntegrationType',
         'mechanical_resolution_type': 'mechanicalResolutionType',
         'mechanical_line_search': 'mechanicalLineSearch',
@@ -58,7 +60,7 @@ class SolidNumerics(object):
         'thermal_line_search': 'thermalLineSearch'
     }
 
-    def __init__(self, solver=None, solve_model=None, eigen_solver=None, calculate_frequency=None, eigen_mode=None, mechanical_time_integration_type=None, mechanical_resolution_type=None, mechanical_line_search=None, thermal_time_integration_type=None, thermal_resolution_type=None, thermal_line_search=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, solver=None, solve_model=None, eigen_solver=None, calculate_frequency=None, eigen_mode=None, enhanced_accuracy=None, mechanical_time_integration_type=None, mechanical_resolution_type=None, mechanical_line_search=None, thermal_time_integration_type=None, thermal_resolution_type=None, thermal_line_search=None, local_vars_configuration=None):  # noqa: E501
         """SolidNumerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class SolidNumerics(object):
         self._eigen_solver = None
         self._calculate_frequency = None
         self._eigen_mode = None
+        self._enhanced_accuracy = None
         self._mechanical_time_integration_type = None
         self._mechanical_resolution_type = None
         self._mechanical_line_search = None
@@ -87,6 +90,8 @@ class SolidNumerics(object):
             self.calculate_frequency = calculate_frequency
         if eigen_mode is not None:
             self.eigen_mode = eigen_mode
+        if enhanced_accuracy is not None:
+            self.enhanced_accuracy = enhanced_accuracy
         if mechanical_time_integration_type is not None:
             self.mechanical_time_integration_type = mechanical_time_integration_type
         if mechanical_resolution_type is not None:
@@ -204,6 +209,29 @@ class SolidNumerics(object):
         """
 
         self._eigen_mode = eigen_mode
+
+    @property
+    def enhanced_accuracy(self):
+        """Gets the enhanced_accuracy of this SolidNumerics.  # noqa: E501
+
+        Further increase the accuracy of the results by running two simulations. The results of the first one will be used as input for the second one to fine-tune the setup.  # noqa: E501
+
+        :return: The enhanced_accuracy of this SolidNumerics.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enhanced_accuracy
+
+    @enhanced_accuracy.setter
+    def enhanced_accuracy(self, enhanced_accuracy):
+        """Sets the enhanced_accuracy of this SolidNumerics.
+
+        Further increase the accuracy of the results by running two simulations. The results of the first one will be used as input for the second one to fine-tune the setup.  # noqa: E501
+
+        :param enhanced_accuracy: The enhanced_accuracy of this SolidNumerics.  # noqa: E501
+        :type: bool
+        """
+
+        self._enhanced_accuracy = enhanced_accuracy
 
     @property
     def mechanical_time_integration_type(self):

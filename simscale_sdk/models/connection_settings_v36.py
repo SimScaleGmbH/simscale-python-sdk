@@ -35,9 +35,7 @@ class ConnectionSettingsV36(object):
         'friction': 'OneOfConnectionSettingsV36Friction',
         'contact_non_linearity_resolution': 'OneOfConnectionSettingsV36ContactNonLinearityResolution',
         'convergence_stabilization': 'bool',
-        'contact_smoothing': 'bool',
-        'stop_if_interpenetration': 'bool',
-        'verify_norms': 'bool'
+        'contact_smoothing': 'bool'
     }
 
     attribute_map = {
@@ -45,12 +43,10 @@ class ConnectionSettingsV36(object):
         'friction': 'friction',
         'contact_non_linearity_resolution': 'contactNonLinearityResolution',
         'convergence_stabilization': 'convergenceStabilization',
-        'contact_smoothing': 'contactSmoothing',
-        'stop_if_interpenetration': 'stopIfInterpenetration',
-        'verify_norms': 'verifyNorms'
+        'contact_smoothing': 'contactSmoothing'
     }
 
-    def __init__(self, nonlinearity_resolution=None, friction=None, contact_non_linearity_resolution=None, convergence_stabilization=None, contact_smoothing=None, stop_if_interpenetration=None, verify_norms=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, nonlinearity_resolution=None, friction=None, contact_non_linearity_resolution=None, convergence_stabilization=None, contact_smoothing=None, local_vars_configuration=None):  # noqa: E501
         """ConnectionSettingsV36 - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,8 +57,6 @@ class ConnectionSettingsV36(object):
         self._contact_non_linearity_resolution = None
         self._convergence_stabilization = None
         self._contact_smoothing = None
-        self._stop_if_interpenetration = None
-        self._verify_norms = None
         self.discriminator = None
 
         if nonlinearity_resolution is not None:
@@ -75,10 +69,6 @@ class ConnectionSettingsV36(object):
             self.convergence_stabilization = convergence_stabilization
         if contact_smoothing is not None:
             self.contact_smoothing = contact_smoothing
-        if stop_if_interpenetration is not None:
-            self.stop_if_interpenetration = stop_if_interpenetration
-        if verify_norms is not None:
-            self.verify_norms = verify_norms
 
     @property
     def nonlinearity_resolution(self):
@@ -184,48 +174,6 @@ class ConnectionSettingsV36(object):
         """
 
         self._contact_smoothing = contact_smoothing
-
-    @property
-    def stop_if_interpenetration(self):
-        """Gets the stop_if_interpenetration of this ConnectionSettingsV36.  # noqa: E501
-
-
-        :return: The stop_if_interpenetration of this ConnectionSettingsV36.  # noqa: E501
-        :rtype: bool
-        """
-        return self._stop_if_interpenetration
-
-    @stop_if_interpenetration.setter
-    def stop_if_interpenetration(self, stop_if_interpenetration):
-        """Sets the stop_if_interpenetration of this ConnectionSettingsV36.
-
-
-        :param stop_if_interpenetration: The stop_if_interpenetration of this ConnectionSettingsV36.  # noqa: E501
-        :type: bool
-        """
-
-        self._stop_if_interpenetration = stop_if_interpenetration
-
-    @property
-    def verify_norms(self):
-        """Gets the verify_norms of this ConnectionSettingsV36.  # noqa: E501
-
-
-        :return: The verify_norms of this ConnectionSettingsV36.  # noqa: E501
-        :rtype: bool
-        """
-        return self._verify_norms
-
-    @verify_norms.setter
-    def verify_norms(self, verify_norms):
-        """Sets the verify_norms of this ConnectionSettingsV36.
-
-
-        :param verify_norms: The verify_norms of this ConnectionSettingsV36.  # noqa: E501
-        :type: bool
-        """
-
-        self._verify_norms = verify_norms
 
     def to_dict(self):
         """Returns the model properties as a dict"""

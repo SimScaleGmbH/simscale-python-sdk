@@ -36,6 +36,7 @@ class CoupledConjugateHeatTransfer(object):
         'enable_radiation': 'bool',
         'enable_solar_load': 'bool',
         'turbulence_model': 'str',
+        'time_dependency': 'OneOfCoupledConjugateHeatTransferTimeDependency',
         'num_of_passive_species': 'int',
         'connection_groups': 'list[FluidInterface]',
         'model': 'FluidModel',
@@ -56,6 +57,7 @@ class CoupledConjugateHeatTransfer(object):
         'enable_radiation': 'enableRadiation',
         'enable_solar_load': 'enableSolarLoad',
         'turbulence_model': 'turbulenceModel',
+        'time_dependency': 'timeDependency',
         'num_of_passive_species': 'numOfPassiveSpecies',
         'connection_groups': 'connectionGroups',
         'model': 'model',
@@ -70,7 +72,7 @@ class CoupledConjugateHeatTransfer(object):
         'contact_handling_mode': 'contactHandlingMode'
     }
 
-    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, enable_solar_load=None, turbulence_model=None, num_of_passive_species=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, enable_solar_load=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
         """CoupledConjugateHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class CoupledConjugateHeatTransfer(object):
         self._enable_radiation = None
         self._enable_solar_load = None
         self._turbulence_model = None
+        self._time_dependency = None
         self._num_of_passive_species = None
         self._connection_groups = None
         self._model = None
@@ -104,6 +107,8 @@ class CoupledConjugateHeatTransfer(object):
             self.enable_solar_load = enable_solar_load
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
+        if time_dependency is not None:
+            self.time_dependency = time_dependency
         if num_of_passive_species is not None:
             self.num_of_passive_species = num_of_passive_species
         if connection_groups is not None:
@@ -251,6 +256,27 @@ class CoupledConjugateHeatTransfer(object):
             )
 
         self._turbulence_model = turbulence_model
+
+    @property
+    def time_dependency(self):
+        """Gets the time_dependency of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+
+        :return: The time_dependency of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: OneOfCoupledConjugateHeatTransferTimeDependency
+        """
+        return self._time_dependency
+
+    @time_dependency.setter
+    def time_dependency(self, time_dependency):
+        """Sets the time_dependency of this CoupledConjugateHeatTransfer.
+
+
+        :param time_dependency: The time_dependency of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: OneOfCoupledConjugateHeatTransferTimeDependency
+        """
+
+        self._time_dependency = time_dependency
 
     @property
     def num_of_passive_species(self):

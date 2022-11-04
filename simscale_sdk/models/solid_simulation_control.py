@@ -31,6 +31,7 @@ class SolidSimulationControl(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'auto_load_ramping': 'bool',
         'timestep_definition': 'OneOfSolidSimulationControlTimestepDefinition',
         'pseudo_time_stepping': 'OneOfSolidSimulationControlPseudoTimeStepping',
         'write_control_definition': 'OneOfSolidSimulationControlWriteControlDefinition',
@@ -41,6 +42,7 @@ class SolidSimulationControl(object):
     }
 
     attribute_map = {
+        'auto_load_ramping': 'autoLoadRamping',
         'timestep_definition': 'timestepDefinition',
         'pseudo_time_stepping': 'pseudoTimeStepping',
         'write_control_definition': 'writeControlDefinition',
@@ -50,12 +52,13 @@ class SolidSimulationControl(object):
         'max_run_time': 'maxRunTime'
     }
 
-    def __init__(self, timestep_definition=None, pseudo_time_stepping=None, write_control_definition=None, excitation_frequencies=None, eigenfrequency_scope=None, processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, auto_load_ramping=None, timestep_definition=None, pseudo_time_stepping=None, write_control_definition=None, excitation_frequencies=None, eigenfrequency_scope=None, processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
         """SolidSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._auto_load_ramping = None
         self._timestep_definition = None
         self._pseudo_time_stepping = None
         self._write_control_definition = None
@@ -65,6 +68,8 @@ class SolidSimulationControl(object):
         self._max_run_time = None
         self.discriminator = None
 
+        if auto_load_ramping is not None:
+            self.auto_load_ramping = auto_load_ramping
         if timestep_definition is not None:
             self.timestep_definition = timestep_definition
         if pseudo_time_stepping is not None:
@@ -79,6 +84,29 @@ class SolidSimulationControl(object):
             self.processors = processors
         if max_run_time is not None:
             self.max_run_time = max_run_time
+
+    @property
+    def auto_load_ramping(self):
+        """Gets the auto_load_ramping of this SolidSimulationControl.  # noqa: E501
+
+        Loads will be ramped linearly over the simulation interval to aid solution convergence. Automatic load ramping will only be applied if all boundary conditions (including gravity) are applied with constant values.  # noqa: E501
+
+        :return: The auto_load_ramping of this SolidSimulationControl.  # noqa: E501
+        :rtype: bool
+        """
+        return self._auto_load_ramping
+
+    @auto_load_ramping.setter
+    def auto_load_ramping(self, auto_load_ramping):
+        """Sets the auto_load_ramping of this SolidSimulationControl.
+
+        Loads will be ramped linearly over the simulation interval to aid solution convergence. Automatic load ramping will only be applied if all boundary conditions (including gravity) are applied with constant values.  # noqa: E501
+
+        :param auto_load_ramping: The auto_load_ramping of this SolidSimulationControl.  # noqa: E501
+        :type: bool
+        """
+
+        self._auto_load_ramping = auto_load_ramping
 
     @property
     def timestep_definition(self):

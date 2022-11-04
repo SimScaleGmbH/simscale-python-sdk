@@ -9,6 +9,14 @@ simscale\_sdk.api package
 Submodules
 ----------
 
+simscale\_sdk.api.folders\_api module
+-------------------------------------
+
+.. automodule:: simscale_sdk.api.folders_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.api.geometries\_api module
 ----------------------------------------
 
@@ -77,6 +85,14 @@ simscale\_sdk.api.simulations\_api module
 -----------------------------------------
 
 .. automodule:: simscale_sdk.api.simulations_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.api.spaces\_api module
+------------------------------------
+
+.. automodule:: simscale_sdk.api.spaces_api
    :members:
    :undoc-members:
    :show-inheritance:

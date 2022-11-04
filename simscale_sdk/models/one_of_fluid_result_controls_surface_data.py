@@ -35,6 +35,7 @@ class OneOfFluidResultControlsSurfaceData(object):
         'name': 'str',
         'write_control': 'OneOfAreaIntegralResultControlWriteControl',
         'topological_reference': 'TopologicalReference',
+        'absolute_value_of_pressure_difference': 'bool',
         'inlet_face_pressure_difference_type': 'str',
         'inlet_face_topological_reference': 'TopologicalReference',
         'outlet_face_pressure_difference_type': 'str',
@@ -46,6 +47,7 @@ class OneOfFluidResultControlsSurfaceData(object):
         'name': 'name',
         'write_control': 'writeControl',
         'topological_reference': 'topologicalReference',
+        'absolute_value_of_pressure_difference': 'absoluteValueOfPressureDifference',
         'inlet_face_pressure_difference_type': 'inletFacePressureDifferenceType',
         'inlet_face_topological_reference': 'inletFaceTopologicalReference',
         'outlet_face_pressure_difference_type': 'outletFacePressureDifferenceType',
@@ -58,7 +60,7 @@ class OneOfFluidResultControlsSurfaceData(object):
         'PRESSURE_DIFFERENCE': 'PressureDifferenceResultControl'
     }
 
-    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, write_control=None, topological_reference=None, inlet_face_pressure_difference_type=None, inlet_face_topological_reference=None, outlet_face_pressure_difference_type=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_DIFFERENCE', name=None, write_control=None, topological_reference=None, absolute_value_of_pressure_difference=None, inlet_face_pressure_difference_type=None, inlet_face_topological_reference=None, outlet_face_pressure_difference_type=None, outlet_face_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidResultControlsSurfaceData - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class OneOfFluidResultControlsSurfaceData(object):
         self._name = None
         self._write_control = None
         self._topological_reference = None
+        self._absolute_value_of_pressure_difference = None
         self._inlet_face_pressure_difference_type = None
         self._inlet_face_topological_reference = None
         self._outlet_face_pressure_difference_type = None
@@ -81,6 +84,8 @@ class OneOfFluidResultControlsSurfaceData(object):
             self.write_control = write_control
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if absolute_value_of_pressure_difference is not None:
+            self.absolute_value_of_pressure_difference = absolute_value_of_pressure_difference
         if inlet_face_pressure_difference_type is not None:
             self.inlet_face_pressure_difference_type = inlet_face_pressure_difference_type
         if inlet_face_topological_reference is not None:
@@ -180,6 +185,29 @@ class OneOfFluidResultControlsSurfaceData(object):
         """
 
         self._topological_reference = topological_reference
+
+    @property
+    def absolute_value_of_pressure_difference(self):
+        """Gets the absolute_value_of_pressure_difference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+
+        Ensure a non-negative pressure difference result. Useful for many applications in which the pressure difference is assumed to be a <i>pressure drop</i>. However, leaving this on may yield <b>non-physical</b> results for some combinations of static/total pressure.  # noqa: E501
+
+        :return: The absolute_value_of_pressure_difference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :rtype: bool
+        """
+        return self._absolute_value_of_pressure_difference
+
+    @absolute_value_of_pressure_difference.setter
+    def absolute_value_of_pressure_difference(self, absolute_value_of_pressure_difference):
+        """Sets the absolute_value_of_pressure_difference of this OneOfFluidResultControlsSurfaceData.
+
+        Ensure a non-negative pressure difference result. Useful for many applications in which the pressure difference is assumed to be a <i>pressure drop</i>. However, leaving this on may yield <b>non-physical</b> results for some combinations of static/total pressure.  # noqa: E501
+
+        :param absolute_value_of_pressure_difference: The absolute_value_of_pressure_difference of this OneOfFluidResultControlsSurfaceData.  # noqa: E501
+        :type: bool
+        """
+
+        self._absolute_value_of_pressure_difference = absolute_value_of_pressure_difference
 
     @property
     def inlet_face_pressure_difference_type(self):

@@ -31,24 +31,29 @@ class TimeDifferentiationSchemes(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'for_default': 'OneOfTimeDifferentiationSchemesForDefault'
+        'for_default': 'OneOfTimeDifferentiationSchemesForDefault',
+        'second_order_scheme': 'bool'
     }
 
     attribute_map = {
-        'for_default': 'forDefault'
+        'for_default': 'forDefault',
+        'second_order_scheme': 'secondOrderScheme'
     }
 
-    def __init__(self, for_default=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, for_default=None, second_order_scheme=None, local_vars_configuration=None):  # noqa: E501
         """TimeDifferentiationSchemes - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._for_default = None
+        self._second_order_scheme = None
         self.discriminator = None
 
         if for_default is not None:
             self.for_default = for_default
+        if second_order_scheme is not None:
+            self.second_order_scheme = second_order_scheme
 
     @property
     def for_default(self):
@@ -70,6 +75,27 @@ class TimeDifferentiationSchemes(object):
         """
 
         self._for_default = for_default
+
+    @property
+    def second_order_scheme(self):
+        """Gets the second_order_scheme of this TimeDifferentiationSchemes.  # noqa: E501
+
+
+        :return: The second_order_scheme of this TimeDifferentiationSchemes.  # noqa: E501
+        :rtype: bool
+        """
+        return self._second_order_scheme
+
+    @second_order_scheme.setter
+    def second_order_scheme(self, second_order_scheme):
+        """Sets the second_order_scheme of this TimeDifferentiationSchemes.
+
+
+        :param second_order_scheme: The second_order_scheme of this TimeDifferentiationSchemes.  # noqa: E501
+        :type: bool
+        """
+
+        self._second_order_scheme = second_order_scheme
 
     def to_dict(self):
         """Returns the model properties as a dict"""
