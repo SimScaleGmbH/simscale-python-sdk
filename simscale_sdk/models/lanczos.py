@@ -36,7 +36,8 @@ class Lanczos(object):
         'nmax_iter_ortho': 'int',
         'prec_lanczos': 'float',
         'max_iter_qr': 'int',
-        'mode_rigid': 'bool'
+        'mode_rigid': 'bool',
+        'subspace_settings': 'OneOfLanczosSubspaceSettings'
     }
 
     attribute_map = {
@@ -45,10 +46,11 @@ class Lanczos(object):
         'nmax_iter_ortho': 'nmaxIterOrtho',
         'prec_lanczos': 'precLanczos',
         'max_iter_qr': 'maxIterQR',
-        'mode_rigid': 'modeRigid'
+        'mode_rigid': 'modeRigid',
+        'subspace_settings': 'subspaceSettings'
     }
 
-    def __init__(self, type='TRI_DIAG', prec_ortho=None, nmax_iter_ortho=None, prec_lanczos=None, max_iter_qr=None, mode_rigid=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TRI_DIAG', prec_ortho=None, nmax_iter_ortho=None, prec_lanczos=None, max_iter_qr=None, mode_rigid=None, subspace_settings=None, local_vars_configuration=None):  # noqa: E501
         """Lanczos - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class Lanczos(object):
         self._prec_lanczos = None
         self._max_iter_qr = None
         self._mode_rigid = None
+        self._subspace_settings = None
         self.discriminator = None
 
         self.type = type
@@ -73,6 +76,8 @@ class Lanczos(object):
             self.max_iter_qr = max_iter_qr
         if mode_rigid is not None:
             self.mode_rigid = mode_rigid
+        if subspace_settings is not None:
+            self.subspace_settings = subspace_settings
 
     @property
     def type(self):
@@ -215,6 +220,27 @@ class Lanczos(object):
         """
 
         self._mode_rigid = mode_rigid
+
+    @property
+    def subspace_settings(self):
+        """Gets the subspace_settings of this Lanczos.  # noqa: E501
+
+
+        :return: The subspace_settings of this Lanczos.  # noqa: E501
+        :rtype: OneOfLanczosSubspaceSettings
+        """
+        return self._subspace_settings
+
+    @subspace_settings.setter
+    def subspace_settings(self, subspace_settings):
+        """Sets the subspace_settings of this Lanczos.
+
+
+        :param subspace_settings: The subspace_settings of this Lanczos.  # noqa: E501
+        :type: OneOfLanczosSubspaceSettings
+        """
+
+        self._subspace_settings = subspace_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

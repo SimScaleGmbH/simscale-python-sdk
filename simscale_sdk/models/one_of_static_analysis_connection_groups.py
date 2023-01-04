@@ -32,15 +32,15 @@ class OneOfStaticAnalysisConnectionGroups(object):
     """
     openapi_types = {
         'type': 'str',
-        'connections': 'list[OneOfPhysicalContactConnections]',
         'node_merging_bonded': 'bool',
+        'connections': 'list[OneOfPhysicalContactConnections]',
         'settings': 'ConnectionSettingsV36'
     }
 
     attribute_map = {
         'type': 'type',
-        'connections': 'connections',
         'node_merging_bonded': 'nodeMergingBonded',
+        'connections': 'connections',
         'settings': 'settings'
     }
 
@@ -49,23 +49,23 @@ class OneOfStaticAnalysisConnectionGroups(object):
         'PHYSICAL_CONTACT_V36': 'PhysicalContact'
     }
 
-    def __init__(self, type='PHYSICAL_CONTACT_V36', connections=None, node_merging_bonded=None, settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PHYSICAL_CONTACT_V36', node_merging_bonded=None, connections=None, settings=None, local_vars_configuration=None):  # noqa: E501
         """OneOfStaticAnalysisConnectionGroups - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._connections = None
         self._node_merging_bonded = None
+        self._connections = None
         self._settings = None
         self.discriminator = 'type'
 
         self.type = type
-        if connections is not None:
-            self.connections = connections
         if node_merging_bonded is not None:
             self.node_merging_bonded = node_merging_bonded
+        if connections is not None:
+            self.connections = connections
         if settings is not None:
             self.settings = settings
 
@@ -95,27 +95,6 @@ class OneOfStaticAnalysisConnectionGroups(object):
         self._type = type
 
     @property
-    def connections(self):
-        """Gets the connections of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
-
-
-        :return: The connections of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
-        :rtype: list[OneOfPhysicalContactConnections]
-        """
-        return self._connections
-
-    @connections.setter
-    def connections(self, connections):
-        """Sets the connections of this OneOfStaticAnalysisConnectionGroups.
-
-
-        :param connections: The connections of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
-        :type: list[OneOfPhysicalContactConnections]
-        """
-
-        self._connections = connections
-
-    @property
     def node_merging_bonded(self):
         """Gets the node_merging_bonded of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
 
@@ -137,6 +116,27 @@ class OneOfStaticAnalysisConnectionGroups(object):
         """
 
         self._node_merging_bonded = node_merging_bonded
+
+    @property
+    def connections(self):
+        """Gets the connections of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
+
+
+        :return: The connections of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
+        :rtype: list[OneOfPhysicalContactConnections]
+        """
+        return self._connections
+
+    @connections.setter
+    def connections(self, connections):
+        """Sets the connections of this OneOfStaticAnalysisConnectionGroups.
+
+
+        :param connections: The connections of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
+        :type: list[OneOfPhysicalContactConnections]
+        """
+
+        self._connections = connections
 
     @property
     def settings(self):

@@ -41,7 +41,9 @@ class OneOfConstCrossPlaneOrthotropicTransportOrientation(object):
     }
 
     discriminator_value_class_map = {
-        'CARTESIAN': 'CartesianOrientation',
+        'XAXIS': 'XAxis',
+        'YAXIS': 'YAxis',
+        'ZAXIS': 'ZAxis',
         'CROSS_PLANE': 'CrossPlaneCustomOrientation'
     }
 

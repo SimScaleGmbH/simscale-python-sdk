@@ -35,7 +35,8 @@ class BatheWilson(object):
         'prec_bathe': 'float',
         'nmax_iter_bathe': 'int',
         'prec_jacobi': 'float',
-        'max_iter_jacobi': 'int'
+        'max_iter_jacobi': 'int',
+        'subspace_settings': 'OneOfBatheWilsonSubspaceSettings'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class BatheWilson(object):
         'prec_bathe': 'precBathe',
         'nmax_iter_bathe': 'nmaxIterBathe',
         'prec_jacobi': 'precJacobi',
-        'max_iter_jacobi': 'maxIterJacobi'
+        'max_iter_jacobi': 'maxIterJacobi',
+        'subspace_settings': 'subspaceSettings'
     }
 
-    def __init__(self, type='JACOBI', prec_bathe=None, nmax_iter_bathe=None, prec_jacobi=None, max_iter_jacobi=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='JACOBI', prec_bathe=None, nmax_iter_bathe=None, prec_jacobi=None, max_iter_jacobi=None, subspace_settings=None, local_vars_configuration=None):  # noqa: E501
         """BatheWilson - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class BatheWilson(object):
         self._nmax_iter_bathe = None
         self._prec_jacobi = None
         self._max_iter_jacobi = None
+        self._subspace_settings = None
         self.discriminator = None
 
         self.type = type
@@ -68,6 +71,8 @@ class BatheWilson(object):
             self.prec_jacobi = prec_jacobi
         if max_iter_jacobi is not None:
             self.max_iter_jacobi = max_iter_jacobi
+        if subspace_settings is not None:
+            self.subspace_settings = subspace_settings
 
     @property
     def type(self):
@@ -189,6 +194,27 @@ class BatheWilson(object):
             raise ValueError("Invalid value for `max_iter_jacobi`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._max_iter_jacobi = max_iter_jacobi
+
+    @property
+    def subspace_settings(self):
+        """Gets the subspace_settings of this BatheWilson.  # noqa: E501
+
+
+        :return: The subspace_settings of this BatheWilson.  # noqa: E501
+        :rtype: OneOfBatheWilsonSubspaceSettings
+        """
+        return self._subspace_settings
+
+    @subspace_settings.setter
+    def subspace_settings(self, subspace_settings):
+        """Sets the subspace_settings of this BatheWilson.
+
+
+        :param subspace_settings: The subspace_settings of this BatheWilson.  # noqa: E501
+        :type: OneOfBatheWilsonSubspaceSettings
+        """
+
+        self._subspace_settings = subspace_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

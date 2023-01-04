@@ -58,7 +58,7 @@ class AbsoluteConvergenceCriteria(object):
     def type(self):
         """Gets the type of this AbsoluteConvergenceCriteria.  # noqa: E501
 
-        <p>Select the type of convergence criterion for the nonlinear solution method.</p> <br /><br />Important remarks: <br /><ul><li>Choose <b>absolute</b> if you want convergence to be reached when the maximum residual of all degrees of freedom of a given Newton iteration is lower than the given tolerance.</li><li>Choose <b>relative</b> if the same criteria as <b>absolute</b> will be checked but for the maximum relative residual i.e. maximum absolute residual divided by external force. Please note, if no external force is involved e.g. two far objects coming in contact, then using relative criteria will lead to singularity and convergence will not be attained.</li></ul>  Schema name: AbsoluteConvergenceCriteria  # noqa: E501
+        Schema name: AbsoluteConvergenceCriteria  # noqa: E501
 
         :return: The type of this AbsoluteConvergenceCriteria.  # noqa: E501
         :rtype: str
@@ -69,7 +69,7 @@ class AbsoluteConvergenceCriteria(object):
     def type(self, type):
         """Sets the type of this AbsoluteConvergenceCriteria.
 
-        <p>Select the type of convergence criterion for the nonlinear solution method.</p> <br /><br />Important remarks: <br /><ul><li>Choose <b>absolute</b> if you want convergence to be reached when the maximum residual of all degrees of freedom of a given Newton iteration is lower than the given tolerance.</li><li>Choose <b>relative</b> if the same criteria as <b>absolute</b> will be checked but for the maximum relative residual i.e. maximum absolute residual divided by external force. Please note, if no external force is involved e.g. two far objects coming in contact, then using relative criteria will lead to singularity and convergence will not be attained.</li></ul>  Schema name: AbsoluteConvergenceCriteria  # noqa: E501
+        Schema name: AbsoluteConvergenceCriteria  # noqa: E501
 
         :param type: The type of this AbsoluteConvergenceCriteria.  # noqa: E501
         :type: str
@@ -83,7 +83,7 @@ class AbsoluteConvergenceCriteria(object):
     def tolerance(self):
         """Gets the tolerance of this AbsoluteConvergenceCriteria.  # noqa: E501
 
-        <p>Set the threshold value for convergence detection for the relative convergence criteria. If the maximum relative error of all DOFs fall below this value the current time step is considered convergent.</p></p> <br /><br />Important remarks: <br /><ul><li>In most of the cases using a lower value for tolerance may lead to hard or no convergence. Therefore, it is always recommended to start with a higher value e.g. 10<sup>-3</sup> or 10<sup>-4</sup>. Please also note that increasing the threshold value may effect the solution results. </li></ul>  # noqa: E501
+        <p>Set the threshold value for the absolute convergence criterion (measured in Newtons). With this criterion, the solver considers a time step as converged if the maximum absolute residual in a Newton iteration falls below the given value.</p>Important remarks: This value is a compromise between solution time and accuracy. A larger value leads to a faster solution time at the cost of losing accuracy in each Newton iteration and possibly causing convergence problems in the following steps.  # noqa: E501
 
         :return: The tolerance of this AbsoluteConvergenceCriteria.  # noqa: E501
         :rtype: float
@@ -94,7 +94,7 @@ class AbsoluteConvergenceCriteria(object):
     def tolerance(self, tolerance):
         """Sets the tolerance of this AbsoluteConvergenceCriteria.
 
-        <p>Set the threshold value for convergence detection for the relative convergence criteria. If the maximum relative error of all DOFs fall below this value the current time step is considered convergent.</p></p> <br /><br />Important remarks: <br /><ul><li>In most of the cases using a lower value for tolerance may lead to hard or no convergence. Therefore, it is always recommended to start with a higher value e.g. 10<sup>-3</sup> or 10<sup>-4</sup>. Please also note that increasing the threshold value may effect the solution results. </li></ul>  # noqa: E501
+        <p>Set the threshold value for the absolute convergence criterion (measured in Newtons). With this criterion, the solver considers a time step as converged if the maximum absolute residual in a Newton iteration falls below the given value.</p>Important remarks: This value is a compromise between solution time and accuracy. A larger value leads to a faster solution time at the cost of losing accuracy in each Newton iteration and possibly causing convergence problems in the following steps.  # noqa: E501
 
         :param tolerance: The tolerance of this AbsoluteConvergenceCriteria.  # noqa: E501
         :type: float

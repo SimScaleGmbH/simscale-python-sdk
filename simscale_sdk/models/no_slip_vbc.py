@@ -34,17 +34,19 @@ class NoSlipVBC(object):
         'type': 'str',
         'turbulence_wall': 'str',
         'enable_surface_roughness': 'bool',
-        'surface_roughness': 'DimensionalLength'
+        'surface_roughness': 'DimensionalLength',
+        'no_slip_wall_roughness_type': 'OneOfNoSlipVBCNoSlipWallRoughnessType'
     }
 
     attribute_map = {
         'type': 'type',
         'turbulence_wall': 'turbulenceWall',
         'enable_surface_roughness': 'enableSurfaceRoughness',
-        'surface_roughness': 'surfaceRoughness'
+        'surface_roughness': 'surfaceRoughness',
+        'no_slip_wall_roughness_type': 'noSlipWallRoughnessType'
     }
 
-    def __init__(self, type='NO_SLIP', turbulence_wall=None, enable_surface_roughness=None, surface_roughness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NO_SLIP', turbulence_wall=None, enable_surface_roughness=None, surface_roughness=None, no_slip_wall_roughness_type=None, local_vars_configuration=None):  # noqa: E501
         """NoSlipVBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class NoSlipVBC(object):
         self._turbulence_wall = None
         self._enable_surface_roughness = None
         self._surface_roughness = None
+        self._no_slip_wall_roughness_type = None
         self.discriminator = None
 
         self.type = type
@@ -63,6 +66,8 @@ class NoSlipVBC(object):
             self.enable_surface_roughness = enable_surface_roughness
         if surface_roughness is not None:
             self.surface_roughness = surface_roughness
+        if no_slip_wall_roughness_type is not None:
+            self.no_slip_wall_roughness_type = no_slip_wall_roughness_type
 
     @property
     def type(self):
@@ -159,6 +164,27 @@ class NoSlipVBC(object):
         """
 
         self._surface_roughness = surface_roughness
+
+    @property
+    def no_slip_wall_roughness_type(self):
+        """Gets the no_slip_wall_roughness_type of this NoSlipVBC.  # noqa: E501
+
+
+        :return: The no_slip_wall_roughness_type of this NoSlipVBC.  # noqa: E501
+        :rtype: OneOfNoSlipVBCNoSlipWallRoughnessType
+        """
+        return self._no_slip_wall_roughness_type
+
+    @no_slip_wall_roughness_type.setter
+    def no_slip_wall_roughness_type(self, no_slip_wall_roughness_type):
+        """Sets the no_slip_wall_roughness_type of this NoSlipVBC.
+
+
+        :param no_slip_wall_roughness_type: The no_slip_wall_roughness_type of this NoSlipVBC.  # noqa: E501
+        :type: OneOfNoSlipVBCNoSlipWallRoughnessType
+        """
+
+        self._no_slip_wall_roughness_type = no_slip_wall_roughness_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

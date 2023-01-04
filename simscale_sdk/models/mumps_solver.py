@@ -43,6 +43,7 @@ class MUMPSSolver(object):
         'preprocessing': 'bool',
         'renumbering_method': 'str',
         'postprocessing': 'str',
+        'mumps_acceleration': 'OneOfMUMPSSolverMumpsAcceleration',
         'distributed_matrix_storage': 'bool',
         'memory_management': 'str'
     }
@@ -60,11 +61,12 @@ class MUMPSSolver(object):
         'preprocessing': 'preprocessing',
         'renumbering_method': 'renumberingMethod',
         'postprocessing': 'postprocessing',
+        'mumps_acceleration': 'mumpsAcceleration',
         'distributed_matrix_storage': 'distributedMatrixStorage',
         'memory_management': 'memoryManagement'
     }
 
-    def __init__(self, type='MUMPS', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, distributed_matrix_storage=None, memory_management=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MUMPS', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, mumps_acceleration=None, distributed_matrix_storage=None, memory_management=None, local_vars_configuration=None):  # noqa: E501
         """MUMPSSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class MUMPSSolver(object):
         self._preprocessing = None
         self._renumbering_method = None
         self._postprocessing = None
+        self._mumps_acceleration = None
         self._distributed_matrix_storage = None
         self._memory_management = None
         self.discriminator = None
@@ -109,6 +112,8 @@ class MUMPSSolver(object):
             self.renumbering_method = renumbering_method
         if postprocessing is not None:
             self.postprocessing = postprocessing
+        if mumps_acceleration is not None:
+            self.mumps_acceleration = mumps_acceleration
         if distributed_matrix_storage is not None:
             self.distributed_matrix_storage = distributed_matrix_storage
         if memory_management is not None:
@@ -401,14 +406,29 @@ class MUMPSSolver(object):
         :param postprocessing: The postprocessing of this MUMPSSolver.  # noqa: E501
         :type: str
         """
-        allowed_values = ["INACTIVE", "ACTIVE", "AUTOMATIC"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and postprocessing not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `postprocessing` ({0}), must be one of {1}"  # noqa: E501
-                .format(postprocessing, allowed_values)
-            )
 
         self._postprocessing = postprocessing
+
+    @property
+    def mumps_acceleration(self):
+        """Gets the mumps_acceleration of this MUMPSSolver.  # noqa: E501
+
+
+        :return: The mumps_acceleration of this MUMPSSolver.  # noqa: E501
+        :rtype: OneOfMUMPSSolverMumpsAcceleration
+        """
+        return self._mumps_acceleration
+
+    @mumps_acceleration.setter
+    def mumps_acceleration(self, mumps_acceleration):
+        """Sets the mumps_acceleration of this MUMPSSolver.
+
+
+        :param mumps_acceleration: The mumps_acceleration of this MUMPSSolver.  # noqa: E501
+        :type: OneOfMUMPSSolverMumpsAcceleration
+        """
+
+        self._mumps_acceleration = mumps_acceleration
 
     @property
     def distributed_matrix_storage(self):

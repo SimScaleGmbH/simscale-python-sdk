@@ -35,6 +35,8 @@ class CoupledConjugateHeatTransfer(object):
         'is_compressible': 'bool',
         'enable_radiation': 'bool',
         'enable_solar_load': 'bool',
+        'enable_humidity_model': 'bool',
+        'enable_joule_heating': 'bool',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfCoupledConjugateHeatTransferTimeDependency',
         'num_of_passive_species': 'int',
@@ -56,6 +58,8 @@ class CoupledConjugateHeatTransfer(object):
         'is_compressible': 'isCompressible',
         'enable_radiation': 'enableRadiation',
         'enable_solar_load': 'enableSolarLoad',
+        'enable_humidity_model': 'enableHumidityModel',
+        'enable_joule_heating': 'enableJouleHeating',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
         'num_of_passive_species': 'numOfPassiveSpecies',
@@ -72,7 +76,7 @@ class CoupledConjugateHeatTransfer(object):
         'contact_handling_mode': 'contactHandlingMode'
     }
 
-    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, enable_solar_load=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
         """CoupledConjugateHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +86,8 @@ class CoupledConjugateHeatTransfer(object):
         self._is_compressible = None
         self._enable_radiation = None
         self._enable_solar_load = None
+        self._enable_humidity_model = None
+        self._enable_joule_heating = None
         self._turbulence_model = None
         self._time_dependency = None
         self._num_of_passive_species = None
@@ -105,6 +111,10 @@ class CoupledConjugateHeatTransfer(object):
             self.enable_radiation = enable_radiation
         if enable_solar_load is not None:
             self.enable_solar_load = enable_solar_load
+        if enable_humidity_model is not None:
+            self.enable_humidity_model = enable_humidity_model
+        if enable_joule_heating is not None:
+            self.enable_joule_heating = enable_joule_heating
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
@@ -186,7 +196,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_radiation(self):
         """Gets the enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
 
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperature differences in the simulation domain are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: bool
@@ -197,7 +207,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_radiation(self, enable_radiation):
         """Sets the enable_radiation of this CoupledConjugateHeatTransfer.
 
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperature differences in the simulation domain are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_radiation: The enable_radiation of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: bool
@@ -209,7 +219,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_solar_load(self):
         """Gets the enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
 
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+        Enables the <b>Solar load</b> model in the simulation. Diffuse and/or directional solar load contributions are specified in the <b>Solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent surfaces are present, internal surfaces of the domain might also be heated. The solar model can be used with or without a radiation model, and it cannot be used if the simulation contains solids. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: bool
@@ -220,13 +230,59 @@ class CoupledConjugateHeatTransfer(object):
     def enable_solar_load(self, enable_solar_load):
         """Sets the enable_solar_load of this CoupledConjugateHeatTransfer.
 
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+        Enables the <b>Solar load</b> model in the simulation. Diffuse and/or directional solar load contributions are specified in the <b>Solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent surfaces are present, internal surfaces of the domain might also be heated. The solar model can be used with or without a radiation model, and it cannot be used if the simulation contains solids. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_solar_load: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: bool
         """
 
         self._enable_solar_load = enable_solar_load
+
+    @property
+    def enable_humidity_model(self):
+        """Gets the enable_humidity_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of 0° to 100°C.  # noqa: E501
+
+        :return: The enable_humidity_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_humidity_model
+
+    @enable_humidity_model.setter
+    def enable_humidity_model(self, enable_humidity_model):
+        """Sets the enable_humidity_model of this CoupledConjugateHeatTransfer.
+
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of 0° to 100°C.  # noqa: E501
+
+        :param enable_humidity_model: The enable_humidity_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_humidity_model = enable_humidity_model
+
+    @property
+    def enable_joule_heating(self):
+        """Gets the enable_joule_heating of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+        Enabling <b>Joule heating</b> gives you the possibility to solve a coupled electric conduction and conjugate heat transfer problem in a single simulation.  # noqa: E501
+
+        :return: The enable_joule_heating of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_joule_heating
+
+    @enable_joule_heating.setter
+    def enable_joule_heating(self, enable_joule_heating):
+        """Sets the enable_joule_heating of this CoupledConjugateHeatTransfer.
+
+        Enabling <b>Joule heating</b> gives you the possibility to solve a coupled electric conduction and conjugate heat transfer problem in a single simulation.  # noqa: E501
+
+        :param enable_joule_heating: The enable_joule_heating of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_joule_heating = enable_joule_heating
 
     @property
     def turbulence_model(self):

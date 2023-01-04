@@ -37,10 +37,12 @@ class VelocityInletBC(object):
         'temperature': 'OneOfVelocityInletBCTemperature',
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'FixedValuePFBC',
+        'associated_phase_fractions': 'list[PhaseNameAndFixedValuePFBC]',
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfVelocityInletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfVelocityInletBCRadiativeIntensityRay',
+        'relative_humidity': 'FixedValueRHBC',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -51,14 +53,16 @@ class VelocityInletBC(object):
         'temperature': 'temperature',
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
+        'associated_phase_fractions': 'associatedPhaseFractions',
         'turbulence_intensity': 'turbulenceIntensity',
         'dissipation_type': 'dissipationType',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
+        'relative_humidity': 'relativeHumidity',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='VELOCITY_INLET_V3', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VELOCITY_INLET_V3', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """VelocityInletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,10 +74,12 @@ class VelocityInletBC(object):
         self._temperature = None
         self._passive_scalars = None
         self._phase_fraction = None
+        self._associated_phase_fractions = None
         self._turbulence_intensity = None
         self._dissipation_type = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
+        self._relative_humidity = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -88,6 +94,8 @@ class VelocityInletBC(object):
             self.passive_scalars = passive_scalars
         if phase_fraction is not None:
             self.phase_fraction = phase_fraction
+        if associated_phase_fractions is not None:
+            self.associated_phase_fractions = associated_phase_fractions
         if turbulence_intensity is not None:
             self.turbulence_intensity = turbulence_intensity
         if dissipation_type is not None:
@@ -96,6 +104,8 @@ class VelocityInletBC(object):
             self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
             self.radiative_intensity_ray = radiative_intensity_ray
+        if relative_humidity is not None:
+            self.relative_humidity = relative_humidity
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -232,6 +242,29 @@ class VelocityInletBC(object):
         self._phase_fraction = phase_fraction
 
     @property
+    def associated_phase_fractions(self):
+        """Gets the associated_phase_fractions of this VelocityInletBC.  # noqa: E501
+
+        Please choose a boundary condition for phase fraction (alpha).  # noqa: E501
+
+        :return: The associated_phase_fractions of this VelocityInletBC.  # noqa: E501
+        :rtype: list[PhaseNameAndFixedValuePFBC]
+        """
+        return self._associated_phase_fractions
+
+    @associated_phase_fractions.setter
+    def associated_phase_fractions(self, associated_phase_fractions):
+        """Sets the associated_phase_fractions of this VelocityInletBC.
+
+        Please choose a boundary condition for phase fraction (alpha).  # noqa: E501
+
+        :param associated_phase_fractions: The associated_phase_fractions of this VelocityInletBC.  # noqa: E501
+        :type: list[PhaseNameAndFixedValuePFBC]
+        """
+
+        self._associated_phase_fractions = associated_phase_fractions
+
+    @property
     def turbulence_intensity(self):
         """Gets the turbulence_intensity of this VelocityInletBC.  # noqa: E501
 
@@ -314,6 +347,27 @@ class VelocityInletBC(object):
         """
 
         self._radiative_intensity_ray = radiative_intensity_ray
+
+    @property
+    def relative_humidity(self):
+        """Gets the relative_humidity of this VelocityInletBC.  # noqa: E501
+
+
+        :return: The relative_humidity of this VelocityInletBC.  # noqa: E501
+        :rtype: FixedValueRHBC
+        """
+        return self._relative_humidity
+
+    @relative_humidity.setter
+    def relative_humidity(self, relative_humidity):
+        """Sets the relative_humidity of this VelocityInletBC.
+
+
+        :param relative_humidity: The relative_humidity of this VelocityInletBC.  # noqa: E501
+        :type: FixedValueRHBC
+        """
+
+        self._relative_humidity = relative_humidity
 
     @property
     def topological_reference(self):

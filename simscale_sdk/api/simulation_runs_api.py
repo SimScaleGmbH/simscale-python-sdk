@@ -1159,6 +1159,7 @@ class SimulationRunsApi(object):
     def get_simulation_run_sdk_code(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
         """Get Python SDK code for the simulation run  # noqa: E501
 
+        Important: due to incompatibilities between the source Spec version and the target SDK version the generated code may contain incomplete sections or even be invalid. The generated code is provided as a convenience and should be reviewed and adapted before use.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_simulation_run_sdk_code(project_id, simulation_id, run_id, async_req=True)
@@ -1187,6 +1188,7 @@ class SimulationRunsApi(object):
     def get_simulation_run_sdk_code_with_http_info(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
         """Get Python SDK code for the simulation run  # noqa: E501
 
+        Important: due to incompatibilities between the source Spec version and the target SDK version the generated code may contain incomplete sections or even be invalid. The generated code is provided as a convenience and should be reviewed and adapted before use.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_simulation_run_sdk_code_with_http_info(project_id, simulation_id, run_id, async_req=True)

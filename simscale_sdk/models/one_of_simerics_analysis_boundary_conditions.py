@@ -37,15 +37,18 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         'temperature': 'OneOfWallBCTemperature',
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'OneOfWallBCPhaseFraction',
+        'associated_phase_fractions': 'list[PhaseNameAndFixedValuePFBC]',
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfWallBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfWallBCRadiativeIntensityRay',
+        'relative_humidity': 'InletOutletRHBC',
         'topological_reference': 'TopologicalReference',
         'pressure': 'OneOfPressureOutletBCPressure',
         'pressure_rgh': 'OneOfPressureOutletBCPressureRgh',
         'gauge_pressure': 'OneOfPressureOutletBCGaugePressure',
-        'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh'
+        'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh',
+        'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition'
     }
 
     attribute_map = {
@@ -55,15 +58,18 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         'temperature': 'temperature',
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
+        'associated_phase_fractions': 'associatedPhaseFractions',
         'turbulence_intensity': 'turbulenceIntensity',
         'dissipation_type': 'dissipationType',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
+        'relative_humidity': 'relativeHumidity',
         'topological_reference': 'topologicalReference',
         'pressure': 'pressure',
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
-        'gauge_pressure_rgh': 'gaugePressureRgh'
+        'gauge_pressure_rgh': 'gaugePressureRgh',
+        'electric_boundary_condition': 'electricBoundaryCondition'
     }
 
     discriminator_value_class_map = {
@@ -75,7 +81,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         'SYMMETRY': 'SymmetryBC'
     }
 
-    def __init__(self, type='SYMMETRY', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SYMMETRY', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimericsAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,15 +93,18 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         self._temperature = None
         self._passive_scalars = None
         self._phase_fraction = None
+        self._associated_phase_fractions = None
         self._turbulence_intensity = None
         self._dissipation_type = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
+        self._relative_humidity = None
         self._topological_reference = None
         self._pressure = None
         self._pressure_rgh = None
         self._gauge_pressure = None
         self._gauge_pressure_rgh = None
+        self._electric_boundary_condition = None
         self.discriminator = 'type'
 
         self.type = type
@@ -109,6 +118,8 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
             self.passive_scalars = passive_scalars
         if phase_fraction is not None:
             self.phase_fraction = phase_fraction
+        if associated_phase_fractions is not None:
+            self.associated_phase_fractions = associated_phase_fractions
         if turbulence_intensity is not None:
             self.turbulence_intensity = turbulence_intensity
         if dissipation_type is not None:
@@ -117,6 +128,8 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
             self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
             self.radiative_intensity_ray = radiative_intensity_ray
+        if relative_humidity is not None:
+            self.relative_humidity = relative_humidity
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if pressure is not None:
@@ -127,6 +140,8 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
             self.gauge_pressure = gauge_pressure
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
+        if electric_boundary_condition is not None:
+            self.electric_boundary_condition = electric_boundary_condition
 
     @property
     def type(self):
@@ -261,6 +276,29 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         self._phase_fraction = phase_fraction
 
     @property
+    def associated_phase_fractions(self):
+        """Gets the associated_phase_fractions of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+
+        Please choose a boundary condition for phase fraction (alpha).  # noqa: E501
+
+        :return: The associated_phase_fractions of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: list[PhaseNameAndFixedValuePFBC]
+        """
+        return self._associated_phase_fractions
+
+    @associated_phase_fractions.setter
+    def associated_phase_fractions(self, associated_phase_fractions):
+        """Sets the associated_phase_fractions of this OneOfSimericsAnalysisBoundaryConditions.
+
+        Please choose a boundary condition for phase fraction (alpha).  # noqa: E501
+
+        :param associated_phase_fractions: The associated_phase_fractions of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+        :type: list[PhaseNameAndFixedValuePFBC]
+        """
+
+        self._associated_phase_fractions = associated_phase_fractions
+
+    @property
     def turbulence_intensity(self):
         """Gets the turbulence_intensity of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
 
@@ -343,6 +381,27 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         """
 
         self._radiative_intensity_ray = radiative_intensity_ray
+
+    @property
+    def relative_humidity(self):
+        """Gets the relative_humidity of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The relative_humidity of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: InletOutletRHBC
+        """
+        return self._relative_humidity
+
+    @relative_humidity.setter
+    def relative_humidity(self, relative_humidity):
+        """Sets the relative_humidity of this OneOfSimericsAnalysisBoundaryConditions.
+
+
+        :param relative_humidity: The relative_humidity of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+        :type: InletOutletRHBC
+        """
+
+        self._relative_humidity = relative_humidity
 
     @property
     def topological_reference(self):
@@ -448,6 +507,27 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh
+
+    @property
+    def electric_boundary_condition(self):
+        """Gets the electric_boundary_condition of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The electric_boundary_condition of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: OneOfWallBCElectricBoundaryCondition
+        """
+        return self._electric_boundary_condition
+
+    @electric_boundary_condition.setter
+    def electric_boundary_condition(self, electric_boundary_condition):
+        """Sets the electric_boundary_condition of this OneOfSimericsAnalysisBoundaryConditions.
+
+
+        :param electric_boundary_condition: The electric_boundary_condition of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+        :type: OneOfWallBCElectricBoundaryCondition
+        """
+
+        self._electric_boundary_condition = electric_boundary_condition
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

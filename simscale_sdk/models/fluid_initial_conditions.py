@@ -48,7 +48,9 @@ class FluidInitialConditions(object):
         'turbulent_thermal_diffusivity_compressible': 'DimensionalInitialConditionDomainsDynamicViscosity',
         'turbulent_dynamic_viscosity': 'DimensionalInitialConditionDomainsDynamicViscosity',
         'passive_scalars': 'list[DimensionalInitialConditionDomainsDimensionless]',
-        'phase_fraction': 'DimensionalInitialConditionDomainsDimensionless'
+        'phase_fraction': 'DimensionalInitialConditionDomainsDimensionless',
+        'phase_fractions': 'DimensionlessInitialConditionDomains',
+        'relative_humidity': 'DimensionalInitialConditionDomainsDimensionless'
     }
 
     attribute_map = {
@@ -69,10 +71,12 @@ class FluidInitialConditions(object):
         'turbulent_thermal_diffusivity_compressible': 'turbulentThermalDiffusivityCompressible',
         'turbulent_dynamic_viscosity': 'turbulentDynamicViscosity',
         'passive_scalars': 'passiveScalars',
-        'phase_fraction': 'phaseFraction'
+        'phase_fraction': 'phaseFraction',
+        'phase_fractions': 'phaseFractions',
+        'relative_humidity': 'relativeHumidity'
     }
 
-    def __init__(self, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, velocity=None, temperature=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_multiphase=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, passive_scalars=None, phase_fraction=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, velocity=None, temperature=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_multiphase=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, passive_scalars=None, phase_fraction=None, phase_fractions=None, relative_humidity=None, local_vars_configuration=None):  # noqa: E501
         """FluidInitialConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -96,6 +100,8 @@ class FluidInitialConditions(object):
         self._turbulent_dynamic_viscosity = None
         self._passive_scalars = None
         self._phase_fraction = None
+        self._phase_fractions = None
+        self._relative_humidity = None
         self.discriminator = None
 
         if pressure is not None:
@@ -134,6 +140,10 @@ class FluidInitialConditions(object):
             self.passive_scalars = passive_scalars
         if phase_fraction is not None:
             self.phase_fraction = phase_fraction
+        if phase_fractions is not None:
+            self.phase_fractions = phase_fractions
+        if relative_humidity is not None:
+            self.relative_humidity = relative_humidity
 
     @property
     def pressure(self):
@@ -512,6 +522,48 @@ class FluidInitialConditions(object):
         """
 
         self._phase_fraction = phase_fraction
+
+    @property
+    def phase_fractions(self):
+        """Gets the phase_fractions of this FluidInitialConditions.  # noqa: E501
+
+
+        :return: The phase_fractions of this FluidInitialConditions.  # noqa: E501
+        :rtype: DimensionlessInitialConditionDomains
+        """
+        return self._phase_fractions
+
+    @phase_fractions.setter
+    def phase_fractions(self, phase_fractions):
+        """Sets the phase_fractions of this FluidInitialConditions.
+
+
+        :param phase_fractions: The phase_fractions of this FluidInitialConditions.  # noqa: E501
+        :type: DimensionlessInitialConditionDomains
+        """
+
+        self._phase_fractions = phase_fractions
+
+    @property
+    def relative_humidity(self):
+        """Gets the relative_humidity of this FluidInitialConditions.  # noqa: E501
+
+
+        :return: The relative_humidity of this FluidInitialConditions.  # noqa: E501
+        :rtype: DimensionalInitialConditionDomainsDimensionless
+        """
+        return self._relative_humidity
+
+    @relative_humidity.setter
+    def relative_humidity(self, relative_humidity):
+        """Sets the relative_humidity of this FluidInitialConditions.
+
+
+        :param relative_humidity: The relative_humidity of this FluidInitialConditions.  # noqa: E501
+        :type: DimensionalInitialConditionDomainsDimensionless
+        """
+
+        self._relative_humidity = relative_humidity
 
     def to_dict(self):
         """Returns the model properties as a dict"""

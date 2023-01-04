@@ -34,12 +34,15 @@ class OneOfSolidResultControlSolutionFields(object):
         'type': 'str',
         'name': 'str',
         'contact_type': 'str',
-        'displacement_type': 'GlobalDisplacementType',
+        'displacement_type': 'NormalizedDisplacementType',
+        'harmonic_displacement_type': 'OneOfHarmonicDisplacementResultControlItemHarmonicDisplacementType',
         'force_type': 'OneOfForceResultControlItemForceType',
         'strain_type': 'OneOfStrainResultControlItemStrainType',
         'stress_type': 'OneOfStressResultControlItemStressType',
         'velocity_type': 'GlobalVelocityType',
+        'harmonic_velocity_type': 'OneOfHarmonicVelocityResultControlItemHarmonicVelocityType',
         'acceleration_type': 'GlobalAccelerationType',
+        'harmonic_acceleration_type': 'OneOfHarmonicAccelerationResultControlItemHarmonicAccelerationType',
         'temperature_type': 'str',
         'heat_flux_type': 'str'
     }
@@ -49,11 +52,14 @@ class OneOfSolidResultControlSolutionFields(object):
         'name': 'name',
         'contact_type': 'contactType',
         'displacement_type': 'displacementType',
+        'harmonic_displacement_type': 'harmonicDisplacementType',
         'force_type': 'forceType',
         'strain_type': 'strainType',
         'stress_type': 'stressType',
         'velocity_type': 'velocityType',
+        'harmonic_velocity_type': 'harmonicVelocityType',
         'acceleration_type': 'accelerationType',
+        'harmonic_acceleration_type': 'harmonicAccelerationType',
         'temperature_type': 'temperatureType',
         'heat_flux_type': 'heatFluxType'
     }
@@ -61,16 +67,20 @@ class OneOfSolidResultControlSolutionFields(object):
     discriminator_value_class_map = {
         'CONTACT': 'ContactResultControlItem',
         'DISPLACEMENT': 'DisplacementResultControlItem',
+        'HARMONIC_DISPLACEMENT': 'HarmonicDisplacementResultControlItem',
+        'NORMALIZED_DISPLACEMENT': 'NormalizedDisplacementResultControlItem',
         'FORCE': 'ForceResultControlItem',
         'STRAIN': 'StrainResultControlItem',
         'STRESS': 'StressResultControlItem',
         'VELOCITY': 'VelocityResultControlItem',
+        'HARMONIC_VELOCITY': 'HarmonicVelocityResultControlItem',
         'ACCELERATION': 'AccelerationResultControlItem',
+        'HARMONIC_ACCELERATION': 'HarmonicAccelerationResultControlItem',
         'TEMPERATURE': 'TemperatureResultControlItem',
         'HEAT_FLUX': 'HeatFluxResultControlItem'
     }
 
-    def __init__(self, type='HEAT_FLUX', name=None, contact_type=None, displacement_type=None, force_type=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, temperature_type=None, heat_flux_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEAT_FLUX', name=None, contact_type=None, displacement_type=None, harmonic_displacement_type=None, force_type=None, strain_type=None, stress_type=None, velocity_type=None, harmonic_velocity_type=None, acceleration_type=None, harmonic_acceleration_type=None, temperature_type=None, heat_flux_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidResultControlSolutionFields - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,11 +90,14 @@ class OneOfSolidResultControlSolutionFields(object):
         self._name = None
         self._contact_type = None
         self._displacement_type = None
+        self._harmonic_displacement_type = None
         self._force_type = None
         self._strain_type = None
         self._stress_type = None
         self._velocity_type = None
+        self._harmonic_velocity_type = None
         self._acceleration_type = None
+        self._harmonic_acceleration_type = None
         self._temperature_type = None
         self._heat_flux_type = None
         self.discriminator = 'type'
@@ -96,6 +109,8 @@ class OneOfSolidResultControlSolutionFields(object):
             self.contact_type = contact_type
         if displacement_type is not None:
             self.displacement_type = displacement_type
+        if harmonic_displacement_type is not None:
+            self.harmonic_displacement_type = harmonic_displacement_type
         if force_type is not None:
             self.force_type = force_type
         if strain_type is not None:
@@ -104,8 +119,12 @@ class OneOfSolidResultControlSolutionFields(object):
             self.stress_type = stress_type
         if velocity_type is not None:
             self.velocity_type = velocity_type
+        if harmonic_velocity_type is not None:
+            self.harmonic_velocity_type = harmonic_velocity_type
         if acceleration_type is not None:
             self.acceleration_type = acceleration_type
+        if harmonic_acceleration_type is not None:
+            self.harmonic_acceleration_type = harmonic_acceleration_type
         if temperature_type is not None:
             self.temperature_type = temperature_type
         if heat_flux_type is not None:
@@ -190,7 +209,7 @@ class OneOfSolidResultControlSolutionFields(object):
 
 
         :return: The displacement_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
-        :rtype: GlobalDisplacementType
+        :rtype: NormalizedDisplacementType
         """
         return self._displacement_type
 
@@ -200,10 +219,31 @@ class OneOfSolidResultControlSolutionFields(object):
 
 
         :param displacement_type: The displacement_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
-        :type: GlobalDisplacementType
+        :type: NormalizedDisplacementType
         """
 
         self._displacement_type = displacement_type
+
+    @property
+    def harmonic_displacement_type(self):
+        """Gets the harmonic_displacement_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+
+
+        :return: The harmonic_displacement_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+        :rtype: OneOfHarmonicDisplacementResultControlItemHarmonicDisplacementType
+        """
+        return self._harmonic_displacement_type
+
+    @harmonic_displacement_type.setter
+    def harmonic_displacement_type(self, harmonic_displacement_type):
+        """Sets the harmonic_displacement_type of this OneOfSolidResultControlSolutionFields.
+
+
+        :param harmonic_displacement_type: The harmonic_displacement_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+        :type: OneOfHarmonicDisplacementResultControlItemHarmonicDisplacementType
+        """
+
+        self._harmonic_displacement_type = harmonic_displacement_type
 
     @property
     def force_type(self):
@@ -290,6 +330,27 @@ class OneOfSolidResultControlSolutionFields(object):
         self._velocity_type = velocity_type
 
     @property
+    def harmonic_velocity_type(self):
+        """Gets the harmonic_velocity_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+
+
+        :return: The harmonic_velocity_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+        :rtype: OneOfHarmonicVelocityResultControlItemHarmonicVelocityType
+        """
+        return self._harmonic_velocity_type
+
+    @harmonic_velocity_type.setter
+    def harmonic_velocity_type(self, harmonic_velocity_type):
+        """Sets the harmonic_velocity_type of this OneOfSolidResultControlSolutionFields.
+
+
+        :param harmonic_velocity_type: The harmonic_velocity_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+        :type: OneOfHarmonicVelocityResultControlItemHarmonicVelocityType
+        """
+
+        self._harmonic_velocity_type = harmonic_velocity_type
+
+    @property
     def acceleration_type(self):
         """Gets the acceleration_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
 
@@ -309,6 +370,27 @@ class OneOfSolidResultControlSolutionFields(object):
         """
 
         self._acceleration_type = acceleration_type
+
+    @property
+    def harmonic_acceleration_type(self):
+        """Gets the harmonic_acceleration_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+
+
+        :return: The harmonic_acceleration_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+        :rtype: OneOfHarmonicAccelerationResultControlItemHarmonicAccelerationType
+        """
+        return self._harmonic_acceleration_type
+
+    @harmonic_acceleration_type.setter
+    def harmonic_acceleration_type(self, harmonic_acceleration_type):
+        """Sets the harmonic_acceleration_type of this OneOfSolidResultControlSolutionFields.
+
+
+        :param harmonic_acceleration_type: The harmonic_acceleration_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+        :type: OneOfHarmonicAccelerationResultControlItemHarmonicAccelerationType
+        """
+
+        self._harmonic_acceleration_type = harmonic_acceleration_type
 
     @property
     def temperature_type(self):

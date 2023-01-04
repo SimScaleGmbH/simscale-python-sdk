@@ -193,7 +193,7 @@ class ConjugateHeatTransfer(object):
     def enable_radiation(self):
         """Gets the enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
 
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperature differences in the simulation domain are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
         :rtype: bool
@@ -204,7 +204,7 @@ class ConjugateHeatTransfer(object):
     def enable_radiation(self, enable_radiation):
         """Sets the enable_radiation of this ConjugateHeatTransfer.
 
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperature differences in the simulation domain are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_radiation: The enable_radiation of this ConjugateHeatTransfer.  # noqa: E501
         :type: bool

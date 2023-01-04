@@ -33,16 +33,18 @@ class IRAMSorensen(object):
     openapi_types = {
         'type': 'str',
         'prec_soren': 'float',
-        'nmax_iter_soren': 'int'
+        'nmax_iter_soren': 'int',
+        'subspace_settings': 'OneOfIRAMSorensenSubspaceSettings'
     }
 
     attribute_map = {
         'type': 'type',
         'prec_soren': 'precSoren',
-        'nmax_iter_soren': 'nmaxIterSoren'
+        'nmax_iter_soren': 'nmaxIterSoren',
+        'subspace_settings': 'subspaceSettings'
     }
 
-    def __init__(self, type='SORENSEN', prec_soren=None, nmax_iter_soren=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SORENSEN', prec_soren=None, nmax_iter_soren=None, subspace_settings=None, local_vars_configuration=None):  # noqa: E501
         """IRAMSorensen - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class IRAMSorensen(object):
         self._type = None
         self._prec_soren = None
         self._nmax_iter_soren = None
+        self._subspace_settings = None
         self.discriminator = None
 
         self.type = type
@@ -58,6 +61,8 @@ class IRAMSorensen(object):
             self.prec_soren = prec_soren
         if nmax_iter_soren is not None:
             self.nmax_iter_soren = nmax_iter_soren
+        if subspace_settings is not None:
+            self.subspace_settings = subspace_settings
 
     @property
     def type(self):
@@ -102,6 +107,9 @@ class IRAMSorensen(object):
         :param prec_soren: The prec_soren of this IRAMSorensen.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                prec_soren is not None and prec_soren < 0):  # noqa: E501
+            raise ValueError("Invalid value for `prec_soren`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._prec_soren = prec_soren
 
@@ -128,6 +136,27 @@ class IRAMSorensen(object):
             raise ValueError("Invalid value for `nmax_iter_soren`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._nmax_iter_soren = nmax_iter_soren
+
+    @property
+    def subspace_settings(self):
+        """Gets the subspace_settings of this IRAMSorensen.  # noqa: E501
+
+
+        :return: The subspace_settings of this IRAMSorensen.  # noqa: E501
+        :rtype: OneOfIRAMSorensenSubspaceSettings
+        """
+        return self._subspace_settings
+
+    @subspace_settings.setter
+    def subspace_settings(self, subspace_settings):
+        """Sets the subspace_settings of this IRAMSorensen.
+
+
+        :param subspace_settings: The subspace_settings of this IRAMSorensen.  # noqa: E501
+        :type: OneOfIRAMSorensenSubspaceSettings
+        """
+
+        self._subspace_settings = subspace_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

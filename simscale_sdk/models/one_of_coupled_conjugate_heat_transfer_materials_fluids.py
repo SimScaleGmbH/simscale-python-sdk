@@ -318,6 +318,9 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         :param laminar_prandtl_number: The laminar_prandtl_number of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                laminar_prandtl_number is not None and laminar_prandtl_number <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `laminar_prandtl_number`, must be a value greater than `0`")  # noqa: E501
 
         self._laminar_prandtl_number = laminar_prandtl_number
 

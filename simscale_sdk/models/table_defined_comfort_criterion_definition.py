@@ -63,7 +63,7 @@ class TableDefinedComfortCriterionDefinition(object):
     def type(self):
         """Gets the type of this TableDefinedComfortCriterionDefinition.  # noqa: E501
 
-        The custom wind comfort criterion table must have exactly 3 columns (Probability, Wind Speed and Legend) separated by specified separator character (',' by default). Probability and Wind Speed must be expressed using numbers. Legend can be at most 32 characters long and can contain only alphanumerical characters, white spaces, and '-' or '_' special characters.  Schema name: TableDefinedComfortCriterionDefinition  # noqa: E501
+        The custom wind comfort criterion table must have exactly 3 columns (Wind Speed, Probability and Legend) separated by specified separator character (',' by default). Probability and Wind Speed must be expressed using numbers. Legend can be at most 32 characters long and can contain only alphanumerical characters, white spaces, and '-' or '_' special characters.  Schema name: TableDefinedComfortCriterionDefinition  # noqa: E501
 
         :return: The type of this TableDefinedComfortCriterionDefinition.  # noqa: E501
         :rtype: str
@@ -74,7 +74,7 @@ class TableDefinedComfortCriterionDefinition(object):
     def type(self, type):
         """Sets the type of this TableDefinedComfortCriterionDefinition.
 
-        The custom wind comfort criterion table must have exactly 3 columns (Probability, Wind Speed and Legend) separated by specified separator character (',' by default). Probability and Wind Speed must be expressed using numbers. Legend can be at most 32 characters long and can contain only alphanumerical characters, white spaces, and '-' or '_' special characters.  Schema name: TableDefinedComfortCriterionDefinition  # noqa: E501
+        The custom wind comfort criterion table must have exactly 3 columns (Wind Speed, Probability and Legend) separated by specified separator character (',' by default). Probability and Wind Speed must be expressed using numbers. Legend can be at most 32 characters long and can contain only alphanumerical characters, white spaces, and '-' or '_' special characters.  Schema name: TableDefinedComfortCriterionDefinition  # noqa: E501
 
         :param type: The type of this TableDefinedComfortCriterionDefinition.  # noqa: E501
         :type: str

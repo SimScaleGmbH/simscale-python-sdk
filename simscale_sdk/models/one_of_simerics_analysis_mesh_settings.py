@@ -34,6 +34,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
         'type': 'str',
         'refinements': 'list[RegionRefinementSimerics]',
         'fineness': 'float',
+        'enable_cad_surface_merging': 'bool',
         'cell_size_specification': 'OneOfManualSimericsMeshSettingsCellSizeSpecification'
     }
 
@@ -41,6 +42,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
         'type': 'type',
         'refinements': 'refinements',
         'fineness': 'fineness',
+        'enable_cad_surface_merging': 'enableCADSurfaceMerging',
         'cell_size_specification': 'cellSizeSpecification'
     }
 
@@ -49,7 +51,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
         'MANUAL_SETTINGS': 'ManualSimericsMeshSettings'
     }
 
-    def __init__(self, type='MANUAL_SETTINGS', refinements=None, fineness=None, cell_size_specification=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MANUAL_SETTINGS', refinements=None, fineness=None, enable_cad_surface_merging=None, cell_size_specification=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimericsAnalysisMeshSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
         self._type = None
         self._refinements = None
         self._fineness = None
+        self._enable_cad_surface_merging = None
         self._cell_size_specification = None
         self.discriminator = 'type'
 
@@ -66,6 +69,8 @@ class OneOfSimericsAnalysisMeshSettings(object):
             self.refinements = refinements
         if fineness is not None:
             self.fineness = fineness
+        if enable_cad_surface_merging is not None:
+            self.enable_cad_surface_merging = enable_cad_surface_merging
         if cell_size_specification is not None:
             self.cell_size_specification = cell_size_specification
 
@@ -143,6 +148,29 @@ class OneOfSimericsAnalysisMeshSettings(object):
             raise ValueError("Invalid value for `fineness`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._fineness = fineness
+
+    @property
+    def enable_cad_surface_merging(self):
+        """Gets the enable_cad_surface_merging of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+
+        Merge all CAD surfaces that are <em>not</em> assigned a boundary condition. Applying this setting significantly increases the probability of successful mesh-generation for more complicated geometry; such as when the model is comprised of many smaller, independent surfaces that are in close proximity to each other.  # noqa: E501
+
+        :return: The enable_cad_surface_merging of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_cad_surface_merging
+
+    @enable_cad_surface_merging.setter
+    def enable_cad_surface_merging(self, enable_cad_surface_merging):
+        """Sets the enable_cad_surface_merging of this OneOfSimericsAnalysisMeshSettings.
+
+        Merge all CAD surfaces that are <em>not</em> assigned a boundary condition. Applying this setting significantly increases the probability of successful mesh-generation for more complicated geometry; such as when the model is comprised of many smaller, independent surfaces that are in close proximity to each other.  # noqa: E501
+
+        :param enable_cad_surface_merging: The enable_cad_surface_merging of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_cad_surface_merging = enable_cad_surface_merging
 
     @property
     def cell_size_specification(self):

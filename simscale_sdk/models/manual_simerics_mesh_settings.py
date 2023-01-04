@@ -33,16 +33,18 @@ class ManualSimericsMeshSettings(object):
     openapi_types = {
         'type': 'str',
         'refinements': 'list[RegionRefinementSimerics]',
-        'cell_size_specification': 'OneOfManualSimericsMeshSettingsCellSizeSpecification'
+        'cell_size_specification': 'OneOfManualSimericsMeshSettingsCellSizeSpecification',
+        'enable_cad_surface_merging': 'bool'
     }
 
     attribute_map = {
         'type': 'type',
         'refinements': 'refinements',
-        'cell_size_specification': 'cellSizeSpecification'
+        'cell_size_specification': 'cellSizeSpecification',
+        'enable_cad_surface_merging': 'enableCADSurfaceMerging'
     }
 
-    def __init__(self, type='MANUAL_SETTINGS', refinements=None, cell_size_specification=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MANUAL_SETTINGS', refinements=None, cell_size_specification=None, enable_cad_surface_merging=None, local_vars_configuration=None):  # noqa: E501
         """ManualSimericsMeshSettings - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class ManualSimericsMeshSettings(object):
         self._type = None
         self._refinements = None
         self._cell_size_specification = None
+        self._enable_cad_surface_merging = None
         self.discriminator = None
 
         self.type = type
@@ -58,6 +61,8 @@ class ManualSimericsMeshSettings(object):
             self.refinements = refinements
         if cell_size_specification is not None:
             self.cell_size_specification = cell_size_specification
+        if enable_cad_surface_merging is not None:
+            self.enable_cad_surface_merging = enable_cad_surface_merging
 
     @property
     def type(self):
@@ -125,6 +130,29 @@ class ManualSimericsMeshSettings(object):
         """
 
         self._cell_size_specification = cell_size_specification
+
+    @property
+    def enable_cad_surface_merging(self):
+        """Gets the enable_cad_surface_merging of this ManualSimericsMeshSettings.  # noqa: E501
+
+        Merge all CAD surfaces that are <em>not</em> assigned a boundary condition. Applying this setting significantly increases the probability of successful mesh-generation for more complicated geometry; such as when the model is comprised of many smaller, independent surfaces that are in close proximity to each other.  # noqa: E501
+
+        :return: The enable_cad_surface_merging of this ManualSimericsMeshSettings.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_cad_surface_merging
+
+    @enable_cad_surface_merging.setter
+    def enable_cad_surface_merging(self, enable_cad_surface_merging):
+        """Sets the enable_cad_surface_merging of this ManualSimericsMeshSettings.
+
+        Merge all CAD surfaces that are <em>not</em> assigned a boundary condition. Applying this setting significantly increases the probability of successful mesh-generation for more complicated geometry; such as when the model is comprised of many smaller, independent surfaces that are in close proximity to each other.  # noqa: E501
+
+        :param enable_cad_surface_merging: The enable_cad_surface_merging of this ManualSimericsMeshSettings.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_cad_surface_merging = enable_cad_surface_merging
 
     def to_dict(self):
         """Returns the model properties as a dict"""

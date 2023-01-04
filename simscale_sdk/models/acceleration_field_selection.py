@@ -32,25 +32,30 @@ class AccelerationFieldSelection(object):
     """
     openapi_types = {
         'type': 'str',
+        'acceleration_type': 'OneOfAccelerationFieldSelectionAccelerationType',
         'component_selection': 'str'
     }
 
     attribute_map = {
         'type': 'type',
+        'acceleration_type': 'accelerationType',
         'component_selection': 'componentSelection'
     }
 
-    def __init__(self, type='ACCELERATION', component_selection=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ACCELERATION', acceleration_type=None, component_selection=None, local_vars_configuration=None):  # noqa: E501
         """AccelerationFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._acceleration_type = None
         self._component_selection = None
         self.discriminator = None
 
         self.type = type
+        if acceleration_type is not None:
+            self.acceleration_type = acceleration_type
         if component_selection is not None:
             self.component_selection = component_selection
 
@@ -78,6 +83,27 @@ class AccelerationFieldSelection(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def acceleration_type(self):
+        """Gets the acceleration_type of this AccelerationFieldSelection.  # noqa: E501
+
+
+        :return: The acceleration_type of this AccelerationFieldSelection.  # noqa: E501
+        :rtype: OneOfAccelerationFieldSelectionAccelerationType
+        """
+        return self._acceleration_type
+
+    @acceleration_type.setter
+    def acceleration_type(self, acceleration_type):
+        """Sets the acceleration_type of this AccelerationFieldSelection.
+
+
+        :param acceleration_type: The acceleration_type of this AccelerationFieldSelection.  # noqa: E501
+        :type: OneOfAccelerationFieldSelectionAccelerationType
+        """
+
+        self._acceleration_type = acceleration_type
 
     @property
     def component_selection(self):

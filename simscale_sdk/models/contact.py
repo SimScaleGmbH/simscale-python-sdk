@@ -32,32 +32,32 @@ class Contact(object):
     """
     openapi_types = {
         'type': 'str',
-        'connections': 'list[OneOfContactConnections]',
-        'node_merging_bonded': 'bool'
+        'node_merging_bonded': 'bool',
+        'connections': 'list[OneOfContactConnections]'
     }
 
     attribute_map = {
         'type': 'type',
-        'connections': 'connections',
-        'node_merging_bonded': 'nodeMergingBonded'
+        'node_merging_bonded': 'nodeMergingBonded',
+        'connections': 'connections'
     }
 
-    def __init__(self, type='CONTACT', connections=None, node_merging_bonded=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONTACT', node_merging_bonded=None, connections=None, local_vars_configuration=None):  # noqa: E501
         """Contact - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._connections = None
         self._node_merging_bonded = None
+        self._connections = None
         self.discriminator = None
 
         self.type = type
-        if connections is not None:
-            self.connections = connections
         if node_merging_bonded is not None:
             self.node_merging_bonded = node_merging_bonded
+        if connections is not None:
+            self.connections = connections
 
     @property
     def type(self):
@@ -85,27 +85,6 @@ class Contact(object):
         self._type = type
 
     @property
-    def connections(self):
-        """Gets the connections of this Contact.  # noqa: E501
-
-
-        :return: The connections of this Contact.  # noqa: E501
-        :rtype: list[OneOfContactConnections]
-        """
-        return self._connections
-
-    @connections.setter
-    def connections(self, connections):
-        """Sets the connections of this Contact.
-
-
-        :param connections: The connections of this Contact.  # noqa: E501
-        :type: list[OneOfContactConnections]
-        """
-
-        self._connections = connections
-
-    @property
     def node_merging_bonded(self):
         """Gets the node_merging_bonded of this Contact.  # noqa: E501
 
@@ -127,6 +106,27 @@ class Contact(object):
         """
 
         self._node_merging_bonded = node_merging_bonded
+
+    @property
+    def connections(self):
+        """Gets the connections of this Contact.  # noqa: E501
+
+
+        :return: The connections of this Contact.  # noqa: E501
+        :rtype: list[OneOfContactConnections]
+        """
+        return self._connections
+
+    @connections.setter
+    def connections(self, connections):
+        """Sets the connections of this Contact.
+
+
+        :param connections: The connections of this Contact.  # noqa: E501
+        :type: list[OneOfContactConnections]
+        """
+
+        self._connections = connections
 
     def to_dict(self):
         """Returns the model properties as a dict"""

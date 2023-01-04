@@ -32,25 +32,30 @@ class VelocityFieldSelection(object):
     """
     openapi_types = {
         'type': 'str',
+        'velocity_type': 'OneOfVelocityFieldSelectionVelocityType',
         'component_selection': 'str'
     }
 
     attribute_map = {
         'type': 'type',
+        'velocity_type': 'velocityType',
         'component_selection': 'componentSelection'
     }
 
-    def __init__(self, type='VELOCITY', component_selection=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VELOCITY', velocity_type=None, component_selection=None, local_vars_configuration=None):  # noqa: E501
         """VelocityFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._velocity_type = None
         self._component_selection = None
         self.discriminator = None
 
         self.type = type
+        if velocity_type is not None:
+            self.velocity_type = velocity_type
         if component_selection is not None:
             self.component_selection = component_selection
 
@@ -78,6 +83,27 @@ class VelocityFieldSelection(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def velocity_type(self):
+        """Gets the velocity_type of this VelocityFieldSelection.  # noqa: E501
+
+
+        :return: The velocity_type of this VelocityFieldSelection.  # noqa: E501
+        :rtype: OneOfVelocityFieldSelectionVelocityType
+        """
+        return self._velocity_type
+
+    @velocity_type.setter
+    def velocity_type(self, velocity_type):
+        """Sets the velocity_type of this VelocityFieldSelection.
+
+
+        :param velocity_type: The velocity_type of this VelocityFieldSelection.  # noqa: E501
+        :type: OneOfVelocityFieldSelectionVelocityType
+        """
+
+        self._velocity_type = velocity_type
 
     @property
     def component_selection(self):

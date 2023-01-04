@@ -44,7 +44,8 @@ class RelaxationFactor(object):
         'epsilon_dissipation_rate_equation': 'float',
         'nu_tilda_equation': 'float',
         'net_radiative_heat_flux_field': 'float',
-        'radiative_intensity_ray_equation': 'float'
+        'radiative_intensity_ray_equation': 'float',
+        'specific_humidity_equation': 'float'
     }
 
     attribute_map = {
@@ -61,10 +62,11 @@ class RelaxationFactor(object):
         'epsilon_dissipation_rate_equation': 'epsilonDissipationRateEquation',
         'nu_tilda_equation': 'nuTildaEquation',
         'net_radiative_heat_flux_field': 'netRadiativeHeatFluxField',
-        'radiative_intensity_ray_equation': 'radiativeIntensityRayEquation'
+        'radiative_intensity_ray_equation': 'radiativeIntensityRayEquation',
+        'specific_humidity_equation': 'specificHumidityEquation'
     }
 
-    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, radiative_intensity_ray_equation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, radiative_intensity_ray_equation=None, specific_humidity_equation=None, local_vars_configuration=None):  # noqa: E501
         """RelaxationFactor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,6 +86,7 @@ class RelaxationFactor(object):
         self._nu_tilda_equation = None
         self._net_radiative_heat_flux_field = None
         self._radiative_intensity_ray_equation = None
+        self._specific_humidity_equation = None
         self.discriminator = None
 
         if pressure_field is not None:
@@ -114,6 +117,8 @@ class RelaxationFactor(object):
             self.net_radiative_heat_flux_field = net_radiative_heat_flux_field
         if radiative_intensity_ray_equation is not None:
             self.radiative_intensity_ray_equation = radiative_intensity_ray_equation
+        if specific_humidity_equation is not None:
+            self.specific_humidity_equation = specific_humidity_equation
 
     @property
     def pressure_field(self):
@@ -258,7 +263,6 @@ class RelaxationFactor(object):
     def density_field(self):
         """Gets the density_field of this RelaxationFactor.  # noqa: E501
 
-        <p>With this parameter you can initialize the under-relaxation of a field or equation. The solver will dynamically adapt this factor to improve stability.</p>  # noqa: E501
 
         :return: The density_field of this RelaxationFactor.  # noqa: E501
         :rtype: float
@@ -269,7 +273,6 @@ class RelaxationFactor(object):
     def density_field(self, density_field):
         """Sets the density_field of this RelaxationFactor.
 
-        <p>With this parameter you can initialize the under-relaxation of a field or equation. The solver will dynamically adapt this factor to improve stability.</p>  # noqa: E501
 
         :param density_field: The density_field of this RelaxationFactor.  # noqa: E501
         :type: float
@@ -502,6 +505,33 @@ class RelaxationFactor(object):
             raise ValueError("Invalid value for `radiative_intensity_ray_equation`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._radiative_intensity_ray_equation = radiative_intensity_ray_equation
+
+    @property
+    def specific_humidity_equation(self):
+        """Gets the specific_humidity_equation of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The specific_humidity_equation of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._specific_humidity_equation
+
+    @specific_humidity_equation.setter
+    def specific_humidity_equation(self, specific_humidity_equation):
+        """Sets the specific_humidity_equation of this RelaxationFactor.
+
+
+        :param specific_humidity_equation: The specific_humidity_equation of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                specific_humidity_equation is not None and specific_humidity_equation > 1):  # noqa: E501
+            raise ValueError("Invalid value for `specific_humidity_equation`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                specific_humidity_equation is not None and specific_humidity_equation < 0):  # noqa: E501
+            raise ValueError("Invalid value for `specific_humidity_equation`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._specific_humidity_equation = specific_humidity_equation
 
     def to_dict(self):
         """Returns the model properties as a dict"""

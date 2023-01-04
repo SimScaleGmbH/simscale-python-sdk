@@ -34,8 +34,10 @@ class SimericsAnalysis(object):
         'type': 'str',
         'model': 'FluidModel',
         'materials': 'SimericsFluidMaterials',
+        'initial_conditions': 'FluidInitialConditions',
         'is_compressible': 'bool',
         'is_multiphase': 'bool',
+        'number_of_phases': 'int',
         'cavitation_model': 'str',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfSimericsAnalysisTimeDependency',
@@ -51,8 +53,10 @@ class SimericsAnalysis(object):
         'type': 'type',
         'model': 'model',
         'materials': 'materials',
+        'initial_conditions': 'initialConditions',
         'is_compressible': 'isCompressible',
         'is_multiphase': 'isMultiphase',
+        'number_of_phases': 'numberOfPhases',
         'cavitation_model': 'cavitationModel',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
@@ -64,7 +68,7 @@ class SimericsAnalysis(object):
         'mesh_settings': 'meshSettings'
     }
 
-    def __init__(self, type='SIMERICS_ANALYSIS', model=None, materials=None, is_compressible=None, is_multiphase=None, cavitation_model=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMERICS_ANALYSIS', model=None, materials=None, initial_conditions=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimericsAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,8 +77,10 @@ class SimericsAnalysis(object):
         self._type = None
         self._model = None
         self._materials = None
+        self._initial_conditions = None
         self._is_compressible = None
         self._is_multiphase = None
+        self._number_of_phases = None
         self._cavitation_model = None
         self._turbulence_model = None
         self._time_dependency = None
@@ -91,10 +97,14 @@ class SimericsAnalysis(object):
             self.model = model
         if materials is not None:
             self.materials = materials
+        if initial_conditions is not None:
+            self.initial_conditions = initial_conditions
         if is_compressible is not None:
             self.is_compressible = is_compressible
         if is_multiphase is not None:
             self.is_multiphase = is_multiphase
+        if number_of_phases is not None:
+            self.number_of_phases = number_of_phases
         if cavitation_model is not None:
             self.cavitation_model = cavitation_model
         if turbulence_model is not None:
@@ -182,6 +192,27 @@ class SimericsAnalysis(object):
         self._materials = materials
 
     @property
+    def initial_conditions(self):
+        """Gets the initial_conditions of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The initial_conditions of this SimericsAnalysis.  # noqa: E501
+        :rtype: FluidInitialConditions
+        """
+        return self._initial_conditions
+
+    @initial_conditions.setter
+    def initial_conditions(self, initial_conditions):
+        """Sets the initial_conditions of this SimericsAnalysis.
+
+
+        :param initial_conditions: The initial_conditions of this SimericsAnalysis.  # noqa: E501
+        :type: FluidInitialConditions
+        """
+
+        self._initial_conditions = initial_conditions
+
+    @property
     def is_compressible(self):
         """Gets the is_compressible of this SimericsAnalysis.  # noqa: E501
 
@@ -222,6 +253,33 @@ class SimericsAnalysis(object):
         """
 
         self._is_multiphase = is_multiphase
+
+    @property
+    def number_of_phases(self):
+        """Gets the number_of_phases of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The number_of_phases of this SimericsAnalysis.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_phases
+
+    @number_of_phases.setter
+    def number_of_phases(self, number_of_phases):
+        """Sets the number_of_phases of this SimericsAnalysis.
+
+
+        :param number_of_phases: The number_of_phases of this SimericsAnalysis.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_phases is not None and number_of_phases > 2):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_phases`, must be a value less than or equal to `2`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_phases is not None and number_of_phases < 2):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_phases`, must be a value greater than or equal to `2`")  # noqa: E501
+
+        self._number_of_phases = number_of_phases
 
     @property
     def cavitation_model(self):

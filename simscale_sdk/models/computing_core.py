@@ -32,15 +32,19 @@ class ComputingCore(object):
     """
     openapi_types = {
         'num_of_processors': 'int',
-        'num_of_computing_processors': 'int'
+        'num_of_computing_processors': 'int',
+        'domain_decomposition': 'OneOfComputingCoreDomainDecomposition',
+        'num_of_threads': 'int'
     }
 
     attribute_map = {
         'num_of_processors': 'numOfProcessors',
-        'num_of_computing_processors': 'numOfComputingProcessors'
+        'num_of_computing_processors': 'numOfComputingProcessors',
+        'domain_decomposition': 'domainDecomposition',
+        'num_of_threads': 'numOfThreads'
     }
 
-    def __init__(self, num_of_processors=None, num_of_computing_processors=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, num_of_processors=None, num_of_computing_processors=None, domain_decomposition=None, num_of_threads=None, local_vars_configuration=None):  # noqa: E501
         """ComputingCore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,12 +52,18 @@ class ComputingCore(object):
 
         self._num_of_processors = None
         self._num_of_computing_processors = None
+        self._domain_decomposition = None
+        self._num_of_threads = None
         self.discriminator = None
 
         if num_of_processors is not None:
             self.num_of_processors = num_of_processors
         if num_of_computing_processors is not None:
             self.num_of_computing_processors = num_of_computing_processors
+        if domain_decomposition is not None:
+            self.domain_decomposition = domain_decomposition
+        if num_of_threads is not None:
+            self.num_of_threads = num_of_threads
 
     @property
     def num_of_processors(self):
@@ -109,6 +119,54 @@ class ComputingCore(object):
             raise ValueError("Invalid value for `num_of_computing_processors`, must be a value greater than or equal to `-1`")  # noqa: E501
 
         self._num_of_computing_processors = num_of_computing_processors
+
+    @property
+    def domain_decomposition(self):
+        """Gets the domain_decomposition of this ComputingCore.  # noqa: E501
+
+
+        :return: The domain_decomposition of this ComputingCore.  # noqa: E501
+        :rtype: OneOfComputingCoreDomainDecomposition
+        """
+        return self._domain_decomposition
+
+    @domain_decomposition.setter
+    def domain_decomposition(self, domain_decomposition):
+        """Sets the domain_decomposition of this ComputingCore.
+
+
+        :param domain_decomposition: The domain_decomposition of this ComputingCore.  # noqa: E501
+        :type: OneOfComputingCoreDomainDecomposition
+        """
+
+        self._domain_decomposition = domain_decomposition
+
+    @property
+    def num_of_threads(self):
+        """Gets the num_of_threads of this ComputingCore.  # noqa: E501
+
+
+        :return: The num_of_threads of this ComputingCore.  # noqa: E501
+        :rtype: int
+        """
+        return self._num_of_threads
+
+    @num_of_threads.setter
+    def num_of_threads(self, num_of_threads):
+        """Sets the num_of_threads of this ComputingCore.
+
+
+        :param num_of_threads: The num_of_threads of this ComputingCore.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                num_of_threads is not None and num_of_threads > 64):  # noqa: E501
+            raise ValueError("Invalid value for `num_of_threads`, must be a value less than or equal to `64`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                num_of_threads is not None and num_of_threads < 1):  # noqa: E501
+            raise ValueError("Invalid value for `num_of_threads`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._num_of_threads = num_of_threads
 
     def to_dict(self):
         """Returns the model properties as a dict"""

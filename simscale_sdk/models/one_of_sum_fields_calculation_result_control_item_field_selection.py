@@ -32,22 +32,28 @@ class OneOfSumFieldsCalculationResultControlItemFieldSelection(object):
     """
     openapi_types = {
         'type': 'str',
+        'displacement_type': 'OneOfDisplacementFieldSelectionDisplacementType',
         'component_selection': 'str',
         'force_type': 'OneOfForceFieldSelectionForceType',
         'moment_type': 'OneOfMomentFieldSelectionMomentType',
         'reference_point': 'DimensionalVectorLength',
         'strain_type': 'OneOfStrainFieldSelectionStrainType',
-        'stress_type': 'OneOfStressFieldSelectionStressType'
+        'stress_type': 'OneOfStressFieldSelectionStressType',
+        'velocity_type': 'OneOfVelocityFieldSelectionVelocityType',
+        'acceleration_type': 'OneOfAccelerationFieldSelectionAccelerationType'
     }
 
     attribute_map = {
         'type': 'type',
+        'displacement_type': 'displacementType',
         'component_selection': 'componentSelection',
         'force_type': 'forceType',
         'moment_type': 'momentType',
         'reference_point': 'referencePoint',
         'strain_type': 'strainType',
-        'stress_type': 'stressType'
+        'stress_type': 'stressType',
+        'velocity_type': 'velocityType',
+        'acceleration_type': 'accelerationType'
     }
 
     discriminator_value_class_map = {
@@ -62,22 +68,27 @@ class OneOfSumFieldsCalculationResultControlItemFieldSelection(object):
         'HEAT_FLUX': 'HeatFluxFieldSelection'
     }
 
-    def __init__(self, type='HEAT_FLUX', component_selection=None, force_type=None, moment_type=None, reference_point=None, strain_type=None, stress_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEAT_FLUX', displacement_type=None, component_selection=None, force_type=None, moment_type=None, reference_point=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSumFieldsCalculationResultControlItemFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._displacement_type = None
         self._component_selection = None
         self._force_type = None
         self._moment_type = None
         self._reference_point = None
         self._strain_type = None
         self._stress_type = None
+        self._velocity_type = None
+        self._acceleration_type = None
         self.discriminator = 'type'
 
         self.type = type
+        if displacement_type is not None:
+            self.displacement_type = displacement_type
         if component_selection is not None:
             self.component_selection = component_selection
         if force_type is not None:
@@ -90,6 +101,10 @@ class OneOfSumFieldsCalculationResultControlItemFieldSelection(object):
             self.strain_type = strain_type
         if stress_type is not None:
             self.stress_type = stress_type
+        if velocity_type is not None:
+            self.velocity_type = velocity_type
+        if acceleration_type is not None:
+            self.acceleration_type = acceleration_type
 
     @property
     def type(self):
@@ -115,6 +130,27 @@ class OneOfSumFieldsCalculationResultControlItemFieldSelection(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def displacement_type(self):
+        """Gets the displacement_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The displacement_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfDisplacementFieldSelectionDisplacementType
+        """
+        return self._displacement_type
+
+    @displacement_type.setter
+    def displacement_type(self, displacement_type):
+        """Sets the displacement_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.
+
+
+        :param displacement_type: The displacement_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfDisplacementFieldSelectionDisplacementType
+        """
+
+        self._displacement_type = displacement_type
 
     @property
     def component_selection(self):
@@ -247,6 +283,48 @@ class OneOfSumFieldsCalculationResultControlItemFieldSelection(object):
         """
 
         self._stress_type = stress_type
+
+    @property
+    def velocity_type(self):
+        """Gets the velocity_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The velocity_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfVelocityFieldSelectionVelocityType
+        """
+        return self._velocity_type
+
+    @velocity_type.setter
+    def velocity_type(self, velocity_type):
+        """Sets the velocity_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.
+
+
+        :param velocity_type: The velocity_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfVelocityFieldSelectionVelocityType
+        """
+
+        self._velocity_type = velocity_type
+
+    @property
+    def acceleration_type(self):
+        """Gets the acceleration_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The acceleration_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfAccelerationFieldSelectionAccelerationType
+        """
+        return self._acceleration_type
+
+    @acceleration_type.setter
+    def acceleration_type(self, acceleration_type):
+        """Sets the acceleration_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.
+
+
+        :param acceleration_type: The acceleration_type of this OneOfSumFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfAccelerationFieldSelectionAccelerationType
+        """
+
+        self._acceleration_type = acceleration_type
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

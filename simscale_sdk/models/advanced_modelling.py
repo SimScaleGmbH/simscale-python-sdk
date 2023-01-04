@@ -31,55 +31,55 @@ class AdvancedModelling(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'surface_roughness': 'list[SurfaceRoughness]',
+        'surface_roughness_models': 'list[SurfaceRoughnessModel]',
         'porous_objects': 'list[OneOfAdvancedModellingPorousObjects]',
         'rotating_walls': 'list[RotatingWall]'
     }
 
     attribute_map = {
-        'surface_roughness': 'surfaceRoughness',
+        'surface_roughness_models': 'surfaceRoughnessModels',
         'porous_objects': 'porousObjects',
         'rotating_walls': 'rotatingWalls'
     }
 
-    def __init__(self, surface_roughness=None, porous_objects=None, rotating_walls=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, surface_roughness_models=None, porous_objects=None, rotating_walls=None, local_vars_configuration=None):  # noqa: E501
         """AdvancedModelling - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._surface_roughness = None
+        self._surface_roughness_models = None
         self._porous_objects = None
         self._rotating_walls = None
         self.discriminator = None
 
-        if surface_roughness is not None:
-            self.surface_roughness = surface_roughness
+        if surface_roughness_models is not None:
+            self.surface_roughness_models = surface_roughness_models
         if porous_objects is not None:
             self.porous_objects = porous_objects
         if rotating_walls is not None:
             self.rotating_walls = rotating_walls
 
     @property
-    def surface_roughness(self):
-        """Gets the surface_roughness of this AdvancedModelling.  # noqa: E501
+    def surface_roughness_models(self):
+        """Gets the surface_roughness_models of this AdvancedModelling.  # noqa: E501
 
 
-        :return: The surface_roughness of this AdvancedModelling.  # noqa: E501
-        :rtype: list[SurfaceRoughness]
+        :return: The surface_roughness_models of this AdvancedModelling.  # noqa: E501
+        :rtype: list[SurfaceRoughnessModel]
         """
-        return self._surface_roughness
+        return self._surface_roughness_models
 
-    @surface_roughness.setter
-    def surface_roughness(self, surface_roughness):
-        """Sets the surface_roughness of this AdvancedModelling.
+    @surface_roughness_models.setter
+    def surface_roughness_models(self, surface_roughness_models):
+        """Sets the surface_roughness_models of this AdvancedModelling.
 
 
-        :param surface_roughness: The surface_roughness of this AdvancedModelling.  # noqa: E501
-        :type: list[SurfaceRoughness]
+        :param surface_roughness_models: The surface_roughness_models of this AdvancedModelling.  # noqa: E501
+        :type: list[SurfaceRoughnessModel]
         """
 
-        self._surface_roughness = surface_roughness
+        self._surface_roughness_models = surface_roughness_models
 
     @property
     def porous_objects(self):

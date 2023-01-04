@@ -32,25 +32,30 @@ class DisplacementFieldSelection(object):
     """
     openapi_types = {
         'type': 'str',
+        'displacement_type': 'OneOfDisplacementFieldSelectionDisplacementType',
         'component_selection': 'str'
     }
 
     attribute_map = {
         'type': 'type',
+        'displacement_type': 'displacementType',
         'component_selection': 'componentSelection'
     }
 
-    def __init__(self, type='DISPLACEMENT', component_selection=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='DISPLACEMENT', displacement_type=None, component_selection=None, local_vars_configuration=None):  # noqa: E501
         """DisplacementFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._displacement_type = None
         self._component_selection = None
         self.discriminator = None
 
         self.type = type
+        if displacement_type is not None:
+            self.displacement_type = displacement_type
         if component_selection is not None:
             self.component_selection = component_selection
 
@@ -78,6 +83,27 @@ class DisplacementFieldSelection(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def displacement_type(self):
+        """Gets the displacement_type of this DisplacementFieldSelection.  # noqa: E501
+
+
+        :return: The displacement_type of this DisplacementFieldSelection.  # noqa: E501
+        :rtype: OneOfDisplacementFieldSelectionDisplacementType
+        """
+        return self._displacement_type
+
+    @displacement_type.setter
+    def displacement_type(self, displacement_type):
+        """Sets the displacement_type of this DisplacementFieldSelection.
+
+
+        :param displacement_type: The displacement_type of this DisplacementFieldSelection.  # noqa: E501
+        :type: OneOfDisplacementFieldSelectionDisplacementType
+        """
+
+        self._displacement_type = displacement_type
 
     @property
     def component_selection(self):

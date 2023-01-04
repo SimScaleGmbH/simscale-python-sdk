@@ -38,6 +38,7 @@ class NaturalConvectionInletOutletBC(object):
         'temperature': 'AmbientTBC',
         'net_radiative_heat_flux': 'OneOfNaturalConvectionInletOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OpenBoundaryRayBC',
+        'relative_humidity': 'InletOutletRHBC',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -49,10 +50,11 @@ class NaturalConvectionInletOutletBC(object):
         'temperature': 'temperature',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
+        'relative_humidity': 'relativeHumidity',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, pressure_rgh=None, gauge_pressure_rgh=None, temperature=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, pressure_rgh=None, gauge_pressure_rgh=None, temperature=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """NaturalConvectionInletOutletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class NaturalConvectionInletOutletBC(object):
         self._temperature = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
+        self._relative_humidity = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -81,6 +84,8 @@ class NaturalConvectionInletOutletBC(object):
             self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
             self.radiative_intensity_ray = radiative_intensity_ray
+        if relative_humidity is not None:
+            self.relative_humidity = relative_humidity
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -234,6 +239,27 @@ class NaturalConvectionInletOutletBC(object):
         """
 
         self._radiative_intensity_ray = radiative_intensity_ray
+
+    @property
+    def relative_humidity(self):
+        """Gets the relative_humidity of this NaturalConvectionInletOutletBC.  # noqa: E501
+
+
+        :return: The relative_humidity of this NaturalConvectionInletOutletBC.  # noqa: E501
+        :rtype: InletOutletRHBC
+        """
+        return self._relative_humidity
+
+    @relative_humidity.setter
+    def relative_humidity(self, relative_humidity):
+        """Sets the relative_humidity of this NaturalConvectionInletOutletBC.
+
+
+        :param relative_humidity: The relative_humidity of this NaturalConvectionInletOutletBC.  # noqa: E501
+        :type: InletOutletRHBC
+        """
+
+        self._relative_humidity = relative_humidity
 
     @property
     def topological_reference(self):

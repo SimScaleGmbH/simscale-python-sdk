@@ -34,6 +34,7 @@ class OneOfSolidNumericsEigenSolver(object):
         'type': 'str',
         'prec_soren': 'float',
         'nmax_iter_soren': 'int',
+        'subspace_settings': 'OneOfBatheWilsonSubspaceSettings',
         'prec_ortho': 'float',
         'nmax_iter_ortho': 'int',
         'prec_lanczos': 'float',
@@ -50,6 +51,7 @@ class OneOfSolidNumericsEigenSolver(object):
         'type': 'type',
         'prec_soren': 'precSoren',
         'nmax_iter_soren': 'nmaxIterSoren',
+        'subspace_settings': 'subspaceSettings',
         'prec_ortho': 'precOrtho',
         'nmax_iter_ortho': 'nmaxIterOrtho',
         'prec_lanczos': 'precLanczos',
@@ -69,7 +71,7 @@ class OneOfSolidNumericsEigenSolver(object):
         'QZ': 'QZ'
     }
 
-    def __init__(self, type='QZ', prec_soren=None, nmax_iter_soren=None, prec_ortho=None, nmax_iter_ortho=None, prec_lanczos=None, max_iter_qr=None, mode_rigid=None, prec_bathe=None, nmax_iter_bathe=None, prec_jacobi=None, max_iter_jacobi=None, type_qz=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='QZ', prec_soren=None, nmax_iter_soren=None, subspace_settings=None, prec_ortho=None, nmax_iter_ortho=None, prec_lanczos=None, max_iter_qr=None, mode_rigid=None, prec_bathe=None, nmax_iter_bathe=None, prec_jacobi=None, max_iter_jacobi=None, type_qz=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidNumericsEigenSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class OneOfSolidNumericsEigenSolver(object):
         self._type = None
         self._prec_soren = None
         self._nmax_iter_soren = None
+        self._subspace_settings = None
         self._prec_ortho = None
         self._nmax_iter_ortho = None
         self._prec_lanczos = None
@@ -95,6 +98,8 @@ class OneOfSolidNumericsEigenSolver(object):
             self.prec_soren = prec_soren
         if nmax_iter_soren is not None:
             self.nmax_iter_soren = nmax_iter_soren
+        if subspace_settings is not None:
+            self.subspace_settings = subspace_settings
         if prec_ortho is not None:
             self.prec_ortho = prec_ortho
         if nmax_iter_ortho is not None:
@@ -159,6 +164,9 @@ class OneOfSolidNumericsEigenSolver(object):
         :param prec_soren: The prec_soren of this OneOfSolidNumericsEigenSolver.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                prec_soren is not None and prec_soren < 0):  # noqa: E501
+            raise ValueError("Invalid value for `prec_soren`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._prec_soren = prec_soren
 
@@ -185,6 +193,27 @@ class OneOfSolidNumericsEigenSolver(object):
             raise ValueError("Invalid value for `nmax_iter_soren`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._nmax_iter_soren = nmax_iter_soren
+
+    @property
+    def subspace_settings(self):
+        """Gets the subspace_settings of this OneOfSolidNumericsEigenSolver.  # noqa: E501
+
+
+        :return: The subspace_settings of this OneOfSolidNumericsEigenSolver.  # noqa: E501
+        :rtype: OneOfBatheWilsonSubspaceSettings
+        """
+        return self._subspace_settings
+
+    @subspace_settings.setter
+    def subspace_settings(self, subspace_settings):
+        """Sets the subspace_settings of this OneOfSolidNumericsEigenSolver.
+
+
+        :param subspace_settings: The subspace_settings of this OneOfSolidNumericsEigenSolver.  # noqa: E501
+        :type: OneOfBatheWilsonSubspaceSettings
+        """
+
+        self._subspace_settings = subspace_settings
 
     @property
     def prec_ortho(self):

@@ -38,7 +38,9 @@ class FanBC(object):
         'gauge_pressure': 'FanPBC',
         'gauge_pressure_rgh': 'FanPBC',
         'temperature': 'FixedValueTBC',
+        'net_radiative_heat_flux': 'OneOfFanBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfFanBCRadiativeIntensityRay',
+        'relative_humidity': 'FixedValueRHBC',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -50,11 +52,13 @@ class FanBC(object):
         'gauge_pressure': 'gaugePressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
         'temperature': 'temperature',
+        'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
+        'relative_humidity': 'relativeHumidity',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='FAN', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, temperature=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FAN', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, temperature=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """FanBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,7 +71,9 @@ class FanBC(object):
         self._gauge_pressure = None
         self._gauge_pressure_rgh = None
         self._temperature = None
+        self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
+        self._relative_humidity = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -84,8 +90,12 @@ class FanBC(object):
             self.gauge_pressure_rgh = gauge_pressure_rgh
         if temperature is not None:
             self.temperature = temperature
+        if net_radiative_heat_flux is not None:
+            self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
             self.radiative_intensity_ray = radiative_intensity_ray
+        if relative_humidity is not None:
+            self.relative_humidity = relative_humidity
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -93,7 +103,7 @@ class FanBC(object):
     def type(self):
         """Gets the type of this FanBC.  # noqa: E501
 
-        Schema name: FanBC  # noqa: E501
+        This boundary condition sets the <b>pressure</b> based on the pressure drop specified as a function of the volumetric flow rate. <a href='https://www.simscale.com/knowledge-base/how-do-i-model-a-fan-curve-in-simscale/#external-fan-boundary-condition' target='_blank'>Learn more</a>  Schema name: FanBC  # noqa: E501
 
         :return: The type of this FanBC.  # noqa: E501
         :rtype: str
@@ -104,7 +114,7 @@ class FanBC(object):
     def type(self, type):
         """Sets the type of this FanBC.
 
-        Schema name: FanBC  # noqa: E501
+        This boundary condition sets the <b>pressure</b> based on the pressure drop specified as a function of the volumetric flow rate. <a href='https://www.simscale.com/knowledge-base/how-do-i-model-a-fan-curve-in-simscale/#external-fan-boundary-condition' target='_blank'>Learn more</a>  Schema name: FanBC  # noqa: E501
 
         :param type: The type of this FanBC.  # noqa: E501
         :type: str
@@ -241,6 +251,27 @@ class FanBC(object):
         self._temperature = temperature
 
     @property
+    def net_radiative_heat_flux(self):
+        """Gets the net_radiative_heat_flux of this FanBC.  # noqa: E501
+
+
+        :return: The net_radiative_heat_flux of this FanBC.  # noqa: E501
+        :rtype: OneOfFanBCNetRadiativeHeatFlux
+        """
+        return self._net_radiative_heat_flux
+
+    @net_radiative_heat_flux.setter
+    def net_radiative_heat_flux(self, net_radiative_heat_flux):
+        """Sets the net_radiative_heat_flux of this FanBC.
+
+
+        :param net_radiative_heat_flux: The net_radiative_heat_flux of this FanBC.  # noqa: E501
+        :type: OneOfFanBCNetRadiativeHeatFlux
+        """
+
+        self._net_radiative_heat_flux = net_radiative_heat_flux
+
+    @property
     def radiative_intensity_ray(self):
         """Gets the radiative_intensity_ray of this FanBC.  # noqa: E501
 
@@ -260,6 +291,27 @@ class FanBC(object):
         """
 
         self._radiative_intensity_ray = radiative_intensity_ray
+
+    @property
+    def relative_humidity(self):
+        """Gets the relative_humidity of this FanBC.  # noqa: E501
+
+
+        :return: The relative_humidity of this FanBC.  # noqa: E501
+        :rtype: FixedValueRHBC
+        """
+        return self._relative_humidity
+
+    @relative_humidity.setter
+    def relative_humidity(self, relative_humidity):
+        """Sets the relative_humidity of this FanBC.
+
+
+        :param relative_humidity: The relative_humidity of this FanBC.  # noqa: E501
+        :type: FixedValueRHBC
+        """
+
+        self._relative_humidity = relative_humidity
 
     @property
     def topological_reference(self):

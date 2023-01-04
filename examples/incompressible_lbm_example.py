@@ -14,7 +14,7 @@ from simscale_sdk import SimulationSpec, SimulationRun
 from simscale_sdk import TopologicalReference, VelocityInletBC, ConstantFunction, PressureOutletBC, WallBC, NoSlipVBC, \
     FluidSimulationControl, DimensionalTime, FluidResultControls, ProbePointsResultControl, RotatableCartesianBox, \
     DimensionalVectorAngle, LocalCartesianBox, IncompressiblePacefish, FlowDomainBoundaries, FixedMagnitudeVBC, \
-    DimensionalFunctionSpeed, TableDefinedFunction, TableFunctionParameter, \
+    DimensionalFunctionSpeed, TableDefinedFunction, TableFunctionParameter, NoSlipWallEquivalentSandRoughness, \
     TurbulenceIntensityTIBC, DimensionalFunctionDimensionless, CustomOmegaDissipation, \
     DimensionalFunctionSpecificTurbulenceDissipationRate, SlipVBC, DimensionalLength, AdvancedModelling, \
     ForcesMomentsResultControl, HighResolution, ModerateResolution, TableDefinedProbeLocations, TransientResultControl, \
@@ -188,7 +188,9 @@ model = IncompressiblePacefish(
         zmin=WallBC(
             name="Ground (E)",
             velocity=NoSlipVBC(
-                surface_roughness=DimensionalLength(value=0, unit="m"),
+                no_slip_wall_roughness_type=NoSlipWallEquivalentSandRoughness(
+                    surface_roughness=DimensionalLength(value=0, unit="m")
+                )
             ),
         ),
         zmax=WallBC(name="Top (F)", velocity=SlipVBC()),

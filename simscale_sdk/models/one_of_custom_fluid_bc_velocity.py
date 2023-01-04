@@ -42,6 +42,7 @@ class OneOfCustomFluidBCVelocity(object):
         'orientation_reference': 'str',
         'enable_surface_roughness': 'bool',
         'surface_roughness': 'DimensionalLength',
+        'no_slip_wall_roughness_type': 'OneOfNoSlipVBCNoSlipWallRoughnessType',
         'phase': 'str',
         'mean_velocity': 'DimensionalSpeed',
         'rotation': 'AngularRotation',
@@ -63,6 +64,7 @@ class OneOfCustomFluidBCVelocity(object):
         'orientation_reference': 'orientationReference',
         'enable_surface_roughness': 'enableSurfaceRoughness',
         'surface_roughness': 'surfaceRoughness',
+        'no_slip_wall_roughness_type': 'noSlipWallRoughnessType',
         'phase': 'phase',
         'mean_velocity': 'meanVelocity',
         'rotation': 'rotation',
@@ -93,7 +95,7 @@ class OneOfCustomFluidBCVelocity(object):
         'TURBULENT_DFSEM_INLET': 'TurbulentDFSEMInletVBC'
     }
 
-    def __init__(self, type='TURBULENT_DFSEM_INLET', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, enable_surface_roughness=None, surface_roughness=None, phase=None, mean_velocity=None, rotation=None, domain_length_scale=None, eddy_length_scale=None, velocity=None, reynolds_stress_tensor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TURBULENT_DFSEM_INLET', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, enable_surface_roughness=None, surface_roughness=None, no_slip_wall_roughness_type=None, phase=None, mean_velocity=None, rotation=None, domain_length_scale=None, eddy_length_scale=None, velocity=None, reynolds_stress_tensor=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -110,6 +112,7 @@ class OneOfCustomFluidBCVelocity(object):
         self._orientation_reference = None
         self._enable_surface_roughness = None
         self._surface_roughness = None
+        self._no_slip_wall_roughness_type = None
         self._phase = None
         self._mean_velocity = None
         self._rotation = None
@@ -140,6 +143,8 @@ class OneOfCustomFluidBCVelocity(object):
             self.enable_surface_roughness = enable_surface_roughness
         if surface_roughness is not None:
             self.surface_roughness = surface_roughness
+        if no_slip_wall_roughness_type is not None:
+            self.no_slip_wall_roughness_type = no_slip_wall_roughness_type
         if phase is not None:
             self.phase = phase
         if mean_velocity is not None:
@@ -403,6 +408,27 @@ class OneOfCustomFluidBCVelocity(object):
         """
 
         self._surface_roughness = surface_roughness
+
+    @property
+    def no_slip_wall_roughness_type(self):
+        """Gets the no_slip_wall_roughness_type of this OneOfCustomFluidBCVelocity.  # noqa: E501
+
+
+        :return: The no_slip_wall_roughness_type of this OneOfCustomFluidBCVelocity.  # noqa: E501
+        :rtype: OneOfNoSlipVBCNoSlipWallRoughnessType
+        """
+        return self._no_slip_wall_roughness_type
+
+    @no_slip_wall_roughness_type.setter
+    def no_slip_wall_roughness_type(self, no_slip_wall_roughness_type):
+        """Sets the no_slip_wall_roughness_type of this OneOfCustomFluidBCVelocity.
+
+
+        :param no_slip_wall_roughness_type: The no_slip_wall_roughness_type of this OneOfCustomFluidBCVelocity.  # noqa: E501
+        :type: OneOfNoSlipVBCNoSlipWallRoughnessType
+        """
+
+        self._no_slip_wall_roughness_type = no_slip_wall_roughness_type
 
     @property
     def phase(self):

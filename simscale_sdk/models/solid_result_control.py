@@ -74,6 +74,7 @@ class SolidResultControl(object):
     def solution_fields(self):
         """Gets the solution_fields of this SolidResultControl.  # noqa: E501
 
+        Each mode is normalized using its largest component of displacement.  # noqa: E501
 
         :return: The solution_fields of this SolidResultControl.  # noqa: E501
         :rtype: list[OneOfSolidResultControlSolutionFields]
@@ -84,6 +85,7 @@ class SolidResultControl(object):
     def solution_fields(self, solution_fields):
         """Sets the solution_fields of this SolidResultControl.
 
+        Each mode is normalized using its largest component of displacement.  # noqa: E501
 
         :param solution_fields: The solution_fields of this SolidResultControl.  # noqa: E501
         :type: list[OneOfSolidResultControlSolutionFields]

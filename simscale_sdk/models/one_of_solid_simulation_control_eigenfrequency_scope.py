@@ -35,6 +35,8 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
         'number_of_modes': 'int',
         'start_frequency': 'DimensionalFrequency',
         'end_frequency': 'DimensionalFrequency',
+        'number_of_sub_bands': 'int',
+        'parallelization_level': 'str',
         'center_frequency': 'DimensionalFrequency'
     }
 
@@ -43,6 +45,8 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
         'number_of_modes': 'numberOfModes',
         'start_frequency': 'startFrequency',
         'end_frequency': 'endFrequency',
+        'number_of_sub_bands': 'numberOfSubBands',
+        'parallelization_level': 'parallelizationLevel',
         'center_frequency': 'centerFrequency'
     }
 
@@ -52,7 +56,7 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
         'CENTER': 'CenterFrequency'
     }
 
-    def __init__(self, type='CENTER', number_of_modes=None, start_frequency=None, end_frequency=None, center_frequency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CENTER', number_of_modes=None, start_frequency=None, end_frequency=None, number_of_sub_bands=None, parallelization_level=None, center_frequency=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidSimulationControlEigenfrequencyScope - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +66,8 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
         self._number_of_modes = None
         self._start_frequency = None
         self._end_frequency = None
+        self._number_of_sub_bands = None
+        self._parallelization_level = None
         self._center_frequency = None
         self.discriminator = 'type'
 
@@ -72,6 +78,10 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
             self.start_frequency = start_frequency
         if end_frequency is not None:
             self.end_frequency = end_frequency
+        if number_of_sub_bands is not None:
+            self.number_of_sub_bands = number_of_sub_bands
+        if parallelization_level is not None:
+            self.parallelization_level = parallelization_level
         if center_frequency is not None:
             self.center_frequency = center_frequency
 
@@ -167,6 +177,60 @@ class OneOfSolidSimulationControlEigenfrequencyScope(object):
         """
 
         self._end_frequency = end_frequency
+
+    @property
+    def number_of_sub_bands(self):
+        """Gets the number_of_sub_bands of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+
+
+        :return: The number_of_sub_bands of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_sub_bands
+
+    @number_of_sub_bands.setter
+    def number_of_sub_bands(self, number_of_sub_bands):
+        """Sets the number_of_sub_bands of this OneOfSolidSimulationControlEigenfrequencyScope.
+
+
+        :param number_of_sub_bands: The number_of_sub_bands of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_sub_bands is not None and number_of_sub_bands > 1000):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_sub_bands`, must be a value less than or equal to `1000`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_sub_bands is not None and number_of_sub_bands < 1):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_sub_bands`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._number_of_sub_bands = number_of_sub_bands
+
+    @property
+    def parallelization_level(self):
+        """Gets the parallelization_level of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+
+
+        :return: The parallelization_level of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+        :rtype: str
+        """
+        return self._parallelization_level
+
+    @parallelization_level.setter
+    def parallelization_level(self, parallelization_level):
+        """Sets the parallelization_level of this OneOfSolidSimulationControlEigenfrequencyScope.
+
+
+        :param parallelization_level: The parallelization_level of this OneOfSolidSimulationControlEigenfrequencyScope.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["COMPLETE", "PARTIAL"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and parallelization_level not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `parallelization_level` ({0}), must be one of {1}"  # noqa: E501
+                .format(parallelization_level, allowed_values)
+            )
+
+        self._parallelization_level = parallelization_level
 
     @property
     def center_frequency(self):

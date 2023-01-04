@@ -32,33 +32,60 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
     """
     openapi_types = {
         'type': 'str',
-        'component_selection': 'str'
+        'displacement_type': 'OneOfDisplacementFieldSelectionDisplacementType',
+        'component_selection': 'str',
+        'strain_type': 'OneOfStrainFieldSelectionStrainType',
+        'stress_type': 'OneOfStressFieldSelectionStressType',
+        'velocity_type': 'OneOfVelocityFieldSelectionVelocityType',
+        'acceleration_type': 'OneOfAccelerationFieldSelectionAccelerationType'
     }
 
     attribute_map = {
         'type': 'type',
-        'component_selection': 'componentSelection'
+        'displacement_type': 'displacementType',
+        'component_selection': 'componentSelection',
+        'strain_type': 'strainType',
+        'stress_type': 'stressType',
+        'velocity_type': 'velocityType',
+        'acceleration_type': 'accelerationType'
     }
 
     discriminator_value_class_map = {
         'DISPLACEMENT': 'DisplacementFieldSelection',
+        'STRAIN': 'StrainFieldSelection',
+        'STRESS': 'StressFieldSelection',
         'VELOCITY': 'VelocityFieldSelection',
         'ACCELERATION': 'AccelerationFieldSelection'
     }
 
-    def __init__(self, type='ACCELERATION', component_selection=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ACCELERATION', displacement_type=None, component_selection=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHarmonicResponseResultControlItemFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._displacement_type = None
         self._component_selection = None
+        self._strain_type = None
+        self._stress_type = None
+        self._velocity_type = None
+        self._acceleration_type = None
         self.discriminator = 'type'
 
         self.type = type
+        if displacement_type is not None:
+            self.displacement_type = displacement_type
         if component_selection is not None:
             self.component_selection = component_selection
+        if strain_type is not None:
+            self.strain_type = strain_type
+        if stress_type is not None:
+            self.stress_type = stress_type
+        if velocity_type is not None:
+            self.velocity_type = velocity_type
+        if acceleration_type is not None:
+            self.acceleration_type = acceleration_type
 
     @property
     def type(self):
@@ -86,6 +113,27 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
         self._type = type
 
     @property
+    def displacement_type(self):
+        """Gets the displacement_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The displacement_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfDisplacementFieldSelectionDisplacementType
+        """
+        return self._displacement_type
+
+    @displacement_type.setter
+    def displacement_type(self, displacement_type):
+        """Sets the displacement_type of this OneOfHarmonicResponseResultControlItemFieldSelection.
+
+
+        :param displacement_type: The displacement_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfDisplacementFieldSelectionDisplacementType
+        """
+
+        self._displacement_type = displacement_type
+
+    @property
     def component_selection(self):
         """Gets the component_selection of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
 
@@ -111,6 +159,90 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
             )
 
         self._component_selection = component_selection
+
+    @property
+    def strain_type(self):
+        """Gets the strain_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The strain_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfStrainFieldSelectionStrainType
+        """
+        return self._strain_type
+
+    @strain_type.setter
+    def strain_type(self, strain_type):
+        """Sets the strain_type of this OneOfHarmonicResponseResultControlItemFieldSelection.
+
+
+        :param strain_type: The strain_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfStrainFieldSelectionStrainType
+        """
+
+        self._strain_type = strain_type
+
+    @property
+    def stress_type(self):
+        """Gets the stress_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The stress_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfStressFieldSelectionStressType
+        """
+        return self._stress_type
+
+    @stress_type.setter
+    def stress_type(self, stress_type):
+        """Sets the stress_type of this OneOfHarmonicResponseResultControlItemFieldSelection.
+
+
+        :param stress_type: The stress_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfStressFieldSelectionStressType
+        """
+
+        self._stress_type = stress_type
+
+    @property
+    def velocity_type(self):
+        """Gets the velocity_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The velocity_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfVelocityFieldSelectionVelocityType
+        """
+        return self._velocity_type
+
+    @velocity_type.setter
+    def velocity_type(self, velocity_type):
+        """Sets the velocity_type of this OneOfHarmonicResponseResultControlItemFieldSelection.
+
+
+        :param velocity_type: The velocity_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfVelocityFieldSelectionVelocityType
+        """
+
+        self._velocity_type = velocity_type
+
+    @property
+    def acceleration_type(self):
+        """Gets the acceleration_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The acceleration_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfAccelerationFieldSelectionAccelerationType
+        """
+        return self._acceleration_type
+
+    @acceleration_type.setter
+    def acceleration_type(self, acceleration_type):
+        """Sets the acceleration_type of this OneOfHarmonicResponseResultControlItemFieldSelection.
+
+
+        :param acceleration_type: The acceleration_type of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfAccelerationFieldSelectionAccelerationType
+        """
+
+        self._acceleration_type = acceleration_type
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

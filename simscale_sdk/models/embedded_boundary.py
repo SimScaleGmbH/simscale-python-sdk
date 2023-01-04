@@ -41,9 +41,10 @@ class EmbeddedBoundary(object):
         'numerics': 'FluidNumerics',
         'simulation_control': 'FluidSimulationControl',
         'result_control': 'FluidResultControls',
-        'mesh_settings': 'BasicEmbeddedBoundaryMeshing',
+        'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
         'is_compressible': 'bool',
         'enable_radiation': 'bool',
+        'enable_joule_heating': 'bool',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfEmbeddedBoundaryTimeDependency'
     }
@@ -59,14 +60,15 @@ class EmbeddedBoundary(object):
         'numerics': 'numerics',
         'simulation_control': 'simulationControl',
         'result_control': 'resultControl',
-        'mesh_settings': 'meshSettings',
+        'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
         'is_compressible': 'isCompressible',
         'enable_radiation': 'enableRadiation',
+        'enable_joule_heating': 'enableJouleHeating',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency'
     }
 
-    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, is_compressible=None, enable_radiation=None, turbulence_model=None, time_dependency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, local_vars_configuration=None):  # noqa: E501
         """EmbeddedBoundary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,9 +84,10 @@ class EmbeddedBoundary(object):
         self._numerics = None
         self._simulation_control = None
         self._result_control = None
-        self._mesh_settings = None
+        self._embedded_boundary_meshing = None
         self._is_compressible = None
         self._enable_radiation = None
+        self._enable_joule_heating = None
         self._turbulence_model = None
         self._time_dependency = None
         self.discriminator = None
@@ -108,12 +111,14 @@ class EmbeddedBoundary(object):
             self.simulation_control = simulation_control
         if result_control is not None:
             self.result_control = result_control
-        if mesh_settings is not None:
-            self.mesh_settings = mesh_settings
+        if embedded_boundary_meshing is not None:
+            self.embedded_boundary_meshing = embedded_boundary_meshing
         if is_compressible is not None:
             self.is_compressible = is_compressible
         if enable_radiation is not None:
             self.enable_radiation = enable_radiation
+        if enable_joule_heating is not None:
+            self.enable_joule_heating = enable_joule_heating
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
@@ -336,25 +341,25 @@ class EmbeddedBoundary(object):
         self._result_control = result_control
 
     @property
-    def mesh_settings(self):
-        """Gets the mesh_settings of this EmbeddedBoundary.  # noqa: E501
+    def embedded_boundary_meshing(self):
+        """Gets the embedded_boundary_meshing of this EmbeddedBoundary.  # noqa: E501
 
 
-        :return: The mesh_settings of this EmbeddedBoundary.  # noqa: E501
-        :rtype: BasicEmbeddedBoundaryMeshing
+        :return: The embedded_boundary_meshing of this EmbeddedBoundary.  # noqa: E501
+        :rtype: EmbeddedBoundaryMeshing
         """
-        return self._mesh_settings
+        return self._embedded_boundary_meshing
 
-    @mesh_settings.setter
-    def mesh_settings(self, mesh_settings):
-        """Sets the mesh_settings of this EmbeddedBoundary.
+    @embedded_boundary_meshing.setter
+    def embedded_boundary_meshing(self, embedded_boundary_meshing):
+        """Sets the embedded_boundary_meshing of this EmbeddedBoundary.
 
 
-        :param mesh_settings: The mesh_settings of this EmbeddedBoundary.  # noqa: E501
-        :type: BasicEmbeddedBoundaryMeshing
+        :param embedded_boundary_meshing: The embedded_boundary_meshing of this EmbeddedBoundary.  # noqa: E501
+        :type: EmbeddedBoundaryMeshing
         """
 
-        self._mesh_settings = mesh_settings
+        self._embedded_boundary_meshing = embedded_boundary_meshing
 
     @property
     def is_compressible(self):
@@ -383,7 +388,7 @@ class EmbeddedBoundary(object):
     def enable_radiation(self):
         """Gets the enable_radiation of this EmbeddedBoundary.  # noqa: E501
 
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperature differences in the simulation domain are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_radiation of this EmbeddedBoundary.  # noqa: E501
         :rtype: bool
@@ -394,13 +399,36 @@ class EmbeddedBoundary(object):
     def enable_radiation(self, enable_radiation):
         """Sets the enable_radiation of this EmbeddedBoundary.
 
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperature differences in the simulation domain are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_radiation: The enable_radiation of this EmbeddedBoundary.  # noqa: E501
         :type: bool
         """
 
         self._enable_radiation = enable_radiation
+
+    @property
+    def enable_joule_heating(self):
+        """Gets the enable_joule_heating of this EmbeddedBoundary.  # noqa: E501
+
+        Enabling <b>Joule heating</b> gives you the possibility to solve a coupled electric conduction and conjugate heat transfer problem in a single simulation.  # noqa: E501
+
+        :return: The enable_joule_heating of this EmbeddedBoundary.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_joule_heating
+
+    @enable_joule_heating.setter
+    def enable_joule_heating(self, enable_joule_heating):
+        """Sets the enable_joule_heating of this EmbeddedBoundary.
+
+        Enabling <b>Joule heating</b> gives you the possibility to solve a coupled electric conduction and conjugate heat transfer problem in a single simulation.  # noqa: E501
+
+        :param enable_joule_heating: The enable_joule_heating of this EmbeddedBoundary.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_joule_heating = enable_joule_heating
 
     @property
     def turbulence_model(self):

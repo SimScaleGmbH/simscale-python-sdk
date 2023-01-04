@@ -32,30 +32,41 @@ class OneOfNewtonKrylovResolutionTypeConvergenceCriteria(object):
     """
     openapi_types = {
         'type': 'str',
+        'relative_tolerance': 'float',
+        'absolute_tolerance': 'float',
         'tolerance': 'float'
     }
 
     attribute_map = {
         'type': 'type',
+        'relative_tolerance': 'relativeTolerance',
+        'absolute_tolerance': 'absoluteTolerance',
         'tolerance': 'tolerance'
     }
 
     discriminator_value_class_map = {
+        'ADAPTIVE': 'AdaptiveConvergenceCriteria',
         'RELATIVE': 'RelativeConvergenceCriteria',
         'ABSOLUTE': 'AbsoluteConvergenceCriteria'
     }
 
-    def __init__(self, type='ABSOLUTE', tolerance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ABSOLUTE', relative_tolerance=None, absolute_tolerance=None, tolerance=None, local_vars_configuration=None):  # noqa: E501
         """OneOfNewtonKrylovResolutionTypeConvergenceCriteria - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._relative_tolerance = None
+        self._absolute_tolerance = None
         self._tolerance = None
         self.discriminator = 'type'
 
         self.type = type
+        if relative_tolerance is not None:
+            self.relative_tolerance = relative_tolerance
+        if absolute_tolerance is not None:
+            self.absolute_tolerance = absolute_tolerance
         if tolerance is not None:
             self.tolerance = tolerance
 
@@ -63,7 +74,7 @@ class OneOfNewtonKrylovResolutionTypeConvergenceCriteria(object):
     def type(self):
         """Gets the type of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
 
-        <p>Select the type of convergence criterion for the nonlinear solution method.</p> <br /><br />Important remarks: <br /><ul><li>Choose <b>absolute</b> if you want convergence to be reached when the maximum residual of all degrees of freedom of a given Newton iteration is lower than the given tolerance.</li><li>Choose <b>relative</b> if the same criteria as <b>absolute</b> will be checked but for the maximum relative residual i.e. maximum absolute residual divided by external force. Please note, if no external force is involved e.g. two far objects coming in contact, then using relative criteria will lead to singularity and convergence will not be attained.</li></ul>  Schema name: AbsoluteConvergenceCriteria  # noqa: E501
+        Schema name: AbsoluteConvergenceCriteria  # noqa: E501
 
         :return: The type of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
         :rtype: str
@@ -74,7 +85,7 @@ class OneOfNewtonKrylovResolutionTypeConvergenceCriteria(object):
     def type(self, type):
         """Sets the type of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.
 
-        <p>Select the type of convergence criterion for the nonlinear solution method.</p> <br /><br />Important remarks: <br /><ul><li>Choose <b>absolute</b> if you want convergence to be reached when the maximum residual of all degrees of freedom of a given Newton iteration is lower than the given tolerance.</li><li>Choose <b>relative</b> if the same criteria as <b>absolute</b> will be checked but for the maximum relative residual i.e. maximum absolute residual divided by external force. Please note, if no external force is involved e.g. two far objects coming in contact, then using relative criteria will lead to singularity and convergence will not be attained.</li></ul>  Schema name: AbsoluteConvergenceCriteria  # noqa: E501
+        Schema name: AbsoluteConvergenceCriteria  # noqa: E501
 
         :param type: The type of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
         :type: str
@@ -85,10 +96,62 @@ class OneOfNewtonKrylovResolutionTypeConvergenceCriteria(object):
         self._type = type
 
     @property
+    def relative_tolerance(self):
+        """Gets the relative_tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
+
+        <p>Set the threshold value for the relative convergence criterion. With this criterion, the solver considers a time step as converged if the maximum relative residual -- the maximum absolute residual divided by external loads and support reactions -- in a Newton iteration falls below the given value.</p>Important remarks: This value is a compromise between solution time and accuracy. A larger value leads to a faster solution time at the cost of losing accuracy in each Newton iteration and possibly causing convergence problems in the following steps. We recommend an upper limit of 1<sup>-3</sup>.  # noqa: E501
+
+        :return: The relative_tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
+        :rtype: float
+        """
+        return self._relative_tolerance
+
+    @relative_tolerance.setter
+    def relative_tolerance(self, relative_tolerance):
+        """Sets the relative_tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.
+
+        <p>Set the threshold value for the relative convergence criterion. With this criterion, the solver considers a time step as converged if the maximum relative residual -- the maximum absolute residual divided by external loads and support reactions -- in a Newton iteration falls below the given value.</p>Important remarks: This value is a compromise between solution time and accuracy. A larger value leads to a faster solution time at the cost of losing accuracy in each Newton iteration and possibly causing convergence problems in the following steps. We recommend an upper limit of 1<sup>-3</sup>.  # noqa: E501
+
+        :param relative_tolerance: The relative_tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                relative_tolerance is not None and relative_tolerance < 0):  # noqa: E501
+            raise ValueError("Invalid value for `relative_tolerance`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._relative_tolerance = relative_tolerance
+
+    @property
+    def absolute_tolerance(self):
+        """Gets the absolute_tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
+
+        <p>Set the threshold value for the absolute convergence criterion (measured in Newtons). With this criterion, the solver considers a time step as converged if the maximum absolute residual in a Newton iteration falls below the given value.</p>Important remarks: This value is a compromise between solution time and accuracy. A larger value leads to a faster solution time at the cost of losing accuracy in each Newton iteration and possibly causing convergence problems in the following steps.  # noqa: E501
+
+        :return: The absolute_tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
+        :rtype: float
+        """
+        return self._absolute_tolerance
+
+    @absolute_tolerance.setter
+    def absolute_tolerance(self, absolute_tolerance):
+        """Sets the absolute_tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.
+
+        <p>Set the threshold value for the absolute convergence criterion (measured in Newtons). With this criterion, the solver considers a time step as converged if the maximum absolute residual in a Newton iteration falls below the given value.</p>Important remarks: This value is a compromise between solution time and accuracy. A larger value leads to a faster solution time at the cost of losing accuracy in each Newton iteration and possibly causing convergence problems in the following steps.  # noqa: E501
+
+        :param absolute_tolerance: The absolute_tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                absolute_tolerance is not None and absolute_tolerance < 0):  # noqa: E501
+            raise ValueError("Invalid value for `absolute_tolerance`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._absolute_tolerance = absolute_tolerance
+
+    @property
     def tolerance(self):
         """Gets the tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
 
-        <p>Set the threshold value for convergence detection for the relative convergence criteria. If the maximum relative error of all DOFs fall below this value the current time step is considered convergent.</p></p> <br /><br />Important remarks: <br /><ul><li>In most of the cases using a lower value for tolerance may lead to hard or no convergence. Therefore, it is always recommended to start with a higher value e.g. 10<sup>-3</sup> or 10<sup>-4</sup>. Please also note that increasing the threshold value may effect the solution results. </li></ul>  # noqa: E501
+        <p>Set the threshold value for the absolute convergence criterion (measured in Newtons). With this criterion, the solver considers a time step as converged if the maximum absolute residual in a Newton iteration falls below the given value.</p>Important remarks: This value is a compromise between solution time and accuracy. A larger value leads to a faster solution time at the cost of losing accuracy in each Newton iteration and possibly causing convergence problems in the following steps.  # noqa: E501
 
         :return: The tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
         :rtype: float
@@ -99,7 +162,7 @@ class OneOfNewtonKrylovResolutionTypeConvergenceCriteria(object):
     def tolerance(self, tolerance):
         """Sets the tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.
 
-        <p>Set the threshold value for convergence detection for the relative convergence criteria. If the maximum relative error of all DOFs fall below this value the current time step is considered convergent.</p></p> <br /><br />Important remarks: <br /><ul><li>In most of the cases using a lower value for tolerance may lead to hard or no convergence. Therefore, it is always recommended to start with a higher value e.g. 10<sup>-3</sup> or 10<sup>-4</sup>. Please also note that increasing the threshold value may effect the solution results. </li></ul>  # noqa: E501
+        <p>Set the threshold value for the absolute convergence criterion (measured in Newtons). With this criterion, the solver considers a time step as converged if the maximum absolute residual in a Newton iteration falls below the given value.</p>Important remarks: This value is a compromise between solution time and accuracy. A larger value leads to a faster solution time at the cost of losing accuracy in each Newton iteration and possibly causing convergence problems in the following steps.  # noqa: E501
 
         :param tolerance: The tolerance of this OneOfNewtonKrylovResolutionTypeConvergenceCriteria.  # noqa: E501
         :type: float

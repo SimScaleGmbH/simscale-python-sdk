@@ -38,6 +38,7 @@ class WallBC(object):
         'phase_fraction': 'OneOfWallBCPhaseFraction',
         'net_radiative_heat_flux': 'OneOfWallBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfWallBCRadiativeIntensityRay',
+        'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -49,10 +50,11 @@ class WallBC(object):
         'phase_fraction': 'phaseFraction',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
+        'electric_boundary_condition': 'electricBoundaryCondition',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='WALL_V34', name=None, velocity=None, temperature=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='WALL_V34', name=None, velocity=None, temperature=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, electric_boundary_condition=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """WallBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class WallBC(object):
         self._phase_fraction = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
+        self._electric_boundary_condition = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -81,6 +84,8 @@ class WallBC(object):
             self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
             self.radiative_intensity_ray = radiative_intensity_ray
+        if electric_boundary_condition is not None:
+            self.electric_boundary_condition = electric_boundary_condition
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -234,6 +239,27 @@ class WallBC(object):
         """
 
         self._radiative_intensity_ray = radiative_intensity_ray
+
+    @property
+    def electric_boundary_condition(self):
+        """Gets the electric_boundary_condition of this WallBC.  # noqa: E501
+
+
+        :return: The electric_boundary_condition of this WallBC.  # noqa: E501
+        :rtype: OneOfWallBCElectricBoundaryCondition
+        """
+        return self._electric_boundary_condition
+
+    @electric_boundary_condition.setter
+    def electric_boundary_condition(self, electric_boundary_condition):
+        """Sets the electric_boundary_condition of this WallBC.
+
+
+        :param electric_boundary_condition: The electric_boundary_condition of this WallBC.  # noqa: E501
+        :type: OneOfWallBCElectricBoundaryCondition
+        """
+
+        self._electric_boundary_condition = electric_boundary_condition
 
     @property
     def topological_reference(self):

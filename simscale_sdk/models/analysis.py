@@ -57,8 +57,9 @@ class Analysis(object):
         'mesh_settings_new': 'OneOfIncompressiblePacefishMeshSettingsNew',
         'is_compressible': 'bool',
         'is_multiphase': 'bool',
+        'number_of_phases': 'int',
         'cavitation_model': 'str',
-        'mesh_settings': 'BasicEmbeddedBoundaryMeshing',
+        'mesh_settings': 'WindComfortMesh',
         'region_of_interest': 'RegionOfInterest',
         'wind_conditions': 'WindConditions',
         'pedestrian_comfort_map': 'list[PedestrianComfortSurface]',
@@ -66,8 +67,11 @@ class Analysis(object):
         'enable_radiation': 'bool',
         'contact_handling_mode': 'str',
         'enable_solar_load': 'bool',
+        'enable_humidity_model': 'bool',
+        'enable_joule_heating': 'bool',
         'solar_calculator': 'SolarCalculator',
         'is_internal_flow': 'bool',
+        'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
         'use_local_time_stepping': 'bool'
     }
 
@@ -98,6 +102,7 @@ class Analysis(object):
         'mesh_settings_new': 'meshSettingsNew',
         'is_compressible': 'isCompressible',
         'is_multiphase': 'isMultiphase',
+        'number_of_phases': 'numberOfPhases',
         'cavitation_model': 'cavitationModel',
         'mesh_settings': 'meshSettings',
         'region_of_interest': 'regionOfInterest',
@@ -107,8 +112,11 @@ class Analysis(object):
         'enable_radiation': 'enableRadiation',
         'contact_handling_mode': 'contactHandlingMode',
         'enable_solar_load': 'enableSolarLoad',
+        'enable_humidity_model': 'enableHumidityModel',
+        'enable_joule_heating': 'enableJouleHeating',
         'solar_calculator': 'solarCalculator',
         'is_internal_flow': 'isInternalFlow',
+        'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
         'use_local_time_stepping': 'useLocalTimeStepping'
     }
 
@@ -131,7 +139,7 @@ class Analysis(object):
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, enable_solar_load=None, solar_calculator=None, is_internal_flow=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, is_internal_flow=None, embedded_boundary_meshing=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -163,6 +171,7 @@ class Analysis(object):
         self._mesh_settings_new = None
         self._is_compressible = None
         self._is_multiphase = None
+        self._number_of_phases = None
         self._cavitation_model = None
         self._mesh_settings = None
         self._region_of_interest = None
@@ -172,8 +181,11 @@ class Analysis(object):
         self._enable_radiation = None
         self._contact_handling_mode = None
         self._enable_solar_load = None
+        self._enable_humidity_model = None
+        self._enable_joule_heating = None
         self._solar_calculator = None
         self._is_internal_flow = None
+        self._embedded_boundary_meshing = None
         self._use_local_time_stepping = None
         self.discriminator = 'type'
 
@@ -228,6 +240,8 @@ class Analysis(object):
             self.is_compressible = is_compressible
         if is_multiphase is not None:
             self.is_multiphase = is_multiphase
+        if number_of_phases is not None:
+            self.number_of_phases = number_of_phases
         if cavitation_model is not None:
             self.cavitation_model = cavitation_model
         if mesh_settings is not None:
@@ -246,10 +260,16 @@ class Analysis(object):
             self.contact_handling_mode = contact_handling_mode
         if enable_solar_load is not None:
             self.enable_solar_load = enable_solar_load
+        if enable_humidity_model is not None:
+            self.enable_humidity_model = enable_humidity_model
+        if enable_joule_heating is not None:
+            self.enable_joule_heating = enable_joule_heating
         if solar_calculator is not None:
             self.solar_calculator = solar_calculator
         if is_internal_flow is not None:
             self.is_internal_flow = is_internal_flow
+        if embedded_boundary_meshing is not None:
+            self.embedded_boundary_meshing = embedded_boundary_meshing
         if use_local_time_stepping is not None:
             self.use_local_time_stepping = use_local_time_stepping
 
@@ -832,6 +852,33 @@ class Analysis(object):
         self._is_multiphase = is_multiphase
 
     @property
+    def number_of_phases(self):
+        """Gets the number_of_phases of this Analysis.  # noqa: E501
+
+
+        :return: The number_of_phases of this Analysis.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_phases
+
+    @number_of_phases.setter
+    def number_of_phases(self, number_of_phases):
+        """Sets the number_of_phases of this Analysis.
+
+
+        :param number_of_phases: The number_of_phases of this Analysis.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_phases is not None and number_of_phases > 2):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_phases`, must be a value less than or equal to `2`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_phases is not None and number_of_phases < 2):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_phases`, must be a value greater than or equal to `2`")  # noqa: E501
+
+        self._number_of_phases = number_of_phases
+
+    @property
     def cavitation_model(self):
         """Gets the cavitation_model of this Analysis.  # noqa: E501
 
@@ -864,7 +911,7 @@ class Analysis(object):
 
 
         :return: The mesh_settings of this Analysis.  # noqa: E501
-        :rtype: BasicEmbeddedBoundaryMeshing
+        :rtype: WindComfortMesh
         """
         return self._mesh_settings
 
@@ -874,7 +921,7 @@ class Analysis(object):
 
 
         :param mesh_settings: The mesh_settings of this Analysis.  # noqa: E501
-        :type: BasicEmbeddedBoundaryMeshing
+        :type: WindComfortMesh
         """
 
         self._mesh_settings = mesh_settings
@@ -967,7 +1014,7 @@ class Analysis(object):
     def enable_radiation(self):
         """Gets the enable_radiation of this Analysis.  # noqa: E501
 
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperature differences in the simulation domain are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_radiation of this Analysis.  # noqa: E501
         :rtype: bool
@@ -978,7 +1025,7 @@ class Analysis(object):
     def enable_radiation(self, enable_radiation):
         """Sets the enable_radiation of this Analysis.
 
-        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperatures involved in the simulation are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
+        Heat transfer through radiation takes place in the form of electromagnetic waves and it can be calculated in the simulation. This phenomenon becomes more important when the temperature differences in the simulation domain are large. <a href='https://www.simscale.com/docs/analysis-types/convective-heat-transfer-analysis/radiation/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_radiation: The enable_radiation of this Analysis.  # noqa: E501
         :type: bool
@@ -1017,7 +1064,7 @@ class Analysis(object):
     def enable_solar_load(self):
         """Gets the enable_solar_load of this Analysis.  # noqa: E501
 
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+        Enables the <b>Solar load</b> model in the simulation. Diffuse and/or directional solar load contributions are specified in the <b>Solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent surfaces are present, internal surfaces of the domain might also be heated. The solar model can be used with or without a radiation model, and it cannot be used if the simulation contains solids. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_solar_load of this Analysis.  # noqa: E501
         :rtype: bool
@@ -1028,13 +1075,59 @@ class Analysis(object):
     def enable_solar_load(self, enable_solar_load):
         """Sets the enable_solar_load of this Analysis.
 
-        <b>Solar load</b> on boundary patches. Heats boundaries externally or, if solar rays enter the domain by transparent or semi-transparent boundaries, it heats boundaries also internally, internally. Sun direction and solar load model are defined in the <b>Solar calculator</b>. <ul><li>Can not be combined with surface to surface radiation.</li><li>Can only be used for convective heat transfer.</li><li>Secondary, reflecting rays are not taken into account.</li></ul> <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+        Enables the <b>Solar load</b> model in the simulation. Diffuse and/or directional solar load contributions are specified in the <b>Solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent surfaces are present, internal surfaces of the domain might also be heated. The solar model can be used with or without a radiation model, and it cannot be used if the simulation contains solids. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_solar_load: The enable_solar_load of this Analysis.  # noqa: E501
         :type: bool
         """
 
         self._enable_solar_load = enable_solar_load
+
+    @property
+    def enable_humidity_model(self):
+        """Gets the enable_humidity_model of this Analysis.  # noqa: E501
+
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of 0° to 100°C.  # noqa: E501
+
+        :return: The enable_humidity_model of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_humidity_model
+
+    @enable_humidity_model.setter
+    def enable_humidity_model(self, enable_humidity_model):
+        """Sets the enable_humidity_model of this Analysis.
+
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of 0° to 100°C.  # noqa: E501
+
+        :param enable_humidity_model: The enable_humidity_model of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_humidity_model = enable_humidity_model
+
+    @property
+    def enable_joule_heating(self):
+        """Gets the enable_joule_heating of this Analysis.  # noqa: E501
+
+        Enabling <b>Joule heating</b> gives you the possibility to solve a coupled electric conduction and conjugate heat transfer problem in a single simulation.  # noqa: E501
+
+        :return: The enable_joule_heating of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_joule_heating
+
+    @enable_joule_heating.setter
+    def enable_joule_heating(self, enable_joule_heating):
+        """Sets the enable_joule_heating of this Analysis.
+
+        Enabling <b>Joule heating</b> gives you the possibility to solve a coupled electric conduction and conjugate heat transfer problem in a single simulation.  # noqa: E501
+
+        :param enable_joule_heating: The enable_joule_heating of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_joule_heating = enable_joule_heating
 
     @property
     def solar_calculator(self):
@@ -1079,6 +1172,27 @@ class Analysis(object):
         """
 
         self._is_internal_flow = is_internal_flow
+
+    @property
+    def embedded_boundary_meshing(self):
+        """Gets the embedded_boundary_meshing of this Analysis.  # noqa: E501
+
+
+        :return: The embedded_boundary_meshing of this Analysis.  # noqa: E501
+        :rtype: EmbeddedBoundaryMeshing
+        """
+        return self._embedded_boundary_meshing
+
+    @embedded_boundary_meshing.setter
+    def embedded_boundary_meshing(self, embedded_boundary_meshing):
+        """Sets the embedded_boundary_meshing of this Analysis.
+
+
+        :param embedded_boundary_meshing: The embedded_boundary_meshing of this Analysis.  # noqa: E501
+        :type: EmbeddedBoundaryMeshing
+        """
+
+        self._embedded_boundary_meshing = embedded_boundary_meshing
 
     @property
     def use_local_time_stepping(self):

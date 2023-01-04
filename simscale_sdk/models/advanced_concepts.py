@@ -38,7 +38,8 @@ class AdvancedConcepts(object):
         'momentum_sources': 'list[OneOfAdvancedConceptsMomentumSources]',
         'passive_scalar_sources': 'list[OneOfAdvancedConceptsPassiveScalarSources]',
         'thermal_resistance_networks': 'list[OneOfAdvancedConceptsThermalResistanceNetworks]',
-        'thermal_contact_resistance': 'list[ThinResistanceLayer]'
+        'thermal_contact_resistance': 'list[OneOfAdvancedConceptsThermalContactResistance]',
+        'humidity_sources': 'list[OneOfAdvancedConceptsHumiditySources]'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class AdvancedConcepts(object):
         'momentum_sources': 'momentumSources',
         'passive_scalar_sources': 'passiveScalarSources',
         'thermal_resistance_networks': 'thermalResistanceNetworks',
-        'thermal_contact_resistance': 'thermalContactResistance'
+        'thermal_contact_resistance': 'thermalContactResistance',
+        'humidity_sources': 'humiditySources'
     }
 
-    def __init__(self, rotating_zones=None, porous_mediums=None, solid_body_motions=None, power_sources=None, momentum_sources=None, passive_scalar_sources=None, thermal_resistance_networks=None, thermal_contact_resistance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, rotating_zones=None, porous_mediums=None, solid_body_motions=None, power_sources=None, momentum_sources=None, passive_scalar_sources=None, thermal_resistance_networks=None, thermal_contact_resistance=None, humidity_sources=None, local_vars_configuration=None):  # noqa: E501
         """AdvancedConcepts - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class AdvancedConcepts(object):
         self._passive_scalar_sources = None
         self._thermal_resistance_networks = None
         self._thermal_contact_resistance = None
+        self._humidity_sources = None
         self.discriminator = None
 
         if rotating_zones is not None:
@@ -84,6 +87,8 @@ class AdvancedConcepts(object):
             self.thermal_resistance_networks = thermal_resistance_networks
         if thermal_contact_resistance is not None:
             self.thermal_contact_resistance = thermal_contact_resistance
+        if humidity_sources is not None:
+            self.humidity_sources = humidity_sources
 
     @property
     def rotating_zones(self):
@@ -238,7 +243,7 @@ class AdvancedConcepts(object):
 
 
         :return: The thermal_contact_resistance of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[ThinResistanceLayer]
+        :rtype: list[OneOfAdvancedConceptsThermalContactResistance]
         """
         return self._thermal_contact_resistance
 
@@ -248,10 +253,31 @@ class AdvancedConcepts(object):
 
 
         :param thermal_contact_resistance: The thermal_contact_resistance of this AdvancedConcepts.  # noqa: E501
-        :type: list[ThinResistanceLayer]
+        :type: list[OneOfAdvancedConceptsThermalContactResistance]
         """
 
         self._thermal_contact_resistance = thermal_contact_resistance
+
+    @property
+    def humidity_sources(self):
+        """Gets the humidity_sources of this AdvancedConcepts.  # noqa: E501
+
+
+        :return: The humidity_sources of this AdvancedConcepts.  # noqa: E501
+        :rtype: list[OneOfAdvancedConceptsHumiditySources]
+        """
+        return self._humidity_sources
+
+    @humidity_sources.setter
+    def humidity_sources(self, humidity_sources):
+        """Sets the humidity_sources of this AdvancedConcepts.
+
+
+        :param humidity_sources: The humidity_sources of this AdvancedConcepts.  # noqa: E501
+        :type: list[OneOfAdvancedConceptsHumiditySources]
+        """
+
+        self._humidity_sources = humidity_sources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -97,7 +97,7 @@ class GlobalTotalStrainType(object):
         :param complex_number: The complex_number of this GlobalTotalStrainType.  # noqa: E501
         :type: str
         """
-        allowed_values = ["REAL_AND_IMAGINARY"]  # noqa: E501
+        allowed_values = ["REAL_AND_IMAGINARY", "MAGNITUDE_AND_PHASE"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and complex_number not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `complex_number` ({0}), must be one of {1}"  # noqa: E501
