@@ -25,6 +25,62 @@ simscale\_sdk.models.absolute\_distance module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.absolute\_harmonic\_acceleration\_field\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_harmonic_acceleration_field_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.absolute\_harmonic\_acceleration\_type module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_harmonic_acceleration_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.absolute\_harmonic\_displacement\_field\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_harmonic_displacement_field_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.absolute\_harmonic\_displacement\_type module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_harmonic_displacement_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.absolute\_harmonic\_velocity\_field\_type module
+---------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_harmonic_velocity_field_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.absolute\_harmonic\_velocity\_type module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_harmonic_velocity_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.absolute\_humidity\_source module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_humidity_source
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.absolute\_passive\_scalar\_source module
 -------------------------------------------------------------
 
@@ -77,6 +133,14 @@ simscale\_sdk.models.adaptive\_augmentation module
 --------------------------------------------------
 
 .. automodule:: simscale_sdk.models.adaptive_augmentation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.adaptive\_convergence\_criteria module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.adaptive_convergence_criteria
    :members:
    :undoc-members:
    :show-inheritance:
@@ -181,6 +245,14 @@ simscale\_sdk.models.advective\_vbc module
 ------------------------------------------
 
 .. automodule:: simscale_sdk.models.advective_vbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.aerodynamic\_roughness module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.aerodynamic_roughness
    :members:
    :undoc-members:
    :show-inheritance:
@@ -305,6 +377,14 @@ simscale\_sdk.models.auto\_timestep\_definition module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.automatic\_acceleration module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_acceleration
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.automatic\_axis\_definition module
 -------------------------------------------------------
 
@@ -313,10 +393,26 @@ simscale\_sdk.models.automatic\_axis\_definition module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.automatic\_domain\_decomposition module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_domain_decomposition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.automatic\_element\_definition\_method module
 ------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.automatic_element_definition_method
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.automatic\_embedded\_boundary\_mesh\_sizing module
+-----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_embedded_boundary_mesh_sizing
    :members:
    :undoc-members:
    :show-inheritance:
@@ -417,6 +513,14 @@ simscale\_sdk.models.automatic\_simerics\_mesh\_settings module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.automatic\_subspace\_settings module
+---------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_subspace_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.average\_fields\_calculation\_result\_control\_item module
 -------------------------------------------------------------------------------
 
@@ -437,14 +541,6 @@ simscale\_sdk.models.base\_excitation\_bc module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.base_excitation_bc
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.basic\_embedded\_boundary\_meshing module
---------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.basic_embedded_boundary_meshing
    :members:
    :undoc-members:
    :show-inheritance:
@@ -653,6 +749,14 @@ simscale\_sdk.models.central\_diff\_time\_integration\_scheme module
 --------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.central_diff_time_integration_scheme
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.centralized\_domain\_decomposition module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.centralized_domain_decomposition
    :members:
    :undoc-members:
    :show-inheritance:
@@ -921,10 +1025,26 @@ simscale\_sdk.models.contact module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.contact\_conductance\_layer module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.contact_conductance_layer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.contact\_interface\_material\_interface\_thermal module
 ----------------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.contact_interface_material_interface_thermal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.contact\_resistance\_layer module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.contact_resistance_layer
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1073,6 +1193,22 @@ simscale\_sdk.models.cubic\_interpolation\_scheme module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.current\_inflow\_ebc module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.current_inflow_ebc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.current\_outflow\_ebc module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.current_outflow_ebc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.custom\_axis\_definition module
 ----------------------------------------------------
 
@@ -1097,10 +1233,26 @@ simscale\_sdk.models.custom\_contact\_stiffness module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.custom\_domain\_decomposition module
+---------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.custom_domain_decomposition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.custom\_element\_definition\_method module
 ---------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.custom_element_definition_method
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.custom\_embedded\_boundary\_mesh\_sizing module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.custom_embedded_boundary_mesh_sizing
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1249,10 +1401,26 @@ simscale\_sdk.models.dic\_preconditioner module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dielectric module
+--------------------------------------
+
+.. automodule:: simscale_sdk.models.dielectric
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dilu\_preconditioner module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dilu_preconditioner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_absolute\_humidity\_rate module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_absolute_humidity_rate
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1353,6 +1521,14 @@ simscale\_sdk.models.dimensional\_electric\_current module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensional\_electric\_potential module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_electric_potential
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dimensional\_epsilon\_gradient module
 ----------------------------------------------------------
 
@@ -1429,6 +1605,14 @@ simscale\_sdk.models.dimensional\_function\_dynamic\_viscosity module
 ---------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_function_dynamic_viscosity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_function\_electric\_resistivity module
+------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_electric_resistivity
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1697,6 +1881,14 @@ simscale\_sdk.models.dimensional\_mass module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensional\_mass\_flow\_rate module
+---------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_mass_flow_rate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dimensional\_molar\_mass module
 ----------------------------------------------------
 
@@ -1761,10 +1953,26 @@ simscale\_sdk.models.dimensional\_rotation\_speed module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensional\_specific\_contact\_resistance module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_specific_contact_resistance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dimensional\_specific\_heat module
 -------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_specific_heat
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_specific\_humidity\_rate module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_specific_humidity_rate
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1845,6 +2053,14 @@ simscale\_sdk.models.dimensional\_time module
 ---------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_time
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_total\_thermal\_transmittance module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_total_thermal_transmittance
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2081,6 +2297,14 @@ simscale\_sdk.models.dimensional\_volumetric\_passive\_scalar\_source\_rate modu
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensionless\_initial\_condition\_domains module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensionless_initial_condition_domains
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.directional\_dependency module
 ---------------------------------------------------
 
@@ -2257,18 +2481,10 @@ simscale\_sdk.models.embedded\_boundary module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.embedded\_distance\_refinement module
-----------------------------------------------------------
+simscale\_sdk.models.embedded\_boundary\_meshing module
+-------------------------------------------------------
 
-.. automodule:: simscale_sdk.models.embedded_distance_refinement
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.embedded\_number\_of\_cells\_refinement module
--------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.embedded_number_of_cells_refinement
+.. automodule:: simscale_sdk.models.embedded_boundary_meshing
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2293,6 +2509,14 @@ simscale\_sdk.models.entity\_description module
 -----------------------------------------------
 
 .. automodule:: simscale_sdk.models.entity_description
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.equivalent\_sand\_grain\_roughness module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.equivalent_sand_grain_roughness
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2565,6 +2789,14 @@ simscale\_sdk.models.fixed\_coeff\_medium module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.fixed_coeff_medium
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.fixed\_electric\_potential\_ebc module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.fixed_electric_potential_ebc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2853,6 +3085,14 @@ simscale\_sdk.models.fixed\_value\_psbc module
 ----------------------------------------------
 
 .. automodule:: simscale_sdk.models.fixed_value_psbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.fixed\_value\_rhbc module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.fixed_value_rhbc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3213,6 +3453,14 @@ simscale\_sdk.models.frictionless\_contact module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.frictionless_contact
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.full\_rank\_acceleration module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.full_rank_acceleration
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3713,6 +3961,14 @@ simscale\_sdk.models.half\_space module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.harmonic\_acceleration\_result\_control\_item module
+-------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.harmonic_acceleration_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.harmonic\_analysis module
 ----------------------------------------------
 
@@ -3721,10 +3977,26 @@ simscale\_sdk.models.harmonic\_analysis module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.harmonic\_displacement\_result\_control\_item module
+-------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.harmonic_displacement_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.harmonic\_response\_result\_control\_item module
 ---------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.harmonic_response_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.harmonic\_velocity\_result\_control\_item module
+---------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.harmonic_velocity_result_control_item
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3985,6 +4257,14 @@ simscale\_sdk.models.inlet\_outlet\_psbc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.inlet\_outlet\_rhbc module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.inlet_outlet_rhbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.inlet\_outlet\_tbc module
 ----------------------------------------------
 
@@ -4101,6 +4381,14 @@ simscale\_sdk.models.isotropic\_directional\_dependency module
 --------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.isotropic_directional_dependency
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.isotropic\_electric\_conductivity module
+-------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.isotropic_electric_conductivity
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4257,6 +4545,14 @@ simscale\_sdk.models.local\_cartesian\_box module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.local\_element\_size\_ebm module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.local_element_size_ebm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.local\_euler\_time\_differentiation\_scheme module
 -----------------------------------------------------------------------
 
@@ -4301,6 +4597,22 @@ simscale\_sdk.models.low\_contact\_stiffness module
 ---------------------------------------------------
 
 .. automodule:: simscale_sdk.models.low_contact_stiffness
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.low\_rank\_acceleration module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.low_rank_acceleration
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.manual\_embedded\_boundary\_mesh\_sizing module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.manual_embedded_boundary_mesh_sizing
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4841,6 +5153,14 @@ simscale\_sdk.models.no\_creep\_formulation module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.no\_current\_ebc module
+--------------------------------------------
+
+.. automodule:: simscale_sdk.models.no_current_ebc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.no\_fictitious\_clearance module
 -----------------------------------------------------
 
@@ -4869,6 +5189,22 @@ simscale\_sdk.models.no\_slip\_vbc module
 -----------------------------------------
 
 .. automodule:: simscale_sdk.models.no_slip_vbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.no\_slip\_wall\_aerodynamic\_roughness module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.no_slip_wall_aerodynamic_roughness
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.no\_slip\_wall\_equivalent\_sand\_roughness module
+-----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.no_slip_wall_equivalent_sand_roughness
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4925,6 +5261,22 @@ simscale\_sdk.models.none\_reactualization module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.none_reactualization
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.normalized\_displacement\_result\_control\_item module
+---------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.normalized_displacement_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.normalized\_displacement\_type module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.normalized_displacement_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5005,6 +5357,14 @@ simscale\_sdk.models.orthotropic\_conductivity module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.orthotropic_conductivity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.orthotropic\_electric\_conductivity module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.orthotropic_electric_conductivity
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5285,6 +5645,30 @@ simscale\_sdk.models.petsc\_solver module
 -----------------------------------------
 
 .. automodule:: simscale_sdk.models.petsc_solver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.phase\_fraction\_ic module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.phase_fraction_ic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.phase\_fractions\_ic module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.phase_fractions_ic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.phase\_name\_and\_fixed\_value\_pfbc module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.phase_name_and_fixed_value_pfbc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5625,6 +6009,14 @@ simscale\_sdk.models.region\_of\_interest module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.region\_refinement\_ebm module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.region_refinement_ebm
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.region\_refinement\_pacefish module
 --------------------------------------------------------
 
@@ -5677,6 +6069,54 @@ simscale\_sdk.models.relative\_distance module
 ----------------------------------------------
 
 .. automodule:: simscale_sdk.models.relative_distance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_harmonic\_acceleration\_field\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_harmonic_acceleration_field_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_harmonic\_acceleration\_type module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_harmonic_acceleration_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_harmonic\_displacement\_field\_type module
+-------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_harmonic_displacement_field_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_harmonic\_displacement\_type module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_harmonic_displacement_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_harmonic\_velocity\_field\_type module
+---------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_harmonic_velocity_field_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_harmonic\_velocity\_type module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_harmonic_velocity_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6385,6 +6825,14 @@ simscale\_sdk.models.specie\_default module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.species\_humidity\_source module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.species_humidity_source
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.specific\_conductance\_interface\_thermal module
 ---------------------------------------------------------------------
 
@@ -6401,6 +6849,14 @@ simscale\_sdk.models.specific\_conductance\_wall\_thermal module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.specific\_humidity\_source module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.specific_humidity_source
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.specific\_passive\_scalar\_source module
 -------------------------------------------------------------
 
@@ -6413,6 +6869,14 @@ simscale\_sdk.models.specific\_power\_source module
 ---------------------------------------------------
 
 .. automodule:: simscale_sdk.models.specific_power_source
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.specific\_resistance\_interface\_thermal module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.specific_resistance_interface_thermal
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6673,6 +7137,14 @@ simscale\_sdk.models.subdomain\_dimensional\_vector\_initial\_condition\_speed m
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.subdomain\_dimensionless\_initial\_condition module
+------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.subdomain_dimensionless_initial_condition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.subdomain\_stress\_initial\_condition module
 -----------------------------------------------------------------
 
@@ -6685,6 +7157,22 @@ simscale\_sdk.models.submesh\_refinement module
 -----------------------------------------------
 
 .. automodule:: simscale_sdk.models.submesh_refinement
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.subspace\_coefficient module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.subspace_coefficient
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.subspace\_dimension module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.subspace_dimension
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6761,10 +7249,10 @@ simscale\_sdk.models.surface\_refinement\_wind\_comfort module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.surface\_roughness module
-----------------------------------------------
+simscale\_sdk.models.surface\_roughness\_model module
+-----------------------------------------------------
 
-.. automodule:: simscale_sdk.models.surface_roughness
+.. automodule:: simscale_sdk.models.surface_roughness_model
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7141,6 +7629,14 @@ simscale\_sdk.models.topological\_reference module
 --------------------------------------------------
 
 .. automodule:: simscale_sdk.models.topological_reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.total\_conductance\_interface\_thermal module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.total_conductance_interface_thermal
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7777,6 +8273,14 @@ simscale\_sdk.models.wind\_data module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.wind\_exposure\_roughness module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.wind_exposure_roughness
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.wind\_rose module
 --------------------------------------
 
@@ -7857,10 +8361,34 @@ simscale\_sdk.models.write\_interval\_write\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.x\_axis module
+-----------------------------------
+
+.. automodule:: simscale_sdk.models.x_axis
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.y\_axis module
+-----------------------------------
+
+.. automodule:: simscale_sdk.models.y_axis
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.y\_plus\_ras\_result\_type module
 ------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.y_plus_ras_result_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.z\_axis module
+-----------------------------------
+
+.. automodule:: simscale_sdk.models.z_axis
    :members:
    :undoc-members:
    :show-inheritance:
