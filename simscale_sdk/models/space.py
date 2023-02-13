@@ -37,7 +37,8 @@ class Space(object):
         'space_type': 'str',
         'name': 'str',
         'created_at': 'datetime',
-        'last_modified_at': 'datetime'
+        'last_modified_at': 'datetime',
+        'space_settings': 'SpaceSettings'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class Space(object):
         'space_type': 'spaceType',
         'name': 'name',
         'created_at': 'createdAt',
-        'last_modified_at': 'lastModifiedAt'
+        'last_modified_at': 'lastModifiedAt',
+        'space_settings': 'spaceSettings'
     }
 
-    def __init__(self, space_id=None, organization_id=None, owner_username=None, space_type=None, name=None, created_at=None, last_modified_at=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, space_id=None, organization_id=None, owner_username=None, space_type=None, name=None, created_at=None, last_modified_at=None, space_settings=None, local_vars_configuration=None):  # noqa: E501
         """Space - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class Space(object):
         self._name = None
         self._created_at = None
         self._last_modified_at = None
+        self._space_settings = None
         self.discriminator = None
 
         if space_id is not None:
@@ -79,6 +82,8 @@ class Space(object):
             self.created_at = created_at
         if last_modified_at is not None:
             self.last_modified_at = last_modified_at
+        if space_settings is not None:
+            self.space_settings = space_settings
 
     @property
     def space_id(self):
@@ -236,6 +241,27 @@ class Space(object):
         """
 
         self._last_modified_at = last_modified_at
+
+    @property
+    def space_settings(self):
+        """Gets the space_settings of this Space.  # noqa: E501
+
+
+        :return: The space_settings of this Space.  # noqa: E501
+        :rtype: SpaceSettings
+        """
+        return self._space_settings
+
+    @space_settings.setter
+    def space_settings(self, space_settings):
+        """Sets the space_settings of this Space.
+
+
+        :param space_settings: The space_settings of this Space.  # noqa: E501
+        :type: SpaceSettings
+        """
+
+        self._space_settings = space_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -35,6 +35,12 @@ class OneOfHeatTransferBoundaryConditions(object):
         'name': 'str',
         'temperature_value': 'DimensionalFunctionTemperature',
         'topological_reference': 'TopologicalReference',
+        'enable_heat_transfer': 'str',
+        'axis_origin': 'DimensionalVectorLength',
+        'axis_direction': 'DimensionalVectorLength',
+        'sector_angle': 'DimensionalAngle',
+        'master_topological_reference': 'TopologicalReference',
+        'slave_topological_reference': 'TopologicalReference',
         'heatflux_value': 'DimensionalFunctionVolumetricPower',
         'reference_temperature': 'DimensionalFunctionTemperature',
         'heat_transfer_coefficient': 'DimensionalFunctionThermalTransmittance'
@@ -45,6 +51,12 @@ class OneOfHeatTransferBoundaryConditions(object):
         'name': 'name',
         'temperature_value': 'temperatureValue',
         'topological_reference': 'topologicalReference',
+        'enable_heat_transfer': 'enableHeatTransfer',
+        'axis_origin': 'axisOrigin',
+        'axis_direction': 'axisDirection',
+        'sector_angle': 'sectorAngle',
+        'master_topological_reference': 'masterTopologicalReference',
+        'slave_topological_reference': 'slaveTopologicalReference',
         'heatflux_value': 'heatfluxValue',
         'reference_temperature': 'referenceTemperature',
         'heat_transfer_coefficient': 'heatTransferCoefficient'
@@ -52,12 +64,13 @@ class OneOfHeatTransferBoundaryConditions(object):
 
     discriminator_value_class_map = {
         'FIXED_TEMPERATURE_VALUE': 'FixedTemperatureValueBC',
+        'CYCLIC_SYMMETRY': 'CyclicSymmetryBC',
         'SURFACE_HEAT_FLUX': 'SurfaceHeatFluxBC',
         'CONVECTIVE_HEAT_FLUX': 'ConvectiveHeatFluxBC',
         'VOLUME_HEAT_FLUX': 'VolumeHeatFluxBC'
     }
 
-    def __init__(self, type='VOLUME_HEAT_FLUX', name=None, temperature_value=None, topological_reference=None, heatflux_value=None, reference_temperature=None, heat_transfer_coefficient=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLUME_HEAT_FLUX', name=None, temperature_value=None, topological_reference=None, enable_heat_transfer=None, axis_origin=None, axis_direction=None, sector_angle=None, master_topological_reference=None, slave_topological_reference=None, heatflux_value=None, reference_temperature=None, heat_transfer_coefficient=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHeatTransferBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +80,12 @@ class OneOfHeatTransferBoundaryConditions(object):
         self._name = None
         self._temperature_value = None
         self._topological_reference = None
+        self._enable_heat_transfer = None
+        self._axis_origin = None
+        self._axis_direction = None
+        self._sector_angle = None
+        self._master_topological_reference = None
+        self._slave_topological_reference = None
         self._heatflux_value = None
         self._reference_temperature = None
         self._heat_transfer_coefficient = None
@@ -79,6 +98,18 @@ class OneOfHeatTransferBoundaryConditions(object):
             self.temperature_value = temperature_value
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if enable_heat_transfer is not None:
+            self.enable_heat_transfer = enable_heat_transfer
+        if axis_origin is not None:
+            self.axis_origin = axis_origin
+        if axis_direction is not None:
+            self.axis_direction = axis_direction
+        if sector_angle is not None:
+            self.sector_angle = sector_angle
+        if master_topological_reference is not None:
+            self.master_topological_reference = master_topological_reference
+        if slave_topological_reference is not None:
+            self.slave_topological_reference = slave_topological_reference
         if heatflux_value is not None:
             self.heatflux_value = heatflux_value
         if reference_temperature is not None:
@@ -173,6 +204,138 @@ class OneOfHeatTransferBoundaryConditions(object):
         """
 
         self._topological_reference = topological_reference
+
+    @property
+    def enable_heat_transfer(self):
+        """Gets the enable_heat_transfer of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+
+
+        :return: The enable_heat_transfer of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: str
+        """
+        return self._enable_heat_transfer
+
+    @enable_heat_transfer.setter
+    def enable_heat_transfer(self, enable_heat_transfer):
+        """Sets the enable_heat_transfer of this OneOfHeatTransferBoundaryConditions.
+
+
+        :param enable_heat_transfer: The enable_heat_transfer of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["YES", "NO", "HEAT_TRANSFER_ONLY"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and enable_heat_transfer not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `enable_heat_transfer` ({0}), must be one of {1}"  # noqa: E501
+                .format(enable_heat_transfer, allowed_values)
+            )
+
+        self._enable_heat_transfer = enable_heat_transfer
+
+    @property
+    def axis_origin(self):
+        """Gets the axis_origin of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+
+
+        :return: The axis_origin of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalVectorLength
+        """
+        return self._axis_origin
+
+    @axis_origin.setter
+    def axis_origin(self, axis_origin):
+        """Sets the axis_origin of this OneOfHeatTransferBoundaryConditions.
+
+
+        :param axis_origin: The axis_origin of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :type: DimensionalVectorLength
+        """
+
+        self._axis_origin = axis_origin
+
+    @property
+    def axis_direction(self):
+        """Gets the axis_direction of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+
+
+        :return: The axis_direction of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalVectorLength
+        """
+        return self._axis_direction
+
+    @axis_direction.setter
+    def axis_direction(self, axis_direction):
+        """Sets the axis_direction of this OneOfHeatTransferBoundaryConditions.
+
+
+        :param axis_direction: The axis_direction of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :type: DimensionalVectorLength
+        """
+
+        self._axis_direction = axis_direction
+
+    @property
+    def sector_angle(self):
+        """Gets the sector_angle of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+
+
+        :return: The sector_angle of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalAngle
+        """
+        return self._sector_angle
+
+    @sector_angle.setter
+    def sector_angle(self, sector_angle):
+        """Sets the sector_angle of this OneOfHeatTransferBoundaryConditions.
+
+
+        :param sector_angle: The sector_angle of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :type: DimensionalAngle
+        """
+
+        self._sector_angle = sector_angle
+
+    @property
+    def master_topological_reference(self):
+        """Gets the master_topological_reference of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+
+
+        :return: The master_topological_reference of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._master_topological_reference
+
+    @master_topological_reference.setter
+    def master_topological_reference(self, master_topological_reference):
+        """Sets the master_topological_reference of this OneOfHeatTransferBoundaryConditions.
+
+
+        :param master_topological_reference: The master_topological_reference of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._master_topological_reference = master_topological_reference
+
+    @property
+    def slave_topological_reference(self):
+        """Gets the slave_topological_reference of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+
+
+        :return: The slave_topological_reference of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._slave_topological_reference
+
+    @slave_topological_reference.setter
+    def slave_topological_reference(self, slave_topological_reference):
+        """Sets the slave_topological_reference of this OneOfHeatTransferBoundaryConditions.
+
+
+        :param slave_topological_reference: The slave_topological_reference of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._slave_topological_reference = slave_topological_reference
 
     @property
     def heatflux_value(self):

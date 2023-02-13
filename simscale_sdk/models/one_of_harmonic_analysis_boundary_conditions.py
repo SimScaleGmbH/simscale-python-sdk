@@ -45,6 +45,12 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'external_point': 'DimensionalVectorLength',
         'deformation_behavior': 'str',
         'rotation': 'AngularRotation',
+        'enable_heat_transfer': 'str',
+        'axis_origin': 'DimensionalVectorLength',
+        'axis_direction': 'DimensionalVectorLength',
+        'sector_angle': 'DimensionalAngle',
+        'master_topological_reference': 'TopologicalReference',
+        'slave_topological_reference': 'TopologicalReference',
         'force': 'DimensionalVectorFunctionForce',
         'scaling': 'DimensionalFunctionDimensionless',
         'pressure': 'DimensionalFunctionPressure',
@@ -68,6 +74,12 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'external_point': 'externalPoint',
         'deformation_behavior': 'deformationBehavior',
         'rotation': 'rotation',
+        'enable_heat_transfer': 'enableHeatTransfer',
+        'axis_origin': 'axisOrigin',
+        'axis_direction': 'axisDirection',
+        'sector_angle': 'sectorAngle',
+        'master_topological_reference': 'masterTopologicalReference',
+        'slave_topological_reference': 'slaveTopologicalReference',
         'force': 'force',
         'scaling': 'scaling',
         'pressure': 'pressure',
@@ -85,6 +97,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'POINT_MASS': 'PointMassBC',
         'REMOTE_DISPLACEMENT_LOAD': 'RemoteDisplacementLoadBC',
         'SYMMETRY_PLANE': 'SymmetryPlaneBC',
+        'CYCLIC_SYMMETRY': 'CyclicSymmetryBC',
         'CENTRIFUGAL_FORCE': 'CentrifugalForceBC',
         'FORCE_LOAD': 'ForceLoadBC',
         'NODAL_LOAD': 'NodalLoadBC',
@@ -94,7 +107,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'VOLUME_LOAD': 'VolumeLoadBC'
     }
 
-    def __init__(self, type='VOLUME_LOAD', name=None, direction=None, acceleration=None, phase_angle=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, force=None, scaling=None, pressure=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLUME_LOAD', name=None, direction=None, acceleration=None, phase_angle=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, enable_heat_transfer=None, axis_origin=None, axis_direction=None, sector_angle=None, master_topological_reference=None, slave_topological_reference=None, force=None, scaling=None, pressure=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHarmonicAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,6 +127,12 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         self._external_point = None
         self._deformation_behavior = None
         self._rotation = None
+        self._enable_heat_transfer = None
+        self._axis_origin = None
+        self._axis_direction = None
+        self._sector_angle = None
+        self._master_topological_reference = None
+        self._slave_topological_reference = None
         self._force = None
         self._scaling = None
         self._pressure = None
@@ -149,6 +168,18 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
             self.deformation_behavior = deformation_behavior
         if rotation is not None:
             self.rotation = rotation
+        if enable_heat_transfer is not None:
+            self.enable_heat_transfer = enable_heat_transfer
+        if axis_origin is not None:
+            self.axis_origin = axis_origin
+        if axis_direction is not None:
+            self.axis_direction = axis_direction
+        if sector_angle is not None:
+            self.sector_angle = sector_angle
+        if master_topological_reference is not None:
+            self.master_topological_reference = master_topological_reference
+        if slave_topological_reference is not None:
+            self.slave_topological_reference = slave_topological_reference
         if force is not None:
             self.force = force
         if scaling is not None:
@@ -467,6 +498,138 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         """
 
         self._rotation = rotation
+
+    @property
+    def enable_heat_transfer(self):
+        """Gets the enable_heat_transfer of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The enable_heat_transfer of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: str
+        """
+        return self._enable_heat_transfer
+
+    @enable_heat_transfer.setter
+    def enable_heat_transfer(self, enable_heat_transfer):
+        """Sets the enable_heat_transfer of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param enable_heat_transfer: The enable_heat_transfer of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["YES", "NO", "HEAT_TRANSFER_ONLY"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and enable_heat_transfer not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `enable_heat_transfer` ({0}), must be one of {1}"  # noqa: E501
+                .format(enable_heat_transfer, allowed_values)
+            )
+
+        self._enable_heat_transfer = enable_heat_transfer
+
+    @property
+    def axis_origin(self):
+        """Gets the axis_origin of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The axis_origin of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalVectorLength
+        """
+        return self._axis_origin
+
+    @axis_origin.setter
+    def axis_origin(self, axis_origin):
+        """Sets the axis_origin of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param axis_origin: The axis_origin of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalVectorLength
+        """
+
+        self._axis_origin = axis_origin
+
+    @property
+    def axis_direction(self):
+        """Gets the axis_direction of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The axis_direction of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalVectorLength
+        """
+        return self._axis_direction
+
+    @axis_direction.setter
+    def axis_direction(self, axis_direction):
+        """Sets the axis_direction of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param axis_direction: The axis_direction of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalVectorLength
+        """
+
+        self._axis_direction = axis_direction
+
+    @property
+    def sector_angle(self):
+        """Gets the sector_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The sector_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalAngle
+        """
+        return self._sector_angle
+
+    @sector_angle.setter
+    def sector_angle(self, sector_angle):
+        """Sets the sector_angle of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param sector_angle: The sector_angle of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalAngle
+        """
+
+        self._sector_angle = sector_angle
+
+    @property
+    def master_topological_reference(self):
+        """Gets the master_topological_reference of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The master_topological_reference of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._master_topological_reference
+
+    @master_topological_reference.setter
+    def master_topological_reference(self, master_topological_reference):
+        """Sets the master_topological_reference of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param master_topological_reference: The master_topological_reference of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._master_topological_reference = master_topological_reference
+
+    @property
+    def slave_topological_reference(self):
+        """Gets the slave_topological_reference of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The slave_topological_reference of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._slave_topological_reference
+
+    @slave_topological_reference.setter
+    def slave_topological_reference(self, slave_topological_reference):
+        """Sets the slave_topological_reference of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param slave_topological_reference: The slave_topological_reference of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._slave_topological_reference = slave_topological_reference
 
     @property
     def force(self):

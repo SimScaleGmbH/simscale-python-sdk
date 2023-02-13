@@ -451,7 +451,7 @@ class SimulationRunsApi(object):
     def create_simulation_run(self, project_id, simulation_id, simulation_run, **kwargs): # noqa: E501
         """Create a simulation run  # noqa: E501
 
-        This operation creates a run in status `READY`, however the run is not automatically started. The run must be started explicitely using the `POST /projects/{projectId}/simulations/{simulationId}/runs/{runId}/start` endpoint.   # noqa: E501
+        This operation creates a run in status `READY`, however the run is not automatically started. The run must be started explicitly using the `POST /projects/{projectId}/simulations/{simulationId}/runs/{runId}/start` endpoint.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_simulation_run(project_id, simulation_id, simulation_run, async_req=True)
@@ -478,7 +478,7 @@ class SimulationRunsApi(object):
     def create_simulation_run_with_http_info(self, project_id, simulation_id, simulation_run, **kwargs):  # noqa: E501
         """Create a simulation run  # noqa: E501
 
-        This operation creates a run in status `READY`, however the run is not automatically started. The run must be started explicitely using the `POST /projects/{projectId}/simulations/{simulationId}/runs/{runId}/start` endpoint.   # noqa: E501
+        This operation creates a run in status `READY`, however the run is not automatically started. The run must be started explicitly using the `POST /projects/{projectId}/simulations/{simulationId}/runs/{runId}/start` endpoint.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_simulation_run_with_http_info(project_id, simulation_id, simulation_run, async_req=True)

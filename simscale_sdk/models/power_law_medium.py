@@ -139,6 +139,9 @@ class PowerLawMedium(object):
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
+                linear_coefficient is not None and linear_coefficient > 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000):  # noqa: E501
+            raise ValueError("Invalid value for `linear_coefficient`, must be a value less than or equal to `100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
                 linear_coefficient is not None and linear_coefficient < 0):  # noqa: E501
             raise ValueError("Invalid value for `linear_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
@@ -162,6 +165,9 @@ class PowerLawMedium(object):
         :param exponent_coefficient: The exponent_coefficient of this PowerLawMedium.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                exponent_coefficient is not None and exponent_coefficient > 50):  # noqa: E501
+            raise ValueError("Invalid value for `exponent_coefficient`, must be a value less than or equal to `50`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 exponent_coefficient is not None and exponent_coefficient < 0):  # noqa: E501
             raise ValueError("Invalid value for `exponent_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501

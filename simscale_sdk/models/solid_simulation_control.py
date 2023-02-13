@@ -131,7 +131,7 @@ class SolidSimulationControl(object):
     def auto_load_ramping(self):
         """Gets the auto_load_ramping of this SolidSimulationControl.  # noqa: E501
 
-        Loads and enforced motions will be ramped linearly over the simulation interval to aid solution convergence. Automatic ramping will only be applied if all boundary conditions (including gravity) are applied with constant values.  # noqa: E501
+        Loads and enforced motions will be ramped linearly over the simulation interval to aid solution convergence. Automatic ramping will only be applied if all boundary conditions (including gravity) are applied with constant values and if no creep formulation has been defined for the materials.  # noqa: E501
 
         :return: The auto_load_ramping of this SolidSimulationControl.  # noqa: E501
         :rtype: bool
@@ -142,7 +142,7 @@ class SolidSimulationControl(object):
     def auto_load_ramping(self, auto_load_ramping):
         """Sets the auto_load_ramping of this SolidSimulationControl.
 
-        Loads and enforced motions will be ramped linearly over the simulation interval to aid solution convergence. Automatic ramping will only be applied if all boundary conditions (including gravity) are applied with constant values.  # noqa: E501
+        Loads and enforced motions will be ramped linearly over the simulation interval to aid solution convergence. Automatic ramping will only be applied if all boundary conditions (including gravity) are applied with constant values and if no creep formulation has been defined for the materials.  # noqa: E501
 
         :param auto_load_ramping: The auto_load_ramping of this SolidSimulationControl.  # noqa: E501
         :type: bool

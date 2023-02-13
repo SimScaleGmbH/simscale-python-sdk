@@ -74,7 +74,7 @@ class OneOfPressureInletBCRadiativeIntensityRay(object):
     def type(self):
         """Gets the type of this OneOfPressureInletBCRadiativeIntensityRay.  # noqa: E501
 
-        Schema name: SemiOpenBoundaryRayBC  # noqa: E501
+        <p><b>Radiative behaviour of the wall</b>. The Kirchhoff's law of thermal radiation is applied in all options. This means that the <b>absorptivity of the surface is equal to its emissivity</b>. <br> <ul><li><b>Opaque</b> is applied to surfaces with transmissivity equal to 0. The radiation that hits the surface will be absorbed and reflected, but not transmitted, e.g.: brick or concrete walls.</li><li><b>Transparent</b> is applied to surfaces with transmissivity equal to 1. The radiation that hits the surface will be fully transmitted to the other side, e.g.: inlets, outlets or regular windows.</li><li><b>Semi-transparent</b> is applied to non-fully transparent surfaces. The radiation that hits the surface will be absorbed, reflected and transmitted, e.g. some stained glass windows.</li></ul></p>  Schema name: SemiOpenBoundaryRayBC  # noqa: E501
 
         :return: The type of this OneOfPressureInletBCRadiativeIntensityRay.  # noqa: E501
         :rtype: str
@@ -85,7 +85,7 @@ class OneOfPressureInletBCRadiativeIntensityRay(object):
     def type(self, type):
         """Sets the type of this OneOfPressureInletBCRadiativeIntensityRay.
 
-        Schema name: SemiOpenBoundaryRayBC  # noqa: E501
+        <p><b>Radiative behaviour of the wall</b>. The Kirchhoff's law of thermal radiation is applied in all options. This means that the <b>absorptivity of the surface is equal to its emissivity</b>. <br> <ul><li><b>Opaque</b> is applied to surfaces with transmissivity equal to 0. The radiation that hits the surface will be absorbed and reflected, but not transmitted, e.g.: brick or concrete walls.</li><li><b>Transparent</b> is applied to surfaces with transmissivity equal to 1. The radiation that hits the surface will be fully transmitted to the other side, e.g.: inlets, outlets or regular windows.</li><li><b>Semi-transparent</b> is applied to non-fully transparent surfaces. The radiation that hits the surface will be absorbed, reflected and transmitted, e.g. some stained glass windows.</li></ul></p>  Schema name: SemiOpenBoundaryRayBC  # noqa: E501
 
         :param type: The type of this OneOfPressureInletBCRadiativeIntensityRay.  # noqa: E501
         :type: str

@@ -36,10 +36,7 @@ class OneOfContactConnections(object):
         'enable_heat_transfer': 'str',
         'position_tolerance': 'OneOfSlidingContactPositionTolerance',
         'master_topological_reference': 'TopologicalReference',
-        'slave_topological_reference': 'TopologicalReference',
-        'axis_origin': 'DimensionalVectorLength',
-        'axis_direction': 'DimensionalVectorLength',
-        'sector_angle': 'DimensionalAngle'
+        'slave_topological_reference': 'TopologicalReference'
     }
 
     attribute_map = {
@@ -48,19 +45,15 @@ class OneOfContactConnections(object):
         'enable_heat_transfer': 'enableHeatTransfer',
         'position_tolerance': 'positionTolerance',
         'master_topological_reference': 'masterTopologicalReference',
-        'slave_topological_reference': 'slaveTopologicalReference',
-        'axis_origin': 'axisOrigin',
-        'axis_direction': 'axisDirection',
-        'sector_angle': 'sectorAngle'
+        'slave_topological_reference': 'slaveTopologicalReference'
     }
 
     discriminator_value_class_map = {
         'BONDED_CONTACT': 'BondedContact',
-        'CYCLIC_SYMMETRY': 'CyclicSymmetryContact',
         'SLIDING_CONTACT': 'SlidingContact'
     }
 
-    def __init__(self, type='SLIDING_CONTACT', name=None, enable_heat_transfer=None, position_tolerance=None, master_topological_reference=None, slave_topological_reference=None, axis_origin=None, axis_direction=None, sector_angle=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SLIDING_CONTACT', name=None, enable_heat_transfer=None, position_tolerance=None, master_topological_reference=None, slave_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """OneOfContactConnections - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,9 +65,6 @@ class OneOfContactConnections(object):
         self._position_tolerance = None
         self._master_topological_reference = None
         self._slave_topological_reference = None
-        self._axis_origin = None
-        self._axis_direction = None
-        self._sector_angle = None
         self.discriminator = 'type'
 
         self.type = type
@@ -88,12 +78,6 @@ class OneOfContactConnections(object):
             self.master_topological_reference = master_topological_reference
         if slave_topological_reference is not None:
             self.slave_topological_reference = slave_topological_reference
-        if axis_origin is not None:
-            self.axis_origin = axis_origin
-        if axis_direction is not None:
-            self.axis_direction = axis_direction
-        if sector_angle is not None:
-            self.sector_angle = sector_angle
 
     @property
     def type(self):
@@ -230,69 +214,6 @@ class OneOfContactConnections(object):
         """
 
         self._slave_topological_reference = slave_topological_reference
-
-    @property
-    def axis_origin(self):
-        """Gets the axis_origin of this OneOfContactConnections.  # noqa: E501
-
-
-        :return: The axis_origin of this OneOfContactConnections.  # noqa: E501
-        :rtype: DimensionalVectorLength
-        """
-        return self._axis_origin
-
-    @axis_origin.setter
-    def axis_origin(self, axis_origin):
-        """Sets the axis_origin of this OneOfContactConnections.
-
-
-        :param axis_origin: The axis_origin of this OneOfContactConnections.  # noqa: E501
-        :type: DimensionalVectorLength
-        """
-
-        self._axis_origin = axis_origin
-
-    @property
-    def axis_direction(self):
-        """Gets the axis_direction of this OneOfContactConnections.  # noqa: E501
-
-
-        :return: The axis_direction of this OneOfContactConnections.  # noqa: E501
-        :rtype: DimensionalVectorLength
-        """
-        return self._axis_direction
-
-    @axis_direction.setter
-    def axis_direction(self, axis_direction):
-        """Sets the axis_direction of this OneOfContactConnections.
-
-
-        :param axis_direction: The axis_direction of this OneOfContactConnections.  # noqa: E501
-        :type: DimensionalVectorLength
-        """
-
-        self._axis_direction = axis_direction
-
-    @property
-    def sector_angle(self):
-        """Gets the sector_angle of this OneOfContactConnections.  # noqa: E501
-
-
-        :return: The sector_angle of this OneOfContactConnections.  # noqa: E501
-        :rtype: DimensionalAngle
-        """
-        return self._sector_angle
-
-    @sector_angle.setter
-    def sector_angle(self, sector_angle):
-        """Sets the sector_angle of this OneOfContactConnections.
-
-
-        :param sector_angle: The sector_angle of this OneOfContactConnections.  # noqa: E501
-        :type: DimensionalAngle
-        """
-
-        self._sector_angle = sector_angle
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

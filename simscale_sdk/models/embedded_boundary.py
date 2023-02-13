@@ -33,9 +33,11 @@ class EmbeddedBoundary(object):
     openapi_types = {
         'type': 'str',
         'is_internal_flow': 'bool',
+        'allow_external_flow': 'bool',
         'model': 'FluidModel',
         'materials': 'CoupledConjugateHeatTransferMaterials',
         'initial_conditions': 'FluidInitialConditions',
+        'external_flow_boundary_condition': 'OneOfEmbeddedBoundaryExternalFlowBoundaryCondition',
         'boundary_conditions': 'list[OneOfEmbeddedBoundaryBoundaryConditions]',
         'advanced_concepts': 'AdvancedConcepts',
         'numerics': 'FluidNumerics',
@@ -52,9 +54,11 @@ class EmbeddedBoundary(object):
     attribute_map = {
         'type': 'type',
         'is_internal_flow': 'isInternalFlow',
+        'allow_external_flow': 'allowExternalFlow',
         'model': 'model',
         'materials': 'materials',
         'initial_conditions': 'initialConditions',
+        'external_flow_boundary_condition': 'externalFlowBoundaryCondition',
         'boundary_conditions': 'boundaryConditions',
         'advanced_concepts': 'advancedConcepts',
         'numerics': 'numerics',
@@ -68,7 +72,7 @@ class EmbeddedBoundary(object):
         'time_dependency': 'timeDependency'
     }
 
-    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, allow_external_flow=None, model=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, local_vars_configuration=None):  # noqa: E501
         """EmbeddedBoundary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,9 +80,11 @@ class EmbeddedBoundary(object):
 
         self._type = None
         self._is_internal_flow = None
+        self._allow_external_flow = None
         self._model = None
         self._materials = None
         self._initial_conditions = None
+        self._external_flow_boundary_condition = None
         self._boundary_conditions = None
         self._advanced_concepts = None
         self._numerics = None
@@ -95,12 +101,16 @@ class EmbeddedBoundary(object):
         self.type = type
         if is_internal_flow is not None:
             self.is_internal_flow = is_internal_flow
+        if allow_external_flow is not None:
+            self.allow_external_flow = allow_external_flow
         if model is not None:
             self.model = model
         if materials is not None:
             self.materials = materials
         if initial_conditions is not None:
             self.initial_conditions = initial_conditions
+        if external_flow_boundary_condition is not None:
+            self.external_flow_boundary_condition = external_flow_boundary_condition
         if boundary_conditions is not None:
             self.boundary_conditions = boundary_conditions
         if advanced_concepts is not None:
@@ -173,6 +183,29 @@ class EmbeddedBoundary(object):
         self._is_internal_flow = is_internal_flow
 
     @property
+    def allow_external_flow(self):
+        """Gets the allow_external_flow of this EmbeddedBoundary.  # noqa: E501
+
+        Help text for this field  # noqa: E501
+
+        :return: The allow_external_flow of this EmbeddedBoundary.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_external_flow
+
+    @allow_external_flow.setter
+    def allow_external_flow(self, allow_external_flow):
+        """Sets the allow_external_flow of this EmbeddedBoundary.
+
+        Help text for this field  # noqa: E501
+
+        :param allow_external_flow: The allow_external_flow of this EmbeddedBoundary.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_external_flow = allow_external_flow
+
+    @property
     def model(self):
         """Gets the model of this EmbeddedBoundary.  # noqa: E501
 
@@ -234,6 +267,27 @@ class EmbeddedBoundary(object):
         """
 
         self._initial_conditions = initial_conditions
+
+    @property
+    def external_flow_boundary_condition(self):
+        """Gets the external_flow_boundary_condition of this EmbeddedBoundary.  # noqa: E501
+
+
+        :return: The external_flow_boundary_condition of this EmbeddedBoundary.  # noqa: E501
+        :rtype: OneOfEmbeddedBoundaryExternalFlowBoundaryCondition
+        """
+        return self._external_flow_boundary_condition
+
+    @external_flow_boundary_condition.setter
+    def external_flow_boundary_condition(self, external_flow_boundary_condition):
+        """Sets the external_flow_boundary_condition of this EmbeddedBoundary.
+
+
+        :param external_flow_boundary_condition: The external_flow_boundary_condition of this EmbeddedBoundary.  # noqa: E501
+        :type: OneOfEmbeddedBoundaryExternalFlowBoundaryCondition
+        """
+
+        self._external_flow_boundary_condition = external_flow_boundary_condition
 
     @property
     def boundary_conditions(self):

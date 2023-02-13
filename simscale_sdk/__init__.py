@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.18.0"
+__version__ = "1.0.0"
 
 # import apis into sdk package
 from simscale_sdk.api.folders_api import FoldersApi
@@ -21,10 +21,12 @@ from simscale_sdk.api.geometry_imports_api import GeometryImportsApi
 from simscale_sdk.api.materials_api import MaterialsApi
 from simscale_sdk.api.mesh_operations_api import MeshOperationsApi
 from simscale_sdk.api.meshes_api import MeshesApi
+from simscale_sdk.api.project_permissions_api import ProjectPermissionsApi
 from simscale_sdk.api.projects_api import ProjectsApi
 from simscale_sdk.api.reports_api import ReportsApi
 from simscale_sdk.api.simulation_runs_api import SimulationRunsApi
 from simscale_sdk.api.simulations_api import SimulationsApi
+from simscale_sdk.api.space_permissions_api import SpacePermissionsApi
 from simscale_sdk.api.spaces_api import SpacesApi
 from simscale_sdk.api.storage_api import StorageApi
 from simscale_sdk.api.table_imports_api import TableImportsApi
@@ -203,7 +205,7 @@ from simscale_sdk.models.custom_solar_load import CustomSolarLoad
 from simscale_sdk.models.custom_sun_direction import CustomSunDirection
 from simscale_sdk.models.custom_tree import CustomTree
 from simscale_sdk.models.cutting_plane import CuttingPlane
-from simscale_sdk.models.cyclic_symmetry_contact import CyclicSymmetryContact
+from simscale_sdk.models.cyclic_symmetry_bc import CyclicSymmetryBC
 from simscale_sdk.models.cylinder import Cylinder
 from simscale_sdk.models.cylinders_visualization_style import CylindersVisualizationStyle
 from simscale_sdk.models.dic_preconditioner import DICPreconditioner
@@ -345,6 +347,8 @@ from simscale_sdk.models.eigen_mode_verification import EigenModeVerification
 from simscale_sdk.models.elastic_jacobian_matrix import ElasticJacobianMatrix
 from simscale_sdk.models.elastic_support_bc import ElasticSupportBC
 from simscale_sdk.models.electromagnetic_material import ElectromagneticMaterial
+from simscale_sdk.models.electromagnetic_simulation_control import ElectromagneticSimulationControl
+from simscale_sdk.models.element_groups_domain_decomposition import ElementGroupsDomainDecomposition
 from simscale_sdk.models.element_technology import ElementTechnology
 from simscale_sdk.models.element_technology_definition import ElementTechnologyDefinition
 from simscale_sdk.models.embedded_boundary import EmbeddedBoundary
@@ -830,6 +834,7 @@ from simscale_sdk.models.one_of_dynamic_analysis_connection_groups import OneOfD
 from simscale_sdk.models.one_of_elastic_support_bc_spring_stiffness import OneOfElasticSupportBCSpringStiffness
 from simscale_sdk.models.one_of_element_technology_definition_method import OneOfElementTechnologyDefinitionMethod
 from simscale_sdk.models.one_of_embedded_boundary_boundary_conditions import OneOfEmbeddedBoundaryBoundaryConditions
+from simscale_sdk.models.one_of_embedded_boundary_external_flow_boundary_condition import OneOfEmbeddedBoundaryExternalFlowBoundaryCondition
 from simscale_sdk.models.one_of_embedded_boundary_meshing_refinements import OneOfEmbeddedBoundaryMeshingRefinements
 from simscale_sdk.models.one_of_embedded_boundary_meshing_sizing import OneOfEmbeddedBoundaryMeshingSizing
 from simscale_sdk.models.one_of_embedded_boundary_time_dependency import OneOfEmbeddedBoundaryTimeDependency
@@ -1173,7 +1178,11 @@ from simscale_sdk.models.perfect_fluid_equation_of_state import PerfectFluidEqua
 from simscale_sdk.models.perfect_gas_equation_of_state import PerfectGasEquationOfState
 from simscale_sdk.models.perforated_plate import PerforatedPlate
 from simscale_sdk.models.periodic_bc import PeriodicBC
+from simscale_sdk.models.permission import Permission
 from simscale_sdk.models.permission_dto import PermissionDto
+from simscale_sdk.models.permission_level import PermissionLevel
+from simscale_sdk.models.permission_scope import PermissionScope
+from simscale_sdk.models.permissions import Permissions
 from simscale_sdk.models.phase_fraction_ic import PhaseFractionIC
 from simscale_sdk.models.phase_fractions_ic import PhaseFractionsIC
 from simscale_sdk.models.phase_name_and_fixed_value_pfbc import PhaseNameAndFixedValuePFBC
@@ -1205,6 +1214,7 @@ from simscale_sdk.models.principal_strain_type import PrincipalStrainType
 from simscale_sdk.models.principal_stress_type import PrincipalStressType
 from simscale_sdk.models.probe_points_result_control import ProbePointsResultControl
 from simscale_sdk.models.project import Project
+from simscale_sdk.models.project_permissions import ProjectPermissions
 from simscale_sdk.models.projection_type import ProjectionType
 from simscale_sdk.models.projects import Projects
 from simscale_sdk.models.property_data_type import PropertyDataType
@@ -1271,6 +1281,7 @@ from simscale_sdk.models.semi_open_boundary_ray_bc import SemiOpenBoundaryRayBC
 from simscale_sdk.models.set_value_position_tolerance import SetValuePositionTolerance
 from simscale_sdk.models.shape_animation_output_settings import ShapeAnimationOutputSettings
 from simscale_sdk.models.shape_animation_output_settings_all_of import ShapeAnimationOutputSettingsAllOf
+from simscale_sdk.models.sharing_control import SharingControl
 from simscale_sdk.models.ship_design_analysis_sbm import ShipDesignAnalysisSBM
 from simscale_sdk.models.signed_von_mises_stress_type import SignedVonMisesStressType
 from simscale_sdk.models.signorini_hyper_elastic_model import SignoriniHyperElasticModel
@@ -1319,6 +1330,8 @@ from simscale_sdk.models.solid_result_control import SolidResultControl
 from simscale_sdk.models.solid_simulation_control import SolidSimulationControl
 from simscale_sdk.models.sor_preconditioner import SorPreconditioner
 from simscale_sdk.models.space import Space
+from simscale_sdk.models.space_permissions import SpacePermissions
+from simscale_sdk.models.space_settings import SpaceSettings
 from simscale_sdk.models.spaces import Spaces
 from simscale_sdk.models.specie_default import SpecieDefault
 from simscale_sdk.models.species_humidity_source import SpeciesHumiditySource

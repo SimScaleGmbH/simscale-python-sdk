@@ -32,27 +32,27 @@ class FixedPowerHeatFlux(object):
     """
     openapi_types = {
         'type': 'str',
-        'value': 'DimensionalPower'
+        'function': 'DimensionalFunctionPower'
     }
 
     attribute_map = {
         'type': 'type',
-        'value': 'value'
+        'function': 'function'
     }
 
-    def __init__(self, type='FIXED_POWER', value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_POWER', function=None, local_vars_configuration=None):  # noqa: E501
         """FixedPowerHeatFlux - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._value = None
+        self._function = None
         self.discriminator = None
 
         self.type = type
-        if value is not None:
-            self.value = value
+        if function is not None:
+            self.function = function
 
     @property
     def type(self):
@@ -80,25 +80,25 @@ class FixedPowerHeatFlux(object):
         self._type = type
 
     @property
-    def value(self):
-        """Gets the value of this FixedPowerHeatFlux.  # noqa: E501
+    def function(self):
+        """Gets the function of this FixedPowerHeatFlux.  # noqa: E501
 
 
-        :return: The value of this FixedPowerHeatFlux.  # noqa: E501
-        :rtype: DimensionalPower
+        :return: The function of this FixedPowerHeatFlux.  # noqa: E501
+        :rtype: DimensionalFunctionPower
         """
-        return self._value
+        return self._function
 
-    @value.setter
-    def value(self, value):
-        """Sets the value of this FixedPowerHeatFlux.
+    @function.setter
+    def function(self, function):
+        """Sets the function of this FixedPowerHeatFlux.
 
 
-        :param value: The value of this FixedPowerHeatFlux.  # noqa: E501
-        :type: DimensionalPower
+        :param function: The function of this FixedPowerHeatFlux.  # noqa: E501
+        :type: DimensionalFunctionPower
         """
 
-        self._value = value
+        self._function = function
 
     def to_dict(self):
         """Returns the model properties as a dict"""

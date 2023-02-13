@@ -34,17 +34,19 @@ class ComputingCore(object):
         'num_of_processors': 'int',
         'num_of_computing_processors': 'int',
         'domain_decomposition': 'OneOfComputingCoreDomainDecomposition',
-        'num_of_threads': 'int'
+        'num_of_threads': 'int',
+        'partition_mesh': 'bool'
     }
 
     attribute_map = {
         'num_of_processors': 'numOfProcessors',
         'num_of_computing_processors': 'numOfComputingProcessors',
         'domain_decomposition': 'domainDecomposition',
-        'num_of_threads': 'numOfThreads'
+        'num_of_threads': 'numOfThreads',
+        'partition_mesh': 'partitionMesh'
     }
 
-    def __init__(self, num_of_processors=None, num_of_computing_processors=None, domain_decomposition=None, num_of_threads=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, num_of_processors=None, num_of_computing_processors=None, domain_decomposition=None, num_of_threads=None, partition_mesh=None, local_vars_configuration=None):  # noqa: E501
         """ComputingCore - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class ComputingCore(object):
         self._num_of_computing_processors = None
         self._domain_decomposition = None
         self._num_of_threads = None
+        self._partition_mesh = None
         self.discriminator = None
 
         if num_of_processors is not None:
@@ -64,6 +67,8 @@ class ComputingCore(object):
             self.domain_decomposition = domain_decomposition
         if num_of_threads is not None:
             self.num_of_threads = num_of_threads
+        if partition_mesh is not None:
+            self.partition_mesh = partition_mesh
 
     @property
     def num_of_processors(self):
@@ -167,6 +172,27 @@ class ComputingCore(object):
             raise ValueError("Invalid value for `num_of_threads`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._num_of_threads = num_of_threads
+
+    @property
+    def partition_mesh(self):
+        """Gets the partition_mesh of this ComputingCore.  # noqa: E501
+
+
+        :return: The partition_mesh of this ComputingCore.  # noqa: E501
+        :rtype: bool
+        """
+        return self._partition_mesh
+
+    @partition_mesh.setter
+    def partition_mesh(self, partition_mesh):
+        """Sets the partition_mesh of this ComputingCore.
+
+
+        :param partition_mesh: The partition_mesh of this ComputingCore.  # noqa: E501
+        :type: bool
+        """
+
+        self._partition_mesh = partition_mesh
 
     def to_dict(self):
         """Returns the model properties as a dict"""

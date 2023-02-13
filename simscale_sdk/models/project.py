@@ -230,7 +230,7 @@ class Project(object):
     def measurement_system(self):
         """Gets the measurement_system of this Project.  # noqa: E501
 
-        The measurement system of the project. Can't be modifed.  # noqa: E501
+        The measurement system of the project. Can't be modified.  # noqa: E501
 
         :return: The measurement_system of this Project.  # noqa: E501
         :rtype: str
@@ -241,7 +241,7 @@ class Project(object):
     def measurement_system(self, measurement_system):
         """Sets the measurement_system of this Project.
 
-        The measurement system of the project. Can't be modifed.  # noqa: E501
+        The measurement system of the project. Can't be modified.  # noqa: E501
 
         :param measurement_system: The measurement_system of this Project.  # noqa: E501
         :type: str

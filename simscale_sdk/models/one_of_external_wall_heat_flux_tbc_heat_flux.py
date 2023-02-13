@@ -37,7 +37,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         'additional_heat_flux': 'DimensionalHeatFlux',
         'wall_thermal': 'OneOfDerivedHeatFluxWallThermal',
         'outer_surface_emissivity': 'float',
-        'value': 'DimensionalPower'
+        'function': 'DimensionalFunctionPower'
     }
 
     attribute_map = {
@@ -47,7 +47,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         'additional_heat_flux': 'additionalHeatFlux',
         'wall_thermal': 'wallThermal',
         'outer_surface_emissivity': 'outerSurfaceEmissivity',
-        'value': 'value'
+        'function': 'function'
     }
 
     discriminator_value_class_map = {
@@ -56,7 +56,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         'FIXED_POWER': 'FixedPowerHeatFlux'
     }
 
-    def __init__(self, type='FIXED_POWER', heat_transfer_coefficient=None, ambient_temperature=None, additional_heat_flux=None, wall_thermal=None, outer_surface_emissivity=None, value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_POWER', heat_transfer_coefficient=None, ambient_temperature=None, additional_heat_flux=None, wall_thermal=None, outer_surface_emissivity=None, function=None, local_vars_configuration=None):  # noqa: E501
         """OneOfExternalWallHeatFluxTBCHeatFlux - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,7 +68,7 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         self._additional_heat_flux = None
         self._wall_thermal = None
         self._outer_surface_emissivity = None
-        self._value = None
+        self._function = None
         self.discriminator = 'type'
 
         self.type = type
@@ -82,8 +82,8 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
             self.wall_thermal = wall_thermal
         if outer_surface_emissivity is not None:
             self.outer_surface_emissivity = outer_surface_emissivity
-        if value is not None:
-            self.value = value
+        if function is not None:
+            self.function = function
 
     @property
     def type(self):
@@ -224,25 +224,25 @@ class OneOfExternalWallHeatFluxTBCHeatFlux(object):
         self._outer_surface_emissivity = outer_surface_emissivity
 
     @property
-    def value(self):
-        """Gets the value of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
+    def function(self):
+        """Gets the function of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
 
 
-        :return: The value of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
-        :rtype: DimensionalPower
+        :return: The function of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
+        :rtype: DimensionalFunctionPower
         """
-        return self._value
+        return self._function
 
-    @value.setter
-    def value(self, value):
-        """Sets the value of this OneOfExternalWallHeatFluxTBCHeatFlux.
+    @function.setter
+    def function(self, function):
+        """Sets the function of this OneOfExternalWallHeatFluxTBCHeatFlux.
 
 
-        :param value: The value of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
-        :type: DimensionalPower
+        :param function: The function of this OneOfExternalWallHeatFluxTBCHeatFlux.  # noqa: E501
+        :type: DimensionalFunctionPower
         """
 
-        self._value = value
+        self._function = function
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

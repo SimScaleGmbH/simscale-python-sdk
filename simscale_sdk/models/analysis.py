@@ -71,6 +71,8 @@ class Analysis(object):
         'enable_joule_heating': 'bool',
         'solar_calculator': 'SolarCalculator',
         'is_internal_flow': 'bool',
+        'allow_external_flow': 'bool',
+        'external_flow_boundary_condition': 'OneOfEmbeddedBoundaryExternalFlowBoundaryCondition',
         'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
         'use_local_time_stepping': 'bool'
     }
@@ -116,6 +118,8 @@ class Analysis(object):
         'enable_joule_heating': 'enableJouleHeating',
         'solar_calculator': 'solarCalculator',
         'is_internal_flow': 'isInternalFlow',
+        'allow_external_flow': 'allowExternalFlow',
+        'external_flow_boundary_condition': 'externalFlowBoundaryCondition',
         'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
         'use_local_time_stepping': 'useLocalTimeStepping'
     }
@@ -139,7 +143,7 @@ class Analysis(object):
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, is_internal_flow=None, embedded_boundary_meshing=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, is_internal_flow=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -185,6 +189,8 @@ class Analysis(object):
         self._enable_joule_heating = None
         self._solar_calculator = None
         self._is_internal_flow = None
+        self._allow_external_flow = None
+        self._external_flow_boundary_condition = None
         self._embedded_boundary_meshing = None
         self._use_local_time_stepping = None
         self.discriminator = 'type'
@@ -268,6 +274,10 @@ class Analysis(object):
             self.solar_calculator = solar_calculator
         if is_internal_flow is not None:
             self.is_internal_flow = is_internal_flow
+        if allow_external_flow is not None:
+            self.allow_external_flow = allow_external_flow
+        if external_flow_boundary_condition is not None:
+            self.external_flow_boundary_condition = external_flow_boundary_condition
         if embedded_boundary_meshing is not None:
             self.embedded_boundary_meshing = embedded_boundary_meshing
         if use_local_time_stepping is not None:
@@ -1172,6 +1182,50 @@ class Analysis(object):
         """
 
         self._is_internal_flow = is_internal_flow
+
+    @property
+    def allow_external_flow(self):
+        """Gets the allow_external_flow of this Analysis.  # noqa: E501
+
+        Help text for this field  # noqa: E501
+
+        :return: The allow_external_flow of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._allow_external_flow
+
+    @allow_external_flow.setter
+    def allow_external_flow(self, allow_external_flow):
+        """Sets the allow_external_flow of this Analysis.
+
+        Help text for this field  # noqa: E501
+
+        :param allow_external_flow: The allow_external_flow of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._allow_external_flow = allow_external_flow
+
+    @property
+    def external_flow_boundary_condition(self):
+        """Gets the external_flow_boundary_condition of this Analysis.  # noqa: E501
+
+
+        :return: The external_flow_boundary_condition of this Analysis.  # noqa: E501
+        :rtype: OneOfEmbeddedBoundaryExternalFlowBoundaryCondition
+        """
+        return self._external_flow_boundary_condition
+
+    @external_flow_boundary_condition.setter
+    def external_flow_boundary_condition(self, external_flow_boundary_condition):
+        """Sets the external_flow_boundary_condition of this Analysis.
+
+
+        :param external_flow_boundary_condition: The external_flow_boundary_condition of this Analysis.  # noqa: E501
+        :type: OneOfEmbeddedBoundaryExternalFlowBoundaryCondition
+        """
+
+        self._external_flow_boundary_condition = external_flow_boundary_condition
 
     @property
     def embedded_boundary_meshing(self):
