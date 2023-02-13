@@ -1321,10 +1321,10 @@ simscale\_sdk.models.cutting\_plane module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.cyclic\_symmetry\_contact module
------------------------------------------------------
+simscale\_sdk.models.cyclic\_symmetry\_bc module
+------------------------------------------------
 
-.. automodule:: simscale_sdk.models.cyclic_symmetry_contact
+.. automodule:: simscale_sdk.models.cyclic_symmetry_bc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2453,6 +2453,22 @@ simscale\_sdk.models.electromagnetic\_material module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.electromagnetic_material
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_simulation\_control module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_simulation_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.element\_groups\_domain\_decomposition module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.element_groups_domain_decomposition
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5633,10 +5649,42 @@ simscale\_sdk.models.periodic\_bc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.permission module
+--------------------------------------
+
+.. automodule:: simscale_sdk.models.permission
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.permission\_dto module
 -------------------------------------------
 
 .. automodule:: simscale_sdk.models.permission_dto
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.permission\_level module
+---------------------------------------------
+
+.. automodule:: simscale_sdk.models.permission_level
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.permission\_scope module
+---------------------------------------------
+
+.. automodule:: simscale_sdk.models.permission_scope
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.permissions module
+---------------------------------------
+
+.. automodule:: simscale_sdk.models.permissions
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5893,6 +5941,14 @@ simscale\_sdk.models.project module
 -----------------------------------
 
 .. automodule:: simscale_sdk.models.project
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.project\_permissions module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.project_permissions
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6425,6 +6481,14 @@ simscale\_sdk.models.shape\_animation\_output\_settings\_all\_of module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.sharing\_control module
+--------------------------------------------
+
+.. automodule:: simscale_sdk.models.sharing_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.ship\_design\_analysis\_sbm module
 -------------------------------------------------------
 
@@ -6805,6 +6869,22 @@ simscale\_sdk.models.space module
 ---------------------------------
 
 .. automodule:: simscale_sdk.models.space
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.space\_permissions module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.space_permissions
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.space\_settings module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.space_settings
    :members:
    :undoc-members:
    :show-inheritance:

@@ -57,6 +57,14 @@ simscale\_sdk.api.meshes\_api module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.api.project\_permissions\_api module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.api.project_permissions_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.api.projects\_api module
 --------------------------------------
 
@@ -85,6 +93,14 @@ simscale\_sdk.api.simulations\_api module
 -----------------------------------------
 
 .. automodule:: simscale_sdk.api.simulations_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.api.space\_permissions\_api module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.api.space_permissions_api
    :members:
    :undoc-members:
    :show-inheritance:
