@@ -95,7 +95,7 @@ class DimensionalFunctionSpeed(object):
         """
         if self.local_vars_configuration.client_side_validation and unit is None:  # noqa: E501
             raise ValueError("Invalid value for `unit`, must not be `None`")  # noqa: E501
-        allowed_values = ["m/s", "in/s", "cm/s", "km/h", "mph", "ft/s", "ft/min"]  # noqa: E501
+        allowed_values = ["m/s", "in/s", "cm/s", "km/h", "ft/s", "ft/min", "mph"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

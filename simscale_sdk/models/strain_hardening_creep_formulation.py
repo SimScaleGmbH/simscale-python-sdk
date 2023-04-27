@@ -130,6 +130,12 @@ class StrainHardeningCreepFormulation(object):
         :param n: The n of this StrainHardeningCreepFormulation.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                n is not None and n > 10):  # noqa: E501
+            raise ValueError("Invalid value for `n`, must be a value less than or equal to `10`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                n is not None and n < 1):  # noqa: E501
+            raise ValueError("Invalid value for `n`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._n = n
 
@@ -153,6 +159,12 @@ class StrainHardeningCreepFormulation(object):
         :param m: The m of this StrainHardeningCreepFormulation.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                m is not None and m > 0):  # noqa: E501
+            raise ValueError("Invalid value for `m`, must be a value less than or equal to `0`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                m is not None and m <= -1):  # noqa: E501
+            raise ValueError("Invalid value for `m`, must be a value greater than `-1`")  # noqa: E501
 
         self._m = m
 

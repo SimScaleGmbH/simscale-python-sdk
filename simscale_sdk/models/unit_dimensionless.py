@@ -31,24 +31,50 @@ class UnitDimensionless(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'value': 'float',
         'unit': 'str'
     }
 
     attribute_map = {
+        'value': 'value',
         'unit': 'unit'
     }
 
-    def __init__(self, unit=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, value=None, unit=None, local_vars_configuration=None):  # noqa: E501
         """UnitDimensionless - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._value = None
         self._unit = None
         self.discriminator = None
 
+        if value is not None:
+            self.value = value
         if unit is not None:
             self.unit = unit
+
+    @property
+    def value(self):
+        """Gets the value of this UnitDimensionless.  # noqa: E501
+
+
+        :return: The value of this UnitDimensionless.  # noqa: E501
+        :rtype: float
+        """
+        return self._value
+
+    @value.setter
+    def value(self, value):
+        """Sets the value of this UnitDimensionless.
+
+
+        :param value: The value of this UnitDimensionless.  # noqa: E501
+        :type: float
+        """
+
+        self._value = value
 
     @property
     def unit(self):

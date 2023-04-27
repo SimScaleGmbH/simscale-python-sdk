@@ -59,7 +59,7 @@ class AdvancedComfortCriterionSettings(object):
     def gust_factor(self):
         """Gets the gust_factor of this AdvancedComfortCriterionSettings.  # noqa: E501
 
-        Value of the gust factor used in the Gust Equivalent Mean (GEM) computation. <a href= https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/pedestrian-comfort-map/gust-equivalent-mean/#gust-equivalent-mean-formulation target='_blank'>Learn more</a>.  # noqa: E501
+        Value of the gust factor <b>k<sub>g</sub></b> used in the computation of the gust wind speed from the mean wind speed <b>U<sub>mean</sub></b> and the standard deviation of the wind speed <b>&sigma;</b>: <ul><b>U<sub>gust</sub> = U<sub>mean</sub> + k<sub>g</sub> &sigma;</b></ul> <a href= https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/pedestrian-comfort-map/gust-equivalent-mean/#gust-equivalent-mean-formulation target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The gust_factor of this AdvancedComfortCriterionSettings.  # noqa: E501
         :rtype: float
@@ -70,7 +70,7 @@ class AdvancedComfortCriterionSettings(object):
     def gust_factor(self, gust_factor):
         """Sets the gust_factor of this AdvancedComfortCriterionSettings.
 
-        Value of the gust factor used in the Gust Equivalent Mean (GEM) computation. <a href= https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/pedestrian-comfort-map/gust-equivalent-mean/#gust-equivalent-mean-formulation target='_blank'>Learn more</a>.  # noqa: E501
+        Value of the gust factor <b>k<sub>g</sub></b> used in the computation of the gust wind speed from the mean wind speed <b>U<sub>mean</sub></b> and the standard deviation of the wind speed <b>&sigma;</b>: <ul><b>U<sub>gust</sub> = U<sub>mean</sub> + k<sub>g</sub> &sigma;</b></ul> <a href= https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/pedestrian-comfort-map/gust-equivalent-mean/#gust-equivalent-mean-formulation target='_blank'>Learn more</a>.  # noqa: E501
 
         :param gust_factor: The gust_factor of this AdvancedComfortCriterionSettings.  # noqa: E501
         :type: float
@@ -85,7 +85,7 @@ class AdvancedComfortCriterionSettings(object):
     def gem_correction(self):
         """Gets the gem_correction of this AdvancedComfortCriterionSettings.  # noqa: E501
 
-        Value of the velocity correction factor used in the Gust Equivalent Mean (GEM) computation. <a href= https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/pedestrian-comfort-map/gust-equivalent-mean/#gust-equivalent-mean-formulation target='_blank'>Learn more</a>.  # noqa: E501
+        Value of the gust equivalent mean correction factor <b>k<sub>GEM</sub></b> used in the computation of the gust equivalent mean wind speed <b>U<sub>GEM</sub></b> from the gust wind speed <b>U<sub>gust</sub>: <ul>U<sub>GEM</sub> = U<sub>gust</sub> / k<sub>GEM</sub></b></ul> <a href= https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/pedestrian-comfort-map/gust-equivalent-mean/#gust-equivalent-mean-formulation target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The gem_correction of this AdvancedComfortCriterionSettings.  # noqa: E501
         :rtype: float
@@ -96,7 +96,7 @@ class AdvancedComfortCriterionSettings(object):
     def gem_correction(self, gem_correction):
         """Sets the gem_correction of this AdvancedComfortCriterionSettings.
 
-        Value of the velocity correction factor used in the Gust Equivalent Mean (GEM) computation. <a href= https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/pedestrian-comfort-map/gust-equivalent-mean/#gust-equivalent-mean-formulation target='_blank'>Learn more</a>.  # noqa: E501
+        Value of the gust equivalent mean correction factor <b>k<sub>GEM</sub></b> used in the computation of the gust equivalent mean wind speed <b>U<sub>GEM</sub></b> from the gust wind speed <b>U<sub>gust</sub>: <ul>U<sub>GEM</sub> = U<sub>gust</sub> / k<sub>GEM</sub></b></ul> <a href= https://www.simscale.com/docs/analysis-types/pedestrian-wind-comfort-analysis/pedestrian-comfort-map/gust-equivalent-mean/#gust-equivalent-mean-formulation target='_blank'>Learn more</a>.  # noqa: E501
 
         :param gem_correction: The gem_correction of this AdvancedComfortCriterionSettings.  # noqa: E501
         :type: float

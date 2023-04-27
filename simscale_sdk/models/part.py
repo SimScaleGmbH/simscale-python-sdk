@@ -32,6 +32,7 @@ class Part(object):
     """
     openapi_types = {
         'part_identifier': 'str',
+        'parent_identifier': 'str',
         'opacity': 'float',
         'render_mode': 'RenderMode',
         'solid_color': 'Color'
@@ -39,24 +40,28 @@ class Part(object):
 
     attribute_map = {
         'part_identifier': 'partIdentifier',
+        'parent_identifier': 'parentIdentifier',
         'opacity': 'opacity',
         'render_mode': 'renderMode',
         'solid_color': 'solidColor'
     }
 
-    def __init__(self, part_identifier=None, opacity=None, render_mode=None, solid_color=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, part_identifier=None, parent_identifier=None, opacity=None, render_mode=None, solid_color=None, local_vars_configuration=None):  # noqa: E501
         """Part - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._part_identifier = None
+        self._parent_identifier = None
         self._opacity = None
         self._render_mode = None
         self._solid_color = None
         self.discriminator = None
 
         self.part_identifier = part_identifier
+        if parent_identifier is not None:
+            self.parent_identifier = parent_identifier
         if opacity is not None:
             self.opacity = opacity
         if render_mode is not None:
@@ -88,6 +93,29 @@ class Part(object):
             raise ValueError("Invalid value for `part_identifier`, must not be `None`")  # noqa: E501
 
         self._part_identifier = part_identifier
+
+    @property
+    def parent_identifier(self):
+        """Gets the parent_identifier of this Part.  # noqa: E501
+
+        The identifier of the parent of the part in the result. This value is necessary in cases where multiple parts appear in the result with the same name/identifier.  # noqa: E501
+
+        :return: The parent_identifier of this Part.  # noqa: E501
+        :rtype: str
+        """
+        return self._parent_identifier
+
+    @parent_identifier.setter
+    def parent_identifier(self, parent_identifier):
+        """Sets the parent_identifier of this Part.
+
+        The identifier of the parent of the part in the result. This value is necessary in cases where multiple parts appear in the result with the same name/identifier.  # noqa: E501
+
+        :param parent_identifier: The parent_identifier of this Part.  # noqa: E501
+        :type: str
+        """
+
+        self._parent_identifier = parent_identifier
 
     @property
     def opacity(self):

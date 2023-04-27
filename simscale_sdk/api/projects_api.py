@@ -37,6 +37,7 @@ class ProjectsApi(object):
     def create_project(self, project, **kwargs): # noqa: E501
         """Create a new project  # noqa: E501
 
+        The visibility of the Project will be determined by the available capabilities of the requesting user. If the user can create private projects, the Project will be private. Otherwise, it will be public.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_project(project, async_req=True)
@@ -61,6 +62,7 @@ class ProjectsApi(object):
     def create_project_with_http_info(self, project, **kwargs):  # noqa: E501
         """Create a new project  # noqa: E501
 
+        The visibility of the Project will be determined by the available capabilities of the requesting user. If the user can create private projects, the Project will be private. Otherwise, it will be public.   # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.create_project_with_http_info(project, async_req=True)
@@ -225,6 +227,8 @@ class ProjectsApi(object):
                                                         local_var_params['project_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `project_id` when calling `get_project`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_project`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -465,6 +469,8 @@ class ProjectsApi(object):
                                                         local_var_params['project'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `project` when calling `update_project`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `update_project`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

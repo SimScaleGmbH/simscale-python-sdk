@@ -117,6 +117,8 @@ class GeometriesApi(object):
                                                         local_var_params['project_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `project_id` when calling `get_geometries`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_geometries`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_geometries`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
@@ -248,6 +250,8 @@ class GeometriesApi(object):
                                                         local_var_params['geometry_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `geometry_id` when calling `get_geometry`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_geometry`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -392,6 +396,8 @@ class GeometriesApi(object):
                                                         local_var_params['geometry_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `geometry_id` when calling `get_geometry_mappings`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_geometry_mappings`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_geometry_mappings`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
@@ -546,6 +552,8 @@ class GeometriesApi(object):
                                                         local_var_params['geometry'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `geometry` when calling `update_geometry`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `update_geometry`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

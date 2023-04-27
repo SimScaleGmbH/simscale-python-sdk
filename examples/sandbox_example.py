@@ -3,6 +3,8 @@
 import os
 import time
 
+import urllib3
+
 import isodate
 from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, GeometryImportsApi, GeometriesApi, \
     SimulationsApi, SimulationRunsApi, Project, GeometryImportRequest
@@ -24,6 +26,9 @@ configuration.api_key = {
     "apiKey": "sandbox-example-api-key",
 }
 api_client = ApiClient(configuration)
+
+retry_policy = urllib3.Retry(connect=5, read=5, redirect=0, status=5, backoff_factor=0.2)
+api_client.rest_client.pool_manager.connection_pool_kw["retries"] = retry_policy
 
 # API clients
 projects_api = ProjectsApi(api_client)

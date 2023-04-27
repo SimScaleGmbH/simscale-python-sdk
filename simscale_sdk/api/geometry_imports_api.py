@@ -116,6 +116,8 @@ class GeometryImportsApi(object):
                                                         local_var_params['geometry_import_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `geometry_import_id` when calling `get_geometry_import`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_geometry_import`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -237,6 +239,8 @@ class GeometryImportsApi(object):
                                                         local_var_params['geometry_import_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `geometry_import_id` when calling `get_geometry_import_event_log`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_geometry_import_event_log`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -360,6 +364,8 @@ class GeometryImportsApi(object):
                                                         local_var_params['geometry_import_request'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `geometry_import_request` when calling `import_geometry`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `import_geometry`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

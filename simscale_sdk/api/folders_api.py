@@ -504,6 +504,8 @@ class FoldersApi(object):
             raise ApiValueError("Invalid value for parameter `page` when calling `list_folders_in_folder`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `list_folders_in_folder`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'sort' in local_var_params and not re.search(r'^[-+](name|createdAt|lastModifiedAt)$', local_var_params['sort']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `sort` when calling `list_folders_in_folder`, must conform to the pattern `/^[-+](name|createdAt|lastModifiedAt)$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -643,6 +645,8 @@ class FoldersApi(object):
             raise ApiValueError("Invalid value for parameter `page` when calling `list_folders_in_space_root`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `list_folders_in_space_root`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'sort' in local_var_params and not re.search(r'^[-+](name|createdAt|lastModifiedAt)$', local_var_params['sort']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `sort` when calling `list_folders_in_space_root`, must conform to the pattern `/^[-+](name|createdAt|lastModifiedAt)$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -787,6 +791,8 @@ class FoldersApi(object):
             raise ApiValueError("Invalid value for parameter `page` when calling `list_projects_in_folder`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `list_projects_in_folder`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'sort' in local_var_params and not re.search(r'^[-+](name|createdAt|lastModifiedAt)$', local_var_params['sort']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `sort` when calling `list_projects_in_folder`, must conform to the pattern `/^[-+](name|createdAt|lastModifiedAt)$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -926,6 +932,8 @@ class FoldersApi(object):
             raise ApiValueError("Invalid value for parameter `page` when calling `list_projects_in_space_root`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `list_projects_in_space_root`, must be a value greater than or equal to `1`")  # noqa: E501
+        if self.api_client.client_side_validation and 'sort' in local_var_params and not re.search(r'^[-+](name|createdAt|lastModifiedAt)$', local_var_params['sort']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `sort` when calling `list_projects_in_space_root`, must conform to the pattern `/^[-+](name|createdAt|lastModifiedAt)$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

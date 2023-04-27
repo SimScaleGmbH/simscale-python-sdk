@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "1.0.0"
+__version__ = "2.0.0"
 
 # import apis into sdk package
 from simscale_sdk.api.folders_api import FoldersApi
@@ -109,6 +109,7 @@ from simscale_sdk.models.average_fields_calculation_result_control_item import A
 from simscale_sdk.models.average_velocity_momentum_source import AverageVelocityMomentumSource
 from simscale_sdk.models.base_excitation_bc import BaseExcitationBC
 from simscale_sdk.models.bathe_wilson import BatheWilson
+from simscale_sdk.models.bilinear_elasto_plastic_model import BilinearElastoPlasticModel
 from simscale_sdk.models.bird_carreau_viscosity_model import BirdCarreauViscosityModel
 from simscale_sdk.models.body_path import BodyPath
 from simscale_sdk.models.bolt_preload_bc import BoltPreloadBC
@@ -141,6 +142,7 @@ from simscale_sdk.models.chestnut import Chestnut
 from simscale_sdk.models.circular_hole_shape import CircularHoleShape
 from simscale_sdk.models.clock_time_write_control import ClockTimeWriteControl
 from simscale_sdk.models.coarse_resolution import CoarseResolution
+from simscale_sdk.models.coil import Coil
 from simscale_sdk.models.collection_links import CollectionLinks
 from simscale_sdk.models.collection_links_first import CollectionLinksFirst
 from simscale_sdk.models.collection_links_last import CollectionLinksLast
@@ -151,6 +153,7 @@ from simscale_sdk.models.collection_meta import CollectionMeta
 from simscale_sdk.models.collision_retiming_event import CollisionRetimingEvent
 from simscale_sdk.models.color import Color
 from simscale_sdk.models.comets_visualization_style import CometsVisualizationStyle
+from simscale_sdk.models.comfort_criterion_definition_v2 import ComfortCriterionDefinitionV2
 from simscale_sdk.models.component_vector_function import ComponentVectorFunction
 from simscale_sdk.models.compressible import Compressible
 from simscale_sdk.models.compressible_fluid_materials import CompressibleFluidMaterials
@@ -189,6 +192,7 @@ from simscale_sdk.models.cross_plane_orthotropic_conductivity import CrossPlaneO
 from simscale_sdk.models.cross_power_law_viscosity_model import CrossPowerLawViscosityModel
 from simscale_sdk.models.cube_root_vol_les_delta import CubeRootVolLesDelta
 from simscale_sdk.models.cubic_interpolation_scheme import CubicInterpolationScheme
+from simscale_sdk.models.current_excitation import CurrentExcitation
 from simscale_sdk.models.current_inflow_ebc import CurrentInflowEBC
 from simscale_sdk.models.current_outflow_ebc import CurrentOutflowEBC
 from simscale_sdk.models.custom_axis_definition import CustomAxisDefinition
@@ -517,6 +521,7 @@ from simscale_sdk.models.geometry_unit import GeometryUnit
 from simscale_sdk.models.global_acceleration_type import GlobalAccelerationType
 from simscale_sdk.models.global_cauchy_stress_type import GlobalCauchyStressType
 from simscale_sdk.models.global_displacement_type import GlobalDisplacementType
+from simscale_sdk.models.global_max_over_phase_von_mises_stress_type import GlobalMaxOverPhaseVonMisesStressType
 from simscale_sdk.models.global_nodal_force_type import GlobalNodalForceType
 from simscale_sdk.models.global_principal_green_lagrange_strain_type import GlobalPrincipalGreenLagrangeStrainType
 from simscale_sdk.models.global_principal_strain_type import GlobalPrincipalStrainType
@@ -622,6 +627,8 @@ from simscale_sdk.models.mrf_rotating_zone import MRFRotatingZone
 from simscale_sdk.models.mules_solver import MULESSolver
 from simscale_sdk.models.mumps_preconditoner import MUMPSPreconditoner
 from simscale_sdk.models.mumps_solver import MUMPSSolver
+from simscale_sdk.models.magnetic_field_normal import MagneticFieldNormal
+from simscale_sdk.models.magnetic_flux_tangential import MagneticFluxTangential
 from simscale_sdk.models.manual_embedded_boundary_mesh_sizing import ManualEmbeddedBoundaryMeshSizing
 from simscale_sdk.models.manual_mesh_grading import ManualMeshGrading
 from simscale_sdk.models.manual_mesh_sizing import ManualMeshSizing
@@ -670,6 +677,7 @@ from simscale_sdk.models.mortar_method import MortarMethod
 from simscale_sdk.models.move_content_request import MoveContentRequest
 from simscale_sdk.models.moving_wall_vbc import MovingWallVBC
 from simscale_sdk.models.multifrontal_solver import MultifrontalSolver
+from simscale_sdk.models.multilinear_elasto_plastic_model import MultilinearElastoPlasticModel
 from simscale_sdk.models.multiphase import Multiphase
 from simscale_sdk.models.multiple_errors_response import MultipleErrorsResponse
 from simscale_sdk.models.multiplied_slave_nodes_iteration_control import MultipliedSlaveNodesIterationControl
@@ -728,8 +736,11 @@ from simscale_sdk.models.one_of_auto_timestep_definition_retiming_event import O
 from simscale_sdk.models.one_of_automatic_layer_on_layer_type import OneOfAutomaticLayerOnLayerType
 from simscale_sdk.models.one_of_average_fields_calculation_result_control_item_field_selection import OneOfAverageFieldsCalculationResultControlItemFieldSelection
 from simscale_sdk.models.one_of_bathe_wilson_subspace_settings import OneOfBatheWilsonSubspaceSettings
+from simscale_sdk.models.one_of_bilinear_elasto_plastic_model_hardening_model import OneOfBilinearElastoPlasticModelHardeningModel
+from simscale_sdk.models.one_of_bilinear_elasto_plastic_model_poissons_ratio import OneOfBilinearElastoPlasticModelPoissonsRatio
 from simscale_sdk.models.one_of_bonded_contact_position_tolerance import OneOfBondedContactPositionTolerance
 from simscale_sdk.models.one_of_camera_settings import OneOfCameraSettings
+from simscale_sdk.models.one_of_coil_coil_type import OneOfCoilCoilType
 from simscale_sdk.models.one_of_component_vector_function_x import OneOfComponentVectorFunctionX
 from simscale_sdk.models.one_of_component_vector_function_y import OneOfComponentVectorFunctionY
 from simscale_sdk.models.one_of_component_vector_function_z import OneOfComponentVectorFunctionZ
@@ -1022,6 +1033,7 @@ from simscale_sdk.models.one_of_pedestrian_comfort_surface_ground import OneOfPe
 from simscale_sdk.models.one_of_penalty_method_contact_stiffness import OneOfPenaltyMethodContactStiffness
 from simscale_sdk.models.one_of_physical_contact_connections import OneOfPhysicalContactConnections
 from simscale_sdk.models.one_of_plastic_material_behavior_creep_formulation import OneOfPlasticMaterialBehaviorCreepFormulation
+from simscale_sdk.models.one_of_plastic_material_behavior_elasto_plastic_model import OneOfPlasticMaterialBehaviorElastoPlasticModel
 from simscale_sdk.models.one_of_plate_data_hole_shape import OneOfPlateDataHoleShape
 from simscale_sdk.models.one_of_porous_tree_tree_type import OneOfPorousTreeTreeType
 from simscale_sdk.models.one_of_prandtl_les_delta_delta_coefficient import OneOfPrandtlLesDeltaDeltaCoefficient
@@ -1140,6 +1152,7 @@ from simscale_sdk.models.one_of_wind_comfort_mesh_refinements import OneOfWindCo
 from simscale_sdk.models.one_of_wind_comfort_mesh_reynolds_scaling_type import OneOfWindComfortMeshReynoldsScalingType
 from simscale_sdk.models.one_of_wind_comfort_mesh_wind_comfort_fineness import OneOfWindComfortMeshWindComfortFineness
 from simscale_sdk.models.open_boundary_ray_bc import OpenBoundaryRayBC
+from simscale_sdk.models.open_coil import OpenCoil
 from simscale_sdk.models.open_window_rsbc import OpenWindowRSBC
 from simscale_sdk.models.original_entity_reference import OriginalEntityReference
 from simscale_sdk.models.orthotropic_conductivity import OrthotropicConductivity
@@ -1176,6 +1189,7 @@ from simscale_sdk.models.penalty_method import PenaltyMethod
 from simscale_sdk.models.peng_robinson_gas_equation_of_state import PengRobinsonGasEquationOfState
 from simscale_sdk.models.perfect_fluid_equation_of_state import PerfectFluidEquationOfState
 from simscale_sdk.models.perfect_gas_equation_of_state import PerfectGasEquationOfState
+from simscale_sdk.models.perfect_plasticity_model import PerfectPlasticityModel
 from simscale_sdk.models.perforated_plate import PerforatedPlate
 from simscale_sdk.models.periodic_bc import PeriodicBC
 from simscale_sdk.models.permission import Permission
@@ -1355,7 +1369,9 @@ from simscale_sdk.models.stepping_list_pseudo_time_stepping import SteppingListP
 from simscale_sdk.models.storage import Storage
 from simscale_sdk.models.strain_field_selection import StrainFieldSelection
 from simscale_sdk.models.strain_hardening_creep_formulation import StrainHardeningCreepFormulation
+from simscale_sdk.models.strain_hardening_model import StrainHardeningModel
 from simscale_sdk.models.strain_result_control_item import StrainResultControlItem
+from simscale_sdk.models.stranded_coil import StrandedCoil
 from simscale_sdk.models.stress_field_selection import StressFieldSelection
 from simscale_sdk.models.stress_initial_condition_domains import StressInitialConditionDomains
 from simscale_sdk.models.stress_result_control_item import StressResultControlItem
@@ -1409,7 +1425,6 @@ from simscale_sdk.models.symmetry_tdcbc import SymmetryTDCBC
 from simscale_sdk.models.symmetry_tkebc import SymmetryTKEBC
 from simscale_sdk.models.symmetry_vbc import SymmetryVBC
 from simscale_sdk.models.synchronize_with_field_output_write_control import SynchronizeWithFieldOutputWriteControl
-from simscale_sdk.models.table_defined_comfort_criterion_definition import TableDefinedComfortCriterionDefinition
 from simscale_sdk.models.table_defined_function import TableDefinedFunction
 from simscale_sdk.models.table_defined_probe_locations import TableDefinedProbeLocations
 from simscale_sdk.models.table_defined_vector_function import TableDefinedVectorFunction
@@ -1465,6 +1480,7 @@ from simscale_sdk.models.unit_frequency import UnitFrequency
 from simscale_sdk.models.unit_length import UnitLength
 from simscale_sdk.models.unit_pressure import UnitPressure
 from simscale_sdk.models.unit_temperature import UnitTemperature
+from simscale_sdk.models.unit_text import UnitText
 from simscale_sdk.models.unit_time import UnitTime
 from simscale_sdk.models.unit_volumetric_flow_rate import UnitVolumetricFlowRate
 from simscale_sdk.models.update_material_group_request import UpdateMaterialGroupRequest
@@ -1472,6 +1488,7 @@ from simscale_sdk.models.user_defined_write_control import UserDefinedWriteContr
 from simscale_sdk.models.user_input_camera_settings import UserInputCameraSettings
 from simscale_sdk.models.variable_group_f import VariableGroupF
 from simscale_sdk.models.variable_group_height import VariableGroupHEIGHT
+from simscale_sdk.models.variable_group_legendprobability import VariableGroupLEGENDPROBABILITY
 from simscale_sdk.models.variable_group_strain import VariableGroupSTRAIN
 from simscale_sdk.models.variable_group_temp import VariableGroupTEMP
 from simscale_sdk.models.variable_group_temppressure import VariableGroupTEMPPRESSURE

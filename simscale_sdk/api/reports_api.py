@@ -116,6 +116,8 @@ class ReportsApi(object):
                                                         local_var_params['report_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `report_id` when calling `cancel_report_job`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `cancel_report_job`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -233,6 +235,8 @@ class ReportsApi(object):
                                                         local_var_params['report_request'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `report_request` when calling `create_report`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `create_report`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -358,6 +362,8 @@ class ReportsApi(object):
                                                         local_var_params['report_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `report_id` when calling `delete_report`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `delete_report`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -475,6 +481,8 @@ class ReportsApi(object):
                                                         local_var_params['report_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `report_id` when calling `get_report`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_report`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -601,6 +609,8 @@ class ReportsApi(object):
                                                         local_var_params['project_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `project_id` when calling `get_reports`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_reports`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_reports`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
@@ -736,6 +746,8 @@ class ReportsApi(object):
                                                         local_var_params['report_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `report_id` when calling `start_report_job`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `start_report_job`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -860,6 +872,8 @@ class ReportsApi(object):
                                                         local_var_params['report_request'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `report_request` when calling `update_report`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `update_report`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

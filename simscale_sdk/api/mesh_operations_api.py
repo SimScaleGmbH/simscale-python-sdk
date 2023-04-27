@@ -116,6 +116,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['mesh_operation_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation_id` when calling `cancel_mesh_operation`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `cancel_mesh_operation`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -240,6 +242,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['mesh_operation_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation_id` when calling `check_mesh_operation_setup`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `check_mesh_operation_setup`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -363,6 +367,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['mesh_operation'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation` when calling `create_mesh_operation`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `create_mesh_operation`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -488,6 +494,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['mesh_operation_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation_id` when calling `estimate_mesh_operation`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `estimate_mesh_operation`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -616,6 +624,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['meshing_spec_schema_version'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `meshing_spec_schema_version` when calling `get_mesh_operation`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_mesh_operation`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -739,6 +749,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['mesh_operation_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation_id` when calling `get_mesh_operation_event_log`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_mesh_operation_event_log`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -868,6 +880,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['mesh_operation_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation_id` when calling `get_mesh_operation_sdk_code`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_mesh_operation_sdk_code`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'sdk_version' in local_var_params and not re.search(r'latest|\d+\.\d+\.\d+', local_var_params['sdk_version']):  # noqa: E501
             raise ApiValueError("Invalid value for parameter `sdk_version` when calling `get_mesh_operation_sdk_code`, must conform to the pattern `/latest|\d+\.\d+\.\d+/`")  # noqa: E501
         collection_formats = {}
@@ -994,6 +1008,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['project_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `project_id` when calling `get_mesh_operations`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_mesh_operations`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_mesh_operations`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
@@ -1128,6 +1144,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['mesh_operation_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation_id` when calling `start_mesh_operation`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `start_mesh_operation`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1258,6 +1276,8 @@ class MeshOperationsApi(object):
                                                         local_var_params['mesh_operation'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation` when calling `update_mesh_operation`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `update_mesh_operation`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

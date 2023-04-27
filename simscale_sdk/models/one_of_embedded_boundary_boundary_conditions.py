@@ -79,6 +79,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
         'PRESSURE_OUTLET_V30': 'PressureOutletBC',
         'WALL_V34': 'WallBC',
         'FAN': 'FanBC',
+        'SYMMETRY': 'SymmetryBC',
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
 

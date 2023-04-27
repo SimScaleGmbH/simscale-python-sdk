@@ -182,7 +182,7 @@ class ProbePointsResultControl(object):
     def export_statistics(self):
         """Gets the export_statistics of this ProbePointsResultControl.  # noqa: E501
 
-        <p>When this switch is active, statistical data for the selected probe points will be exported:</p><ul><li>Minimum (<strong>MIN</strong>)</li><li>Maximum (<strong>MAX</strong>)</li><li>Absolute minimum (<strong>MIN (Abs)</strong>)</li><li>Absolute maximum (<strong>MAX (Abs)</strong>)</li><li>Average (<strong>AVG</strong>)</li><li>Standard deviation (<strong>STDDEV</strong>)</li><li>Root mean square (<strong>RMS (fluctuation)</strong>)</li></ul>  # noqa: E501
+        <p>When this switch is activated, statistical data for the selected probe points will be exported:</p><ul><li>Minimum (<strong>MIN</strong>)</li><li>Maximum (<strong>MAX</strong>)</li><li>Average (<strong>AVG</strong>)</li><li>Standard deviation (<strong>STDDEV</strong>)</li><li>Root mean square (<strong>RMS</strong>)</li></ul>  # noqa: E501
 
         :return: The export_statistics of this ProbePointsResultControl.  # noqa: E501
         :rtype: bool
@@ -193,7 +193,7 @@ class ProbePointsResultControl(object):
     def export_statistics(self, export_statistics):
         """Sets the export_statistics of this ProbePointsResultControl.
 
-        <p>When this switch is active, statistical data for the selected probe points will be exported:</p><ul><li>Minimum (<strong>MIN</strong>)</li><li>Maximum (<strong>MAX</strong>)</li><li>Absolute minimum (<strong>MIN (Abs)</strong>)</li><li>Absolute maximum (<strong>MAX (Abs)</strong>)</li><li>Average (<strong>AVG</strong>)</li><li>Standard deviation (<strong>STDDEV</strong>)</li><li>Root mean square (<strong>RMS (fluctuation)</strong>)</li></ul>  # noqa: E501
+        <p>When this switch is activated, statistical data for the selected probe points will be exported:</p><ul><li>Minimum (<strong>MIN</strong>)</li><li>Maximum (<strong>MAX</strong>)</li><li>Average (<strong>AVG</strong>)</li><li>Standard deviation (<strong>STDDEV</strong>)</li><li>Root mean square (<strong>RMS</strong>)</li></ul>  # noqa: E501
 
         :param export_statistics: The export_statistics of this ProbePointsResultControl.  # noqa: E501
         :type: bool

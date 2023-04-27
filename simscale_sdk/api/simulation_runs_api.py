@@ -132,6 +132,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['wind_data'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `wind_data` when calling `add_wind_data_to_simulation_run`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `add_wind_data_to_simulation_run`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -268,6 +270,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `run_id` when calling `cancel_simulation_run`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `cancel_simulation_run`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -405,6 +409,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['sub_run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `sub_run_id` when calling `cancel_simulation_run_sub_run`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `cancel_simulation_run_sub_run`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -539,6 +545,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['simulation_run'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `simulation_run` when calling `create_simulation_run`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `create_simulation_run`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -680,6 +688,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['sub_run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `sub_run_id` when calling `delete_simulation_run_sub_run`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `delete_simulation_run_sub_run`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -812,6 +822,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_run`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -942,6 +954,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run_event_log`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_run_event_log`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1093,6 +1107,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run_results`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_run_results`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_simulation_run_results`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
@@ -1253,6 +1269,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run_sdk_code`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_run_sdk_code`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'sdk_version' in local_var_params and not re.search(r'latest|\d+\.\d+\.\d+', local_var_params['sdk_version']):  # noqa: E501
             raise ApiValueError("Invalid value for parameter `sdk_version` when calling `get_simulation_run_sdk_code`, must conform to the pattern `/latest|\d+\.\d+\.\d+/`")  # noqa: E501
         collection_formats = {}
@@ -1392,6 +1410,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run_spec`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_run_spec`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1549,6 +1569,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['sub_run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `sub_run_id` when calling `get_simulation_run_sub_run_results`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_run_sub_run_results`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_simulation_run_sub_run_results`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
@@ -1711,6 +1733,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['sub_run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `sub_run_id` when calling `get_simulation_run_sub_run_spec`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_run_sub_run_spec`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -1851,6 +1875,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `run_id` when calling `get_simulation_run_sub_runs`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_run_sub_runs`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_simulation_run_sub_runs`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
@@ -1992,6 +2018,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['simulation_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `simulation_id` when calling `get_simulation_runs`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `get_simulation_runs`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_simulation_runs`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
@@ -2132,6 +2160,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['run_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `run_id` when calling `start_simulation_run`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `start_simulation_run`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}
@@ -2269,6 +2299,8 @@ class SimulationRunsApi(object):
                                                         local_var_params['simulation_run'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `simulation_run` when calling `update_simulation_run`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `update_simulation_run`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

@@ -36,7 +36,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
         'damping': 'OneOfLinearElasticMaterialBehaviorDamping',
         'creep_formulation': 'OneOfPlasticMaterialBehaviorCreepFormulation',
         'hyper_elastic_model': 'OneOfHyperElasticMaterialBehaviorHyperElasticModel',
-        'plastic_hardening': 'IsotropicPlasticHardening'
+        'elasto_plastic_model': 'OneOfPlasticMaterialBehaviorElastoPlasticModel'
     }
 
     attribute_map = {
@@ -45,7 +45,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
         'damping': 'damping',
         'creep_formulation': 'creepFormulation',
         'hyper_elastic_model': 'hyperElasticModel',
-        'plastic_hardening': 'plasticHardening'
+        'elasto_plastic_model': 'elastoPlasticModel'
     }
 
     discriminator_value_class_map = {
@@ -54,7 +54,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
         'PLASTIC': 'PlasticMaterialBehavior'
     }
 
-    def __init__(self, type='PLASTIC', directional_dependency=None, damping=None, creep_formulation=None, hyper_elastic_model=None, plastic_hardening=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PLASTIC', directional_dependency=None, damping=None, creep_formulation=None, hyper_elastic_model=None, elasto_plastic_model=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidMaterialMaterialBehavior - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,7 +65,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
         self._damping = None
         self._creep_formulation = None
         self._hyper_elastic_model = None
-        self._plastic_hardening = None
+        self._elasto_plastic_model = None
         self.discriminator = 'type'
 
         self.type = type
@@ -77,8 +77,8 @@ class OneOfSolidMaterialMaterialBehavior(object):
             self.creep_formulation = creep_formulation
         if hyper_elastic_model is not None:
             self.hyper_elastic_model = hyper_elastic_model
-        if plastic_hardening is not None:
-            self.plastic_hardening = plastic_hardening
+        if elasto_plastic_model is not None:
+            self.elasto_plastic_model = elasto_plastic_model
 
     @property
     def type(self):
@@ -190,25 +190,25 @@ class OneOfSolidMaterialMaterialBehavior(object):
         self._hyper_elastic_model = hyper_elastic_model
 
     @property
-    def plastic_hardening(self):
-        """Gets the plastic_hardening of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
+    def elasto_plastic_model(self):
+        """Gets the elasto_plastic_model of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
 
 
-        :return: The plastic_hardening of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
-        :rtype: IsotropicPlasticHardening
+        :return: The elasto_plastic_model of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
+        :rtype: OneOfPlasticMaterialBehaviorElastoPlasticModel
         """
-        return self._plastic_hardening
+        return self._elasto_plastic_model
 
-    @plastic_hardening.setter
-    def plastic_hardening(self, plastic_hardening):
-        """Sets the plastic_hardening of this OneOfSolidMaterialMaterialBehavior.
+    @elasto_plastic_model.setter
+    def elasto_plastic_model(self, elasto_plastic_model):
+        """Sets the elasto_plastic_model of this OneOfSolidMaterialMaterialBehavior.
 
 
-        :param plastic_hardening: The plastic_hardening of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
-        :type: IsotropicPlasticHardening
+        :param elasto_plastic_model: The elasto_plastic_model of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
+        :type: OneOfPlasticMaterialBehaviorElastoPlasticModel
         """
 
-        self._plastic_hardening = plastic_hardening
+        self._elasto_plastic_model = elasto_plastic_model
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

@@ -118,6 +118,8 @@ class TableImportsApi(object):
                                                         local_var_params['table_import_request'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `table_import_request` when calling `import_table`")  # noqa: E501
 
+        if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `project_id` when calling `import_table`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         collection_formats = {}
 
         path_params = {}

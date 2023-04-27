@@ -132,8 +132,8 @@ class IRAMSorensen(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
-                nmax_iter_soren is not None and nmax_iter_soren < 0):  # noqa: E501
-            raise ValueError("Invalid value for `nmax_iter_soren`, must be a value greater than or equal to `0`")  # noqa: E501
+                nmax_iter_soren is not None and nmax_iter_soren < 1):  # noqa: E501
+            raise ValueError("Invalid value for `nmax_iter_soren`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._nmax_iter_soren = nmax_iter_soren
 

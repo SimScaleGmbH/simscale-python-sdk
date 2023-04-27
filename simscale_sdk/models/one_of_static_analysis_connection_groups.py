@@ -98,7 +98,7 @@ class OneOfStaticAnalysisConnectionGroups(object):
     def node_merging_bonded(self):
         """Gets the node_merging_bonded of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
 
-        <p>Allow node merging where possible to increase contact accuracy and solution efficiency. For contact pairs where nodes cannot be merged, linear relations will be used with the defined position tolerance.</p>  # noqa: E501
+        <p>Allow node merging for bonded contacts where possible to increase contact accuracy and solution efficiency. For contact pairs where nodes cannot be merged, linear relations will be used with the defined position tolerance.</p>  # noqa: E501
 
         :return: The node_merging_bonded of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
         :rtype: bool
@@ -109,7 +109,7 @@ class OneOfStaticAnalysisConnectionGroups(object):
     def node_merging_bonded(self, node_merging_bonded):
         """Sets the node_merging_bonded of this OneOfStaticAnalysisConnectionGroups.
 
-        <p>Allow node merging where possible to increase contact accuracy and solution efficiency. For contact pairs where nodes cannot be merged, linear relations will be used with the defined position tolerance.</p>  # noqa: E501
+        <p>Allow node merging for bonded contacts where possible to increase contact accuracy and solution efficiency. For contact pairs where nodes cannot be merged, linear relations will be used with the defined position tolerance.</p>  # noqa: E501
 
         :param node_merging_bonded: The node_merging_bonded of this OneOfStaticAnalysisConnectionGroups.  # noqa: E501
         :type: bool

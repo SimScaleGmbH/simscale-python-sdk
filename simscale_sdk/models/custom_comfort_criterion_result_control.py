@@ -33,7 +33,7 @@ class CustomComfortCriterionResultControl(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'comfort_criterion_definition': 'TableDefinedComfortCriterionDefinition',
+        'comfort_criterion_definition_v2': 'ComfortCriterionDefinitionV2',
         'out_of_bounds_name': 'str',
         'advanced_settings': 'AdvancedComfortCriterionSettings'
     }
@@ -41,12 +41,12 @@ class CustomComfortCriterionResultControl(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
-        'comfort_criterion_definition': 'comfortCriterionDefinition',
+        'comfort_criterion_definition_v2': 'comfortCriterionDefinitionV2',
         'out_of_bounds_name': 'outOfBoundsName',
         'advanced_settings': 'advancedSettings'
     }
 
-    def __init__(self, type='CUSTOM_COMFORT_CRITERION', name=None, comfort_criterion_definition=None, out_of_bounds_name=None, advanced_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CUSTOM_COMFORT_CRITERION', name=None, comfort_criterion_definition_v2=None, out_of_bounds_name=None, advanced_settings=None, local_vars_configuration=None):  # noqa: E501
         """CustomComfortCriterionResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,7 +54,7 @@ class CustomComfortCriterionResultControl(object):
 
         self._type = None
         self._name = None
-        self._comfort_criterion_definition = None
+        self._comfort_criterion_definition_v2 = None
         self._out_of_bounds_name = None
         self._advanced_settings = None
         self.discriminator = None
@@ -62,8 +62,8 @@ class CustomComfortCriterionResultControl(object):
         self.type = type
         if name is not None:
             self.name = name
-        if comfort_criterion_definition is not None:
-            self.comfort_criterion_definition = comfort_criterion_definition
+        if comfort_criterion_definition_v2 is not None:
+            self.comfort_criterion_definition_v2 = comfort_criterion_definition_v2
         if out_of_bounds_name is not None:
             self.out_of_bounds_name = out_of_bounds_name
         if advanced_settings is not None:
@@ -119,25 +119,25 @@ class CustomComfortCriterionResultControl(object):
         self._name = name
 
     @property
-    def comfort_criterion_definition(self):
-        """Gets the comfort_criterion_definition of this CustomComfortCriterionResultControl.  # noqa: E501
+    def comfort_criterion_definition_v2(self):
+        """Gets the comfort_criterion_definition_v2 of this CustomComfortCriterionResultControl.  # noqa: E501
 
 
-        :return: The comfort_criterion_definition of this CustomComfortCriterionResultControl.  # noqa: E501
-        :rtype: TableDefinedComfortCriterionDefinition
+        :return: The comfort_criterion_definition_v2 of this CustomComfortCriterionResultControl.  # noqa: E501
+        :rtype: ComfortCriterionDefinitionV2
         """
-        return self._comfort_criterion_definition
+        return self._comfort_criterion_definition_v2
 
-    @comfort_criterion_definition.setter
-    def comfort_criterion_definition(self, comfort_criterion_definition):
-        """Sets the comfort_criterion_definition of this CustomComfortCriterionResultControl.
+    @comfort_criterion_definition_v2.setter
+    def comfort_criterion_definition_v2(self, comfort_criterion_definition_v2):
+        """Sets the comfort_criterion_definition_v2 of this CustomComfortCriterionResultControl.
 
 
-        :param comfort_criterion_definition: The comfort_criterion_definition of this CustomComfortCriterionResultControl.  # noqa: E501
-        :type: TableDefinedComfortCriterionDefinition
+        :param comfort_criterion_definition_v2: The comfort_criterion_definition_v2 of this CustomComfortCriterionResultControl.  # noqa: E501
+        :type: ComfortCriterionDefinitionV2
         """
 
-        self._comfort_criterion_definition = comfort_criterion_definition
+        self._comfort_criterion_definition_v2 = comfort_criterion_definition_v2
 
     @property
     def out_of_bounds_name(self):

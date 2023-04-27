@@ -34,17 +34,19 @@ class ReportRequest(object):
         'name': 'str',
         'description': 'str',
         'result_ids': 'list[str]',
-        'report_properties': 'OneOfReportProperties'
+        'report_properties': 'OneOfReportProperties',
+        'report_id': 'str'
     }
 
     attribute_map = {
         'name': 'name',
         'description': 'description',
         'result_ids': 'resultIds',
-        'report_properties': 'reportProperties'
+        'report_properties': 'reportProperties',
+        'report_id': 'reportId'
     }
 
-    def __init__(self, name=None, description=None, result_ids=None, report_properties=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, description=None, result_ids=None, report_properties=None, report_id=None, local_vars_configuration=None):  # noqa: E501
         """ReportRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class ReportRequest(object):
         self._description = None
         self._result_ids = None
         self._report_properties = None
+        self._report_id = None
         self.discriminator = None
 
         self.name = name
@@ -61,6 +64,8 @@ class ReportRequest(object):
             self.description = description
         self.result_ids = result_ids
         self.report_properties = report_properties
+        if report_id is not None:
+            self.report_id = report_id
 
     @property
     def name(self):
@@ -169,6 +174,29 @@ class ReportRequest(object):
             raise ValueError("Invalid value for `report_properties`, must not be `None`")  # noqa: E501
 
         self._report_properties = report_properties
+
+    @property
+    def report_id(self):
+        """Gets the report_id of this ReportRequest.  # noqa: E501
+
+        If provided, the newly created report will have this value for its UUID.  # noqa: E501
+
+        :return: The report_id of this ReportRequest.  # noqa: E501
+        :rtype: str
+        """
+        return self._report_id
+
+    @report_id.setter
+    def report_id(self, report_id):
+        """Sets the report_id of this ReportRequest.
+
+        If provided, the newly created report will have this value for its UUID.  # noqa: E501
+
+        :param report_id: The report_id of this ReportRequest.  # noqa: E501
+        :type: str
+        """
+
+        self._report_id = report_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

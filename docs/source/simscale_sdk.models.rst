@@ -553,6 +553,14 @@ simscale\_sdk.models.bathe\_wilson module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.bilinear\_elasto\_plastic\_model module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.bilinear_elasto_plastic_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.bird\_carreau\_viscosity\_model module
 -----------------------------------------------------------
 
@@ -809,6 +817,14 @@ simscale\_sdk.models.coarse\_resolution module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.coil module
+--------------------------------
+
+.. automodule:: simscale_sdk.models.coil
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.collection\_links module
 ---------------------------------------------
 
@@ -885,6 +901,14 @@ simscale\_sdk.models.comets\_visualization\_style module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.comets_visualization_style
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.comfort\_criterion\_definition\_v2 module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.comfort_criterion_definition_v2
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1189,6 +1213,14 @@ simscale\_sdk.models.cubic\_interpolation\_scheme module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.cubic_interpolation_scheme
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.current\_excitation module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.current_excitation
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3817,6 +3849,14 @@ simscale\_sdk.models.global\_displacement\_type module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.global\_max\_over\_phase\_von\_mises\_stress\_type module
+------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.global_max_over_phase_von_mises_stress_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.global\_nodal\_force\_type module
 ------------------------------------------------------
 
@@ -4625,6 +4665,22 @@ simscale\_sdk.models.low\_rank\_acceleration module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.magnetic\_field\_normal module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.magnetic_field_normal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.magnetic\_flux\_tangential module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.magnetic_flux_tangential
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.manual\_embedded\_boundary\_mesh\_sizing module
 --------------------------------------------------------------------
 
@@ -5025,6 +5081,14 @@ simscale\_sdk.models.multifrontal\_solver module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.multilinear\_elasto\_plastic\_model module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.multilinear_elasto_plastic_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.multiphase module
 --------------------------------------
 
@@ -5353,6 +5417,14 @@ simscale\_sdk.models.open\_boundary\_ray\_bc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.open\_coil module
+--------------------------------------
+
+.. automodule:: simscale_sdk.models.open_coil
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.open\_window\_rsbc module
 ----------------------------------------------
 
@@ -5629,6 +5701,14 @@ simscale\_sdk.models.perfect\_gas\_equation\_of\_state module
 -------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.perfect_gas_equation_of_state
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.perfect\_plasticity\_model module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.perfect_plasticity_model
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7073,10 +7153,26 @@ simscale\_sdk.models.strain\_hardening\_creep\_formulation module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.strain\_hardening\_model module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.strain_hardening_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.strain\_result\_control\_item module
 ---------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.strain_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.stranded\_coil module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.stranded_coil
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7501,14 +7597,6 @@ simscale\_sdk.models.synchronize\_with\_field\_output\_write\_control module
 ----------------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.synchronize_with_field_output_write_control
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.table\_defined\_comfort\_criterion\_definition module
---------------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.table_defined_comfort_criterion_definition
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7953,6 +8041,14 @@ simscale\_sdk.models.unit\_temperature module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.unit\_text module
+--------------------------------------
+
+.. automodule:: simscale_sdk.models.unit_text
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.unit\_time module
 --------------------------------------
 
@@ -8005,6 +8101,14 @@ simscale\_sdk.models.variable\_group\_height module
 ---------------------------------------------------
 
 .. automodule:: simscale_sdk.models.variable_group_height
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.variable\_group\_legendprobability module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.variable_group_legendprobability
    :members:
    :undoc-members:
    :show-inheritance:

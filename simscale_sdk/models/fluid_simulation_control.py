@@ -37,12 +37,12 @@ class FluidSimulationControl(object):
         'delta_t': 'DimensionalTime',
         'adjustable_timestep': 'OneOfFluidSimulationControlAdjustableTimestep',
         'write_control': 'OneOfFluidSimulationControlWriteControl',
+        'relative_convergence_criteria': 'float',
         'num_processors': 'int',
         'max_run_time': 'DimensionalTime',
         'velocity_scaling': 'float',
         'potential_foam_initialization': 'bool',
-        'decompose_algorithm': 'OneOfFluidSimulationControlDecomposeAlgorithm',
-        'relative_convergence_criteria': 'float'
+        'decompose_algorithm': 'OneOfFluidSimulationControlDecomposeAlgorithm'
     }
 
     attribute_map = {
@@ -52,15 +52,15 @@ class FluidSimulationControl(object):
         'delta_t': 'deltaT',
         'adjustable_timestep': 'adjustableTimestep',
         'write_control': 'writeControl',
+        'relative_convergence_criteria': 'relativeConvergenceCriteria',
         'num_processors': 'numProcessors',
         'max_run_time': 'maxRunTime',
         'velocity_scaling': 'velocityScaling',
         'potential_foam_initialization': 'potentialFoamInitialization',
-        'decompose_algorithm': 'decomposeAlgorithm',
-        'relative_convergence_criteria': 'relativeConvergenceCriteria'
+        'decompose_algorithm': 'decomposeAlgorithm'
     }
 
-    def __init__(self, end_time=None, adjoint_end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, num_processors=None, max_run_time=None, velocity_scaling=None, potential_foam_initialization=None, decompose_algorithm=None, relative_convergence_criteria=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, end_time=None, adjoint_end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, relative_convergence_criteria=None, num_processors=None, max_run_time=None, velocity_scaling=None, potential_foam_initialization=None, decompose_algorithm=None, local_vars_configuration=None):  # noqa: E501
         """FluidSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,12 +72,12 @@ class FluidSimulationControl(object):
         self._delta_t = None
         self._adjustable_timestep = None
         self._write_control = None
+        self._relative_convergence_criteria = None
         self._num_processors = None
         self._max_run_time = None
         self._velocity_scaling = None
         self._potential_foam_initialization = None
         self._decompose_algorithm = None
-        self._relative_convergence_criteria = None
         self.discriminator = None
 
         if end_time is not None:
@@ -92,6 +92,8 @@ class FluidSimulationControl(object):
             self.adjustable_timestep = adjustable_timestep
         if write_control is not None:
             self.write_control = write_control
+        if relative_convergence_criteria is not None:
+            self.relative_convergence_criteria = relative_convergence_criteria
         if num_processors is not None:
             self.num_processors = num_processors
         if max_run_time is not None:
@@ -102,8 +104,6 @@ class FluidSimulationControl(object):
             self.potential_foam_initialization = potential_foam_initialization
         if decompose_algorithm is not None:
             self.decompose_algorithm = decompose_algorithm
-        if relative_convergence_criteria is not None:
-            self.relative_convergence_criteria = relative_convergence_criteria
 
     @property
     def end_time(self):
@@ -237,6 +237,35 @@ class FluidSimulationControl(object):
         self._write_control = write_control
 
     @property
+    def relative_convergence_criteria(self):
+        """Gets the relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
+
+        <b>Steady-state simulation:</b> This represents the relative error residuals that once attained by the solver the simulation is considered to be converged and will stop. The recommended value is 0.001.<br> <b>Transient simulation:</b> This represents the relative error residuals that once attained by the solver the simulation will move to the next time-step regardless of the <i>Number of iterations</i>. The recommended value is 0.1.</br> <br> <b>Please note: </b>Relative residual is defined as the residual in the current iteration divided by the maximum value of residual calculated up to that point.</br> <br> <b>Please note: </b>Lower convergence criterion is demanded for <b>Steady-state simulations</b> because the initial guess is typically farther from the correct solution.</br>  # noqa: E501
+
+        :return: The relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
+        :rtype: float
+        """
+        return self._relative_convergence_criteria
+
+    @relative_convergence_criteria.setter
+    def relative_convergence_criteria(self, relative_convergence_criteria):
+        """Sets the relative_convergence_criteria of this FluidSimulationControl.
+
+        <b>Steady-state simulation:</b> This represents the relative error residuals that once attained by the solver the simulation is considered to be converged and will stop. The recommended value is 0.001.<br> <b>Transient simulation:</b> This represents the relative error residuals that once attained by the solver the simulation will move to the next time-step regardless of the <i>Number of iterations</i>. The recommended value is 0.1.</br> <br> <b>Please note: </b>Relative residual is defined as the residual in the current iteration divided by the maximum value of residual calculated up to that point.</br> <br> <b>Please note: </b>Lower convergence criterion is demanded for <b>Steady-state simulations</b> because the initial guess is typically farther from the correct solution.</br>  # noqa: E501
+
+        :param relative_convergence_criteria: The relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                relative_convergence_criteria is not None and relative_convergence_criteria > 1):  # noqa: E501
+            raise ValueError("Invalid value for `relative_convergence_criteria`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                relative_convergence_criteria is not None and relative_convergence_criteria < 0):  # noqa: E501
+            raise ValueError("Invalid value for `relative_convergence_criteria`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._relative_convergence_criteria = relative_convergence_criteria
+
+    @property
     def num_processors(self):
         """Gets the num_processors of this FluidSimulationControl.  # noqa: E501
 
@@ -358,35 +387,6 @@ class FluidSimulationControl(object):
         """
 
         self._decompose_algorithm = decompose_algorithm
-
-    @property
-    def relative_convergence_criteria(self):
-        """Gets the relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
-
-        <b>Steady-state simulation:</b> This represents the relative error residuals that once attained by the solver the simulation is considered to be converged and will stop. The recommended value is 0.001.<br> <b>Transient simulation:</b> This represents the relative error residuals that once attained by the solver the simulation will move to the next time-step regardless of the <i>Number of iterations</i>. The recommended value is 0.1.</br> <br> <b>Please note: </b>Relative residual is defined as the residual in the current iteration divided by the maximum value of residual calculated up to that point.</br> <br> <b>Please note: </b>Lower convergence criterion is demanded for <b>Steady-state simulations</b> because the initial guess is typically farther from the correct solution.</br>  # noqa: E501
-
-        :return: The relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
-        :rtype: float
-        """
-        return self._relative_convergence_criteria
-
-    @relative_convergence_criteria.setter
-    def relative_convergence_criteria(self, relative_convergence_criteria):
-        """Sets the relative_convergence_criteria of this FluidSimulationControl.
-
-        <b>Steady-state simulation:</b> This represents the relative error residuals that once attained by the solver the simulation is considered to be converged and will stop. The recommended value is 0.001.<br> <b>Transient simulation:</b> This represents the relative error residuals that once attained by the solver the simulation will move to the next time-step regardless of the <i>Number of iterations</i>. The recommended value is 0.1.</br> <br> <b>Please note: </b>Relative residual is defined as the residual in the current iteration divided by the maximum value of residual calculated up to that point.</br> <br> <b>Please note: </b>Lower convergence criterion is demanded for <b>Steady-state simulations</b> because the initial guess is typically farther from the correct solution.</br>  # noqa: E501
-
-        :param relative_convergence_criteria: The relative_convergence_criteria of this FluidSimulationControl.  # noqa: E501
-        :type: float
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                relative_convergence_criteria is not None and relative_convergence_criteria > 1):  # noqa: E501
-            raise ValueError("Invalid value for `relative_convergence_criteria`, must be a value less than or equal to `1`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                relative_convergence_criteria is not None and relative_convergence_criteria < 0):  # noqa: E501
-            raise ValueError("Invalid value for `relative_convergence_criteria`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._relative_convergence_criteria = relative_convergence_criteria
 
     def to_dict(self):
         """Returns the model properties as a dict"""

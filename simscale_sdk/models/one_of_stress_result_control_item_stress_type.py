@@ -45,6 +45,7 @@ class OneOfStressResultControlItemStressType(object):
         'CAUCHY': 'GlobalCauchyStressType',
         'PRINCIPAL': 'GlobalPrincipalStressType',
         'VON_MISES': 'GlobalVonMisesStressType',
+        'MAX_OVER_PHASE_VON_MISES': 'GlobalMaxOverPhaseVonMisesStressType',
         'SIGNED_VON_MISES': 'GlobalSignedVonMisesStressType'
     }
 

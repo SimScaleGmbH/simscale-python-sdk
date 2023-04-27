@@ -31,55 +31,29 @@ class EigenModeVerification(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'stop_error': 'bool',
         'threshold': 'float',
         'precision_shift': 'float'
     }
 
     attribute_map = {
-        'stop_error': 'stopError',
         'threshold': 'threshold',
         'precision_shift': 'precisionShift'
     }
 
-    def __init__(self, stop_error=None, threshold=None, precision_shift=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, threshold=None, precision_shift=None, local_vars_configuration=None):  # noqa: E501
         """EigenModeVerification - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._stop_error = None
         self._threshold = None
         self._precision_shift = None
         self.discriminator = None
 
-        if stop_error is not None:
-            self.stop_error = stop_error
         if threshold is not None:
             self.threshold = threshold
         if precision_shift is not None:
             self.precision_shift = precision_shift
-
-    @property
-    def stop_error(self):
-        """Gets the stop_error of this EigenModeVerification.  # noqa: E501
-
-
-        :return: The stop_error of this EigenModeVerification.  # noqa: E501
-        :rtype: bool
-        """
-        return self._stop_error
-
-    @stop_error.setter
-    def stop_error(self, stop_error):
-        """Sets the stop_error of this EigenModeVerification.
-
-
-        :param stop_error: The stop_error of this EigenModeVerification.  # noqa: E501
-        :type: bool
-        """
-
-        self._stop_error = stop_error
 
     @property
     def threshold(self):

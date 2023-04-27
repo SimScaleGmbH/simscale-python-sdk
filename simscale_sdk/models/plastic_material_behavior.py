@@ -32,30 +32,30 @@ class PlasticMaterialBehavior(object):
     """
     openapi_types = {
         'type': 'str',
-        'plastic_hardening': 'IsotropicPlasticHardening',
+        'elasto_plastic_model': 'OneOfPlasticMaterialBehaviorElastoPlasticModel',
         'creep_formulation': 'OneOfPlasticMaterialBehaviorCreepFormulation'
     }
 
     attribute_map = {
         'type': 'type',
-        'plastic_hardening': 'plasticHardening',
+        'elasto_plastic_model': 'elastoPlasticModel',
         'creep_formulation': 'creepFormulation'
     }
 
-    def __init__(self, type='PLASTIC', plastic_hardening=None, creep_formulation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PLASTIC', elasto_plastic_model=None, creep_formulation=None, local_vars_configuration=None):  # noqa: E501
         """PlasticMaterialBehavior - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._plastic_hardening = None
+        self._elasto_plastic_model = None
         self._creep_formulation = None
         self.discriminator = None
 
         self.type = type
-        if plastic_hardening is not None:
-            self.plastic_hardening = plastic_hardening
+        if elasto_plastic_model is not None:
+            self.elasto_plastic_model = elasto_plastic_model
         if creep_formulation is not None:
             self.creep_formulation = creep_formulation
 
@@ -85,25 +85,25 @@ class PlasticMaterialBehavior(object):
         self._type = type
 
     @property
-    def plastic_hardening(self):
-        """Gets the plastic_hardening of this PlasticMaterialBehavior.  # noqa: E501
+    def elasto_plastic_model(self):
+        """Gets the elasto_plastic_model of this PlasticMaterialBehavior.  # noqa: E501
 
 
-        :return: The plastic_hardening of this PlasticMaterialBehavior.  # noqa: E501
-        :rtype: IsotropicPlasticHardening
+        :return: The elasto_plastic_model of this PlasticMaterialBehavior.  # noqa: E501
+        :rtype: OneOfPlasticMaterialBehaviorElastoPlasticModel
         """
-        return self._plastic_hardening
+        return self._elasto_plastic_model
 
-    @plastic_hardening.setter
-    def plastic_hardening(self, plastic_hardening):
-        """Sets the plastic_hardening of this PlasticMaterialBehavior.
+    @elasto_plastic_model.setter
+    def elasto_plastic_model(self, elasto_plastic_model):
+        """Sets the elasto_plastic_model of this PlasticMaterialBehavior.
 
 
-        :param plastic_hardening: The plastic_hardening of this PlasticMaterialBehavior.  # noqa: E501
-        :type: IsotropicPlasticHardening
+        :param elasto_plastic_model: The elasto_plastic_model of this PlasticMaterialBehavior.  # noqa: E501
+        :type: OneOfPlasticMaterialBehaviorElastoPlasticModel
         """
 
-        self._plastic_hardening = plastic_hardening
+        self._elasto_plastic_model = elasto_plastic_model
 
     @property
     def creep_formulation(self):
