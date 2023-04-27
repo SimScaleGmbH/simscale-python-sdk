@@ -2937,7 +2937,8 @@ Ref: <a class="reference external" href="https://openapi-generator.tech">https:/
 <dt class="sig sig-object py" id="simscale_sdk.api.projects_api.ProjectsApi.create_project">
 <span class="sig-name descname"><span class="pre">create_project</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.projects_api.ProjectsApi.create_project" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new project  # noqa: E501</p>
-<p>This method makes a synchronous HTTP request by default. To make an
+<p>The visibility of the Project will be determined by the available capabilities of the requesting user. If the user can create private projects, the Project will be private. Otherwise, it will be public.   # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True
 &gt;&gt;&gt; thread = api.create_project(project, async_req=True)
 &gt;&gt;&gt; result = thread.get()</p>
@@ -2967,7 +2968,8 @@ returns the request thread.</p>
 <dt class="sig sig-object py" id="simscale_sdk.api.projects_api.ProjectsApi.create_project_with_http_info">
 <span class="sig-name descname"><span class="pre">create_project_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.projects_api.ProjectsApi.create_project_with_http_info" title="Permalink to this definition">¶</a></dt>
 <dd><p>Create a new project  # noqa: E501</p>
-<p>This method makes a synchronous HTTP request by default. To make an
+<p>The visibility of the Project will be determined by the available capabilities of the requesting user. If the user can create private projects, the Project will be private. Otherwise, it will be public.   # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True
 &gt;&gt;&gt; thread = api.create_project_with_http_info(project, async_req=True)
 &gt;&gt;&gt; result = thread.get()</p>
