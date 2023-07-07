@@ -153,7 +153,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
     def enable_cad_surface_merging(self):
         """Gets the enable_cad_surface_merging of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
 
-        Merge all CAD surfaces that are <em>not</em> assigned a boundary condition. Applying this setting significantly increases the probability of successful mesh-generation for more complicated geometry; such as when the model is comprised of many smaller, independent surfaces that are in close proximity to each other.  # noqa: E501
+        <b>Merge CAD surfaces</b> combines all surfaces of the CAD model that are <i>not</i> assigned a boundary condition or result control. With this turned on, the probability of successful mesh generation for more complicated geometries significantly increases. If you need to inspect unassigned surfaces separately, turn it off. For more information, please contact Support.  # noqa: E501
 
         :return: The enable_cad_surface_merging of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
         :rtype: bool
@@ -164,7 +164,7 @@ class OneOfSimericsAnalysisMeshSettings(object):
     def enable_cad_surface_merging(self, enable_cad_surface_merging):
         """Sets the enable_cad_surface_merging of this OneOfSimericsAnalysisMeshSettings.
 
-        Merge all CAD surfaces that are <em>not</em> assigned a boundary condition. Applying this setting significantly increases the probability of successful mesh-generation for more complicated geometry; such as when the model is comprised of many smaller, independent surfaces that are in close proximity to each other.  # noqa: E501
+        <b>Merge CAD surfaces</b> combines all surfaces of the CAD model that are <i>not</i> assigned a boundary condition or result control. With this turned on, the probability of successful mesh generation for more complicated geometries significantly increases. If you need to inspect unassigned surfaces separately, turn it off. For more information, please contact Support.  # noqa: E501
 
         :param enable_cad_surface_merging: The enable_cad_surface_merging of this OneOfSimericsAnalysisMeshSettings.  # noqa: E501
         :type: bool

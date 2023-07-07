@@ -37,6 +37,7 @@ class PressureInletBC(object):
         'pressure_rgh': 'TotalPBC',
         'gauge_pressure': 'OneOfPressureInletBCGaugePressure',
         'gauge_pressure_rgh': 'TotalPBC',
+        'turbulence': 'OneOfPressureInletBCTurbulence',
         'temperature': 'OneOfPressureInletBCTemperature',
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'FixedValuePFBC',
@@ -54,6 +55,7 @@ class PressureInletBC(object):
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
+        'turbulence': 'turbulence',
         'temperature': 'temperature',
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
@@ -64,7 +66,7 @@ class PressureInletBC(object):
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_INLET_V31', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_INLET_V31', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureInletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +78,7 @@ class PressureInletBC(object):
         self._pressure_rgh = None
         self._gauge_pressure = None
         self._gauge_pressure_rgh = None
+        self._turbulence = None
         self._temperature = None
         self._passive_scalars = None
         self._phase_fraction = None
@@ -97,6 +100,8 @@ class PressureInletBC(object):
             self.gauge_pressure = gauge_pressure
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
+        if turbulence is not None:
+            self.turbulence = turbulence
         if temperature is not None:
             self.temperature = temperature
         if passive_scalars is not None:
@@ -243,6 +248,27 @@ class PressureInletBC(object):
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh
+
+    @property
+    def turbulence(self):
+        """Gets the turbulence of this PressureInletBC.  # noqa: E501
+
+
+        :return: The turbulence of this PressureInletBC.  # noqa: E501
+        :rtype: OneOfPressureInletBCTurbulence
+        """
+        return self._turbulence
+
+    @turbulence.setter
+    def turbulence(self, turbulence):
+        """Sets the turbulence of this PressureInletBC.
+
+
+        :param turbulence: The turbulence of this PressureInletBC.  # noqa: E501
+        :type: OneOfPressureInletBCTurbulence
+        """
+
+        self._turbulence = turbulence
 
     @property
     def temperature(self):

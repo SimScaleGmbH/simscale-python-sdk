@@ -63,7 +63,7 @@ class NortonCreepFormulation(object):
     def type(self):
         """Gets the type of this NortonCreepFormulation.  # noqa: E501
 
-        <p>Define the Creep formulation. Two fundamental Creep law types are available: <ul><li><b>Power Law</b></li><b>&epsilon;&#775 = m*A*&sigma;<sup>n</sup>*t<sup>m-1</sup></b><li><b>Hyperbolic Sine Law</b> </li><b>&epsilon;&#775;= &epsilon;<sub>0</sub>* sinh(&sigma;/(&sigma;<sub>0</sub>))<sup>n</sup></b>.</ul> For the Power Law different formulations, like the <b>Norton</b>, <b>Strain Hardening</b> or <b>Time Hardening</b> are available. For the Hyperbolic Sine Law, the <b>Garofalo<b> formulation is available.</p>  Schema name: NortonCreepFormulation  # noqa: E501
+        Schema name: NortonCreepFormulation  # noqa: E501
 
         :return: The type of this NortonCreepFormulation.  # noqa: E501
         :rtype: str
@@ -74,7 +74,7 @@ class NortonCreepFormulation(object):
     def type(self, type):
         """Sets the type of this NortonCreepFormulation.
 
-        <p>Define the Creep formulation. Two fundamental Creep law types are available: <ul><li><b>Power Law</b></li><b>&epsilon;&#775 = m*A*&sigma;<sup>n</sup>*t<sup>m-1</sup></b><li><b>Hyperbolic Sine Law</b> </li><b>&epsilon;&#775;= &epsilon;<sub>0</sub>* sinh(&sigma;/(&sigma;<sub>0</sub>))<sup>n</sup></b>.</ul> For the Power Law different formulations, like the <b>Norton</b>, <b>Strain Hardening</b> or <b>Time Hardening</b> are available. For the Hyperbolic Sine Law, the <b>Garofalo<b> formulation is available.</p>  Schema name: NortonCreepFormulation  # noqa: E501
+        Schema name: NortonCreepFormulation  # noqa: E501
 
         :param type: The type of this NortonCreepFormulation.  # noqa: E501
         :type: str

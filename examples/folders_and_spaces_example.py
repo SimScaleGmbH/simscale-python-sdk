@@ -82,17 +82,17 @@ print(f"Updated folder with ID '{folder_c.folder_id}'. New name: '{folder_c.name
 
 # List the contents of the Space root
 folders_in_space_root = folders_api.list_folders_in_space_root(space_id=personal_space_id)
-print(f"Number of folders in Space root: {folders_in_space_root._meta.total} - Sample Folder info: {folders_in_space_root._embedded[0]}")
+print(f"Number of folders in Space root: {folders_in_space_root.meta.total} - Sample Folder info: {folders_in_space_root.embedded[0]}")
 
 projects_in_space_root = folders_api.list_projects_in_space_root(space_id=personal_space_id)
-print(f"Number of projects in Space root: {projects_in_space_root._meta.total} - Sample Projects info: {projects_in_space_root._embedded[0]}")
+print(f"Number of projects in Space root: {projects_in_space_root.meta.total} - Sample Projects info: {projects_in_space_root.embedded[0]}")
 
 # List the contents of a Folder
 folders_in_folder = folders_api.list_folders_in_folder(space_id=personal_space_id, folder_id=folder_a.folder_id)
-print(f"Number of folders in Folder A: {folders_in_folder._meta.total} - Folders: {folders_in_folder._embedded}")
+print(f"Number of folders in Folder A: {folders_in_folder.meta.total} - Folders: {folders_in_folder.embedded}")
 
 projects_in_folder = folders_api.list_projects_in_folder(space_id=personal_space_id, folder_id=folder_a.folder_id)
-print(f"Number of projects in Folder A: {projects_in_folder._meta.total} - Projects: {projects_in_folder._embedded}")
+print(f"Number of projects in Folder A: {projects_in_folder.meta.total} - Projects: {projects_in_folder.embedded}")
 
 # Move content from the Space root to Folder B
 move_content_request = MoveContentRequest(

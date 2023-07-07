@@ -34,6 +34,7 @@ class StaticAnalysis(object):
         'type': 'str',
         'non_linear_analysis': 'bool',
         'connection_groups': 'list[OneOfStaticAnalysisConnectionGroups]',
+        'connectors': 'list[PinConnector]',
         'element_technology': 'SolidElementTechnology',
         'model': 'SolidModel',
         'materials': 'list[SolidMaterial]',
@@ -49,6 +50,7 @@ class StaticAnalysis(object):
         'type': 'type',
         'non_linear_analysis': 'nonLinearAnalysis',
         'connection_groups': 'connectionGroups',
+        'connectors': 'connectors',
         'element_technology': 'elementTechnology',
         'model': 'model',
         'materials': 'materials',
@@ -60,7 +62,7 @@ class StaticAnalysis(object):
         'mesh_order': 'meshOrder'
     }
 
-    def __init__(self, type='STATIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='STATIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
         """StaticAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class StaticAnalysis(object):
         self._type = None
         self._non_linear_analysis = None
         self._connection_groups = None
+        self._connectors = None
         self._element_technology = None
         self._model = None
         self._materials = None
@@ -85,6 +88,8 @@ class StaticAnalysis(object):
             self.non_linear_analysis = non_linear_analysis
         if connection_groups is not None:
             self.connection_groups = connection_groups
+        if connectors is not None:
+            self.connectors = connectors
         if element_technology is not None:
             self.element_technology = element_technology
         if model is not None:
@@ -172,6 +177,27 @@ class StaticAnalysis(object):
         """
 
         self._connection_groups = connection_groups
+
+    @property
+    def connectors(self):
+        """Gets the connectors of this StaticAnalysis.  # noqa: E501
+
+
+        :return: The connectors of this StaticAnalysis.  # noqa: E501
+        :rtype: list[PinConnector]
+        """
+        return self._connectors
+
+    @connectors.setter
+    def connectors(self, connectors):
+        """Sets the connectors of this StaticAnalysis.
+
+
+        :param connectors: The connectors of this StaticAnalysis.  # noqa: E501
+        :type: list[PinConnector]
+        """
+
+        self._connectors = connectors
 
     @property
     def element_technology(self):

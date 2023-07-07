@@ -34,27 +34,24 @@ class OneOfLinearElasticMaterialBehaviorCreepFormulation(object):
         'type': 'str',
         'a': 'DimensionalStrainRate',
         'n': 'float',
-        'm': 'float',
-        's': 'float'
+        'm': 'float'
     }
 
     attribute_map = {
         'type': 'type',
         'a': 'a',
         'n': 'n',
-        'm': 'm',
-        's': 's'
+        'm': 'm'
     }
 
     discriminator_value_class_map = {
         'NORTON': 'NortonCreepFormulation',
         'NO_CREEP': 'NoCreepFormulation',
         'STRAIN_HARDENING': 'StrainHardeningCreepFormulation',
-        'TIME_HARDENING': 'TimeHardeningCreepFormulation',
-        'GAROFALO': 'GarofaloCreepFormulation'
+        'TIME_HARDENING': 'TimeHardeningCreepFormulation'
     }
 
-    def __init__(self, type='GAROFALO', a=None, n=None, m=None, s=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TIME_HARDENING', a=None, n=None, m=None, local_vars_configuration=None):  # noqa: E501
         """OneOfLinearElasticMaterialBehaviorCreepFormulation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,7 +61,6 @@ class OneOfLinearElasticMaterialBehaviorCreepFormulation(object):
         self._a = None
         self._n = None
         self._m = None
-        self._s = None
         self.discriminator = 'type'
 
         self.type = type
@@ -74,14 +70,12 @@ class OneOfLinearElasticMaterialBehaviorCreepFormulation(object):
             self.n = n
         if m is not None:
             self.m = m
-        if s is not None:
-            self.s = s
 
     @property
     def type(self):
         """Gets the type of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
 
-        <p>Define the Creep formulation. Two fundamental Creep law types are available: <ul><li><b>Power Law</b></li><b>&epsilon;&#775 = m*A*&sigma;<sup>n</sup>*t<sup>m-1</sup></b><li><b>Hyperbolic Sine Law</b> </li><b>&epsilon;&#775;= &epsilon;<sub>0</sub>* sinh(&sigma;/(&sigma;<sub>0</sub>))<sup>n</sup></b>.</ul> For the Power Law different formulations, like the <b>Norton</b>, <b>Strain Hardening</b> or <b>Time Hardening</b> are available. For the Hyperbolic Sine Law, the <b>Garofalo<b> formulation is available.</p>  Schema name: GarofaloCreepFormulation  # noqa: E501
+        Schema name: TimeHardeningCreepFormulation  # noqa: E501
 
         :return: The type of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
         :rtype: str
@@ -92,7 +86,7 @@ class OneOfLinearElasticMaterialBehaviorCreepFormulation(object):
     def type(self, type):
         """Sets the type of this OneOfLinearElasticMaterialBehaviorCreepFormulation.
 
-        <p>Define the Creep formulation. Two fundamental Creep law types are available: <ul><li><b>Power Law</b></li><b>&epsilon;&#775 = m*A*&sigma;<sup>n</sup>*t<sup>m-1</sup></b><li><b>Hyperbolic Sine Law</b> </li><b>&epsilon;&#775;= &epsilon;<sub>0</sub>* sinh(&sigma;/(&sigma;<sub>0</sub>))<sup>n</sup></b>.</ul> For the Power Law different formulations, like the <b>Norton</b>, <b>Strain Hardening</b> or <b>Time Hardening</b> are available. For the Hyperbolic Sine Law, the <b>Garofalo<b> formulation is available.</p>  Schema name: GarofaloCreepFormulation  # noqa: E501
+        Schema name: TimeHardeningCreepFormulation  # noqa: E501
 
         :param type: The type of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
         :type: str
@@ -127,7 +121,7 @@ class OneOfLinearElasticMaterialBehaviorCreepFormulation(object):
     def n(self):
         """Gets the n of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
 
-        <p>Define the parameter <b>&sigma;<sub>0</sub></b> of the Garofalo creep formulation: <ul><b>&epsilon;&#775; = &epsilon;<sub>0</sub>* &sinh(&sigma;/(&sigma<sub>0</sub>))<sup>n</sup></b></ul></p>  # noqa: E501
+        <p>Define the parameter <b>n</b> of the Time Hardening creep formulation: <ul><b>&epsilon;&#775; = A*&sigma;<sup>n</sup>*t<sup>m</sup></b></ul></p>  # noqa: E501
 
         :return: The n of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
         :rtype: float
@@ -138,7 +132,7 @@ class OneOfLinearElasticMaterialBehaviorCreepFormulation(object):
     def n(self, n):
         """Sets the n of this OneOfLinearElasticMaterialBehaviorCreepFormulation.
 
-        <p>Define the parameter <b>&sigma;<sub>0</sub></b> of the Garofalo creep formulation: <ul><b>&epsilon;&#775; = &epsilon;<sub>0</sub>* &sinh(&sigma;/(&sigma<sub>0</sub>))<sup>n</sup></b></ul></p>  # noqa: E501
+        <p>Define the parameter <b>n</b> of the Time Hardening creep formulation: <ul><b>&epsilon;&#775; = A*&sigma;<sup>n</sup>*t<sup>m</sup></b></ul></p>  # noqa: E501
 
         :param n: The n of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
         :type: float
@@ -180,32 +174,6 @@ class OneOfLinearElasticMaterialBehaviorCreepFormulation(object):
             raise ValueError("Invalid value for `m`, must be a value greater than `-1`")  # noqa: E501
 
         self._m = m
-
-    @property
-    def s(self):
-        """Gets the s of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
-
-        <p>Define the parameter <b>&epsilon;<sub>0</sub></b> of the Garofalo creep formulation: <ul><b>&epsilon;&#775; = &epsilon;<sub>0</sub>* &sinh(&sigma;/(&sigma<sub>0</sub>))<sup>n</sup></b></ul></p>  # noqa: E501
-
-        :return: The s of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
-        :rtype: float
-        """
-        return self._s
-
-    @s.setter
-    def s(self, s):
-        """Sets the s of this OneOfLinearElasticMaterialBehaviorCreepFormulation.
-
-        <p>Define the parameter <b>&epsilon;<sub>0</sub></b> of the Garofalo creep formulation: <ul><b>&epsilon;&#775; = &epsilon;<sub>0</sub>* &sinh(&sigma;/(&sigma<sub>0</sub>))<sup>n</sup></b></ul></p>  # noqa: E501
-
-        :param s: The s of this OneOfLinearElasticMaterialBehaviorCreepFormulation.  # noqa: E501
-        :type: float
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                s is not None and s <= 0):  # noqa: E501
-            raise ValueError("Invalid value for `s`, must be a value greater than `0`")  # noqa: E501
-
-        self._s = s
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

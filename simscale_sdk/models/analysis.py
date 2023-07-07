@@ -34,6 +34,7 @@ class Analysis(object):
         'type': 'str',
         'non_linear_analysis': 'bool',
         'connection_groups': 'list[Contact]',
+        'connectors': 'list[PinConnector]',
         'element_technology': 'SolidElementTechnology',
         'model': 'SolidModel',
         'materials': 'list[SolidMaterial]',
@@ -43,7 +44,7 @@ class Analysis(object):
         'simulation_control': 'SolidSimulationControl',
         'result_control': 'SolidResultControl',
         'mesh_order': 'str',
-        'time_dependency': 'OneOfEmbeddedBoundaryTimeDependency',
+        'time_dependency': 'OneOfConjugateHeatTransferTimeDependency',
         'inertia_effect': 'str',
         'turbulence_model': 'str',
         'algorithm': 'str',
@@ -65,12 +66,11 @@ class Analysis(object):
         'pedestrian_comfort_map': 'list[PedestrianComfortSurface]',
         'additional_result_export': 'FluidResultControls',
         'enable_radiation': 'bool',
-        'contact_handling_mode': 'str',
         'enable_solar_load': 'bool',
         'enable_humidity_model': 'bool',
         'enable_joule_heating': 'bool',
         'solar_calculator': 'SolarCalculator',
-        'is_internal_flow': 'bool',
+        'contact_handling_mode': 'str',
         'allow_external_flow': 'bool',
         'external_flow_boundary_condition': 'OneOfEmbeddedBoundaryExternalFlowBoundaryCondition',
         'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
@@ -81,6 +81,7 @@ class Analysis(object):
         'type': 'type',
         'non_linear_analysis': 'nonLinearAnalysis',
         'connection_groups': 'connectionGroups',
+        'connectors': 'connectors',
         'element_technology': 'elementTechnology',
         'model': 'model',
         'materials': 'materials',
@@ -112,12 +113,11 @@ class Analysis(object):
         'pedestrian_comfort_map': 'pedestrianComfortMap',
         'additional_result_export': 'additionalResultExport',
         'enable_radiation': 'enableRadiation',
-        'contact_handling_mode': 'contactHandlingMode',
         'enable_solar_load': 'enableSolarLoad',
         'enable_humidity_model': 'enableHumidityModel',
         'enable_joule_heating': 'enableJouleHeating',
         'solar_calculator': 'solarCalculator',
-        'is_internal_flow': 'isInternalFlow',
+        'contact_handling_mode': 'contactHandlingMode',
         'allow_external_flow': 'allowExternalFlow',
         'external_flow_boundary_condition': 'externalFlowBoundaryCondition',
         'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
@@ -135,15 +135,15 @@ class Analysis(object):
         'WIND_COMFORT': 'WindComfort',
         'COMPRESSIBLE': 'Compressible',
         'CONVECTIVE_HEAT_TRANSFER': 'ConvectiveHeatTransfer',
-        'CONJUGATE_HEAT_TRANSFER': 'ConjugateHeatTransfer',
         'COUPLED_CONJUGATE_HEAT_TRANSFER': 'CoupledConjugateHeatTransfer',
         'EMBEDDED_BOUNDARY': 'EmbeddedBoundary',
         'MULTIPHASE': 'Multiphase',
+        'CONJUGATE_HEAT_TRANSFER': 'ConjugateHeatTransfer',
         'HARMONIC_ANALYSIS': 'HarmonicAnalysis',
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, contact_handling_mode=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, is_internal_flow=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -152,6 +152,7 @@ class Analysis(object):
         self._type = None
         self._non_linear_analysis = None
         self._connection_groups = None
+        self._connectors = None
         self._element_technology = None
         self._model = None
         self._materials = None
@@ -183,12 +184,11 @@ class Analysis(object):
         self._pedestrian_comfort_map = None
         self._additional_result_export = None
         self._enable_radiation = None
-        self._contact_handling_mode = None
         self._enable_solar_load = None
         self._enable_humidity_model = None
         self._enable_joule_heating = None
         self._solar_calculator = None
-        self._is_internal_flow = None
+        self._contact_handling_mode = None
         self._allow_external_flow = None
         self._external_flow_boundary_condition = None
         self._embedded_boundary_meshing = None
@@ -200,6 +200,8 @@ class Analysis(object):
             self.non_linear_analysis = non_linear_analysis
         if connection_groups is not None:
             self.connection_groups = connection_groups
+        if connectors is not None:
+            self.connectors = connectors
         if element_technology is not None:
             self.element_technology = element_technology
         if model is not None:
@@ -262,8 +264,6 @@ class Analysis(object):
             self.additional_result_export = additional_result_export
         if enable_radiation is not None:
             self.enable_radiation = enable_radiation
-        if contact_handling_mode is not None:
-            self.contact_handling_mode = contact_handling_mode
         if enable_solar_load is not None:
             self.enable_solar_load = enable_solar_load
         if enable_humidity_model is not None:
@@ -272,8 +272,8 @@ class Analysis(object):
             self.enable_joule_heating = enable_joule_heating
         if solar_calculator is not None:
             self.solar_calculator = solar_calculator
-        if is_internal_flow is not None:
-            self.is_internal_flow = is_internal_flow
+        if contact_handling_mode is not None:
+            self.contact_handling_mode = contact_handling_mode
         if allow_external_flow is not None:
             self.allow_external_flow = allow_external_flow
         if external_flow_boundary_condition is not None:
@@ -351,6 +351,27 @@ class Analysis(object):
         """
 
         self._connection_groups = connection_groups
+
+    @property
+    def connectors(self):
+        """Gets the connectors of this Analysis.  # noqa: E501
+
+
+        :return: The connectors of this Analysis.  # noqa: E501
+        :rtype: list[PinConnector]
+        """
+        return self._connectors
+
+    @connectors.setter
+    def connectors(self, connectors):
+        """Sets the connectors of this Analysis.
+
+
+        :param connectors: The connectors of this Analysis.  # noqa: E501
+        :type: list[PinConnector]
+        """
+
+        self._connectors = connectors
 
     @property
     def element_technology(self):
@@ -553,7 +574,7 @@ class Analysis(object):
 
 
         :return: The time_dependency of this Analysis.  # noqa: E501
-        :rtype: OneOfEmbeddedBoundaryTimeDependency
+        :rtype: OneOfConjugateHeatTransferTimeDependency
         """
         return self._time_dependency
 
@@ -563,7 +584,7 @@ class Analysis(object):
 
 
         :param time_dependency: The time_dependency of this Analysis.  # noqa: E501
-        :type: OneOfEmbeddedBoundaryTimeDependency
+        :type: OneOfConjugateHeatTransferTimeDependency
         """
 
         self._time_dependency = time_dependency
@@ -611,7 +632,7 @@ class Analysis(object):
         :param turbulence_model: The turbulence_model of this Analysis.  # noqa: E501
         :type: str
         """
-        allowed_values = ["SMAGORINSKY", "SPALARTALLMARAS", "NONE", "KEPSILON", "KOMEGA", "KOMEGASST"]  # noqa: E501
+        allowed_values = ["SMAGORINSKY", "NONE", "KEPSILON", "KOMEGASST"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and turbulence_model not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `turbulence_model` ({0}), must be one of {1}"  # noqa: E501
@@ -1044,33 +1065,6 @@ class Analysis(object):
         self._enable_radiation = enable_radiation
 
     @property
-    def contact_handling_mode(self):
-        """Gets the contact_handling_mode of this Analysis.  # noqa: E501
-
-
-        :return: The contact_handling_mode of this Analysis.  # noqa: E501
-        :rtype: str
-        """
-        return self._contact_handling_mode
-
-    @contact_handling_mode.setter
-    def contact_handling_mode(self, contact_handling_mode):
-        """Sets the contact_handling_mode of this Analysis.
-
-
-        :param contact_handling_mode: The contact_handling_mode of this Analysis.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["MANUAL", "AUTO"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and contact_handling_mode not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `contact_handling_mode` ({0}), must be one of {1}"  # noqa: E501
-                .format(contact_handling_mode, allowed_values)
-            )
-
-        self._contact_handling_mode = contact_handling_mode
-
-    @property
     def enable_solar_load(self):
         """Gets the enable_solar_load of this Analysis.  # noqa: E501
 
@@ -1161,27 +1155,31 @@ class Analysis(object):
         self._solar_calculator = solar_calculator
 
     @property
-    def is_internal_flow(self):
-        """Gets the is_internal_flow of this Analysis.  # noqa: E501
+    def contact_handling_mode(self):
+        """Gets the contact_handling_mode of this Analysis.  # noqa: E501
 
-        If active it indicates that the fluid region is contained within the uploaded geometry.  # noqa: E501
 
-        :return: The is_internal_flow of this Analysis.  # noqa: E501
-        :rtype: bool
+        :return: The contact_handling_mode of this Analysis.  # noqa: E501
+        :rtype: str
         """
-        return self._is_internal_flow
+        return self._contact_handling_mode
 
-    @is_internal_flow.setter
-    def is_internal_flow(self, is_internal_flow):
-        """Sets the is_internal_flow of this Analysis.
+    @contact_handling_mode.setter
+    def contact_handling_mode(self, contact_handling_mode):
+        """Sets the contact_handling_mode of this Analysis.
 
-        If active it indicates that the fluid region is contained within the uploaded geometry.  # noqa: E501
 
-        :param is_internal_flow: The is_internal_flow of this Analysis.  # noqa: E501
-        :type: bool
+        :param contact_handling_mode: The contact_handling_mode of this Analysis.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["MANUAL", "AUTO"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and contact_handling_mode not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `contact_handling_mode` ({0}), must be one of {1}"  # noqa: E501
+                .format(contact_handling_mode, allowed_values)
+            )
 
-        self._is_internal_flow = is_internal_flow
+        self._contact_handling_mode = contact_handling_mode
 
     @property
     def allow_external_flow(self):

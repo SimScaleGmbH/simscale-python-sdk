@@ -32,7 +32,6 @@ class EmbeddedBoundary(object):
     """
     openapi_types = {
         'type': 'str',
-        'is_internal_flow': 'bool',
         'allow_external_flow': 'bool',
         'model': 'FluidModel',
         'materials': 'CoupledConjugateHeatTransferMaterials',
@@ -53,7 +52,6 @@ class EmbeddedBoundary(object):
 
     attribute_map = {
         'type': 'type',
-        'is_internal_flow': 'isInternalFlow',
         'allow_external_flow': 'allowExternalFlow',
         'model': 'model',
         'materials': 'materials',
@@ -72,14 +70,13 @@ class EmbeddedBoundary(object):
         'time_dependency': 'timeDependency'
     }
 
-    def __init__(self, type='EMBEDDED_BOUNDARY', is_internal_flow=None, allow_external_flow=None, model=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMBEDDED_BOUNDARY', allow_external_flow=None, model=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, local_vars_configuration=None):  # noqa: E501
         """EmbeddedBoundary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._is_internal_flow = None
         self._allow_external_flow = None
         self._model = None
         self._materials = None
@@ -99,8 +96,6 @@ class EmbeddedBoundary(object):
         self.discriminator = None
 
         self.type = type
-        if is_internal_flow is not None:
-            self.is_internal_flow = is_internal_flow
         if allow_external_flow is not None:
             self.allow_external_flow = allow_external_flow
         if model is not None:
@@ -158,29 +153,6 @@ class EmbeddedBoundary(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def is_internal_flow(self):
-        """Gets the is_internal_flow of this EmbeddedBoundary.  # noqa: E501
-
-        If active it indicates that the fluid region is contained within the uploaded geometry.  # noqa: E501
-
-        :return: The is_internal_flow of this EmbeddedBoundary.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_internal_flow
-
-    @is_internal_flow.setter
-    def is_internal_flow(self, is_internal_flow):
-        """Sets the is_internal_flow of this EmbeddedBoundary.
-
-        If active it indicates that the fluid region is contained within the uploaded geometry.  # noqa: E501
-
-        :param is_internal_flow: The is_internal_flow of this EmbeddedBoundary.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_internal_flow = is_internal_flow
 
     @property
     def allow_external_flow(self):

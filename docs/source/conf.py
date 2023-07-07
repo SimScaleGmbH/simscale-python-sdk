@@ -15,7 +15,7 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Project information -----------------------------------------------------
 
 project = 'SimScale Python SDK'
-copyright = '2021, SimScale GmbH'
+copyright = '2023, SimScale GmbH'
 author = 'SimScale GmbH'
 
 # -- General configuration ---------------------------------------------------

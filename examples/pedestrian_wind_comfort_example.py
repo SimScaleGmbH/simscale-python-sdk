@@ -225,19 +225,28 @@ while simulation_run.status not in ("FINISHED", "CANCELED", "FAILED"):
     simulation_run = simulation_run_api.get_simulation_run(project_id, simulation_id, run_id)
     print(f"Simulation run status: {simulation_run.status} - {simulation_run.progress}")
 
-# Get result metadata and download results
-results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, run_id)
-statistical_surface_solution_info = [r for r in results._embedded if r.category == "STATISTICAL_SURFACE_SOLUTION"][0]
+# Get result metadata and download results (response is paginated)
+results = simulation_run_api.get_simulation_run_results(
+    project_id,
+    simulation_id,
+    run_id,
+    page=1,
+    limit=100,
+    category="STATISTICAL_SURFACE_SOLUTION"
+)
+print(f"Results: {results}")
+
+# Download statistical surface solution
+statistical_surface_solution_info = results.embedded[0]
 statistical_surface_solution_response = api_client.rest_client.GET(
     url=statistical_surface_solution_info.download.url, headers={api_key_header: api_key}, _preload_content=False
 )
 with open("statistical_surface_solution.zip", "wb") as file:
     file.write(statistical_surface_solution_response.data)
-zip = zipfile.ZipFile("statistical_surface_solution.zip")
-print(f"Statistical surface solution solution ZIP file content: {zip.namelist()}")
+zip_file = zipfile.ZipFile("statistical_surface_solution.zip")
+print(f"Statistical surface solution solution ZIP file content: {zip_file.namelist()}")
 
 # Generating simulation run report
-
 camera_settings = UserInputCameraSettings(
     projection_type=ProjectionType.ORTHOGONAL,
     up=Vector3D(0.5, 0.3, 0.2),
@@ -323,15 +332,22 @@ while additional_run.status not in ("FINISHED", "CANCELED", "FAILED"):
     print(f"Simulation run status: {additional_run.status} - {additional_run.progress}")
 
 # Get result metadata and download results
-new_results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, additional_run_id)
-
-statistical_surface_solution_info = [r for r in new_results._embedded if r.category == "STATISTICAL_SURFACE_SOLUTION"][
-    0
-]
-statistical_surface_solution_response = api_client.rest_client.GET(
-    url=statistical_surface_solution_info.download.url, headers={api_key_header: api_key}, _preload_content=False
+updated_results = simulation_run_api.get_simulation_run_results(
+    project_id,
+    simulation_id,
+    run_id,
+    page=1,
+    limit=100,
+    category="STATISTICAL_SURFACE_SOLUTION"
 )
-with open("statistical_surface_solution.zip", "wb") as file:
-    file.write(statistical_surface_solution_response.data)
-zip = zipfile.ZipFile("statistical_surface_solution.zip")
-print(f"Statistical surface solution solution ZIP file content: {zip.namelist()}")
+print(f"Updated results: {results}")
+
+# Download statistical surface solution once again
+updated_statistical_surface_solution_info = updated_results.embedded[0]
+updated_statistical_surface_solution_response = api_client.rest_client.GET(
+    url=updated_statistical_surface_solution_info.download.url, headers={api_key_header: api_key}, _preload_content=False
+)
+with open("statistical_surface_solution_2.zip", "wb") as file:
+    file.write(updated_statistical_surface_solution_response.data)
+zip_file = zipfile.ZipFile("statistical_surface_solution_2.zip")
+print(f"Updated statistical surface solution solution ZIP file content: {zip_file.namelist()}")

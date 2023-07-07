@@ -18,4 +18,5 @@ from simscale_sdk.api.space_permissions_api import SpacePermissionsApi
 from simscale_sdk.api.spaces_api import SpacesApi
 from simscale_sdk.api.storage_api import StorageApi
 from simscale_sdk.api.table_imports_api import TableImportsApi
+from simscale_sdk.api.users_api import UsersApi
 from simscale_sdk.api.wind_api import WindApi

@@ -73,14 +73,6 @@ simscale\_sdk.models.absolute\_harmonic\_velocity\_type module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.absolute\_humidity\_source module
-------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.absolute_humidity_source
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.absolute\_passive\_scalar\_source module
 -------------------------------------------------------------
 
@@ -209,10 +201,26 @@ simscale\_sdk.models.advanced\_modelling module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.advanced\_pin\_settings module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.advanced_pin_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.advanced\_roi\_settings module
 ---------------------------------------------------
 
 .. automodule:: simscale_sdk.models.advanced_roi_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.advanced\_simmetrix\_em\_settings module
+-------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.advanced_simmetrix_em_settings
    :members:
    :undoc-members:
    :show-inheritance:
@@ -521,6 +529,14 @@ simscale\_sdk.models.automatic\_subspace\_settings module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.automatic\_turbulence module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_turbulence
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.average\_fields\_calculation\_result\_control\_item module
 -------------------------------------------------------------------------------
 
@@ -805,6 +821,14 @@ simscale\_sdk.models.clock\_time\_write\_control module
 -------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.clock_time_write_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.closed\_coil module
+----------------------------------------
+
+.. automodule:: simscale_sdk.models.closed_coil
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1297,6 +1321,14 @@ simscale\_sdk.models.custom\_fluid\_bc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.custom\_mesh\_sizing\_simmetrix module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.custom_mesh_sizing_simmetrix
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.custom\_omega\_dissipation module
 ------------------------------------------------------
 
@@ -1445,14 +1477,6 @@ simscale\_sdk.models.dilu\_preconditioner module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dilu_preconditioner
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.dimensional\_absolute\_humidity\_rate module
------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.dimensional_absolute_humidity_rate
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1669,6 +1693,14 @@ simscale\_sdk.models.dimensional\_function\_length module
 ---------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_function_length
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_function\_magnetic\_flux\_density module
+--------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_magnetic_flux_density
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2001,14 +2033,6 @@ simscale\_sdk.models.dimensional\_specific\_heat module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.dimensional\_specific\_humidity\_rate module
------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.dimensional_specific_humidity_rate
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.dimensional\_specific\_turbulence\_dissipation\_rate module
 --------------------------------------------------------------------------------
 
@@ -2029,6 +2053,14 @@ simscale\_sdk.models.dimensional\_speed module
 ----------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_speed
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_stiffness module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_stiffness
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2393,6 +2425,22 @@ simscale\_sdk.models.distance\_region\_refinement\_with\_levels module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.distance\_sizing module
+--------------------------------------------
+
+.. automodule:: simscale_sdk.models.distance_sizing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.distance\_volume\_custom\_sizing module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.distance_volume_custom_sizing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.distributed\_isotropic\_stiffness\_definition module
 -------------------------------------------------------------------------
 
@@ -2485,6 +2533,14 @@ simscale\_sdk.models.electromagnetic\_material module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.electromagnetic_material
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_result\_control module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_result_control
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3177,6 +3233,14 @@ simscale\_sdk.models.fixed\_value\_tkebc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.fixed\_value\_turbulence module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.fixed_value_turbulence
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.fixed\_value\_vbc module
 ---------------------------------------------
 
@@ -3305,6 +3369,22 @@ simscale\_sdk.models.fluid\_solvers module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.fluid\_type\_gas module
+--------------------------------------------
+
+.. automodule:: simscale_sdk.models.fluid_type_gas
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.fluid\_type\_liquid module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.fluid_type_liquid
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.flux\_heat\_source module
 ----------------------------------------------
 
@@ -3341,6 +3421,14 @@ simscale\_sdk.models.follower\_pressure\_bc module
 --------------------------------------------------
 
 .. automodule:: simscale_sdk.models.follower_pressure_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.force\_and\_torque module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.force_and_torque
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3597,14 +3685,6 @@ simscale\_sdk.models.gamg\_solver module
 ----------------------------------------
 
 .. automodule:: simscale_sdk.models.gamg_solver
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.garofalo\_creep\_formulation module
---------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.garofalo_creep_formulation
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4361,6 +4441,14 @@ simscale\_sdk.models.inside\_region\_refinement\_with\_levels module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.inside\_volume\_custom\_sizing module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.inside_volume_custom_sizing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.intensity\_kinetic\_energy\_inlet\_tkebc module
 --------------------------------------------------------------------
 
@@ -4581,6 +4669,14 @@ simscale\_sdk.models.linear\_interpolation\_scheme module
 ---------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.linear_interpolation_scheme
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.linear\_isotropic\_permeabiltiy module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.linear_isotropic_permeabiltiy
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5345,6 +5441,14 @@ simscale\_sdk.models.none\_reactualization module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.nonlinear\_isotropic\_permeability module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.nonlinear_isotropic_permeability
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.normalized\_displacement\_result\_control\_item module
 ---------------------------------------------------------------------------
 
@@ -5805,6 +5909,14 @@ simscale\_sdk.models.physical\_contact module
 ---------------------------------------------
 
 .. automodule:: simscale_sdk.models.physical_contact
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.pin\_connector module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.pin_connector
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7009,14 +7121,6 @@ simscale\_sdk.models.specific\_conductance\_wall\_thermal module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.specific\_humidity\_source module
-------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.specific_humidity_source
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.specific\_passive\_scalar\_source module
 -------------------------------------------------------------
 
@@ -7357,6 +7461,14 @@ simscale\_sdk.models.sum\_fields\_calculation\_result\_control\_item module
 ---------------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.sum_fields_calculation_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.surface\_custom\_sizing module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.surface_custom_sizing
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7969,6 +8081,14 @@ simscale\_sdk.models.turbulent\_heat\_flux\_tbc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.turbulent\_intensity\_and\_reference\_length\_turbulence module
+------------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.turbulent_intensity_and_reference_length_turbulence
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.two\_resistor\_network module
 --------------------------------------------------
 
@@ -8021,6 +8141,14 @@ simscale\_sdk.models.unit\_length module
 ----------------------------------------
 
 .. automodule:: simscale_sdk.models.unit_length
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.unit\_magnetic\_field\_strength module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.unit_magnetic_field_strength
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8089,6 +8217,22 @@ simscale\_sdk.models.user\_input\_camera\_settings module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.user\_signup\_request module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.user_signup_request
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.user\_signup\_response module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.user_signup_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.variable\_group\_f module
 ----------------------------------------------
 
@@ -8109,6 +8253,14 @@ simscale\_sdk.models.variable\_group\_legendprobability module
 --------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.variable_group_legendprobability
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.variable\_group\_magneticfieldstrength module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.variable_group_magneticfieldstrength
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8245,6 +8397,14 @@ simscale\_sdk.models.velocity\_result\_control\_item module
 -----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.velocity_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.volume\_custom\_sizing module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.volume_custom_sizing
    :members:
    :undoc-members:
    :show-inheritance:

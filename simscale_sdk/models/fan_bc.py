@@ -37,6 +37,7 @@ class FanBC(object):
         'pressure_rgh': 'FanPBC',
         'gauge_pressure': 'FanPBC',
         'gauge_pressure_rgh': 'FanPBC',
+        'turbulence': 'OneOfFanBCTurbulence',
         'temperature': 'FixedValueTBC',
         'net_radiative_heat_flux': 'OneOfFanBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfFanBCRadiativeIntensityRay',
@@ -51,6 +52,7 @@ class FanBC(object):
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
+        'turbulence': 'turbulence',
         'temperature': 'temperature',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
@@ -58,7 +60,7 @@ class FanBC(object):
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='FAN', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, temperature=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FAN', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """FanBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class FanBC(object):
         self._pressure_rgh = None
         self._gauge_pressure = None
         self._gauge_pressure_rgh = None
+        self._turbulence = None
         self._temperature = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
@@ -88,6 +91,8 @@ class FanBC(object):
             self.gauge_pressure = gauge_pressure
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
+        if turbulence is not None:
+            self.turbulence = turbulence
         if temperature is not None:
             self.temperature = temperature
         if net_radiative_heat_flux is not None:
@@ -228,6 +233,27 @@ class FanBC(object):
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh
+
+    @property
+    def turbulence(self):
+        """Gets the turbulence of this FanBC.  # noqa: E501
+
+
+        :return: The turbulence of this FanBC.  # noqa: E501
+        :rtype: OneOfFanBCTurbulence
+        """
+        return self._turbulence
+
+    @turbulence.setter
+    def turbulence(self, turbulence):
+        """Sets the turbulence of this FanBC.
+
+
+        :param turbulence: The turbulence of this FanBC.  # noqa: E501
+        :type: OneOfFanBCTurbulence
+        """
+
+        self._turbulence = turbulence
 
     @property
     def temperature(self):

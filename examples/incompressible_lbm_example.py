@@ -102,7 +102,7 @@ geometry_api.update_geometry(project_id, geometry_id, geometry)
 geometry_mappings = geometry_api.get_geometry_mappings(
     project_id, geometry_id, _class="face", entities=["Cylinder", "Cube 2", "Sphere"]
 )
-entities = [mapping.name for mapping in geometry_mappings._embedded]
+entities = [mapping.name for mapping in geometry_mappings.embedded]
 print(f"entities: {entities}")
 
 # Upload table containing Probe Points information
@@ -313,13 +313,19 @@ while simulation_run.status not in ("FINISHED", "CANCELED", "FAILED"):
     simulation_run = simulation_run_api.get_simulation_run(project_id, simulation_id, run_id)
     print(f"Simulation run status: {simulation_run.status} - {simulation_run.progress}")
 
-# Get result metadata and download results
+# Get result metadata and download results (response is paginated)
+probe_points_results = simulation_run_api.get_simulation_run_results(
+    project_id,
+    simulation_id,
+    run_id,
+    page=1,
+    limit=100,
+    category="PROBE_POINT_PLOT_STATISTICAL_DATA"
+)
+print(f"Probe points results: {probe_points_results}")
 
-results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, run_id)
-
-probe_point_plot_statistical_data_info = [
-    r for r in results._embedded if r.category == "PROBE_POINT_PLOT_STATISTICAL_DATA"
-][0]
+# Download probe points data
+probe_point_plot_statistical_data_info = probe_points_results.embedded[0]
 probe_point_plot_statistical_data_response = api_client.rest_client.GET(
     url=probe_point_plot_statistical_data_info.download.url,
     headers={api_key_header: api_key},
@@ -332,7 +338,18 @@ print(f"Probe point plot statistical data as CSV: {probe_point_plot_statistical_
 with open("probe_points.csv", "w") as file:
     file.write(probe_point_plot_statistical_data_csv)
 
-averaged_solution_info = [r for r in results._embedded if r.category == "AVERAGED_SOLUTION"][0]
+# Download averaged solution fields
+averaged_solution_results = simulation_run_api.get_simulation_run_results(
+    project_id,
+    simulation_id,
+    run_id,
+    page=1,
+    limit=100,
+    category="AVERAGED_SOLUTION"
+)
+print(f"Averaged solution results: {averaged_solution_results}")
+
+averaged_solution_info = averaged_solution_results.embedded[0]
 averaged_solution_response = api_client.rest_client.GET(
     url=averaged_solution_info.download.url,
     headers={api_key_header: api_key},
@@ -340,11 +357,10 @@ averaged_solution_response = api_client.rest_client.GET(
 )
 with open("averaged_solution.zip", "wb") as file:
     file.write(averaged_solution_response.data)
-zip = zipfile.ZipFile("averaged_solution.zip")
-print(f"Averaged solution ZIP file content: {zip.namelist()}")
+zip_file = zipfile.ZipFile("averaged_solution.zip")
+print(f"Averaged solution ZIP file content: {zip_file.namelist()}")
 
 # Generating simulation run report
-
 camera_settings = UserInputCameraSettings(
     projection_type=ProjectionType.ORTHOGONAL,
     up=Vector3D(0.5, 0.3, 0.2),

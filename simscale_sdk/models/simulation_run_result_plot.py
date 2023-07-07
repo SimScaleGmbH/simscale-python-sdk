@@ -134,7 +134,7 @@ class SimulationRunResultPlot(object):
     def category(self):
         """Gets the category of this SimulationRunResultPlot.  # noqa: E501
 
-        The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc.   # noqa: E501
+        The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'MOMENT_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc.   # noqa: E501
 
         :return: The category of this SimulationRunResultPlot.  # noqa: E501
         :rtype: str
@@ -145,7 +145,7 @@ class SimulationRunResultPlot(object):
     def category(self, category):
         """Sets the category of this SimulationRunResultPlot.
 
-        The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc.   # noqa: E501
+        The result category. For solution fields values include 'SOLUTION', 'AVERAGED_SOLUTION', 'TRANSIENT_SOLUTION', 'STATISTICAL_SURFACE_SOLUTION', etc. For convergence plots values include 'RESIDUALS_PLOT', 'NUMBER_OF_NEWTON_ITERATIONS', etc. For plots values include 'FORCE_PLOT', 'MOMENT_PLOT', 'FORCE_COEFFICIENTS_PLOT', 'PROBE_POINT_PLOT', 'AREA_AVERAGE', 'FACE_CALC', etc.   # noqa: E501
 
         :param category: The category of this SimulationRunResultPlot.  # noqa: E501
         :type: str

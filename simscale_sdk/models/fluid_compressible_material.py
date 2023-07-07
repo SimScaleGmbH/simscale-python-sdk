@@ -33,6 +33,7 @@ class FluidCompressibleMaterial(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'fluid_type': 'OneOfFluidCompressibleMaterialFluidType',
         'associated_phase': 'str',
         'specie': 'SpecieDefault',
         'transport': 'OneOfFluidCompressibleMaterialTransport',
@@ -45,6 +46,7 @@ class FluidCompressibleMaterial(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'fluid_type': 'fluidType',
         'associated_phase': 'associatedPhase',
         'specie': 'specie',
         'transport': 'transport',
@@ -54,7 +56,7 @@ class FluidCompressibleMaterial(object):
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, specie=None, transport=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, specie=None, transport=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """FluidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +64,7 @@ class FluidCompressibleMaterial(object):
 
         self._type = None
         self._name = None
+        self._fluid_type = None
         self._associated_phase = None
         self._specie = None
         self._transport = None
@@ -74,6 +77,8 @@ class FluidCompressibleMaterial(object):
         self.type = type
         if name is not None:
             self.name = name
+        if fluid_type is not None:
+            self.fluid_type = fluid_type
         if associated_phase is not None:
             self.associated_phase = associated_phase
         if specie is not None:
@@ -134,6 +139,27 @@ class FluidCompressibleMaterial(object):
         """
 
         self._name = name
+
+    @property
+    def fluid_type(self):
+        """Gets the fluid_type of this FluidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The fluid_type of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: OneOfFluidCompressibleMaterialFluidType
+        """
+        return self._fluid_type
+
+    @fluid_type.setter
+    def fluid_type(self, fluid_type):
+        """Sets the fluid_type of this FluidCompressibleMaterial.
+
+
+        :param fluid_type: The fluid_type of this FluidCompressibleMaterial.  # noqa: E501
+        :type: OneOfFluidCompressibleMaterialFluidType
+        """
+
+        self._fluid_type = fluid_type
 
     @property
     def associated_phase(self):

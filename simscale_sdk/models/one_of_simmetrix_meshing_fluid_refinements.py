@@ -36,6 +36,8 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         'refinement': 'OneOfRegionRefinementWithLengthRefinement',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
+        'sizing': 'OneOfSurfaceCustomSizingSizing',
+        'custom_sizing_modes': 'OneOfVolumeCustomSizingCustomSizingModes',
         'max_element_size': 'DimensionalLength',
         'number_of_layers': 'int',
         'total_relative_thickness': 'float',
@@ -55,6 +57,8 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         'refinement': 'refinement',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
+        'sizing': 'sizing',
+        'custom_sizing_modes': 'customSizingModes',
         'max_element_size': 'maxElementSize',
         'number_of_layers': 'numberOfLayers',
         'total_relative_thickness': 'totalRelativeThickness',
@@ -70,13 +74,15 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
 
     discriminator_value_class_map = {
         'REGION_LENGTH': 'RegionRefinementWithLength',
+        'SURFACE_CUSTOM_SIZING': 'SurfaceCustomSizing',
+        'VOLUME_CUSTOM_SIZING': 'VolumeCustomSizing',
         'SIMMETRIX_LOCAL_SIZING_V10': 'SimmetrixLocalSizingRefinement',
         'SIMMETRIX_BOUNDARY_LAYER_V13': 'SimmetrixBoundaryLayerRefinement',
         'SIMMETRIX_SWEPT_MESH_REFINEMENT': 'SimmetrixSweptMeshRefinement',
         'SIMMETRIX_THIN_SECTION_MESH_REFINEMENT': 'SimmetrixThinSectionMeshRefinement'
     }
 
-    def __init__(self, type='SIMMETRIX_THIN_SECTION_MESH_REFINEMENT', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, sizing_type=None, surface_element_type=None, specify_local_size=None, source_topological_reference=None, destination_topological_reference=None, distance_type=None, number_of_elements=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_THIN_SECTION_MESH_REFINEMENT', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, sizing=None, custom_sizing_modes=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, sizing_type=None, surface_element_type=None, specify_local_size=None, source_topological_reference=None, destination_topological_reference=None, distance_type=None, number_of_elements=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixMeshingFluidRefinements - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +93,8 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         self._refinement = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
+        self._sizing = None
+        self._custom_sizing_modes = None
         self._max_element_size = None
         self._number_of_layers = None
         self._total_relative_thickness = None
@@ -109,6 +117,10 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
+        if sizing is not None:
+            self.sizing = sizing
+        if custom_sizing_modes is not None:
+            self.custom_sizing_modes = custom_sizing_modes
         if max_element_size is not None:
             self.max_element_size = max_element_size
         if number_of_layers is not None:
@@ -240,6 +252,48 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         """
 
         self._geometry_primitive_uuids = geometry_primitive_uuids
+
+    @property
+    def sizing(self):
+        """Gets the sizing of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+
+
+        :return: The sizing of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :rtype: OneOfSurfaceCustomSizingSizing
+        """
+        return self._sizing
+
+    @sizing.setter
+    def sizing(self, sizing):
+        """Sets the sizing of this OneOfSimmetrixMeshingFluidRefinements.
+
+
+        :param sizing: The sizing of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :type: OneOfSurfaceCustomSizingSizing
+        """
+
+        self._sizing = sizing
+
+    @property
+    def custom_sizing_modes(self):
+        """Gets the custom_sizing_modes of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+
+
+        :return: The custom_sizing_modes of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :rtype: OneOfVolumeCustomSizingCustomSizingModes
+        """
+        return self._custom_sizing_modes
+
+    @custom_sizing_modes.setter
+    def custom_sizing_modes(self, custom_sizing_modes):
+        """Sets the custom_sizing_modes of this OneOfSimmetrixMeshingFluidRefinements.
+
+
+        :param custom_sizing_modes: The custom_sizing_modes of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :type: OneOfVolumeCustomSizingCustomSizingModes
+        """
+
+        self._custom_sizing_modes = custom_sizing_modes
 
     @property
     def max_element_size(self):

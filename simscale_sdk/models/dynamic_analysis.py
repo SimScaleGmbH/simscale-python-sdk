@@ -33,6 +33,7 @@ class DynamicAnalysis(object):
     openapi_types = {
         'type': 'str',
         'connection_groups': 'list[OneOfDynamicAnalysisConnectionGroups]',
+        'connectors': 'list[PinConnector]',
         'element_technology': 'SolidElementTechnology',
         'model': 'SolidModel',
         'materials': 'list[SolidMaterial]',
@@ -47,6 +48,7 @@ class DynamicAnalysis(object):
     attribute_map = {
         'type': 'type',
         'connection_groups': 'connectionGroups',
+        'connectors': 'connectors',
         'element_technology': 'elementTechnology',
         'model': 'model',
         'materials': 'materials',
@@ -58,7 +60,7 @@ class DynamicAnalysis(object):
         'mesh_order': 'meshOrder'
     }
 
-    def __init__(self, type='DYNAMIC_ANALYSIS', connection_groups=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='DYNAMIC_ANALYSIS', connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
         """DynamicAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class DynamicAnalysis(object):
 
         self._type = None
         self._connection_groups = None
+        self._connectors = None
         self._element_technology = None
         self._model = None
         self._materials = None
@@ -80,6 +83,8 @@ class DynamicAnalysis(object):
         self.type = type
         if connection_groups is not None:
             self.connection_groups = connection_groups
+        if connectors is not None:
+            self.connectors = connectors
         if element_technology is not None:
             self.element_technology = element_technology
         if model is not None:
@@ -144,6 +149,27 @@ class DynamicAnalysis(object):
         """
 
         self._connection_groups = connection_groups
+
+    @property
+    def connectors(self):
+        """Gets the connectors of this DynamicAnalysis.  # noqa: E501
+
+
+        :return: The connectors of this DynamicAnalysis.  # noqa: E501
+        :rtype: list[PinConnector]
+        """
+        return self._connectors
+
+    @connectors.setter
+    def connectors(self, connectors):
+        """Sets the connectors of this DynamicAnalysis.
+
+
+        :param connectors: The connectors of this DynamicAnalysis.  # noqa: E501
+        :type: list[PinConnector]
+        """
+
+        self._connectors = connectors
 
     @property
     def element_technology(self):

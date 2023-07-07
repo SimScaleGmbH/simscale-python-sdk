@@ -32,7 +32,7 @@ class Coil(object):
     """
     openapi_types = {
         'name': 'str',
-        'topology': 'OpenCoil',
+        'topology': 'OneOfCoilTopology',
         'coil_type': 'OneOfCoilCoilType',
         'excitation': 'CurrentExcitation'
     }
@@ -92,7 +92,7 @@ class Coil(object):
 
 
         :return: The topology of this Coil.  # noqa: E501
-        :rtype: OpenCoil
+        :rtype: OneOfCoilTopology
         """
         return self._topology
 
@@ -102,7 +102,7 @@ class Coil(object):
 
 
         :param topology: The topology of this Coil.  # noqa: E501
-        :type: OpenCoil
+        :type: OneOfCoilTopology
         """
 
         self._topology = topology

@@ -33,6 +33,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'fluid_type': 'OneOfFluidCompressibleMaterialFluidType',
         'associated_phase': 'str',
         'viscosity_model': 'OneOfIncompressibleMaterialViscosityModel',
         'density': 'DimensionalDensity',
@@ -54,6 +55,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'fluid_type': 'fluidType',
         'associated_phase': 'associatedPhase',
         'viscosity_model': 'viscosityModel',
         'density': 'density',
@@ -77,7 +79,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'COMPRESSIBLE': 'FluidCompressibleMaterial'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferMaterialsFluids - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
 
         self._type = None
         self._name = None
+        self._fluid_type = None
         self._associated_phase = None
         self._viscosity_model = None
         self._density = None
@@ -106,6 +109,8 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         self.type = type
         if name is not None:
             self.name = name
+        if fluid_type is not None:
+            self.fluid_type = fluid_type
         if associated_phase is not None:
             self.associated_phase = associated_phase
         if viscosity_model is not None:
@@ -184,6 +189,27 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         """
 
         self._name = name
+
+    @property
+    def fluid_type(self):
+        """Gets the fluid_type of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+
+
+        :return: The fluid_type of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :rtype: OneOfFluidCompressibleMaterialFluidType
+        """
+        return self._fluid_type
+
+    @fluid_type.setter
+    def fluid_type(self, fluid_type):
+        """Sets the fluid_type of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
+
+
+        :param fluid_type: The fluid_type of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :type: OneOfFluidCompressibleMaterialFluidType
+        """
+
+        self._fluid_type = fluid_type
 
     @property
     def associated_phase(self):

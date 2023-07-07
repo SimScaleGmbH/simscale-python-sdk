@@ -105,7 +105,7 @@ geometry_api.update_geometry(project_id, geometry_id, geometry)
 
 # Get geometry mappings
 def get_single_entity_name(project_id, geometry_id, **kwargs):
-    entities = geometry_api.get_geometry_mappings(project_id, geometry_id, **kwargs)._embedded
+    entities = geometry_api.get_geometry_mappings(project_id, geometry_id, **kwargs).embedded
     if len(entities) == 1:
         return entities[0].name
     else:
@@ -368,11 +368,19 @@ while simulation_run.status not in ("FINISHED", "CANCELED", "FAILED"):
     simulation_run = simulation_run_api.get_simulation_run(project_id, simulation_id, run_id)
     print(f"Simulation run status: {simulation_run.status} - {simulation_run.progress}")
 
-# Get result metadata and download results
-results = simulation_run_api.get_simulation_run_results(project_id, simulation_id, run_id)
-print(f"results: {results}")
+# Get result metadata and download results (response is paginated)
+probe_point_results = simulation_run_api.get_simulation_run_results(
+    project_id,
+    simulation_id,
+    run_id,
+    page=1,
+    limit=100,
+    category="PROBE_POINT_PLOT"
+)
+print(f"Probe point results: {probe_point_results}")
 
-probe_point_plot_info = [r for r in results._embedded if r.category == "PROBE_POINT_PLOT"][0]
+# Download probe point plot data
+probe_point_plot_info = probe_point_results.embedded[0]
 probe_point_plot_data_response = api_client.rest_client.GET(
     url=probe_point_plot_info.download.url, headers={api_key_header: api_key}, _preload_content=False
 )
@@ -383,14 +391,25 @@ print(f"Probe point plot data as CSV: {probe_point_plot_data_csv}")
 with open("probe_points.csv", "w") as file:
     file.write(probe_point_plot_data_csv)
 
-solution_info = [r for r in results._embedded if r.category == "SOLUTION"][0]
+# Download solution fields
+solution_fields_results = simulation_run_api.get_simulation_run_results(
+    project_id,
+    simulation_id,
+    run_id,
+    page=1,
+    limit=100,
+    category="SOLUTION"
+)
+print(f"Solution field results: {solution_fields_results}")
+
+solution_info = solution_fields_results.embedded[0]
 solution_response = api_client.rest_client.GET(
     url=solution_info.download.url, headers={api_key_header: api_key}, _preload_content=False
 )
 with open("solution.zip", "wb") as file:
     file.write(solution_response.data)
-zip = zipfile.ZipFile("solution.zip")
-print(f"Averaged solution ZIP file content: {zip.namelist()}")
+zip_file = zipfile.ZipFile("solution.zip")
+print(f"Averaged solution ZIP file content: {zip_file.namelist()}")
 
 # Generating simulation run report
 camera_settings = UserInputCameraSettings(

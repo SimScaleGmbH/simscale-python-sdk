@@ -34,6 +34,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         'type': 'str',
         'name': 'str',
         'velocity': 'OneOfCustomFluidBCVelocity',
+        'turbulence': 'OneOfFanBCTurbulence',
         'temperature': 'OneOfCustomFluidBCTemperature',
         'passive_scalars': 'list[OneOfCustomFluidBCPassiveScalars]',
         'phase_fraction': 'OneOfCustomFluidBCPhaseFraction',
@@ -64,6 +65,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         'type': 'type',
         'name': 'name',
         'velocity': 'velocity',
+        'turbulence': 'turbulence',
         'temperature': 'temperature',
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
@@ -104,7 +106,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         'EMPTY_2D': 'Empty2DBC'
     }
 
-    def __init__(self, type='EMPTY_2D', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMPTY_2D', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, local_vars_configuration=None):  # noqa: E501
         """OneOfIncompressibleBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,6 +115,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         self._type = None
         self._name = None
         self._velocity = None
+        self._turbulence = None
         self._temperature = None
         self._passive_scalars = None
         self._phase_fraction = None
@@ -144,6 +147,8 @@ class OneOfIncompressibleBoundaryConditions(object):
             self.name = name
         if velocity is not None:
             self.velocity = velocity
+        if turbulence is not None:
+            self.turbulence = turbulence
         if temperature is not None:
             self.temperature = temperature
         if passive_scalars is not None:
@@ -259,6 +264,27 @@ class OneOfIncompressibleBoundaryConditions(object):
         """
 
         self._velocity = velocity
+
+    @property
+    def turbulence(self):
+        """Gets the turbulence of this OneOfIncompressibleBoundaryConditions.  # noqa: E501
+
+
+        :return: The turbulence of this OneOfIncompressibleBoundaryConditions.  # noqa: E501
+        :rtype: OneOfFanBCTurbulence
+        """
+        return self._turbulence
+
+    @turbulence.setter
+    def turbulence(self, turbulence):
+        """Sets the turbulence of this OneOfIncompressibleBoundaryConditions.
+
+
+        :param turbulence: The turbulence of this OneOfIncompressibleBoundaryConditions.  # noqa: E501
+        :type: OneOfFanBCTurbulence
+        """
+
+        self._turbulence = turbulence
 
     @property
     def temperature(self):

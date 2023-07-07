@@ -34,6 +34,7 @@ class VelocityInletBC(object):
         'type': 'str',
         'name': 'str',
         'velocity': 'OneOfVelocityInletBCVelocity',
+        'turbulence': 'OneOfVelocityInletBCTurbulence',
         'temperature': 'OneOfVelocityInletBCTemperature',
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'FixedValuePFBC',
@@ -50,6 +51,7 @@ class VelocityInletBC(object):
         'type': 'type',
         'name': 'name',
         'velocity': 'velocity',
+        'turbulence': 'turbulence',
         'temperature': 'temperature',
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
@@ -62,7 +64,7 @@ class VelocityInletBC(object):
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='VELOCITY_INLET_V3', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VELOCITY_INLET_V3', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """VelocityInletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +73,7 @@ class VelocityInletBC(object):
         self._type = None
         self._name = None
         self._velocity = None
+        self._turbulence = None
         self._temperature = None
         self._passive_scalars = None
         self._phase_fraction = None
@@ -88,6 +91,8 @@ class VelocityInletBC(object):
             self.name = name
         if velocity is not None:
             self.velocity = velocity
+        if turbulence is not None:
+            self.turbulence = turbulence
         if temperature is not None:
             self.temperature = temperature
         if passive_scalars is not None:
@@ -175,6 +180,27 @@ class VelocityInletBC(object):
         """
 
         self._velocity = velocity
+
+    @property
+    def turbulence(self):
+        """Gets the turbulence of this VelocityInletBC.  # noqa: E501
+
+
+        :return: The turbulence of this VelocityInletBC.  # noqa: E501
+        :rtype: OneOfVelocityInletBCTurbulence
+        """
+        return self._turbulence
+
+    @turbulence.setter
+    def turbulence(self, turbulence):
+        """Sets the turbulence of this VelocityInletBC.
+
+
+        :param turbulence: The turbulence of this VelocityInletBC.  # noqa: E501
+        :type: OneOfVelocityInletBCTurbulence
+        """
+
+        self._turbulence = turbulence
 
     @property
     def temperature(self):

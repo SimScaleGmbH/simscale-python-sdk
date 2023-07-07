@@ -44,7 +44,6 @@ project = projects_api.create_project(project)
 project_id = project.project_id
 
 # Upload CAD: POST /storage + PUT {storage.url}
-# Note: uploads to https://httpbin.org
 storage = storage_api.create_storage()
 cad_file_content = "dummy"  # load CAD file content
 api_client.rest_client.PUT(url=storage.url, body=cad_file_content)
@@ -143,11 +142,16 @@ while simulation_run.status not in ("FINISHED", "CANCELED", "FAILED"):
     simulation_run = simulation_run_api.get_simulation_run(project_id, simulation_id, run_id)
     time.sleep(10)
 
-# Get result metadata: GET /projects/{projectId}/simulations/{simulationId}/runs/{runId}/results
+# Get result metadata: GET /projects/{projectId}/simulations/{simulationId}/runs/{runId}/results (response is paginated)
 results = simulation_run_api.get_simulation_run_results(
-    project_id, simulation_id, run_id, category="STATISTICAL_SURFACE_SOLUTION"
+    project_id,
+    simulation_id,
+    run_id,
+    page=1,
+    limit=100,
+    category="STATISTICAL_SURFACE_SOLUTION"
 )
-solution = results._embedded[0]
+solution = results.embedded[0]
 too_large = solution.download.uncompressed_size_in_bytes > 100000000
 if too_large:
     raise Exception("Solution is too large", solution)

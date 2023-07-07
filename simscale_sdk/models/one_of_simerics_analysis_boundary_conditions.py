@@ -34,6 +34,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         'type': 'str',
         'name': 'str',
         'velocity': 'OneOfWallBCVelocity',
+        'turbulence': 'OneOfPressureInletBCTurbulence',
         'temperature': 'OneOfWallBCTemperature',
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'OneOfWallBCPhaseFraction',
@@ -55,6 +56,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         'type': 'type',
         'name': 'name',
         'velocity': 'velocity',
+        'turbulence': 'turbulence',
         'temperature': 'temperature',
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
@@ -81,7 +83,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         'SYMMETRY': 'SymmetryBC'
     }
 
-    def __init__(self, type='SYMMETRY', name=None, velocity=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SYMMETRY', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimericsAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         self._type = None
         self._name = None
         self._velocity = None
+        self._turbulence = None
         self._temperature = None
         self._passive_scalars = None
         self._phase_fraction = None
@@ -112,6 +115,8 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
             self.name = name
         if velocity is not None:
             self.velocity = velocity
+        if turbulence is not None:
+            self.turbulence = turbulence
         if temperature is not None:
             self.temperature = temperature
         if passive_scalars is not None:
@@ -209,6 +214,27 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         """
 
         self._velocity = velocity
+
+    @property
+    def turbulence(self):
+        """Gets the turbulence of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The turbulence of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: OneOfPressureInletBCTurbulence
+        """
+        return self._turbulence
+
+    @turbulence.setter
+    def turbulence(self, turbulence):
+        """Sets the turbulence of this OneOfSimericsAnalysisBoundaryConditions.
+
+
+        :param turbulence: The turbulence of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
+        :type: OneOfPressureInletBCTurbulence
+        """
+
+        self._turbulence = turbulence
 
     @property
     def temperature(self):

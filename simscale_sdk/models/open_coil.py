@@ -32,28 +32,33 @@ class OpenCoil(object):
     """
     openapi_types = {
         'type': 'str',
+        'bodies': 'TopologicalReference',
         'entry_port': 'TopologicalReference',
         'exit_port': 'TopologicalReference'
     }
 
     attribute_map = {
         'type': 'type',
+        'bodies': 'bodies',
         'entry_port': 'entryPort',
         'exit_port': 'exitPort'
     }
 
-    def __init__(self, type='OPEN_COIL', entry_port=None, exit_port=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='OPEN_COIL', bodies=None, entry_port=None, exit_port=None, local_vars_configuration=None):  # noqa: E501
         """OpenCoil - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._bodies = None
         self._entry_port = None
         self._exit_port = None
         self.discriminator = None
 
         self.type = type
+        if bodies is not None:
+            self.bodies = bodies
         if entry_port is not None:
             self.entry_port = entry_port
         if exit_port is not None:
@@ -83,6 +88,27 @@ class OpenCoil(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def bodies(self):
+        """Gets the bodies of this OpenCoil.  # noqa: E501
+
+
+        :return: The bodies of this OpenCoil.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._bodies
+
+    @bodies.setter
+    def bodies(self, bodies):
+        """Sets the bodies of this OpenCoil.
+
+
+        :param bodies: The bodies of this OpenCoil.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._bodies = bodies
 
     @property
     def entry_port(self):
