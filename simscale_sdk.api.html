@@ -2296,7 +2296,7 @@ returns the request thread.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation">
-<span class="sig-name descname"><span class="pre">get_mesh_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_operation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meshing_spec_schema_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1.1'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_mesh_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_operation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meshing_spec_schema_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'1.2'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get information about the mesh operation  # noqa: E501</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True
@@ -4129,7 +4129,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>limit</strong> (<em>int</em>) – The number of items to return.</p></li>
 <li><p><strong>page</strong> (<em>int</em>) – The page number. Use in combination with limit.</p></li>
 <li><p><strong>type</strong> (<em>str</em>) – The result type. The possible values are ‘SOLUTION_FIELD’, ‘CONVERGENCE_PLOT’, ‘PLOT’, ‘TABLE’.</p></li>
-<li><p><strong>category</strong> (<em>str</em>) – The result category. For solution fields values include ‘SOLUTION’, ‘AVERAGED_SOLUTION’, ‘TRANSIENT_SOLUTION’, ‘STATISTICAL_SURFACE_SOLUTION’, etc. For convergence plots values include ‘RESIDUALS_PLOT’, ‘NUMBER_OF_NEWTON_ITERATIONS’, etc. For plots values include ‘FORCE_PLOT’, ‘FORCE_COEFFICIENTS_PLOT’, ‘PROBE_POINT_PLOT’, ‘AREA_AVERAGE’, ‘FACE_CALC’, etc.</p></li>
+<li><p><strong>category</strong> (<em>str</em>) – The result category. For solution fields values include ‘SOLUTION’, ‘AVERAGED_SOLUTION’, ‘TRANSIENT_SOLUTION’, ‘STATISTICAL_SURFACE_SOLUTION’, etc. For convergence plots values include ‘RESIDUALS_PLOT’, ‘NUMBER_OF_NEWTON_ITERATIONS’, etc. For plots values include ‘FORCE_PLOT’, ‘MOMENT_PLOT’, ‘FORCE_COEFFICIENTS_PLOT’, ‘PROBE_POINT_PLOT’, ‘AREA_AVERAGE’, ‘FACE_CALC’, etc.</p></li>
 <li><p><strong>quantity</strong> (<em>str</em>) – The result quantity, only applies to plot result types. Valid values include ‘Ux’, ‘Uy’, ‘Uz’, ‘p’, ‘k’, ‘omega’, ‘T’, ‘displacement’, ‘von Mises stress’, etc.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The name that was defined for extra simulation result outputs.</p></li>
 <li><p><strong>direction</strong> (<em>float</em>) – The result direction, only applies to Pedestrian Wind Comfort analysis.</p></li>
@@ -4168,7 +4168,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>limit</strong> (<em>int</em>) – The number of items to return.</p></li>
 <li><p><strong>page</strong> (<em>int</em>) – The page number. Use in combination with limit.</p></li>
 <li><p><strong>type</strong> (<em>str</em>) – The result type. The possible values are ‘SOLUTION_FIELD’, ‘CONVERGENCE_PLOT’, ‘PLOT’, ‘TABLE’.</p></li>
-<li><p><strong>category</strong> (<em>str</em>) – The result category. For solution fields values include ‘SOLUTION’, ‘AVERAGED_SOLUTION’, ‘TRANSIENT_SOLUTION’, ‘STATISTICAL_SURFACE_SOLUTION’, etc. For convergence plots values include ‘RESIDUALS_PLOT’, ‘NUMBER_OF_NEWTON_ITERATIONS’, etc. For plots values include ‘FORCE_PLOT’, ‘FORCE_COEFFICIENTS_PLOT’, ‘PROBE_POINT_PLOT’, ‘AREA_AVERAGE’, ‘FACE_CALC’, etc.</p></li>
+<li><p><strong>category</strong> (<em>str</em>) – The result category. For solution fields values include ‘SOLUTION’, ‘AVERAGED_SOLUTION’, ‘TRANSIENT_SOLUTION’, ‘STATISTICAL_SURFACE_SOLUTION’, etc. For convergence plots values include ‘RESIDUALS_PLOT’, ‘NUMBER_OF_NEWTON_ITERATIONS’, etc. For plots values include ‘FORCE_PLOT’, ‘MOMENT_PLOT’, ‘FORCE_COEFFICIENTS_PLOT’, ‘PROBE_POINT_PLOT’, ‘AREA_AVERAGE’, ‘FACE_CALC’, etc.</p></li>
 <li><p><strong>quantity</strong> (<em>str</em>) – The result quantity, only applies to plot result types. Valid values include ‘Ux’, ‘Uy’, ‘Uz’, ‘p’, ‘k’, ‘omega’, ‘T’, ‘displacement’, ‘von Mises stress’, etc.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The name that was defined for extra simulation result outputs.</p></li>
 <li><p><strong>direction</strong> (<em>float</em>) – The result direction, only applies to Pedestrian Wind Comfort analysis.</p></li>
@@ -4350,7 +4350,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>limit</strong> (<em>int</em>) – The number of items to return.</p></li>
 <li><p><strong>page</strong> (<em>int</em>) – The page number. Use in combination with limit.</p></li>
 <li><p><strong>type</strong> (<em>str</em>) – The result type. The possible values are ‘SOLUTION_FIELD’, ‘CONVERGENCE_PLOT’, ‘PLOT’, ‘TABLE’.</p></li>
-<li><p><strong>category</strong> (<em>str</em>) – The result category. For solution fields values include ‘SOLUTION’, ‘AVERAGED_SOLUTION’, ‘TRANSIENT_SOLUTION’, ‘STATISTICAL_SURFACE_SOLUTION’, etc. For convergence plots values include ‘RESIDUALS_PLOT’, ‘NUMBER_OF_NEWTON_ITERATIONS’, etc. For plots values include ‘FORCE_PLOT’, ‘FORCE_COEFFICIENTS_PLOT’, ‘PROBE_POINT_PLOT’, ‘AREA_AVERAGE’, ‘FACE_CALC’, etc.</p></li>
+<li><p><strong>category</strong> (<em>str</em>) – The result category. For solution fields values include ‘SOLUTION’, ‘AVERAGED_SOLUTION’, ‘TRANSIENT_SOLUTION’, ‘STATISTICAL_SURFACE_SOLUTION’, etc. For convergence plots values include ‘RESIDUALS_PLOT’, ‘NUMBER_OF_NEWTON_ITERATIONS’, etc. For plots values include ‘FORCE_PLOT’, ‘MOMENT_PLOT’, ‘FORCE_COEFFICIENTS_PLOT’, ‘PROBE_POINT_PLOT’, ‘AREA_AVERAGE’, ‘FACE_CALC’, etc.</p></li>
 <li><p><strong>quantity</strong> (<em>str</em>) – The result quantity, only applies to plot result types. Valid values include ‘Ux’, ‘Uy’, ‘Uz’, ‘p’, ‘k’, ‘omega’, ‘T’, ‘displacement’, ‘von Mises stress’, etc.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The name that was defined for extra simulation result outputs.</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
@@ -4389,7 +4389,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>limit</strong> (<em>int</em>) – The number of items to return.</p></li>
 <li><p><strong>page</strong> (<em>int</em>) – The page number. Use in combination with limit.</p></li>
 <li><p><strong>type</strong> (<em>str</em>) – The result type. The possible values are ‘SOLUTION_FIELD’, ‘CONVERGENCE_PLOT’, ‘PLOT’, ‘TABLE’.</p></li>
-<li><p><strong>category</strong> (<em>str</em>) – The result category. For solution fields values include ‘SOLUTION’, ‘AVERAGED_SOLUTION’, ‘TRANSIENT_SOLUTION’, ‘STATISTICAL_SURFACE_SOLUTION’, etc. For convergence plots values include ‘RESIDUALS_PLOT’, ‘NUMBER_OF_NEWTON_ITERATIONS’, etc. For plots values include ‘FORCE_PLOT’, ‘FORCE_COEFFICIENTS_PLOT’, ‘PROBE_POINT_PLOT’, ‘AREA_AVERAGE’, ‘FACE_CALC’, etc.</p></li>
+<li><p><strong>category</strong> (<em>str</em>) – The result category. For solution fields values include ‘SOLUTION’, ‘AVERAGED_SOLUTION’, ‘TRANSIENT_SOLUTION’, ‘STATISTICAL_SURFACE_SOLUTION’, etc. For convergence plots values include ‘RESIDUALS_PLOT’, ‘NUMBER_OF_NEWTON_ITERATIONS’, etc. For plots values include ‘FORCE_PLOT’, ‘MOMENT_PLOT’, ‘FORCE_COEFFICIENTS_PLOT’, ‘PROBE_POINT_PLOT’, ‘AREA_AVERAGE’, ‘FACE_CALC’, etc.</p></li>
 <li><p><strong>quantity</strong> (<em>str</em>) – The result quantity, only applies to plot result types. Valid values include ‘Ux’, ‘Uy’, ‘Uz’, ‘p’, ‘k’, ‘omega’, ‘T’, ‘displacement’, ‘von Mises stress’, etc.</p></li>
 <li><p><strong>name</strong> (<em>str</em>) – The name that was defined for extra simulation result outputs.</p></li>
 <li><p><strong>_return_http_data_only</strong> – response data without head status code
@@ -5969,6 +5969,85 @@ returns the request thread.</p>
 </dd></dl>
 
 </section>
+<section id="module-simscale_sdk.api.users_api">
+<span id="simscale-sdk-api-users-api-module"></span><h2>simscale_sdk.api.users_api module<a class="headerlink" href="#module-simscale_sdk.api.users_api" title="Permalink to this heading">¶</a></h2>
+<p>SimScale API</p>
+<p>The version of the OpenAPI document: 0.0.0
+Generated by: <a class="reference external" href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<dl class="py class">
+<dt class="sig sig-object py" id="simscale_sdk.api.users_api.UsersApi">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">simscale_sdk.api.users_api.</span></span><span class="sig-name descname"><span class="pre">UsersApi</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">api_client</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.users_api.UsersApi" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>NOTE: This class is auto generated by OpenAPI Generator
+Ref: <a class="reference external" href="https://openapi-generator.tech">https://openapi-generator.tech</a></p>
+<p>Do not edit the class manually.</p>
+<dl class="py method">
+<dt class="sig sig-object py" id="simscale_sdk.api.users_api.UsersApi.signup_user">
+<span class="sig-name descname"><span class="pre">signup_user</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_signup_request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.users_api.UsersApi.signup_user" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signup a user  # noqa: E501</p>
+<p>Signup a new user. The current requester user needs to be authenticated.  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.signup_user(user_signup_request, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bool</strong> (<em>async_req</em>) – execute request asynchronously</p></li>
+<li><p><strong>user_signup_request</strong> (<a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.user_signup_request.UserSignupRequest" title="simscale_sdk.models.user_signup_request.UserSignupRequest"><em>UserSignupRequest</em></a>) – (required)</p></li>
+<li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.</p></li>
+<li><p><strong>_request_timeout</strong> – timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>UserSignupResponse
+If the method is called asynchronously,
+returns the request thread.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="simscale_sdk.api.users_api.UsersApi.signup_user_with_http_info">
+<span class="sig-name descname"><span class="pre">signup_user_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">user_signup_request</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.users_api.UsersApi.signup_user_with_http_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Signup a user  # noqa: E501</p>
+<p>Signup a new user. The current requester user needs to be authenticated.  # noqa: E501
+This method makes a synchronous HTTP request by default. To make an
+asynchronous HTTP request, please pass async_req=True
+&gt;&gt;&gt; thread = api.signup_user_with_http_info(user_signup_request, async_req=True)
+&gt;&gt;&gt; result = thread.get()</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>bool</strong> (<em>async_req</em>) – execute request asynchronously</p></li>
+<li><p><strong>user_signup_request</strong> (<a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.user_signup_request.UserSignupRequest" title="simscale_sdk.models.user_signup_request.UserSignupRequest"><em>UserSignupRequest</em></a>) – (required)</p></li>
+<li><p><strong>_return_http_data_only</strong> – response data without head status code
+and headers</p></li>
+<li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
+be returned without reading/decoding response
+data. Default is True.</p></li>
+<li><p><strong>_request_timeout</strong> – timeout setting for this request. If one
+number provided, it will be total request
+timeout. It can also be a pair (tuple) of
+(connection, read) timeouts.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>tuple(UserSignupResponse, status_code(int), headers(HTTPHeaderDict))
+If the method is called asynchronously,
+returns the request thread.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
 <section id="module-simscale_sdk.api.wind_api">
 <span id="simscale-sdk-api-wind-api-module"></span><h2>simscale_sdk.api.wind_api module<a class="headerlink" href="#module-simscale_sdk.api.wind_api" title="Permalink to this heading">¶</a></h2>
 <p>SimScale API</p>
@@ -6344,6 +6423,14 @@ returns the request thread.</p>
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="#module-simscale_sdk.api.users_api">simscale_sdk.api.users_api module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="#simscale_sdk.api.users_api.UsersApi"><code class="docutils literal notranslate"><span class="pre">UsersApi</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="#simscale_sdk.api.users_api.UsersApi.signup_user"><code class="docutils literal notranslate"><span class="pre">UsersApi.signup_user()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="#simscale_sdk.api.users_api.UsersApi.signup_user_with_http_info"><code class="docutils literal notranslate"><span class="pre">UsersApi.signup_user_with_http_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="#module-simscale_sdk.api.wind_api">simscale_sdk.api.wind_api module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="#simscale_sdk.api.wind_api.WindApi"><code class="docutils literal notranslate"><span class="pre">WindApi</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="#simscale_sdk.api.wind_api.WindApi.get_wind_data"><code class="docutils literal notranslate"><span class="pre">WindApi.get_wind_data()</span></code></a></li>
@@ -6404,7 +6491,7 @@ returns the request thread.</p>
       <div class="clearer"></div>
     </div>
     <div class="footer">
-      &copy;2021, SimScale GmbH.
+      &copy;2023, SimScale GmbH.
       
       |
       Powered by <a href="http://sphinx-doc.org/">Sphinx 5.3.0</a>
