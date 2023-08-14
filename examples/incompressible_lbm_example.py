@@ -20,8 +20,8 @@ from simscale_sdk import TopologicalReference, VelocityInletBC, ConstantFunction
     ForcesMomentsResultControl, HighResolution, ModerateResolution, TableDefinedProbeLocations, TransientResultControl, \
     CoarseResolution, StatisticalAveragingResultControlV2, SnapshotResultControl, PacefishFinenessCoarse, \
     PacefishAutomesh, AutomaticReferenceLength, Region
-from simscale_sdk import UserInputCameraSettings, ProjectionType, Vector3D, ModelSettings, Part, ScalarField, \
-    ScreenshotOutputSettings, Color, ResolutionInfo, ScreenshotReportProperties, ReportRequest
+from simscale_sdk import TopViewPredefinedCameraSettings, ProjectionType, Vector3D, ModelSettings, Filters, ScalarField, \
+    ScreenshotOutputSettings,  ResolutionInfo, ScreenshotReportProperties, ReportRequest, CuttingPlane, RenderMode
 
 # Check that the environment variables are set
 if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
@@ -361,37 +361,38 @@ zip_file = zipfile.ZipFile("averaged_solution.zip")
 print(f"Averaged solution ZIP file content: {zip_file.namelist()}")
 
 # Generating simulation run report
-camera_settings = UserInputCameraSettings(
-    projection_type=ProjectionType.ORTHOGONAL,
-    up=Vector3D(0.5, 0.3, 0.2),
-    eye=Vector3D(0.0, 5.0, 10.0),
-    center=Vector3D(10.0, 12.0, 1.0),
-    front_plane_frustum_height=0.5,
-)
+scalar_field = ScalarField(field_name="Velocity", component="Magnitude", data_type="CELL")
 model_settings = ModelSettings(
-    parts=[
-        Part(
-            part_identifier="data - surface-export-1",
-            solid_color=Color(0.8, 0.2, 0.4),
-        ),
-        Part(
-            part_identifier="data - surface-export-2",
-            solid_color=Color(0.2, 0.4, 0.8),
-        ),
-        Part(
-            part_identifier="data - surface-export-3",
-            solid_color=Color(0.4, 0.8, 0.2),
-        ),
-    ],
-    scalar_field=ScalarField(field_name="Velocity", component="X", data_type="CELL"),
+    parts=[],
+    scalar_field=scalar_field
 )
-output_settings = ScreenshotOutputSettings(name="Output 1", format="PNG", resolution=ResolutionInfo(800, 800),
-                                           frame_index=0)
+cutting_plane = CuttingPlane(
+    name="velocity-plane",
+    scalar_field=scalar_field,
+    center=Vector3D(x=150, y=0, z=150),
+    normal=Vector3D(x=0, y=1, z=0),
+    opacity=1,
+    clipping=True,
+    render_mode=RenderMode.SURFACES
+)
+filters = Filters(cutting_planes=[cutting_plane])
+camera_settings = TopViewPredefinedCameraSettings(
+    projection_type=ProjectionType.ORTHOGONAL,
+    direction_specifier="Y_POSITIVE"
+)
+output_settings = ScreenshotOutputSettings(
+    name="Output 1",
+    format="PNG",
+    resolution=ResolutionInfo(x=1440, y=1080),
+    frame_index=0,
+    show_legend=True,
+    show_cube=False
+)
 report_properties = ScreenshotReportProperties(
     model_settings=model_settings,
-    filters=None,
+    filters=filters,
     camera_settings=camera_settings,
-    output_settings=output_settings,
+    output_settings=output_settings
 )
 report_request = ReportRequest(
     name="Report 1",

@@ -10,8 +10,8 @@ from simscale_sdk import Configuration, ApiClient, ProjectsApi, StorageApi, Geom
     WindApi, SimulationsApi, SimulationRunsApi, ReportsApi, Project, GeometryImportRequest, ApiException, WindData
 from simscale_sdk import GeometryImportRequestLocation, GeometryImportRequestOptions
 from simscale_sdk import SimulationSpec, SimulationRun
-from simscale_sdk import UserInputCameraSettings, ProjectionType, Vector3D, ModelSettings, Part, \
-    ScreenshotOutputSettings, Color, ResolutionInfo, ScreenshotReportProperties, ReportRequest
+from simscale_sdk import TopViewPredefinedCameraSettings, ProjectionType, ModelSettings, Part, \
+    ScreenshotOutputSettings, ResolutionInfo, ScreenshotReportProperties, ReportRequest
 from simscale_sdk import WindComfort, RegionOfInterest, DimensionalLength, DimensionalVector2dLength, DecimalVector2d, \
     DimensionalAngle, AdvancedROISettings, WindTunnelSizeModerate, WindConditions, GeographicalLocation, WindRose, \
     WindRoseVelocityBucket, PedestrianComfortSurface, GroundAbsolute, WindComfortSimulationControl, AdvancedModelling, \
@@ -247,22 +247,29 @@ zip_file = zipfile.ZipFile("statistical_surface_solution.zip")
 print(f"Statistical surface solution solution ZIP file content: {zip_file.namelist()}")
 
 # Generating simulation run report
-camera_settings = UserInputCameraSettings(
-    projection_type=ProjectionType.ORTHOGONAL,
-    up=Vector3D(0.5, 0.3, 0.2),
-    eye=Vector3D(0.0, 5.0, 10.0),
-    center=Vector3D(10.0, 12.0, 1.0),
-    front_plane_frustum_height=0.5,
-)
 model_settings = ModelSettings(
-    parts=[Part(part_identifier="Pedestrian level 1", solid_color=Color(0.8, 0.2, 0.4))],
+    parts=[
+        Part(part_identifier="solid 1 input - group-all-volumes"),
+        Part(part_identifier="Pedestrian level 1")
+    ]
 )
-output_settings = ScreenshotOutputSettings("Output 1", "PNG", ResolutionInfo(800, 800), frame_index=0)
+camera_settings = TopViewPredefinedCameraSettings(
+    projection_type=ProjectionType.ORTHOGONAL,
+    direction_specifier="Z_NEGATIVE"
+)
+output_settings = ScreenshotOutputSettings(
+    name="Output 1",
+    format="PNG",
+    resolution=ResolutionInfo(x=1440, y=1080),
+    frame_index=0,
+    show_legend=True,
+    show_cube=False
+)
 report_properties = ScreenshotReportProperties(
     model_settings=model_settings,
     filters=None,
     camera_settings=camera_settings,
-    output_settings=output_settings,
+    output_settings=output_settings
 )
 report_request = ReportRequest(
     name="Report 1", description="Simulation report", result_ids=[statistical_surface_solution_info.result_id],

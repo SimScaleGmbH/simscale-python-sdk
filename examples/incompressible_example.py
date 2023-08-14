@@ -20,8 +20,8 @@ from simscale_sdk import Incompressible, IncompressibleFluidMaterials, FluidMode
     FluidSimulationControl, DimensionalTime, TimeStepWriteControl, ScotchDecomposeAlgorithm, FluidResultControls, \
     DimensionalVectorFunctionSpeed
 from simscale_sdk import SimulationSpec, MeshOperation, SimmetrixMeshingFluid, AutomaticLayerOn, SimulationRun
-from simscale_sdk import UserInputCameraSettings, ProjectionType, Vector3D, ModelSettings, Part, ScalarField, \
-    Color, ResolutionInfo, ReportRequest, TimeStepAnimationOutputSettings, AnimationReportProperties
+from simscale_sdk import TopViewPredefinedCameraSettings, ProjectionType, Vector3D, ModelSettings, Filters, ScalarField, \
+    ResolutionInfo, ReportRequest, TimeStepAnimationOutputSettings, AnimationReportProperties, CuttingPlane, RenderMode
 
 # Check that the environment variables are set
 if not os.getenv("SIMSCALE_API_KEY") or not os.getenv("SIMSCALE_API_URL"):
@@ -180,9 +180,9 @@ model = Incompressible(
         ),
     ],
     simulation_control=FluidSimulationControl(
-        end_time=DimensionalTime(value=1000, unit="s"),
+        end_time=DimensionalTime(value=100, unit="s"),
         delta_t=DimensionalTime(value=1, unit="s"),
-        write_control=TimeStepWriteControl(write_interval=1000),
+        write_control=TimeStepWriteControl(write_interval=20),
         max_run_time=DimensionalTime(value=10000, unit="s"),
         decompose_algorithm=ScotchDecomposeAlgorithm(),
     ),
@@ -391,32 +391,42 @@ solution_response = api_client.rest_client.GET(
 with open("solution.zip", "wb") as file:
     file.write(solution_response.data)
 zip_file = zipfile.ZipFile("solution.zip")
-print(f"Averaged solution ZIP file content: {zip_file.namelist()}")
+print(f"Solution ZIP file content: {zip_file.namelist()}")
 
 # Generating simulation run report
-camera_settings = UserInputCameraSettings(
-    projection_type=ProjectionType.ORTHOGONAL,
-    up=Vector3D(0.5, 0.3, 0.2),
-    eye=Vector3D(0.0, 5.0, 10.0),
-    center=Vector3D(10.0, 12.0, 1.0),
-    front_plane_frustum_height=0.5,
-)
+scalar_field = ScalarField(field_name="Velocity", component="Magnitude", data_type="CELL")
 model_settings = ModelSettings(
-    parts=[Part(part_identifier="default_region", solid_color=Color(0.8, 0.2, 0.4))],
-    scalar_field=ScalarField(field_name="Velocity", component="X", data_type="CELL"),
+    parts=[],
+    scalar_field=scalar_field
+)
+cutting_plane = CuttingPlane(
+    name="velocity-plane",
+    scalar_field=scalar_field,
+    center=Vector3D(x=0, y=0, z=0),
+    normal=Vector3D(x=1, y=0, z=0),
+    opacity=1,
+    clipping=True,
+    render_mode=RenderMode.SURFACES
+)
+filters = Filters(cutting_planes=[cutting_plane])
+camera_settings = TopViewPredefinedCameraSettings(
+    projection_type=ProjectionType.ORTHOGONAL,
+    direction_specifier="X_POSITIVE"
 )
 output_settings = TimeStepAnimationOutputSettings(
     type="TIME_STEP",
     name="Output 1",
-    format="GIF",
-    resolution=ResolutionInfo(800, 800),
+    format="MP4",
+    resolution=ResolutionInfo(x=1440, y=1080),
     from_frame_index=0,
-    to_frame_index=1,
+    to_frame_index=5,
     skip_frames=0,
+    show_legend=True,
+    show_cube=False
 )
 report_properties = AnimationReportProperties(
     model_settings=model_settings,
-    filters=None,
+    filters=filters,
     camera_settings=camera_settings,
     output_settings=output_settings,
 )

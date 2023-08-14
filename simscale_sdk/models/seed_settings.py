@@ -140,8 +140,8 @@ class SeedSettings(object):
         if self.local_vars_configuration.client_side_validation and horizontal_dimension is None:  # noqa: E501
             raise ValueError("Invalid value for `horizontal_dimension`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                horizontal_dimension is not None and horizontal_dimension > 100):  # noqa: E501
-            raise ValueError("Invalid value for `horizontal_dimension`, must be a value less than or equal to `100`")  # noqa: E501
+                horizontal_dimension is not None and horizontal_dimension > 500):  # noqa: E501
+            raise ValueError("Invalid value for `horizontal_dimension`, must be a value less than or equal to `500`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 horizontal_dimension is not None and horizontal_dimension < 1):  # noqa: E501
             raise ValueError("Invalid value for `horizontal_dimension`, must be a value greater than or equal to `1`")  # noqa: E501
@@ -171,8 +171,8 @@ class SeedSettings(object):
         if self.local_vars_configuration.client_side_validation and vertical_dimension is None:  # noqa: E501
             raise ValueError("Invalid value for `vertical_dimension`, must not be `None`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                vertical_dimension is not None and vertical_dimension > 100):  # noqa: E501
-            raise ValueError("Invalid value for `vertical_dimension`, must be a value less than or equal to `100`")  # noqa: E501
+                vertical_dimension is not None and vertical_dimension > 500):  # noqa: E501
+            raise ValueError("Invalid value for `vertical_dimension`, must be a value less than or equal to `500`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 vertical_dimension is not None and vertical_dimension < 1):  # noqa: E501
             raise ValueError("Invalid value for `vertical_dimension`, must be a value greater than or equal to `1`")  # noqa: E501
