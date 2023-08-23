@@ -33,16 +33,20 @@ class IsotropicDirectionalDependency(object):
     openapi_types = {
         'type': 'str',
         'youngs_modulus': 'DimensionalFunctionPressure',
-        'poissons_ratio': 'OneOfIsotropicDirectionalDependencyPoissonsRatio'
+        'poissons_ratio': 'OneOfIsotropicDirectionalDependencyPoissonsRatio',
+        'expansion_coefficient': 'DimensionalFunctionThermalExpansionRate',
+        'reference_temperature': 'DimensionalTemperature'
     }
 
     attribute_map = {
         'type': 'type',
         'youngs_modulus': 'youngsModulus',
-        'poissons_ratio': 'poissonsRatio'
+        'poissons_ratio': 'poissonsRatio',
+        'expansion_coefficient': 'expansionCoefficient',
+        'reference_temperature': 'referenceTemperature'
     }
 
-    def __init__(self, type='ISOTROPIC', youngs_modulus=None, poissons_ratio=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ISOTROPIC', youngs_modulus=None, poissons_ratio=None, expansion_coefficient=None, reference_temperature=None, local_vars_configuration=None):  # noqa: E501
         """IsotropicDirectionalDependency - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +55,8 @@ class IsotropicDirectionalDependency(object):
         self._type = None
         self._youngs_modulus = None
         self._poissons_ratio = None
+        self._expansion_coefficient = None
+        self._reference_temperature = None
         self.discriminator = None
 
         self.type = type
@@ -58,12 +64,16 @@ class IsotropicDirectionalDependency(object):
             self.youngs_modulus = youngs_modulus
         if poissons_ratio is not None:
             self.poissons_ratio = poissons_ratio
+        if expansion_coefficient is not None:
+            self.expansion_coefficient = expansion_coefficient
+        if reference_temperature is not None:
+            self.reference_temperature = reference_temperature
 
     @property
     def type(self):
         """Gets the type of this IsotropicDirectionalDependency.  # noqa: E501
 
-        <p>Choose the directional dependency for this property. <b>Anisotropic and orthotropic materials will be available soon.</b></p>  Schema name: IsotropicDirectionalDependency  # noqa: E501
+        Schema name: IsotropicDirectionalDependency  # noqa: E501
 
         :return: The type of this IsotropicDirectionalDependency.  # noqa: E501
         :rtype: str
@@ -74,7 +84,7 @@ class IsotropicDirectionalDependency(object):
     def type(self, type):
         """Sets the type of this IsotropicDirectionalDependency.
 
-        <p>Choose the directional dependency for this property. <b>Anisotropic and orthotropic materials will be available soon.</b></p>  Schema name: IsotropicDirectionalDependency  # noqa: E501
+        Schema name: IsotropicDirectionalDependency  # noqa: E501
 
         :param type: The type of this IsotropicDirectionalDependency.  # noqa: E501
         :type: str
@@ -125,6 +135,48 @@ class IsotropicDirectionalDependency(object):
         """
 
         self._poissons_ratio = poissons_ratio
+
+    @property
+    def expansion_coefficient(self):
+        """Gets the expansion_coefficient of this IsotropicDirectionalDependency.  # noqa: E501
+
+
+        :return: The expansion_coefficient of this IsotropicDirectionalDependency.  # noqa: E501
+        :rtype: DimensionalFunctionThermalExpansionRate
+        """
+        return self._expansion_coefficient
+
+    @expansion_coefficient.setter
+    def expansion_coefficient(self, expansion_coefficient):
+        """Sets the expansion_coefficient of this IsotropicDirectionalDependency.
+
+
+        :param expansion_coefficient: The expansion_coefficient of this IsotropicDirectionalDependency.  # noqa: E501
+        :type: DimensionalFunctionThermalExpansionRate
+        """
+
+        self._expansion_coefficient = expansion_coefficient
+
+    @property
+    def reference_temperature(self):
+        """Gets the reference_temperature of this IsotropicDirectionalDependency.  # noqa: E501
+
+
+        :return: The reference_temperature of this IsotropicDirectionalDependency.  # noqa: E501
+        :rtype: DimensionalTemperature
+        """
+        return self._reference_temperature
+
+    @reference_temperature.setter
+    def reference_temperature(self, reference_temperature):
+        """Sets the reference_temperature of this IsotropicDirectionalDependency.
+
+
+        :param reference_temperature: The reference_temperature of this IsotropicDirectionalDependency.  # noqa: E501
+        :type: DimensionalTemperature
+        """
+
+        self._reference_temperature = reference_temperature
 
     def to_dict(self):
         """Returns the model properties as a dict"""

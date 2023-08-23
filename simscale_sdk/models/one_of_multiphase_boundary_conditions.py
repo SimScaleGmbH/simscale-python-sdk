@@ -43,7 +43,7 @@ class OneOfMultiphaseBoundaryConditions(object):
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfCustomFluidBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfWallBCRadiativeIntensityRay',
-        'relative_humidity': 'InletOutletRHBC',
+        'relative_humidity': 'OneOfWallBCRelativeHumidity',
         'topological_reference': 'TopologicalReference',
         'pressure': 'OneOfCustomFluidBCPressure',
         'pressure_rgh': 'OneOfCustomFluidBCPressureRgh',
@@ -463,7 +463,7 @@ class OneOfMultiphaseBoundaryConditions(object):
 
 
         :return: The relative_humidity of this OneOfMultiphaseBoundaryConditions.  # noqa: E501
-        :rtype: InletOutletRHBC
+        :rtype: OneOfWallBCRelativeHumidity
         """
         return self._relative_humidity
 
@@ -473,7 +473,7 @@ class OneOfMultiphaseBoundaryConditions(object):
 
 
         :param relative_humidity: The relative_humidity of this OneOfMultiphaseBoundaryConditions.  # noqa: E501
-        :type: InletOutletRHBC
+        :type: OneOfWallBCRelativeHumidity
         """
 
         self._relative_humidity = relative_humidity

@@ -32,7 +32,7 @@ class LinearElasticMaterialBehavior(object):
     """
     openapi_types = {
         'type': 'str',
-        'directional_dependency': 'IsotropicDirectionalDependency',
+        'directional_dependency': 'OneOfLinearElasticMaterialBehaviorDirectionalDependency',
         'damping': 'OneOfLinearElasticMaterialBehaviorDamping',
         'creep_formulation': 'OneOfLinearElasticMaterialBehaviorCreepFormulation'
     }
@@ -95,7 +95,7 @@ class LinearElasticMaterialBehavior(object):
 
 
         :return: The directional_dependency of this LinearElasticMaterialBehavior.  # noqa: E501
-        :rtype: IsotropicDirectionalDependency
+        :rtype: OneOfLinearElasticMaterialBehaviorDirectionalDependency
         """
         return self._directional_dependency
 
@@ -105,7 +105,7 @@ class LinearElasticMaterialBehavior(object):
 
 
         :param directional_dependency: The directional_dependency of this LinearElasticMaterialBehavior.  # noqa: E501
-        :type: IsotropicDirectionalDependency
+        :type: OneOfLinearElasticMaterialBehaviorDirectionalDependency
         """
 
         self._directional_dependency = directional_dependency

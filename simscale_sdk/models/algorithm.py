@@ -39,7 +39,7 @@ class Algorithm(object):
         'physics_based_meshing': 'bool',
         'hex_core': 'bool',
         'num_of_processors': 'int',
-        'advanced_simmetrix_settings': 'AdvancedSimmetrixSolidSettings',
+        'advanced_simmetrix_settings': 'AdvancedSimmetrixEmSettings',
         'enable_shell_meshing': 'bool',
         'surface_element_type': 'str',
         'meshing_mode': 'str'
@@ -63,6 +63,7 @@ class Algorithm(object):
     discriminator_value_class_map = {
         'SIMMETRIX_MESHING_FLUID_V16': 'SimmetrixMeshingFluid',
         'SIMMETRIX_MESHING_SOLID': 'SimmetrixMeshingSolid',
+        'SIMMETRIX_MESHING_ELECTROMAGNETICS': 'SimmetrixMeshingElectromagnetics',
         'HEX_DOMINANT_SNAPPY_V5': 'HexDominantSnappy'
     }
 
@@ -300,7 +301,7 @@ class Algorithm(object):
 
 
         :return: The advanced_simmetrix_settings of this Algorithm.  # noqa: E501
-        :rtype: AdvancedSimmetrixSolidSettings
+        :rtype: AdvancedSimmetrixEmSettings
         """
         return self._advanced_simmetrix_settings
 
@@ -310,7 +311,7 @@ class Algorithm(object):
 
 
         :param advanced_simmetrix_settings: The advanced_simmetrix_settings of this Algorithm.  # noqa: E501
-        :type: AdvancedSimmetrixSolidSettings
+        :type: AdvancedSimmetrixEmSettings
         """
 
         self._advanced_simmetrix_settings = advanced_simmetrix_settings

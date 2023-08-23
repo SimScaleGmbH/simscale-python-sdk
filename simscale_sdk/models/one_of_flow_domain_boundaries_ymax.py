@@ -43,7 +43,7 @@ class OneOfFlowDomainBoundariesYMAX(object):
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfWallBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfWallBCRadiativeIntensityRay',
-        'relative_humidity': 'InletOutletRHBC',
+        'relative_humidity': 'OneOfWallBCRelativeHumidity',
         'topological_reference': 'TopologicalReference',
         'pressure': 'OneOfPressureOutletBCPressure',
         'pressure_rgh': 'OneOfPressureOutletBCPressureRgh',
@@ -428,7 +428,7 @@ class OneOfFlowDomainBoundariesYMAX(object):
 
 
         :return: The relative_humidity of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
-        :rtype: InletOutletRHBC
+        :rtype: OneOfWallBCRelativeHumidity
         """
         return self._relative_humidity
 
@@ -438,7 +438,7 @@ class OneOfFlowDomainBoundariesYMAX(object):
 
 
         :param relative_humidity: The relative_humidity of this OneOfFlowDomainBoundariesYMAX.  # noqa: E501
-        :type: InletOutletRHBC
+        :type: OneOfWallBCRelativeHumidity
         """
 
         self._relative_humidity = relative_humidity

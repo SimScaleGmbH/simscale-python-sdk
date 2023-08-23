@@ -35,6 +35,7 @@ class WallBC(object):
         'name': 'str',
         'velocity': 'OneOfWallBCVelocity',
         'temperature': 'OneOfWallBCTemperature',
+        'relative_humidity': 'OneOfWallBCRelativeHumidity',
         'phase_fraction': 'OneOfWallBCPhaseFraction',
         'net_radiative_heat_flux': 'OneOfWallBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfWallBCRadiativeIntensityRay',
@@ -47,6 +48,7 @@ class WallBC(object):
         'name': 'name',
         'velocity': 'velocity',
         'temperature': 'temperature',
+        'relative_humidity': 'relativeHumidity',
         'phase_fraction': 'phaseFraction',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
@@ -54,7 +56,7 @@ class WallBC(object):
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='WALL_V34', name=None, velocity=None, temperature=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, electric_boundary_condition=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='WALL_V34', name=None, velocity=None, temperature=None, relative_humidity=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, electric_boundary_condition=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """WallBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,6 +66,7 @@ class WallBC(object):
         self._name = None
         self._velocity = None
         self._temperature = None
+        self._relative_humidity = None
         self._phase_fraction = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
@@ -78,6 +81,8 @@ class WallBC(object):
             self.velocity = velocity
         if temperature is not None:
             self.temperature = temperature
+        if relative_humidity is not None:
+            self.relative_humidity = relative_humidity
         if phase_fraction is not None:
             self.phase_fraction = phase_fraction
         if net_radiative_heat_flux is not None:
@@ -176,6 +181,27 @@ class WallBC(object):
         """
 
         self._temperature = temperature
+
+    @property
+    def relative_humidity(self):
+        """Gets the relative_humidity of this WallBC.  # noqa: E501
+
+
+        :return: The relative_humidity of this WallBC.  # noqa: E501
+        :rtype: OneOfWallBCRelativeHumidity
+        """
+        return self._relative_humidity
+
+    @relative_humidity.setter
+    def relative_humidity(self, relative_humidity):
+        """Sets the relative_humidity of this WallBC.
+
+
+        :param relative_humidity: The relative_humidity of this WallBC.  # noqa: E501
+        :type: OneOfWallBCRelativeHumidity
+        """
+
+        self._relative_humidity = relative_humidity
 
     @property
     def phase_fraction(self):

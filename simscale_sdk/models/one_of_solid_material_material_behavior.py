@@ -32,7 +32,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
     """
     openapi_types = {
         'type': 'str',
-        'directional_dependency': 'IsotropicDirectionalDependency',
+        'directional_dependency': 'OneOfLinearElasticMaterialBehaviorDirectionalDependency',
         'damping': 'OneOfLinearElasticMaterialBehaviorDamping',
         'creep_formulation': 'OneOfPlasticMaterialBehaviorCreepFormulation',
         'hyper_elastic_model': 'OneOfHyperElasticMaterialBehaviorHyperElasticModel',
@@ -111,7 +111,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
 
 
         :return: The directional_dependency of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
-        :rtype: IsotropicDirectionalDependency
+        :rtype: OneOfLinearElasticMaterialBehaviorDirectionalDependency
         """
         return self._directional_dependency
 
@@ -121,7 +121,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
 
 
         :param directional_dependency: The directional_dependency of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
-        :type: IsotropicDirectionalDependency
+        :type: OneOfLinearElasticMaterialBehaviorDirectionalDependency
         """
 
         self._directional_dependency = directional_dependency

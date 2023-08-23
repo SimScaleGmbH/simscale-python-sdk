@@ -31,12 +31,15 @@ class SolidNumerics(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'harmonic_solution_method': 'str',
         'solver': 'OneOfSolidNumericsSolver',
         'solve_model': 'object',
         'eigen_solver': 'OneOfSolidNumericsEigenSolver',
         'calculate_frequency': 'CalculateFrequency',
         'eigen_mode': 'EigenModeVerification',
         'enhanced_accuracy': 'bool',
+        'modal_base': 'ModalSolver',
+        'harmonic_response': 'HarmonicResponse',
         'mechanical_time_integration_type': 'OneOfSolidNumericsMechanicalTimeIntegrationType',
         'mechanical_resolution_type': 'OneOfSolidNumericsMechanicalResolutionType',
         'mechanical_line_search': 'OneOfSolidNumericsMechanicalLineSearch',
@@ -46,12 +49,15 @@ class SolidNumerics(object):
     }
 
     attribute_map = {
+        'harmonic_solution_method': 'harmonicSolutionMethod',
         'solver': 'solver',
         'solve_model': 'solveModel',
         'eigen_solver': 'eigenSolver',
         'calculate_frequency': 'calculateFrequency',
         'eigen_mode': 'eigenMode',
         'enhanced_accuracy': 'enhancedAccuracy',
+        'modal_base': 'modalBase',
+        'harmonic_response': 'harmonicResponse',
         'mechanical_time_integration_type': 'mechanicalTimeIntegrationType',
         'mechanical_resolution_type': 'mechanicalResolutionType',
         'mechanical_line_search': 'mechanicalLineSearch',
@@ -60,18 +66,21 @@ class SolidNumerics(object):
         'thermal_line_search': 'thermalLineSearch'
     }
 
-    def __init__(self, solver=None, solve_model=None, eigen_solver=None, calculate_frequency=None, eigen_mode=None, enhanced_accuracy=None, mechanical_time_integration_type=None, mechanical_resolution_type=None, mechanical_line_search=None, thermal_time_integration_type=None, thermal_resolution_type=None, thermal_line_search=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, harmonic_solution_method=None, solver=None, solve_model=None, eigen_solver=None, calculate_frequency=None, eigen_mode=None, enhanced_accuracy=None, modal_base=None, harmonic_response=None, mechanical_time_integration_type=None, mechanical_resolution_type=None, mechanical_line_search=None, thermal_time_integration_type=None, thermal_resolution_type=None, thermal_line_search=None, local_vars_configuration=None):  # noqa: E501
         """SolidNumerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._harmonic_solution_method = None
         self._solver = None
         self._solve_model = None
         self._eigen_solver = None
         self._calculate_frequency = None
         self._eigen_mode = None
         self._enhanced_accuracy = None
+        self._modal_base = None
+        self._harmonic_response = None
         self._mechanical_time_integration_type = None
         self._mechanical_resolution_type = None
         self._mechanical_line_search = None
@@ -80,6 +89,8 @@ class SolidNumerics(object):
         self._thermal_line_search = None
         self.discriminator = None
 
+        if harmonic_solution_method is not None:
+            self.harmonic_solution_method = harmonic_solution_method
         if solver is not None:
             self.solver = solver
         if solve_model is not None:
@@ -92,6 +103,10 @@ class SolidNumerics(object):
             self.eigen_mode = eigen_mode
         if enhanced_accuracy is not None:
             self.enhanced_accuracy = enhanced_accuracy
+        if modal_base is not None:
+            self.modal_base = modal_base
+        if harmonic_response is not None:
+            self.harmonic_response = harmonic_response
         if mechanical_time_integration_type is not None:
             self.mechanical_time_integration_type = mechanical_time_integration_type
         if mechanical_resolution_type is not None:
@@ -104,6 +119,33 @@ class SolidNumerics(object):
             self.thermal_resolution_type = thermal_resolution_type
         if thermal_line_search is not None:
             self.thermal_line_search = thermal_line_search
+
+    @property
+    def harmonic_solution_method(self):
+        """Gets the harmonic_solution_method of this SolidNumerics.  # noqa: E501
+
+
+        :return: The harmonic_solution_method of this SolidNumerics.  # noqa: E501
+        :rtype: str
+        """
+        return self._harmonic_solution_method
+
+    @harmonic_solution_method.setter
+    def harmonic_solution_method(self, harmonic_solution_method):
+        """Sets the harmonic_solution_method of this SolidNumerics.
+
+
+        :param harmonic_solution_method: The harmonic_solution_method of this SolidNumerics.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["MODAL_BASED", "DIRECT"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and harmonic_solution_method not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `harmonic_solution_method` ({0}), must be one of {1}"  # noqa: E501
+                .format(harmonic_solution_method, allowed_values)
+            )
+
+        self._harmonic_solution_method = harmonic_solution_method
 
     @property
     def solver(self):
@@ -232,6 +274,48 @@ class SolidNumerics(object):
         """
 
         self._enhanced_accuracy = enhanced_accuracy
+
+    @property
+    def modal_base(self):
+        """Gets the modal_base of this SolidNumerics.  # noqa: E501
+
+
+        :return: The modal_base of this SolidNumerics.  # noqa: E501
+        :rtype: ModalSolver
+        """
+        return self._modal_base
+
+    @modal_base.setter
+    def modal_base(self, modal_base):
+        """Sets the modal_base of this SolidNumerics.
+
+
+        :param modal_base: The modal_base of this SolidNumerics.  # noqa: E501
+        :type: ModalSolver
+        """
+
+        self._modal_base = modal_base
+
+    @property
+    def harmonic_response(self):
+        """Gets the harmonic_response of this SolidNumerics.  # noqa: E501
+
+
+        :return: The harmonic_response of this SolidNumerics.  # noqa: E501
+        :rtype: HarmonicResponse
+        """
+        return self._harmonic_response
+
+    @harmonic_response.setter
+    def harmonic_response(self, harmonic_response):
+        """Sets the harmonic_response of this SolidNumerics.
+
+
+        :param harmonic_response: The harmonic_response of this SolidNumerics.  # noqa: E501
+        :type: HarmonicResponse
+        """
+
+        self._harmonic_response = harmonic_response
 
     @property
     def mechanical_time_integration_type(self):

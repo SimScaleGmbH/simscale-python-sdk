@@ -39,7 +39,7 @@ class AdvancedConcepts(object):
         'passive_scalar_sources': 'list[OneOfAdvancedConceptsPassiveScalarSources]',
         'thermal_resistance_networks': 'list[OneOfAdvancedConceptsThermalResistanceNetworks]',
         'thermal_contact_resistance': 'list[OneOfAdvancedConceptsThermalContactResistance]',
-        'humidity_sources': 'list[SpeciesHumiditySource]'
+        'humidity_sources': 'list[OneOfAdvancedConceptsHumiditySources]'
     }
 
     attribute_map = {
@@ -264,7 +264,7 @@ class AdvancedConcepts(object):
 
 
         :return: The humidity_sources of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[SpeciesHumiditySource]
+        :rtype: list[OneOfAdvancedConceptsHumiditySources]
         """
         return self._humidity_sources
 
@@ -274,7 +274,7 @@ class AdvancedConcepts(object):
 
 
         :param humidity_sources: The humidity_sources of this AdvancedConcepts.  # noqa: E501
-        :type: list[SpeciesHumiditySource]
+        :type: list[OneOfAdvancedConceptsHumiditySources]
         """
 
         self._humidity_sources = humidity_sources

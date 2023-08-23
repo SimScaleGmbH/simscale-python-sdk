@@ -73,6 +73,14 @@ simscale\_sdk.models.absolute\_harmonic\_velocity\_type module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.absolute\_humidity\_value module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_humidity_value
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.absolute\_passive\_scalar\_source module
 -------------------------------------------------------------
 
@@ -833,6 +841,14 @@ simscale\_sdk.models.closed\_coil module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.cluster\_around\_modes module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.cluster_around_modes
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.coarse\_resolution module
 ----------------------------------------------
 
@@ -1481,6 +1497,14 @@ simscale\_sdk.models.dilu\_preconditioner module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensional\_absolute\_humidity\_rate module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_absolute_humidity_rate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dimensional\_absorptivity module
 -----------------------------------------------------
 
@@ -1949,6 +1973,14 @@ simscale\_sdk.models.dimensional\_mass\_flow\_rate module
 ---------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_mass_flow_rate
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_mass\_fraction module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_mass_fraction
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2529,10 +2561,26 @@ simscale\_sdk.models.elastic\_support\_bc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.electromagnetic\_analysis module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_analysis
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.electromagnetic\_material module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.electromagnetic_material
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_numerics module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_numerics
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4121,6 +4169,22 @@ simscale\_sdk.models.harmonic\_displacement\_result\_control\_item module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.harmonic\_response module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.harmonic_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.harmonic\_response\_control module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.harmonic_response_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.harmonic\_response\_result\_control\_item module
 ---------------------------------------------------------------------
 
@@ -5089,6 +5153,22 @@ simscale\_sdk.models.mixing\_length\_inlet\_ebc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.modal\_base\_control module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.modal_base_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.modal\_solver module
+-----------------------------------------
+
+.. automodule:: simscale_sdk.models.modal_solver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.model\_settings module
 -------------------------------------------
 
@@ -5549,6 +5629,14 @@ simscale\_sdk.models.orthotropic\_conductivity module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.orthotropic_conductivity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.orthotropic\_directional\_dependency module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.orthotropic_directional_dependency
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6369,6 +6457,14 @@ simscale\_sdk.models.relative\_harmonic\_velocity\_type module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.relative\_humidity\_value module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_humidity_value
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.relative\_to\_all\_cad\_surfaces\_settings module
 ----------------------------------------------------------------------
 
@@ -6753,6 +6849,14 @@ simscale\_sdk.models.simmetrix\_local\_sizing\_refinement module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.simmetrix\_meshing\_electromagnetics module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.simmetrix_meshing_electromagnetics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.simmetrix\_meshing\_fluid module
 -----------------------------------------------------
 
@@ -7117,6 +7221,14 @@ simscale\_sdk.models.specific\_conductance\_wall\_thermal module
 ----------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.specific_conductance_wall_thermal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.specific\_humidity\_value module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.specific_humidity_value
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7541,6 +7653,14 @@ simscale\_sdk.models.surface\_roughness\_model module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.surface_roughness_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.surface\_water\_vapor\_flux\_humidity\_bc module
+---------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.surface_water_vapor_flux_humidity_bc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8089,6 +8209,14 @@ simscale\_sdk.models.turbulent\_intensity\_and\_reference\_length\_turbulence mo
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.twice\_max\_loading\_frequency module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.twice_max_loading_frequency
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.two\_resistor\_network module
 --------------------------------------------------
 
@@ -8433,6 +8561,14 @@ simscale\_sdk.models.volumetric\_flow module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.volumetric\_species\_humidity\_source module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.volumetric_species_humidity_source
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.von\_mises\_stress\_type module
 ----------------------------------------------------
 
@@ -8557,6 +8693,14 @@ simscale\_sdk.models.wall\_shear\_stress\_result\_type module
 -------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.wall_shear_stress_result_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.water\_vapor\_flux\_humidity\_bc module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.water_vapor_flux_humidity_bc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8765,6 +8909,14 @@ simscale\_sdk.models.zero\_gradient\_evcbc module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.zero_gradient_evcbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.zero\_gradient\_humidity\_bc module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.zero_gradient_humidity_bc
    :members:
    :undoc-members:
    :show-inheritance:

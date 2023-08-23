@@ -2,7 +2,7 @@
 
 import os
 import time
-
+import zipfile
 import urllib3
 
 import isodate
@@ -155,4 +155,13 @@ solution = results.embedded[0]
 too_large = solution.download.uncompressed_size_in_bytes > 100000000
 if too_large:
     raise Exception("Solution is too large", solution)
-api_client.rest_client.GET(url=solution.download.url, _preload_content=False)
+
+try:
+    solution_response = api_client.rest_client.GET(url=solution.download.url, _preload_content=False)
+    with open("solution.zip", "wb") as file:
+        file.write(solution_response.data)
+    zip_file = zipfile.ZipFile("solution.zip")
+    print(f"Solution ZIP file content: {zip_file.namelist()}")
+except BaseException as e:
+    print(f"Error while downloading results: ")
+    print(e)

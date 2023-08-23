@@ -37,14 +37,14 @@ class Analysis(object):
         'connectors': 'list[PinConnector]',
         'element_technology': 'SolidElementTechnology',
         'model': 'SolidModel',
-        'materials': 'list[SolidMaterial]',
+        'materials': 'list[ElectromagneticMaterial]',
         'initial_conditions': 'SolidInitialConditions',
-        'boundary_conditions': 'list[OneOfFrequencyAnalysisBoundaryConditions]',
-        'numerics': 'SolidNumerics',
-        'simulation_control': 'SolidSimulationControl',
-        'result_control': 'SolidResultControl',
+        'boundary_conditions': 'list[OneOfElectromagneticAnalysisBoundaryConditions]',
+        'numerics': 'ElectromagneticNumerics',
+        'simulation_control': 'ElectromagneticSimulationControl',
+        'result_control': 'ElectromagneticResultControl',
         'mesh_order': 'str',
-        'time_dependency': 'OneOfConjugateHeatTransferTimeDependency',
+        'time_dependency': 'StationaryTimeDependency',
         'inertia_effect': 'str',
         'turbulence_model': 'str',
         'algorithm': 'str',
@@ -74,7 +74,9 @@ class Analysis(object):
         'allow_external_flow': 'bool',
         'external_flow_boundary_condition': 'OneOfEmbeddedBoundaryExternalFlowBoundaryCondition',
         'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
-        'use_local_time_stepping': 'bool'
+        'use_local_time_stepping': 'bool',
+        'dominant_field': 'str',
+        'coils': 'list[Coil]'
     }
 
     attribute_map = {
@@ -121,7 +123,9 @@ class Analysis(object):
         'allow_external_flow': 'allowExternalFlow',
         'external_flow_boundary_condition': 'externalFlowBoundaryCondition',
         'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
-        'use_local_time_stepping': 'useLocalTimeStepping'
+        'use_local_time_stepping': 'useLocalTimeStepping',
+        'dominant_field': 'dominantField',
+        'coils': 'coils'
     }
 
     discriminator_value_class_map = {
@@ -140,10 +144,11 @@ class Analysis(object):
         'MULTIPHASE': 'Multiphase',
         'CONJUGATE_HEAT_TRANSFER': 'ConjugateHeatTransfer',
         'HARMONIC_ANALYSIS': 'HarmonicAnalysis',
-        'FREQUENCY_ANALYSIS': 'FrequencyAnalysis'
+        'FREQUENCY_ANALYSIS': 'FrequencyAnalysis',
+        'ELECTROMAGNETIC_ANALYSIS': 'ElectromagneticAnalysis'
     }
 
-    def __init__(self, type='FREQUENCY_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, dominant_field=None, coils=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -193,6 +198,8 @@ class Analysis(object):
         self._external_flow_boundary_condition = None
         self._embedded_boundary_meshing = None
         self._use_local_time_stepping = None
+        self._dominant_field = None
+        self._coils = None
         self.discriminator = 'type'
 
         self.type = type
@@ -282,12 +289,16 @@ class Analysis(object):
             self.embedded_boundary_meshing = embedded_boundary_meshing
         if use_local_time_stepping is not None:
             self.use_local_time_stepping = use_local_time_stepping
+        if dominant_field is not None:
+            self.dominant_field = dominant_field
+        if coils is not None:
+            self.coils = coils
 
     @property
     def type(self):
         """Gets the type of this Analysis.  # noqa: E501
 
-        Schema name: FrequencyAnalysis  # noqa: E501
+        Schema name: ElectromagneticAnalysis  # noqa: E501
 
         :return: The type of this Analysis.  # noqa: E501
         :rtype: str
@@ -298,7 +309,7 @@ class Analysis(object):
     def type(self, type):
         """Sets the type of this Analysis.
 
-        Schema name: FrequencyAnalysis  # noqa: E501
+        Schema name: ElectromagneticAnalysis  # noqa: E501
 
         :param type: The type of this Analysis.  # noqa: E501
         :type: str
@@ -421,7 +432,7 @@ class Analysis(object):
 
 
         :return: The materials of this Analysis.  # noqa: E501
-        :rtype: list[SolidMaterial]
+        :rtype: list[ElectromagneticMaterial]
         """
         return self._materials
 
@@ -431,7 +442,7 @@ class Analysis(object):
 
 
         :param materials: The materials of this Analysis.  # noqa: E501
-        :type: list[SolidMaterial]
+        :type: list[ElectromagneticMaterial]
         """
 
         self._materials = materials
@@ -463,7 +474,7 @@ class Analysis(object):
 
 
         :return: The boundary_conditions of this Analysis.  # noqa: E501
-        :rtype: list[OneOfFrequencyAnalysisBoundaryConditions]
+        :rtype: list[OneOfElectromagneticAnalysisBoundaryConditions]
         """
         return self._boundary_conditions
 
@@ -473,7 +484,7 @@ class Analysis(object):
 
 
         :param boundary_conditions: The boundary_conditions of this Analysis.  # noqa: E501
-        :type: list[OneOfFrequencyAnalysisBoundaryConditions]
+        :type: list[OneOfElectromagneticAnalysisBoundaryConditions]
         """
 
         self._boundary_conditions = boundary_conditions
@@ -484,7 +495,7 @@ class Analysis(object):
 
 
         :return: The numerics of this Analysis.  # noqa: E501
-        :rtype: SolidNumerics
+        :rtype: ElectromagneticNumerics
         """
         return self._numerics
 
@@ -494,7 +505,7 @@ class Analysis(object):
 
 
         :param numerics: The numerics of this Analysis.  # noqa: E501
-        :type: SolidNumerics
+        :type: ElectromagneticNumerics
         """
 
         self._numerics = numerics
@@ -505,7 +516,7 @@ class Analysis(object):
 
 
         :return: The simulation_control of this Analysis.  # noqa: E501
-        :rtype: SolidSimulationControl
+        :rtype: ElectromagneticSimulationControl
         """
         return self._simulation_control
 
@@ -515,7 +526,7 @@ class Analysis(object):
 
 
         :param simulation_control: The simulation_control of this Analysis.  # noqa: E501
-        :type: SolidSimulationControl
+        :type: ElectromagneticSimulationControl
         """
 
         self._simulation_control = simulation_control
@@ -526,7 +537,7 @@ class Analysis(object):
 
 
         :return: The result_control of this Analysis.  # noqa: E501
-        :rtype: SolidResultControl
+        :rtype: ElectromagneticResultControl
         """
         return self._result_control
 
@@ -536,7 +547,7 @@ class Analysis(object):
 
 
         :param result_control: The result_control of this Analysis.  # noqa: E501
-        :type: SolidResultControl
+        :type: ElectromagneticResultControl
         """
 
         self._result_control = result_control
@@ -574,7 +585,7 @@ class Analysis(object):
 
 
         :return: The time_dependency of this Analysis.  # noqa: E501
-        :rtype: OneOfConjugateHeatTransferTimeDependency
+        :rtype: StationaryTimeDependency
         """
         return self._time_dependency
 
@@ -584,7 +595,7 @@ class Analysis(object):
 
 
         :param time_dependency: The time_dependency of this Analysis.  # noqa: E501
-        :type: OneOfConjugateHeatTransferTimeDependency
+        :type: StationaryTimeDependency
         """
 
         self._time_dependency = time_dependency
@@ -1268,6 +1279,54 @@ class Analysis(object):
         """
 
         self._use_local_time_stepping = use_local_time_stepping
+
+    @property
+    def dominant_field(self):
+        """Gets the dominant_field of this Analysis.  # noqa: E501
+
+
+        :return: The dominant_field of this Analysis.  # noqa: E501
+        :rtype: str
+        """
+        return self._dominant_field
+
+    @dominant_field.setter
+    def dominant_field(self, dominant_field):
+        """Sets the dominant_field of this Analysis.
+
+
+        :param dominant_field: The dominant_field of this Analysis.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["MAGNETIC"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and dominant_field not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `dominant_field` ({0}), must be one of {1}"  # noqa: E501
+                .format(dominant_field, allowed_values)
+            )
+
+        self._dominant_field = dominant_field
+
+    @property
+    def coils(self):
+        """Gets the coils of this Analysis.  # noqa: E501
+
+
+        :return: The coils of this Analysis.  # noqa: E501
+        :rtype: list[Coil]
+        """
+        return self._coils
+
+    @coils.setter
+    def coils(self, coils):
+        """Sets the coils of this Analysis.
+
+
+        :param coils: The coils of this Analysis.  # noqa: E501
+        :type: list[Coil]
+        """
+
+        self._coils = coils
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

@@ -32,27 +32,27 @@ class FixedValueRHBC(object):
     """
     openapi_types = {
         'type': 'str',
-        'value': 'float'
+        'humidity_value': 'OneOfFixedValueRHBCHumidityValue'
     }
 
     attribute_map = {
         'type': 'type',
-        'value': 'value'
+        'humidity_value': 'humidityValue'
     }
 
-    def __init__(self, type='FIXED_VALUE', value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_VALUE', humidity_value=None, local_vars_configuration=None):  # noqa: E501
         """FixedValueRHBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._value = None
+        self._humidity_value = None
         self.discriminator = None
 
         self.type = type
-        if value is not None:
-            self.value = value
+        if humidity_value is not None:
+            self.humidity_value = humidity_value
 
     @property
     def type(self):
@@ -80,31 +80,25 @@ class FixedValueRHBC(object):
         self._type = type
 
     @property
-    def value(self):
-        """Gets the value of this FixedValueRHBC.  # noqa: E501
+    def humidity_value(self):
+        """Gets the humidity_value of this FixedValueRHBC.  # noqa: E501
 
 
-        :return: The value of this FixedValueRHBC.  # noqa: E501
-        :rtype: float
+        :return: The humidity_value of this FixedValueRHBC.  # noqa: E501
+        :rtype: OneOfFixedValueRHBCHumidityValue
         """
-        return self._value
+        return self._humidity_value
 
-    @value.setter
-    def value(self, value):
-        """Sets the value of this FixedValueRHBC.
+    @humidity_value.setter
+    def humidity_value(self, humidity_value):
+        """Sets the humidity_value of this FixedValueRHBC.
 
 
-        :param value: The value of this FixedValueRHBC.  # noqa: E501
-        :type: float
+        :param humidity_value: The humidity_value of this FixedValueRHBC.  # noqa: E501
+        :type: OneOfFixedValueRHBCHumidityValue
         """
-        if (self.local_vars_configuration.client_side_validation and
-                value is not None and value > 100):  # noqa: E501
-            raise ValueError("Invalid value for `value`, must be a value less than or equal to `100`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                value is not None and value < 0):  # noqa: E501
-            raise ValueError("Invalid value for `value`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._value = value
+        self._humidity_value = humidity_value
 
     def to_dict(self):
         """Returns the model properties as a dict"""

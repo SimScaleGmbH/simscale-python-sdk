@@ -37,6 +37,8 @@ class SolidSimulationControl(object):
         'write_control_definition': 'OneOfSolidSimulationControlWriteControlDefinition',
         'excitation_frequencies': 'OneOfSolidSimulationControlExcitationFrequencies',
         'eigenfrequency_scope': 'OneOfSolidSimulationControlEigenfrequencyScope',
+        'modal_base': 'ModalBaseControl',
+        'harmonic_response': 'HarmonicResponseControl',
         'processors': 'ComputingCore',
         'max_run_time': 'DimensionalTime'
     }
@@ -48,11 +50,13 @@ class SolidSimulationControl(object):
         'write_control_definition': 'writeControlDefinition',
         'excitation_frequencies': 'excitationFrequencies',
         'eigenfrequency_scope': 'eigenfrequencyScope',
+        'modal_base': 'modalBase',
+        'harmonic_response': 'harmonicResponse',
         'processors': 'processors',
         'max_run_time': 'maxRunTime'
     }
 
-    def __init__(self, timestep_definition=None, pseudo_time_stepping=None, auto_load_ramping=None, write_control_definition=None, excitation_frequencies=None, eigenfrequency_scope=None, processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, timestep_definition=None, pseudo_time_stepping=None, auto_load_ramping=None, write_control_definition=None, excitation_frequencies=None, eigenfrequency_scope=None, modal_base=None, harmonic_response=None, processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
         """SolidSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,6 +68,8 @@ class SolidSimulationControl(object):
         self._write_control_definition = None
         self._excitation_frequencies = None
         self._eigenfrequency_scope = None
+        self._modal_base = None
+        self._harmonic_response = None
         self._processors = None
         self._max_run_time = None
         self.discriminator = None
@@ -80,6 +86,10 @@ class SolidSimulationControl(object):
             self.excitation_frequencies = excitation_frequencies
         if eigenfrequency_scope is not None:
             self.eigenfrequency_scope = eigenfrequency_scope
+        if modal_base is not None:
+            self.modal_base = modal_base
+        if harmonic_response is not None:
+            self.harmonic_response = harmonic_response
         if processors is not None:
             self.processors = processors
         if max_run_time is not None:
@@ -212,6 +222,48 @@ class SolidSimulationControl(object):
         """
 
         self._eigenfrequency_scope = eigenfrequency_scope
+
+    @property
+    def modal_base(self):
+        """Gets the modal_base of this SolidSimulationControl.  # noqa: E501
+
+
+        :return: The modal_base of this SolidSimulationControl.  # noqa: E501
+        :rtype: ModalBaseControl
+        """
+        return self._modal_base
+
+    @modal_base.setter
+    def modal_base(self, modal_base):
+        """Sets the modal_base of this SolidSimulationControl.
+
+
+        :param modal_base: The modal_base of this SolidSimulationControl.  # noqa: E501
+        :type: ModalBaseControl
+        """
+
+        self._modal_base = modal_base
+
+    @property
+    def harmonic_response(self):
+        """Gets the harmonic_response of this SolidSimulationControl.  # noqa: E501
+
+
+        :return: The harmonic_response of this SolidSimulationControl.  # noqa: E501
+        :rtype: HarmonicResponseControl
+        """
+        return self._harmonic_response
+
+    @harmonic_response.setter
+    def harmonic_response(self, harmonic_response):
+        """Sets the harmonic_response of this SolidSimulationControl.
+
+
+        :param harmonic_response: The harmonic_response of this SolidSimulationControl.  # noqa: E501
+        :type: HarmonicResponseControl
+        """
+
+        self._harmonic_response = harmonic_response
 
     @property
     def processors(self):

@@ -32,23 +32,20 @@ class OneOfPressureOutletBCGaugePressure(object):
     """
     openapi_types = {
         'type': 'str',
-        'value': 'DimensionalPressure',
-        'total_pressure': 'DimensionalFunctionPressure'
+        'value': 'DimensionalPressure'
     }
 
     attribute_map = {
         'type': 'type',
-        'value': 'value',
-        'total_pressure': 'totalPressure'
+        'value': 'value'
     }
 
     discriminator_value_class_map = {
         'FIXED_VALUE': 'FixedValuePBC',
-        'FIXED_MEAN': 'MeanValuePBC',
-        'TOTAL_PRESSURE': 'TotalPBC'
+        'FIXED_MEAN': 'MeanValuePBC'
     }
 
-    def __init__(self, type='TOTAL_PRESSURE', value=None, total_pressure=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_MEAN', value=None, local_vars_configuration=None):  # noqa: E501
         """OneOfPressureOutletBCGaugePressure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,20 +53,17 @@ class OneOfPressureOutletBCGaugePressure(object):
 
         self._type = None
         self._value = None
-        self._total_pressure = None
         self.discriminator = 'type'
 
         self.type = type
         if value is not None:
             self.value = value
-        if total_pressure is not None:
-            self.total_pressure = total_pressure
 
     @property
     def type(self):
         """Gets the type of this OneOfPressureOutletBCGaugePressure.  # noqa: E501
 
-        Schema name: TotalPBC  # noqa: E501
+        Schema name: MeanValuePBC  # noqa: E501
 
         :return: The type of this OneOfPressureOutletBCGaugePressure.  # noqa: E501
         :rtype: str
@@ -80,7 +74,7 @@ class OneOfPressureOutletBCGaugePressure(object):
     def type(self, type):
         """Sets the type of this OneOfPressureOutletBCGaugePressure.
 
-        Schema name: TotalPBC  # noqa: E501
+        Schema name: MeanValuePBC  # noqa: E501
 
         :param type: The type of this OneOfPressureOutletBCGaugePressure.  # noqa: E501
         :type: str
@@ -110,27 +104,6 @@ class OneOfPressureOutletBCGaugePressure(object):
         """
 
         self._value = value
-
-    @property
-    def total_pressure(self):
-        """Gets the total_pressure of this OneOfPressureOutletBCGaugePressure.  # noqa: E501
-
-
-        :return: The total_pressure of this OneOfPressureOutletBCGaugePressure.  # noqa: E501
-        :rtype: DimensionalFunctionPressure
-        """
-        return self._total_pressure
-
-    @total_pressure.setter
-    def total_pressure(self, total_pressure):
-        """Sets the total_pressure of this OneOfPressureOutletBCGaugePressure.
-
-
-        :param total_pressure: The total_pressure of this OneOfPressureOutletBCGaugePressure.  # noqa: E501
-        :type: DimensionalFunctionPressure
-        """
-
-        self._total_pressure = total_pressure
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

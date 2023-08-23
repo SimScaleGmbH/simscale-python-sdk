@@ -35,6 +35,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'name': 'str',
         'velocity': 'OneOfWallBCVelocity',
         'temperature': 'AmbientTBC',
+        'relative_humidity': 'InletOutletRHBC',
         'phase_fraction': 'OneOfWallBCPhaseFraction',
         'net_radiative_heat_flux': 'OneOfNaturalConvectionInletOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OpenBoundaryRayBC',
@@ -42,8 +43,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'topological_reference': 'TopologicalReference',
         'pressure_rgh': 'AmbientPBC',
         'gauge_pressure_rgh': 'AmbientPBC',
-        'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence',
-        'relative_humidity': 'InletOutletRHBC'
+        'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence'
     }
 
     attribute_map = {
@@ -51,6 +51,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'name': 'name',
         'velocity': 'velocity',
         'temperature': 'temperature',
+        'relative_humidity': 'relativeHumidity',
         'phase_fraction': 'phaseFraction',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
@@ -58,8 +59,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'topological_reference': 'topologicalReference',
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure_rgh': 'gaugePressureRgh',
-        'turbulence': 'turbulence',
-        'relative_humidity': 'relativeHumidity'
+        'turbulence': 'turbulence'
     }
 
     discriminator_value_class_map = {
@@ -67,7 +67,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
 
-    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, temperature=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, electric_boundary_condition=None, topological_reference=None, pressure_rgh=None, gauge_pressure_rgh=None, turbulence=None, relative_humidity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, temperature=None, relative_humidity=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, electric_boundary_condition=None, topological_reference=None, pressure_rgh=None, gauge_pressure_rgh=None, turbulence=None, local_vars_configuration=None):  # noqa: E501
         """OneOfEmbeddedBoundaryExternalFlowBoundaryCondition - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +77,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         self._name = None
         self._velocity = None
         self._temperature = None
+        self._relative_humidity = None
         self._phase_fraction = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
@@ -85,7 +86,6 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         self._pressure_rgh = None
         self._gauge_pressure_rgh = None
         self._turbulence = None
-        self._relative_humidity = None
         self.discriminator = 'type'
 
         self.type = type
@@ -95,6 +95,8 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
             self.velocity = velocity
         if temperature is not None:
             self.temperature = temperature
+        if relative_humidity is not None:
+            self.relative_humidity = relative_humidity
         if phase_fraction is not None:
             self.phase_fraction = phase_fraction
         if net_radiative_heat_flux is not None:
@@ -111,8 +113,6 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
             self.gauge_pressure_rgh = gauge_pressure_rgh
         if turbulence is not None:
             self.turbulence = turbulence
-        if relative_humidity is not None:
-            self.relative_humidity = relative_humidity
 
     @property
     def type(self):
@@ -201,6 +201,27 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         """
 
         self._temperature = temperature
+
+    @property
+    def relative_humidity(self):
+        """Gets the relative_humidity of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
+
+
+        :return: The relative_humidity of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
+        :rtype: InletOutletRHBC
+        """
+        return self._relative_humidity
+
+    @relative_humidity.setter
+    def relative_humidity(self, relative_humidity):
+        """Sets the relative_humidity of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.
+
+
+        :param relative_humidity: The relative_humidity of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
+        :type: InletOutletRHBC
+        """
+
+        self._relative_humidity = relative_humidity
 
     @property
     def phase_fraction(self):
@@ -369,27 +390,6 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         """
 
         self._turbulence = turbulence
-
-    @property
-    def relative_humidity(self):
-        """Gets the relative_humidity of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
-
-
-        :return: The relative_humidity of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
-        :rtype: InletOutletRHBC
-        """
-        return self._relative_humidity
-
-    @relative_humidity.setter
-    def relative_humidity(self, relative_humidity):
-        """Sets the relative_humidity of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.
-
-
-        :param relative_humidity: The relative_humidity of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
-        :type: InletOutletRHBC
-        """
-
-        self._relative_humidity = relative_humidity
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

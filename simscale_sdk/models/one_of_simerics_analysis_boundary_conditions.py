@@ -43,7 +43,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfWallBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfWallBCRadiativeIntensityRay',
-        'relative_humidity': 'InletOutletRHBC',
+        'relative_humidity': 'OneOfWallBCRelativeHumidity',
         'topological_reference': 'TopologicalReference',
         'pressure': 'OneOfPressureOutletBCPressure',
         'pressure_rgh': 'OneOfPressureOutletBCPressureRgh',
@@ -414,7 +414,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
 
 
         :return: The relative_humidity of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
-        :rtype: InletOutletRHBC
+        :rtype: OneOfWallBCRelativeHumidity
         """
         return self._relative_humidity
 
@@ -424,7 +424,7 @@ class OneOfSimericsAnalysisBoundaryConditions(object):
 
 
         :param relative_humidity: The relative_humidity of this OneOfSimericsAnalysisBoundaryConditions.  # noqa: E501
-        :type: InletOutletRHBC
+        :type: OneOfWallBCRelativeHumidity
         """
 
         self._relative_humidity = relative_humidity
