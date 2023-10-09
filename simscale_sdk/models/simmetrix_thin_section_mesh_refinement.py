@@ -34,7 +34,7 @@ class SimmetrixThinSectionMeshRefinement(object):
         'type': 'str',
         'name': 'str',
         'distance_type': 'OneOfSimmetrixThinSectionMeshRefinementDistanceType',
-        'number_of_elements': 'int',
+        'sizing_type': 'OneOfSimmetrixThinSectionMeshRefinementSizingType',
         'surface_element_type': 'str',
         'specify_local_size': 'bool',
         'max_element_size': 'DimensionalLength',
@@ -46,7 +46,7 @@ class SimmetrixThinSectionMeshRefinement(object):
         'type': 'type',
         'name': 'name',
         'distance_type': 'distanceType',
-        'number_of_elements': 'numberOfElements',
+        'sizing_type': 'sizingType',
         'surface_element_type': 'surfaceElementType',
         'specify_local_size': 'specifyLocalSize',
         'max_element_size': 'maxElementSize',
@@ -54,7 +54,7 @@ class SimmetrixThinSectionMeshRefinement(object):
         'destination_topological_reference': 'destinationTopologicalReference'
     }
 
-    def __init__(self, type='SIMMETRIX_THIN_SECTION_MESH_REFINEMENT', name=None, distance_type=None, number_of_elements=None, surface_element_type=None, specify_local_size=None, max_element_size=None, source_topological_reference=None, destination_topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_THIN_SECTION_MESH_REFINEMENT', name=None, distance_type=None, sizing_type=None, surface_element_type=None, specify_local_size=None, max_element_size=None, source_topological_reference=None, destination_topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixThinSectionMeshRefinement - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,7 +63,7 @@ class SimmetrixThinSectionMeshRefinement(object):
         self._type = None
         self._name = None
         self._distance_type = None
-        self._number_of_elements = None
+        self._sizing_type = None
         self._surface_element_type = None
         self._specify_local_size = None
         self._max_element_size = None
@@ -76,8 +76,8 @@ class SimmetrixThinSectionMeshRefinement(object):
             self.name = name
         if distance_type is not None:
             self.distance_type = distance_type
-        if number_of_elements is not None:
-            self.number_of_elements = number_of_elements
+        if sizing_type is not None:
+            self.sizing_type = sizing_type
         if surface_element_type is not None:
             self.surface_element_type = surface_element_type
         if specify_local_size is not None:
@@ -157,33 +157,25 @@ class SimmetrixThinSectionMeshRefinement(object):
         self._distance_type = distance_type
 
     @property
-    def number_of_elements(self):
-        """Gets the number_of_elements of this SimmetrixThinSectionMeshRefinement.  # noqa: E501
+    def sizing_type(self):
+        """Gets the sizing_type of this SimmetrixThinSectionMeshRefinement.  # noqa: E501
 
-        <b>Number of elements</b> defines the number of cells that will be created across the thin sections of a model region.  # noqa: E501
 
-        :return: The number_of_elements of this SimmetrixThinSectionMeshRefinement.  # noqa: E501
-        :rtype: int
+        :return: The sizing_type of this SimmetrixThinSectionMeshRefinement.  # noqa: E501
+        :rtype: OneOfSimmetrixThinSectionMeshRefinementSizingType
         """
-        return self._number_of_elements
+        return self._sizing_type
 
-    @number_of_elements.setter
-    def number_of_elements(self, number_of_elements):
-        """Sets the number_of_elements of this SimmetrixThinSectionMeshRefinement.
+    @sizing_type.setter
+    def sizing_type(self, sizing_type):
+        """Sets the sizing_type of this SimmetrixThinSectionMeshRefinement.
 
-        <b>Number of elements</b> defines the number of cells that will be created across the thin sections of a model region.  # noqa: E501
 
-        :param number_of_elements: The number_of_elements of this SimmetrixThinSectionMeshRefinement.  # noqa: E501
-        :type: int
+        :param sizing_type: The sizing_type of this SimmetrixThinSectionMeshRefinement.  # noqa: E501
+        :type: OneOfSimmetrixThinSectionMeshRefinementSizingType
         """
-        if (self.local_vars_configuration.client_side_validation and
-                number_of_elements is not None and number_of_elements > 100000):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_elements`, must be a value less than or equal to `100000`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                number_of_elements is not None and number_of_elements < 1):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_elements`, must be a value greater than or equal to `1`")  # noqa: E501
 
-        self._number_of_elements = number_of_elements
+        self._sizing_type = sizing_type
 
     @property
     def surface_element_type(self):

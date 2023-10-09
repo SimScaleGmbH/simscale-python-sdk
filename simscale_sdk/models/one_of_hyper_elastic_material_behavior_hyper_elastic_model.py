@@ -35,7 +35,9 @@ class OneOfHyperElasticMaterialBehaviorHyperElasticModel(object):
         'c10': 'DimensionalPressure',
         'c01': 'DimensionalPressure',
         'd1': 'DimensionalInvPressure',
-        'c20': 'DimensionalPressure'
+        'c20': 'DimensionalPressure',
+        'c30': 'DimensionalPressure',
+        'order': 'OneOfOgdenHyperElasticModelOrder'
     }
 
     attribute_map = {
@@ -43,16 +45,20 @@ class OneOfHyperElasticMaterialBehaviorHyperElasticModel(object):
         'c10': 'c10',
         'c01': 'c01',
         'd1': 'd1',
-        'c20': 'c20'
+        'c20': 'c20',
+        'c30': 'c30',
+        'order': 'order'
     }
 
     discriminator_value_class_map = {
         'MOONEY_RIVLIN': 'MooneyRivlinHyperElasticModel',
         'NEO_HOOKE': 'NeoHookeHyperElasticModel',
-        'SIGNORINI': 'SignoriniHyperElasticModel'
+        'SIGNORINI': 'SignoriniHyperElasticModel',
+        'YEOH': 'YeohHyperElasticModel',
+        'OGDEN': 'OgdenHyperElasticModel'
     }
 
-    def __init__(self, type='SIGNORINI', c10=None, c01=None, d1=None, c20=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='OGDEN', c10=None, c01=None, d1=None, c20=None, c30=None, order=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHyperElasticMaterialBehaviorHyperElasticModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +69,8 @@ class OneOfHyperElasticMaterialBehaviorHyperElasticModel(object):
         self._c01 = None
         self._d1 = None
         self._c20 = None
+        self._c30 = None
+        self._order = None
         self.discriminator = 'type'
 
         self.type = type
@@ -74,12 +82,16 @@ class OneOfHyperElasticMaterialBehaviorHyperElasticModel(object):
             self.d1 = d1
         if c20 is not None:
             self.c20 = c20
+        if c30 is not None:
+            self.c30 = c30
+        if order is not None:
+            self.order = order
 
     @property
     def type(self):
         """Gets the type of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
 
-        <p>Choose the hyperelastic material model that should be used. All models derive the stress-strain relation from a strain energy function defined by the material model parameters.</p>  Schema name: SignoriniHyperElasticModel  # noqa: E501
+        <p>Choose the hyperelastic material model that should be used. All models derive the stress-strain relation from a strain energy function defined by the material model parameters.</p>  Schema name: OgdenHyperElasticModel  # noqa: E501
 
         :return: The type of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
         :rtype: str
@@ -90,7 +102,7 @@ class OneOfHyperElasticMaterialBehaviorHyperElasticModel(object):
     def type(self, type):
         """Sets the type of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.
 
-        <p>Choose the hyperelastic material model that should be used. All models derive the stress-strain relation from a strain energy function defined by the material model parameters.</p>  Schema name: SignoriniHyperElasticModel  # noqa: E501
+        <p>Choose the hyperelastic material model that should be used. All models derive the stress-strain relation from a strain energy function defined by the material model parameters.</p>  Schema name: OgdenHyperElasticModel  # noqa: E501
 
         :param type: The type of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
         :type: str
@@ -183,6 +195,48 @@ class OneOfHyperElasticMaterialBehaviorHyperElasticModel(object):
         """
 
         self._c20 = c20
+
+    @property
+    def c30(self):
+        """Gets the c30 of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
+
+
+        :return: The c30 of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
+        :rtype: DimensionalPressure
+        """
+        return self._c30
+
+    @c30.setter
+    def c30(self, c30):
+        """Sets the c30 of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.
+
+
+        :param c30: The c30 of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
+        :type: DimensionalPressure
+        """
+
+        self._c30 = c30
+
+    @property
+    def order(self):
+        """Gets the order of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
+
+
+        :return: The order of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
+        :rtype: OneOfOgdenHyperElasticModelOrder
+        """
+        return self._order
+
+    @order.setter
+    def order(self, order):
+        """Sets the order of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.
+
+
+        :param order: The order of this OneOfHyperElasticMaterialBehaviorHyperElasticModel.  # noqa: E501
+        :type: OneOfOgdenHyperElasticModelOrder
+        """
+
+        self._order = order
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

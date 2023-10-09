@@ -242,7 +242,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_humidity_model(self):
         """Gets the enable_humidity_model of this CoupledConjugateHeatTransfer.  # noqa: E501
 
-        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of 0° to 100°C.  # noqa: E501
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of <b>0° to 100°C</b>. </li></ul></p><a href= https://www.simscale.com/docs/simulation-setup/global-settings/humidity-modeling/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_humidity_model of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: bool
@@ -253,7 +253,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_humidity_model(self, enable_humidity_model):
         """Sets the enable_humidity_model of this CoupledConjugateHeatTransfer.
 
-        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of 0° to 100°C.  # noqa: E501
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of <b>0° to 100°C</b>. </li></ul></p><a href= https://www.simscale.com/docs/simulation-setup/global-settings/humidity-modeling/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_humidity_model: The enable_humidity_model of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: bool
@@ -288,6 +288,7 @@ class CoupledConjugateHeatTransfer(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST.</p>  # noqa: E501
 
         :return: The turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: str
@@ -298,6 +299,7 @@ class CoupledConjugateHeatTransfer(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this CoupledConjugateHeatTransfer.
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST.</p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: str

@@ -32,15 +32,19 @@ class NewtonianViscosityModel(object):
     """
     openapi_types = {
         'type': 'str',
-        'kinematic_viscosity': 'DimensionalKinematicViscosity'
+        'kinematic_viscosity': 'DimensionalKinematicViscosity',
+        'kinematic_viscosity_function': 'DimensionalFunctionKinematicViscosity',
+        'dynamic_viscosity_function': 'DimensionalFunctionDynamicViscosity'
     }
 
     attribute_map = {
         'type': 'type',
-        'kinematic_viscosity': 'kinematicViscosity'
+        'kinematic_viscosity': 'kinematicViscosity',
+        'kinematic_viscosity_function': 'kinematicViscosityFunction',
+        'dynamic_viscosity_function': 'dynamicViscosityFunction'
     }
 
-    def __init__(self, type='NEWTONIAN', kinematic_viscosity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NEWTONIAN', kinematic_viscosity=None, kinematic_viscosity_function=None, dynamic_viscosity_function=None, local_vars_configuration=None):  # noqa: E501
         """NewtonianViscosityModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +52,17 @@ class NewtonianViscosityModel(object):
 
         self._type = None
         self._kinematic_viscosity = None
+        self._kinematic_viscosity_function = None
+        self._dynamic_viscosity_function = None
         self.discriminator = None
 
         self.type = type
         if kinematic_viscosity is not None:
             self.kinematic_viscosity = kinematic_viscosity
+        if kinematic_viscosity_function is not None:
+            self.kinematic_viscosity_function = kinematic_viscosity_function
+        if dynamic_viscosity_function is not None:
+            self.dynamic_viscosity_function = dynamic_viscosity_function
 
     @property
     def type(self):
@@ -99,6 +109,48 @@ class NewtonianViscosityModel(object):
         """
 
         self._kinematic_viscosity = kinematic_viscosity
+
+    @property
+    def kinematic_viscosity_function(self):
+        """Gets the kinematic_viscosity_function of this NewtonianViscosityModel.  # noqa: E501
+
+
+        :return: The kinematic_viscosity_function of this NewtonianViscosityModel.  # noqa: E501
+        :rtype: DimensionalFunctionKinematicViscosity
+        """
+        return self._kinematic_viscosity_function
+
+    @kinematic_viscosity_function.setter
+    def kinematic_viscosity_function(self, kinematic_viscosity_function):
+        """Sets the kinematic_viscosity_function of this NewtonianViscosityModel.
+
+
+        :param kinematic_viscosity_function: The kinematic_viscosity_function of this NewtonianViscosityModel.  # noqa: E501
+        :type: DimensionalFunctionKinematicViscosity
+        """
+
+        self._kinematic_viscosity_function = kinematic_viscosity_function
+
+    @property
+    def dynamic_viscosity_function(self):
+        """Gets the dynamic_viscosity_function of this NewtonianViscosityModel.  # noqa: E501
+
+
+        :return: The dynamic_viscosity_function of this NewtonianViscosityModel.  # noqa: E501
+        :rtype: DimensionalFunctionDynamicViscosity
+        """
+        return self._dynamic_viscosity_function
+
+    @dynamic_viscosity_function.setter
+    def dynamic_viscosity_function(self, dynamic_viscosity_function):
+        """Sets the dynamic_viscosity_function of this NewtonianViscosityModel.
+
+
+        :param dynamic_viscosity_function: The dynamic_viscosity_function of this NewtonianViscosityModel.  # noqa: E501
+        :type: DimensionalFunctionDynamicViscosity
+        """
+
+        self._dynamic_viscosity_function = dynamic_viscosity_function
 
     def to_dict(self):
         """Returns the model properties as a dict"""

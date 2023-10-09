@@ -68,7 +68,7 @@ class StrainHardeningModel(object):
     def type(self):
         """Gets the type of this StrainHardeningModel.  # noqa: E501
 
-        Choose the material behavior for your problem. </p> <br /><br />Important remarks:<br /> <ul><li>Choose <b>Strain Hardening</b> if the material response is a combination of linear elastic behavior and plastic hardening behavior, where the material becomes progressively stiffer with increasing strain.</li><li>Choose <b>Perfect Plasticity</b> if the material response is a combination of linear elastic and perfect plastic hardening behavior (constant stress for applied strain).</li></ul>  Schema name: StrainHardeningModel  # noqa: E501
+        Schema name: StrainHardeningModel  # noqa: E501
 
         :return: The type of this StrainHardeningModel.  # noqa: E501
         :rtype: str
@@ -79,7 +79,7 @@ class StrainHardeningModel(object):
     def type(self, type):
         """Sets the type of this StrainHardeningModel.
 
-        Choose the material behavior for your problem. </p> <br /><br />Important remarks:<br /> <ul><li>Choose <b>Strain Hardening</b> if the material response is a combination of linear elastic behavior and plastic hardening behavior, where the material becomes progressively stiffer with increasing strain.</li><li>Choose <b>Perfect Plasticity</b> if the material response is a combination of linear elastic and perfect plastic hardening behavior (constant stress for applied strain).</li></ul>  Schema name: StrainHardeningModel  # noqa: E501
+        Schema name: StrainHardeningModel  # noqa: E501
 
         :param type: The type of this StrainHardeningModel.  # noqa: E501
         :type: str

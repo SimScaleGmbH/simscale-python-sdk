@@ -34,7 +34,7 @@ class Coil(object):
         'name': 'str',
         'topology': 'OneOfCoilTopology',
         'coil_type': 'OneOfCoilCoilType',
-        'excitation': 'CurrentExcitation'
+        'excitation': 'OneOfCoilExcitation'
     }
 
     attribute_map = {
@@ -134,7 +134,7 @@ class Coil(object):
 
 
         :return: The excitation of this Coil.  # noqa: E501
-        :rtype: CurrentExcitation
+        :rtype: OneOfCoilExcitation
         """
         return self._excitation
 
@@ -144,7 +144,7 @@ class Coil(object):
 
 
         :param excitation: The excitation of this Coil.  # noqa: E501
-        :type: CurrentExcitation
+        :type: OneOfCoilExcitation
         """
 
         self._excitation = excitation

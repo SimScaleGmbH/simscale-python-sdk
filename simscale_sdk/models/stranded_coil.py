@@ -88,6 +88,7 @@ class StrandedCoil(object):
     def number_of_turns(self):
         """Gets the number_of_turns of this StrandedCoil.  # noqa: E501
 
+        <p>The <strong>Number of Turns</strong> option indicates the number of times the wire is wound around the coil's core to form loops. Each loop is a complete 360-degree winding of the wire around the core.</p>  # noqa: E501
 
         :return: The number_of_turns of this StrandedCoil.  # noqa: E501
         :rtype: int
@@ -98,6 +99,7 @@ class StrandedCoil(object):
     def number_of_turns(self, number_of_turns):
         """Sets the number_of_turns of this StrandedCoil.
 
+        <p>The <strong>Number of Turns</strong> option indicates the number of times the wire is wound around the coil's core to form loops. Each loop is a complete 360-degree winding of the wire around the core.</p>  # noqa: E501
 
         :param number_of_turns: The number_of_turns of this StrandedCoil.  # noqa: E501
         :type: int

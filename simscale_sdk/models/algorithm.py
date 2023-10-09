@@ -40,6 +40,7 @@ class Algorithm(object):
         'hex_core': 'bool',
         'num_of_processors': 'int',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixEmSettings',
+        'automatic_sweep_parameters': 'OneOfSimmetrixMeshingSolidAutomaticSweepParameters',
         'enable_shell_meshing': 'bool',
         'surface_element_type': 'str',
         'meshing_mode': 'str'
@@ -55,6 +56,7 @@ class Algorithm(object):
         'hex_core': 'hexCore',
         'num_of_processors': 'numOfProcessors',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings',
+        'automatic_sweep_parameters': 'automaticSweepParameters',
         'enable_shell_meshing': 'enableShellMeshing',
         'surface_element_type': 'surfaceElementType',
         'meshing_mode': 'meshingMode'
@@ -67,7 +69,7 @@ class Algorithm(object):
         'HEX_DOMINANT_SNAPPY_V5': 'HexDominantSnappy'
     }
 
-    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, advanced_simmetrix_settings=None, enable_shell_meshing=None, surface_element_type=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, advanced_simmetrix_settings=None, automatic_sweep_parameters=None, enable_shell_meshing=None, surface_element_type=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
         """Algorithm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +84,7 @@ class Algorithm(object):
         self._hex_core = None
         self._num_of_processors = None
         self._advanced_simmetrix_settings = None
+        self._automatic_sweep_parameters = None
         self._enable_shell_meshing = None
         self._surface_element_type = None
         self._meshing_mode = None
@@ -104,6 +107,8 @@ class Algorithm(object):
             self.num_of_processors = num_of_processors
         if advanced_simmetrix_settings is not None:
             self.advanced_simmetrix_settings = advanced_simmetrix_settings
+        if automatic_sweep_parameters is not None:
+            self.automatic_sweep_parameters = automatic_sweep_parameters
         if enable_shell_meshing is not None:
             self.enable_shell_meshing = enable_shell_meshing
         if surface_element_type is not None:
@@ -315,6 +320,27 @@ class Algorithm(object):
         """
 
         self._advanced_simmetrix_settings = advanced_simmetrix_settings
+
+    @property
+    def automatic_sweep_parameters(self):
+        """Gets the automatic_sweep_parameters of this Algorithm.  # noqa: E501
+
+
+        :return: The automatic_sweep_parameters of this Algorithm.  # noqa: E501
+        :rtype: OneOfSimmetrixMeshingSolidAutomaticSweepParameters
+        """
+        return self._automatic_sweep_parameters
+
+    @automatic_sweep_parameters.setter
+    def automatic_sweep_parameters(self, automatic_sweep_parameters):
+        """Sets the automatic_sweep_parameters of this Algorithm.
+
+
+        :param automatic_sweep_parameters: The automatic_sweep_parameters of this Algorithm.  # noqa: E501
+        :type: OneOfSimmetrixMeshingSolidAutomaticSweepParameters
+        """
+
+        self._automatic_sweep_parameters = automatic_sweep_parameters
 
     @property
     def enable_shell_meshing(self):

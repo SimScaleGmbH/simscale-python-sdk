@@ -36,6 +36,7 @@ class OneOfCustomFluidBCTemperature(object):
         'value': 'DimensionalTemperature',
         'gradient': 'DimensionalFunctionTemperatureGradient',
         'total_temperature': 'DimensionalTemperature',
+        'total_temperature_function': 'DimensionalFunctionTemperature',
         'specific_heat_ratio': 'float',
         'heat_source': 'OneOfTurbulentHeatFluxTBCHeatSource',
         'wall_temperature': 'DimensionalTemperature',
@@ -48,6 +49,7 @@ class OneOfCustomFluidBCTemperature(object):
         'value': 'value',
         'gradient': 'gradient',
         'total_temperature': 'totalTemperature',
+        'total_temperature_function': 'totalTemperatureFunction',
         'specific_heat_ratio': 'specificHeatRatio',
         'heat_source': 'heatSource',
         'wall_temperature': 'wallTemperature',
@@ -66,7 +68,7 @@ class OneOfCustomFluidBCTemperature(object):
         'WALL_HEAT_TRANSFER': 'WallHeatTransferTBC'
     }
 
-    def __init__(self, type='WALL_HEAT_TRANSFER', heat_flux=None, value=None, gradient=None, total_temperature=None, specific_heat_ratio=None, heat_source=None, wall_temperature=None, thermal_diffusivity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='WALL_HEAT_TRANSFER', heat_flux=None, value=None, gradient=None, total_temperature=None, total_temperature_function=None, specific_heat_ratio=None, heat_source=None, wall_temperature=None, thermal_diffusivity=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCTemperature - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -77,6 +79,7 @@ class OneOfCustomFluidBCTemperature(object):
         self._value = None
         self._gradient = None
         self._total_temperature = None
+        self._total_temperature_function = None
         self._specific_heat_ratio = None
         self._heat_source = None
         self._wall_temperature = None
@@ -92,6 +95,8 @@ class OneOfCustomFluidBCTemperature(object):
             self.gradient = gradient
         if total_temperature is not None:
             self.total_temperature = total_temperature
+        if total_temperature_function is not None:
+            self.total_temperature_function = total_temperature_function
         if specific_heat_ratio is not None:
             self.specific_heat_ratio = specific_heat_ratio
         if heat_source is not None:
@@ -209,6 +214,27 @@ class OneOfCustomFluidBCTemperature(object):
         """
 
         self._total_temperature = total_temperature
+
+    @property
+    def total_temperature_function(self):
+        """Gets the total_temperature_function of this OneOfCustomFluidBCTemperature.  # noqa: E501
+
+
+        :return: The total_temperature_function of this OneOfCustomFluidBCTemperature.  # noqa: E501
+        :rtype: DimensionalFunctionTemperature
+        """
+        return self._total_temperature_function
+
+    @total_temperature_function.setter
+    def total_temperature_function(self, total_temperature_function):
+        """Sets the total_temperature_function of this OneOfCustomFluidBCTemperature.
+
+
+        :param total_temperature_function: The total_temperature_function of this OneOfCustomFluidBCTemperature.  # noqa: E501
+        :type: DimensionalFunctionTemperature
+        """
+
+        self._total_temperature_function = total_temperature_function
 
     @property
     def specific_heat_ratio(self):

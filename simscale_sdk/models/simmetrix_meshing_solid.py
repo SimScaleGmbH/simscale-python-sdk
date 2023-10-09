@@ -34,6 +34,7 @@ class SimmetrixMeshingSolid(object):
         'type': 'str',
         'sizing': 'OneOfSimmetrixMeshingSolidSizing',
         'refinements': 'list[OneOfSimmetrixMeshingSolidRefinements]',
+        'automatic_sweep_parameters': 'OneOfSimmetrixMeshingSolidAutomaticSweepParameters',
         'enable_shell_meshing': 'bool',
         'surface_element_type': 'str',
         'num_of_processors': 'int',
@@ -44,13 +45,14 @@ class SimmetrixMeshingSolid(object):
         'type': 'type',
         'sizing': 'sizing',
         'refinements': 'refinements',
+        'automatic_sweep_parameters': 'automaticSweepParameters',
         'enable_shell_meshing': 'enableShellMeshing',
         'surface_element_type': 'surfaceElementType',
         'num_of_processors': 'numOfProcessors',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings'
     }
 
-    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, enable_shell_meshing=None, surface_element_type=None, num_of_processors=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, automatic_sweep_parameters=None, enable_shell_meshing=None, surface_element_type=None, num_of_processors=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixMeshingSolid - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class SimmetrixMeshingSolid(object):
         self._type = None
         self._sizing = None
         self._refinements = None
+        self._automatic_sweep_parameters = None
         self._enable_shell_meshing = None
         self._surface_element_type = None
         self._num_of_processors = None
@@ -70,6 +73,8 @@ class SimmetrixMeshingSolid(object):
             self.sizing = sizing
         if refinements is not None:
             self.refinements = refinements
+        if automatic_sweep_parameters is not None:
+            self.automatic_sweep_parameters = automatic_sweep_parameters
         if enable_shell_meshing is not None:
             self.enable_shell_meshing = enable_shell_meshing
         if surface_element_type is not None:
@@ -145,6 +150,27 @@ class SimmetrixMeshingSolid(object):
         """
 
         self._refinements = refinements
+
+    @property
+    def automatic_sweep_parameters(self):
+        """Gets the automatic_sweep_parameters of this SimmetrixMeshingSolid.  # noqa: E501
+
+
+        :return: The automatic_sweep_parameters of this SimmetrixMeshingSolid.  # noqa: E501
+        :rtype: OneOfSimmetrixMeshingSolidAutomaticSweepParameters
+        """
+        return self._automatic_sweep_parameters
+
+    @automatic_sweep_parameters.setter
+    def automatic_sweep_parameters(self, automatic_sweep_parameters):
+        """Sets the automatic_sweep_parameters of this SimmetrixMeshingSolid.
+
+
+        :param automatic_sweep_parameters: The automatic_sweep_parameters of this SimmetrixMeshingSolid.  # noqa: E501
+        :type: OneOfSimmetrixMeshingSolidAutomaticSweepParameters
+        """
+
+        self._automatic_sweep_parameters = automatic_sweep_parameters
 
     @property
     def enable_shell_meshing(self):

@@ -33,16 +33,18 @@ class RhoConstEquationOfState(object):
     openapi_types = {
         'type': 'str',
         'density': 'DimensionalDensity',
+        'density_function': 'DimensionalFunctionDensity',
         'energy': 'str'
     }
 
     attribute_map = {
         'type': 'type',
         'density': 'density',
+        'density_function': 'densityFunction',
         'energy': 'energy'
     }
 
-    def __init__(self, type='RHO_CONST', density=None, energy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='RHO_CONST', density=None, density_function=None, energy=None, local_vars_configuration=None):  # noqa: E501
         """RhoConstEquationOfState - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,12 +52,15 @@ class RhoConstEquationOfState(object):
 
         self._type = None
         self._density = None
+        self._density_function = None
         self._energy = None
         self.discriminator = None
 
         self.type = type
         if density is not None:
             self.density = density
+        if density_function is not None:
+            self.density_function = density_function
         if energy is not None:
             self.energy = energy
 
@@ -104,6 +109,27 @@ class RhoConstEquationOfState(object):
         """
 
         self._density = density
+
+    @property
+    def density_function(self):
+        """Gets the density_function of this RhoConstEquationOfState.  # noqa: E501
+
+
+        :return: The density_function of this RhoConstEquationOfState.  # noqa: E501
+        :rtype: DimensionalFunctionDensity
+        """
+        return self._density_function
+
+    @density_function.setter
+    def density_function(self, density_function):
+        """Sets the density_function of this RhoConstEquationOfState.
+
+
+        :param density_function: The density_function of this RhoConstEquationOfState.  # noqa: E501
+        :type: DimensionalFunctionDensity
+        """
+
+        self._density_function = density_function
 
     @property
     def energy(self):

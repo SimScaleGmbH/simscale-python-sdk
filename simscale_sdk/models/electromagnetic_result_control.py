@@ -59,6 +59,7 @@ class ElectromagneticResultControl(object):
     def calculate_inductances(self):
         """Gets the calculate_inductances of this ElectromagneticResultControl.  # noqa: E501
 
+        Calculate the inductance matrix of the coils.  # noqa: E501
 
         :return: The calculate_inductances of this ElectromagneticResultControl.  # noqa: E501
         :rtype: bool
@@ -69,6 +70,7 @@ class ElectromagneticResultControl(object):
     def calculate_inductances(self, calculate_inductances):
         """Sets the calculate_inductances of this ElectromagneticResultControl.
 
+        Calculate the inductance matrix of the coils.  # noqa: E501
 
         :param calculate_inductances: The calculate_inductances of this ElectromagneticResultControl.  # noqa: E501
         :type: bool

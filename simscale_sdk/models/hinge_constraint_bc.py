@@ -68,7 +68,7 @@ class HingeConstraintBC(object):
     def type(self):
         """Gets the type of this HingeConstraintBC.  # noqa: E501
 
-        Schema name: HingeConstraintBC  # noqa: E501
+        Replicate the behaviour of a freely rotating hinge fixed to the ground. Note that only a single face assignment is allowed. The assigned surface is constrained such that only rotational motion around the hinge axis is free. SimScale can automatically detect the axis of the hinge based on an assigned cylindrical surface, but the boundary condition also allows for a user-defined input.  Schema name: HingeConstraintBC  # noqa: E501
 
         :return: The type of this HingeConstraintBC.  # noqa: E501
         :rtype: str
@@ -79,7 +79,7 @@ class HingeConstraintBC(object):
     def type(self, type):
         """Sets the type of this HingeConstraintBC.
 
-        Schema name: HingeConstraintBC  # noqa: E501
+        Replicate the behaviour of a freely rotating hinge fixed to the ground. Note that only a single face assignment is allowed. The assigned surface is constrained such that only rotational motion around the hinge axis is free. SimScale can automatically detect the axis of the hinge based on an assigned cylindrical surface, but the boundary condition also allows for a user-defined input.  Schema name: HingeConstraintBC  # noqa: E501
 
         :param type: The type of this HingeConstraintBC.  # noqa: E501
         :type: str

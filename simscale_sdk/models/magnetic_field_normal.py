@@ -63,7 +63,7 @@ class MagneticFieldNormal(object):
     def type(self):
         """Gets the type of this MagneticFieldNormal.  # noqa: E501
 
-        Schema name: MagneticFieldNormal  # noqa: E501
+        The magnetic field is enforced to be perpendicular to the boundary.   Schema name: MagneticFieldNormal  # noqa: E501
 
         :return: The type of this MagneticFieldNormal.  # noqa: E501
         :rtype: str
@@ -74,7 +74,7 @@ class MagneticFieldNormal(object):
     def type(self, type):
         """Sets the type of this MagneticFieldNormal.
 
-        Schema name: MagneticFieldNormal  # noqa: E501
+        The magnetic field is enforced to be perpendicular to the boundary.   Schema name: MagneticFieldNormal  # noqa: E501
 
         :param type: The type of this MagneticFieldNormal.  # noqa: E501
         :type: str

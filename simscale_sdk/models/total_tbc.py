@@ -33,16 +33,18 @@ class TotalTBC(object):
     openapi_types = {
         'type': 'str',
         'total_temperature': 'DimensionalTemperature',
+        'total_temperature_function': 'DimensionalFunctionTemperature',
         'specific_heat_ratio': 'float'
     }
 
     attribute_map = {
         'type': 'type',
         'total_temperature': 'totalTemperature',
+        'total_temperature_function': 'totalTemperatureFunction',
         'specific_heat_ratio': 'specificHeatRatio'
     }
 
-    def __init__(self, type='TOTAL_TEMPERATURE', total_temperature=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOTAL_TEMPERATURE', total_temperature=None, total_temperature_function=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
         """TotalTBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,12 +52,15 @@ class TotalTBC(object):
 
         self._type = None
         self._total_temperature = None
+        self._total_temperature_function = None
         self._specific_heat_ratio = None
         self.discriminator = None
 
         self.type = type
         if total_temperature is not None:
             self.total_temperature = total_temperature
+        if total_temperature_function is not None:
+            self.total_temperature_function = total_temperature_function
         if specific_heat_ratio is not None:
             self.specific_heat_ratio = specific_heat_ratio
 
@@ -104,6 +109,27 @@ class TotalTBC(object):
         """
 
         self._total_temperature = total_temperature
+
+    @property
+    def total_temperature_function(self):
+        """Gets the total_temperature_function of this TotalTBC.  # noqa: E501
+
+
+        :return: The total_temperature_function of this TotalTBC.  # noqa: E501
+        :rtype: DimensionalFunctionTemperature
+        """
+        return self._total_temperature_function
+
+    @total_temperature_function.setter
+    def total_temperature_function(self, total_temperature_function):
+        """Sets the total_temperature_function of this TotalTBC.
+
+
+        :param total_temperature_function: The total_temperature_function of this TotalTBC.  # noqa: E501
+        :type: DimensionalFunctionTemperature
+        """
+
+        self._total_temperature_function = total_temperature_function
 
     @property
     def specific_heat_ratio(self):

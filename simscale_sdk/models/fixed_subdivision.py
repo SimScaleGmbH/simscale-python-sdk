@@ -76,8 +76,8 @@ class FixedSubdivision(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
-                num_subdivisions is not None and num_subdivisions < 1):  # noqa: E501
-            raise ValueError("Invalid value for `num_subdivisions`, must be a value greater than or equal to `1`")  # noqa: E501
+                num_subdivisions is not None and num_subdivisions < 2):  # noqa: E501
+            raise ValueError("Invalid value for `num_subdivisions`, must be a value greater than or equal to `2`")  # noqa: E501
 
         self._num_subdivisions = num_subdivisions
 
@@ -102,8 +102,8 @@ class FixedSubdivision(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
-                max_subdivision_depth is not None and max_subdivision_depth < 1):  # noqa: E501
-            raise ValueError("Invalid value for `max_subdivision_depth`, must be a value greater than or equal to `1`")  # noqa: E501
+                max_subdivision_depth is not None and max_subdivision_depth < 2):  # noqa: E501
+            raise ValueError("Invalid value for `max_subdivision_depth`, must be a value greater than or equal to `2`")  # noqa: E501
 
         self._max_subdivision_depth = max_subdivision_depth
 

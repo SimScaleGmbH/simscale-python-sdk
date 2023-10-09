@@ -33,31 +33,21 @@ class OneOfFrictionlessContactContactSolutionMethod(object):
     openapi_types = {
         'type': 'str',
         'augmented_lagrange_coefficient': 'float',
-        'contact_stiffness': 'OneOfPenaltyMethodContactStiffness',
-        'mortar_jacobian_type': 'str',
-        'mortar_pairing_type': 'str',
-        'mortar_pairing_tolerance': 'float',
-        'max_penetration': 'DimensionalLength'
+        'contact_stiffness': 'OneOfPenaltyMethodContactStiffness'
     }
 
     attribute_map = {
         'type': 'type',
         'augmented_lagrange_coefficient': 'augmentedLagrangeCoefficient',
-        'contact_stiffness': 'contactStiffness',
-        'mortar_jacobian_type': 'mortarJacobianType',
-        'mortar_pairing_type': 'mortarPairingType',
-        'mortar_pairing_tolerance': 'mortarPairingTolerance',
-        'max_penetration': 'maxPenetration'
+        'contact_stiffness': 'contactStiffness'
     }
 
     discriminator_value_class_map = {
         'AUGMENTED_LAGRANGE': 'AugmentedLagrangeMethod',
-        'PENALTY_METHOD': 'PenaltyMethod',
-        'MORTAR_METHOD': 'MortarMethod',
-        'AUTOMATIC_PENETRATION_CONTROL': 'AutomaticPenetrationControl'
+        'PENALTY_METHOD': 'PenaltyMethod'
     }
 
-    def __init__(self, type='AUTOMATIC_PENETRATION_CONTROL', augmented_lagrange_coefficient=None, contact_stiffness=None, mortar_jacobian_type=None, mortar_pairing_type=None, mortar_pairing_tolerance=None, max_penetration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PENALTY_METHOD', augmented_lagrange_coefficient=None, contact_stiffness=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFrictionlessContactContactSolutionMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,10 +56,6 @@ class OneOfFrictionlessContactContactSolutionMethod(object):
         self._type = None
         self._augmented_lagrange_coefficient = None
         self._contact_stiffness = None
-        self._mortar_jacobian_type = None
-        self._mortar_pairing_type = None
-        self._mortar_pairing_tolerance = None
-        self._max_penetration = None
         self.discriminator = 'type'
 
         self.type = type
@@ -77,20 +63,12 @@ class OneOfFrictionlessContactContactSolutionMethod(object):
             self.augmented_lagrange_coefficient = augmented_lagrange_coefficient
         if contact_stiffness is not None:
             self.contact_stiffness = contact_stiffness
-        if mortar_jacobian_type is not None:
-            self.mortar_jacobian_type = mortar_jacobian_type
-        if mortar_pairing_type is not None:
-            self.mortar_pairing_type = mortar_pairing_type
-        if mortar_pairing_tolerance is not None:
-            self.mortar_pairing_tolerance = mortar_pairing_tolerance
-        if max_penetration is not None:
-            self.max_penetration = max_penetration
 
     @property
     def type(self):
         """Gets the type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
 
-        Schema name: AutomaticPenetrationControl  # noqa: E501
+        Schema name: PenaltyMethod  # noqa: E501
 
         :return: The type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
         :rtype: str
@@ -101,7 +79,7 @@ class OneOfFrictionlessContactContactSolutionMethod(object):
     def type(self, type):
         """Sets the type of this OneOfFrictionlessContactContactSolutionMethod.
 
-        Schema name: AutomaticPenetrationControl  # noqa: E501
+        Schema name: PenaltyMethod  # noqa: E501
 
         :param type: The type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
         :type: str
@@ -158,114 +136,6 @@ class OneOfFrictionlessContactContactSolutionMethod(object):
         """
 
         self._contact_stiffness = contact_stiffness
-
-    @property
-    def mortar_jacobian_type(self):
-        """Gets the mortar_jacobian_type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-
-        Use updated Jacobian if the contact area is undergoing large deformations.  # noqa: E501
-
-        :return: The mortar_jacobian_type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-        :rtype: str
-        """
-        return self._mortar_jacobian_type
-
-    @mortar_jacobian_type.setter
-    def mortar_jacobian_type(self, mortar_jacobian_type):
-        """Sets the mortar_jacobian_type of this OneOfFrictionlessContactContactSolutionMethod.
-
-        Use updated Jacobian if the contact area is undergoing large deformations.  # noqa: E501
-
-        :param mortar_jacobian_type: The mortar_jacobian_type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["INITIAL", "UPDATED"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and mortar_jacobian_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `mortar_jacobian_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(mortar_jacobian_type, allowed_values)
-            )
-
-        self._mortar_jacobian_type = mortar_jacobian_type
-
-    @property
-    def mortar_pairing_type(self):
-        """Gets the mortar_pairing_type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-
-        Using the fast pairing can lead to false pairings, whereas the robust algorithm is much slower.  # noqa: E501
-
-        :return: The mortar_pairing_type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-        :rtype: str
-        """
-        return self._mortar_pairing_type
-
-    @mortar_pairing_type.setter
-    def mortar_pairing_type(self, mortar_pairing_type):
-        """Sets the mortar_pairing_type of this OneOfFrictionlessContactContactSolutionMethod.
-
-        Using the fast pairing can lead to false pairings, whereas the robust algorithm is much slower.  # noqa: E501
-
-        :param mortar_pairing_type: The mortar_pairing_type of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["FAST", "ROBUST"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and mortar_pairing_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `mortar_pairing_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(mortar_pairing_type, allowed_values)
-            )
-
-        self._mortar_pairing_type = mortar_pairing_type
-
-    @property
-    def mortar_pairing_tolerance(self):
-        """Gets the mortar_pairing_tolerance of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-
-        Accuracy of the pairing, the default value is suitable for most cases.  # noqa: E501
-
-        :return: The mortar_pairing_tolerance of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-        :rtype: float
-        """
-        return self._mortar_pairing_tolerance
-
-    @mortar_pairing_tolerance.setter
-    def mortar_pairing_tolerance(self, mortar_pairing_tolerance):
-        """Sets the mortar_pairing_tolerance of this OneOfFrictionlessContactContactSolutionMethod.
-
-        Accuracy of the pairing, the default value is suitable for most cases.  # noqa: E501
-
-        :param mortar_pairing_tolerance: The mortar_pairing_tolerance of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-        :type: float
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                mortar_pairing_tolerance is not None and mortar_pairing_tolerance > 100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000):  # noqa: E501
-            raise ValueError("Invalid value for `mortar_pairing_tolerance`, must be a value less than or equal to `100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                mortar_pairing_tolerance is not None and mortar_pairing_tolerance < 0):  # noqa: E501
-            raise ValueError("Invalid value for `mortar_pairing_tolerance`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._mortar_pairing_tolerance = mortar_pairing_tolerance
-
-    @property
-    def max_penetration(self):
-        """Gets the max_penetration of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-
-
-        :return: The max_penetration of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-        :rtype: DimensionalLength
-        """
-        return self._max_penetration
-
-    @max_penetration.setter
-    def max_penetration(self, max_penetration):
-        """Sets the max_penetration of this OneOfFrictionlessContactContactSolutionMethod.
-
-
-        :param max_penetration: The max_penetration of this OneOfFrictionlessContactContactSolutionMethod.  # noqa: E501
-        :type: DimensionalLength
-        """
-
-        self._max_penetration = max_penetration
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

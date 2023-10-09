@@ -627,7 +627,7 @@ class Analysis(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this Analysis.  # noqa: E501
 
-        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, Realizable k-epsilon ,<a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/#standard-k-epsilon-model' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/#realizable-k-epsilon-model' target='_blank'>Realizable k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :return: The turbulence_model of this Analysis.  # noqa: E501
         :rtype: str
@@ -638,7 +638,7 @@ class Analysis(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this Analysis.
 
-        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/' target='_blank'>k-epsilon</a>, Realizable k-epsilon ,<a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/#standard-k-epsilon-model' target='_blank'>k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/#realizable-k-epsilon-model' target='_blank'>Realizable k-epsilon</a>, <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega and k-omega SST</a></li><li><strong>LES</strong>: Smagorinsky, Spalart-Allmaras</li></ul><p><p><a href='https://www.simscale.com/blog/2017/12/turbulence-cfd-analysis/' target='_blank'>Learn more</a>.</p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this Analysis.  # noqa: E501
         :type: str
@@ -1102,7 +1102,7 @@ class Analysis(object):
     def enable_humidity_model(self):
         """Gets the enable_humidity_model of this Analysis.  # noqa: E501
 
-        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of 0° to 100°C.  # noqa: E501
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of <b>0° to 100°C</b>. </li></ul></p><a href= https://www.simscale.com/docs/simulation-setup/global-settings/humidity-modeling/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_humidity_model of this Analysis.  # noqa: E501
         :rtype: bool
@@ -1113,7 +1113,7 @@ class Analysis(object):
     def enable_humidity_model(self, enable_humidity_model):
         """Sets the enable_humidity_model of this Analysis.
 
-        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of 0° to 100°C.  # noqa: E501
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of <b>0° to 100°C</b>. </li></ul></p><a href= https://www.simscale.com/docs/simulation-setup/global-settings/humidity-modeling/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_humidity_model: The enable_humidity_model of this Analysis.  # noqa: E501
         :type: bool

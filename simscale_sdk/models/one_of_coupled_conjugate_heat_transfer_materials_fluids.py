@@ -35,13 +35,15 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'name': 'str',
         'fluid_type': 'OneOfFluidCompressibleMaterialFluidType',
         'associated_phase': 'str',
-        'viscosity_model': 'OneOfIncompressibleMaterialViscosityModel',
+        'viscosity_model': 'OneOfFluidCompressibleMaterialViscosityModel',
         'density': 'DimensionalDensity',
         'thermal_expansion_coefficient': 'DimensionalThermalExpansionRate',
         'reference_temperature': 'DimensionalTemperature',
         'laminar_prandtl_number': 'float',
+        'laminar_prandtl_number_function': 'DimensionalFunctionDimensionless',
         'turbulent_prandtl_number': 'float',
         'specific_heat': 'DimensionalSpecificHeat',
+        'specific_heat_function': 'DimensionalFunctionSpecificHeat',
         'molar_weight': 'DimensionalMolarMass',
         'cavitation': 'Cavitation',
         'topological_reference': 'TopologicalReference',
@@ -49,7 +51,8 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'built_in_material': 'str',
         'material_library_reference': 'MaterialLibraryReference',
         'specie': 'SpecieDefault',
-        'transport': 'OneOfFluidCompressibleMaterialTransport'
+        'transport': 'OneOfFluidCompressibleMaterialTransport',
+        'equation_of_state': 'OneOfFluidCompressibleMaterialEquationOfState'
     }
 
     attribute_map = {
@@ -62,8 +65,10 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'thermal_expansion_coefficient': 'thermalExpansionCoefficient',
         'reference_temperature': 'referenceTemperature',
         'laminar_prandtl_number': 'laminarPrandtlNumber',
+        'laminar_prandtl_number_function': 'laminarPrandtlNumberFunction',
         'turbulent_prandtl_number': 'turbulentPrandtlNumber',
         'specific_heat': 'specificHeat',
+        'specific_heat_function': 'specificHeatFunction',
         'molar_weight': 'molarWeight',
         'cavitation': 'cavitation',
         'topological_reference': 'topologicalReference',
@@ -71,7 +76,8 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference',
         'specie': 'specie',
-        'transport': 'transport'
+        'transport': 'transport',
+        'equation_of_state': 'equationOfState'
     }
 
     discriminator_value_class_map = {
@@ -79,7 +85,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'COMPRESSIBLE': 'FluidCompressibleMaterial'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, specific_heat=None, specific_heat_function=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferMaterialsFluids - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,8 +100,10 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         self._thermal_expansion_coefficient = None
         self._reference_temperature = None
         self._laminar_prandtl_number = None
+        self._laminar_prandtl_number_function = None
         self._turbulent_prandtl_number = None
         self._specific_heat = None
+        self._specific_heat_function = None
         self._molar_weight = None
         self._cavitation = None
         self._topological_reference = None
@@ -104,6 +112,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         self._material_library_reference = None
         self._specie = None
         self._transport = None
+        self._equation_of_state = None
         self.discriminator = 'type'
 
         self.type = type
@@ -123,10 +132,14 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
             self.reference_temperature = reference_temperature
         if laminar_prandtl_number is not None:
             self.laminar_prandtl_number = laminar_prandtl_number
+        if laminar_prandtl_number_function is not None:
+            self.laminar_prandtl_number_function = laminar_prandtl_number_function
         if turbulent_prandtl_number is not None:
             self.turbulent_prandtl_number = turbulent_prandtl_number
         if specific_heat is not None:
             self.specific_heat = specific_heat
+        if specific_heat_function is not None:
+            self.specific_heat_function = specific_heat_function
         if molar_weight is not None:
             self.molar_weight = molar_weight
         if cavitation is not None:
@@ -143,6 +156,8 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
             self.specie = specie
         if transport is not None:
             self.transport = transport
+        if equation_of_state is not None:
+            self.equation_of_state = equation_of_state
 
     @property
     def type(self):
@@ -246,7 +261,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
 
 
         :return: The viscosity_model of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
-        :rtype: OneOfIncompressibleMaterialViscosityModel
+        :rtype: OneOfFluidCompressibleMaterialViscosityModel
         """
         return self._viscosity_model
 
@@ -256,7 +271,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
 
 
         :param viscosity_model: The viscosity_model of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
-        :type: OneOfIncompressibleMaterialViscosityModel
+        :type: OneOfFluidCompressibleMaterialViscosityModel
         """
 
         self._viscosity_model = viscosity_model
@@ -351,6 +366,27 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         self._laminar_prandtl_number = laminar_prandtl_number
 
     @property
+    def laminar_prandtl_number_function(self):
+        """Gets the laminar_prandtl_number_function of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+
+
+        :return: The laminar_prandtl_number_function of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :rtype: DimensionalFunctionDimensionless
+        """
+        return self._laminar_prandtl_number_function
+
+    @laminar_prandtl_number_function.setter
+    def laminar_prandtl_number_function(self, laminar_prandtl_number_function):
+        """Sets the laminar_prandtl_number_function of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
+
+
+        :param laminar_prandtl_number_function: The laminar_prandtl_number_function of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :type: DimensionalFunctionDimensionless
+        """
+
+        self._laminar_prandtl_number_function = laminar_prandtl_number_function
+
+    @property
     def turbulent_prandtl_number(self):
         """Gets the turbulent_prandtl_number of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
 
@@ -370,6 +406,9 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         :param turbulent_prandtl_number: The turbulent_prandtl_number of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                turbulent_prandtl_number is not None and turbulent_prandtl_number <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_prandtl_number`, must be a value greater than `0`")  # noqa: E501
 
         self._turbulent_prandtl_number = turbulent_prandtl_number
 
@@ -393,6 +432,27 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         """
 
         self._specific_heat = specific_heat
+
+    @property
+    def specific_heat_function(self):
+        """Gets the specific_heat_function of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+
+
+        :return: The specific_heat_function of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :rtype: DimensionalFunctionSpecificHeat
+        """
+        return self._specific_heat_function
+
+    @specific_heat_function.setter
+    def specific_heat_function(self, specific_heat_function):
+        """Sets the specific_heat_function of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
+
+
+        :param specific_heat_function: The specific_heat_function of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :type: DimensionalFunctionSpecificHeat
+        """
+
+        self._specific_heat_function = specific_heat_function
 
     @property
     def molar_weight(self):
@@ -561,6 +621,27 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         """
 
         self._transport = transport
+
+    @property
+    def equation_of_state(self):
+        """Gets the equation_of_state of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+
+
+        :return: The equation_of_state of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :rtype: OneOfFluidCompressibleMaterialEquationOfState
+        """
+        return self._equation_of_state
+
+    @equation_of_state.setter
+    def equation_of_state(self, equation_of_state):
+        """Sets the equation_of_state of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
+
+
+        :param equation_of_state: The equation_of_state of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :type: OneOfFluidCompressibleMaterialEquationOfState
+        """
+
+        self._equation_of_state = equation_of_state
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

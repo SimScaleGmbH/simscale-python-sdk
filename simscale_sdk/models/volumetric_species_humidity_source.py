@@ -78,7 +78,7 @@ class VolumetricSpeciesHumiditySource(object):
     def type(self):
         """Gets the type of this VolumetricSpeciesHumiditySource.  # noqa: E501
 
-        <i>Humidity sources</i> can be used to simulate humidity generation or purification from a volume. Three types are available:<br><li><b>Species source</b> (recommended)</li>: Used when the mass of the species entering the fluid domain per second are known.<li><b>Absolute humidity source</b></li>: Used when the local change of the absolute humidity over time is known.<li><b>Specific humidity source</b></li>: Similar to absolute humidity source but for the specific humidity.  Schema name: VolumetricSpeciesHumiditySource  # noqa: E501
+        <i>Humidity sources</i> can be used to simulate humidity generation from a volume, knowing the mass of species entering the fluid domain per second.  Schema name: VolumetricSpeciesHumiditySource  # noqa: E501
 
         :return: The type of this VolumetricSpeciesHumiditySource.  # noqa: E501
         :rtype: str
@@ -89,7 +89,7 @@ class VolumetricSpeciesHumiditySource(object):
     def type(self, type):
         """Sets the type of this VolumetricSpeciesHumiditySource.
 
-        <i>Humidity sources</i> can be used to simulate humidity generation or purification from a volume. Three types are available:<br><li><b>Species source</b> (recommended)</li>: Used when the mass of the species entering the fluid domain per second are known.<li><b>Absolute humidity source</b></li>: Used when the local change of the absolute humidity over time is known.<li><b>Specific humidity source</b></li>: Similar to absolute humidity source but for the specific humidity.  Schema name: VolumetricSpeciesHumiditySource  # noqa: E501
+        <i>Humidity sources</i> can be used to simulate humidity generation from a volume, knowing the mass of species entering the fluid domain per second.  Schema name: VolumetricSpeciesHumiditySource  # noqa: E501
 
         :param type: The type of this VolumetricSpeciesHumiditySource.  # noqa: E501
         :type: str

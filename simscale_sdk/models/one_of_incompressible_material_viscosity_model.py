@@ -33,10 +33,16 @@ class OneOfIncompressibleMaterialViscosityModel(object):
     openapi_types = {
         'type': 'str',
         'kinematic_viscosity': 'DimensionalKinematicViscosity',
+        'kinematic_viscosity_function': 'DimensionalFunctionKinematicViscosity',
+        'dynamic_viscosity_function': 'DimensionalFunctionDynamicViscosity',
         'k': 'DimensionalTime',
         'n': 'DimensionalDimensionless',
         'nu_min': 'DimensionalKinematicViscosity',
         'nu_max': 'DimensionalKinematicViscosity',
+        'consistency': 'DimensionalDynamicViscosity',
+        'flow_index': 'DimensionalDimensionless',
+        'fluid_yield_stress': 'DimensionalPressure',
+        'critical_shear_rate': 'DimensionalStrainRate',
         'tau0': 'DimensionalTurbulenceKineticEnergy',
         'nu0': 'DimensionalKinematicViscosity',
         'nu_inf': 'DimensionalKinematicViscosity',
@@ -47,10 +53,16 @@ class OneOfIncompressibleMaterialViscosityModel(object):
     attribute_map = {
         'type': 'type',
         'kinematic_viscosity': 'kinematicViscosity',
+        'kinematic_viscosity_function': 'kinematicViscosityFunction',
+        'dynamic_viscosity_function': 'dynamicViscosityFunction',
         'k': 'k',
         'n': 'n',
         'nu_min': 'nuMin',
         'nu_max': 'nuMax',
+        'consistency': 'consistency',
+        'flow_index': 'flowIndex',
+        'fluid_yield_stress': 'fluidYieldStress',
+        'critical_shear_rate': 'criticalShearRate',
         'tau0': 'tau0',
         'nu0': 'nu0',
         'nu_inf': 'nuInf',
@@ -61,12 +73,13 @@ class OneOfIncompressibleMaterialViscosityModel(object):
     discriminator_value_class_map = {
         'NEWTONIAN': 'NewtonianViscosityModel',
         'POWER_LAW': 'PowerLawViscosityModel',
+        'STD_HERSCHEL_BULKLEY': 'StandardHerschelBulkleyViscosityModel',
         'HERSCHEL_BULKLEY': 'HerschelBulkleyViscosityModel',
         'CROSS_POWER_LAW': 'CrossPowerLawViscosityModel',
         'BIRD_CARREAU': 'BirdCarreauViscosityModel'
     }
 
-    def __init__(self, type='BIRD_CARREAU', kinematic_viscosity=None, k=None, n=None, nu_min=None, nu_max=None, tau0=None, nu0=None, nu_inf=None, m=None, a=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='BIRD_CARREAU', kinematic_viscosity=None, kinematic_viscosity_function=None, dynamic_viscosity_function=None, k=None, n=None, nu_min=None, nu_max=None, consistency=None, flow_index=None, fluid_yield_stress=None, critical_shear_rate=None, tau0=None, nu0=None, nu_inf=None, m=None, a=None, local_vars_configuration=None):  # noqa: E501
         """OneOfIncompressibleMaterialViscosityModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,10 +87,16 @@ class OneOfIncompressibleMaterialViscosityModel(object):
 
         self._type = None
         self._kinematic_viscosity = None
+        self._kinematic_viscosity_function = None
+        self._dynamic_viscosity_function = None
         self._k = None
         self._n = None
         self._nu_min = None
         self._nu_max = None
+        self._consistency = None
+        self._flow_index = None
+        self._fluid_yield_stress = None
+        self._critical_shear_rate = None
         self._tau0 = None
         self._nu0 = None
         self._nu_inf = None
@@ -88,6 +107,10 @@ class OneOfIncompressibleMaterialViscosityModel(object):
         self.type = type
         if kinematic_viscosity is not None:
             self.kinematic_viscosity = kinematic_viscosity
+        if kinematic_viscosity_function is not None:
+            self.kinematic_viscosity_function = kinematic_viscosity_function
+        if dynamic_viscosity_function is not None:
+            self.dynamic_viscosity_function = dynamic_viscosity_function
         if k is not None:
             self.k = k
         if n is not None:
@@ -96,6 +119,14 @@ class OneOfIncompressibleMaterialViscosityModel(object):
             self.nu_min = nu_min
         if nu_max is not None:
             self.nu_max = nu_max
+        if consistency is not None:
+            self.consistency = consistency
+        if flow_index is not None:
+            self.flow_index = flow_index
+        if fluid_yield_stress is not None:
+            self.fluid_yield_stress = fluid_yield_stress
+        if critical_shear_rate is not None:
+            self.critical_shear_rate = critical_shear_rate
         if tau0 is not None:
             self.tau0 = tau0
         if nu0 is not None:
@@ -152,6 +183,48 @@ class OneOfIncompressibleMaterialViscosityModel(object):
         """
 
         self._kinematic_viscosity = kinematic_viscosity
+
+    @property
+    def kinematic_viscosity_function(self):
+        """Gets the kinematic_viscosity_function of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+
+
+        :return: The kinematic_viscosity_function of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :rtype: DimensionalFunctionKinematicViscosity
+        """
+        return self._kinematic_viscosity_function
+
+    @kinematic_viscosity_function.setter
+    def kinematic_viscosity_function(self, kinematic_viscosity_function):
+        """Sets the kinematic_viscosity_function of this OneOfIncompressibleMaterialViscosityModel.
+
+
+        :param kinematic_viscosity_function: The kinematic_viscosity_function of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :type: DimensionalFunctionKinematicViscosity
+        """
+
+        self._kinematic_viscosity_function = kinematic_viscosity_function
+
+    @property
+    def dynamic_viscosity_function(self):
+        """Gets the dynamic_viscosity_function of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+
+
+        :return: The dynamic_viscosity_function of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :rtype: DimensionalFunctionDynamicViscosity
+        """
+        return self._dynamic_viscosity_function
+
+    @dynamic_viscosity_function.setter
+    def dynamic_viscosity_function(self, dynamic_viscosity_function):
+        """Sets the dynamic_viscosity_function of this OneOfIncompressibleMaterialViscosityModel.
+
+
+        :param dynamic_viscosity_function: The dynamic_viscosity_function of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :type: DimensionalFunctionDynamicViscosity
+        """
+
+        self._dynamic_viscosity_function = dynamic_viscosity_function
 
     @property
     def k(self):
@@ -236,6 +309,90 @@ class OneOfIncompressibleMaterialViscosityModel(object):
         """
 
         self._nu_max = nu_max
+
+    @property
+    def consistency(self):
+        """Gets the consistency of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+
+
+        :return: The consistency of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :rtype: DimensionalDynamicViscosity
+        """
+        return self._consistency
+
+    @consistency.setter
+    def consistency(self, consistency):
+        """Sets the consistency of this OneOfIncompressibleMaterialViscosityModel.
+
+
+        :param consistency: The consistency of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :type: DimensionalDynamicViscosity
+        """
+
+        self._consistency = consistency
+
+    @property
+    def flow_index(self):
+        """Gets the flow_index of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+
+
+        :return: The flow_index of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :rtype: DimensionalDimensionless
+        """
+        return self._flow_index
+
+    @flow_index.setter
+    def flow_index(self, flow_index):
+        """Sets the flow_index of this OneOfIncompressibleMaterialViscosityModel.
+
+
+        :param flow_index: The flow_index of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :type: DimensionalDimensionless
+        """
+
+        self._flow_index = flow_index
+
+    @property
+    def fluid_yield_stress(self):
+        """Gets the fluid_yield_stress of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+
+
+        :return: The fluid_yield_stress of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :rtype: DimensionalPressure
+        """
+        return self._fluid_yield_stress
+
+    @fluid_yield_stress.setter
+    def fluid_yield_stress(self, fluid_yield_stress):
+        """Sets the fluid_yield_stress of this OneOfIncompressibleMaterialViscosityModel.
+
+
+        :param fluid_yield_stress: The fluid_yield_stress of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :type: DimensionalPressure
+        """
+
+        self._fluid_yield_stress = fluid_yield_stress
+
+    @property
+    def critical_shear_rate(self):
+        """Gets the critical_shear_rate of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+
+
+        :return: The critical_shear_rate of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :rtype: DimensionalStrainRate
+        """
+        return self._critical_shear_rate
+
+    @critical_shear_rate.setter
+    def critical_shear_rate(self, critical_shear_rate):
+        """Sets the critical_shear_rate of this OneOfIncompressibleMaterialViscosityModel.
+
+
+        :param critical_shear_rate: The critical_shear_rate of this OneOfIncompressibleMaterialViscosityModel.  # noqa: E501
+        :type: DimensionalStrainRate
+        """
+
+        self._critical_shear_rate = critical_shear_rate
 
     @property
     def tau0(self):

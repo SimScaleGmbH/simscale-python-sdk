@@ -37,6 +37,11 @@ class FluidCompressibleMaterial(object):
         'associated_phase': 'str',
         'specie': 'SpecieDefault',
         'transport': 'OneOfFluidCompressibleMaterialTransport',
+        'viscosity_model': 'OneOfFluidCompressibleMaterialViscosityModel',
+        'laminar_prandtl_number_function': 'DimensionalFunctionDimensionless',
+        'turbulent_prandtl_number': 'float',
+        'specific_heat_function': 'DimensionalFunctionSpecificHeat',
+        'equation_of_state': 'OneOfFluidCompressibleMaterialEquationOfState',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'built_in_material': 'str',
@@ -50,13 +55,18 @@ class FluidCompressibleMaterial(object):
         'associated_phase': 'associatedPhase',
         'specie': 'specie',
         'transport': 'transport',
+        'viscosity_model': 'viscosityModel',
+        'laminar_prandtl_number_function': 'laminarPrandtlNumberFunction',
+        'turbulent_prandtl_number': 'turbulentPrandtlNumber',
+        'specific_heat_function': 'specificHeatFunction',
+        'equation_of_state': 'equationOfState',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, specie=None, transport=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, specie=None, transport=None, viscosity_model=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, specific_heat_function=None, equation_of_state=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """FluidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +78,11 @@ class FluidCompressibleMaterial(object):
         self._associated_phase = None
         self._specie = None
         self._transport = None
+        self._viscosity_model = None
+        self._laminar_prandtl_number_function = None
+        self._turbulent_prandtl_number = None
+        self._specific_heat_function = None
+        self._equation_of_state = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._built_in_material = None
@@ -85,6 +100,16 @@ class FluidCompressibleMaterial(object):
             self.specie = specie
         if transport is not None:
             self.transport = transport
+        if viscosity_model is not None:
+            self.viscosity_model = viscosity_model
+        if laminar_prandtl_number_function is not None:
+            self.laminar_prandtl_number_function = laminar_prandtl_number_function
+        if turbulent_prandtl_number is not None:
+            self.turbulent_prandtl_number = turbulent_prandtl_number
+        if specific_heat_function is not None:
+            self.specific_heat_function = specific_heat_function
+        if equation_of_state is not None:
+            self.equation_of_state = equation_of_state
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -231,6 +256,116 @@ class FluidCompressibleMaterial(object):
         """
 
         self._transport = transport
+
+    @property
+    def viscosity_model(self):
+        """Gets the viscosity_model of this FluidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The viscosity_model of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: OneOfFluidCompressibleMaterialViscosityModel
+        """
+        return self._viscosity_model
+
+    @viscosity_model.setter
+    def viscosity_model(self, viscosity_model):
+        """Sets the viscosity_model of this FluidCompressibleMaterial.
+
+
+        :param viscosity_model: The viscosity_model of this FluidCompressibleMaterial.  # noqa: E501
+        :type: OneOfFluidCompressibleMaterialViscosityModel
+        """
+
+        self._viscosity_model = viscosity_model
+
+    @property
+    def laminar_prandtl_number_function(self):
+        """Gets the laminar_prandtl_number_function of this FluidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The laminar_prandtl_number_function of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: DimensionalFunctionDimensionless
+        """
+        return self._laminar_prandtl_number_function
+
+    @laminar_prandtl_number_function.setter
+    def laminar_prandtl_number_function(self, laminar_prandtl_number_function):
+        """Sets the laminar_prandtl_number_function of this FluidCompressibleMaterial.
+
+
+        :param laminar_prandtl_number_function: The laminar_prandtl_number_function of this FluidCompressibleMaterial.  # noqa: E501
+        :type: DimensionalFunctionDimensionless
+        """
+
+        self._laminar_prandtl_number_function = laminar_prandtl_number_function
+
+    @property
+    def turbulent_prandtl_number(self):
+        """Gets the turbulent_prandtl_number of this FluidCompressibleMaterial.  # noqa: E501
+
+        Turbulent Prandtl number is used to calculate the heat transfer due to turbulent effects in the domain.  # noqa: E501
+
+        :return: The turbulent_prandtl_number of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: float
+        """
+        return self._turbulent_prandtl_number
+
+    @turbulent_prandtl_number.setter
+    def turbulent_prandtl_number(self, turbulent_prandtl_number):
+        """Sets the turbulent_prandtl_number of this FluidCompressibleMaterial.
+
+        Turbulent Prandtl number is used to calculate the heat transfer due to turbulent effects in the domain.  # noqa: E501
+
+        :param turbulent_prandtl_number: The turbulent_prandtl_number of this FluidCompressibleMaterial.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                turbulent_prandtl_number is not None and turbulent_prandtl_number <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_prandtl_number`, must be a value greater than `0`")  # noqa: E501
+
+        self._turbulent_prandtl_number = turbulent_prandtl_number
+
+    @property
+    def specific_heat_function(self):
+        """Gets the specific_heat_function of this FluidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The specific_heat_function of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: DimensionalFunctionSpecificHeat
+        """
+        return self._specific_heat_function
+
+    @specific_heat_function.setter
+    def specific_heat_function(self, specific_heat_function):
+        """Sets the specific_heat_function of this FluidCompressibleMaterial.
+
+
+        :param specific_heat_function: The specific_heat_function of this FluidCompressibleMaterial.  # noqa: E501
+        :type: DimensionalFunctionSpecificHeat
+        """
+
+        self._specific_heat_function = specific_heat_function
+
+    @property
+    def equation_of_state(self):
+        """Gets the equation_of_state of this FluidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The equation_of_state of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: OneOfFluidCompressibleMaterialEquationOfState
+        """
+        return self._equation_of_state
+
+    @equation_of_state.setter
+    def equation_of_state(self, equation_of_state):
+        """Sets the equation_of_state of this FluidCompressibleMaterial.
+
+
+        :param equation_of_state: The equation_of_state of this FluidCompressibleMaterial.  # noqa: E501
+        :type: OneOfFluidCompressibleMaterialEquationOfState
+        """
+
+        self._equation_of_state = equation_of_state
 
     @property
     def topological_reference(self):

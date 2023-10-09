@@ -140,6 +140,7 @@ class ClusterAroundModes(object):
     def frequencies_per_mode(self):
         """Gets the frequencies_per_mode of this ClusterAroundModes.  # noqa: E501
 
+        Specify the number of excitation frequencies to be clustered around each eigenfrequency. The eigenfrequency will also be considered when an even number is provided  # noqa: E501
 
         :return: The frequencies_per_mode of this ClusterAroundModes.  # noqa: E501
         :rtype: int
@@ -150,6 +151,7 @@ class ClusterAroundModes(object):
     def frequencies_per_mode(self, frequencies_per_mode):
         """Sets the frequencies_per_mode of this ClusterAroundModes.
 
+        Specify the number of excitation frequencies to be clustered around each eigenfrequency. The eigenfrequency will also be considered when an even number is provided  # noqa: E501
 
         :param frequencies_per_mode: The frequencies_per_mode of this ClusterAroundModes.  # noqa: E501
         :type: int
@@ -164,6 +166,7 @@ class ClusterAroundModes(object):
     def percentage_spread(self):
         """Gets the percentage_spread of this ClusterAroundModes.  # noqa: E501
 
+        Define the total bandwidth around each eigenfrequency as a percentage of each individual eigenfrequency within which excitation frequencies will be spaced. If a value of 10% is given, the bandwidth will extend 5% of the eigenfrequency value on both sides of the eigenfrequency.  # noqa: E501
 
         :return: The percentage_spread of this ClusterAroundModes.  # noqa: E501
         :rtype: float
@@ -174,6 +177,7 @@ class ClusterAroundModes(object):
     def percentage_spread(self, percentage_spread):
         """Sets the percentage_spread of this ClusterAroundModes.
 
+        Define the total bandwidth around each eigenfrequency as a percentage of each individual eigenfrequency within which excitation frequencies will be spaced. If a value of 10% is given, the bandwidth will extend 5% of the eigenfrequency value on both sides of the eigenfrequency.  # noqa: E501
 
         :param percentage_spread: The percentage_spread of this ClusterAroundModes.  # noqa: E501
         :type: float

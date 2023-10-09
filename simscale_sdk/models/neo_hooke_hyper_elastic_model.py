@@ -63,7 +63,7 @@ class NeoHookeHyperElasticModel(object):
     def type(self):
         """Gets the type of this NeoHookeHyperElasticModel.  # noqa: E501
 
-        <p>Choose the hyperelastic material model that should be used. All models derive the stress-strain relation from a strain energy function defined by the material model parameters.</p>  Schema name: NeoHookeHyperElasticModel  # noqa: E501
+        Schema name: NeoHookeHyperElasticModel  # noqa: E501
 
         :return: The type of this NeoHookeHyperElasticModel.  # noqa: E501
         :rtype: str
@@ -74,7 +74,7 @@ class NeoHookeHyperElasticModel(object):
     def type(self, type):
         """Sets the type of this NeoHookeHyperElasticModel.
 
-        <p>Choose the hyperelastic material model that should be used. All models derive the stress-strain relation from a strain energy function defined by the material model parameters.</p>  Schema name: NeoHookeHyperElasticModel  # noqa: E501
+        Schema name: NeoHookeHyperElasticModel  # noqa: E501
 
         :param type: The type of this NeoHookeHyperElasticModel.  # noqa: E501
         :type: str

@@ -32,6 +32,7 @@ class ElectromagneticMaterial(object):
     """
     openapi_types = {
         'name': 'str',
+        'material_behavior': 'OneOfElectromagneticMaterialMaterialBehavior',
         'electric_conductivity': 'DimensionalElectricConductivity',
         'magnetic_permeability_type': 'OneOfElectromagneticMaterialMagneticPermeabilityType',
         'topological_reference': 'TopologicalReference',
@@ -41,6 +42,7 @@ class ElectromagneticMaterial(object):
 
     attribute_map = {
         'name': 'name',
+        'material_behavior': 'materialBehavior',
         'electric_conductivity': 'electricConductivity',
         'magnetic_permeability_type': 'magneticPermeabilityType',
         'topological_reference': 'topologicalReference',
@@ -48,13 +50,14 @@ class ElectromagneticMaterial(object):
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, name=None, electric_conductivity=None, magnetic_permeability_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, material_behavior=None, electric_conductivity=None, magnetic_permeability_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._name = None
+        self._material_behavior = None
         self._electric_conductivity = None
         self._magnetic_permeability_type = None
         self._topological_reference = None
@@ -64,6 +67,8 @@ class ElectromagneticMaterial(object):
 
         if name is not None:
             self.name = name
+        if material_behavior is not None:
+            self.material_behavior = material_behavior
         if electric_conductivity is not None:
             self.electric_conductivity = electric_conductivity
         if magnetic_permeability_type is not None:
@@ -95,6 +100,27 @@ class ElectromagneticMaterial(object):
         """
 
         self._name = name
+
+    @property
+    def material_behavior(self):
+        """Gets the material_behavior of this ElectromagneticMaterial.  # noqa: E501
+
+
+        :return: The material_behavior of this ElectromagneticMaterial.  # noqa: E501
+        :rtype: OneOfElectromagneticMaterialMaterialBehavior
+        """
+        return self._material_behavior
+
+    @material_behavior.setter
+    def material_behavior(self, material_behavior):
+        """Sets the material_behavior of this ElectromagneticMaterial.
+
+
+        :param material_behavior: The material_behavior of this ElectromagneticMaterial.  # noqa: E501
+        :type: OneOfElectromagneticMaterialMaterialBehavior
+        """
+
+        self._material_behavior = material_behavior
 
     @property
     def electric_conductivity(self):

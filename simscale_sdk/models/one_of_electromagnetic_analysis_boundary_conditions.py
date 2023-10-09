@@ -68,7 +68,7 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
     def type(self):
         """Gets the type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
 
-        Schema name: MagneticFluxTangential  # noqa: E501
+        The magnetic flux is enforced to be tangential to the boundary. This boundary is often appropriate when electric current enters or leaves the boundary.  Schema name: MagneticFluxTangential  # noqa: E501
 
         :return: The type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -79,7 +79,7 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfElectromagneticAnalysisBoundaryConditions.
 
-        Schema name: MagneticFluxTangential  # noqa: E501
+        The magnetic flux is enforced to be tangential to the boundary. This boundary is often appropriate when electric current enters or leaves the boundary.  Schema name: MagneticFluxTangential  # noqa: E501
 
         :param type: The type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
         :type: str

@@ -36,10 +36,11 @@ class OneOfFluidCompressibleMaterialTransport(object):
         'dynamic_viscosity_function': 'DimensionalFunctionDynamicViscosity',
         'prandtl_number': 'float',
         'turbulent_prandtl_number': 'float',
-        'thermo': 'OneOfSutherlandTransportThermo',
+        'thermo': 'HConstThermo',
         'reference_viscosity': 'DimensionalDynamicViscosity',
         'reference_temperature': 'DimensionalTemperature',
-        'ts': 'DimensionalTemperature'
+        'ts': 'DimensionalTemperature',
+        'viscosity_model': 'StandardHerschelBulkleyViscosityModel'
     }
 
     attribute_map = {
@@ -51,15 +52,17 @@ class OneOfFluidCompressibleMaterialTransport(object):
         'thermo': 'thermo',
         'reference_viscosity': 'referenceViscosity',
         'reference_temperature': 'referenceTemperature',
-        'ts': 'ts'
+        'ts': 'ts',
+        'viscosity_model': 'viscosityModel'
     }
 
     discriminator_value_class_map = {
         'CONST': 'ConstTransport',
-        'SUTHERLAND': 'SutherlandTransport'
+        'SUTHERLAND': 'SutherlandTransport',
+        'HERSCHEL_BULKLEY': 'HerschelBulkleyTransport'
     }
 
-    def __init__(self, type='SUTHERLAND', dynamic_viscosity=None, dynamic_viscosity_function=None, prandtl_number=None, turbulent_prandtl_number=None, thermo=None, reference_viscosity=None, reference_temperature=None, ts=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HERSCHEL_BULKLEY', dynamic_viscosity=None, dynamic_viscosity_function=None, prandtl_number=None, turbulent_prandtl_number=None, thermo=None, reference_viscosity=None, reference_temperature=None, ts=None, viscosity_model=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidCompressibleMaterialTransport - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -74,6 +77,7 @@ class OneOfFluidCompressibleMaterialTransport(object):
         self._reference_viscosity = None
         self._reference_temperature = None
         self._ts = None
+        self._viscosity_model = None
         self.discriminator = 'type'
 
         self.type = type
@@ -93,12 +97,14 @@ class OneOfFluidCompressibleMaterialTransport(object):
             self.reference_temperature = reference_temperature
         if ts is not None:
             self.ts = ts
+        if viscosity_model is not None:
+            self.viscosity_model = viscosity_model
 
     @property
     def type(self):
         """Gets the type of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
 
-        Schema name: SutherlandTransport  # noqa: E501
+        Schema name: HerschelBulkleyTransport  # noqa: E501
 
         :return: The type of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
         :rtype: str
@@ -109,7 +115,7 @@ class OneOfFluidCompressibleMaterialTransport(object):
     def type(self, type):
         """Sets the type of this OneOfFluidCompressibleMaterialTransport.
 
-        Schema name: SutherlandTransport  # noqa: E501
+        Schema name: HerschelBulkleyTransport  # noqa: E501
 
         :param type: The type of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
         :type: str
@@ -219,7 +225,7 @@ class OneOfFluidCompressibleMaterialTransport(object):
 
 
         :return: The thermo of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
-        :rtype: OneOfSutherlandTransportThermo
+        :rtype: HConstThermo
         """
         return self._thermo
 
@@ -229,7 +235,7 @@ class OneOfFluidCompressibleMaterialTransport(object):
 
 
         :param thermo: The thermo of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
-        :type: OneOfSutherlandTransportThermo
+        :type: HConstThermo
         """
 
         self._thermo = thermo
@@ -296,6 +302,27 @@ class OneOfFluidCompressibleMaterialTransport(object):
         """
 
         self._ts = ts
+
+    @property
+    def viscosity_model(self):
+        """Gets the viscosity_model of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
+
+
+        :return: The viscosity_model of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
+        :rtype: StandardHerschelBulkleyViscosityModel
+        """
+        return self._viscosity_model
+
+    @viscosity_model.setter
+    def viscosity_model(self, viscosity_model):
+        """Sets the viscosity_model of this OneOfFluidCompressibleMaterialTransport.
+
+
+        :param viscosity_model: The viscosity_model of this OneOfFluidCompressibleMaterialTransport.  # noqa: E501
+        :type: StandardHerschelBulkleyViscosityModel
+        """
+
+        self._viscosity_model = viscosity_model
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

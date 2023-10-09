@@ -37,7 +37,8 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
         'end_frequency': 'DimensionalFrequency',
         'frequency_stepping': 'RestrictedDimensionalFunctionFrequency',
         'frequencies_per_mode': 'int',
-        'percentage_spread': 'float'
+        'percentage_spread': 'float',
+        'growth_ratio': 'float'
     }
 
     attribute_map = {
@@ -47,16 +48,18 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
         'end_frequency': 'endFrequency',
         'frequency_stepping': 'frequencyStepping',
         'frequencies_per_mode': 'frequenciesPerMode',
-        'percentage_spread': 'percentageSpread'
+        'percentage_spread': 'percentageSpread',
+        'growth_ratio': 'growthRatio'
     }
 
     discriminator_value_class_map = {
         'SINGLE': 'SingleFrequency',
         'LIST_V20': 'FrequencyList',
-        'CLUSTER_AROUND_MODES': 'ClusterAroundModes'
+        'CLUSTER_AROUND_MODES': 'ClusterAroundModes',
+        'COVER_SPECTRUM': 'CoverSpectrum'
     }
 
-    def __init__(self, type='CLUSTER_AROUND_MODES', frequency=None, start_frequency=None, end_frequency=None, frequency_stepping=None, frequencies_per_mode=None, percentage_spread=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COVER_SPECTRUM', frequency=None, start_frequency=None, end_frequency=None, frequency_stepping=None, frequencies_per_mode=None, percentage_spread=None, growth_ratio=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHarmonicResponseControlExcitationFrequencies - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +72,7 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
         self._frequency_stepping = None
         self._frequencies_per_mode = None
         self._percentage_spread = None
+        self._growth_ratio = None
         self.discriminator = 'type'
 
         self.type = type
@@ -84,12 +88,14 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
             self.frequencies_per_mode = frequencies_per_mode
         if percentage_spread is not None:
             self.percentage_spread = percentage_spread
+        if growth_ratio is not None:
+            self.growth_ratio = growth_ratio
 
     @property
     def type(self):
         """Gets the type of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
 
-        Schema name: ClusterAroundModes  # noqa: E501
+        Schema name: CoverSpectrum  # noqa: E501
 
         :return: The type of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
         :rtype: str
@@ -100,7 +106,7 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
     def type(self, type):
         """Sets the type of this OneOfHarmonicResponseControlExcitationFrequencies.
 
-        Schema name: ClusterAroundModes  # noqa: E501
+        Schema name: CoverSpectrum  # noqa: E501
 
         :param type: The type of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
         :type: str
@@ -198,6 +204,7 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
     def frequencies_per_mode(self):
         """Gets the frequencies_per_mode of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
 
+        Specify the number of excitation frequencies to be clustered around each eigenfrequency. The eigenfrequency will also be considered when an even number is provided  # noqa: E501
 
         :return: The frequencies_per_mode of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
         :rtype: int
@@ -208,6 +215,7 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
     def frequencies_per_mode(self, frequencies_per_mode):
         """Sets the frequencies_per_mode of this OneOfHarmonicResponseControlExcitationFrequencies.
 
+        Specify the number of excitation frequencies to be clustered around each eigenfrequency. The eigenfrequency will also be considered when an even number is provided  # noqa: E501
 
         :param frequencies_per_mode: The frequencies_per_mode of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
         :type: int
@@ -222,6 +230,7 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
     def percentage_spread(self):
         """Gets the percentage_spread of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
 
+        Define the total bandwidth around each eigenfrequency as a percentage of each individual eigenfrequency within which excitation frequencies will be spaced. If a value of 10% is given, the bandwidth will extend 5% of the eigenfrequency value on both sides of the eigenfrequency.  # noqa: E501
 
         :return: The percentage_spread of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
         :rtype: float
@@ -232,6 +241,7 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
     def percentage_spread(self, percentage_spread):
         """Sets the percentage_spread of this OneOfHarmonicResponseControlExcitationFrequencies.
 
+        Define the total bandwidth around each eigenfrequency as a percentage of each individual eigenfrequency within which excitation frequencies will be spaced. If a value of 10% is given, the bandwidth will extend 5% of the eigenfrequency value on both sides of the eigenfrequency.  # noqa: E501
 
         :param percentage_spread: The percentage_spread of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
         :type: float
@@ -241,6 +251,32 @@ class OneOfHarmonicResponseControlExcitationFrequencies(object):
             raise ValueError("Invalid value for `percentage_spread`, must be a value greater than `0`")  # noqa: E501
 
         self._percentage_spread = percentage_spread
+
+    @property
+    def growth_ratio(self):
+        """Gets the growth_ratio of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
+
+        Ratio between the adjacent distances of frequencies. It controls the distribution of the frequencies, with larger values resulting in a wider spread towards the valleys and tighter clustering around the mode peaks. Suggested value r >= 2.  # noqa: E501
+
+        :return: The growth_ratio of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
+        :rtype: float
+        """
+        return self._growth_ratio
+
+    @growth_ratio.setter
+    def growth_ratio(self, growth_ratio):
+        """Sets the growth_ratio of this OneOfHarmonicResponseControlExcitationFrequencies.
+
+        Ratio between the adjacent distances of frequencies. It controls the distribution of the frequencies, with larger values resulting in a wider spread towards the valleys and tighter clustering around the mode peaks. Suggested value r >= 2.  # noqa: E501
+
+        :param growth_ratio: The growth_ratio of this OneOfHarmonicResponseControlExcitationFrequencies.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                growth_ratio is not None and growth_ratio <= 1):  # noqa: E501
+            raise ValueError("Invalid value for `growth_ratio`, must be a value greater than `1`")  # noqa: E501
+
+        self._growth_ratio = growth_ratio
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

@@ -33,24 +33,21 @@ class OneOfFrictionContactContactSolutionMethod(object):
     openapi_types = {
         'type': 'str',
         'augmented_lagrange_coefficient': 'float',
-        'contact_stiffness': 'OneOfPenaltyMethodContactStiffness',
-        'max_penetration': 'DimensionalLength'
+        'contact_stiffness': 'OneOfPenaltyMethodContactStiffness'
     }
 
     attribute_map = {
         'type': 'type',
         'augmented_lagrange_coefficient': 'augmentedLagrangeCoefficient',
-        'contact_stiffness': 'contactStiffness',
-        'max_penetration': 'maxPenetration'
+        'contact_stiffness': 'contactStiffness'
     }
 
     discriminator_value_class_map = {
         'AUGMENTED_LAGRANGE': 'AugmentedLagrangeMethod',
-        'PENALTY_METHOD': 'PenaltyMethod',
-        'AUTOMATIC_PENETRATION_CONTROL': 'AutomaticPenetrationControl'
+        'PENALTY_METHOD': 'PenaltyMethod'
     }
 
-    def __init__(self, type='AUTOMATIC_PENETRATION_CONTROL', augmented_lagrange_coefficient=None, contact_stiffness=None, max_penetration=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PENALTY_METHOD', augmented_lagrange_coefficient=None, contact_stiffness=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFrictionContactContactSolutionMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,7 +56,6 @@ class OneOfFrictionContactContactSolutionMethod(object):
         self._type = None
         self._augmented_lagrange_coefficient = None
         self._contact_stiffness = None
-        self._max_penetration = None
         self.discriminator = 'type'
 
         self.type = type
@@ -67,14 +63,12 @@ class OneOfFrictionContactContactSolutionMethod(object):
             self.augmented_lagrange_coefficient = augmented_lagrange_coefficient
         if contact_stiffness is not None:
             self.contact_stiffness = contact_stiffness
-        if max_penetration is not None:
-            self.max_penetration = max_penetration
 
     @property
     def type(self):
         """Gets the type of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
 
-        Schema name: AutomaticPenetrationControl  # noqa: E501
+        Schema name: PenaltyMethod  # noqa: E501
 
         :return: The type of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
         :rtype: str
@@ -85,7 +79,7 @@ class OneOfFrictionContactContactSolutionMethod(object):
     def type(self, type):
         """Sets the type of this OneOfFrictionContactContactSolutionMethod.
 
-        Schema name: AutomaticPenetrationControl  # noqa: E501
+        Schema name: PenaltyMethod  # noqa: E501
 
         :param type: The type of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
         :type: str
@@ -142,27 +136,6 @@ class OneOfFrictionContactContactSolutionMethod(object):
         """
 
         self._contact_stiffness = contact_stiffness
-
-    @property
-    def max_penetration(self):
-        """Gets the max_penetration of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
-
-
-        :return: The max_penetration of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
-        :rtype: DimensionalLength
-        """
-        return self._max_penetration
-
-    @max_penetration.setter
-    def max_penetration(self, max_penetration):
-        """Sets the max_penetration of this OneOfFrictionContactContactSolutionMethod.
-
-
-        :param max_penetration: The max_penetration of this OneOfFrictionContactContactSolutionMethod.  # noqa: E501
-        :type: DimensionalLength
-        """
-
-        self._max_penetration = max_penetration
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

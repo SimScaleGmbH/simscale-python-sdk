@@ -34,6 +34,7 @@ class OneOfPressureInletBCTemperature(object):
         'type': 'str',
         'value': 'DimensionalFunctionTemperature',
         'total_temperature': 'DimensionalTemperature',
+        'total_temperature_function': 'DimensionalFunctionTemperature',
         'specific_heat_ratio': 'float'
     }
 
@@ -41,6 +42,7 @@ class OneOfPressureInletBCTemperature(object):
         'type': 'type',
         'value': 'value',
         'total_temperature': 'totalTemperature',
+        'total_temperature_function': 'totalTemperatureFunction',
         'specific_heat_ratio': 'specificHeatRatio'
     }
 
@@ -49,7 +51,7 @@ class OneOfPressureInletBCTemperature(object):
         'TOTAL_TEMPERATURE': 'TotalTBC'
     }
 
-    def __init__(self, type='TOTAL_TEMPERATURE', value=None, total_temperature=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOTAL_TEMPERATURE', value=None, total_temperature=None, total_temperature_function=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
         """OneOfPressureInletBCTemperature - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class OneOfPressureInletBCTemperature(object):
         self._type = None
         self._value = None
         self._total_temperature = None
+        self._total_temperature_function = None
         self._specific_heat_ratio = None
         self.discriminator = 'type'
 
@@ -66,6 +69,8 @@ class OneOfPressureInletBCTemperature(object):
             self.value = value
         if total_temperature is not None:
             self.total_temperature = total_temperature
+        if total_temperature_function is not None:
+            self.total_temperature_function = total_temperature_function
         if specific_heat_ratio is not None:
             self.specific_heat_ratio = specific_heat_ratio
 
@@ -135,6 +140,27 @@ class OneOfPressureInletBCTemperature(object):
         """
 
         self._total_temperature = total_temperature
+
+    @property
+    def total_temperature_function(self):
+        """Gets the total_temperature_function of this OneOfPressureInletBCTemperature.  # noqa: E501
+
+
+        :return: The total_temperature_function of this OneOfPressureInletBCTemperature.  # noqa: E501
+        :rtype: DimensionalFunctionTemperature
+        """
+        return self._total_temperature_function
+
+    @total_temperature_function.setter
+    def total_temperature_function(self, total_temperature_function):
+        """Sets the total_temperature_function of this OneOfPressureInletBCTemperature.
+
+
+        :param total_temperature_function: The total_temperature_function of this OneOfPressureInletBCTemperature.  # noqa: E501
+        :type: DimensionalFunctionTemperature
+        """
+
+        self._total_temperature_function = total_temperature_function
 
     @property
     def specific_heat_ratio(self):

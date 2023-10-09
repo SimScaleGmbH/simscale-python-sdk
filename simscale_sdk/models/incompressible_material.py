@@ -40,8 +40,10 @@ class IncompressibleMaterial(object):
         'thermal_expansion_coefficient': 'DimensionalThermalExpansionRate',
         'reference_temperature': 'DimensionalTemperature',
         'laminar_prandtl_number': 'float',
+        'laminar_prandtl_number_function': 'DimensionalFunctionDimensionless',
         'turbulent_prandtl_number': 'float',
         'specific_heat': 'DimensionalSpecificHeat',
+        'specific_heat_function': 'DimensionalFunctionSpecificHeat',
         'molar_weight': 'DimensionalMolarMass',
         'cavitation': 'Cavitation',
         'topological_reference': 'TopologicalReference',
@@ -60,8 +62,10 @@ class IncompressibleMaterial(object):
         'thermal_expansion_coefficient': 'thermalExpansionCoefficient',
         'reference_temperature': 'referenceTemperature',
         'laminar_prandtl_number': 'laminarPrandtlNumber',
+        'laminar_prandtl_number_function': 'laminarPrandtlNumberFunction',
         'turbulent_prandtl_number': 'turbulentPrandtlNumber',
         'specific_heat': 'specificHeat',
+        'specific_heat_function': 'specificHeatFunction',
         'molar_weight': 'molarWeight',
         'cavitation': 'cavitation',
         'topological_reference': 'topologicalReference',
@@ -70,7 +74,7 @@ class IncompressibleMaterial(object):
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, type='INCOMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, turbulent_prandtl_number=None, specific_heat=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INCOMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, specific_heat=None, specific_heat_function=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """IncompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,8 +89,10 @@ class IncompressibleMaterial(object):
         self._thermal_expansion_coefficient = None
         self._reference_temperature = None
         self._laminar_prandtl_number = None
+        self._laminar_prandtl_number_function = None
         self._turbulent_prandtl_number = None
         self._specific_heat = None
+        self._specific_heat_function = None
         self._molar_weight = None
         self._cavitation = None
         self._topological_reference = None
@@ -112,10 +118,14 @@ class IncompressibleMaterial(object):
             self.reference_temperature = reference_temperature
         if laminar_prandtl_number is not None:
             self.laminar_prandtl_number = laminar_prandtl_number
+        if laminar_prandtl_number_function is not None:
+            self.laminar_prandtl_number_function = laminar_prandtl_number_function
         if turbulent_prandtl_number is not None:
             self.turbulent_prandtl_number = turbulent_prandtl_number
         if specific_heat is not None:
             self.specific_heat = specific_heat
+        if specific_heat_function is not None:
+            self.specific_heat_function = specific_heat_function
         if molar_weight is not None:
             self.molar_weight = molar_weight
         if cavitation is not None:
@@ -336,6 +346,27 @@ class IncompressibleMaterial(object):
         self._laminar_prandtl_number = laminar_prandtl_number
 
     @property
+    def laminar_prandtl_number_function(self):
+        """Gets the laminar_prandtl_number_function of this IncompressibleMaterial.  # noqa: E501
+
+
+        :return: The laminar_prandtl_number_function of this IncompressibleMaterial.  # noqa: E501
+        :rtype: DimensionalFunctionDimensionless
+        """
+        return self._laminar_prandtl_number_function
+
+    @laminar_prandtl_number_function.setter
+    def laminar_prandtl_number_function(self, laminar_prandtl_number_function):
+        """Sets the laminar_prandtl_number_function of this IncompressibleMaterial.
+
+
+        :param laminar_prandtl_number_function: The laminar_prandtl_number_function of this IncompressibleMaterial.  # noqa: E501
+        :type: DimensionalFunctionDimensionless
+        """
+
+        self._laminar_prandtl_number_function = laminar_prandtl_number_function
+
+    @property
     def turbulent_prandtl_number(self):
         """Gets the turbulent_prandtl_number of this IncompressibleMaterial.  # noqa: E501
 
@@ -378,6 +409,27 @@ class IncompressibleMaterial(object):
         """
 
         self._specific_heat = specific_heat
+
+    @property
+    def specific_heat_function(self):
+        """Gets the specific_heat_function of this IncompressibleMaterial.  # noqa: E501
+
+
+        :return: The specific_heat_function of this IncompressibleMaterial.  # noqa: E501
+        :rtype: DimensionalFunctionSpecificHeat
+        """
+        return self._specific_heat_function
+
+    @specific_heat_function.setter
+    def specific_heat_function(self, specific_heat_function):
+        """Sets the specific_heat_function of this IncompressibleMaterial.
+
+
+        :param specific_heat_function: The specific_heat_function of this IncompressibleMaterial.  # noqa: E501
+        :type: DimensionalFunctionSpecificHeat
+        """
+
+        self._specific_heat_function = specific_heat_function
 
     @property
     def molar_weight(self):

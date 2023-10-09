@@ -34,7 +34,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'type': 'str',
         'name': 'str',
         'pressure_type': 'OneOfFieldCalculationsPressureResultControlPressureType',
-        'result_type': 'WallHeatFluxResultType',
+        'result_type': 'OperativeTemperatureResultType',
         'age_of_fluid_diffusion': 'bool',
         'turbulent_schmidt_number': 'float',
         'diffusion_coefficient': 'DimensionalKinematicViscosity',
@@ -80,10 +80,12 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'AGE_OF_FLUID': 'FieldCalculationsMeanAgeOfFluidResultControl',
         'THERMAL_COMFORT': 'FieldCalculationsThermalComfortResultControl',
         'ADJOINT_SENSITIVITIES': 'FieldCalculationsAdjointSensitivitiesResultControl',
-        'WALL_HEAT_FLUX': 'FieldCalculationsWallHeatFluxResultControl'
+        'WALL_HEAT_FLUX': 'FieldCalculationsWallHeatFluxResultControl',
+        'MEAN_RADIANT_TEMPERATURE': 'FieldCalculationsMeanRadiantTemperatureResultControl',
+        'OPERATIVE_TEMPERATURE': 'FieldCalculationsOperativeTemperatureResultControl'
     }
 
-    def __init__(self, type='WALL_HEAT_FLUX', name=None, pressure_type=None, result_type=None, age_of_fluid_diffusion=None, turbulent_schmidt_number=None, diffusion_coefficient=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, compute_heat_transfer_coefficient=None, reference_temperature_result_type=None, compute_nusselt_number=None, reference_nusselt_number_length=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='OPERATIVE_TEMPERATURE', name=None, pressure_type=None, result_type=None, age_of_fluid_diffusion=None, turbulent_schmidt_number=None, diffusion_coefficient=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, compute_heat_transfer_coefficient=None, reference_temperature_result_type=None, compute_nusselt_number=None, reference_nusselt_number_length=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidResultControlsFieldCalculations - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -146,7 +148,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
     def type(self):
         """Gets the type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
 
-        Computes the <b>heat flux</b> [W/m²] at every <b>wall</b> based on the surface normal gradient of the temperature. Radiation effects are not included.  Schema name: FieldCalculationsWallHeatFluxResultControl  # noqa: E501
+        Computes the <b>Operative Temperature</b>. It is defined as the uniform surface temperature of an imaginary black enclosure in which an every point of the domain would exchange the same amount of convective and radiative heat as in the actual nonuniform space  Schema name: FieldCalculationsOperativeTemperatureResultControl  # noqa: E501
 
         :return: The type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
         :rtype: str
@@ -157,7 +159,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
     def type(self, type):
         """Sets the type of this OneOfFluidResultControlsFieldCalculations.
 
-        Computes the <b>heat flux</b> [W/m²] at every <b>wall</b> based on the surface normal gradient of the temperature. Radiation effects are not included.  Schema name: FieldCalculationsWallHeatFluxResultControl  # noqa: E501
+        Computes the <b>Operative Temperature</b>. It is defined as the uniform surface temperature of an imaginary black enclosure in which an every point of the domain would exchange the same amount of convective and radiative heat as in the actual nonuniform space  Schema name: FieldCalculationsOperativeTemperatureResultControl  # noqa: E501
 
         :param type: The type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
         :type: str
@@ -218,7 +220,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
 
 
         :return: The result_type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
-        :rtype: WallHeatFluxResultType
+        :rtype: OperativeTemperatureResultType
         """
         return self._result_type
 
@@ -228,7 +230,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
 
 
         :param result_type: The result_type of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
-        :type: WallHeatFluxResultType
+        :type: OperativeTemperatureResultType
         """
 
         self._result_type = result_type

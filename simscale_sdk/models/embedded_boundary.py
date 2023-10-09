@@ -47,7 +47,8 @@ class EmbeddedBoundary(object):
         'enable_radiation': 'bool',
         'enable_joule_heating': 'bool',
         'turbulence_model': 'str',
-        'time_dependency': 'OneOfEmbeddedBoundaryTimeDependency'
+        'time_dependency': 'OneOfEmbeddedBoundaryTimeDependency',
+        'num_of_passive_species': 'int'
     }
 
     attribute_map = {
@@ -67,10 +68,11 @@ class EmbeddedBoundary(object):
         'enable_radiation': 'enableRadiation',
         'enable_joule_heating': 'enableJouleHeating',
         'turbulence_model': 'turbulenceModel',
-        'time_dependency': 'timeDependency'
+        'time_dependency': 'timeDependency',
+        'num_of_passive_species': 'numOfPassiveSpecies'
     }
 
-    def __init__(self, type='EMBEDDED_BOUNDARY', allow_external_flow=None, model=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMBEDDED_BOUNDARY', allow_external_flow=None, model=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, local_vars_configuration=None):  # noqa: E501
         """EmbeddedBoundary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -93,6 +95,7 @@ class EmbeddedBoundary(object):
         self._enable_joule_heating = None
         self._turbulence_model = None
         self._time_dependency = None
+        self._num_of_passive_species = None
         self.discriminator = None
 
         self.type = type
@@ -128,6 +131,8 @@ class EmbeddedBoundary(object):
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
             self.time_dependency = time_dependency
+        if num_of_passive_species is not None:
+            self.num_of_passive_species = num_of_passive_species
 
     @property
     def type(self):
@@ -460,6 +465,7 @@ class EmbeddedBoundary(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this EmbeddedBoundary.  # noqa: E501
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST.</p>  # noqa: E501
 
         :return: The turbulence_model of this EmbeddedBoundary.  # noqa: E501
         :rtype: str
@@ -470,6 +476,7 @@ class EmbeddedBoundary(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this EmbeddedBoundary.
 
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST.</p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this EmbeddedBoundary.  # noqa: E501
         :type: str
@@ -503,6 +510,35 @@ class EmbeddedBoundary(object):
         """
 
         self._time_dependency = time_dependency
+
+    @property
+    def num_of_passive_species(self):
+        """Gets the num_of_passive_species of this EmbeddedBoundary.  # noqa: E501
+
+        Select the number of passive species involved in the simulation. Passive species allow you to simulate the transport of a scalar quantity within a fluid flow without affecting it. <a href='https://www.simscale.com/docs/simulation-setup/global-settings/#passive-species' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :return: The num_of_passive_species of this EmbeddedBoundary.  # noqa: E501
+        :rtype: int
+        """
+        return self._num_of_passive_species
+
+    @num_of_passive_species.setter
+    def num_of_passive_species(self, num_of_passive_species):
+        """Sets the num_of_passive_species of this EmbeddedBoundary.
+
+        Select the number of passive species involved in the simulation. Passive species allow you to simulate the transport of a scalar quantity within a fluid flow without affecting it. <a href='https://www.simscale.com/docs/simulation-setup/global-settings/#passive-species' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :param num_of_passive_species: The num_of_passive_species of this EmbeddedBoundary.  # noqa: E501
+        :type: int
+        """
+        allowed_values = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and num_of_passive_species not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `num_of_passive_species` ({0}), must be one of {1}"  # noqa: E501
+                .format(num_of_passive_species, allowed_values)
+            )
+
+        self._num_of_passive_species = num_of_passive_species
 
     def to_dict(self):
         """Returns the model properties as a dict"""

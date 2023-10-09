@@ -31,29 +31,61 @@ class ElectromagneticNumerics(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'nonlinear_residual': 'float',
         'element_accuracy': 'str'
     }
 
     attribute_map = {
+        'nonlinear_residual': 'nonlinearResidual',
         'element_accuracy': 'elementAccuracy'
     }
 
-    def __init__(self, element_accuracy=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, nonlinear_residual=None, element_accuracy=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticNumerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._nonlinear_residual = None
         self._element_accuracy = None
         self.discriminator = None
 
+        if nonlinear_residual is not None:
+            self.nonlinear_residual = nonlinear_residual
         if element_accuracy is not None:
             self.element_accuracy = element_accuracy
+
+    @property
+    def nonlinear_residual(self):
+        """Gets the nonlinear_residual of this ElectromagneticNumerics.  # noqa: E501
+
+        The nonlinear residual error is computed as the difference between the calculated and expected flux density value when a BH curve is specified.  # noqa: E501
+
+        :return: The nonlinear_residual of this ElectromagneticNumerics.  # noqa: E501
+        :rtype: float
+        """
+        return self._nonlinear_residual
+
+    @nonlinear_residual.setter
+    def nonlinear_residual(self, nonlinear_residual):
+        """Sets the nonlinear_residual of this ElectromagneticNumerics.
+
+        The nonlinear residual error is computed as the difference between the calculated and expected flux density value when a BH curve is specified.  # noqa: E501
+
+        :param nonlinear_residual: The nonlinear_residual of this ElectromagneticNumerics.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                nonlinear_residual is not None and nonlinear_residual < 0):  # noqa: E501
+            raise ValueError("Invalid value for `nonlinear_residual`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._nonlinear_residual = nonlinear_residual
 
     @property
     def element_accuracy(self):
         """Gets the element_accuracy of this ElectromagneticNumerics.  # noqa: E501
 
+        Uses second order element shape functions for a higher accuracy. Especially recommended when calculating torques or forces. However this increases memory consumption and computational time.  # noqa: E501
 
         :return: The element_accuracy of this ElectromagneticNumerics.  # noqa: E501
         :rtype: str
@@ -64,6 +96,7 @@ class ElectromagneticNumerics(object):
     def element_accuracy(self, element_accuracy):
         """Sets the element_accuracy of this ElectromagneticNumerics.
 
+        Uses second order element shape functions for a higher accuracy. Especially recommended when calculating torques or forces. However this increases memory consumption and computational time.  # noqa: E501
 
         :param element_accuracy: The element_accuracy of this ElectromagneticNumerics.  # noqa: E501
         :type: str

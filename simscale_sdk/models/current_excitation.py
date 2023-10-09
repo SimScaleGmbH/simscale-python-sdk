@@ -58,7 +58,7 @@ class CurrentExcitation(object):
     def type(self):
         """Gets the type of this CurrentExcitation.  # noqa: E501
 
-        Schema name: CurrentExcitation  # noqa: E501
+        The total current over all faces  Schema name: CurrentExcitation  # noqa: E501
 
         :return: The type of this CurrentExcitation.  # noqa: E501
         :rtype: str
@@ -69,7 +69,7 @@ class CurrentExcitation(object):
     def type(self, type):
         """Sets the type of this CurrentExcitation.
 
-        Schema name: CurrentExcitation  # noqa: E501
+        The total current over all faces  Schema name: CurrentExcitation  # noqa: E501
 
         :param type: The type of this CurrentExcitation.  # noqa: E501
         :type: str

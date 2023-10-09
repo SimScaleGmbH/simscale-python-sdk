@@ -124,6 +124,7 @@ class SolidNumerics(object):
     def harmonic_solution_method(self):
         """Gets the harmonic_solution_method of this SolidNumerics.  # noqa: E501
 
+        Select the basis for the computation of the harmonic analysis.  # noqa: E501
 
         :return: The harmonic_solution_method of this SolidNumerics.  # noqa: E501
         :rtype: str
@@ -134,6 +135,7 @@ class SolidNumerics(object):
     def harmonic_solution_method(self, harmonic_solution_method):
         """Sets the harmonic_solution_method of this SolidNumerics.
 
+        Select the basis for the computation of the harmonic analysis.  # noqa: E501
 
         :param harmonic_solution_method: The harmonic_solution_method of this SolidNumerics.  # noqa: E501
         :type: str
