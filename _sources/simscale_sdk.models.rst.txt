@@ -489,14 +489,6 @@ simscale\_sdk.models.automatic\_omega\_dissipation module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.automatic\_penetration\_control module
------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.automatic_penetration_control
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.automatic\_reactualization module
 ------------------------------------------------------
 
@@ -533,6 +525,22 @@ simscale\_sdk.models.automatic\_subspace\_settings module
 ---------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.automatic_subspace_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.automatic\_sweep\_off module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_sweep_off
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.automatic\_sweep\_on module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_sweep_on
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1185,6 +1193,14 @@ simscale\_sdk.models.coupled\_interface\_thermal module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.cover\_spectrum module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.cover_spectrum
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.cpu\_time\_write\_control module
 -----------------------------------------------------
 
@@ -1609,6 +1625,14 @@ simscale\_sdk.models.dimensional\_electric\_potential module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensional\_electric\_resistance module
+-------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_electric_resistance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dimensional\_epsilon\_gradient module
 ----------------------------------------------------------
 
@@ -1709,6 +1733,14 @@ simscale\_sdk.models.dimensional\_function\_initial\_condition\_domains\_tempera
 -------------------------------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_function_initial_condition_domains_temperature
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_function\_kinematic\_viscosity module
+-----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_kinematic_viscosity
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1957,6 +1989,14 @@ simscale\_sdk.models.dimensional\_length module
 -----------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_length
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_magnetic\_flux\_density module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_magnetic_flux_density
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2833,6 +2873,22 @@ simscale\_sdk.models.field\_calculations\_mean\_age\_of\_fluid\_result\_control 
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.field\_calculations\_mean\_radiant\_temperature\_result\_control module
+--------------------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_mean_radiant_temperature_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.field\_calculations\_operative\_temperature\_result\_control module
+----------------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_operative_temperature_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.field\_calculations\_pressure\_result\_control module
 --------------------------------------------------------------------------
 
@@ -2925,6 +2981,14 @@ simscale\_sdk.models.first\_mode module
 ---------------------------------------
 
 .. automodule:: simscale_sdk.models.first_mode
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.first\_order\_ogden module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.first_order_ogden
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4233,6 +4297,14 @@ simscale\_sdk.models.heat\_transfer module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.herschel\_bulkley\_transport module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.herschel_bulkley_transport
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.herschel\_bulkley\_viscosity\_model module
 ---------------------------------------------------------------
 
@@ -5057,6 +5129,14 @@ simscale\_sdk.models.mean\_age\_of\_fluid\_result\_type module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.mean\_radiant\_temperature\_result\_type module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.mean_radiant_temperature_result_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.mean\_value\_outlet\_vbc module
 ----------------------------------------------------
 
@@ -5205,14 +5285,6 @@ simscale\_sdk.models.mooney\_rivlin\_hyper\_elastic\_model module
 -----------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.mooney_rivlin_hyper_elastic_model
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.mortar\_method module
-------------------------------------------
-
-.. automodule:: simscale_sdk.models.mortar_method
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5593,6 +5665,14 @@ simscale\_sdk.models.off\_position\_tolerance module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.ogden\_hyper\_elastic\_model module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.ogden_hyper_elastic_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.open\_boundary\_ray\_bc module
 ---------------------------------------------------
 
@@ -5613,6 +5693,14 @@ simscale\_sdk.models.open\_window\_rsbc module
 ----------------------------------------------
 
 .. automodule:: simscale_sdk.models.open_window_rsbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.operative\_temperature\_result\_type module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.operative_temperature_result_type
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5917,6 +6005,14 @@ simscale\_sdk.models.periodic\_bc module
 ----------------------------------------
 
 .. automodule:: simscale_sdk.models.periodic_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.permanent\_magnet\_material module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.permanent_magnet_material
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6729,6 +6825,14 @@ simscale\_sdk.models.screenshot\_report\_properties module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.second\_order\_ogden module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.second_order_ogden
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.seed\_settings module
 ------------------------------------------
 
@@ -6837,6 +6941,14 @@ simscale\_sdk.models.simmetrix\_cell\_zones module
 --------------------------------------------------
 
 .. automodule:: simscale_sdk.models.simmetrix_cell_zones
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.simmetrix\_extrusion\_mesh\_refinement module
+------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.simmetrix_extrusion_mesh_refinement
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7073,6 +7185,14 @@ simscale\_sdk.models.snapshot\_result\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.soft\_magnetic\_material module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.soft_magnetic_material
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.solar\_calculator module
 ---------------------------------------------
 
@@ -7277,6 +7397,14 @@ simscale\_sdk.models.stabilization module
 -----------------------------------------
 
 .. automodule:: simscale_sdk.models.stabilization
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.standard\_herschel\_bulkley\_viscosity\_model module
+-------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.standard_herschel_bulkley_viscosity_model
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7673,6 +7801,14 @@ simscale\_sdk.models.sutherland\_transport module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.sutherland\_viscosity module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.sutherland_viscosity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.sweep\_meshing\_absolute\_size module
 ----------------------------------------------------------
 
@@ -7957,6 +8093,14 @@ simscale\_sdk.models.thin\_resistance\_layer module
 ---------------------------------------------------
 
 .. automodule:: simscale_sdk.models.thin_resistance_layer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.third\_order\_ogden module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.third_order_ogden
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8529,6 +8673,14 @@ simscale\_sdk.models.velocity\_result\_control\_item module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.voltage\_excitation module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.voltage_excitation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.volume\_custom\_sizing module
 --------------------------------------------------
 
@@ -8869,6 +9021,14 @@ simscale\_sdk.models.y\_plus\_ras\_result\_type module
 ------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.y_plus_ras_result_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.yeoh\_hyper\_elastic\_model module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.yeoh_hyper_elastic_model
    :members:
    :undoc-members:
    :show-inheritance:
