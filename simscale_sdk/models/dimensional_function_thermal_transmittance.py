@@ -95,7 +95,7 @@ class DimensionalFunctionThermalTransmittance(object):
         """
         if self.local_vars_configuration.client_side_validation and unit is None:  # noqa: E501
             raise ValueError("Invalid value for `unit`, must not be `None`")  # noqa: E501
-        allowed_values = ["W/(K·m²)", "Btu/(s·in²·°F)"]  # noqa: E501
+        allowed_values = ["W/(K·m²)", "Btu/(s·in²·°F)", "W/(K·mm²)", "W/(K·cm²)", "Btu/(h·in²·°F)", "Btu/(min·in²·°F)", "Btu/(s·ft²·°F)", "Btu/(min·ft²·°F)"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

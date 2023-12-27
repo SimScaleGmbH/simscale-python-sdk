@@ -32,8 +32,7 @@ class ElectromagneticAnalysis(object):
     """
     openapi_types = {
         'type': 'str',
-        'dominant_field': 'str',
-        'time_dependency': 'StationaryTimeDependency',
+        'model': 'OneOfElectromagneticAnalysisModel',
         'materials': 'list[ElectromagneticMaterial]',
         'coils': 'list[Coil]',
         'boundary_conditions': 'list[OneOfElectromagneticAnalysisBoundaryConditions]',
@@ -44,8 +43,7 @@ class ElectromagneticAnalysis(object):
 
     attribute_map = {
         'type': 'type',
-        'dominant_field': 'dominantField',
-        'time_dependency': 'timeDependency',
+        'model': 'model',
         'materials': 'materials',
         'coils': 'coils',
         'boundary_conditions': 'boundaryConditions',
@@ -54,15 +52,14 @@ class ElectromagneticAnalysis(object):
         'simulation_control': 'simulationControl'
     }
 
-    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', dominant_field=None, time_dependency=None, materials=None, coils=None, boundary_conditions=None, result_control=None, numerics=None, simulation_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', model=None, materials=None, coils=None, boundary_conditions=None, result_control=None, numerics=None, simulation_control=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._dominant_field = None
-        self._time_dependency = None
+        self._model = None
         self._materials = None
         self._coils = None
         self._boundary_conditions = None
@@ -72,10 +69,8 @@ class ElectromagneticAnalysis(object):
         self.discriminator = None
 
         self.type = type
-        if dominant_field is not None:
-            self.dominant_field = dominant_field
-        if time_dependency is not None:
-            self.time_dependency = time_dependency
+        if model is not None:
+            self.model = model
         if materials is not None:
             self.materials = materials
         if coils is not None:
@@ -115,52 +110,25 @@ class ElectromagneticAnalysis(object):
         self._type = type
 
     @property
-    def dominant_field(self):
-        """Gets the dominant_field of this ElectromagneticAnalysis.  # noqa: E501
+    def model(self):
+        """Gets the model of this ElectromagneticAnalysis.  # noqa: E501
 
 
-        :return: The dominant_field of this ElectromagneticAnalysis.  # noqa: E501
-        :rtype: str
+        :return: The model of this ElectromagneticAnalysis.  # noqa: E501
+        :rtype: OneOfElectromagneticAnalysisModel
         """
-        return self._dominant_field
+        return self._model
 
-    @dominant_field.setter
-    def dominant_field(self, dominant_field):
-        """Sets the dominant_field of this ElectromagneticAnalysis.
-
-
-        :param dominant_field: The dominant_field of this ElectromagneticAnalysis.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["MAGNETIC"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and dominant_field not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `dominant_field` ({0}), must be one of {1}"  # noqa: E501
-                .format(dominant_field, allowed_values)
-            )
-
-        self._dominant_field = dominant_field
-
-    @property
-    def time_dependency(self):
-        """Gets the time_dependency of this ElectromagneticAnalysis.  # noqa: E501
+    @model.setter
+    def model(self, model):
+        """Sets the model of this ElectromagneticAnalysis.
 
 
-        :return: The time_dependency of this ElectromagneticAnalysis.  # noqa: E501
-        :rtype: StationaryTimeDependency
-        """
-        return self._time_dependency
-
-    @time_dependency.setter
-    def time_dependency(self, time_dependency):
-        """Sets the time_dependency of this ElectromagneticAnalysis.
-
-
-        :param time_dependency: The time_dependency of this ElectromagneticAnalysis.  # noqa: E501
-        :type: StationaryTimeDependency
+        :param model: The model of this ElectromagneticAnalysis.  # noqa: E501
+        :type: OneOfElectromagneticAnalysisModel
         """
 
-        self._time_dependency = time_dependency
+        self._model = model
 
     @property
     def materials(self):

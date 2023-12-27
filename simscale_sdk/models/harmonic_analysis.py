@@ -35,6 +35,7 @@ class HarmonicAnalysis(object):
         'connection_groups': 'list[Contact]',
         'connectors': 'list[PinConnector]',
         'element_technology': 'SolidElementTechnology',
+        'global_physics': 'SolidGlobalPhysics',
         'model': 'SolidModel',
         'materials': 'list[SolidMaterial]',
         'initial_conditions': 'SolidInitialConditions',
@@ -50,6 +51,7 @@ class HarmonicAnalysis(object):
         'connection_groups': 'connectionGroups',
         'connectors': 'connectors',
         'element_technology': 'elementTechnology',
+        'global_physics': 'globalPhysics',
         'model': 'model',
         'materials': 'materials',
         'initial_conditions': 'initialConditions',
@@ -60,7 +62,7 @@ class HarmonicAnalysis(object):
         'mesh_order': 'meshOrder'
     }
 
-    def __init__(self, type='HARMONIC_ANALYSIS', connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HARMONIC_ANALYSIS', connection_groups=None, connectors=None, element_technology=None, global_physics=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, local_vars_configuration=None):  # noqa: E501
         """HarmonicAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class HarmonicAnalysis(object):
         self._connection_groups = None
         self._connectors = None
         self._element_technology = None
+        self._global_physics = None
         self._model = None
         self._materials = None
         self._initial_conditions = None
@@ -87,6 +90,8 @@ class HarmonicAnalysis(object):
             self.connectors = connectors
         if element_technology is not None:
             self.element_technology = element_technology
+        if global_physics is not None:
+            self.global_physics = global_physics
         if model is not None:
             self.model = model
         if materials is not None:
@@ -191,6 +196,27 @@ class HarmonicAnalysis(object):
         """
 
         self._element_technology = element_technology
+
+    @property
+    def global_physics(self):
+        """Gets the global_physics of this HarmonicAnalysis.  # noqa: E501
+
+
+        :return: The global_physics of this HarmonicAnalysis.  # noqa: E501
+        :rtype: SolidGlobalPhysics
+        """
+        return self._global_physics
+
+    @global_physics.setter
+    def global_physics(self, global_physics):
+        """Sets the global_physics of this HarmonicAnalysis.
+
+
+        :param global_physics: The global_physics of this HarmonicAnalysis.  # noqa: E501
+        :type: SolidGlobalPhysics
+        """
+
+        self._global_physics = global_physics
 
     @property
     def model(self):

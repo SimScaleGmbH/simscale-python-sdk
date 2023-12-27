@@ -32,15 +32,19 @@ class CurrentExcitation(object):
     """
     openapi_types = {
         'type': 'str',
-        'current': 'DimensionalElectricCurrent'
+        'current': 'DimensionalElectricCurrent',
+        'current_rms': 'DimensionalElectricCurrent',
+        'current_phase': 'DimensionalAngle'
     }
 
     attribute_map = {
         'type': 'type',
-        'current': 'current'
+        'current': 'current',
+        'current_rms': 'currentRMS',
+        'current_phase': 'currentPhase'
     }
 
-    def __init__(self, type='CURRENT_EXCITATION', current=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CURRENT_EXCITATION', current=None, current_rms=None, current_phase=None, local_vars_configuration=None):  # noqa: E501
         """CurrentExcitation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +52,17 @@ class CurrentExcitation(object):
 
         self._type = None
         self._current = None
+        self._current_rms = None
+        self._current_phase = None
         self.discriminator = None
 
         self.type = type
         if current is not None:
             self.current = current
+        if current_rms is not None:
+            self.current_rms = current_rms
+        if current_phase is not None:
+            self.current_phase = current_phase
 
     @property
     def type(self):
@@ -99,6 +109,48 @@ class CurrentExcitation(object):
         """
 
         self._current = current
+
+    @property
+    def current_rms(self):
+        """Gets the current_rms of this CurrentExcitation.  # noqa: E501
+
+
+        :return: The current_rms of this CurrentExcitation.  # noqa: E501
+        :rtype: DimensionalElectricCurrent
+        """
+        return self._current_rms
+
+    @current_rms.setter
+    def current_rms(self, current_rms):
+        """Sets the current_rms of this CurrentExcitation.
+
+
+        :param current_rms: The current_rms of this CurrentExcitation.  # noqa: E501
+        :type: DimensionalElectricCurrent
+        """
+
+        self._current_rms = current_rms
+
+    @property
+    def current_phase(self):
+        """Gets the current_phase of this CurrentExcitation.  # noqa: E501
+
+
+        :return: The current_phase of this CurrentExcitation.  # noqa: E501
+        :rtype: DimensionalAngle
+        """
+        return self._current_phase
+
+    @current_phase.setter
+    def current_phase(self, current_phase):
+        """Sets the current_phase of this CurrentExcitation.
+
+
+        :param current_phase: The current_phase of this CurrentExcitation.  # noqa: E501
+        :type: DimensionalAngle
+        """
+
+        self._current_phase = current_phase
 
     def to_dict(self):
         """Returns the model properties as a dict"""

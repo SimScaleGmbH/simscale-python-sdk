@@ -53,7 +53,7 @@ class NoneDamping(object):
     def type(self):
         """Gets the type of this NoneDamping.  # noqa: E501
 
-        <p>Choose if damping effects should be considered. The supported damping types are:<ul><li><p><b>Rayleigh Damping</b> which is also known as <i>proportional viscous damping</i>. This model assumes that the damping is proportional to the vibrating velocity.</p></ul><ul><li><p><b>Hysteretic Damping</b>, also known as <i>structural damping</i>. Here the damping is assumed to be proportional to the displacement.</p></ul><br><a href= https://www.simscale.com/docs/simulation-setup/materials/damping/' target='_blank'>Learn more</a>.   Schema name: NoneDamping  # noqa: E501
+        Schema name: NoneDamping  # noqa: E501
 
         :return: The type of this NoneDamping.  # noqa: E501
         :rtype: str
@@ -64,7 +64,7 @@ class NoneDamping(object):
     def type(self, type):
         """Sets the type of this NoneDamping.
 
-        <p>Choose if damping effects should be considered. The supported damping types are:<ul><li><p><b>Rayleigh Damping</b> which is also known as <i>proportional viscous damping</i>. This model assumes that the damping is proportional to the vibrating velocity.</p></ul><ul><li><p><b>Hysteretic Damping</b>, also known as <i>structural damping</i>. Here the damping is assumed to be proportional to the displacement.</p></ul><br><a href= https://www.simscale.com/docs/simulation-setup/materials/damping/' target='_blank'>Learn more</a>.   Schema name: NoneDamping  # noqa: E501
+        Schema name: NoneDamping  # noqa: E501
 
         :param type: The type of this NoneDamping.  # noqa: E501
         :type: str

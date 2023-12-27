@@ -32,15 +32,17 @@ class AutomaticEmbeddedBoundaryMeshSizing(object):
     """
     openapi_types = {
         'type': 'str',
-        'fineness': 'float'
+        'fineness': 'float',
+        'physics_based_meshing_ibm': 'bool'
     }
 
     attribute_map = {
         'type': 'type',
-        'fineness': 'fineness'
+        'fineness': 'fineness',
+        'physics_based_meshing_ibm': 'physicsBasedMeshingIBM'
     }
 
-    def __init__(self, type='AUTOMATIC_EBM_MESH_SIZING', fineness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='AUTOMATIC_EBM_MESH_SIZING', fineness=None, physics_based_meshing_ibm=None, local_vars_configuration=None):  # noqa: E501
         """AutomaticEmbeddedBoundaryMeshSizing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class AutomaticEmbeddedBoundaryMeshSizing(object):
 
         self._type = None
         self._fineness = None
+        self._physics_based_meshing_ibm = None
         self.discriminator = None
 
         self.type = type
         if fineness is not None:
             self.fineness = fineness
+        if physics_based_meshing_ibm is not None:
+            self.physics_based_meshing_ibm = physics_based_meshing_ibm
 
     @property
     def type(self):
@@ -107,6 +112,29 @@ class AutomaticEmbeddedBoundaryMeshSizing(object):
             raise ValueError("Invalid value for `fineness`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._fineness = fineness
+
+    @property
+    def physics_based_meshing_ibm(self):
+        """Gets the physics_based_meshing_ibm of this AutomaticEmbeddedBoundaryMeshSizing.  # noqa: E501
+
+        <b>Physics-based meshing</b> takes setup information into account to size the immersed mesh accordingly. Users can expect automatic refinements applied to the following: </p><ul><li><p><b>Boundary faces</b>: All of those which belong to a boundary condition.</p></li> <li><p><b>Advanced concepts</b>: Power and momentum sources, porous regions and thermal resistance networks.</p></li></ul>  # noqa: E501
+
+        :return: The physics_based_meshing_ibm of this AutomaticEmbeddedBoundaryMeshSizing.  # noqa: E501
+        :rtype: bool
+        """
+        return self._physics_based_meshing_ibm
+
+    @physics_based_meshing_ibm.setter
+    def physics_based_meshing_ibm(self, physics_based_meshing_ibm):
+        """Sets the physics_based_meshing_ibm of this AutomaticEmbeddedBoundaryMeshSizing.
+
+        <b>Physics-based meshing</b> takes setup information into account to size the immersed mesh accordingly. Users can expect automatic refinements applied to the following: </p><ul><li><p><b>Boundary faces</b>: All of those which belong to a boundary condition.</p></li> <li><p><b>Advanced concepts</b>: Power and momentum sources, porous regions and thermal resistance networks.</p></li></ul>  # noqa: E501
+
+        :param physics_based_meshing_ibm: The physics_based_meshing_ibm of this AutomaticEmbeddedBoundaryMeshSizing.  # noqa: E501
+        :type: bool
+        """
+
+        self._physics_based_meshing_ibm = physics_based_meshing_ibm
 
     def to_dict(self):
         """Returns the model properties as a dict"""

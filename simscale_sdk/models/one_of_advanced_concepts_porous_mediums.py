@@ -33,10 +33,14 @@ class OneOfAdvancedConceptsPorousMediums(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'porosity': 'float',
+        'permeability': 'DimensionalArea',
+        'drag_coefficient': 'float',
+        'topological_reference': 'TopologicalReference',
+        'pressure_loss_function': 'DimensionalFunctionPressure',
         'coefficient_d': 'DimensionalVectorReciprocalPermeability',
         'coefficient_f': 'DimensionalVectorAbsorptivity',
         'orientation': 'OneOfFixedCoeffMediumOrientation',
-        'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'alpha': 'DimensionalVectorSpecificTurbulenceDissipationRate',
         'beta': 'DimensionalVectorAbsorptivity',
@@ -52,10 +56,14 @@ class OneOfAdvancedConceptsPorousMediums(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'porosity': 'porosity',
+        'permeability': 'permeability',
+        'drag_coefficient': 'dragCoefficient',
+        'topological_reference': 'topologicalReference',
+        'pressure_loss_function': 'pressureLossFunction',
         'coefficient_d': 'coefficientD',
         'coefficient_f': 'coefficientF',
         'orientation': 'orientation',
-        'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'alpha': 'alpha',
         'beta': 'beta',
@@ -69,6 +77,8 @@ class OneOfAdvancedConceptsPorousMediums(object):
     }
 
     discriminator_value_class_map = {
+        'DARCY': 'DarcyMedium',
+        'PRESSURE_LOSS_FUNCTION': 'PressureLossFunctionMedium',
         'DARCY_FORCHHEIMER': 'DarcyForchheimerMedium',
         'FIXED_COEFFICIENTS': 'FixedCoeffMedium',
         'POWER_LAW': 'PowerLawMedium',
@@ -76,7 +86,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
         'PERFORATED_PLATE': 'PerforatedPlate'
     }
 
-    def __init__(self, type='PERFORATED_PLATE', name=None, coefficient_d=None, coefficient_f=None, orientation=None, topological_reference=None, geometry_primitive_uuids=None, alpha=None, beta=None, reference_density=None, linear_coefficient=None, exponent_coefficient=None, pressure_loss_data=None, directional_dependency=None, plate_data=None, darcy_forchheimer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PERFORATED_PLATE', name=None, porosity=None, permeability=None, drag_coefficient=None, topological_reference=None, pressure_loss_function=None, coefficient_d=None, coefficient_f=None, orientation=None, geometry_primitive_uuids=None, alpha=None, beta=None, reference_density=None, linear_coefficient=None, exponent_coefficient=None, pressure_loss_data=None, directional_dependency=None, plate_data=None, darcy_forchheimer_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfAdvancedConceptsPorousMediums - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,10 +94,14 @@ class OneOfAdvancedConceptsPorousMediums(object):
 
         self._type = None
         self._name = None
+        self._porosity = None
+        self._permeability = None
+        self._drag_coefficient = None
+        self._topological_reference = None
+        self._pressure_loss_function = None
         self._coefficient_d = None
         self._coefficient_f = None
         self._orientation = None
-        self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._alpha = None
         self._beta = None
@@ -103,14 +117,22 @@ class OneOfAdvancedConceptsPorousMediums(object):
         self.type = type
         if name is not None:
             self.name = name
+        if porosity is not None:
+            self.porosity = porosity
+        if permeability is not None:
+            self.permeability = permeability
+        if drag_coefficient is not None:
+            self.drag_coefficient = drag_coefficient
+        if topological_reference is not None:
+            self.topological_reference = topological_reference
+        if pressure_loss_function is not None:
+            self.pressure_loss_function = pressure_loss_function
         if coefficient_d is not None:
             self.coefficient_d = coefficient_d
         if coefficient_f is not None:
             self.coefficient_f = coefficient_f
         if orientation is not None:
             self.orientation = orientation
-        if topological_reference is not None:
-            self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
         if alpha is not None:
@@ -179,6 +201,124 @@ class OneOfAdvancedConceptsPorousMediums(object):
         self._name = name
 
     @property
+    def porosity(self):
+        """Gets the porosity of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+
+        Porosity is the fraction of a volume of material is that is void. It ranges from φ = 0 (completely empty) to φ = 1 (completely solid).  # noqa: E501
+
+        :return: The porosity of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :rtype: float
+        """
+        return self._porosity
+
+    @porosity.setter
+    def porosity(self, porosity):
+        """Sets the porosity of this OneOfAdvancedConceptsPorousMediums.
+
+        Porosity is the fraction of a volume of material is that is void. It ranges from φ = 0 (completely empty) to φ = 1 (completely solid).  # noqa: E501
+
+        :param porosity: The porosity of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                porosity is not None and porosity > 1):  # noqa: E501
+            raise ValueError("Invalid value for `porosity`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                porosity is not None and porosity < 0):  # noqa: E501
+            raise ValueError("Invalid value for `porosity`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._porosity = porosity
+
+    @property
+    def permeability(self):
+        """Gets the permeability of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+
+
+        :return: The permeability of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :rtype: DimensionalArea
+        """
+        return self._permeability
+
+    @permeability.setter
+    def permeability(self, permeability):
+        """Sets the permeability of this OneOfAdvancedConceptsPorousMediums.
+
+
+        :param permeability: The permeability of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :type: DimensionalArea
+        """
+
+        self._permeability = permeability
+
+    @property
+    def drag_coefficient(self):
+        """Gets the drag_coefficient of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+
+        The Darcy law may be extended to include the Forchheimer drag term for more inertial flows (Re > 10). This term is quadratic in flow velocity. Its coefficient includes the fluid drag coefficient Cd.  # noqa: E501
+
+        :return: The drag_coefficient of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :rtype: float
+        """
+        return self._drag_coefficient
+
+    @drag_coefficient.setter
+    def drag_coefficient(self, drag_coefficient):
+        """Sets the drag_coefficient of this OneOfAdvancedConceptsPorousMediums.
+
+        The Darcy law may be extended to include the Forchheimer drag term for more inertial flows (Re > 10). This term is quadratic in flow velocity. Its coefficient includes the fluid drag coefficient Cd.  # noqa: E501
+
+        :param drag_coefficient: The drag_coefficient of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                drag_coefficient is not None and drag_coefficient < 0):  # noqa: E501
+            raise ValueError("Invalid value for `drag_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._drag_coefficient = drag_coefficient
+
+    @property
+    def topological_reference(self):
+        """Gets the topological_reference of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+
+
+        :return: The topological_reference of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._topological_reference
+
+    @topological_reference.setter
+    def topological_reference(self, topological_reference):
+        """Sets the topological_reference of this OneOfAdvancedConceptsPorousMediums.
+
+
+        :param topological_reference: The topological_reference of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._topological_reference = topological_reference
+
+    @property
+    def pressure_loss_function(self):
+        """Gets the pressure_loss_function of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+
+
+        :return: The pressure_loss_function of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :rtype: DimensionalFunctionPressure
+        """
+        return self._pressure_loss_function
+
+    @pressure_loss_function.setter
+    def pressure_loss_function(self, pressure_loss_function):
+        """Sets the pressure_loss_function of this OneOfAdvancedConceptsPorousMediums.
+
+
+        :param pressure_loss_function: The pressure_loss_function of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :type: DimensionalFunctionPressure
+        """
+
+        self._pressure_loss_function = pressure_loss_function
+
+    @property
     def coefficient_d(self):
         """Gets the coefficient_d of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
 
@@ -240,27 +380,6 @@ class OneOfAdvancedConceptsPorousMediums(object):
         """
 
         self._orientation = orientation
-
-    @property
-    def topological_reference(self):
-        """Gets the topological_reference of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
-
-
-        :return: The topological_reference of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
-        :rtype: TopologicalReference
-        """
-        return self._topological_reference
-
-    @topological_reference.setter
-    def topological_reference(self, topological_reference):
-        """Sets the topological_reference of this OneOfAdvancedConceptsPorousMediums.
-
-
-        :param topological_reference: The topological_reference of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
-        :type: TopologicalReference
-        """
-
-        self._topological_reference = topological_reference
 
     @property
     def geometry_primitive_uuids(self):

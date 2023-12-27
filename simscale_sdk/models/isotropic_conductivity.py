@@ -32,15 +32,17 @@ class IsotropicConductivity(object):
     """
     openapi_types = {
         'type': 'str',
-        'thermal_conductivity': 'DimensionalFunctionThermalConductivity'
+        'thermal_conductivity': 'DimensionalFunctionThermalConductivity',
+        'thermal_conductivity_function': 'DimensionalFunctionThermalConductivity'
     }
 
     attribute_map = {
         'type': 'type',
-        'thermal_conductivity': 'thermalConductivity'
+        'thermal_conductivity': 'thermalConductivity',
+        'thermal_conductivity_function': 'thermalConductivityFunction'
     }
 
-    def __init__(self, type='ISOTROPIC', thermal_conductivity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ISOTROPIC', thermal_conductivity=None, thermal_conductivity_function=None, local_vars_configuration=None):  # noqa: E501
         """IsotropicConductivity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class IsotropicConductivity(object):
 
         self._type = None
         self._thermal_conductivity = None
+        self._thermal_conductivity_function = None
         self.discriminator = None
 
         self.type = type
         if thermal_conductivity is not None:
             self.thermal_conductivity = thermal_conductivity
+        if thermal_conductivity_function is not None:
+            self.thermal_conductivity_function = thermal_conductivity_function
 
     @property
     def type(self):
@@ -99,6 +104,27 @@ class IsotropicConductivity(object):
         """
 
         self._thermal_conductivity = thermal_conductivity
+
+    @property
+    def thermal_conductivity_function(self):
+        """Gets the thermal_conductivity_function of this IsotropicConductivity.  # noqa: E501
+
+
+        :return: The thermal_conductivity_function of this IsotropicConductivity.  # noqa: E501
+        :rtype: DimensionalFunctionThermalConductivity
+        """
+        return self._thermal_conductivity_function
+
+    @thermal_conductivity_function.setter
+    def thermal_conductivity_function(self, thermal_conductivity_function):
+        """Sets the thermal_conductivity_function of this IsotropicConductivity.
+
+
+        :param thermal_conductivity_function: The thermal_conductivity_function of this IsotropicConductivity.  # noqa: E501
+        :type: DimensionalFunctionThermalConductivity
+        """
+
+        self._thermal_conductivity_function = thermal_conductivity_function
 
     def to_dict(self):
         """Returns the model properties as a dict"""

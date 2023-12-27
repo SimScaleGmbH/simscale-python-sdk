@@ -94,7 +94,7 @@ class UnitPressure(object):
         :param unit: The unit of this UnitPressure.  # noqa: E501
         :type: str
         """
-        allowed_values = ["Pa", "lbf/in²", "kPa", "MPa", "bar", "mbar", "mH2O"]  # noqa: E501
+        allowed_values = ["Pa", "lbf/in²", "hPa", "kPa", "MPa", "atm", "mbar", "bar", "mH2O", "mmH2O", "mmHg", "dyne/cm²", "inH2O", "ftH2O", "inHg", "psf"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

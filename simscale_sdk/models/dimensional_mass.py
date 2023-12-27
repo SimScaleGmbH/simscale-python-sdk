@@ -95,7 +95,7 @@ class DimensionalMass(object):
         """
         if self.local_vars_configuration.client_side_validation and unit is None:  # noqa: E501
             raise ValueError("Invalid value for `unit`, must not be `None`")  # noqa: E501
-        allowed_values = ["kg", "lb"]  # noqa: E501
+        allowed_values = ["kg", "lb", "t"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

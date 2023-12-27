@@ -33,16 +33,18 @@ class HConstThermo(object):
     openapi_types = {
         'type': 'str',
         'specific_heat': 'DimensionalSpecificHeat',
+        'specific_heat_function': 'DimensionalFunctionSpecificHeat',
         'equation_of_state': 'OneOfHConstThermoEquationOfState'
     }
 
     attribute_map = {
         'type': 'type',
         'specific_heat': 'specificHeat',
+        'specific_heat_function': 'specificHeatFunction',
         'equation_of_state': 'equationOfState'
     }
 
-    def __init__(self, type='HCONST', specific_heat=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HCONST', specific_heat=None, specific_heat_function=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
         """HConstThermo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,12 +52,15 @@ class HConstThermo(object):
 
         self._type = None
         self._specific_heat = None
+        self._specific_heat_function = None
         self._equation_of_state = None
         self.discriminator = None
 
         self.type = type
         if specific_heat is not None:
             self.specific_heat = specific_heat
+        if specific_heat_function is not None:
+            self.specific_heat_function = specific_heat_function
         if equation_of_state is not None:
             self.equation_of_state = equation_of_state
 
@@ -104,6 +109,27 @@ class HConstThermo(object):
         """
 
         self._specific_heat = specific_heat
+
+    @property
+    def specific_heat_function(self):
+        """Gets the specific_heat_function of this HConstThermo.  # noqa: E501
+
+
+        :return: The specific_heat_function of this HConstThermo.  # noqa: E501
+        :rtype: DimensionalFunctionSpecificHeat
+        """
+        return self._specific_heat_function
+
+    @specific_heat_function.setter
+    def specific_heat_function(self, specific_heat_function):
+        """Sets the specific_heat_function of this HConstThermo.
+
+
+        :param specific_heat_function: The specific_heat_function of this HConstThermo.  # noqa: E501
+        :type: DimensionalFunctionSpecificHeat
+        """
+
+        self._specific_heat_function = specific_heat_function
 
     @property
     def equation_of_state(self):

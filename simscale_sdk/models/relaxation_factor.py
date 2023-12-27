@@ -45,7 +45,8 @@ class RelaxationFactor(object):
         'nu_tilda_equation': 'float',
         'net_radiative_heat_flux_field': 'float',
         'radiative_intensity_ray_equation': 'float',
-        'specific_humidity_equation': 'float'
+        'specific_humidity_equation': 'float',
+        'age_of_fluid_equation': 'float'
     }
 
     attribute_map = {
@@ -63,10 +64,11 @@ class RelaxationFactor(object):
         'nu_tilda_equation': 'nuTildaEquation',
         'net_radiative_heat_flux_field': 'netRadiativeHeatFluxField',
         'radiative_intensity_ray_equation': 'radiativeIntensityRayEquation',
-        'specific_humidity_equation': 'specificHumidityEquation'
+        'specific_humidity_equation': 'specificHumidityEquation',
+        'age_of_fluid_equation': 'ageOfFluidEquation'
     }
 
-    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, radiative_intensity_ray_equation=None, specific_humidity_equation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, radiative_intensity_ray_equation=None, specific_humidity_equation=None, age_of_fluid_equation=None, local_vars_configuration=None):  # noqa: E501
         """RelaxationFactor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class RelaxationFactor(object):
         self._net_radiative_heat_flux_field = None
         self._radiative_intensity_ray_equation = None
         self._specific_humidity_equation = None
+        self._age_of_fluid_equation = None
         self.discriminator = None
 
         if pressure_field is not None:
@@ -119,6 +122,8 @@ class RelaxationFactor(object):
             self.radiative_intensity_ray_equation = radiative_intensity_ray_equation
         if specific_humidity_equation is not None:
             self.specific_humidity_equation = specific_humidity_equation
+        if age_of_fluid_equation is not None:
+            self.age_of_fluid_equation = age_of_fluid_equation
 
     @property
     def pressure_field(self):
@@ -532,6 +537,33 @@ class RelaxationFactor(object):
             raise ValueError("Invalid value for `specific_humidity_equation`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._specific_humidity_equation = specific_humidity_equation
+
+    @property
+    def age_of_fluid_equation(self):
+        """Gets the age_of_fluid_equation of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The age_of_fluid_equation of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._age_of_fluid_equation
+
+    @age_of_fluid_equation.setter
+    def age_of_fluid_equation(self, age_of_fluid_equation):
+        """Sets the age_of_fluid_equation of this RelaxationFactor.
+
+
+        :param age_of_fluid_equation: The age_of_fluid_equation of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                age_of_fluid_equation is not None and age_of_fluid_equation > 1):  # noqa: E501
+            raise ValueError("Invalid value for `age_of_fluid_equation`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                age_of_fluid_equation is not None and age_of_fluid_equation < 0):  # noqa: E501
+            raise ValueError("Invalid value for `age_of_fluid_equation`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._age_of_fluid_equation = age_of_fluid_equation
 
     def to_dict(self):
         """Returns the model properties as a dict"""

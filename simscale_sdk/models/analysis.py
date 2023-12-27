@@ -36,7 +36,7 @@ class Analysis(object):
         'connection_groups': 'list[Contact]',
         'connectors': 'list[PinConnector]',
         'element_technology': 'SolidElementTechnology',
-        'model': 'SolidModel',
+        'model': 'OneOfElectromagneticAnalysisModel',
         'materials': 'list[ElectromagneticMaterial]',
         'initial_conditions': 'SolidInitialConditions',
         'boundary_conditions': 'list[OneOfElectromagneticAnalysisBoundaryConditions]',
@@ -44,9 +44,10 @@ class Analysis(object):
         'simulation_control': 'ElectromagneticSimulationControl',
         'result_control': 'ElectromagneticResultControl',
         'mesh_order': 'str',
-        'time_dependency': 'StationaryTimeDependency',
+        'time_dependency': 'OneOfConjugateHeatTransferTimeDependency',
         'inertia_effect': 'str',
         'turbulence_model': 'str',
+        'adjoint_turbulence_model': 'str',
         'algorithm': 'str',
         'num_of_passive_species': 'int',
         'enable_adjoint_optimization': 'bool',
@@ -75,7 +76,7 @@ class Analysis(object):
         'external_flow_boundary_condition': 'OneOfEmbeddedBoundaryExternalFlowBoundaryCondition',
         'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
         'use_local_time_stepping': 'bool',
-        'dominant_field': 'str',
+        'global_physics': 'SolidGlobalPhysics',
         'coils': 'list[Coil]'
     }
 
@@ -96,6 +97,7 @@ class Analysis(object):
         'time_dependency': 'timeDependency',
         'inertia_effect': 'inertiaEffect',
         'turbulence_model': 'turbulenceModel',
+        'adjoint_turbulence_model': 'adjointTurbulenceModel',
         'algorithm': 'algorithm',
         'num_of_passive_species': 'numOfPassiveSpecies',
         'enable_adjoint_optimization': 'enableAdjointOptimization',
@@ -124,7 +126,7 @@ class Analysis(object):
         'external_flow_boundary_condition': 'externalFlowBoundaryCondition',
         'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
         'use_local_time_stepping': 'useLocalTimeStepping',
-        'dominant_field': 'dominantField',
+        'global_physics': 'globalPhysics',
         'coils': 'coils'
     }
 
@@ -148,7 +150,7 @@ class Analysis(object):
         'ELECTROMAGNETIC_ANALYSIS': 'ElectromagneticAnalysis'
     }
 
-    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, dominant_field=None, coils=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -170,6 +172,7 @@ class Analysis(object):
         self._time_dependency = None
         self._inertia_effect = None
         self._turbulence_model = None
+        self._adjoint_turbulence_model = None
         self._algorithm = None
         self._num_of_passive_species = None
         self._enable_adjoint_optimization = None
@@ -198,7 +201,7 @@ class Analysis(object):
         self._external_flow_boundary_condition = None
         self._embedded_boundary_meshing = None
         self._use_local_time_stepping = None
-        self._dominant_field = None
+        self._global_physics = None
         self._coils = None
         self.discriminator = 'type'
 
@@ -233,6 +236,8 @@ class Analysis(object):
             self.inertia_effect = inertia_effect
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
+        if adjoint_turbulence_model is not None:
+            self.adjoint_turbulence_model = adjoint_turbulence_model
         if algorithm is not None:
             self.algorithm = algorithm
         if num_of_passive_species is not None:
@@ -289,8 +294,8 @@ class Analysis(object):
             self.embedded_boundary_meshing = embedded_boundary_meshing
         if use_local_time_stepping is not None:
             self.use_local_time_stepping = use_local_time_stepping
-        if dominant_field is not None:
-            self.dominant_field = dominant_field
+        if global_physics is not None:
+            self.global_physics = global_physics
         if coils is not None:
             self.coils = coils
 
@@ -411,7 +416,7 @@ class Analysis(object):
 
 
         :return: The model of this Analysis.  # noqa: E501
-        :rtype: SolidModel
+        :rtype: OneOfElectromagneticAnalysisModel
         """
         return self._model
 
@@ -421,7 +426,7 @@ class Analysis(object):
 
 
         :param model: The model of this Analysis.  # noqa: E501
-        :type: SolidModel
+        :type: OneOfElectromagneticAnalysisModel
         """
 
         self._model = model
@@ -585,7 +590,7 @@ class Analysis(object):
 
 
         :return: The time_dependency of this Analysis.  # noqa: E501
-        :rtype: StationaryTimeDependency
+        :rtype: OneOfConjugateHeatTransferTimeDependency
         """
         return self._time_dependency
 
@@ -595,7 +600,7 @@ class Analysis(object):
 
 
         :param time_dependency: The time_dependency of this Analysis.  # noqa: E501
-        :type: StationaryTimeDependency
+        :type: OneOfConjugateHeatTransferTimeDependency
         """
 
         self._time_dependency = time_dependency
@@ -651,6 +656,33 @@ class Analysis(object):
             )
 
         self._turbulence_model = turbulence_model
+
+    @property
+    def adjoint_turbulence_model(self):
+        """Gets the adjoint_turbulence_model of this Analysis.  # noqa: E501
+
+
+        :return: The adjoint_turbulence_model of this Analysis.  # noqa: E501
+        :rtype: str
+        """
+        return self._adjoint_turbulence_model
+
+    @adjoint_turbulence_model.setter
+    def adjoint_turbulence_model(self, adjoint_turbulence_model):
+        """Sets the adjoint_turbulence_model of this Analysis.
+
+
+        :param adjoint_turbulence_model: The adjoint_turbulence_model of this Analysis.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ADJOINT_NONE", "ADJOINT_KOMEGASST"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and adjoint_turbulence_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `adjoint_turbulence_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(adjoint_turbulence_model, allowed_values)
+            )
+
+        self._adjoint_turbulence_model = adjoint_turbulence_model
 
     @property
     def algorithm(self):
@@ -1281,31 +1313,25 @@ class Analysis(object):
         self._use_local_time_stepping = use_local_time_stepping
 
     @property
-    def dominant_field(self):
-        """Gets the dominant_field of this Analysis.  # noqa: E501
+    def global_physics(self):
+        """Gets the global_physics of this Analysis.  # noqa: E501
 
 
-        :return: The dominant_field of this Analysis.  # noqa: E501
-        :rtype: str
+        :return: The global_physics of this Analysis.  # noqa: E501
+        :rtype: SolidGlobalPhysics
         """
-        return self._dominant_field
+        return self._global_physics
 
-    @dominant_field.setter
-    def dominant_field(self, dominant_field):
-        """Sets the dominant_field of this Analysis.
+    @global_physics.setter
+    def global_physics(self, global_physics):
+        """Sets the global_physics of this Analysis.
 
 
-        :param dominant_field: The dominant_field of this Analysis.  # noqa: E501
-        :type: str
+        :param global_physics: The global_physics of this Analysis.  # noqa: E501
+        :type: SolidGlobalPhysics
         """
-        allowed_values = ["MAGNETIC"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and dominant_field not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `dominant_field` ({0}), must be one of {1}"  # noqa: E501
-                .format(dominant_field, allowed_values)
-            )
 
-        self._dominant_field = dominant_field
+        self._global_physics = global_physics
 
     @property
     def coils(self):

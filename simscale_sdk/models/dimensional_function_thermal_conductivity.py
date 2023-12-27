@@ -95,7 +95,7 @@ class DimensionalFunctionThermalConductivity(object):
         """
         if self.local_vars_configuration.client_side_validation and unit is None:  # noqa: E501
             raise ValueError("Invalid value for `unit`, must not be `None`")  # noqa: E501
-        allowed_values = ["W/(m·K)", "Btu/(s·in·°F)"]  # noqa: E501
+        allowed_values = ["W/(m·K)", "Btu/(s·in·°F)", "W/(mm·K)", "W/(cm·K)", "Btu/(min·in·°F)", "Btu/(h·in·°F)", "Btu/(s·ft·°F)", "Btu/(min·ft·°F)", "Btu/(h·ft·°F)"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

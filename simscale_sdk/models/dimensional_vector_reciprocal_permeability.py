@@ -95,7 +95,7 @@ class DimensionalVectorReciprocalPermeability(object):
         """
         if self.local_vars_configuration.client_side_validation and unit is None:  # noqa: E501
             raise ValueError("Invalid value for `unit`, must not be `None`")  # noqa: E501
-        allowed_values = ["1/m²", "1/in²"]  # noqa: E501
+        allowed_values = ["1/m²", "1/in²", "1/mm²", "1/cm²", "1/ft²", "1/yd²"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

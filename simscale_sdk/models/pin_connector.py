@@ -33,8 +33,8 @@ class PinConnector(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'allow_axial_translation': 'bool',
-        'axial_stiffness': 'DimensionalStiffness',
+        'interaction': 'str',
+        'kinematic_behavior': 'PinKinematicBehavior',
         'advanced_pin_settings': 'AdvancedPinSettings',
         'topological_reference': 'TopologicalReference'
     }
@@ -42,13 +42,13 @@ class PinConnector(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
-        'allow_axial_translation': 'allowAxialTranslation',
-        'axial_stiffness': 'axialStiffness',
+        'interaction': 'interaction',
+        'kinematic_behavior': 'kinematicBehavior',
         'advanced_pin_settings': 'advancedPinSettings',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PIN_CONNECTOR', name=None, allow_axial_translation=None, axial_stiffness=None, advanced_pin_settings=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PIN_CONNECTOR', name=None, interaction=None, kinematic_behavior=None, advanced_pin_settings=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PinConnector - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,8 +56,8 @@ class PinConnector(object):
 
         self._type = None
         self._name = None
-        self._allow_axial_translation = None
-        self._axial_stiffness = None
+        self._interaction = None
+        self._kinematic_behavior = None
         self._advanced_pin_settings = None
         self._topological_reference = None
         self.discriminator = None
@@ -65,10 +65,10 @@ class PinConnector(object):
         self.type = type
         if name is not None:
             self.name = name
-        if allow_axial_translation is not None:
-            self.allow_axial_translation = allow_axial_translation
-        if axial_stiffness is not None:
-            self.axial_stiffness = axial_stiffness
+        if interaction is not None:
+            self.interaction = interaction
+        if kinematic_behavior is not None:
+            self.kinematic_behavior = kinematic_behavior
         if advanced_pin_settings is not None:
             self.advanced_pin_settings = advanced_pin_settings
         if topological_reference is not None:
@@ -121,48 +121,52 @@ class PinConnector(object):
         self._name = name
 
     @property
-    def allow_axial_translation(self):
-        """Gets the allow_axial_translation of this PinConnector.  # noqa: E501
+    def interaction(self):
+        """Gets the interaction of this PinConnector.  # noqa: E501
 
-        Enable this toggle to allow axial elongation of the pin by defining its <i>axial stiffness</i>.  # noqa: E501
 
-        :return: The allow_axial_translation of this PinConnector.  # noqa: E501
-        :rtype: bool
+        :return: The interaction of this PinConnector.  # noqa: E501
+        :rtype: str
         """
-        return self._allow_axial_translation
+        return self._interaction
 
-    @allow_axial_translation.setter
-    def allow_axial_translation(self, allow_axial_translation):
-        """Sets the allow_axial_translation of this PinConnector.
+    @interaction.setter
+    def interaction(self, interaction):
+        """Sets the interaction of this PinConnector.
 
-        Enable this toggle to allow axial elongation of the pin by defining its <i>axial stiffness</i>.  # noqa: E501
 
-        :param allow_axial_translation: The allow_axial_translation of this PinConnector.  # noqa: E501
-        :type: bool
+        :param interaction: The interaction of this PinConnector.  # noqa: E501
+        :type: str
         """
+        allowed_values = ["BODY_TO_BODY", "BODY_TO_GROUND"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and interaction not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `interaction` ({0}), must be one of {1}"  # noqa: E501
+                .format(interaction, allowed_values)
+            )
 
-        self._allow_axial_translation = allow_axial_translation
+        self._interaction = interaction
 
     @property
-    def axial_stiffness(self):
-        """Gets the axial_stiffness of this PinConnector.  # noqa: E501
+    def kinematic_behavior(self):
+        """Gets the kinematic_behavior of this PinConnector.  # noqa: E501
 
 
-        :return: The axial_stiffness of this PinConnector.  # noqa: E501
-        :rtype: DimensionalStiffness
+        :return: The kinematic_behavior of this PinConnector.  # noqa: E501
+        :rtype: PinKinematicBehavior
         """
-        return self._axial_stiffness
+        return self._kinematic_behavior
 
-    @axial_stiffness.setter
-    def axial_stiffness(self, axial_stiffness):
-        """Sets the axial_stiffness of this PinConnector.
+    @kinematic_behavior.setter
+    def kinematic_behavior(self, kinematic_behavior):
+        """Sets the kinematic_behavior of this PinConnector.
 
 
-        :param axial_stiffness: The axial_stiffness of this PinConnector.  # noqa: E501
-        :type: DimensionalStiffness
+        :param kinematic_behavior: The kinematic_behavior of this PinConnector.  # noqa: E501
+        :type: PinKinematicBehavior
         """
 
-        self._axial_stiffness = axial_stiffness
+        self._kinematic_behavior = kinematic_behavior
 
     @property
     def advanced_pin_settings(self):

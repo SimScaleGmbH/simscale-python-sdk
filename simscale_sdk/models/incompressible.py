@@ -33,6 +33,7 @@ class Incompressible(object):
     openapi_types = {
         'type': 'str',
         'turbulence_model': 'str',
+        'adjoint_turbulence_model': 'str',
         'time_dependency': 'OneOfIncompressibleTimeDependency',
         'algorithm': 'str',
         'num_of_passive_species': 'int',
@@ -50,6 +51,7 @@ class Incompressible(object):
     attribute_map = {
         'type': 'type',
         'turbulence_model': 'turbulenceModel',
+        'adjoint_turbulence_model': 'adjointTurbulenceModel',
         'time_dependency': 'timeDependency',
         'algorithm': 'algorithm',
         'num_of_passive_species': 'numOfPassiveSpecies',
@@ -64,7 +66,7 @@ class Incompressible(object):
         'result_control': 'resultControl'
     }
 
-    def __init__(self, type='INCOMPRESSIBLE', turbulence_model=None, time_dependency=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INCOMPRESSIBLE', turbulence_model=None, adjoint_turbulence_model=None, time_dependency=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
         """Incompressible - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class Incompressible(object):
 
         self._type = None
         self._turbulence_model = None
+        self._adjoint_turbulence_model = None
         self._time_dependency = None
         self._algorithm = None
         self._num_of_passive_species = None
@@ -89,6 +92,8 @@ class Incompressible(object):
         self.type = type
         if turbulence_model is not None:
             self.turbulence_model = turbulence_model
+        if adjoint_turbulence_model is not None:
+            self.adjoint_turbulence_model = adjoint_turbulence_model
         if time_dependency is not None:
             self.time_dependency = time_dependency
         if algorithm is not None:
@@ -167,6 +172,33 @@ class Incompressible(object):
             )
 
         self._turbulence_model = turbulence_model
+
+    @property
+    def adjoint_turbulence_model(self):
+        """Gets the adjoint_turbulence_model of this Incompressible.  # noqa: E501
+
+
+        :return: The adjoint_turbulence_model of this Incompressible.  # noqa: E501
+        :rtype: str
+        """
+        return self._adjoint_turbulence_model
+
+    @adjoint_turbulence_model.setter
+    def adjoint_turbulence_model(self, adjoint_turbulence_model):
+        """Sets the adjoint_turbulence_model of this Incompressible.
+
+
+        :param adjoint_turbulence_model: The adjoint_turbulence_model of this Incompressible.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ADJOINT_NONE", "ADJOINT_KOMEGASST"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and adjoint_turbulence_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `adjoint_turbulence_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(adjoint_turbulence_model, allowed_values)
+            )
+
+        self._adjoint_turbulence_model = adjoint_turbulence_model
 
     @property
     def time_dependency(self):

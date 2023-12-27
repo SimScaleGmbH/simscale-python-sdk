@@ -140,7 +140,7 @@ class CoverSpectrum(object):
     def frequencies_per_mode(self):
         """Gets the frequencies_per_mode of this CoverSpectrum.  # noqa: E501
 
-        Specify the number of excitation frequencies to be clustered around each eigenfrequency. The eigenfrequency will also be considered when an even number is provided  # noqa: E501
+        Specify the number of excitation frequencies to be spread over each modal peak and neighbouring valleys. The eigenfrequency will also be considered when an even number is provided.  # noqa: E501
 
         :return: The frequencies_per_mode of this CoverSpectrum.  # noqa: E501
         :rtype: int
@@ -151,7 +151,7 @@ class CoverSpectrum(object):
     def frequencies_per_mode(self, frequencies_per_mode):
         """Sets the frequencies_per_mode of this CoverSpectrum.
 
-        Specify the number of excitation frequencies to be clustered around each eigenfrequency. The eigenfrequency will also be considered when an even number is provided  # noqa: E501
+        Specify the number of excitation frequencies to be spread over each modal peak and neighbouring valleys. The eigenfrequency will also be considered when an even number is provided.  # noqa: E501
 
         :param frequencies_per_mode: The frequencies_per_mode of this CoverSpectrum.  # noqa: E501
         :type: int
@@ -166,7 +166,7 @@ class CoverSpectrum(object):
     def growth_ratio(self):
         """Gets the growth_ratio of this CoverSpectrum.  # noqa: E501
 
-        Ratio between the adjacent distances of frequencies. It controls the distribution of the frequencies, with larger values resulting in a wider spread towards the valleys and tighter clustering around the mode peaks. Suggested value r >= 2.  # noqa: E501
+        Ratio of the adjacent distances between excitation frequencies. It controls the distribution of the frequencies, with larger values resulting in a faster spread towards the valleys and tighter clustering around the modal peaks. Suggested value r >= 2.  # noqa: E501
 
         :return: The growth_ratio of this CoverSpectrum.  # noqa: E501
         :rtype: float
@@ -177,7 +177,7 @@ class CoverSpectrum(object):
     def growth_ratio(self, growth_ratio):
         """Sets the growth_ratio of this CoverSpectrum.
 
-        Ratio between the adjacent distances of frequencies. It controls the distribution of the frequencies, with larger values resulting in a wider spread towards the valleys and tighter clustering around the mode peaks. Suggested value r >= 2.  # noqa: E501
+        Ratio of the adjacent distances between excitation frequencies. It controls the distribution of the frequencies, with larger values resulting in a faster spread towards the valleys and tighter clustering around the modal peaks. Suggested value r >= 2.  # noqa: E501
 
         :param growth_ratio: The growth_ratio of this CoverSpectrum.  # noqa: E501
         :type: float

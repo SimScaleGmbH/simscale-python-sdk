@@ -32,30 +32,25 @@ class SpecieDefault(object):
     """
     openapi_types = {
         'type': 'str',
-        'amount_of_substance': 'DimensionalAmountOfSubstance',
         'molar_weight': 'DimensionalMolarMass'
     }
 
     attribute_map = {
         'type': 'type',
-        'amount_of_substance': 'amountOfSubstance',
         'molar_weight': 'molarWeight'
     }
 
-    def __init__(self, type='SPECIE', amount_of_substance=None, molar_weight=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SPECIE', molar_weight=None, local_vars_configuration=None):  # noqa: E501
         """SpecieDefault - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._amount_of_substance = None
         self._molar_weight = None
         self.discriminator = None
 
         self.type = type
-        if amount_of_substance is not None:
-            self.amount_of_substance = amount_of_substance
         if molar_weight is not None:
             self.molar_weight = molar_weight
 
@@ -83,27 +78,6 @@ class SpecieDefault(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def amount_of_substance(self):
-        """Gets the amount_of_substance of this SpecieDefault.  # noqa: E501
-
-
-        :return: The amount_of_substance of this SpecieDefault.  # noqa: E501
-        :rtype: DimensionalAmountOfSubstance
-        """
-        return self._amount_of_substance
-
-    @amount_of_substance.setter
-    def amount_of_substance(self, amount_of_substance):
-        """Sets the amount_of_substance of this SpecieDefault.
-
-
-        :param amount_of_substance: The amount_of_substance of this SpecieDefault.  # noqa: E501
-        :type: DimensionalAmountOfSubstance
-        """
-
-        self._amount_of_substance = amount_of_substance
 
     @property
     def molar_weight(self):

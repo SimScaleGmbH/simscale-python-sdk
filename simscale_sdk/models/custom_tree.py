@@ -93,7 +93,7 @@ class CustomTree(object):
     def leaf_area_index(self):
         """Gets the leaf_area_index of this CustomTree.  # noqa: E501
 
-        Leaf Area Index (LAI) is a dimensionless quantity that is defined as the leaf area per unit ground surface area in broadleaf canopies  # noqa: E501
+        Leaf Area Index (LAI) is a dimensionless quantity that is defined as the leaf area per unit ground surface area in broadle af canopies  # noqa: E501
 
         :return: The leaf_area_index of this CustomTree.  # noqa: E501
         :rtype: float
@@ -104,7 +104,7 @@ class CustomTree(object):
     def leaf_area_index(self, leaf_area_index):
         """Sets the leaf_area_index of this CustomTree.
 
-        Leaf Area Index (LAI) is a dimensionless quantity that is defined as the leaf area per unit ground surface area in broadleaf canopies  # noqa: E501
+        Leaf Area Index (LAI) is a dimensionless quantity that is defined as the leaf area per unit ground surface area in broadle af canopies  # noqa: E501
 
         :param leaf_area_index: The leaf_area_index of this CustomTree.  # noqa: E501
         :type: float

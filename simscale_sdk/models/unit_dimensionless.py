@@ -94,7 +94,7 @@ class UnitDimensionless(object):
         :param unit: The unit of this UnitDimensionless.  # noqa: E501
         :type: str
         """
-        allowed_values = [""]  # noqa: E501
+        allowed_values = ["", "%"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

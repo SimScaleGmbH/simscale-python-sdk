@@ -95,7 +95,7 @@ class DimensionalFunctionMassFlowRate(object):
         """
         if self.local_vars_configuration.client_side_validation and unit is None:  # noqa: E501
             raise ValueError("Invalid value for `unit`, must not be `None`")  # noqa: E501
-        allowed_values = ["kg/s", "lb/s"]  # noqa: E501
+        allowed_values = ["kg/s", "lb/s", "kg/min", "kg/h", "g/s", "g/min", "g/h", "lb/min", "lb/h", "slug/s", "slug/min", "slug/h"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

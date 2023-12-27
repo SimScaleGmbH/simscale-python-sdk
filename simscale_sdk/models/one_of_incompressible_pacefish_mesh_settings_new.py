@@ -36,9 +36,9 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'reference_length': 'DimensionalLength',
         'reynolds_scaling_type': 'OneOfPacefishAutomeshReynoldsScalingType',
         'refinements': 'list[OneOfPacefishAutomeshRefinements]',
-        'primary_topology': 'OneOfPacefishAutomeshPrimaryTopology',
         'new_fineness': 'OneOfPacefishAutomeshNewFineness',
-        'reference_length_computation': 'OneOfPacefishAutomeshReferenceLengthComputation'
+        'reference_length_computation': 'OneOfPacefishAutomeshReferenceLengthComputation',
+        'primary_topology': 'OneOfPacefishAutomeshPrimaryTopology'
     }
 
     attribute_map = {
@@ -47,18 +47,17 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'reference_length': 'referenceLength',
         'reynolds_scaling_type': 'reynoldsScalingType',
         'refinements': 'refinements',
-        'primary_topology': 'primaryTopology',
         'new_fineness': 'newFineness',
-        'reference_length_computation': 'referenceLengthComputation'
+        'reference_length_computation': 'referenceLengthComputation',
+        'primary_topology': 'primaryTopology'
     }
 
     discriminator_value_class_map = {
         'PACEFISH_MESH_LEGACY': 'PacefishMeshLegacy',
-        'PACEFISH_MESH_V38': 'PacefishMeshV38',
         'PACEFISH_AUTOMESH': 'PacefishAutomesh'
     }
 
-    def __init__(self, type='PACEFISH_AUTOMESH', fineness=None, reference_length=None, reynolds_scaling_type=None, refinements=None, primary_topology=None, new_fineness=None, reference_length_computation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PACEFISH_AUTOMESH', fineness=None, reference_length=None, reynolds_scaling_type=None, refinements=None, new_fineness=None, reference_length_computation=None, primary_topology=None, local_vars_configuration=None):  # noqa: E501
         """OneOfIncompressiblePacefishMeshSettingsNew - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,9 +68,9 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         self._reference_length = None
         self._reynolds_scaling_type = None
         self._refinements = None
-        self._primary_topology = None
         self._new_fineness = None
         self._reference_length_computation = None
+        self._primary_topology = None
         self.discriminator = 'type'
 
         self.type = type
@@ -83,12 +82,12 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
             self.reynolds_scaling_type = reynolds_scaling_type
         if refinements is not None:
             self.refinements = refinements
-        if primary_topology is not None:
-            self.primary_topology = primary_topology
         if new_fineness is not None:
             self.new_fineness = new_fineness
         if reference_length_computation is not None:
             self.reference_length_computation = reference_length_computation
+        if primary_topology is not None:
+            self.primary_topology = primary_topology
 
     @property
     def type(self):
@@ -206,27 +205,6 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         self._refinements = refinements
 
     @property
-    def primary_topology(self):
-        """Gets the primary_topology of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
-
-
-        :return: The primary_topology of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
-        :rtype: OneOfPacefishAutomeshPrimaryTopology
-        """
-        return self._primary_topology
-
-    @primary_topology.setter
-    def primary_topology(self, primary_topology):
-        """Sets the primary_topology of this OneOfIncompressiblePacefishMeshSettingsNew.
-
-
-        :param primary_topology: The primary_topology of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
-        :type: OneOfPacefishAutomeshPrimaryTopology
-        """
-
-        self._primary_topology = primary_topology
-
-    @property
     def new_fineness(self):
         """Gets the new_fineness of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
 
@@ -267,6 +245,27 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         """
 
         self._reference_length_computation = reference_length_computation
+
+    @property
+    def primary_topology(self):
+        """Gets the primary_topology of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+
+
+        :return: The primary_topology of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+        :rtype: OneOfPacefishAutomeshPrimaryTopology
+        """
+        return self._primary_topology
+
+    @primary_topology.setter
+    def primary_topology(self, primary_topology):
+        """Sets the primary_topology of this OneOfIncompressiblePacefishMeshSettingsNew.
+
+
+        :param primary_topology: The primary_topology of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+        :type: OneOfPacefishAutomeshPrimaryTopology
+        """
+
+        self._primary_topology = primary_topology
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

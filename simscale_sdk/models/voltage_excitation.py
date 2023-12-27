@@ -33,16 +33,20 @@ class VoltageExcitation(object):
     openapi_types = {
         'type': 'str',
         'voltage': 'DimensionalElectricPotential',
+        'voltage_rms': 'DimensionalElectricPotential',
+        'voltage_phase': 'DimensionalAngle',
         'additional_resistance': 'DimensionalElectricResistance'
     }
 
     attribute_map = {
         'type': 'type',
         'voltage': 'voltage',
+        'voltage_rms': 'voltageRMS',
+        'voltage_phase': 'voltagePhase',
         'additional_resistance': 'additionalResistance'
     }
 
-    def __init__(self, type='VOLTAGE_EXCITATION', voltage=None, additional_resistance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLTAGE_EXCITATION', voltage=None, voltage_rms=None, voltage_phase=None, additional_resistance=None, local_vars_configuration=None):  # noqa: E501
         """VoltageExcitation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,12 +54,18 @@ class VoltageExcitation(object):
 
         self._type = None
         self._voltage = None
+        self._voltage_rms = None
+        self._voltage_phase = None
         self._additional_resistance = None
         self.discriminator = None
 
         self.type = type
         if voltage is not None:
             self.voltage = voltage
+        if voltage_rms is not None:
+            self.voltage_rms = voltage_rms
+        if voltage_phase is not None:
+            self.voltage_phase = voltage_phase
         if additional_resistance is not None:
             self.additional_resistance = additional_resistance
 
@@ -104,6 +114,48 @@ class VoltageExcitation(object):
         """
 
         self._voltage = voltage
+
+    @property
+    def voltage_rms(self):
+        """Gets the voltage_rms of this VoltageExcitation.  # noqa: E501
+
+
+        :return: The voltage_rms of this VoltageExcitation.  # noqa: E501
+        :rtype: DimensionalElectricPotential
+        """
+        return self._voltage_rms
+
+    @voltage_rms.setter
+    def voltage_rms(self, voltage_rms):
+        """Sets the voltage_rms of this VoltageExcitation.
+
+
+        :param voltage_rms: The voltage_rms of this VoltageExcitation.  # noqa: E501
+        :type: DimensionalElectricPotential
+        """
+
+        self._voltage_rms = voltage_rms
+
+    @property
+    def voltage_phase(self):
+        """Gets the voltage_phase of this VoltageExcitation.  # noqa: E501
+
+
+        :return: The voltage_phase of this VoltageExcitation.  # noqa: E501
+        :rtype: DimensionalAngle
+        """
+        return self._voltage_phase
+
+    @voltage_phase.setter
+    def voltage_phase(self, voltage_phase):
+        """Sets the voltage_phase of this VoltageExcitation.
+
+
+        :param voltage_phase: The voltage_phase of this VoltageExcitation.  # noqa: E501
+        :type: DimensionalAngle
+        """
+
+        self._voltage_phase = voltage_phase
 
     @property
     def additional_resistance(self):

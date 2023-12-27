@@ -95,7 +95,7 @@ class DimensionalFunctionVolumetricFlowRate(object):
         """
         if self.local_vars_configuration.client_side_validation and unit is None:  # noqa: E501
             raise ValueError("Invalid value for `unit`, must not be `None`")  # noqa: E501
-        allowed_values = ["m³/s", "in³/s"]  # noqa: E501
+        allowed_values = ["m³/s", "in³/s", "m³/min", "m³/h", "mm³/s", "mm³/min", "mm³/h", "cm³/s", "cm³/min", "cm³/h", "l/s", "l/min", "l/h", "in³/min", "in³/h", "ft³/s", "ft³/min", "ft³/h", "gal/min", "gal/h", "gal/s"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and unit not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `unit` ({0}), must be one of {1}"  # noqa: E501

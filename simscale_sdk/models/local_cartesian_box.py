@@ -138,6 +138,9 @@ class LocalCartesianBox(object):
         :param name: The name of this LocalCartesianBox.  # noqa: E501
         :type: str
         """
+        if (self.local_vars_configuration.client_side_validation and
+                name is not None and not re.search(r'^[A-Za-z()][-+0-9a-zA-Z_()\h]{0,199}$', name)):  # noqa: E501
+            raise ValueError(r"Invalid value for `name`, must be a follow pattern or equal to `/^[A-Za-z()][-+0-9a-zA-Z_()\h]{0,199}$/`")  # noqa: E501
 
         self._name = name
 

@@ -34,23 +34,24 @@ class OneOfLinearElasticMaterialBehaviorDamping(object):
         'type': 'str',
         'stiffness_proportional_coefficient': 'DimensionalTime',
         'mass_proportional_coefficient': 'DimensionalFrequency',
-        'hysteretic_coefficient': 'float'
+        'damping_level': 'float'
     }
 
     attribute_map = {
         'type': 'type',
         'stiffness_proportional_coefficient': 'stiffnessProportionalCoefficient',
         'mass_proportional_coefficient': 'massProportionalCoefficient',
-        'hysteretic_coefficient': 'hystereticCoefficient'
+        'damping_level': 'dampingLevel'
     }
 
     discriminator_value_class_map = {
         'NONE': 'NoneDamping',
         'RAYLEIGH': 'RayleighDamping',
-        'HYSTERETIC': 'HystereticDamping'
+        'HYSTERETIC': 'HystereticDamping',
+        'GLOBAL_DAMPING_VALUE': 'GlobalDampingValue'
     }
 
-    def __init__(self, type='HYSTERETIC', stiffness_proportional_coefficient=None, mass_proportional_coefficient=None, hysteretic_coefficient=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='GLOBAL_DAMPING_VALUE', stiffness_proportional_coefficient=None, mass_proportional_coefficient=None, damping_level=None, local_vars_configuration=None):  # noqa: E501
         """OneOfLinearElasticMaterialBehaviorDamping - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,7 +60,7 @@ class OneOfLinearElasticMaterialBehaviorDamping(object):
         self._type = None
         self._stiffness_proportional_coefficient = None
         self._mass_proportional_coefficient = None
-        self._hysteretic_coefficient = None
+        self._damping_level = None
         self.discriminator = 'type'
 
         self.type = type
@@ -67,14 +68,14 @@ class OneOfLinearElasticMaterialBehaviorDamping(object):
             self.stiffness_proportional_coefficient = stiffness_proportional_coefficient
         if mass_proportional_coefficient is not None:
             self.mass_proportional_coefficient = mass_proportional_coefficient
-        if hysteretic_coefficient is not None:
-            self.hysteretic_coefficient = hysteretic_coefficient
+        if damping_level is not None:
+            self.damping_level = damping_level
 
     @property
     def type(self):
         """Gets the type of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
 
-        <p>Choose if damping effects should be considered. The supported damping types are:<ul><li><p><b>Rayleigh Damping</b> which is also known as <i>proportional viscous damping</i>. This model assumes that the damping is proportional to the vibrating velocity.</p></ul><ul><li><p><b>Hysteretic Damping</b>, also known as <i>structural damping</i>. Here the damping is assumed to be proportional to the displacement.</p></ul><br><a href= https://www.simscale.com/docs/simulation-setup/materials/damping/' target='_blank'>Learn more</a>.   Schema name: HystereticDamping  # noqa: E501
+        Schema name: GlobalDampingValue  # noqa: E501
 
         :return: The type of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
         :rtype: str
@@ -85,7 +86,7 @@ class OneOfLinearElasticMaterialBehaviorDamping(object):
     def type(self, type):
         """Sets the type of this OneOfLinearElasticMaterialBehaviorDamping.
 
-        <p>Choose if damping effects should be considered. The supported damping types are:<ul><li><p><b>Rayleigh Damping</b> which is also known as <i>proportional viscous damping</i>. This model assumes that the damping is proportional to the vibrating velocity.</p></ul><ul><li><p><b>Hysteretic Damping</b>, also known as <i>structural damping</i>. Here the damping is assumed to be proportional to the displacement.</p></ul><br><a href= https://www.simscale.com/docs/simulation-setup/materials/damping/' target='_blank'>Learn more</a>.   Schema name: HystereticDamping  # noqa: E501
+        Schema name: GlobalDampingValue  # noqa: E501
 
         :param type: The type of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
         :type: str
@@ -138,27 +139,30 @@ class OneOfLinearElasticMaterialBehaviorDamping(object):
         self._mass_proportional_coefficient = mass_proportional_coefficient
 
     @property
-    def hysteretic_coefficient(self):
-        """Gets the hysteretic_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+    def damping_level(self):
+        """Gets the damping_level of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
 
-        <p>Set the hysteretic damping coefficient <b>&kappa;</b> of the material. The system equation is then: <b>M*ü+K*(1+i*&kappa;)*u = f</b>.</p>  # noqa: E501
+        Specify the level of damping to be applied as a percentage of critical damping.  # noqa: E501
 
-        :return: The hysteretic_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+        :return: The damping_level of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
         :rtype: float
         """
-        return self._hysteretic_coefficient
+        return self._damping_level
 
-    @hysteretic_coefficient.setter
-    def hysteretic_coefficient(self, hysteretic_coefficient):
-        """Sets the hysteretic_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.
+    @damping_level.setter
+    def damping_level(self, damping_level):
+        """Sets the damping_level of this OneOfLinearElasticMaterialBehaviorDamping.
 
-        <p>Set the hysteretic damping coefficient <b>&kappa;</b> of the material. The system equation is then: <b>M*ü+K*(1+i*&kappa;)*u = f</b>.</p>  # noqa: E501
+        Specify the level of damping to be applied as a percentage of critical damping.  # noqa: E501
 
-        :param hysteretic_coefficient: The hysteretic_coefficient of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
+        :param damping_level: The damping_level of this OneOfLinearElasticMaterialBehaviorDamping.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                damping_level is not None and damping_level < 0):  # noqa: E501
+            raise ValueError("Invalid value for `damping_level`, must be a value greater than or equal to `0`")  # noqa: E501
 
-        self._hysteretic_coefficient = hysteretic_coefficient
+        self._damping_level = damping_level
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

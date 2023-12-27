@@ -33,6 +33,7 @@ class OneOfSolidMaterialConductivity(object):
     openapi_types = {
         'type': 'str',
         'thermal_conductivity': 'DimensionalFunctionThermalConductivity',
+        'thermal_conductivity_function': 'DimensionalFunctionThermalConductivity',
         'thermal_conductivity_x': 'DimensionalFunctionThermalConductivity',
         'thermal_conductivity_y': 'DimensionalFunctionThermalConductivity',
         'thermal_conductivity_z': 'DimensionalFunctionThermalConductivity'
@@ -41,6 +42,7 @@ class OneOfSolidMaterialConductivity(object):
     attribute_map = {
         'type': 'type',
         'thermal_conductivity': 'thermalConductivity',
+        'thermal_conductivity_function': 'thermalConductivityFunction',
         'thermal_conductivity_x': 'thermalConductivityX',
         'thermal_conductivity_y': 'thermalConductivityY',
         'thermal_conductivity_z': 'thermalConductivityZ'
@@ -51,7 +53,7 @@ class OneOfSolidMaterialConductivity(object):
         'ORTHOTROPIC': 'OrthotropicConductivity'
     }
 
-    def __init__(self, type='ORTHOTROPIC', thermal_conductivity=None, thermal_conductivity_x=None, thermal_conductivity_y=None, thermal_conductivity_z=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ORTHOTROPIC', thermal_conductivity=None, thermal_conductivity_function=None, thermal_conductivity_x=None, thermal_conductivity_y=None, thermal_conductivity_z=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidMaterialConductivity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class OneOfSolidMaterialConductivity(object):
 
         self._type = None
         self._thermal_conductivity = None
+        self._thermal_conductivity_function = None
         self._thermal_conductivity_x = None
         self._thermal_conductivity_y = None
         self._thermal_conductivity_z = None
@@ -67,6 +70,8 @@ class OneOfSolidMaterialConductivity(object):
         self.type = type
         if thermal_conductivity is not None:
             self.thermal_conductivity = thermal_conductivity
+        if thermal_conductivity_function is not None:
+            self.thermal_conductivity_function = thermal_conductivity_function
         if thermal_conductivity_x is not None:
             self.thermal_conductivity_x = thermal_conductivity_x
         if thermal_conductivity_y is not None:
@@ -119,6 +124,27 @@ class OneOfSolidMaterialConductivity(object):
         """
 
         self._thermal_conductivity = thermal_conductivity
+
+    @property
+    def thermal_conductivity_function(self):
+        """Gets the thermal_conductivity_function of this OneOfSolidMaterialConductivity.  # noqa: E501
+
+
+        :return: The thermal_conductivity_function of this OneOfSolidMaterialConductivity.  # noqa: E501
+        :rtype: DimensionalFunctionThermalConductivity
+        """
+        return self._thermal_conductivity_function
+
+    @thermal_conductivity_function.setter
+    def thermal_conductivity_function(self, thermal_conductivity_function):
+        """Sets the thermal_conductivity_function of this OneOfSolidMaterialConductivity.
+
+
+        :param thermal_conductivity_function: The thermal_conductivity_function of this OneOfSolidMaterialConductivity.  # noqa: E501
+        :type: DimensionalFunctionThermalConductivity
+        """
+
+        self._thermal_conductivity_function = thermal_conductivity_function
 
     @property
     def thermal_conductivity_x(self):

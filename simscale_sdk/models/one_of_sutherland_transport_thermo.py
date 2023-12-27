@@ -33,13 +33,15 @@ class OneOfSutherlandTransportThermo(object):
     openapi_types = {
         'type': 'str',
         'specific_heat': 'DimensionalSpecificHeat',
-        'equation_of_state': 'OneOfHConstThermoEquationOfState'
+        'equation_of_state': 'OneOfHConstThermoEquationOfState',
+        'specific_heat_function': 'DimensionalFunctionSpecificHeat'
     }
 
     attribute_map = {
         'type': 'type',
         'specific_heat': 'specificHeat',
-        'equation_of_state': 'equationOfState'
+        'equation_of_state': 'equationOfState',
+        'specific_heat_function': 'specificHeatFunction'
     }
 
     discriminator_value_class_map = {
@@ -47,7 +49,7 @@ class OneOfSutherlandTransportThermo(object):
         'HCONST': 'HConstThermo'
     }
 
-    def __init__(self, type='HCONST', specific_heat=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HCONST', specific_heat=None, equation_of_state=None, specific_heat_function=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSutherlandTransportThermo - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class OneOfSutherlandTransportThermo(object):
         self._type = None
         self._specific_heat = None
         self._equation_of_state = None
+        self._specific_heat_function = None
         self.discriminator = 'type'
 
         self.type = type
@@ -63,6 +66,8 @@ class OneOfSutherlandTransportThermo(object):
             self.specific_heat = specific_heat
         if equation_of_state is not None:
             self.equation_of_state = equation_of_state
+        if specific_heat_function is not None:
+            self.specific_heat_function = specific_heat_function
 
     @property
     def type(self):
@@ -130,6 +135,27 @@ class OneOfSutherlandTransportThermo(object):
         """
 
         self._equation_of_state = equation_of_state
+
+    @property
+    def specific_heat_function(self):
+        """Gets the specific_heat_function of this OneOfSutherlandTransportThermo.  # noqa: E501
+
+
+        :return: The specific_heat_function of this OneOfSutherlandTransportThermo.  # noqa: E501
+        :rtype: DimensionalFunctionSpecificHeat
+        """
+        return self._specific_heat_function
+
+    @specific_heat_function.setter
+    def specific_heat_function(self, specific_heat_function):
+        """Sets the specific_heat_function of this OneOfSutherlandTransportThermo.
+
+
+        :param specific_heat_function: The specific_heat_function of this OneOfSutherlandTransportThermo.  # noqa: E501
+        :type: DimensionalFunctionSpecificHeat
+        """
+
+        self._specific_heat_function = specific_heat_function
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
