@@ -1449,6 +1449,14 @@ simscale\_sdk.models.darcy\_forchheimer\_medium module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.darcy\_medium module
+-----------------------------------------
+
+.. automodule:: simscale_sdk.models.darcy_medium
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.data\_type module
 --------------------------------------
 
@@ -1533,14 +1541,6 @@ simscale\_sdk.models.dimensional\_acceleration module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_acceleration
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.dimensional\_amount\_of\_substance module
---------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.dimensional_amount_of_substance
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2085,6 +2085,14 @@ simscale\_sdk.models.dimensional\_rotation\_speed module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_rotation_speed
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_rotational\_stiffness module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_rotational_stiffness
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2881,6 +2889,14 @@ simscale\_sdk.models.field\_calculations\_mean\_radiant\_temperature\_result\_co
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.field\_calculations\_modeled\_ti\_result\_control module
+-----------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_modeled_ti_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.field\_calculations\_operative\_temperature\_result\_control module
 ----------------------------------------------------------------------------------------
 
@@ -2897,6 +2913,22 @@ simscale\_sdk.models.field\_calculations\_pressure\_result\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.field\_calculations\_resolved\_ti\_result\_control module
+------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_resolved_ti_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.field\_calculations\_resolved\_tke\_result\_control module
+-------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_resolved_tke_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.field\_calculations\_surface\_normals\_result\_control module
 ----------------------------------------------------------------------------------
 
@@ -2909,6 +2941,22 @@ simscale\_sdk.models.field\_calculations\_thermal\_comfort\_result\_control modu
 ----------------------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.field_calculations_thermal_comfort_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.field\_calculations\_total\_ti\_result\_control module
+---------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_total_ti_result_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.field\_calculations\_total\_tke\_result\_control module
+----------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.field_calculations_total_tke_result_control
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3361,6 +3409,14 @@ simscale\_sdk.models.fixed\_value\_vbc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.flexible\_axial\_translation module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.flexible_axial_translation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.flow\_dependent\_value\_pfbc module
 --------------------------------------------------------
 
@@ -3621,6 +3677,22 @@ simscale\_sdk.models.fractional\_height2 module
 -----------------------------------------------
 
 .. automodule:: simscale_sdk.models.fractional_height2
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.free\_axial\_rotation module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.free_axial_rotation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.free\_axial\_translation module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.free_axial_translation
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4029,6 +4101,14 @@ simscale\_sdk.models.global\_cauchy\_stress\_type module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.global_cauchy_stress_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.global\_damping\_value module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.global_damping_value
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4913,6 +4993,14 @@ simscale\_sdk.models.magnetic\_flux\_tangential module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.magnetostatics module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.magnetostatics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.manual\_embedded\_boundary\_mesh\_sizing module
 --------------------------------------------------------------------
 
@@ -5257,6 +5345,14 @@ simscale\_sdk.models.model\_settings module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.modeled\_turbulence\_intensity module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.modeled_turbulence_intensity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.moderate\_contact\_stiffness module
 --------------------------------------------------------
 
@@ -5501,14 +5597,6 @@ simscale\_sdk.models.no\_friction module
 ----------------------------------------
 
 .. automodule:: simscale_sdk.models.no_friction
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.no\_primary\_topology module
--------------------------------------------------
-
-.. automodule:: simscale_sdk.models.no_primary_topology
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5857,14 +5945,6 @@ simscale\_sdk.models.pacefish\_mesh\_legacy module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.pacefish\_mesh\_v38 module
------------------------------------------------
-
-.. automodule:: simscale_sdk.models.pacefish_mesh_v38
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.parameter\_with\_value\_generator module
 -------------------------------------------------------------
 
@@ -6105,6 +6185,14 @@ simscale\_sdk.models.pin\_connector module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.pin\_kinematic\_behavior module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.pin_kinematic_behavior
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.plane\_tree module
 ---------------------------------------
 
@@ -6261,6 +6349,14 @@ simscale\_sdk.models.pressure\_loss\_data module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.pressure_loss_data
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.pressure\_loss\_function\_medium module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.pressure_loss_function_medium
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6657,6 +6753,22 @@ simscale\_sdk.models.resolution\_info module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.resolved\_turbulence\_intensity module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.resolved_turbulence_intensity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.resolved\_turbulent\_kinetic\_energy module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.resolved_turbulent_kinetic_energy
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.resource\_location module
 ----------------------------------------------
 
@@ -6709,6 +6821,22 @@ simscale\_sdk.models.rho\_const\_equation\_of\_state module
 -----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.rho_const_equation_of_state
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.rigid\_axial\_rotation module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.rigid_axial_rotation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.rigid\_axial\_translation module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.rigid_axial_translation
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7221,6 +7349,14 @@ simscale\_sdk.models.solid\_element\_technology module
 ------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.solid_element_technology
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.solid\_global\_physics module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.solid_global_physics
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8129,6 +8265,14 @@ simscale\_sdk.models.time\_hardening\_creep\_formulation module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.time\_harmonic\_magnetics module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.time_harmonic_magnetics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.time\_step\_animation\_output\_settings module
 -------------------------------------------------------------------
 
@@ -8173,6 +8317,14 @@ simscale\_sdk.models.topological\_reference module
 --------------------------------------------------
 
 .. automodule:: simscale_sdk.models.topological_reference
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.torsional\_axial\_rotation module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.torsional_axial_rotation
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8261,6 +8413,22 @@ simscale\_sdk.models.total\_tbc module
 --------------------------------------
 
 .. automodule:: simscale_sdk.models.total_tbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.total\_turbulence\_intensity module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.total_turbulence_intensity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.total\_turbulent\_kinetic\_energy module
+-------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.total_turbulent_kinetic_energy
    :members:
    :undoc-members:
    :show-inheritance:
