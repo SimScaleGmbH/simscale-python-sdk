@@ -139,7 +139,7 @@ def create_simulation(name):
         ),
         mesh_settings=WindComfortMesh(wind_comfort_fineness=PacefishFinenessVeryCoarse()),
     )
-    simulation_spec = SimulationSpec(name=f"Pedestrian Wind Comfort {name}", version="10.0", geometry_id=geometry_id, model=model)
+    simulation_spec = SimulationSpec(name=f"Pedestrian Wind Comfort {name}", geometry_id=geometry_id, model=model)
 
     # Create simulation
     simulation_id = simulation_api.create_simulation(project_id, simulation_spec).simulation_id
