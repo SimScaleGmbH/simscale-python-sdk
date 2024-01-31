@@ -131,7 +131,7 @@ print(f"geometry_primitive_uuid: {geometry_primitive_uuid}")
 model = ConvectiveHeatTransfer(
     is_compressible=False,
     turbulence_model="KOMEGASST",
-    model=FluidModel(gravity=DimensionalVectorAcceleration(value=DecimalVector(x=0, y=0, z=9.81), unit="m")),
+    model=FluidModel(gravity=DimensionalVectorAcceleration(value=DecimalVector(x=0, y=0, z=9.81), unit="m/s²")),
     initial_conditions=FluidInitialConditions(),
     advanced_concepts=AdvancedConcepts(),
     materials=ConvectiveHeatTransferMaterials(),
