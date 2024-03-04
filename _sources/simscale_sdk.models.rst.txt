@@ -825,6 +825,14 @@ simscale\_sdk.models.chestnut module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.chronos\_preconditioner module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.chronos_preconditioner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.circular\_hole\_shape module
 -------------------------------------------------
 
@@ -1865,6 +1873,14 @@ simscale\_sdk.models.dimensional\_function\_thermal\_transmittance module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.dimensional\_function\_total\_thermal\_transmittance module
+--------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_total_thermal_transmittance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.dimensional\_function\_turbulence\_kinetic\_energy module
 ------------------------------------------------------------------------------
 
@@ -1909,14 +1925,6 @@ simscale\_sdk.models.dimensional\_initial\_condition\_domains\_dimensionless mod
 -----------------------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_initial_condition_domains_dimensionless
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.dimensional\_initial\_condition\_domains\_dynamic\_viscosity module
-----------------------------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.dimensional_initial_condition_domains_dynamic_viscosity
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2605,6 +2613,14 @@ simscale\_sdk.models.elastic\_support\_bc module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.elastic_support_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electrical\_steel\_core\_loss module
+---------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electrical_steel_core_loss
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4345,6 +4361,22 @@ simscale\_sdk.models.harmonic\_velocity\_result\_control\_item module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.heat\_exchanger\_performance module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.heat_exchanger_performance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.heat\_exchanger\_source module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.heat_exchanger_source
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.heat\_flow\_calculation\_result\_control\_item module
 --------------------------------------------------------------------------
 
@@ -4373,6 +4405,14 @@ simscale\_sdk.models.heat\_transfer module
 ------------------------------------------
 
 .. automodule:: simscale_sdk.models.heat_transfer
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.heat\_transfer\_coefficients module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.heat_transfer_coefficients
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5569,6 +5609,14 @@ simscale\_sdk.models.newtonian\_viscosity\_model module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.no\_core\_loss module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.no_core_loss
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.no\_creep\_formulation module
 --------------------------------------------------
 
@@ -6017,6 +6065,14 @@ simscale\_sdk.models.pbicg\_solver module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.pbicg\_stab\_solver module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.pbicg_stab_solver
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.pcg\_solver module
 ---------------------------------------
 
@@ -6245,6 +6301,14 @@ simscale\_sdk.models.porous\_tree module
 ----------------------------------------
 
 .. automodule:: simscale_sdk.models.porous_tree
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.power\_ferrite\_core\_loss module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.power_ferrite_core_loss
    :members:
    :undoc-members:
    :show-inheritance:
@@ -7273,6 +7337,14 @@ simscale\_sdk.models.sliding\_contact module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.slim\_mesh\_operation module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.slim_mesh_operation
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.slip\_vbc module
 -------------------------------------
 
@@ -7725,14 +7797,6 @@ simscale\_sdk.models.subdomain\_dimensional\_initial\_condition\_dimensionless m
 -------------------------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.subdomain_dimensional_initial_condition_dimensionless
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.subdomain\_dimensional\_initial\_condition\_dynamic\_viscosity module
-------------------------------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.subdomain_dimensional_initial_condition_dynamic_viscosity
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8497,14 +8561,6 @@ simscale\_sdk.models.turbulence\_kinetic\_energy\_tibc module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.turbulent\_dfsem\_inlet\_vbc module
---------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.turbulent_dfsem_inlet_vbc
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.turbulent\_heat\_flux\_tbc module
 ------------------------------------------------------
 
@@ -8597,6 +8653,14 @@ simscale\_sdk.models.unit\_pressure module
 ------------------------------------------
 
 .. automodule:: simscale_sdk.models.unit_pressure
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.unit\_speed module
+---------------------------------------
+
+.. automodule:: simscale_sdk.models.unit_speed
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8749,6 +8813,14 @@ simscale\_sdk.models.variable\_group\_vdot module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.variable_group_vdot
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.variable\_group\_velocity module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.variable_group_velocity
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8909,6 +8981,14 @@ simscale\_sdk.models.wall\_bc module
 ------------------------------------
 
 .. automodule:: simscale_sdk.models.wall_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.wall\_contact\_angle module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.wall_contact_angle
    :members:
    :undoc-members:
    :show-inheritance:
