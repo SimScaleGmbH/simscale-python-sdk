@@ -35,7 +35,8 @@ class OneOfAdvancedConceptsPowerSources(object):
         'name': 'str',
         'heat_flux': 'DimensionalFunctionVolumetricPower',
         'topological_reference': 'TopologicalReference',
-        'geometry_primitive_uuids': 'list[str]'
+        'geometry_primitive_uuids': 'list[str]',
+        'heat_exchanger_mode': 'OneOfHeatExchangerSourceHeatExchangerMode'
     }
 
     attribute_map = {
@@ -43,15 +44,17 @@ class OneOfAdvancedConceptsPowerSources(object):
         'name': 'name',
         'heat_flux': 'heatFlux',
         'topological_reference': 'topologicalReference',
-        'geometry_primitive_uuids': 'geometryPrimitiveUuids'
+        'geometry_primitive_uuids': 'geometryPrimitiveUuids',
+        'heat_exchanger_mode': 'heatExchangerMode'
     }
 
     discriminator_value_class_map = {
         'ABSOLUTE_V23': 'AbsolutePowerSource',
-        'SPECIFIC_V23': 'SpecificPowerSource'
+        'SPECIFIC_V23': 'SpecificPowerSource',
+        'HEAT_EXCHANGER_SOURCE': 'HeatExchangerSource'
     }
 
-    def __init__(self, type='SPECIFIC_V23', name=None, heat_flux=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEAT_EXCHANGER_SOURCE', name=None, heat_flux=None, topological_reference=None, geometry_primitive_uuids=None, heat_exchanger_mode=None, local_vars_configuration=None):  # noqa: E501
         """OneOfAdvancedConceptsPowerSources - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +65,7 @@ class OneOfAdvancedConceptsPowerSources(object):
         self._heat_flux = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
+        self._heat_exchanger_mode = None
         self.discriminator = 'type'
 
         self.type = type
@@ -73,12 +77,14 @@ class OneOfAdvancedConceptsPowerSources(object):
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
+        if heat_exchanger_mode is not None:
+            self.heat_exchanger_mode = heat_exchanger_mode
 
     @property
     def type(self):
         """Gets the type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
 
-        <i>Power sources</i> can be used to simulate heat generation from a volume. Two types are available:<br><li><b>Absolute</b></li>: Used when total power emitted by the assigned volume is known.<li><b>Specific</b></li>: Used when power density of the assigned volume is known. <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: SpecificPowerSource  # noqa: E501
+        <i>Power sources</i> can be used to simulate heat generation from a volume. Two types are available:<br><li><b>Absolute</b></li>: Used when total power emitted by the assigned volume is known.<li><b>Specific</b></li>: Used when power density of the assigned volume is known. <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: HeatExchangerSource  # noqa: E501
 
         :return: The type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
         :rtype: str
@@ -89,7 +95,7 @@ class OneOfAdvancedConceptsPowerSources(object):
     def type(self, type):
         """Sets the type of this OneOfAdvancedConceptsPowerSources.
 
-        <i>Power sources</i> can be used to simulate heat generation from a volume. Two types are available:<br><li><b>Absolute</b></li>: Used when total power emitted by the assigned volume is known.<li><b>Specific</b></li>: Used when power density of the assigned volume is known. <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: SpecificPowerSource  # noqa: E501
+        <i>Power sources</i> can be used to simulate heat generation from a volume. Two types are available:<br><li><b>Absolute</b></li>: Used when total power emitted by the assigned volume is known.<li><b>Specific</b></li>: Used when power density of the assigned volume is known. <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: HeatExchangerSource  # noqa: E501
 
         :param type: The type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
         :type: str
@@ -182,6 +188,27 @@ class OneOfAdvancedConceptsPowerSources(object):
         """
 
         self._geometry_primitive_uuids = geometry_primitive_uuids
+
+    @property
+    def heat_exchanger_mode(self):
+        """Gets the heat_exchanger_mode of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
+
+
+        :return: The heat_exchanger_mode of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
+        :rtype: OneOfHeatExchangerSourceHeatExchangerMode
+        """
+        return self._heat_exchanger_mode
+
+    @heat_exchanger_mode.setter
+    def heat_exchanger_mode(self, heat_exchanger_mode):
+        """Sets the heat_exchanger_mode of this OneOfAdvancedConceptsPowerSources.
+
+
+        :param heat_exchanger_mode: The heat_exchanger_mode of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
+        :type: OneOfHeatExchangerSourceHeatExchangerMode
+        """
+
+        self._heat_exchanger_mode = heat_exchanger_mode
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

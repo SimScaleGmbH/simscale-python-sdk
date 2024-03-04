@@ -219,7 +219,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_solar_load(self):
         """Gets the enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
 
-        Enables the <b>Solar load</b> model in the simulation. Diffuse and/or directional solar load contributions are specified in the <b>Solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent surfaces are present, internal surfaces of the domain might also be heated. The solar model can be used with or without a radiation model, and it cannot be used if the simulation contains solids. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+        Enables the <b>solar load</b> model in the simulation. <b>Diffuse</b> and/or <b>directional</b> solar load contributions are specified in the <b>solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent boundaries are present, internal surfaces of the domain might also be heated. All <b>internal solids</b> will be considered <b>opaque</b>. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: bool
@@ -230,7 +230,7 @@ class CoupledConjugateHeatTransfer(object):
     def enable_solar_load(self, enable_solar_load):
         """Sets the enable_solar_load of this CoupledConjugateHeatTransfer.
 
-        Enables the <b>Solar load</b> model in the simulation. Diffuse and/or directional solar load contributions are specified in the <b>Solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent surfaces are present, internal surfaces of the domain might also be heated. The solar model can be used with or without a radiation model, and it cannot be used if the simulation contains solids. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+        Enables the <b>solar load</b> model in the simulation. <b>Diffuse</b> and/or <b>directional</b> solar load contributions are specified in the <b>solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent boundaries are present, internal surfaces of the domain might also be heated. All <b>internal solids</b> will be considered <b>opaque</b>. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param enable_solar_load: The enable_solar_load of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: bool

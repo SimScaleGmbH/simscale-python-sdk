@@ -37,6 +37,7 @@ class NaturalConvectionInletOutletBC(object):
         'gauge_pressure_rgh': 'AmbientPBC',
         'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence',
         'temperature': 'AmbientTBC',
+        'passive_scalars': 'list[InletOutletPSBC]',
         'net_radiative_heat_flux': 'OneOfNaturalConvectionInletOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OpenBoundaryRayBC',
         'relative_humidity': 'InletOutletRHBC',
@@ -50,13 +51,14 @@ class NaturalConvectionInletOutletBC(object):
         'gauge_pressure_rgh': 'gaugePressureRgh',
         'turbulence': 'turbulence',
         'temperature': 'temperature',
+        'passive_scalars': 'passiveScalars',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
         'relative_humidity': 'relativeHumidity',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, pressure_rgh=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, pressure_rgh=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, passive_scalars=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """NaturalConvectionInletOutletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class NaturalConvectionInletOutletBC(object):
         self._gauge_pressure_rgh = None
         self._turbulence = None
         self._temperature = None
+        self._passive_scalars = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
         self._relative_humidity = None
@@ -85,6 +88,8 @@ class NaturalConvectionInletOutletBC(object):
             self.turbulence = turbulence
         if temperature is not None:
             self.temperature = temperature
+        if passive_scalars is not None:
+            self.passive_scalars = passive_scalars
         if net_radiative_heat_flux is not None:
             self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
@@ -223,6 +228,29 @@ class NaturalConvectionInletOutletBC(object):
         """
 
         self._temperature = temperature
+
+    @property
+    def passive_scalars(self):
+        """Gets the passive_scalars of this NaturalConvectionInletOutletBC.  # noqa: E501
+
+        Please choose a boundary condition for passive scalar (T).  # noqa: E501
+
+        :return: The passive_scalars of this NaturalConvectionInletOutletBC.  # noqa: E501
+        :rtype: list[InletOutletPSBC]
+        """
+        return self._passive_scalars
+
+    @passive_scalars.setter
+    def passive_scalars(self, passive_scalars):
+        """Sets the passive_scalars of this NaturalConvectionInletOutletBC.
+
+        Please choose a boundary condition for passive scalar (T).  # noqa: E501
+
+        :param passive_scalars: The passive_scalars of this NaturalConvectionInletOutletBC.  # noqa: E501
+        :type: list[InletOutletPSBC]
+        """
+
+        self._passive_scalars = passive_scalars
 
     @property
     def net_radiative_heat_flux(self):

@@ -121,8 +121,8 @@ class GeometriesApi(object):
             raise ApiValueError("Invalid value for parameter `project_id` when calling `get_geometries`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_geometries`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `get_geometries`, must be a value greater than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_geometries`, must be a value greater than or equal to `1`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `get_geometries`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
@@ -400,8 +400,8 @@ class GeometriesApi(object):
             raise ApiValueError("Invalid value for parameter `project_id` when calling `get_geometry_mappings`, must conform to the pattern `/^\d+$/`")  # noqa: E501
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `get_geometry_mappings`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `get_geometry_mappings`, must be a value greater than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `get_geometry_mappings`, must be a value greater than or equal to `1`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `get_geometry_mappings`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501

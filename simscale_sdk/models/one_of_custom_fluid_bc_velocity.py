@@ -43,13 +43,10 @@ class OneOfCustomFluidBCVelocity(object):
         'enable_surface_roughness': 'bool',
         'surface_roughness': 'DimensionalLength',
         'no_slip_wall_roughness_type': 'OneOfNoSlipVBCNoSlipWallRoughnessType',
+        'wall_contact_model': 'list[WallContactAngle]',
         'phase': 'str',
         'mean_velocity': 'DimensionalSpeed',
-        'rotation': 'AngularRotation',
-        'domain_length_scale': 'DimensionalLength',
-        'eddy_length_scale': 'DimensionalFunctionLength',
-        'velocity': 'DimensionalVectorFunctionSpeed',
-        'reynolds_stress_tensor': 'StressTensorPressure'
+        'rotation': 'AngularRotation'
     }
 
     attribute_map = {
@@ -65,13 +62,10 @@ class OneOfCustomFluidBCVelocity(object):
         'enable_surface_roughness': 'enableSurfaceRoughness',
         'surface_roughness': 'surfaceRoughness',
         'no_slip_wall_roughness_type': 'noSlipWallRoughnessType',
+        'wall_contact_model': 'wallContactModel',
         'phase': 'phase',
         'mean_velocity': 'meanVelocity',
-        'rotation': 'rotation',
-        'domain_length_scale': 'domainLengthScale',
-        'eddy_length_scale': 'eddyLengthScale',
-        'velocity': 'velocity',
-        'reynolds_stress_tensor': 'reynoldsStressTensor'
+        'rotation': 'rotation'
     }
 
     discriminator_value_class_map = {
@@ -91,11 +85,10 @@ class OneOfCustomFluidBCVelocity(object):
         'PRESSURE_INLET_OUTLET_VELOCITY': 'PressureInletOutletVBC',
         'ROTATING_WALL_VELOCITY': 'RotatingWallVBC',
         'ZERO_GRADIENT': 'ZeroGradientVBC',
-        'SLIP': 'SlipVBC',
-        'TURBULENT_DFSEM_INLET': 'TurbulentDFSEMInletVBC'
+        'SLIP': 'SlipVBC'
     }
 
-    def __init__(self, type='TURBULENT_DFSEM_INLET', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, enable_surface_roughness=None, surface_roughness=None, no_slip_wall_roughness_type=None, phase=None, mean_velocity=None, rotation=None, domain_length_scale=None, eddy_length_scale=None, velocity=None, reynolds_stress_tensor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SLIP', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, enable_surface_roughness=None, surface_roughness=None, no_slip_wall_roughness_type=None, wall_contact_model=None, phase=None, mean_velocity=None, rotation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -113,13 +106,10 @@ class OneOfCustomFluidBCVelocity(object):
         self._enable_surface_roughness = None
         self._surface_roughness = None
         self._no_slip_wall_roughness_type = None
+        self._wall_contact_model = None
         self._phase = None
         self._mean_velocity = None
         self._rotation = None
-        self._domain_length_scale = None
-        self._eddy_length_scale = None
-        self._velocity = None
-        self._reynolds_stress_tensor = None
         self.discriminator = 'type'
 
         self.type = type
@@ -145,26 +135,20 @@ class OneOfCustomFluidBCVelocity(object):
             self.surface_roughness = surface_roughness
         if no_slip_wall_roughness_type is not None:
             self.no_slip_wall_roughness_type = no_slip_wall_roughness_type
+        if wall_contact_model is not None:
+            self.wall_contact_model = wall_contact_model
         if phase is not None:
             self.phase = phase
         if mean_velocity is not None:
             self.mean_velocity = mean_velocity
         if rotation is not None:
             self.rotation = rotation
-        if domain_length_scale is not None:
-            self.domain_length_scale = domain_length_scale
-        if eddy_length_scale is not None:
-            self.eddy_length_scale = eddy_length_scale
-        if velocity is not None:
-            self.velocity = velocity
-        if reynolds_stress_tensor is not None:
-            self.reynolds_stress_tensor = reynolds_stress_tensor
 
     @property
     def type(self):
         """Gets the type of this OneOfCustomFluidBCVelocity.  # noqa: E501
 
-        Schema name: TurbulentDFSEMInletVBC  # noqa: E501
+        Schema name: SlipVBC  # noqa: E501
 
         :return: The type of this OneOfCustomFluidBCVelocity.  # noqa: E501
         :rtype: str
@@ -175,7 +159,7 @@ class OneOfCustomFluidBCVelocity(object):
     def type(self, type):
         """Sets the type of this OneOfCustomFluidBCVelocity.
 
-        Schema name: TurbulentDFSEMInletVBC  # noqa: E501
+        Schema name: SlipVBC  # noqa: E501
 
         :param type: The type of this OneOfCustomFluidBCVelocity.  # noqa: E501
         :type: str
@@ -431,6 +415,27 @@ class OneOfCustomFluidBCVelocity(object):
         self._no_slip_wall_roughness_type = no_slip_wall_roughness_type
 
     @property
+    def wall_contact_model(self):
+        """Gets the wall_contact_model of this OneOfCustomFluidBCVelocity.  # noqa: E501
+
+
+        :return: The wall_contact_model of this OneOfCustomFluidBCVelocity.  # noqa: E501
+        :rtype: list[WallContactAngle]
+        """
+        return self._wall_contact_model
+
+    @wall_contact_model.setter
+    def wall_contact_model(self, wall_contact_model):
+        """Sets the wall_contact_model of this OneOfCustomFluidBCVelocity.
+
+
+        :param wall_contact_model: The wall_contact_model of this OneOfCustomFluidBCVelocity.  # noqa: E501
+        :type: list[WallContactAngle]
+        """
+
+        self._wall_contact_model = wall_contact_model
+
+    @property
     def phase(self):
         """Gets the phase of this OneOfCustomFluidBCVelocity.  # noqa: E501
 
@@ -498,90 +503,6 @@ class OneOfCustomFluidBCVelocity(object):
         """
 
         self._rotation = rotation
-
-    @property
-    def domain_length_scale(self):
-        """Gets the domain_length_scale of this OneOfCustomFluidBCVelocity.  # noqa: E501
-
-
-        :return: The domain_length_scale of this OneOfCustomFluidBCVelocity.  # noqa: E501
-        :rtype: DimensionalLength
-        """
-        return self._domain_length_scale
-
-    @domain_length_scale.setter
-    def domain_length_scale(self, domain_length_scale):
-        """Sets the domain_length_scale of this OneOfCustomFluidBCVelocity.
-
-
-        :param domain_length_scale: The domain_length_scale of this OneOfCustomFluidBCVelocity.  # noqa: E501
-        :type: DimensionalLength
-        """
-
-        self._domain_length_scale = domain_length_scale
-
-    @property
-    def eddy_length_scale(self):
-        """Gets the eddy_length_scale of this OneOfCustomFluidBCVelocity.  # noqa: E501
-
-
-        :return: The eddy_length_scale of this OneOfCustomFluidBCVelocity.  # noqa: E501
-        :rtype: DimensionalFunctionLength
-        """
-        return self._eddy_length_scale
-
-    @eddy_length_scale.setter
-    def eddy_length_scale(self, eddy_length_scale):
-        """Sets the eddy_length_scale of this OneOfCustomFluidBCVelocity.
-
-
-        :param eddy_length_scale: The eddy_length_scale of this OneOfCustomFluidBCVelocity.  # noqa: E501
-        :type: DimensionalFunctionLength
-        """
-
-        self._eddy_length_scale = eddy_length_scale
-
-    @property
-    def velocity(self):
-        """Gets the velocity of this OneOfCustomFluidBCVelocity.  # noqa: E501
-
-
-        :return: The velocity of this OneOfCustomFluidBCVelocity.  # noqa: E501
-        :rtype: DimensionalVectorFunctionSpeed
-        """
-        return self._velocity
-
-    @velocity.setter
-    def velocity(self, velocity):
-        """Sets the velocity of this OneOfCustomFluidBCVelocity.
-
-
-        :param velocity: The velocity of this OneOfCustomFluidBCVelocity.  # noqa: E501
-        :type: DimensionalVectorFunctionSpeed
-        """
-
-        self._velocity = velocity
-
-    @property
-    def reynolds_stress_tensor(self):
-        """Gets the reynolds_stress_tensor of this OneOfCustomFluidBCVelocity.  # noqa: E501
-
-
-        :return: The reynolds_stress_tensor of this OneOfCustomFluidBCVelocity.  # noqa: E501
-        :rtype: StressTensorPressure
-        """
-        return self._reynolds_stress_tensor
-
-    @reynolds_stress_tensor.setter
-    def reynolds_stress_tensor(self, reynolds_stress_tensor):
-        """Sets the reynolds_stress_tensor of this OneOfCustomFluidBCVelocity.
-
-
-        :param reynolds_stress_tensor: The reynolds_stress_tensor of this OneOfCustomFluidBCVelocity.  # noqa: E501
-        :type: StressTensorPressure
-        """
-
-        self._reynolds_stress_tensor = reynolds_stress_tensor
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

@@ -58,7 +58,8 @@ class FluidSolvers(object):
         'epsilon_dissipation_rate_final_solver': 'OneOfFluidSolversEpsilonDissipationRateFinalSolver',
         'passive_scalar_solver': 'OneOfFluidSolversPassiveScalarSolver',
         'radiative_intensity_ray_solver': 'OneOfFluidSolversRadiativeIntensityRaySolver',
-        'specific_humidity_solver': 'OneOfFluidSolversSpecificHumiditySolver'
+        'specific_humidity_solver': 'OneOfFluidSolversSpecificHumiditySolver',
+        'voltage_solver': 'OneOfFluidSolversVoltageSolver'
     }
 
     attribute_map = {
@@ -89,10 +90,11 @@ class FluidSolvers(object):
         'epsilon_dissipation_rate_final_solver': 'epsilonDissipationRateFinalSolver',
         'passive_scalar_solver': 'passiveScalarSolver',
         'radiative_intensity_ray_solver': 'radiativeIntensityRaySolver',
-        'specific_humidity_solver': 'specificHumiditySolver'
+        'specific_humidity_solver': 'specificHumiditySolver',
+        'voltage_solver': 'voltageSolver'
     }
 
-    def __init__(self, phase_fraction_solver=None, velocity_solver=None, velocity_final_solver=None, density_solver=None, density_final_solver=None, pressure_solver=None, pressure_final_solver=None, temperature_solver=None, temperature_final_solver=None, pressure_rgh_solver=None, pressure_rgh_final_solver=None, solid_enthalpy_solver=None, solid_enthalpy_final_solver=None, enthalpy_solver=None, enthalpy_final_solver=None, internal_energy_solver=None, internal_energy_final_solver=None, turbulent_kinetic_energy_solver=None, turbulent_kinetic_energy_final_solver=None, nu_tilda_solver=None, nu_tilda_final_solver=None, omega_dissipation_rate_solver=None, omega_dissipation_rate_final_solver=None, epsilon_dissipation_rate_solver=None, epsilon_dissipation_rate_final_solver=None, passive_scalar_solver=None, radiative_intensity_ray_solver=None, specific_humidity_solver=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, phase_fraction_solver=None, velocity_solver=None, velocity_final_solver=None, density_solver=None, density_final_solver=None, pressure_solver=None, pressure_final_solver=None, temperature_solver=None, temperature_final_solver=None, pressure_rgh_solver=None, pressure_rgh_final_solver=None, solid_enthalpy_solver=None, solid_enthalpy_final_solver=None, enthalpy_solver=None, enthalpy_final_solver=None, internal_energy_solver=None, internal_energy_final_solver=None, turbulent_kinetic_energy_solver=None, turbulent_kinetic_energy_final_solver=None, nu_tilda_solver=None, nu_tilda_final_solver=None, omega_dissipation_rate_solver=None, omega_dissipation_rate_final_solver=None, epsilon_dissipation_rate_solver=None, epsilon_dissipation_rate_final_solver=None, passive_scalar_solver=None, radiative_intensity_ray_solver=None, specific_humidity_solver=None, voltage_solver=None, local_vars_configuration=None):  # noqa: E501
         """FluidSolvers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -126,6 +128,7 @@ class FluidSolvers(object):
         self._passive_scalar_solver = None
         self._radiative_intensity_ray_solver = None
         self._specific_humidity_solver = None
+        self._voltage_solver = None
         self.discriminator = None
 
         if phase_fraction_solver is not None:
@@ -184,6 +187,8 @@ class FluidSolvers(object):
             self.radiative_intensity_ray_solver = radiative_intensity_ray_solver
         if specific_humidity_solver is not None:
             self.specific_humidity_solver = specific_humidity_solver
+        if voltage_solver is not None:
+            self.voltage_solver = voltage_solver
 
     @property
     def phase_fraction_solver(self):
@@ -772,6 +777,27 @@ class FluidSolvers(object):
         """
 
         self._specific_humidity_solver = specific_humidity_solver
+
+    @property
+    def voltage_solver(self):
+        """Gets the voltage_solver of this FluidSolvers.  # noqa: E501
+
+
+        :return: The voltage_solver of this FluidSolvers.  # noqa: E501
+        :rtype: OneOfFluidSolversVoltageSolver
+        """
+        return self._voltage_solver
+
+    @voltage_solver.setter
+    def voltage_solver(self, voltage_solver):
+        """Sets the voltage_solver of this FluidSolvers.
+
+
+        :param voltage_solver: The voltage_solver of this FluidSolvers.  # noqa: E501
+        :type: OneOfFluidSolversVoltageSolver
+        """
+
+        self._voltage_solver = voltage_solver
 
     def to_dict(self):
         """Returns the model properties as a dict"""

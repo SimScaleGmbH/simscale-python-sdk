@@ -40,13 +40,7 @@ class FluidInitialConditions(object):
         'turbulent_kinetic_energy': 'DimensionalInitialConditionDomainsTurbulenceKineticEnergy',
         'omega_dissipation_rate': 'DimensionalInitialConditionDomainsSpecificTurbulenceDissipationRate',
         'epsilon_dissipation_rate': 'DimensionalInitialConditionDomainsTurbulentDissipation',
-        'eddy_viscosity': 'DimensionalInitialConditionDomainsDynamicViscosity',
-        'eddy_viscosity_multiphase': 'DimensionalInitialConditionDomainsKinematicViscosity',
-        'eddy_viscosity_compressible': 'DimensionalInitialConditionDomainsDynamicViscosity',
         'nu_tilda': 'DimensionalInitialConditionDomainsKinematicViscosity',
-        'turbulent_thermal_diffusivity': 'DimensionalInitialConditionDomainsDynamicViscosity',
-        'turbulent_thermal_diffusivity_compressible': 'DimensionalInitialConditionDomainsDynamicViscosity',
-        'turbulent_dynamic_viscosity': 'DimensionalInitialConditionDomainsDynamicViscosity',
         'passive_scalars': 'list[DimensionalInitialConditionDomainsDimensionless]',
         'phase_fraction': 'DimensionalInitialConditionDomainsDimensionless',
         'phase_fractions': 'DimensionlessInitialConditionDomains',
@@ -63,20 +57,14 @@ class FluidInitialConditions(object):
         'turbulent_kinetic_energy': 'turbulentKineticEnergy',
         'omega_dissipation_rate': 'omegaDissipationRate',
         'epsilon_dissipation_rate': 'epsilonDissipationRate',
-        'eddy_viscosity': 'eddyViscosity',
-        'eddy_viscosity_multiphase': 'eddyViscosityMultiphase',
-        'eddy_viscosity_compressible': 'eddyViscosityCompressible',
         'nu_tilda': 'nuTilda',
-        'turbulent_thermal_diffusivity': 'turbulentThermalDiffusivity',
-        'turbulent_thermal_diffusivity_compressible': 'turbulentThermalDiffusivityCompressible',
-        'turbulent_dynamic_viscosity': 'turbulentDynamicViscosity',
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
         'phase_fractions': 'phaseFractions',
         'relative_humidity': 'relativeHumidity'
     }
 
-    def __init__(self, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, velocity=None, temperature=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_multiphase=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, passive_scalars=None, phase_fraction=None, phase_fractions=None, relative_humidity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, velocity=None, temperature=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, nu_tilda=None, passive_scalars=None, phase_fraction=None, phase_fractions=None, relative_humidity=None, local_vars_configuration=None):  # noqa: E501
         """FluidInitialConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,13 +79,7 @@ class FluidInitialConditions(object):
         self._turbulent_kinetic_energy = None
         self._omega_dissipation_rate = None
         self._epsilon_dissipation_rate = None
-        self._eddy_viscosity = None
-        self._eddy_viscosity_multiphase = None
-        self._eddy_viscosity_compressible = None
         self._nu_tilda = None
-        self._turbulent_thermal_diffusivity = None
-        self._turbulent_thermal_diffusivity_compressible = None
-        self._turbulent_dynamic_viscosity = None
         self._passive_scalars = None
         self._phase_fraction = None
         self._phase_fractions = None
@@ -122,20 +104,8 @@ class FluidInitialConditions(object):
             self.omega_dissipation_rate = omega_dissipation_rate
         if epsilon_dissipation_rate is not None:
             self.epsilon_dissipation_rate = epsilon_dissipation_rate
-        if eddy_viscosity is not None:
-            self.eddy_viscosity = eddy_viscosity
-        if eddy_viscosity_multiphase is not None:
-            self.eddy_viscosity_multiphase = eddy_viscosity_multiphase
-        if eddy_viscosity_compressible is not None:
-            self.eddy_viscosity_compressible = eddy_viscosity_compressible
         if nu_tilda is not None:
             self.nu_tilda = nu_tilda
-        if turbulent_thermal_diffusivity is not None:
-            self.turbulent_thermal_diffusivity = turbulent_thermal_diffusivity
-        if turbulent_thermal_diffusivity_compressible is not None:
-            self.turbulent_thermal_diffusivity_compressible = turbulent_thermal_diffusivity_compressible
-        if turbulent_dynamic_viscosity is not None:
-            self.turbulent_dynamic_viscosity = turbulent_dynamic_viscosity
         if passive_scalars is not None:
             self.passive_scalars = passive_scalars
         if phase_fraction is not None:
@@ -335,69 +305,6 @@ class FluidInitialConditions(object):
         self._epsilon_dissipation_rate = epsilon_dissipation_rate
 
     @property
-    def eddy_viscosity(self):
-        """Gets the eddy_viscosity of this FluidInitialConditions.  # noqa: E501
-
-
-        :return: The eddy_viscosity of this FluidInitialConditions.  # noqa: E501
-        :rtype: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-        return self._eddy_viscosity
-
-    @eddy_viscosity.setter
-    def eddy_viscosity(self, eddy_viscosity):
-        """Sets the eddy_viscosity of this FluidInitialConditions.
-
-
-        :param eddy_viscosity: The eddy_viscosity of this FluidInitialConditions.  # noqa: E501
-        :type: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-
-        self._eddy_viscosity = eddy_viscosity
-
-    @property
-    def eddy_viscosity_multiphase(self):
-        """Gets the eddy_viscosity_multiphase of this FluidInitialConditions.  # noqa: E501
-
-
-        :return: The eddy_viscosity_multiphase of this FluidInitialConditions.  # noqa: E501
-        :rtype: DimensionalInitialConditionDomainsKinematicViscosity
-        """
-        return self._eddy_viscosity_multiphase
-
-    @eddy_viscosity_multiphase.setter
-    def eddy_viscosity_multiphase(self, eddy_viscosity_multiphase):
-        """Sets the eddy_viscosity_multiphase of this FluidInitialConditions.
-
-
-        :param eddy_viscosity_multiphase: The eddy_viscosity_multiphase of this FluidInitialConditions.  # noqa: E501
-        :type: DimensionalInitialConditionDomainsKinematicViscosity
-        """
-
-        self._eddy_viscosity_multiphase = eddy_viscosity_multiphase
-
-    @property
-    def eddy_viscosity_compressible(self):
-        """Gets the eddy_viscosity_compressible of this FluidInitialConditions.  # noqa: E501
-
-
-        :return: The eddy_viscosity_compressible of this FluidInitialConditions.  # noqa: E501
-        :rtype: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-        return self._eddy_viscosity_compressible
-
-    @eddy_viscosity_compressible.setter
-    def eddy_viscosity_compressible(self, eddy_viscosity_compressible):
-        """Sets the eddy_viscosity_compressible of this FluidInitialConditions.
-
-
-        :param eddy_viscosity_compressible: The eddy_viscosity_compressible of this FluidInitialConditions.  # noqa: E501
-        :type: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-
-        self._eddy_viscosity_compressible = eddy_viscosity_compressible
-
-    @property
     def nu_tilda(self):
         """Gets the nu_tilda of this FluidInitialConditions.  # noqa: E501
 
@@ -417,69 +324,6 @@ class FluidInitialConditions(object):
         """
 
         self._nu_tilda = nu_tilda
-
-    @property
-    def turbulent_thermal_diffusivity(self):
-        """Gets the turbulent_thermal_diffusivity of this FluidInitialConditions.  # noqa: E501
-
-
-        :return: The turbulent_thermal_diffusivity of this FluidInitialConditions.  # noqa: E501
-        :rtype: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-        return self._turbulent_thermal_diffusivity
-
-    @turbulent_thermal_diffusivity.setter
-    def turbulent_thermal_diffusivity(self, turbulent_thermal_diffusivity):
-        """Sets the turbulent_thermal_diffusivity of this FluidInitialConditions.
-
-
-        :param turbulent_thermal_diffusivity: The turbulent_thermal_diffusivity of this FluidInitialConditions.  # noqa: E501
-        :type: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-
-        self._turbulent_thermal_diffusivity = turbulent_thermal_diffusivity
-
-    @property
-    def turbulent_thermal_diffusivity_compressible(self):
-        """Gets the turbulent_thermal_diffusivity_compressible of this FluidInitialConditions.  # noqa: E501
-
-
-        :return: The turbulent_thermal_diffusivity_compressible of this FluidInitialConditions.  # noqa: E501
-        :rtype: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-        return self._turbulent_thermal_diffusivity_compressible
-
-    @turbulent_thermal_diffusivity_compressible.setter
-    def turbulent_thermal_diffusivity_compressible(self, turbulent_thermal_diffusivity_compressible):
-        """Sets the turbulent_thermal_diffusivity_compressible of this FluidInitialConditions.
-
-
-        :param turbulent_thermal_diffusivity_compressible: The turbulent_thermal_diffusivity_compressible of this FluidInitialConditions.  # noqa: E501
-        :type: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-
-        self._turbulent_thermal_diffusivity_compressible = turbulent_thermal_diffusivity_compressible
-
-    @property
-    def turbulent_dynamic_viscosity(self):
-        """Gets the turbulent_dynamic_viscosity of this FluidInitialConditions.  # noqa: E501
-
-
-        :return: The turbulent_dynamic_viscosity of this FluidInitialConditions.  # noqa: E501
-        :rtype: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-        return self._turbulent_dynamic_viscosity
-
-    @turbulent_dynamic_viscosity.setter
-    def turbulent_dynamic_viscosity(self, turbulent_dynamic_viscosity):
-        """Sets the turbulent_dynamic_viscosity of this FluidInitialConditions.
-
-
-        :param turbulent_dynamic_viscosity: The turbulent_dynamic_viscosity of this FluidInitialConditions.  # noqa: E501
-        :type: DimensionalInitialConditionDomainsDynamicViscosity
-        """
-
-        self._turbulent_dynamic_viscosity = turbulent_dynamic_viscosity
 
     @property
     def passive_scalars(self):

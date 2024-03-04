@@ -208,7 +208,7 @@ class OneOfFluidSolversDensitySolver(object):
         :param smoother: The smoother of this OneOfFluidSolversDensitySolver.  # noqa: E501
         :type: str
         """
-        allowed_values = ["GAUSSSEIDEL", "SYMGAUSSSEIDEL"]  # noqa: E501
+        allowed_values = ["GAUSSSEIDEL", "SYMGAUSSSEIDEL", "DIC"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and smoother not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `smoother` ({0}), must be one of {1}"  # noqa: E501

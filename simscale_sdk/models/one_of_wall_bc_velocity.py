@@ -38,6 +38,7 @@ class OneOfWallBCVelocity(object):
         'enable_surface_roughness': 'bool',
         'surface_roughness': 'DimensionalLength',
         'no_slip_wall_roughness_type': 'OneOfNoSlipVBCNoSlipWallRoughnessType',
+        'wall_contact_model': 'list[WallContactAngle]',
         'rotation': 'AngularRotation'
     }
 
@@ -49,6 +50,7 @@ class OneOfWallBCVelocity(object):
         'enable_surface_roughness': 'enableSurfaceRoughness',
         'surface_roughness': 'surfaceRoughness',
         'no_slip_wall_roughness_type': 'noSlipWallRoughnessType',
+        'wall_contact_model': 'wallContactModel',
         'rotation': 'rotation'
     }
 
@@ -59,7 +61,7 @@ class OneOfWallBCVelocity(object):
         'SLIP': 'SlipVBC'
     }
 
-    def __init__(self, type='SLIP', value=None, turbulence_wall=None, orientation_reference=None, enable_surface_roughness=None, surface_roughness=None, no_slip_wall_roughness_type=None, rotation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SLIP', value=None, turbulence_wall=None, orientation_reference=None, enable_surface_roughness=None, surface_roughness=None, no_slip_wall_roughness_type=None, wall_contact_model=None, rotation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfWallBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class OneOfWallBCVelocity(object):
         self._enable_surface_roughness = None
         self._surface_roughness = None
         self._no_slip_wall_roughness_type = None
+        self._wall_contact_model = None
         self._rotation = None
         self.discriminator = 'type'
 
@@ -88,6 +91,8 @@ class OneOfWallBCVelocity(object):
             self.surface_roughness = surface_roughness
         if no_slip_wall_roughness_type is not None:
             self.no_slip_wall_roughness_type = no_slip_wall_roughness_type
+        if wall_contact_model is not None:
+            self.wall_contact_model = wall_contact_model
         if rotation is not None:
             self.rotation = rotation
 
@@ -255,6 +260,27 @@ class OneOfWallBCVelocity(object):
         """
 
         self._no_slip_wall_roughness_type = no_slip_wall_roughness_type
+
+    @property
+    def wall_contact_model(self):
+        """Gets the wall_contact_model of this OneOfWallBCVelocity.  # noqa: E501
+
+
+        :return: The wall_contact_model of this OneOfWallBCVelocity.  # noqa: E501
+        :rtype: list[WallContactAngle]
+        """
+        return self._wall_contact_model
+
+    @wall_contact_model.setter
+    def wall_contact_model(self, wall_contact_model):
+        """Sets the wall_contact_model of this OneOfWallBCVelocity.
+
+
+        :param wall_contact_model: The wall_contact_model of this OneOfWallBCVelocity.  # noqa: E501
+        :type: list[WallContactAngle]
+        """
+
+        self._wall_contact_model = wall_contact_model
 
     @property
     def rotation(self):

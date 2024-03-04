@@ -54,7 +54,7 @@ class AdvancedPinSettings(object):
     def assigned_face_behavior(self):
         """Gets the assigned_face_behavior of this AdvancedPinSettings.  # noqa: E501
 
-        Specify whether the face to which the pin is connected should be <i>Deformable</i> or <i>Undeformable</i>.  # noqa: E501
+        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entity is allowed to deform without applying additional stiffness, selecting <b>undeformable</b> leads to a rigid entity. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/remote-displacement/#deformation-behavior' target='_blank'>Learn more</a></p>  # noqa: E501
 
         :return: The assigned_face_behavior of this AdvancedPinSettings.  # noqa: E501
         :rtype: str
@@ -65,7 +65,7 @@ class AdvancedPinSettings(object):
     def assigned_face_behavior(self, assigned_face_behavior):
         """Sets the assigned_face_behavior of this AdvancedPinSettings.
 
-        Specify whether the face to which the pin is connected should be <i>Deformable</i> or <i>Undeformable</i>.  # noqa: E501
+        <p>Choose the deformation behavior of the assigned entity. If <b>deformable</b> is selected, the entity is allowed to deform without applying additional stiffness, selecting <b>undeformable</b> leads to a rigid entity. <a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/remote-displacement/#deformation-behavior' target='_blank'>Learn more</a></p>  # noqa: E501
 
         :param assigned_face_behavior: The assigned_face_behavior of this AdvancedPinSettings.  # noqa: E501
         :type: str

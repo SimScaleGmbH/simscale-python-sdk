@@ -46,7 +46,8 @@ class RelaxationFactor(object):
         'net_radiative_heat_flux_field': 'float',
         'radiative_intensity_ray_equation': 'float',
         'specific_humidity_equation': 'float',
-        'age_of_fluid_equation': 'float'
+        'age_of_fluid_equation': 'float',
+        'voltage_field': 'float'
     }
 
     attribute_map = {
@@ -65,10 +66,11 @@ class RelaxationFactor(object):
         'net_radiative_heat_flux_field': 'netRadiativeHeatFluxField',
         'radiative_intensity_ray_equation': 'radiativeIntensityRayEquation',
         'specific_humidity_equation': 'specificHumidityEquation',
-        'age_of_fluid_equation': 'ageOfFluidEquation'
+        'age_of_fluid_equation': 'ageOfFluidEquation',
+        'voltage_field': 'voltageField'
     }
 
-    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, radiative_intensity_ray_equation=None, specific_humidity_equation=None, age_of_fluid_equation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, radiative_intensity_ray_equation=None, specific_humidity_equation=None, age_of_fluid_equation=None, voltage_field=None, local_vars_configuration=None):  # noqa: E501
         """RelaxationFactor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,6 +92,7 @@ class RelaxationFactor(object):
         self._radiative_intensity_ray_equation = None
         self._specific_humidity_equation = None
         self._age_of_fluid_equation = None
+        self._voltage_field = None
         self.discriminator = None
 
         if pressure_field is not None:
@@ -124,6 +127,8 @@ class RelaxationFactor(object):
             self.specific_humidity_equation = specific_humidity_equation
         if age_of_fluid_equation is not None:
             self.age_of_fluid_equation = age_of_fluid_equation
+        if voltage_field is not None:
+            self.voltage_field = voltage_field
 
     @property
     def pressure_field(self):
@@ -564,6 +569,33 @@ class RelaxationFactor(object):
             raise ValueError("Invalid value for `age_of_fluid_equation`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._age_of_fluid_equation = age_of_fluid_equation
+
+    @property
+    def voltage_field(self):
+        """Gets the voltage_field of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The voltage_field of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._voltage_field
+
+    @voltage_field.setter
+    def voltage_field(self, voltage_field):
+        """Sets the voltage_field of this RelaxationFactor.
+
+
+        :param voltage_field: The voltage_field of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                voltage_field is not None and voltage_field > 1):  # noqa: E501
+            raise ValueError("Invalid value for `voltage_field`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                voltage_field is not None and voltage_field < 0):  # noqa: E501
+            raise ValueError("Invalid value for `voltage_field`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._voltage_field = voltage_field
 
     def to_dict(self):
         """Returns the model properties as a dict"""

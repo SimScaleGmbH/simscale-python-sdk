@@ -415,7 +415,7 @@ class FoldersApi(object):
         :param async_req bool: execute request asynchronously
         :param str space_id: The space ID (required)
         :param str folder_id: The folder ID (required)
-        :param int limit: The number of folders to return.
+        :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
         :param str sort: A field to sort by. The available fields are: 'name', 'createdAt' and 'lastModifiedAt'. To indicate sorting direction, the field must be prefixed with '+' (ascending) or '-' (descending), e.g. ?sort=+name
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -444,7 +444,7 @@ class FoldersApi(object):
         :param async_req bool: execute request asynchronously
         :param str space_id: The space ID (required)
         :param str folder_id: The folder ID (required)
-        :param int limit: The number of folders to return.
+        :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
         :param str sort: A field to sort by. The available fields are: 'name', 'createdAt' and 'lastModifiedAt'. To indicate sorting direction, the field must be prefixed with '+' (ascending) or '-' (descending), e.g. ?sort=+name
         :param _return_http_data_only: response data without head status code
@@ -498,8 +498,8 @@ class FoldersApi(object):
 
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `list_folders_in_folder`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_folders_in_folder`, must be a value greater than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_folders_in_folder`, must be a value greater than or equal to `1`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `list_folders_in_folder`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
@@ -562,7 +562,7 @@ class FoldersApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str space_id: The space ID (required)
-        :param int limit: The number of folders to return.
+        :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
         :param str sort: A field to sort by. The available fields are: 'name', 'createdAt' and 'lastModifiedAt'. To indicate sorting direction, the field must be prefixed with '+' (ascending) or '-' (descending), e.g. ?sort=+name
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -590,7 +590,7 @@ class FoldersApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str space_id: The space ID (required)
-        :param int limit: The number of folders to return.
+        :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
         :param str sort: A field to sort by. The available fields are: 'name', 'createdAt' and 'lastModifiedAt'. To indicate sorting direction, the field must be prefixed with '+' (ascending) or '-' (descending), e.g. ?sort=+name
         :param _return_http_data_only: response data without head status code
@@ -639,8 +639,8 @@ class FoldersApi(object):
 
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `list_folders_in_space_root`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_folders_in_space_root`, must be a value greater than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_folders_in_space_root`, must be a value greater than or equal to `1`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `list_folders_in_space_root`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
@@ -702,7 +702,7 @@ class FoldersApi(object):
         :param async_req bool: execute request asynchronously
         :param str space_id: The space ID (required)
         :param str folder_id: The folder ID (required)
-        :param int limit: The number of projects to return.
+        :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
         :param str sort: A field to sort by. The available fields are: 'name', 'createdAt' and 'lastModifiedAt'. To indicate sorting direction, the field must be prefixed with '+' (ascending) or '-' (descending), e.g. ?sort=+name
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -731,7 +731,7 @@ class FoldersApi(object):
         :param async_req bool: execute request asynchronously
         :param str space_id: The space ID (required)
         :param str folder_id: The folder ID (required)
-        :param int limit: The number of projects to return.
+        :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
         :param str sort: A field to sort by. The available fields are: 'name', 'createdAt' and 'lastModifiedAt'. To indicate sorting direction, the field must be prefixed with '+' (ascending) or '-' (descending), e.g. ?sort=+name
         :param _return_http_data_only: response data without head status code
@@ -785,8 +785,8 @@ class FoldersApi(object):
 
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `list_projects_in_folder`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_projects_in_folder`, must be a value greater than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_projects_in_folder`, must be a value greater than or equal to `1`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `list_projects_in_folder`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501
@@ -849,7 +849,7 @@ class FoldersApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str space_id: The space ID (required)
-        :param int limit: The number of projects to return.
+        :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
         :param str sort: A field to sort by. The available fields are: 'name', 'createdAt' and 'lastModifiedAt'. To indicate sorting direction, the field must be prefixed with '+' (ascending) or '-' (descending), e.g. ?sort=+name
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -877,7 +877,7 @@ class FoldersApi(object):
 
         :param async_req bool: execute request asynchronously
         :param str space_id: The space ID (required)
-        :param int limit: The number of projects to return.
+        :param int limit: The number of items to return.
         :param int page: The page number. Use in combination with limit.
         :param str sort: A field to sort by. The available fields are: 'name', 'createdAt' and 'lastModifiedAt'. To indicate sorting direction, the field must be prefixed with '+' (ascending) or '-' (descending), e.g. ?sort=+name
         :param _return_http_data_only: response data without head status code
@@ -926,8 +926,8 @@ class FoldersApi(object):
 
         if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `limit` when calling `list_projects_in_space_root`, must be a value less than or equal to `1000`")  # noqa: E501
-        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 10:  # noqa: E501
-            raise ApiValueError("Invalid value for parameter `limit` when calling `list_projects_in_space_root`, must be a value greater than or equal to `10`")  # noqa: E501
+        if self.api_client.client_side_validation and 'limit' in local_var_params and local_var_params['limit'] < 1:  # noqa: E501
+            raise ApiValueError("Invalid value for parameter `limit` when calling `list_projects_in_space_root`, must be a value greater than or equal to `1`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] > 1000:  # noqa: E501
             raise ApiValueError("Invalid value for parameter `page` when calling `list_projects_in_space_root`, must be a value less than or equal to `1000`")  # noqa: E501
         if self.api_client.client_side_validation and 'page' in local_var_params and local_var_params['page'] < 1:  # noqa: E501

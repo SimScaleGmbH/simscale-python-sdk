@@ -43,7 +43,8 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'topological_reference': 'TopologicalReference',
         'pressure_rgh': 'AmbientPBC',
         'gauge_pressure_rgh': 'AmbientPBC',
-        'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence'
+        'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence',
+        'passive_scalars': 'list[InletOutletPSBC]'
     }
 
     attribute_map = {
@@ -59,7 +60,8 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'topological_reference': 'topologicalReference',
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure_rgh': 'gaugePressureRgh',
-        'turbulence': 'turbulence'
+        'turbulence': 'turbulence',
+        'passive_scalars': 'passiveScalars'
     }
 
     discriminator_value_class_map = {
@@ -67,7 +69,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
 
-    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, temperature=None, relative_humidity=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, electric_boundary_condition=None, topological_reference=None, pressure_rgh=None, gauge_pressure_rgh=None, turbulence=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, temperature=None, relative_humidity=None, phase_fraction=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, electric_boundary_condition=None, topological_reference=None, pressure_rgh=None, gauge_pressure_rgh=None, turbulence=None, passive_scalars=None, local_vars_configuration=None):  # noqa: E501
         """OneOfEmbeddedBoundaryExternalFlowBoundaryCondition - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         self._pressure_rgh = None
         self._gauge_pressure_rgh = None
         self._turbulence = None
+        self._passive_scalars = None
         self.discriminator = 'type'
 
         self.type = type
@@ -113,6 +116,8 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
             self.gauge_pressure_rgh = gauge_pressure_rgh
         if turbulence is not None:
             self.turbulence = turbulence
+        if passive_scalars is not None:
+            self.passive_scalars = passive_scalars
 
     @property
     def type(self):
@@ -390,6 +395,29 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         """
 
         self._turbulence = turbulence
+
+    @property
+    def passive_scalars(self):
+        """Gets the passive_scalars of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
+
+        Please choose a boundary condition for passive scalar (T).  # noqa: E501
+
+        :return: The passive_scalars of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
+        :rtype: list[InletOutletPSBC]
+        """
+        return self._passive_scalars
+
+    @passive_scalars.setter
+    def passive_scalars(self, passive_scalars):
+        """Sets the passive_scalars of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.
+
+        Please choose a boundary condition for passive scalar (T).  # noqa: E501
+
+        :param passive_scalars: The passive_scalars of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
+        :type: list[InletOutletPSBC]
+        """
+
+        self._passive_scalars = passive_scalars
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

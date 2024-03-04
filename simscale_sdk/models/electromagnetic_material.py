@@ -35,6 +35,7 @@ class ElectromagneticMaterial(object):
         'material_behavior': 'OneOfElectromagneticMaterialMaterialBehavior',
         'electric_conductivity': 'DimensionalElectricConductivity',
         'magnetic_permeability_type': 'OneOfElectromagneticMaterialMagneticPermeabilityType',
+        'core_losses_type': 'OneOfElectromagneticMaterialCoreLossesType',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
         'material_library_reference': 'MaterialLibraryReference'
@@ -45,12 +46,13 @@ class ElectromagneticMaterial(object):
         'material_behavior': 'materialBehavior',
         'electric_conductivity': 'electricConductivity',
         'magnetic_permeability_type': 'magneticPermeabilityType',
+        'core_losses_type': 'coreLossesType',
         'topological_reference': 'topologicalReference',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, name=None, material_behavior=None, electric_conductivity=None, magnetic_permeability_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, material_behavior=None, electric_conductivity=None, magnetic_permeability_type=None, core_losses_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class ElectromagneticMaterial(object):
         self._material_behavior = None
         self._electric_conductivity = None
         self._magnetic_permeability_type = None
+        self._core_losses_type = None
         self._topological_reference = None
         self._built_in_material = None
         self._material_library_reference = None
@@ -73,6 +76,8 @@ class ElectromagneticMaterial(object):
             self.electric_conductivity = electric_conductivity
         if magnetic_permeability_type is not None:
             self.magnetic_permeability_type = magnetic_permeability_type
+        if core_losses_type is not None:
+            self.core_losses_type = core_losses_type
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if built_in_material is not None:
@@ -163,6 +168,27 @@ class ElectromagneticMaterial(object):
         """
 
         self._magnetic_permeability_type = magnetic_permeability_type
+
+    @property
+    def core_losses_type(self):
+        """Gets the core_losses_type of this ElectromagneticMaterial.  # noqa: E501
+
+
+        :return: The core_losses_type of this ElectromagneticMaterial.  # noqa: E501
+        :rtype: OneOfElectromagneticMaterialCoreLossesType
+        """
+        return self._core_losses_type
+
+    @core_losses_type.setter
+    def core_losses_type(self, core_losses_type):
+        """Sets the core_losses_type of this ElectromagneticMaterial.
+
+
+        :param core_losses_type: The core_losses_type of this ElectromagneticMaterial.  # noqa: E501
+        :type: OneOfElectromagneticMaterialCoreLossesType
+        """
+
+        self._core_losses_type = core_losses_type
 
     @property
     def topological_reference(self):

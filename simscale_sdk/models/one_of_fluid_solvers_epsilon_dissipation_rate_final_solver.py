@@ -34,7 +34,7 @@ class OneOfFluidSolversEpsilonDissipationRateFinalSolver(object):
         'type': 'str',
         'absolute_tolerance': 'float',
         'relative_tolerance': 'float',
-        'preconditioner': 'OneOfPBICGSolverPreconditioner',
+        'preconditioner': 'OneOfPBICGStabSolverPreconditioner',
         'smoother': 'str',
         'num_sweeps': 'int'
     }
@@ -50,6 +50,7 @@ class OneOfFluidSolversEpsilonDissipationRateFinalSolver(object):
 
     discriminator_value_class_map = {
         'PBICG': 'PBICGSolver',
+        'PBICGStab': 'PBICGStabSolver',
         'SMOOTH': 'SmoothSolver'
     }
 
@@ -168,7 +169,7 @@ class OneOfFluidSolversEpsilonDissipationRateFinalSolver(object):
 
 
         :return: The preconditioner of this OneOfFluidSolversEpsilonDissipationRateFinalSolver.  # noqa: E501
-        :rtype: OneOfPBICGSolverPreconditioner
+        :rtype: OneOfPBICGStabSolverPreconditioner
         """
         return self._preconditioner
 
@@ -178,7 +179,7 @@ class OneOfFluidSolversEpsilonDissipationRateFinalSolver(object):
 
 
         :param preconditioner: The preconditioner of this OneOfFluidSolversEpsilonDissipationRateFinalSolver.  # noqa: E501
-        :type: OneOfPBICGSolverPreconditioner
+        :type: OneOfPBICGStabSolverPreconditioner
         """
 
         self._preconditioner = preconditioner
@@ -203,7 +204,7 @@ class OneOfFluidSolversEpsilonDissipationRateFinalSolver(object):
         :param smoother: The smoother of this OneOfFluidSolversEpsilonDissipationRateFinalSolver.  # noqa: E501
         :type: str
         """
-        allowed_values = ["GAUSSSEIDEL", "SYMGAUSSSEIDEL"]  # noqa: E501
+        allowed_values = ["GAUSSSEIDEL", "SYMGAUSSSEIDEL", "DIC"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and smoother not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `smoother` ({0}), must be one of {1}"  # noqa: E501

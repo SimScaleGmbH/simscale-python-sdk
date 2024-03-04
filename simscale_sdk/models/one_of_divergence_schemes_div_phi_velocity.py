@@ -50,11 +50,10 @@ class OneOfDivergenceSchemesDivPhiVelocity(object):
         'BOUNDED_GAUSS_UPWIND': 'BoundedGaussUpwindDivergenceScheme',
         'GAUSS_UPWIND': 'GaussUpwindDivergenceScheme',
         'GAUSS_VANLEER': 'GaussVanleerDivergenceScheme',
-        'GAUSS_LINEARUPWINDV_GRAD_U_': 'GaussLinearUpwindVGradUDivergenceScheme',
-        'GAUSS_INTERFACECOMPRESSION': 'GaussInterfaceCompressionDivergenceScheme'
+        'GAUSS_LINEARUPWINDV_GRAD_U_': 'GaussLinearUpwindVGradUDivergenceScheme'
     }
 
-    def __init__(self, type='GAUSS_INTERFACECOMPRESSION', limiter_coefficient=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='GAUSS_LINEARUPWINDV_GRAD_U_', limiter_coefficient=None, local_vars_configuration=None):  # noqa: E501
         """OneOfDivergenceSchemesDivPhiVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,7 +71,7 @@ class OneOfDivergenceSchemesDivPhiVelocity(object):
     def type(self):
         """Gets the type of this OneOfDivergenceSchemesDivPhiVelocity.  # noqa: E501
 
-        Schema name: GaussInterfaceCompressionDivergenceScheme  # noqa: E501
+        Schema name: GaussLinearUpwindVGradUDivergenceScheme  # noqa: E501
 
         :return: The type of this OneOfDivergenceSchemesDivPhiVelocity.  # noqa: E501
         :rtype: str
@@ -83,7 +82,7 @@ class OneOfDivergenceSchemesDivPhiVelocity(object):
     def type(self, type):
         """Sets the type of this OneOfDivergenceSchemesDivPhiVelocity.
 
-        Schema name: GaussInterfaceCompressionDivergenceScheme  # noqa: E501
+        Schema name: GaussLinearUpwindVGradUDivergenceScheme  # noqa: E501
 
         :param type: The type of this OneOfDivergenceSchemesDivPhiVelocity.  # noqa: E501
         :type: str

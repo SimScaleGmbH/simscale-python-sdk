@@ -33,7 +33,7 @@ class MeshOperations(object):
     openapi_types = {
         'links': 'CollectionLinks',
         'meta': 'CollectionMeta',
-        'embedded': 'list[MeshOperation]'
+        'embedded': 'list[SlimMeshOperation]'
     }
 
     attribute_map = {
@@ -108,7 +108,7 @@ class MeshOperations(object):
 
 
         :return: The embedded of this MeshOperations.  # noqa: E501
-        :rtype: list[MeshOperation]
+        :rtype: list[SlimMeshOperation]
         """
         return self._embedded
 
@@ -118,7 +118,7 @@ class MeshOperations(object):
 
 
         :param embedded: The embedded of this MeshOperations.  # noqa: E501
-        :type: list[MeshOperation]
+        :type: list[SlimMeshOperation]
         """
 
         self._embedded = embedded

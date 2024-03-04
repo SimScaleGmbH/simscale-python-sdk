@@ -47,6 +47,8 @@ class FluidNumerics(object):
         'pressure_reference_cell': 'int',
         'pressure_reference_value': 'DimensionalPressure',
         'velocity_limit': 'DimensionalSpeed',
+        'max_voltage_initial_iterations': 'float',
+        'voltage_initial_tolerance': 'float',
         'residual_controls': 'ResidualControls',
         'solvers': 'FluidSolvers',
         'schemes': 'Schemes',
@@ -70,13 +72,15 @@ class FluidNumerics(object):
         'pressure_reference_cell': 'pressureReferenceCell',
         'pressure_reference_value': 'pressureReferenceValue',
         'velocity_limit': 'velocityLimit',
+        'max_voltage_initial_iterations': 'maxVoltageInitialIterations',
+        'voltage_initial_tolerance': 'voltageInitialTolerance',
         'residual_controls': 'residualControls',
         'solvers': 'solvers',
         'schemes': 'schemes',
         'stabilization': 'stabilization'
     }
 
-    def __init__(self, relaxation_type=None, relaxation_factor=None, radiation_resolution=None, momentum_predictor=None, transonic=None, num_outer_correctors=None, num_correctors=None, num_non_orthogonal_correctors=None, smoothing_parameter=None, damping_coefficient=None, num_alpha_spread_iterations=None, num_alpha_sweep_iterations=None, evaluate_turbulence_only_on_final_iteration=None, pressure_reference_cell=None, pressure_reference_value=None, velocity_limit=None, residual_controls=None, solvers=None, schemes=None, stabilization=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, relaxation_type=None, relaxation_factor=None, radiation_resolution=None, momentum_predictor=None, transonic=None, num_outer_correctors=None, num_correctors=None, num_non_orthogonal_correctors=None, smoothing_parameter=None, damping_coefficient=None, num_alpha_spread_iterations=None, num_alpha_sweep_iterations=None, evaluate_turbulence_only_on_final_iteration=None, pressure_reference_cell=None, pressure_reference_value=None, velocity_limit=None, max_voltage_initial_iterations=None, voltage_initial_tolerance=None, residual_controls=None, solvers=None, schemes=None, stabilization=None, local_vars_configuration=None):  # noqa: E501
         """FluidNumerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -98,6 +102,8 @@ class FluidNumerics(object):
         self._pressure_reference_cell = None
         self._pressure_reference_value = None
         self._velocity_limit = None
+        self._max_voltage_initial_iterations = None
+        self._voltage_initial_tolerance = None
         self._residual_controls = None
         self._solvers = None
         self._schemes = None
@@ -136,6 +142,10 @@ class FluidNumerics(object):
             self.pressure_reference_value = pressure_reference_value
         if velocity_limit is not None:
             self.velocity_limit = velocity_limit
+        if max_voltage_initial_iterations is not None:
+            self.max_voltage_initial_iterations = max_voltage_initial_iterations
+        if voltage_initial_tolerance is not None:
+            self.voltage_initial_tolerance = voltage_initial_tolerance
         if residual_controls is not None:
             self.residual_controls = residual_controls
         if solvers is not None:
@@ -526,6 +536,60 @@ class FluidNumerics(object):
         """
 
         self._velocity_limit = velocity_limit
+
+    @property
+    def max_voltage_initial_iterations(self):
+        """Gets the max_voltage_initial_iterations of this FluidNumerics.  # noqa: E501
+
+
+        :return: The max_voltage_initial_iterations of this FluidNumerics.  # noqa: E501
+        :rtype: float
+        """
+        return self._max_voltage_initial_iterations
+
+    @max_voltage_initial_iterations.setter
+    def max_voltage_initial_iterations(self, max_voltage_initial_iterations):
+        """Sets the max_voltage_initial_iterations of this FluidNumerics.
+
+
+        :param max_voltage_initial_iterations: The max_voltage_initial_iterations of this FluidNumerics.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                max_voltage_initial_iterations is not None and max_voltage_initial_iterations > 10000):  # noqa: E501
+            raise ValueError("Invalid value for `max_voltage_initial_iterations`, must be a value less than or equal to `10000`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                max_voltage_initial_iterations is not None and max_voltage_initial_iterations < 0):  # noqa: E501
+            raise ValueError("Invalid value for `max_voltage_initial_iterations`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._max_voltage_initial_iterations = max_voltage_initial_iterations
+
+    @property
+    def voltage_initial_tolerance(self):
+        """Gets the voltage_initial_tolerance of this FluidNumerics.  # noqa: E501
+
+
+        :return: The voltage_initial_tolerance of this FluidNumerics.  # noqa: E501
+        :rtype: float
+        """
+        return self._voltage_initial_tolerance
+
+    @voltage_initial_tolerance.setter
+    def voltage_initial_tolerance(self, voltage_initial_tolerance):
+        """Sets the voltage_initial_tolerance of this FluidNumerics.
+
+
+        :param voltage_initial_tolerance: The voltage_initial_tolerance of this FluidNumerics.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                voltage_initial_tolerance is not None and voltage_initial_tolerance > 1):  # noqa: E501
+            raise ValueError("Invalid value for `voltage_initial_tolerance`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                voltage_initial_tolerance is not None and voltage_initial_tolerance < 1.0E-16):  # noqa: E501
+            raise ValueError("Invalid value for `voltage_initial_tolerance`, must be a value greater than or equal to `1.0E-16`")  # noqa: E501
+
+        self._voltage_initial_tolerance = voltage_initial_tolerance
 
     @property
     def residual_controls(self):

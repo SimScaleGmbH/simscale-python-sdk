@@ -31,148 +31,106 @@ class AdvancedConcepts(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'rotating_zones': 'list[OneOfAdvancedConceptsRotatingZones]',
-        'porous_mediums': 'list[OneOfAdvancedConceptsPorousMediums]',
-        'solid_body_motions': 'list[OneOfAdvancedConceptsSolidBodyMotions]',
-        'power_sources': 'list[OneOfAdvancedConceptsPowerSources]',
+        'thermal_contact_resistance': 'list[OneOfAdvancedConceptsThermalContactResistance]',
+        'humidity_sources': 'list[OneOfAdvancedConceptsHumiditySources]',
         'momentum_sources': 'list[OneOfAdvancedConceptsMomentumSources]',
         'passive_scalar_sources': 'list[OneOfAdvancedConceptsPassiveScalarSources]',
-        'thermal_resistance_networks': 'list[OneOfAdvancedConceptsThermalResistanceNetworks]',
-        'thermal_contact_resistance': 'list[OneOfAdvancedConceptsThermalContactResistance]',
-        'humidity_sources': 'list[OneOfAdvancedConceptsHumiditySources]'
+        'porous_mediums': 'list[OneOfAdvancedConceptsPorousMediums]',
+        'power_sources': 'list[OneOfAdvancedConceptsPowerSources]',
+        'rotating_zones': 'list[OneOfAdvancedConceptsRotatingZones]',
+        'solid_body_motions': 'list[OneOfAdvancedConceptsSolidBodyMotions]',
+        'thermal_resistance_networks': 'list[OneOfAdvancedConceptsThermalResistanceNetworks]'
     }
 
     attribute_map = {
-        'rotating_zones': 'rotatingZones',
-        'porous_mediums': 'porousMediums',
-        'solid_body_motions': 'solidBodyMotions',
-        'power_sources': 'powerSources',
+        'thermal_contact_resistance': 'thermalContactResistance',
+        'humidity_sources': 'humiditySources',
         'momentum_sources': 'momentumSources',
         'passive_scalar_sources': 'passiveScalarSources',
-        'thermal_resistance_networks': 'thermalResistanceNetworks',
-        'thermal_contact_resistance': 'thermalContactResistance',
-        'humidity_sources': 'humiditySources'
+        'porous_mediums': 'porousMediums',
+        'power_sources': 'powerSources',
+        'rotating_zones': 'rotatingZones',
+        'solid_body_motions': 'solidBodyMotions',
+        'thermal_resistance_networks': 'thermalResistanceNetworks'
     }
 
-    def __init__(self, rotating_zones=None, porous_mediums=None, solid_body_motions=None, power_sources=None, momentum_sources=None, passive_scalar_sources=None, thermal_resistance_networks=None, thermal_contact_resistance=None, humidity_sources=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, thermal_contact_resistance=None, humidity_sources=None, momentum_sources=None, passive_scalar_sources=None, porous_mediums=None, power_sources=None, rotating_zones=None, solid_body_motions=None, thermal_resistance_networks=None, local_vars_configuration=None):  # noqa: E501
         """AdvancedConcepts - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._rotating_zones = None
-        self._porous_mediums = None
-        self._solid_body_motions = None
-        self._power_sources = None
-        self._momentum_sources = None
-        self._passive_scalar_sources = None
-        self._thermal_resistance_networks = None
         self._thermal_contact_resistance = None
         self._humidity_sources = None
+        self._momentum_sources = None
+        self._passive_scalar_sources = None
+        self._porous_mediums = None
+        self._power_sources = None
+        self._rotating_zones = None
+        self._solid_body_motions = None
+        self._thermal_resistance_networks = None
         self.discriminator = None
 
-        if rotating_zones is not None:
-            self.rotating_zones = rotating_zones
-        if porous_mediums is not None:
-            self.porous_mediums = porous_mediums
-        if solid_body_motions is not None:
-            self.solid_body_motions = solid_body_motions
-        if power_sources is not None:
-            self.power_sources = power_sources
-        if momentum_sources is not None:
-            self.momentum_sources = momentum_sources
-        if passive_scalar_sources is not None:
-            self.passive_scalar_sources = passive_scalar_sources
-        if thermal_resistance_networks is not None:
-            self.thermal_resistance_networks = thermal_resistance_networks
         if thermal_contact_resistance is not None:
             self.thermal_contact_resistance = thermal_contact_resistance
         if humidity_sources is not None:
             self.humidity_sources = humidity_sources
+        if momentum_sources is not None:
+            self.momentum_sources = momentum_sources
+        if passive_scalar_sources is not None:
+            self.passive_scalar_sources = passive_scalar_sources
+        if porous_mediums is not None:
+            self.porous_mediums = porous_mediums
+        if power_sources is not None:
+            self.power_sources = power_sources
+        if rotating_zones is not None:
+            self.rotating_zones = rotating_zones
+        if solid_body_motions is not None:
+            self.solid_body_motions = solid_body_motions
+        if thermal_resistance_networks is not None:
+            self.thermal_resistance_networks = thermal_resistance_networks
 
     @property
-    def rotating_zones(self):
-        """Gets the rotating_zones of this AdvancedConcepts.  # noqa: E501
+    def thermal_contact_resistance(self):
+        """Gets the thermal_contact_resistance of this AdvancedConcepts.  # noqa: E501
 
 
-        :return: The rotating_zones of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[OneOfAdvancedConceptsRotatingZones]
+        :return: The thermal_contact_resistance of this AdvancedConcepts.  # noqa: E501
+        :rtype: list[OneOfAdvancedConceptsThermalContactResistance]
         """
-        return self._rotating_zones
+        return self._thermal_contact_resistance
 
-    @rotating_zones.setter
-    def rotating_zones(self, rotating_zones):
-        """Sets the rotating_zones of this AdvancedConcepts.
+    @thermal_contact_resistance.setter
+    def thermal_contact_resistance(self, thermal_contact_resistance):
+        """Sets the thermal_contact_resistance of this AdvancedConcepts.
 
 
-        :param rotating_zones: The rotating_zones of this AdvancedConcepts.  # noqa: E501
-        :type: list[OneOfAdvancedConceptsRotatingZones]
+        :param thermal_contact_resistance: The thermal_contact_resistance of this AdvancedConcepts.  # noqa: E501
+        :type: list[OneOfAdvancedConceptsThermalContactResistance]
         """
 
-        self._rotating_zones = rotating_zones
+        self._thermal_contact_resistance = thermal_contact_resistance
 
     @property
-    def porous_mediums(self):
-        """Gets the porous_mediums of this AdvancedConcepts.  # noqa: E501
+    def humidity_sources(self):
+        """Gets the humidity_sources of this AdvancedConcepts.  # noqa: E501
 
 
-        :return: The porous_mediums of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[OneOfAdvancedConceptsPorousMediums]
+        :return: The humidity_sources of this AdvancedConcepts.  # noqa: E501
+        :rtype: list[OneOfAdvancedConceptsHumiditySources]
         """
-        return self._porous_mediums
+        return self._humidity_sources
 
-    @porous_mediums.setter
-    def porous_mediums(self, porous_mediums):
-        """Sets the porous_mediums of this AdvancedConcepts.
-
-
-        :param porous_mediums: The porous_mediums of this AdvancedConcepts.  # noqa: E501
-        :type: list[OneOfAdvancedConceptsPorousMediums]
-        """
-
-        self._porous_mediums = porous_mediums
-
-    @property
-    def solid_body_motions(self):
-        """Gets the solid_body_motions of this AdvancedConcepts.  # noqa: E501
+    @humidity_sources.setter
+    def humidity_sources(self, humidity_sources):
+        """Sets the humidity_sources of this AdvancedConcepts.
 
 
-        :return: The solid_body_motions of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[OneOfAdvancedConceptsSolidBodyMotions]
-        """
-        return self._solid_body_motions
-
-    @solid_body_motions.setter
-    def solid_body_motions(self, solid_body_motions):
-        """Sets the solid_body_motions of this AdvancedConcepts.
-
-
-        :param solid_body_motions: The solid_body_motions of this AdvancedConcepts.  # noqa: E501
-        :type: list[OneOfAdvancedConceptsSolidBodyMotions]
+        :param humidity_sources: The humidity_sources of this AdvancedConcepts.  # noqa: E501
+        :type: list[OneOfAdvancedConceptsHumiditySources]
         """
 
-        self._solid_body_motions = solid_body_motions
-
-    @property
-    def power_sources(self):
-        """Gets the power_sources of this AdvancedConcepts.  # noqa: E501
-
-
-        :return: The power_sources of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[OneOfAdvancedConceptsPowerSources]
-        """
-        return self._power_sources
-
-    @power_sources.setter
-    def power_sources(self, power_sources):
-        """Sets the power_sources of this AdvancedConcepts.
-
-
-        :param power_sources: The power_sources of this AdvancedConcepts.  # noqa: E501
-        :type: list[OneOfAdvancedConceptsPowerSources]
-        """
-
-        self._power_sources = power_sources
+        self._humidity_sources = humidity_sources
 
     @property
     def momentum_sources(self):
@@ -217,6 +175,90 @@ class AdvancedConcepts(object):
         self._passive_scalar_sources = passive_scalar_sources
 
     @property
+    def porous_mediums(self):
+        """Gets the porous_mediums of this AdvancedConcepts.  # noqa: E501
+
+
+        :return: The porous_mediums of this AdvancedConcepts.  # noqa: E501
+        :rtype: list[OneOfAdvancedConceptsPorousMediums]
+        """
+        return self._porous_mediums
+
+    @porous_mediums.setter
+    def porous_mediums(self, porous_mediums):
+        """Sets the porous_mediums of this AdvancedConcepts.
+
+
+        :param porous_mediums: The porous_mediums of this AdvancedConcepts.  # noqa: E501
+        :type: list[OneOfAdvancedConceptsPorousMediums]
+        """
+
+        self._porous_mediums = porous_mediums
+
+    @property
+    def power_sources(self):
+        """Gets the power_sources of this AdvancedConcepts.  # noqa: E501
+
+
+        :return: The power_sources of this AdvancedConcepts.  # noqa: E501
+        :rtype: list[OneOfAdvancedConceptsPowerSources]
+        """
+        return self._power_sources
+
+    @power_sources.setter
+    def power_sources(self, power_sources):
+        """Sets the power_sources of this AdvancedConcepts.
+
+
+        :param power_sources: The power_sources of this AdvancedConcepts.  # noqa: E501
+        :type: list[OneOfAdvancedConceptsPowerSources]
+        """
+
+        self._power_sources = power_sources
+
+    @property
+    def rotating_zones(self):
+        """Gets the rotating_zones of this AdvancedConcepts.  # noqa: E501
+
+
+        :return: The rotating_zones of this AdvancedConcepts.  # noqa: E501
+        :rtype: list[OneOfAdvancedConceptsRotatingZones]
+        """
+        return self._rotating_zones
+
+    @rotating_zones.setter
+    def rotating_zones(self, rotating_zones):
+        """Sets the rotating_zones of this AdvancedConcepts.
+
+
+        :param rotating_zones: The rotating_zones of this AdvancedConcepts.  # noqa: E501
+        :type: list[OneOfAdvancedConceptsRotatingZones]
+        """
+
+        self._rotating_zones = rotating_zones
+
+    @property
+    def solid_body_motions(self):
+        """Gets the solid_body_motions of this AdvancedConcepts.  # noqa: E501
+
+
+        :return: The solid_body_motions of this AdvancedConcepts.  # noqa: E501
+        :rtype: list[OneOfAdvancedConceptsSolidBodyMotions]
+        """
+        return self._solid_body_motions
+
+    @solid_body_motions.setter
+    def solid_body_motions(self, solid_body_motions):
+        """Sets the solid_body_motions of this AdvancedConcepts.
+
+
+        :param solid_body_motions: The solid_body_motions of this AdvancedConcepts.  # noqa: E501
+        :type: list[OneOfAdvancedConceptsSolidBodyMotions]
+        """
+
+        self._solid_body_motions = solid_body_motions
+
+    @property
     def thermal_resistance_networks(self):
         """Gets the thermal_resistance_networks of this AdvancedConcepts.  # noqa: E501
 
@@ -236,48 +278,6 @@ class AdvancedConcepts(object):
         """
 
         self._thermal_resistance_networks = thermal_resistance_networks
-
-    @property
-    def thermal_contact_resistance(self):
-        """Gets the thermal_contact_resistance of this AdvancedConcepts.  # noqa: E501
-
-
-        :return: The thermal_contact_resistance of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[OneOfAdvancedConceptsThermalContactResistance]
-        """
-        return self._thermal_contact_resistance
-
-    @thermal_contact_resistance.setter
-    def thermal_contact_resistance(self, thermal_contact_resistance):
-        """Sets the thermal_contact_resistance of this AdvancedConcepts.
-
-
-        :param thermal_contact_resistance: The thermal_contact_resistance of this AdvancedConcepts.  # noqa: E501
-        :type: list[OneOfAdvancedConceptsThermalContactResistance]
-        """
-
-        self._thermal_contact_resistance = thermal_contact_resistance
-
-    @property
-    def humidity_sources(self):
-        """Gets the humidity_sources of this AdvancedConcepts.  # noqa: E501
-
-
-        :return: The humidity_sources of this AdvancedConcepts.  # noqa: E501
-        :rtype: list[OneOfAdvancedConceptsHumiditySources]
-        """
-        return self._humidity_sources
-
-    @humidity_sources.setter
-    def humidity_sources(self, humidity_sources):
-        """Sets the humidity_sources of this AdvancedConcepts.
-
-
-        :param humidity_sources: The humidity_sources of this AdvancedConcepts.  # noqa: E501
-        :type: list[OneOfAdvancedConceptsHumiditySources]
-        """
-
-        self._humidity_sources = humidity_sources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

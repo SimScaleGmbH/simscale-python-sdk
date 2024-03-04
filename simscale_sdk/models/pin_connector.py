@@ -78,7 +78,7 @@ class PinConnector(object):
     def type(self):
         """Gets the type of this PinConnector.  # noqa: E501
 
-        Schema name: PinConnector  # noqa: E501
+        <p>Connect multiple bodies via a virtual pin <br /><br /><b>Usage</b>: <br /><ul><li>Define a separate pin connector item for each virtual pin</li><li>Assign only cylindrical surfaces</li><ul/><b>Behavior</b>:<br /><ul><li>Option to connect bodies to bodies or bodies to the ground via virtual pins</li><li>Bodies freely rotate relative to one another about the virtual pin axis</li><li>Users have full control over axial translation and rotation of the connection with the ability to define torsional and axial spring stiffness</li></ul></p>  Schema name: PinConnector  # noqa: E501
 
         :return: The type of this PinConnector.  # noqa: E501
         :rtype: str
@@ -89,7 +89,7 @@ class PinConnector(object):
     def type(self, type):
         """Sets the type of this PinConnector.
 
-        Schema name: PinConnector  # noqa: E501
+        <p>Connect multiple bodies via a virtual pin <br /><br /><b>Usage</b>: <br /><ul><li>Define a separate pin connector item for each virtual pin</li><li>Assign only cylindrical surfaces</li><ul/><b>Behavior</b>:<br /><ul><li>Option to connect bodies to bodies or bodies to the ground via virtual pins</li><li>Bodies freely rotate relative to one another about the virtual pin axis</li><li>Users have full control over axial translation and rotation of the connection with the ability to define torsional and axial spring stiffness</li></ul></p>  Schema name: PinConnector  # noqa: E501
 
         :param type: The type of this PinConnector.  # noqa: E501
         :type: str
@@ -124,6 +124,7 @@ class PinConnector(object):
     def interaction(self):
         """Gets the interaction of this PinConnector.  # noqa: E501
 
+        <p>Select an interaction option<br /><ul><li><b>Body to body</b> - Two or more bodies may be connected to each other via a single virtual pin. The pin will move with the bodies.</li><li><b>Body to ground</b> - Two or more bodies may be connected to the ground via a single virtual pin. The pin remains stationary.</li></ul></p>  # noqa: E501
 
         :return: The interaction of this PinConnector.  # noqa: E501
         :rtype: str
@@ -134,6 +135,7 @@ class PinConnector(object):
     def interaction(self, interaction):
         """Sets the interaction of this PinConnector.
 
+        <p>Select an interaction option<br /><ul><li><b>Body to body</b> - Two or more bodies may be connected to each other via a single virtual pin. The pin will move with the bodies.</li><li><b>Body to ground</b> - Two or more bodies may be connected to the ground via a single virtual pin. The pin remains stationary.</li></ul></p>  # noqa: E501
 
         :param interaction: The interaction of this PinConnector.  # noqa: E501
         :type: str

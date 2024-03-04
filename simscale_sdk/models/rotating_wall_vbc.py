@@ -33,16 +33,18 @@ class RotatingWallVBC(object):
     openapi_types = {
         'type': 'str',
         'rotation': 'AngularRotation',
-        'turbulence_wall': 'str'
+        'turbulence_wall': 'str',
+        'wall_contact_model': 'list[WallContactAngle]'
     }
 
     attribute_map = {
         'type': 'type',
         'rotation': 'rotation',
-        'turbulence_wall': 'turbulenceWall'
+        'turbulence_wall': 'turbulenceWall',
+        'wall_contact_model': 'wallContactModel'
     }
 
-    def __init__(self, type='ROTATING_WALL_VELOCITY', rotation=None, turbulence_wall=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ROTATING_WALL_VELOCITY', rotation=None, turbulence_wall=None, wall_contact_model=None, local_vars_configuration=None):  # noqa: E501
         """RotatingWallVBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class RotatingWallVBC(object):
         self._type = None
         self._rotation = None
         self._turbulence_wall = None
+        self._wall_contact_model = None
         self.discriminator = None
 
         self.type = type
@@ -58,6 +61,8 @@ class RotatingWallVBC(object):
             self.rotation = rotation
         if turbulence_wall is not None:
             self.turbulence_wall = turbulence_wall
+        if wall_contact_model is not None:
+            self.wall_contact_model = wall_contact_model
 
     @property
     def type(self):
@@ -131,6 +136,27 @@ class RotatingWallVBC(object):
             )
 
         self._turbulence_wall = turbulence_wall
+
+    @property
+    def wall_contact_model(self):
+        """Gets the wall_contact_model of this RotatingWallVBC.  # noqa: E501
+
+
+        :return: The wall_contact_model of this RotatingWallVBC.  # noqa: E501
+        :rtype: list[WallContactAngle]
+        """
+        return self._wall_contact_model
+
+    @wall_contact_model.setter
+    def wall_contact_model(self, wall_contact_model):
+        """Sets the wall_contact_model of this RotatingWallVBC.
+
+
+        :param wall_contact_model: The wall_contact_model of this RotatingWallVBC.  # noqa: E501
+        :type: list[WallContactAngle]
+        """
+
+        self._wall_contact_model = wall_contact_model
 
     def to_dict(self):
         """Returns the model properties as a dict"""

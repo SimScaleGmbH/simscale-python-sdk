@@ -36,7 +36,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
         'velocity': 'OneOfWallBCVelocity',
         'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence',
         'temperature': 'AmbientTBC',
-        'passive_scalars': 'list[FixedValuePSBC]',
+        'passive_scalars': 'list[InletOutletPSBC]',
         'phase_fraction': 'OneOfWallBCPhaseFraction',
         'associated_phase_fractions': 'list[PhaseNameAndFixedValuePFBC]',
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
@@ -266,7 +266,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
         Please choose a boundary condition for passive scalar (T).  # noqa: E501
 
         :return: The passive_scalars of this OneOfEmbeddedBoundaryBoundaryConditions.  # noqa: E501
-        :rtype: list[FixedValuePSBC]
+        :rtype: list[InletOutletPSBC]
         """
         return self._passive_scalars
 
@@ -277,7 +277,7 @@ class OneOfEmbeddedBoundaryBoundaryConditions(object):
         Please choose a boundary condition for passive scalar (T).  # noqa: E501
 
         :param passive_scalars: The passive_scalars of this OneOfEmbeddedBoundaryBoundaryConditions.  # noqa: E501
-        :type: list[FixedValuePSBC]
+        :type: list[InletOutletPSBC]
         """
 
         self._passive_scalars = passive_scalars

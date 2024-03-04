@@ -37,7 +37,8 @@ class WindRose(object):
         'exposure_categories': 'list[str]',
         'wind_engineering_standard': 'str',
         'wind_data_source': 'str',
-        'add_surface_roughness': 'bool'
+        'add_surface_roughness': 'bool',
+        'gust_factor': 'float'
     }
 
     attribute_map = {
@@ -47,10 +48,11 @@ class WindRose(object):
         'exposure_categories': 'exposureCategories',
         'wind_engineering_standard': 'windEngineeringStandard',
         'wind_data_source': 'windDataSource',
-        'add_surface_roughness': 'addSurfaceRoughness'
+        'add_surface_roughness': 'addSurfaceRoughness',
+        'gust_factor': 'gustFactor'
     }
 
-    def __init__(self, num_directions=None, velocity_buckets=None, velocity_unit='m/s', exposure_categories=None, wind_engineering_standard=None, wind_data_source=None, add_surface_roughness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, num_directions=None, velocity_buckets=None, velocity_unit='m/s', exposure_categories=None, wind_engineering_standard=None, wind_data_source=None, add_surface_roughness=None, gust_factor=None, local_vars_configuration=None):  # noqa: E501
         """WindRose - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -63,6 +65,7 @@ class WindRose(object):
         self._wind_engineering_standard = None
         self._wind_data_source = None
         self._add_surface_roughness = None
+        self._gust_factor = None
         self.discriminator = None
 
         if num_directions is not None:
@@ -78,6 +81,8 @@ class WindRose(object):
             self.wind_data_source = wind_data_source
         if add_surface_roughness is not None:
             self.add_surface_roughness = add_surface_roughness
+        if gust_factor is not None:
+            self.gust_factor = gust_factor
 
     @property
     def num_directions(self):
@@ -194,7 +199,7 @@ class WindRose(object):
         :param wind_engineering_standard: The wind_engineering_standard of this WindRose.  # noqa: E501
         :type: str
         """
-        allowed_values = ["EU", "AS_NZS", "NEN8100", "LONDON"]  # noqa: E501
+        allowed_values = ["EU", "AS_NZS", "NEN8100", "LONDON", "AIJ"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and wind_engineering_standard not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `wind_engineering_standard` ({0}), must be one of {1}"  # noqa: E501
@@ -250,6 +255,33 @@ class WindRose(object):
         """
 
         self._add_surface_roughness = add_surface_roughness
+
+    @property
+    def gust_factor(self):
+        """Gets the gust_factor of this WindRose.  # noqa: E501
+
+
+        :return: The gust_factor of this WindRose.  # noqa: E501
+        :rtype: float
+        """
+        return self._gust_factor
+
+    @gust_factor.setter
+    def gust_factor(self, gust_factor):
+        """Sets the gust_factor of this WindRose.
+
+
+        :param gust_factor: The gust_factor of this WindRose.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                gust_factor is not None and gust_factor > 3.5):  # noqa: E501
+            raise ValueError("Invalid value for `gust_factor`, must be a value less than or equal to `3.5`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                gust_factor is not None and gust_factor < 1.5):  # noqa: E501
+            raise ValueError("Invalid value for `gust_factor`, must be a value greater than or equal to `1.5`")  # noqa: E501
+
+        self._gust_factor = gust_factor
 
     def to_dict(self):
         """Returns the model properties as a dict"""

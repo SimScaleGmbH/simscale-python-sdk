@@ -45,6 +45,7 @@ class EmbeddedBoundary(object):
         'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
         'is_compressible': 'bool',
         'enable_radiation': 'bool',
+        'enable_humidity_model': 'bool',
         'enable_joule_heating': 'bool',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfEmbeddedBoundaryTimeDependency',
@@ -66,13 +67,14 @@ class EmbeddedBoundary(object):
         'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
         'is_compressible': 'isCompressible',
         'enable_radiation': 'enableRadiation',
+        'enable_humidity_model': 'enableHumidityModel',
         'enable_joule_heating': 'enableJouleHeating',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
         'num_of_passive_species': 'numOfPassiveSpecies'
     }
 
-    def __init__(self, type='EMBEDDED_BOUNDARY', allow_external_flow=None, model=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMBEDDED_BOUNDARY', allow_external_flow=None, model=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_humidity_model=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, local_vars_configuration=None):  # noqa: E501
         """EmbeddedBoundary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -92,6 +94,7 @@ class EmbeddedBoundary(object):
         self._embedded_boundary_meshing = None
         self._is_compressible = None
         self._enable_radiation = None
+        self._enable_humidity_model = None
         self._enable_joule_heating = None
         self._turbulence_model = None
         self._time_dependency = None
@@ -125,6 +128,8 @@ class EmbeddedBoundary(object):
             self.is_compressible = is_compressible
         if enable_radiation is not None:
             self.enable_radiation = enable_radiation
+        if enable_humidity_model is not None:
+            self.enable_humidity_model = enable_humidity_model
         if enable_joule_heating is not None:
             self.enable_joule_heating = enable_joule_heating
         if turbulence_model is not None:
@@ -437,6 +442,29 @@ class EmbeddedBoundary(object):
         """
 
         self._enable_radiation = enable_radiation
+
+    @property
+    def enable_humidity_model(self):
+        """Gets the enable_humidity_model of this EmbeddedBoundary.  # noqa: E501
+
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of <b>0° to 100°C</b>. </li></ul></p><a href= https://www.simscale.com/docs/simulation-setup/global-settings/humidity-modeling/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :return: The enable_humidity_model of this EmbeddedBoundary.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_humidity_model
+
+    @enable_humidity_model.setter
+    def enable_humidity_model(self, enable_humidity_model):
+        """Sets the enable_humidity_model of this EmbeddedBoundary.
+
+        <b>Humidity model</b> to simulate wet air. First turn on the <em>compressible</em> toggle to enable it. The simulation will take the effect of humid air on the flow field into account. Dry air is heavier than wet air and hence sinks. The model does not account for condensation and evaporation and is not applicable in cases where this is of concern, for example dehumidifiers. It is suitable for HVAC analysis and for temperature ranges of <b>0° to 100°C</b>. </li></ul></p><a href= https://www.simscale.com/docs/simulation-setup/global-settings/humidity-modeling/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :param enable_humidity_model: The enable_humidity_model of this EmbeddedBoundary.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_humidity_model = enable_humidity_model
 
     @property
     def enable_joule_heating(self):

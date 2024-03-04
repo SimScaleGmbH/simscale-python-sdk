@@ -36,7 +36,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
         'velocity': 'OneOfCustomFluidBCVelocity',
         'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence',
         'temperature': 'AmbientTBC',
-        'passive_scalars': 'list[OneOfCustomFluidBCPassiveScalars]',
+        'passive_scalars': 'list[InletOutletPSBC]',
         'phase_fraction': 'OneOfCustomFluidBCPhaseFraction',
         'associated_phase_fractions': 'list[PhaseNameAndFixedValuePFBC]',
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
@@ -314,7 +314,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
         Please choose a boundary condition for passive scalar (T).  # noqa: E501
 
         :return: The passive_scalars of this OneOfConvectiveHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: list[OneOfCustomFluidBCPassiveScalars]
+        :rtype: list[InletOutletPSBC]
         """
         return self._passive_scalars
 
@@ -325,7 +325,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
         Please choose a boundary condition for passive scalar (T).  # noqa: E501
 
         :param passive_scalars: The passive_scalars of this OneOfConvectiveHeatTransferBoundaryConditions.  # noqa: E501
-        :type: list[OneOfCustomFluidBCPassiveScalars]
+        :type: list[InletOutletPSBC]
         """
 
         self._passive_scalars = passive_scalars
