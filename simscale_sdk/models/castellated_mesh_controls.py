@@ -214,8 +214,8 @@ class CastellatedMeshControls(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
-                cells_between_levels is not None and cells_between_levels < 0):  # noqa: E501
-            raise ValueError("Invalid value for `cells_between_levels`, must be a value greater than or equal to `0`")  # noqa: E501
+                cells_between_levels is not None and cells_between_levels < 1):  # noqa: E501
+            raise ValueError("Invalid value for `cells_between_levels`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._cells_between_levels = cells_between_levels
 

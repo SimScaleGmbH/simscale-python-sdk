@@ -33,7 +33,7 @@ class HarmonicAnalysis(object):
     openapi_types = {
         'type': 'str',
         'connection_groups': 'list[Contact]',
-        'connectors': 'list[PinConnector]',
+        'connectors': 'list[OneOfHarmonicAnalysisConnectors]',
         'element_technology': 'SolidElementTechnology',
         'global_physics': 'SolidGlobalPhysics',
         'model': 'SolidModel',
@@ -161,7 +161,7 @@ class HarmonicAnalysis(object):
 
 
         :return: The connectors of this HarmonicAnalysis.  # noqa: E501
-        :rtype: list[PinConnector]
+        :rtype: list[OneOfHarmonicAnalysisConnectors]
         """
         return self._connectors
 
@@ -171,7 +171,7 @@ class HarmonicAnalysis(object):
 
 
         :param connectors: The connectors of this HarmonicAnalysis.  # noqa: E501
-        :type: list[PinConnector]
+        :type: list[OneOfHarmonicAnalysisConnectors]
         """
 
         self._connectors = connectors

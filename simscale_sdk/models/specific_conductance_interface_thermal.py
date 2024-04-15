@@ -32,15 +32,17 @@ class SpecificConductanceInterfaceThermal(object):
     """
     openapi_types = {
         'type': 'str',
-        'contact_conductance': 'DimensionalThermalTransmittance'
+        'contact_conductance': 'DimensionalThermalTransmittance',
+        'electric_conductance': 'DimensionalSpecificElectricConductance'
     }
 
     attribute_map = {
         'type': 'type',
-        'contact_conductance': 'contactConductance'
+        'contact_conductance': 'contactConductance',
+        'electric_conductance': 'electricConductance'
     }
 
-    def __init__(self, type='SPECIFIC_CONDUCTANCE', contact_conductance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SPECIFIC_CONDUCTANCE', contact_conductance=None, electric_conductance=None, local_vars_configuration=None):  # noqa: E501
         """SpecificConductanceInterfaceThermal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class SpecificConductanceInterfaceThermal(object):
 
         self._type = None
         self._contact_conductance = None
+        self._electric_conductance = None
         self.discriminator = None
 
         self.type = type
         if contact_conductance is not None:
             self.contact_conductance = contact_conductance
+        if electric_conductance is not None:
+            self.electric_conductance = electric_conductance
 
     @property
     def type(self):
@@ -99,6 +104,27 @@ class SpecificConductanceInterfaceThermal(object):
         """
 
         self._contact_conductance = contact_conductance
+
+    @property
+    def electric_conductance(self):
+        """Gets the electric_conductance of this SpecificConductanceInterfaceThermal.  # noqa: E501
+
+
+        :return: The electric_conductance of this SpecificConductanceInterfaceThermal.  # noqa: E501
+        :rtype: DimensionalSpecificElectricConductance
+        """
+        return self._electric_conductance
+
+    @electric_conductance.setter
+    def electric_conductance(self, electric_conductance):
+        """Sets the electric_conductance of this SpecificConductanceInterfaceThermal.
+
+
+        :param electric_conductance: The electric_conductance of this SpecificConductanceInterfaceThermal.  # noqa: E501
+        :type: DimensionalSpecificElectricConductance
+        """
+
+        self._electric_conductance = electric_conductance
 
     def to_dict(self):
         """Returns the model properties as a dict"""

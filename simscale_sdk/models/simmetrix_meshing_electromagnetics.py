@@ -35,6 +35,7 @@ class SimmetrixMeshingElectromagnetics(object):
         'sizing': 'AutomaticMeshSizingSimmetrix',
         'refinements': 'list[OneOfSimmetrixMeshingElectromagneticsRefinements]',
         'num_of_processors': 'int',
+        'max_meshing_run_time': 'DimensionalTime',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixEmSettings'
     }
 
@@ -43,10 +44,11 @@ class SimmetrixMeshingElectromagnetics(object):
         'sizing': 'sizing',
         'refinements': 'refinements',
         'num_of_processors': 'numOfProcessors',
+        'max_meshing_run_time': 'maxMeshingRunTime',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings'
     }
 
-    def __init__(self, type='SIMMETRIX_MESHING_ELECTROMAGNETICS', sizing=None, refinements=None, num_of_processors=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_MESHING_ELECTROMAGNETICS', sizing=None, refinements=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixMeshingElectromagnetics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +58,7 @@ class SimmetrixMeshingElectromagnetics(object):
         self._sizing = None
         self._refinements = None
         self._num_of_processors = None
+        self._max_meshing_run_time = None
         self._advanced_simmetrix_settings = None
         self.discriminator = None
 
@@ -66,6 +69,8 @@ class SimmetrixMeshingElectromagnetics(object):
             self.refinements = refinements
         if num_of_processors is not None:
             self.num_of_processors = num_of_processors
+        if max_meshing_run_time is not None:
+            self.max_meshing_run_time = max_meshing_run_time
         if advanced_simmetrix_settings is not None:
             self.advanced_simmetrix_settings = advanced_simmetrix_settings
 
@@ -164,6 +169,27 @@ class SimmetrixMeshingElectromagnetics(object):
             )
 
         self._num_of_processors = num_of_processors
+
+    @property
+    def max_meshing_run_time(self):
+        """Gets the max_meshing_run_time of this SimmetrixMeshingElectromagnetics.  # noqa: E501
+
+
+        :return: The max_meshing_run_time of this SimmetrixMeshingElectromagnetics.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._max_meshing_run_time
+
+    @max_meshing_run_time.setter
+    def max_meshing_run_time(self, max_meshing_run_time):
+        """Sets the max_meshing_run_time of this SimmetrixMeshingElectromagnetics.
+
+
+        :param max_meshing_run_time: The max_meshing_run_time of this SimmetrixMeshingElectromagnetics.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._max_meshing_run_time = max_meshing_run_time
 
     @property
     def advanced_simmetrix_settings(self):

@@ -33,7 +33,7 @@ class DynamicAnalysis(object):
     openapi_types = {
         'type': 'str',
         'connection_groups': 'list[OneOfDynamicAnalysisConnectionGroups]',
-        'connectors': 'list[PinConnector]',
+        'connectors': 'list[OneOfDynamicAnalysisConnectors]',
         'element_technology': 'SolidElementTechnology',
         'model': 'SolidModel',
         'materials': 'list[SolidMaterial]',
@@ -156,7 +156,7 @@ class DynamicAnalysis(object):
 
 
         :return: The connectors of this DynamicAnalysis.  # noqa: E501
-        :rtype: list[PinConnector]
+        :rtype: list[OneOfDynamicAnalysisConnectors]
         """
         return self._connectors
 
@@ -166,7 +166,7 @@ class DynamicAnalysis(object):
 
 
         :param connectors: The connectors of this DynamicAnalysis.  # noqa: E501
-        :type: list[PinConnector]
+        :type: list[OneOfDynamicAnalysisConnectors]
         """
 
         self._connectors = connectors

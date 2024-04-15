@@ -52,6 +52,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'material_library_reference': 'MaterialLibraryReference',
         'specie': 'SpecieDefault',
         'transport': 'OneOfFluidCompressibleMaterialTransport',
+        'schmidt_number': 'float',
         'equation_of_state': 'OneOfFluidCompressibleMaterialEquationOfState'
     }
 
@@ -77,6 +78,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'material_library_reference': 'materialLibraryReference',
         'specie': 'specie',
         'transport': 'transport',
+        'schmidt_number': 'schmidtNumber',
         'equation_of_state': 'equationOfState'
     }
 
@@ -85,7 +87,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'COMPRESSIBLE': 'FluidCompressibleMaterial'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, specific_heat=None, specific_heat_function=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, specific_heat=None, specific_heat_function=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, schmidt_number=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferMaterialsFluids - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +114,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         self._material_library_reference = None
         self._specie = None
         self._transport = None
+        self._schmidt_number = None
         self._equation_of_state = None
         self.discriminator = 'type'
 
@@ -156,6 +159,8 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
             self.specie = specie
         if transport is not None:
             self.transport = transport
+        if schmidt_number is not None:
+            self.schmidt_number = schmidt_number
         if equation_of_state is not None:
             self.equation_of_state = equation_of_state
 
@@ -621,6 +626,32 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         """
 
         self._transport = transport
+
+    @property
+    def schmidt_number(self):
+        """Gets the schmidt_number of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+
+        The Schmidt number is a dimensionless number defined as the ratio of viscous diffusion to molecular mass diffusion. In dilute flows where a dominant carrier gas advects other species, it is assumed to be constant and a typical value is Sc = 5/6.  # noqa: E501
+
+        :return: The schmidt_number of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :rtype: float
+        """
+        return self._schmidt_number
+
+    @schmidt_number.setter
+    def schmidt_number(self, schmidt_number):
+        """Sets the schmidt_number of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
+
+        The Schmidt number is a dimensionless number defined as the ratio of viscous diffusion to molecular mass diffusion. In dilute flows where a dominant carrier gas advects other species, it is assumed to be constant and a typical value is Sc = 5/6.  # noqa: E501
+
+        :param schmidt_number: The schmidt_number of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                schmidt_number is not None and schmidt_number <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `schmidt_number`, must be a value greater than `0`")  # noqa: E501
+
+        self._schmidt_number = schmidt_number
 
     @property
     def equation_of_state(self):

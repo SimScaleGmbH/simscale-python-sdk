@@ -32,26 +32,31 @@ class ConductivityThicknessPair(object):
     """
     openapi_types = {
         'thermal_conductivity': 'DimensionalThermalConductivity',
+        'electric_resistivity': 'DimensionalElectricResistivity',
         'layer_thickness': 'DimensionalLength'
     }
 
     attribute_map = {
         'thermal_conductivity': 'thermalConductivity',
+        'electric_resistivity': 'electricResistivity',
         'layer_thickness': 'layerThickness'
     }
 
-    def __init__(self, thermal_conductivity=None, layer_thickness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, thermal_conductivity=None, electric_resistivity=None, layer_thickness=None, local_vars_configuration=None):  # noqa: E501
         """ConductivityThicknessPair - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._thermal_conductivity = None
+        self._electric_resistivity = None
         self._layer_thickness = None
         self.discriminator = None
 
         if thermal_conductivity is not None:
             self.thermal_conductivity = thermal_conductivity
+        if electric_resistivity is not None:
+            self.electric_resistivity = electric_resistivity
         if layer_thickness is not None:
             self.layer_thickness = layer_thickness
 
@@ -75,6 +80,27 @@ class ConductivityThicknessPair(object):
         """
 
         self._thermal_conductivity = thermal_conductivity
+
+    @property
+    def electric_resistivity(self):
+        """Gets the electric_resistivity of this ConductivityThicknessPair.  # noqa: E501
+
+
+        :return: The electric_resistivity of this ConductivityThicknessPair.  # noqa: E501
+        :rtype: DimensionalElectricResistivity
+        """
+        return self._electric_resistivity
+
+    @electric_resistivity.setter
+    def electric_resistivity(self, electric_resistivity):
+        """Sets the electric_resistivity of this ConductivityThicknessPair.
+
+
+        :param electric_resistivity: The electric_resistivity of this ConductivityThicknessPair.  # noqa: E501
+        :type: DimensionalElectricResistivity
+        """
+
+        self._electric_resistivity = electric_resistivity
 
     @property
     def layer_thickness(self):

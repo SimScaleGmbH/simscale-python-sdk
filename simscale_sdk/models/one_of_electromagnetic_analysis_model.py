@@ -41,6 +41,7 @@ class OneOfElectromagneticAnalysisModel(object):
     }
 
     discriminator_value_class_map = {
+        'ELECTROSTATICS': 'Electrostatics',
         'MAGNETOSTATICS': 'Magnetostatics',
         'TIME_HARMONIC_MAGNETICS': 'TimeHarmonicMagnetics'
     }

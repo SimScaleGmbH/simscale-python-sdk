@@ -44,6 +44,7 @@ class FluidInitialConditions(object):
         'passive_scalars': 'list[DimensionalInitialConditionDomainsDimensionless]',
         'phase_fraction': 'DimensionalInitialConditionDomainsDimensionless',
         'phase_fractions': 'DimensionlessInitialConditionDomains',
+        'mass_fractions': 'FractionValuesInitialConditions',
         'relative_humidity': 'DimensionalInitialConditionDomainsDimensionless'
     }
 
@@ -61,10 +62,11 @@ class FluidInitialConditions(object):
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
         'phase_fractions': 'phaseFractions',
+        'mass_fractions': 'massFractions',
         'relative_humidity': 'relativeHumidity'
     }
 
-    def __init__(self, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, velocity=None, temperature=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, nu_tilda=None, passive_scalars=None, phase_fraction=None, phase_fractions=None, relative_humidity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, velocity=None, temperature=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, nu_tilda=None, passive_scalars=None, phase_fraction=None, phase_fractions=None, mass_fractions=None, relative_humidity=None, local_vars_configuration=None):  # noqa: E501
         """FluidInitialConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class FluidInitialConditions(object):
         self._passive_scalars = None
         self._phase_fraction = None
         self._phase_fractions = None
+        self._mass_fractions = None
         self._relative_humidity = None
         self.discriminator = None
 
@@ -112,6 +115,8 @@ class FluidInitialConditions(object):
             self.phase_fraction = phase_fraction
         if phase_fractions is not None:
             self.phase_fractions = phase_fractions
+        if mass_fractions is not None:
+            self.mass_fractions = mass_fractions
         if relative_humidity is not None:
             self.relative_humidity = relative_humidity
 
@@ -387,6 +392,27 @@ class FluidInitialConditions(object):
         """
 
         self._phase_fractions = phase_fractions
+
+    @property
+    def mass_fractions(self):
+        """Gets the mass_fractions of this FluidInitialConditions.  # noqa: E501
+
+
+        :return: The mass_fractions of this FluidInitialConditions.  # noqa: E501
+        :rtype: FractionValuesInitialConditions
+        """
+        return self._mass_fractions
+
+    @mass_fractions.setter
+    def mass_fractions(self, mass_fractions):
+        """Sets the mass_fractions of this FluidInitialConditions.
+
+
+        :param mass_fractions: The mass_fractions of this FluidInitialConditions.  # noqa: E501
+        :type: FractionValuesInitialConditions
+        """
+
+        self._mass_fractions = mass_fractions
 
     @property
     def relative_humidity(self):

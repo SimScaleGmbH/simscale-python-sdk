@@ -34,6 +34,7 @@ class OneOfAverageFieldsCalculationResultControlItemFieldSelection(object):
         'type': 'str',
         'displacement_type': 'OneOfDisplacementFieldSelectionDisplacementType',
         'component_selection': 'str',
+        'output_method': 'str',
         'force_type': 'OneOfForceFieldSelectionForceType',
         'strain_type': 'OneOfStrainFieldSelectionStrainType',
         'stress_type': 'OneOfStressFieldSelectionStressType',
@@ -45,6 +46,7 @@ class OneOfAverageFieldsCalculationResultControlItemFieldSelection(object):
         'type': 'type',
         'displacement_type': 'displacementType',
         'component_selection': 'componentSelection',
+        'output_method': 'outputMethod',
         'force_type': 'forceType',
         'strain_type': 'strainType',
         'stress_type': 'stressType',
@@ -63,7 +65,7 @@ class OneOfAverageFieldsCalculationResultControlItemFieldSelection(object):
         'HEAT_FLUX': 'HeatFluxFieldSelection'
     }
 
-    def __init__(self, type='HEAT_FLUX', displacement_type=None, component_selection=None, force_type=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEAT_FLUX', displacement_type=None, component_selection=None, output_method=None, force_type=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfAverageFieldsCalculationResultControlItemFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class OneOfAverageFieldsCalculationResultControlItemFieldSelection(object):
         self._type = None
         self._displacement_type = None
         self._component_selection = None
+        self._output_method = None
         self._force_type = None
         self._strain_type = None
         self._stress_type = None
@@ -84,6 +87,8 @@ class OneOfAverageFieldsCalculationResultControlItemFieldSelection(object):
             self.displacement_type = displacement_type
         if component_selection is not None:
             self.component_selection = component_selection
+        if output_method is not None:
+            self.output_method = output_method
         if force_type is not None:
             self.force_type = force_type
         if strain_type is not None:
@@ -167,6 +172,35 @@ class OneOfAverageFieldsCalculationResultControlItemFieldSelection(object):
             )
 
         self._component_selection = component_selection
+
+    @property
+    def output_method(self):
+        """Gets the output_method of this OneOfAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+
+        <p>This option allows to control the output frequency and accuracy:</p><ul><li><p><b>Post simulation:</b> Point data output is synchronised with global solution fields. Data is interpolated from nodes surrounding the geometry primitive.</p></ul><ul><li><p><b>Live:</b> Point data is output continuously during the simulation at all computed timesteps. Data is taken directly from the nearest mesh node and no interpolation is performed.</p></ul>  # noqa: E501
+
+        :return: The output_method of this OneOfAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_method
+
+    @output_method.setter
+    def output_method(self, output_method):
+        """Sets the output_method of this OneOfAverageFieldsCalculationResultControlItemFieldSelection.
+
+        <p>This option allows to control the output frequency and accuracy:</p><ul><li><p><b>Post simulation:</b> Point data output is synchronised with global solution fields. Data is interpolated from nodes surrounding the geometry primitive.</p></ul><ul><li><p><b>Live:</b> Point data is output continuously during the simulation at all computed timesteps. Data is taken directly from the nearest mesh node and no interpolation is performed.</p></ul>  # noqa: E501
+
+        :param output_method: The output_method of this OneOfAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["POST_SIMULATION", "LIVE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and output_method not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `output_method` ({0}), must be one of {1}"  # noqa: E501
+                .format(output_method, allowed_values)
+            )
+
+        self._output_method = output_method
 
     @property
     def force_type(self):

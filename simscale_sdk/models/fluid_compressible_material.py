@@ -40,6 +40,7 @@ class FluidCompressibleMaterial(object):
         'viscosity_model': 'OneOfFluidCompressibleMaterialViscosityModel',
         'laminar_prandtl_number_function': 'DimensionalFunctionDimensionless',
         'turbulent_prandtl_number': 'float',
+        'schmidt_number': 'float',
         'specific_heat_function': 'DimensionalFunctionSpecificHeat',
         'equation_of_state': 'OneOfFluidCompressibleMaterialEquationOfState',
         'topological_reference': 'TopologicalReference',
@@ -58,6 +59,7 @@ class FluidCompressibleMaterial(object):
         'viscosity_model': 'viscosityModel',
         'laminar_prandtl_number_function': 'laminarPrandtlNumberFunction',
         'turbulent_prandtl_number': 'turbulentPrandtlNumber',
+        'schmidt_number': 'schmidtNumber',
         'specific_heat_function': 'specificHeatFunction',
         'equation_of_state': 'equationOfState',
         'topological_reference': 'topologicalReference',
@@ -66,7 +68,7 @@ class FluidCompressibleMaterial(object):
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, specie=None, transport=None, viscosity_model=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, specific_heat_function=None, equation_of_state=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, specie=None, transport=None, viscosity_model=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, schmidt_number=None, specific_heat_function=None, equation_of_state=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """FluidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class FluidCompressibleMaterial(object):
         self._viscosity_model = None
         self._laminar_prandtl_number_function = None
         self._turbulent_prandtl_number = None
+        self._schmidt_number = None
         self._specific_heat_function = None
         self._equation_of_state = None
         self._topological_reference = None
@@ -106,6 +109,8 @@ class FluidCompressibleMaterial(object):
             self.laminar_prandtl_number_function = laminar_prandtl_number_function
         if turbulent_prandtl_number is not None:
             self.turbulent_prandtl_number = turbulent_prandtl_number
+        if schmidt_number is not None:
+            self.schmidt_number = schmidt_number
         if specific_heat_function is not None:
             self.specific_heat_function = specific_heat_function
         if equation_of_state is not None:
@@ -324,6 +329,32 @@ class FluidCompressibleMaterial(object):
             raise ValueError("Invalid value for `turbulent_prandtl_number`, must be a value greater than `0`")  # noqa: E501
 
         self._turbulent_prandtl_number = turbulent_prandtl_number
+
+    @property
+    def schmidt_number(self):
+        """Gets the schmidt_number of this FluidCompressibleMaterial.  # noqa: E501
+
+        The Schmidt number is a dimensionless number defined as the ratio of viscous diffusion to molecular mass diffusion. In dilute flows where a dominant carrier gas advects other species, it is assumed to be constant and a typical value is Sc = 5/6.  # noqa: E501
+
+        :return: The schmidt_number of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: float
+        """
+        return self._schmidt_number
+
+    @schmidt_number.setter
+    def schmidt_number(self, schmidt_number):
+        """Sets the schmidt_number of this FluidCompressibleMaterial.
+
+        The Schmidt number is a dimensionless number defined as the ratio of viscous diffusion to molecular mass diffusion. In dilute flows where a dominant carrier gas advects other species, it is assumed to be constant and a typical value is Sc = 5/6.  # noqa: E501
+
+        :param schmidt_number: The schmidt_number of this FluidCompressibleMaterial.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                schmidt_number is not None and schmidt_number <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `schmidt_number`, must be a value greater than `0`")  # noqa: E501
+
+        self._schmidt_number = schmidt_number
 
     @property
     def specific_heat_function(self):

@@ -32,12 +32,14 @@ class OneOfContactConductanceLayerInterfaceThermal(object):
     """
     openapi_types = {
         'type': 'str',
-        'contact_conductance': 'DimensionalTotalThermalTransmittance'
+        'contact_conductance': 'DimensionalTotalThermalTransmittance',
+        'electric_conductance': 'DimensionalElectricConductance'
     }
 
     attribute_map = {
         'type': 'type',
-        'contact_conductance': 'contactConductance'
+        'contact_conductance': 'contactConductance',
+        'electric_conductance': 'electricConductance'
     }
 
     discriminator_value_class_map = {
@@ -45,7 +47,7 @@ class OneOfContactConductanceLayerInterfaceThermal(object):
         'TOTAL_CONDUCTANCE': 'TotalConductanceInterfaceThermal'
     }
 
-    def __init__(self, type='TOTAL_CONDUCTANCE', contact_conductance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOTAL_CONDUCTANCE', contact_conductance=None, electric_conductance=None, local_vars_configuration=None):  # noqa: E501
         """OneOfContactConductanceLayerInterfaceThermal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,11 +55,14 @@ class OneOfContactConductanceLayerInterfaceThermal(object):
 
         self._type = None
         self._contact_conductance = None
+        self._electric_conductance = None
         self.discriminator = 'type'
 
         self.type = type
         if contact_conductance is not None:
             self.contact_conductance = contact_conductance
+        if electric_conductance is not None:
+            self.electric_conductance = electric_conductance
 
     @property
     def type(self):
@@ -104,6 +109,27 @@ class OneOfContactConductanceLayerInterfaceThermal(object):
         """
 
         self._contact_conductance = contact_conductance
+
+    @property
+    def electric_conductance(self):
+        """Gets the electric_conductance of this OneOfContactConductanceLayerInterfaceThermal.  # noqa: E501
+
+
+        :return: The electric_conductance of this OneOfContactConductanceLayerInterfaceThermal.  # noqa: E501
+        :rtype: DimensionalElectricConductance
+        """
+        return self._electric_conductance
+
+    @electric_conductance.setter
+    def electric_conductance(self, electric_conductance):
+        """Sets the electric_conductance of this OneOfContactConductanceLayerInterfaceThermal.
+
+
+        :param electric_conductance: The electric_conductance of this OneOfContactConductanceLayerInterfaceThermal.  # noqa: E501
+        :type: DimensionalElectricConductance
+        """
+
+        self._electric_conductance = electric_conductance
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

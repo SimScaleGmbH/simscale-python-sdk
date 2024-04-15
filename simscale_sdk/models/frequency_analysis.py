@@ -33,7 +33,7 @@ class FrequencyAnalysis(object):
     openapi_types = {
         'type': 'str',
         'connection_groups': 'list[Contact]',
-        'connectors': 'list[PinConnector]',
+        'connectors': 'list[OneOfFrequencyAnalysisConnectors]',
         'element_technology': 'SolidElementTechnology',
         'model': 'SolidModel',
         'materials': 'list[SolidMaterial]',
@@ -156,7 +156,7 @@ class FrequencyAnalysis(object):
 
 
         :return: The connectors of this FrequencyAnalysis.  # noqa: E501
-        :rtype: list[PinConnector]
+        :rtype: list[OneOfFrequencyAnalysisConnectors]
         """
         return self._connectors
 
@@ -166,7 +166,7 @@ class FrequencyAnalysis(object):
 
 
         :param connectors: The connectors of this FrequencyAnalysis.  # noqa: E501
-        :type: list[PinConnector]
+        :type: list[OneOfFrequencyAnalysisConnectors]
         """
 
         self._connectors = connectors

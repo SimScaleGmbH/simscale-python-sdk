@@ -34,6 +34,7 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
         'type': 'str',
         'displacement_type': 'OneOfDisplacementFieldSelectionDisplacementType',
         'component_selection': 'str',
+        'output_method': 'str',
         'strain_type': 'OneOfStrainFieldSelectionStrainType',
         'stress_type': 'OneOfStressFieldSelectionStressType',
         'velocity_type': 'OneOfVelocityFieldSelectionVelocityType',
@@ -44,6 +45,7 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
         'type': 'type',
         'displacement_type': 'displacementType',
         'component_selection': 'componentSelection',
+        'output_method': 'outputMethod',
         'strain_type': 'strainType',
         'stress_type': 'stressType',
         'velocity_type': 'velocityType',
@@ -58,7 +60,7 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
         'ACCELERATION': 'AccelerationFieldSelection'
     }
 
-    def __init__(self, type='ACCELERATION', displacement_type=None, component_selection=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ACCELERATION', displacement_type=None, component_selection=None, output_method=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHarmonicResponseResultControlItemFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
         self._type = None
         self._displacement_type = None
         self._component_selection = None
+        self._output_method = None
         self._strain_type = None
         self._stress_type = None
         self._velocity_type = None
@@ -78,6 +81,8 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
             self.displacement_type = displacement_type
         if component_selection is not None:
             self.component_selection = component_selection
+        if output_method is not None:
+            self.output_method = output_method
         if strain_type is not None:
             self.strain_type = strain_type
         if stress_type is not None:
@@ -159,6 +164,35 @@ class OneOfHarmonicResponseResultControlItemFieldSelection(object):
             )
 
         self._component_selection = component_selection
+
+    @property
+    def output_method(self):
+        """Gets the output_method of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+
+        <p>This option allows to control the output frequency and accuracy:</p><ul><li><p><b>Post simulation:</b> Point data output is synchronised with global solution fields. Data is interpolated from nodes surrounding the geometry primitive.</p></ul><ul><li><p><b>Live:</b> Point data is output continuously during the simulation at all computed timesteps. Data is taken directly from the nearest mesh node and no interpolation is performed.</p></ul>  # noqa: E501
+
+        :return: The output_method of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :rtype: str
+        """
+        return self._output_method
+
+    @output_method.setter
+    def output_method(self, output_method):
+        """Sets the output_method of this OneOfHarmonicResponseResultControlItemFieldSelection.
+
+        <p>This option allows to control the output frequency and accuracy:</p><ul><li><p><b>Post simulation:</b> Point data output is synchronised with global solution fields. Data is interpolated from nodes surrounding the geometry primitive.</p></ul><ul><li><p><b>Live:</b> Point data is output continuously during the simulation at all computed timesteps. Data is taken directly from the nearest mesh node and no interpolation is performed.</p></ul>  # noqa: E501
+
+        :param output_method: The output_method of this OneOfHarmonicResponseResultControlItemFieldSelection.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["POST_SIMULATION", "LIVE"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and output_method not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `output_method` ({0}), must be one of {1}"  # noqa: E501
+                .format(output_method, allowed_values)
+            )
+
+        self._output_method = output_method
 
     @property
     def strain_type(self):

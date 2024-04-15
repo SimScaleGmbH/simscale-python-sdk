@@ -73,7 +73,7 @@ class AbsolutePowerSource(object):
     def type(self):
         """Gets the type of this AbsolutePowerSource.  # noqa: E501
 
-        <i>Power sources</i> can be used to simulate heat generation from a volume. Two types are available:<br><li><b>Absolute</b></li>: Used when total power emitted by the assigned volume is known.<li><b>Specific</b></li>: Used when power density of the assigned volume is known. <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: AbsolutePowerSource  # noqa: E501
+        <i>Power sources</i> can be used to simulate heat generation from a volume. Three types are available:<br><li><b>Absolute</b>: Used when total power emitted by the assigned volume is known.<li><b>Specific:</b> Used when power density of the assigned volume is known.<li><b>Heat exchanger:</b> Used to model a heat exchanger on a fluid region. The heat input is computed from the total conductance (U [W/K]) and the difference between the fluid temperature (T) and the heat exchanger temperature (Tref). Q = U (T - Tref). <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: AbsolutePowerSource  # noqa: E501
 
         :return: The type of this AbsolutePowerSource.  # noqa: E501
         :rtype: str
@@ -84,7 +84,7 @@ class AbsolutePowerSource(object):
     def type(self, type):
         """Sets the type of this AbsolutePowerSource.
 
-        <i>Power sources</i> can be used to simulate heat generation from a volume. Two types are available:<br><li><b>Absolute</b></li>: Used when total power emitted by the assigned volume is known.<li><b>Specific</b></li>: Used when power density of the assigned volume is known. <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: AbsolutePowerSource  # noqa: E501
+        <i>Power sources</i> can be used to simulate heat generation from a volume. Three types are available:<br><li><b>Absolute</b>: Used when total power emitted by the assigned volume is known.<li><b>Specific:</b> Used when power density of the assigned volume is known.<li><b>Heat exchanger:</b> Used to model a heat exchanger on a fluid region. The heat input is computed from the total conductance (U [W/K]) and the difference between the fluid temperature (T) and the heat exchanger temperature (Tref). Q = U (T - Tref). <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: AbsolutePowerSource  # noqa: E501
 
         :param type: The type of this AbsolutePowerSource.  # noqa: E501
         :type: str

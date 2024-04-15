@@ -33,9 +33,10 @@ class ElectromagneticMaterial(object):
     openapi_types = {
         'name': 'str',
         'material_behavior': 'OneOfElectromagneticMaterialMaterialBehavior',
-        'electric_conductivity': 'DimensionalElectricConductivity',
+        'electric_conductivity_type': 'LinearIsotropicConductivityMethod',
         'magnetic_permeability_type': 'OneOfElectromagneticMaterialMagneticPermeabilityType',
         'core_losses_type': 'OneOfElectromagneticMaterialCoreLossesType',
+        'electric_permittivity_type': 'LinearIsotropicPermittivityMethod',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
         'material_library_reference': 'MaterialLibraryReference'
@@ -44,15 +45,16 @@ class ElectromagneticMaterial(object):
     attribute_map = {
         'name': 'name',
         'material_behavior': 'materialBehavior',
-        'electric_conductivity': 'electricConductivity',
+        'electric_conductivity_type': 'electricConductivityType',
         'magnetic_permeability_type': 'magneticPermeabilityType',
         'core_losses_type': 'coreLossesType',
+        'electric_permittivity_type': 'electricPermittivityType',
         'topological_reference': 'topologicalReference',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, name=None, material_behavior=None, electric_conductivity=None, magnetic_permeability_type=None, core_losses_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, material_behavior=None, electric_conductivity_type=None, magnetic_permeability_type=None, core_losses_type=None, electric_permittivity_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,9 +62,10 @@ class ElectromagneticMaterial(object):
 
         self._name = None
         self._material_behavior = None
-        self._electric_conductivity = None
+        self._electric_conductivity_type = None
         self._magnetic_permeability_type = None
         self._core_losses_type = None
+        self._electric_permittivity_type = None
         self._topological_reference = None
         self._built_in_material = None
         self._material_library_reference = None
@@ -72,12 +75,14 @@ class ElectromagneticMaterial(object):
             self.name = name
         if material_behavior is not None:
             self.material_behavior = material_behavior
-        if electric_conductivity is not None:
-            self.electric_conductivity = electric_conductivity
+        if electric_conductivity_type is not None:
+            self.electric_conductivity_type = electric_conductivity_type
         if magnetic_permeability_type is not None:
             self.magnetic_permeability_type = magnetic_permeability_type
         if core_losses_type is not None:
             self.core_losses_type = core_losses_type
+        if electric_permittivity_type is not None:
+            self.electric_permittivity_type = electric_permittivity_type
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if built_in_material is not None:
@@ -128,25 +133,25 @@ class ElectromagneticMaterial(object):
         self._material_behavior = material_behavior
 
     @property
-    def electric_conductivity(self):
-        """Gets the electric_conductivity of this ElectromagneticMaterial.  # noqa: E501
+    def electric_conductivity_type(self):
+        """Gets the electric_conductivity_type of this ElectromagneticMaterial.  # noqa: E501
 
 
-        :return: The electric_conductivity of this ElectromagneticMaterial.  # noqa: E501
-        :rtype: DimensionalElectricConductivity
+        :return: The electric_conductivity_type of this ElectromagneticMaterial.  # noqa: E501
+        :rtype: LinearIsotropicConductivityMethod
         """
-        return self._electric_conductivity
+        return self._electric_conductivity_type
 
-    @electric_conductivity.setter
-    def electric_conductivity(self, electric_conductivity):
-        """Sets the electric_conductivity of this ElectromagneticMaterial.
+    @electric_conductivity_type.setter
+    def electric_conductivity_type(self, electric_conductivity_type):
+        """Sets the electric_conductivity_type of this ElectromagneticMaterial.
 
 
-        :param electric_conductivity: The electric_conductivity of this ElectromagneticMaterial.  # noqa: E501
-        :type: DimensionalElectricConductivity
+        :param electric_conductivity_type: The electric_conductivity_type of this ElectromagneticMaterial.  # noqa: E501
+        :type: LinearIsotropicConductivityMethod
         """
 
-        self._electric_conductivity = electric_conductivity
+        self._electric_conductivity_type = electric_conductivity_type
 
     @property
     def magnetic_permeability_type(self):
@@ -189,6 +194,27 @@ class ElectromagneticMaterial(object):
         """
 
         self._core_losses_type = core_losses_type
+
+    @property
+    def electric_permittivity_type(self):
+        """Gets the electric_permittivity_type of this ElectromagneticMaterial.  # noqa: E501
+
+
+        :return: The electric_permittivity_type of this ElectromagneticMaterial.  # noqa: E501
+        :rtype: LinearIsotropicPermittivityMethod
+        """
+        return self._electric_permittivity_type
+
+    @electric_permittivity_type.setter
+    def electric_permittivity_type(self, electric_permittivity_type):
+        """Sets the electric_permittivity_type of this ElectromagneticMaterial.
+
+
+        :param electric_permittivity_type: The electric_permittivity_type of this ElectromagneticMaterial.  # noqa: E501
+        :type: LinearIsotropicPermittivityMethod
+        """
+
+        self._electric_permittivity_type = electric_permittivity_type
 
     @property
     def topological_reference(self):

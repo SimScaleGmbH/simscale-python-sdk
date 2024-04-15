@@ -33,14 +33,18 @@ class OneOfRegionInterfaceInterfaceThermal(object):
     openapi_types = {
         'type': 'str',
         'contact_resistance': 'DimensionalContactResistance',
+        'electric_resistance': 'DimensionalElectricResistance',
         'contact_conductance': 'DimensionalThermalTransmittance',
+        'electric_conductance': 'DimensionalSpecificElectricConductance',
         'conductivity_thickness_pairs': 'list[ConductivityThicknessPair]'
     }
 
     attribute_map = {
         'type': 'type',
         'contact_resistance': 'contactResistance',
+        'electric_resistance': 'electricResistance',
         'contact_conductance': 'contactConductance',
+        'electric_conductance': 'electricConductance',
         'conductivity_thickness_pairs': 'conductivityThicknessPairs'
     }
 
@@ -52,7 +56,7 @@ class OneOfRegionInterfaceInterfaceThermal(object):
         'CONTACT_INTERFACE_MATERIAL': 'ContactInterfaceMaterialInterfaceThermal'
     }
 
-    def __init__(self, type='CONTACT_INTERFACE_MATERIAL', contact_resistance=None, contact_conductance=None, conductivity_thickness_pairs=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONTACT_INTERFACE_MATERIAL', contact_resistance=None, electric_resistance=None, contact_conductance=None, electric_conductance=None, conductivity_thickness_pairs=None, local_vars_configuration=None):  # noqa: E501
         """OneOfRegionInterfaceInterfaceThermal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,15 +64,21 @@ class OneOfRegionInterfaceInterfaceThermal(object):
 
         self._type = None
         self._contact_resistance = None
+        self._electric_resistance = None
         self._contact_conductance = None
+        self._electric_conductance = None
         self._conductivity_thickness_pairs = None
         self.discriminator = 'type'
 
         self.type = type
         if contact_resistance is not None:
             self.contact_resistance = contact_resistance
+        if electric_resistance is not None:
+            self.electric_resistance = electric_resistance
         if contact_conductance is not None:
             self.contact_conductance = contact_conductance
+        if electric_conductance is not None:
+            self.electric_conductance = electric_conductance
         if conductivity_thickness_pairs is not None:
             self.conductivity_thickness_pairs = conductivity_thickness_pairs
 
@@ -119,6 +129,27 @@ class OneOfRegionInterfaceInterfaceThermal(object):
         self._contact_resistance = contact_resistance
 
     @property
+    def electric_resistance(self):
+        """Gets the electric_resistance of this OneOfRegionInterfaceInterfaceThermal.  # noqa: E501
+
+
+        :return: The electric_resistance of this OneOfRegionInterfaceInterfaceThermal.  # noqa: E501
+        :rtype: DimensionalElectricResistance
+        """
+        return self._electric_resistance
+
+    @electric_resistance.setter
+    def electric_resistance(self, electric_resistance):
+        """Sets the electric_resistance of this OneOfRegionInterfaceInterfaceThermal.
+
+
+        :param electric_resistance: The electric_resistance of this OneOfRegionInterfaceInterfaceThermal.  # noqa: E501
+        :type: DimensionalElectricResistance
+        """
+
+        self._electric_resistance = electric_resistance
+
+    @property
     def contact_conductance(self):
         """Gets the contact_conductance of this OneOfRegionInterfaceInterfaceThermal.  # noqa: E501
 
@@ -138,6 +169,27 @@ class OneOfRegionInterfaceInterfaceThermal(object):
         """
 
         self._contact_conductance = contact_conductance
+
+    @property
+    def electric_conductance(self):
+        """Gets the electric_conductance of this OneOfRegionInterfaceInterfaceThermal.  # noqa: E501
+
+
+        :return: The electric_conductance of this OneOfRegionInterfaceInterfaceThermal.  # noqa: E501
+        :rtype: DimensionalSpecificElectricConductance
+        """
+        return self._electric_conductance
+
+    @electric_conductance.setter
+    def electric_conductance(self, electric_conductance):
+        """Sets the electric_conductance of this OneOfRegionInterfaceInterfaceThermal.
+
+
+        :param electric_conductance: The electric_conductance of this OneOfRegionInterfaceInterfaceThermal.  # noqa: E501
+        :type: DimensionalSpecificElectricConductance
+        """
+
+        self._electric_conductance = electric_conductance
 
     @property
     def conductivity_thickness_pairs(self):

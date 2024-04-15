@@ -42,6 +42,7 @@ class PressureInletBC(object):
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'FixedValuePFBC',
         'associated_phase_fractions': 'list[PhaseNameAndFixedValuePFBC]',
+        'mass_fractions': 'list[FixedValueMassFractionBC]',
         'net_radiative_heat_flux': 'OneOfPressureInletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfPressureInletBCRadiativeIntensityRay',
         'relative_humidity': 'FixedValueRHBC',
@@ -60,13 +61,14 @@ class PressureInletBC(object):
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
         'associated_phase_fractions': 'associatedPhaseFractions',
+        'mass_fractions': 'massFractions',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
         'relative_humidity': 'relativeHumidity',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_INLET_V31', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_INLET_V31', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, mass_fractions=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureInletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +85,7 @@ class PressureInletBC(object):
         self._passive_scalars = None
         self._phase_fraction = None
         self._associated_phase_fractions = None
+        self._mass_fractions = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
         self._relative_humidity = None
@@ -110,6 +113,8 @@ class PressureInletBC(object):
             self.phase_fraction = phase_fraction
         if associated_phase_fractions is not None:
             self.associated_phase_fractions = associated_phase_fractions
+        if mass_fractions is not None:
+            self.mass_fractions = mass_fractions
         if net_radiative_heat_flux is not None:
             self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
@@ -357,6 +362,29 @@ class PressureInletBC(object):
         """
 
         self._associated_phase_fractions = associated_phase_fractions
+
+    @property
+    def mass_fractions(self):
+        """Gets the mass_fractions of this PressureInletBC.  # noqa: E501
+
+        Please choose a boundary condition for component mass density fraction.  # noqa: E501
+
+        :return: The mass_fractions of this PressureInletBC.  # noqa: E501
+        :rtype: list[FixedValueMassFractionBC]
+        """
+        return self._mass_fractions
+
+    @mass_fractions.setter
+    def mass_fractions(self, mass_fractions):
+        """Sets the mass_fractions of this PressureInletBC.
+
+        Please choose a boundary condition for component mass density fraction.  # noqa: E501
+
+        :param mass_fractions: The mass_fractions of this PressureInletBC.  # noqa: E501
+        :type: list[FixedValueMassFractionBC]
+        """
+
+        self._mass_fractions = mass_fractions
 
     @property
     def net_radiative_heat_flux(self):

@@ -34,7 +34,7 @@ class StaticAnalysis(object):
         'type': 'str',
         'non_linear_analysis': 'bool',
         'connection_groups': 'list[OneOfStaticAnalysisConnectionGroups]',
-        'connectors': 'list[PinConnector]',
+        'connectors': 'list[OneOfStaticAnalysisConnectors]',
         'element_technology': 'SolidElementTechnology',
         'model': 'SolidModel',
         'materials': 'list[SolidMaterial]',
@@ -184,7 +184,7 @@ class StaticAnalysis(object):
 
 
         :return: The connectors of this StaticAnalysis.  # noqa: E501
-        :rtype: list[PinConnector]
+        :rtype: list[OneOfStaticAnalysisConnectors]
         """
         return self._connectors
 
@@ -194,7 +194,7 @@ class StaticAnalysis(object):
 
 
         :param connectors: The connectors of this StaticAnalysis.  # noqa: E501
-        :type: list[PinConnector]
+        :type: list[OneOfStaticAnalysisConnectors]
         """
 
         self._connectors = connectors

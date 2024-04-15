@@ -32,26 +32,31 @@ class ElectromagneticResultControl(object):
     """
     openapi_types = {
         'calculate_inductances': 'bool',
+        'calculate_capacitances': 'bool',
         'forces_and_torques': 'list[ForceAndTorque]'
     }
 
     attribute_map = {
         'calculate_inductances': 'calculateInductances',
+        'calculate_capacitances': 'calculateCapacitances',
         'forces_and_torques': 'forcesAndTorques'
     }
 
-    def __init__(self, calculate_inductances=None, forces_and_torques=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, calculate_inductances=None, calculate_capacitances=None, forces_and_torques=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._calculate_inductances = None
+        self._calculate_capacitances = None
         self._forces_and_torques = None
         self.discriminator = None
 
         if calculate_inductances is not None:
             self.calculate_inductances = calculate_inductances
+        if calculate_capacitances is not None:
+            self.calculate_capacitances = calculate_capacitances
         if forces_and_torques is not None:
             self.forces_and_torques = forces_and_torques
 
@@ -77,6 +82,27 @@ class ElectromagneticResultControl(object):
         """
 
         self._calculate_inductances = calculate_inductances
+
+    @property
+    def calculate_capacitances(self):
+        """Gets the calculate_capacitances of this ElectromagneticResultControl.  # noqa: E501
+
+
+        :return: The calculate_capacitances of this ElectromagneticResultControl.  # noqa: E501
+        :rtype: bool
+        """
+        return self._calculate_capacitances
+
+    @calculate_capacitances.setter
+    def calculate_capacitances(self, calculate_capacitances):
+        """Sets the calculate_capacitances of this ElectromagneticResultControl.
+
+
+        :param calculate_capacitances: The calculate_capacitances of this ElectromagneticResultControl.  # noqa: E501
+        :type: bool
+        """
+
+        self._calculate_capacitances = calculate_capacitances
 
     @property
     def forces_and_torques(self):

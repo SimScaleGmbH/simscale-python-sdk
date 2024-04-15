@@ -33,18 +33,16 @@ class HeatExchangerPerformance(object):
     openapi_types = {
         'type': 'str',
         'ref_temperature': 'DimensionalFunctionTemperature',
-        'performance': 'DimensionalFunctionTotalThermalTransmittance',
-        'heat_distribution': 'str'
+        'performance': 'DimensionalFunctionTotalThermalTransmittance'
     }
 
     attribute_map = {
         'type': 'type',
         'ref_temperature': 'refTemperature',
-        'performance': 'performance',
-        'heat_distribution': 'heatDistribution'
+        'performance': 'performance'
     }
 
-    def __init__(self, type='HEAT_EXCHANGER_PERFORMANCE', ref_temperature=None, performance=None, heat_distribution=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEAT_EXCHANGER_PERFORMANCE', ref_temperature=None, performance=None, local_vars_configuration=None):  # noqa: E501
         """HeatExchangerPerformance - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,7 +51,6 @@ class HeatExchangerPerformance(object):
         self._type = None
         self._ref_temperature = None
         self._performance = None
-        self._heat_distribution = None
         self.discriminator = None
 
         self.type = type
@@ -61,8 +58,6 @@ class HeatExchangerPerformance(object):
             self.ref_temperature = ref_temperature
         if performance is not None:
             self.performance = performance
-        if heat_distribution is not None:
-            self.heat_distribution = heat_distribution
 
     @property
     def type(self):
@@ -130,35 +125,6 @@ class HeatExchangerPerformance(object):
         """
 
         self._performance = performance
-
-    @property
-    def heat_distribution(self):
-        """Gets the heat_distribution of this HeatExchangerPerformance.  # noqa: E501
-
-        Heat exchanger heat distribution place holder  # noqa: E501
-
-        :return: The heat_distribution of this HeatExchangerPerformance.  # noqa: E501
-        :rtype: str
-        """
-        return self._heat_distribution
-
-    @heat_distribution.setter
-    def heat_distribution(self, heat_distribution):
-        """Sets the heat_distribution of this HeatExchangerPerformance.
-
-        Heat exchanger heat distribution place holder  # noqa: E501
-
-        :param heat_distribution: The heat_distribution of this HeatExchangerPerformance.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["LOCAL", "AVERAGE"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and heat_distribution not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `heat_distribution` ({0}), must be one of {1}"  # noqa: E501
-                .format(heat_distribution, allowed_values)
-            )
-
-        self._heat_distribution = heat_distribution
 
     def to_dict(self):
         """Returns the model properties as a dict"""

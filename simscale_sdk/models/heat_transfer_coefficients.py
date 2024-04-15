@@ -161,7 +161,7 @@ class HeatTransferCoefficients(object):
     def heat_distribution(self):
         """Gets the heat_distribution of this HeatTransferCoefficients.  # noqa: E501
 
-        Heat exchanger heat distribution place holder  # noqa: E501
+        Sampling method for the field temperature (T) in T - Tref. This indicates whether the temperature (T) is averaged on the complete heat exchanger or sampled at each position.  # noqa: E501
 
         :return: The heat_distribution of this HeatTransferCoefficients.  # noqa: E501
         :rtype: str
@@ -172,7 +172,7 @@ class HeatTransferCoefficients(object):
     def heat_distribution(self, heat_distribution):
         """Sets the heat_distribution of this HeatTransferCoefficients.
 
-        Heat exchanger heat distribution place holder  # noqa: E501
+        Sampling method for the field temperature (T) in T - Tref. This indicates whether the temperature (T) is averaged on the complete heat exchanger or sampled at each position.  # noqa: E501
 
         :param heat_distribution: The heat_distribution of this HeatTransferCoefficients.  # noqa: E501
         :type: str

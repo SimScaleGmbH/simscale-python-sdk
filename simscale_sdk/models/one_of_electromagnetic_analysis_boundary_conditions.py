@@ -33,21 +33,31 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'topological_reference': 'TopologicalReference'
+        'topological_reference': 'TopologicalReference',
+        'potential': 'DimensionalElectricPotential',
+        'charge_density': 'DimensionalChargeDensity',
+        'total_charge': 'DimensionalCharge'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
-        'topological_reference': 'topologicalReference'
+        'topological_reference': 'topologicalReference',
+        'potential': 'potential',
+        'charge_density': 'chargeDensity',
+        'total_charge': 'totalCharge'
     }
 
     discriminator_value_class_map = {
         'MAGNETIC_FIELD_NORMAL': 'MagneticFieldNormal',
-        'MAGNETIC_FLUX_TANGENTIAL': 'MagneticFluxTangential'
+        'MAGNETIC_FLUX_TANGENTIAL': 'MagneticFluxTangential',
+        'FIXED_POTENTIAL': 'FixedPotential',
+        'FLOATING_POTENTIAL': 'FloatingPotential',
+        'CHARGE_DENSITY': 'ChargeDensity',
+        'TOTAL_CHARGE': 'TotalCharge'
     }
 
-    def __init__(self, type='MAGNETIC_FLUX_TANGENTIAL', name=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOTAL_CHARGE', name=None, topological_reference=None, potential=None, charge_density=None, total_charge=None, local_vars_configuration=None):  # noqa: E501
         """OneOfElectromagneticAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +66,9 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         self._type = None
         self._name = None
         self._topological_reference = None
+        self._potential = None
+        self._charge_density = None
+        self._total_charge = None
         self.discriminator = 'type'
 
         self.type = type
@@ -63,12 +76,18 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
             self.name = name
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if potential is not None:
+            self.potential = potential
+        if charge_density is not None:
+            self.charge_density = charge_density
+        if total_charge is not None:
+            self.total_charge = total_charge
 
     @property
     def type(self):
         """Gets the type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
 
-        The magnetic flux is enforced to be tangential to the boundary. This boundary is often appropriate when electric current enters or leaves the boundary.  Schema name: MagneticFluxTangential  # noqa: E501
+        Schema name: TotalCharge  # noqa: E501
 
         :return: The type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -79,7 +98,7 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfElectromagneticAnalysisBoundaryConditions.
 
-        The magnetic flux is enforced to be tangential to the boundary. This boundary is often appropriate when electric current enters or leaves the boundary.  Schema name: MagneticFluxTangential  # noqa: E501
+        Schema name: TotalCharge  # noqa: E501
 
         :param type: The type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
         :type: str
@@ -130,6 +149,69 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         """
 
         self._topological_reference = topological_reference
+
+    @property
+    def potential(self):
+        """Gets the potential of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The potential of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalElectricPotential
+        """
+        return self._potential
+
+    @potential.setter
+    def potential(self, potential):
+        """Sets the potential of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param potential: The potential of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalElectricPotential
+        """
+
+        self._potential = potential
+
+    @property
+    def charge_density(self):
+        """Gets the charge_density of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The charge_density of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalChargeDensity
+        """
+        return self._charge_density
+
+    @charge_density.setter
+    def charge_density(self, charge_density):
+        """Sets the charge_density of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param charge_density: The charge_density of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalChargeDensity
+        """
+
+        self._charge_density = charge_density
+
+    @property
+    def total_charge(self):
+        """Gets the total_charge of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The total_charge of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalCharge
+        """
+        return self._total_charge
+
+    @total_charge.setter
+    def total_charge(self, total_charge):
+        """Sets the total_charge of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param total_charge: The total_charge of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalCharge
+        """
+
+        self._total_charge = total_charge
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

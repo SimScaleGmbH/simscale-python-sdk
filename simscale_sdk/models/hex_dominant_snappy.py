@@ -36,6 +36,7 @@ class HexDominantSnappy(object):
         'sizing': 'OneOfHexDominantSnappySizing',
         'physics_based_meshing': 'bool',
         'num_of_processors': 'int',
+        'max_meshing_run_time': 'DimensionalTime',
         'refinements': 'list[OneOfHexDominantSnappyRefinements]'
     }
 
@@ -45,10 +46,11 @@ class HexDominantSnappy(object):
         'sizing': 'sizing',
         'physics_based_meshing': 'physicsBasedMeshing',
         'num_of_processors': 'numOfProcessors',
+        'max_meshing_run_time': 'maxMeshingRunTime',
         'refinements': 'refinements'
     }
 
-    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', meshing_mode=None, sizing=None, physics_based_meshing=None, num_of_processors=None, refinements=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', meshing_mode=None, sizing=None, physics_based_meshing=None, num_of_processors=None, max_meshing_run_time=None, refinements=None, local_vars_configuration=None):  # noqa: E501
         """HexDominantSnappy - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class HexDominantSnappy(object):
         self._sizing = None
         self._physics_based_meshing = None
         self._num_of_processors = None
+        self._max_meshing_run_time = None
         self._refinements = None
         self.discriminator = None
 
@@ -71,6 +74,8 @@ class HexDominantSnappy(object):
             self.physics_based_meshing = physics_based_meshing
         if num_of_processors is not None:
             self.num_of_processors = num_of_processors
+        if max_meshing_run_time is not None:
+            self.max_meshing_run_time = max_meshing_run_time
         if refinements is not None:
             self.refinements = refinements
 
@@ -200,6 +205,27 @@ class HexDominantSnappy(object):
             )
 
         self._num_of_processors = num_of_processors
+
+    @property
+    def max_meshing_run_time(self):
+        """Gets the max_meshing_run_time of this HexDominantSnappy.  # noqa: E501
+
+
+        :return: The max_meshing_run_time of this HexDominantSnappy.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._max_meshing_run_time
+
+    @max_meshing_run_time.setter
+    def max_meshing_run_time(self, max_meshing_run_time):
+        """Sets the max_meshing_run_time of this HexDominantSnappy.
+
+
+        :param max_meshing_run_time: The max_meshing_run_time of this HexDominantSnappy.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._max_meshing_run_time = max_meshing_run_time
 
     @property
     def refinements(self):

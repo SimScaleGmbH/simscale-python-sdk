@@ -39,6 +39,7 @@ class OneOfFlowDomainBoundariesYMIN(object):
         'passive_scalars': 'list[FixedValuePSBC]',
         'phase_fraction': 'OneOfWallBCPhaseFraction',
         'associated_phase_fractions': 'list[PhaseNameAndFixedValuePFBC]',
+        'mass_fractions': 'list[FixedValueMassFractionBC]',
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfWallBCNetRadiativeHeatFlux',
@@ -64,6 +65,7 @@ class OneOfFlowDomainBoundariesYMIN(object):
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
         'associated_phase_fractions': 'associatedPhaseFractions',
+        'mass_fractions': 'massFractions',
         'turbulence_intensity': 'turbulenceIntensity',
         'dissipation_type': 'dissipationType',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
@@ -88,7 +90,7 @@ class OneOfFlowDomainBoundariesYMIN(object):
         'ATMOSPHERIC_BOUNDARY_LAYER_INLET': 'AtmosphericBoundaryLayerInletBC'
     }
 
-    def __init__(self, type='ATMOSPHERIC_BOUNDARY_LAYER_INLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, reference_velocity=None, reference_height=None, ground_roughness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ATMOSPHERIC_BOUNDARY_LAYER_INLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, mass_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, reference_velocity=None, reference_height=None, ground_roughness=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFlowDomainBoundariesYMIN - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -102,6 +104,7 @@ class OneOfFlowDomainBoundariesYMIN(object):
         self._passive_scalars = None
         self._phase_fraction = None
         self._associated_phase_fractions = None
+        self._mass_fractions = None
         self._turbulence_intensity = None
         self._dissipation_type = None
         self._net_radiative_heat_flux = None
@@ -133,6 +136,8 @@ class OneOfFlowDomainBoundariesYMIN(object):
             self.phase_fraction = phase_fraction
         if associated_phase_fractions is not None:
             self.associated_phase_fractions = associated_phase_fractions
+        if mass_fractions is not None:
+            self.mass_fractions = mass_fractions
         if turbulence_intensity is not None:
             self.turbulence_intensity = turbulence_intensity
         if dissipation_type is not None:
@@ -337,6 +342,29 @@ class OneOfFlowDomainBoundariesYMIN(object):
         """
 
         self._associated_phase_fractions = associated_phase_fractions
+
+    @property
+    def mass_fractions(self):
+        """Gets the mass_fractions of this OneOfFlowDomainBoundariesYMIN.  # noqa: E501
+
+        Please choose a boundary condition for component mass density fraction.  # noqa: E501
+
+        :return: The mass_fractions of this OneOfFlowDomainBoundariesYMIN.  # noqa: E501
+        :rtype: list[FixedValueMassFractionBC]
+        """
+        return self._mass_fractions
+
+    @mass_fractions.setter
+    def mass_fractions(self, mass_fractions):
+        """Sets the mass_fractions of this OneOfFlowDomainBoundariesYMIN.
+
+        Please choose a boundary condition for component mass density fraction.  # noqa: E501
+
+        :param mass_fractions: The mass_fractions of this OneOfFlowDomainBoundariesYMIN.  # noqa: E501
+        :type: list[FixedValueMassFractionBC]
+        """
+
+        self._mass_fractions = mass_fractions
 
     @property
     def turbulence_intensity(self):

@@ -38,6 +38,7 @@ class SimmetrixMeshingSolid(object):
         'enable_shell_meshing': 'bool',
         'surface_element_type': 'str',
         'num_of_processors': 'int',
+        'max_meshing_run_time': 'DimensionalTime',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixSolidSettings'
     }
 
@@ -49,10 +50,11 @@ class SimmetrixMeshingSolid(object):
         'enable_shell_meshing': 'enableShellMeshing',
         'surface_element_type': 'surfaceElementType',
         'num_of_processors': 'numOfProcessors',
+        'max_meshing_run_time': 'maxMeshingRunTime',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings'
     }
 
-    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, automatic_sweep_parameters=None, enable_shell_meshing=None, surface_element_type=None, num_of_processors=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, automatic_sweep_parameters=None, enable_shell_meshing=None, surface_element_type=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixMeshingSolid - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class SimmetrixMeshingSolid(object):
         self._enable_shell_meshing = None
         self._surface_element_type = None
         self._num_of_processors = None
+        self._max_meshing_run_time = None
         self._advanced_simmetrix_settings = None
         self.discriminator = None
 
@@ -81,6 +84,8 @@ class SimmetrixMeshingSolid(object):
             self.surface_element_type = surface_element_type
         if num_of_processors is not None:
             self.num_of_processors = num_of_processors
+        if max_meshing_run_time is not None:
+            self.max_meshing_run_time = max_meshing_run_time
         if advanced_simmetrix_settings is not None:
             self.advanced_simmetrix_settings = advanced_simmetrix_settings
 
@@ -248,6 +253,27 @@ class SimmetrixMeshingSolid(object):
             )
 
         self._num_of_processors = num_of_processors
+
+    @property
+    def max_meshing_run_time(self):
+        """Gets the max_meshing_run_time of this SimmetrixMeshingSolid.  # noqa: E501
+
+
+        :return: The max_meshing_run_time of this SimmetrixMeshingSolid.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._max_meshing_run_time
+
+    @max_meshing_run_time.setter
+    def max_meshing_run_time(self, max_meshing_run_time):
+        """Sets the max_meshing_run_time of this SimmetrixMeshingSolid.
+
+
+        :param max_meshing_run_time: The max_meshing_run_time of this SimmetrixMeshingSolid.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._max_meshing_run_time = max_meshing_run_time
 
     @property
     def advanced_simmetrix_settings(self):

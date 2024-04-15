@@ -32,15 +32,17 @@ class SpecificResistanceInterfaceThermal(object):
     """
     openapi_types = {
         'type': 'str',
-        'contact_resistance': 'DimensionalSpecificContactResistance'
+        'contact_resistance': 'DimensionalSpecificContactResistance',
+        'electric_resistance': 'DimensionalSpecificElectricResistance'
     }
 
     attribute_map = {
         'type': 'type',
-        'contact_resistance': 'contactResistance'
+        'contact_resistance': 'contactResistance',
+        'electric_resistance': 'electricResistance'
     }
 
-    def __init__(self, type='SPECIFIC_RESISTANCE', contact_resistance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SPECIFIC_RESISTANCE', contact_resistance=None, electric_resistance=None, local_vars_configuration=None):  # noqa: E501
         """SpecificResistanceInterfaceThermal - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class SpecificResistanceInterfaceThermal(object):
 
         self._type = None
         self._contact_resistance = None
+        self._electric_resistance = None
         self.discriminator = None
 
         self.type = type
         if contact_resistance is not None:
             self.contact_resistance = contact_resistance
+        if electric_resistance is not None:
+            self.electric_resistance = electric_resistance
 
     @property
     def type(self):
@@ -99,6 +104,27 @@ class SpecificResistanceInterfaceThermal(object):
         """
 
         self._contact_resistance = contact_resistance
+
+    @property
+    def electric_resistance(self):
+        """Gets the electric_resistance of this SpecificResistanceInterfaceThermal.  # noqa: E501
+
+
+        :return: The electric_resistance of this SpecificResistanceInterfaceThermal.  # noqa: E501
+        :rtype: DimensionalSpecificElectricResistance
+        """
+        return self._electric_resistance
+
+    @electric_resistance.setter
+    def electric_resistance(self, electric_resistance):
+        """Sets the electric_resistance of this SpecificResistanceInterfaceThermal.
+
+
+        :param electric_resistance: The electric_resistance of this SpecificResistanceInterfaceThermal.  # noqa: E501
+        :type: DimensionalSpecificElectricResistance
+        """
+
+        self._electric_resistance = electric_resistance
 
     def to_dict(self):
         """Returns the model properties as a dict"""
