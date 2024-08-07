@@ -35,8 +35,8 @@ class VelocityOutletBC(object):
         'name': 'str',
         'velocity': 'OneOfVelocityOutletBCVelocity',
         'phase_fraction': 'OneOfVelocityOutletBCPhaseFraction',
-        'associated_phase_fractions': 'list[PhaseNameAndFixedValuePFBC]',
-        'mass_fractions': 'list[FixedValueMassFractionBC]',
+        'phase_fractions_v2': 'OneOfVelocityOutletBCPhaseFractionsV2',
+        'mass_fractions_v2': 'OutletBackFlowMFValues',
         'net_radiative_heat_flux': 'OneOfVelocityOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfVelocityOutletBCRadiativeIntensityRay',
         'topological_reference': 'TopologicalReference'
@@ -47,14 +47,14 @@ class VelocityOutletBC(object):
         'name': 'name',
         'velocity': 'velocity',
         'phase_fraction': 'phaseFraction',
-        'associated_phase_fractions': 'associatedPhaseFractions',
-        'mass_fractions': 'massFractions',
+        'phase_fractions_v2': 'phaseFractionsV2',
+        'mass_fractions_v2': 'massFractionsV2',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='VELOCITY_OUTLET_V7', name=None, velocity=None, phase_fraction=None, associated_phase_fractions=None, mass_fractions=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VELOCITY_OUTLET_V7', name=None, velocity=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """VelocityOutletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,8 +64,8 @@ class VelocityOutletBC(object):
         self._name = None
         self._velocity = None
         self._phase_fraction = None
-        self._associated_phase_fractions = None
-        self._mass_fractions = None
+        self._phase_fractions_v2 = None
+        self._mass_fractions_v2 = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
         self._topological_reference = None
@@ -78,10 +78,10 @@ class VelocityOutletBC(object):
             self.velocity = velocity
         if phase_fraction is not None:
             self.phase_fraction = phase_fraction
-        if associated_phase_fractions is not None:
-            self.associated_phase_fractions = associated_phase_fractions
-        if mass_fractions is not None:
-            self.mass_fractions = mass_fractions
+        if phase_fractions_v2 is not None:
+            self.phase_fractions_v2 = phase_fractions_v2
+        if mass_fractions_v2 is not None:
+            self.mass_fractions_v2 = mass_fractions_v2
         if net_radiative_heat_flux is not None:
             self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
@@ -178,50 +178,46 @@ class VelocityOutletBC(object):
         self._phase_fraction = phase_fraction
 
     @property
-    def associated_phase_fractions(self):
-        """Gets the associated_phase_fractions of this VelocityOutletBC.  # noqa: E501
+    def phase_fractions_v2(self):
+        """Gets the phase_fractions_v2 of this VelocityOutletBC.  # noqa: E501
 
-        Please choose a boundary condition for phase fraction (alpha).  # noqa: E501
 
-        :return: The associated_phase_fractions of this VelocityOutletBC.  # noqa: E501
-        :rtype: list[PhaseNameAndFixedValuePFBC]
+        :return: The phase_fractions_v2 of this VelocityOutletBC.  # noqa: E501
+        :rtype: OneOfVelocityOutletBCPhaseFractionsV2
         """
-        return self._associated_phase_fractions
+        return self._phase_fractions_v2
 
-    @associated_phase_fractions.setter
-    def associated_phase_fractions(self, associated_phase_fractions):
-        """Sets the associated_phase_fractions of this VelocityOutletBC.
+    @phase_fractions_v2.setter
+    def phase_fractions_v2(self, phase_fractions_v2):
+        """Sets the phase_fractions_v2 of this VelocityOutletBC.
 
-        Please choose a boundary condition for phase fraction (alpha).  # noqa: E501
 
-        :param associated_phase_fractions: The associated_phase_fractions of this VelocityOutletBC.  # noqa: E501
-        :type: list[PhaseNameAndFixedValuePFBC]
+        :param phase_fractions_v2: The phase_fractions_v2 of this VelocityOutletBC.  # noqa: E501
+        :type: OneOfVelocityOutletBCPhaseFractionsV2
         """
 
-        self._associated_phase_fractions = associated_phase_fractions
+        self._phase_fractions_v2 = phase_fractions_v2
 
     @property
-    def mass_fractions(self):
-        """Gets the mass_fractions of this VelocityOutletBC.  # noqa: E501
+    def mass_fractions_v2(self):
+        """Gets the mass_fractions_v2 of this VelocityOutletBC.  # noqa: E501
 
-        Please choose a boundary condition for component mass density fraction.  # noqa: E501
 
-        :return: The mass_fractions of this VelocityOutletBC.  # noqa: E501
-        :rtype: list[FixedValueMassFractionBC]
+        :return: The mass_fractions_v2 of this VelocityOutletBC.  # noqa: E501
+        :rtype: OutletBackFlowMFValues
         """
-        return self._mass_fractions
+        return self._mass_fractions_v2
 
-    @mass_fractions.setter
-    def mass_fractions(self, mass_fractions):
-        """Sets the mass_fractions of this VelocityOutletBC.
+    @mass_fractions_v2.setter
+    def mass_fractions_v2(self, mass_fractions_v2):
+        """Sets the mass_fractions_v2 of this VelocityOutletBC.
 
-        Please choose a boundary condition for component mass density fraction.  # noqa: E501
 
-        :param mass_fractions: The mass_fractions of this VelocityOutletBC.  # noqa: E501
-        :type: list[FixedValueMassFractionBC]
+        :param mass_fractions_v2: The mass_fractions_v2 of this VelocityOutletBC.  # noqa: E501
+        :type: OutletBackFlowMFValues
         """
 
-        self._mass_fractions = mass_fractions
+        self._mass_fractions_v2 = mass_fractions_v2
 
     @property
     def net_radiative_heat_flux(self):

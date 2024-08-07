@@ -33,12 +33,14 @@ class OneOfVolumeCustomSizingCustomSizingModes(object):
     openapi_types = {
         'type': 'str',
         'distance_sizing_values': 'list[DistanceSizing]',
+        'curvature': 'OneOfDistanceVolumeCustomSizingCurvature',
         'sizing': 'OneOfInsideVolumeCustomSizingSizing'
     }
 
     attribute_map = {
         'type': 'type',
         'distance_sizing_values': 'distanceSizingValues',
+        'curvature': 'curvature',
         'sizing': 'sizing'
     }
 
@@ -47,7 +49,7 @@ class OneOfVolumeCustomSizingCustomSizingModes(object):
         'INSIDE_CUSTOM_SIZING': 'InsideVolumeCustomSizing'
     }
 
-    def __init__(self, type='INSIDE_CUSTOM_SIZING', distance_sizing_values=None, sizing=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INSIDE_CUSTOM_SIZING', distance_sizing_values=None, curvature=None, sizing=None, local_vars_configuration=None):  # noqa: E501
         """OneOfVolumeCustomSizingCustomSizingModes - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,12 +57,15 @@ class OneOfVolumeCustomSizingCustomSizingModes(object):
 
         self._type = None
         self._distance_sizing_values = None
+        self._curvature = None
         self._sizing = None
         self.discriminator = 'type'
 
         self.type = type
         if distance_sizing_values is not None:
             self.distance_sizing_values = distance_sizing_values
+        if curvature is not None:
+            self.curvature = curvature
         if sizing is not None:
             self.sizing = sizing
 
@@ -111,6 +116,27 @@ class OneOfVolumeCustomSizingCustomSizingModes(object):
         """
 
         self._distance_sizing_values = distance_sizing_values
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this OneOfVolumeCustomSizingCustomSizingModes.  # noqa: E501
+
+
+        :return: The curvature of this OneOfVolumeCustomSizingCustomSizingModes.  # noqa: E501
+        :rtype: OneOfDistanceVolumeCustomSizingCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this OneOfVolumeCustomSizingCustomSizingModes.
+
+
+        :param curvature: The curvature of this OneOfVolumeCustomSizingCustomSizingModes.  # noqa: E501
+        :type: OneOfDistanceVolumeCustomSizingCurvature
+        """
+
+        self._curvature = curvature
 
     @property
     def sizing(self):

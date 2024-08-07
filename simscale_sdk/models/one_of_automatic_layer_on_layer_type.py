@@ -32,43 +32,59 @@ class OneOfAutomaticLayerOnLayerType(object):
     """
     openapi_types = {
         'type': 'str',
+        'number_of_layers': 'int',
+        'total_relative_thickness': 'float',
         'first_layer_size': 'DimensionalLength',
-        'growth_rate': 'float'
+        'growth_rate': 'float',
+        'total_absolute_thickness': 'DimensionalLength'
     }
 
     attribute_map = {
         'type': 'type',
+        'number_of_layers': 'numberOfLayers',
+        'total_relative_thickness': 'totalRelativeThickness',
         'first_layer_size': 'firstLayerSize',
-        'growth_rate': 'growthRate'
+        'growth_rate': 'growthRate',
+        'total_absolute_thickness': 'totalAbsoluteThickness'
     }
 
     discriminator_value_class_map = {
         'FRACTIONAL_HEIGHT_1': 'FractionalHeight1',
-        'FRACTIONAL_HEIGHT_2': 'FractionalHeight2'
+        'FRACTIONAL_HEIGHT_2': 'FractionalHeight2',
+        'GEOMETRIC_GROWTH': 'GeometricGrowth'
     }
 
-    def __init__(self, type='FRACTIONAL_HEIGHT_2', first_layer_size=None, growth_rate=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='GEOMETRIC_GROWTH', number_of_layers=None, total_relative_thickness=None, first_layer_size=None, growth_rate=None, total_absolute_thickness=None, local_vars_configuration=None):  # noqa: E501
         """OneOfAutomaticLayerOnLayerType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._number_of_layers = None
+        self._total_relative_thickness = None
         self._first_layer_size = None
         self._growth_rate = None
+        self._total_absolute_thickness = None
         self.discriminator = 'type'
 
         self.type = type
+        if number_of_layers is not None:
+            self.number_of_layers = number_of_layers
+        if total_relative_thickness is not None:
+            self.total_relative_thickness = total_relative_thickness
         if first_layer_size is not None:
             self.first_layer_size = first_layer_size
         if growth_rate is not None:
             self.growth_rate = growth_rate
+        if total_absolute_thickness is not None:
+            self.total_absolute_thickness = total_absolute_thickness
 
     @property
     def type(self):
         """Gets the type of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
 
-        Schema name: FractionalHeight2  # noqa: E501
+        Schema name: GeometricGrowth  # noqa: E501
 
         :return: The type of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
         :rtype: str
@@ -79,7 +95,7 @@ class OneOfAutomaticLayerOnLayerType(object):
     def type(self, type):
         """Sets the type of this OneOfAutomaticLayerOnLayerType.
 
-        Schema name: FractionalHeight2  # noqa: E501
+        Schema name: GeometricGrowth  # noqa: E501
 
         :param type: The type of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
         :type: str
@@ -88,6 +104,58 @@ class OneOfAutomaticLayerOnLayerType(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def number_of_layers(self):
+        """Gets the number_of_layers of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+
+        The <i>Number of layers</i> defines how many prismatic boundary layers should be created. 3 is default.  # noqa: E501
+
+        :return: The number_of_layers of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_layers
+
+    @number_of_layers.setter
+    def number_of_layers(self, number_of_layers):
+        """Sets the number_of_layers of this OneOfAutomaticLayerOnLayerType.
+
+        The <i>Number of layers</i> defines how many prismatic boundary layers should be created. 3 is default.  # noqa: E501
+
+        :param number_of_layers: The number_of_layers of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_layers is not None and number_of_layers > 20):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_layers`, must be a value less than or equal to `20`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_layers is not None and number_of_layers < 1):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_layers`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._number_of_layers = number_of_layers
+
+    @property
+    def total_relative_thickness(self):
+        """Gets the total_relative_thickness of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+
+        It defines the thickness of all prismatic boundary layers combined in relation to the local element size.<img src=\"/spec/resources/help/imgs/simmetrix-overall-layer-thickness.png\" class=\"helpPopupImage\"/>Example 3-layer thickness of 40% (0.4) of the local mesh size.  # noqa: E501
+
+        :return: The total_relative_thickness of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+        :rtype: float
+        """
+        return self._total_relative_thickness
+
+    @total_relative_thickness.setter
+    def total_relative_thickness(self, total_relative_thickness):
+        """Sets the total_relative_thickness of this OneOfAutomaticLayerOnLayerType.
+
+        It defines the thickness of all prismatic boundary layers combined in relation to the local element size.<img src=\"/spec/resources/help/imgs/simmetrix-overall-layer-thickness.png\" class=\"helpPopupImage\"/>Example 3-layer thickness of 40% (0.4) of the local mesh size.  # noqa: E501
+
+        :param total_relative_thickness: The total_relative_thickness of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+        :type: float
+        """
+
+        self._total_relative_thickness = total_relative_thickness
 
     @property
     def first_layer_size(self):
@@ -135,6 +203,27 @@ class OneOfAutomaticLayerOnLayerType(object):
             raise ValueError("Invalid value for `growth_rate`, must be a value greater than or equal to `1`")  # noqa: E501
 
         self._growth_rate = growth_rate
+
+    @property
+    def total_absolute_thickness(self):
+        """Gets the total_absolute_thickness of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+
+
+        :return: The total_absolute_thickness of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+        :rtype: DimensionalLength
+        """
+        return self._total_absolute_thickness
+
+    @total_absolute_thickness.setter
+    def total_absolute_thickness(self, total_absolute_thickness):
+        """Sets the total_absolute_thickness of this OneOfAutomaticLayerOnLayerType.
+
+
+        :param total_absolute_thickness: The total_absolute_thickness of this OneOfAutomaticLayerOnLayerType.  # noqa: E501
+        :type: DimensionalLength
+        """
+
+        self._total_absolute_thickness = total_absolute_thickness
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

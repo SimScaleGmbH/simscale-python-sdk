@@ -43,10 +43,11 @@ class OneOfElectromagneticAnalysisModel(object):
     discriminator_value_class_map = {
         'ELECTROSTATICS': 'Electrostatics',
         'MAGNETOSTATICS': 'Magnetostatics',
-        'TIME_HARMONIC_MAGNETICS': 'TimeHarmonicMagnetics'
+        'TIME_HARMONIC_MAGNETICS': 'TimeHarmonicMagnetics',
+        'TIME_TRANSIENT_MAGNETICS': 'TimeTransientMagnetics'
     }
 
-    def __init__(self, type='TIME_HARMONIC_MAGNETICS', frequency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', frequency=None, local_vars_configuration=None):  # noqa: E501
         """OneOfElectromagneticAnalysisModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,7 +65,7 @@ class OneOfElectromagneticAnalysisModel(object):
     def type(self):
         """Gets the type of this OneOfElectromagneticAnalysisModel.  # noqa: E501
 
-        Schema name: TimeHarmonicMagnetics  # noqa: E501
+        Schema name: TimeTransientMagnetics  # noqa: E501
 
         :return: The type of this OneOfElectromagneticAnalysisModel.  # noqa: E501
         :rtype: str
@@ -75,7 +76,7 @@ class OneOfElectromagneticAnalysisModel(object):
     def type(self, type):
         """Sets the type of this OneOfElectromagneticAnalysisModel.
 
-        Schema name: TimeHarmonicMagnetics  # noqa: E501
+        Schema name: TimeTransientMagnetics  # noqa: E501
 
         :param type: The type of this OneOfElectromagneticAnalysisModel.  # noqa: E501
         :type: str

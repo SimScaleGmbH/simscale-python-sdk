@@ -90,7 +90,7 @@ class ComputingCore(object):
         :param num_of_processors: The num_of_processors of this ComputingCore.  # noqa: E501
         :type: int
         """
-        allowed_values = [-1, 1, 2, 4, 8, 16, 32, 64]  # noqa: E501
+        allowed_values = [-1, 1, 2, 4, 8, 16, 32, 48, 64, 96, 128, 192]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and num_of_processors not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `num_of_processors` ({0}), must be one of {1}"  # noqa: E501
@@ -165,8 +165,8 @@ class ComputingCore(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
-                num_of_threads is not None and num_of_threads > 64):  # noqa: E501
-            raise ValueError("Invalid value for `num_of_threads`, must be a value less than or equal to `64`")  # noqa: E501
+                num_of_threads is not None and num_of_threads > 192):  # noqa: E501
+            raise ValueError("Invalid value for `num_of_threads`, must be a value less than or equal to `192`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 num_of_threads is not None and num_of_threads < 1):  # noqa: E501
             raise ValueError("Invalid value for `num_of_threads`, must be a value greater than or equal to `1`")  # noqa: E501

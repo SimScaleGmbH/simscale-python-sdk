@@ -38,7 +38,7 @@ class WindRose(object):
         'wind_engineering_standard': 'str',
         'wind_data_source': 'str',
         'add_surface_roughness': 'bool',
-        'gust_factor': 'float'
+        'gust_factor_v2': 'float'
     }
 
     attribute_map = {
@@ -49,10 +49,10 @@ class WindRose(object):
         'wind_engineering_standard': 'windEngineeringStandard',
         'wind_data_source': 'windDataSource',
         'add_surface_roughness': 'addSurfaceRoughness',
-        'gust_factor': 'gustFactor'
+        'gust_factor_v2': 'gustFactorV2'
     }
 
-    def __init__(self, num_directions=None, velocity_buckets=None, velocity_unit='m/s', exposure_categories=None, wind_engineering_standard=None, wind_data_source=None, add_surface_roughness=None, gust_factor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, num_directions=None, velocity_buckets=None, velocity_unit='m/s', exposure_categories=None, wind_engineering_standard=None, wind_data_source=None, add_surface_roughness=None, gust_factor_v2=None, local_vars_configuration=None):  # noqa: E501
         """WindRose - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,7 +65,7 @@ class WindRose(object):
         self._wind_engineering_standard = None
         self._wind_data_source = None
         self._add_surface_roughness = None
-        self._gust_factor = None
+        self._gust_factor_v2 = None
         self.discriminator = None
 
         if num_directions is not None:
@@ -81,8 +81,8 @@ class WindRose(object):
             self.wind_data_source = wind_data_source
         if add_surface_roughness is not None:
             self.add_surface_roughness = add_surface_roughness
-        if gust_factor is not None:
-            self.gust_factor = gust_factor
+        if gust_factor_v2 is not None:
+            self.gust_factor_v2 = gust_factor_v2
 
     @property
     def num_directions(self):
@@ -257,31 +257,31 @@ class WindRose(object):
         self._add_surface_roughness = add_surface_roughness
 
     @property
-    def gust_factor(self):
-        """Gets the gust_factor of this WindRose.  # noqa: E501
+    def gust_factor_v2(self):
+        """Gets the gust_factor_v2 of this WindRose.  # noqa: E501
 
 
-        :return: The gust_factor of this WindRose.  # noqa: E501
+        :return: The gust_factor_v2 of this WindRose.  # noqa: E501
         :rtype: float
         """
-        return self._gust_factor
+        return self._gust_factor_v2
 
-    @gust_factor.setter
-    def gust_factor(self, gust_factor):
-        """Sets the gust_factor of this WindRose.
+    @gust_factor_v2.setter
+    def gust_factor_v2(self, gust_factor_v2):
+        """Sets the gust_factor_v2 of this WindRose.
 
 
-        :param gust_factor: The gust_factor of this WindRose.  # noqa: E501
+        :param gust_factor_v2: The gust_factor_v2 of this WindRose.  # noqa: E501
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                gust_factor is not None and gust_factor > 3.5):  # noqa: E501
-            raise ValueError("Invalid value for `gust_factor`, must be a value less than or equal to `3.5`")  # noqa: E501
+                gust_factor_v2 is not None and gust_factor_v2 > 3.5):  # noqa: E501
+            raise ValueError("Invalid value for `gust_factor_v2`, must be a value less than or equal to `3.5`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
-                gust_factor is not None and gust_factor < 1.5):  # noqa: E501
-            raise ValueError("Invalid value for `gust_factor`, must be a value greater than or equal to `1.5`")  # noqa: E501
+                gust_factor_v2 is not None and gust_factor_v2 < 1.5):  # noqa: E501
+            raise ValueError("Invalid value for `gust_factor_v2`, must be a value greater than or equal to `1.5`")  # noqa: E501
 
-        self._gust_factor = gust_factor
+        self._gust_factor_v2 = gust_factor_v2
 
     def to_dict(self):
         """Returns the model properties as a dict"""

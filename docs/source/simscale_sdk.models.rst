@@ -185,6 +185,14 @@ simscale\_sdk.models.adjustable\_runtime\_write\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.advanced\_chronos\_settings module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.advanced_chronos_settings
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.advanced\_comfort\_criterion\_settings module
 ------------------------------------------------------------------
 
@@ -405,6 +413,14 @@ simscale\_sdk.models.automatic\_axis\_definition module
 -------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.automatic_axis_definition
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.automatic\_curvature module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_curvature
    :members:
    :undoc-members:
    :show-inheritance:
@@ -849,10 +865,10 @@ simscale\_sdk.models.chestnut module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.chronos\_preconditioner module
----------------------------------------------------
+simscale\_sdk.models.chronos\_solver module
+-------------------------------------------
 
-.. automodule:: simscale_sdk.models.chronos_preconditioner
+.. automodule:: simscale_sdk.models.chronos_solver
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1157,6 +1173,22 @@ simscale\_sdk.models.contact\_result\_control\_item module
 ----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.contact_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.convection\_radiation\_tbc module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.convection_radiation_tbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.convection\_tbc module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.convection_tbc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1773,6 +1805,22 @@ simscale\_sdk.models.dimensional\_function\_dynamic\_viscosity module
 ---------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.dimensional_function_dynamic_viscosity
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_function\_electric\_current module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_electric_current
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.dimensional\_function\_electric\_potential module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_electric_potential
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2705,6 +2753,30 @@ simscale\_sdk.models.electromagnetic\_analysis module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.electromagnetic\_current\_type\_constant module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_current_type_constant
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_current\_type\_sinusoidal module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_current_type_sinusoidal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_current\_type\_table module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_current_type_table
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.electromagnetic\_material module
 -----------------------------------------------------
 
@@ -2733,6 +2805,38 @@ simscale\_sdk.models.electromagnetic\_simulation\_control module
 ----------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.electromagnetic_simulation_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_transient\_control module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_transient_control
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_voltage\_type\_constant module
+--------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_voltage_type_constant
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_voltage\_type\_sinusoidal module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_voltage_type_sinusoidal
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.electromagnetic\_voltage\_type\_table module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_voltage_type_table
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3457,6 +3561,14 @@ simscale\_sdk.models.fixed\_value\_pfbc module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.fixed\_value\_phase\_fraction\_bc module
+-------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.fixed_value_phase_fraction_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.fixed\_value\_psbc module
 ----------------------------------------------
 
@@ -4145,6 +4257,14 @@ simscale\_sdk.models.geographical\_location module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.geometric\_growth module
+---------------------------------------------
+
+.. automodule:: simscale_sdk.models.geometric_growth
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.geometries module
 --------------------------------------
 
@@ -4705,6 +4825,22 @@ simscale\_sdk.models.initial\_timesteps\_write\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.inlet\_fixed\_mf\_values module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.inlet_fixed_mf_values
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.inlet\_fixed\_pf\_values module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.inlet_fixed_pf_values
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.inlet\_outlet\_dvbc module
 -----------------------------------------------
 
@@ -4941,6 +5077,14 @@ simscale\_sdk.models.jacobi\_preconditioner module
 --------------------------------------------------
 
 .. automodule:: simscale_sdk.models.jacobi_preconditioner
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.johnson\_cook\_elasto\_plastic\_model module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.johnson_cook_elasto_plastic_model
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6041,6 +6185,30 @@ simscale\_sdk.models.oscillating\_rotating\_sbm module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.outlet\_back\_flow\_mf\_values module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.outlet_back_flow_mf_values
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.outlet\_back\_flow\_pf\_values module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.outlet_back_flow_pf_values
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.outlet\_flow\_driven\_pf module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.outlet_flow_driven_pf
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.outlet\_mean\_phase\_vbc module
 ----------------------------------------------------
 
@@ -6353,14 +6521,6 @@ simscale\_sdk.models.phase\_fractions\_ic module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.phase\_name\_and\_fixed\_value\_pfbc module
-----------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.phase_name_and_fixed_value_pfbc
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.physical\_contact module
 ---------------------------------------------
 
@@ -6609,6 +6769,14 @@ simscale\_sdk.models.probe\_points\_result\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.progressive\_refinement module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.progressive_refinement
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.project module
 -----------------------------------
 
@@ -6653,6 +6821,14 @@ simscale\_sdk.models.qz module
 ------------------------------
 
 .. automodule:: simscale_sdk.models.qz
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.radiation\_tbc module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.radiation_tbc
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6789,6 +6965,14 @@ simscale\_sdk.models.relative\_convergence\_criteria module
 -----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.relative_convergence_criteria
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_curvature module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_curvature
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8505,6 +8689,14 @@ simscale\_sdk.models.time\_step\_write\_control module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.time\_transient\_magnetics module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.time_transient_magnetics
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.tolerance module
 -------------------------------------
 
@@ -9145,6 +9337,14 @@ simscale\_sdk.models.wall\_contact\_angle module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.wall\_convection\_model module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.wall_convection_model
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.wall\_function\_dvbc module
 ------------------------------------------------
 
@@ -9237,6 +9437,14 @@ simscale\_sdk.models.wall\_next\_cell\_heat\_transfer\_coefficient\_result\_type
 ---------------------------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.wall_next_cell_heat_transfer_coefficient_result_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.wall\_radiation\_model module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.wall_radiation_model
    :members:
    :undoc-members:
    :show-inheritance:

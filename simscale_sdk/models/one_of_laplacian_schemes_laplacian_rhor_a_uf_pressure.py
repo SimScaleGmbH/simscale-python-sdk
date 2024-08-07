@@ -89,7 +89,7 @@ class OneOfLaplacianSchemesLaplacianRhorAUfPressure(object):
     def limiter_coefficient(self):
         """Gets the limiter_coefficient of this OneOfLaplacianSchemesLaplacianRhorAUfPressure.  # noqa: E501
 
-        This property defines a limiter coefficient for the scheme. 1 ensures boundedness while 0 applies no limiting.  # noqa: E501
+        This property defines a limiter coefficient for the scheme:<ul><li><strong>0</strong>: no correction, equivalent to the uncorrected scheme</li><li><strong>1</strong>: full non-orthogonal correction applied</li><li><strong>0.5</strong>: non-orthogonal contribution does not exceed the orthogonal part</li></ul>  # noqa: E501
 
         :return: The limiter_coefficient of this OneOfLaplacianSchemesLaplacianRhorAUfPressure.  # noqa: E501
         :rtype: float
@@ -100,7 +100,7 @@ class OneOfLaplacianSchemesLaplacianRhorAUfPressure(object):
     def limiter_coefficient(self, limiter_coefficient):
         """Sets the limiter_coefficient of this OneOfLaplacianSchemesLaplacianRhorAUfPressure.
 
-        This property defines a limiter coefficient for the scheme. 1 ensures boundedness while 0 applies no limiting.  # noqa: E501
+        This property defines a limiter coefficient for the scheme:<ul><li><strong>0</strong>: no correction, equivalent to the uncorrected scheme</li><li><strong>1</strong>: full non-orthogonal correction applied</li><li><strong>0.5</strong>: non-orthogonal contribution does not exceed the orthogonal part</li></ul>  # noqa: E501
 
         :param limiter_coefficient: The limiter_coefficient of this OneOfLaplacianSchemesLaplacianRhorAUfPressure.  # noqa: E501
         :type: float

@@ -32,29 +32,34 @@ class WindComfortMesh(object):
     """
     openapi_types = {
         'wind_comfort_fineness': 'OneOfWindComfortMeshWindComfortFineness',
+        'progressive_refinement': 'ProgressiveRefinement',
         'reynolds_scaling_type': 'OneOfWindComfortMeshReynoldsScalingType',
         'refinements': 'list[OneOfWindComfortMeshRefinements]'
     }
 
     attribute_map = {
         'wind_comfort_fineness': 'windComfortFineness',
+        'progressive_refinement': 'progressiveRefinement',
         'reynolds_scaling_type': 'reynoldsScalingType',
         'refinements': 'refinements'
     }
 
-    def __init__(self, wind_comfort_fineness=None, reynolds_scaling_type=None, refinements=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, wind_comfort_fineness=None, progressive_refinement=None, reynolds_scaling_type=None, refinements=None, local_vars_configuration=None):  # noqa: E501
         """WindComfortMesh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._wind_comfort_fineness = None
+        self._progressive_refinement = None
         self._reynolds_scaling_type = None
         self._refinements = None
         self.discriminator = None
 
         if wind_comfort_fineness is not None:
             self.wind_comfort_fineness = wind_comfort_fineness
+        if progressive_refinement is not None:
+            self.progressive_refinement = progressive_refinement
         if reynolds_scaling_type is not None:
             self.reynolds_scaling_type = reynolds_scaling_type
         if refinements is not None:
@@ -80,6 +85,27 @@ class WindComfortMesh(object):
         """
 
         self._wind_comfort_fineness = wind_comfort_fineness
+
+    @property
+    def progressive_refinement(self):
+        """Gets the progressive_refinement of this WindComfortMesh.  # noqa: E501
+
+
+        :return: The progressive_refinement of this WindComfortMesh.  # noqa: E501
+        :rtype: ProgressiveRefinement
+        """
+        return self._progressive_refinement
+
+    @progressive_refinement.setter
+    def progressive_refinement(self, progressive_refinement):
+        """Sets the progressive_refinement of this WindComfortMesh.
+
+
+        :param progressive_refinement: The progressive_refinement of this WindComfortMesh.  # noqa: E501
+        :type: ProgressiveRefinement
+        """
+
+        self._progressive_refinement = progressive_refinement
 
     @property
     def reynolds_scaling_type(self):

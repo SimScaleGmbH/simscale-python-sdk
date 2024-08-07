@@ -36,6 +36,8 @@ class PressureOutletBC(object):
         'pressure': 'OneOfPressureOutletBCPressure',
         'pressure_rgh': 'OneOfPressureOutletBCPressureRgh',
         'gauge_pressure': 'OneOfPressureOutletBCGaugePressure',
+        'phase_fractions_v2': 'OneOfPressureOutletBCPhaseFractionsV2',
+        'mass_fractions_v2': 'OutletBackFlowMFValues',
         'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh',
         'net_radiative_heat_flux': 'OneOfPressureOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfPressureOutletBCRadiativeIntensityRay',
@@ -49,6 +51,8 @@ class PressureOutletBC(object):
         'pressure': 'pressure',
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
+        'phase_fractions_v2': 'phaseFractionsV2',
+        'mass_fractions_v2': 'massFractionsV2',
         'gauge_pressure_rgh': 'gaugePressureRgh',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
@@ -56,7 +60,7 @@ class PressureOutletBC(object):
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_OUTLET_V30', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_OUTLET_V30', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, phase_fractions_v2=None, mass_fractions_v2=None, gauge_pressure_rgh=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureOutletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +71,8 @@ class PressureOutletBC(object):
         self._pressure = None
         self._pressure_rgh = None
         self._gauge_pressure = None
+        self._phase_fractions_v2 = None
+        self._mass_fractions_v2 = None
         self._gauge_pressure_rgh = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
@@ -83,6 +89,10 @@ class PressureOutletBC(object):
             self.pressure_rgh = pressure_rgh
         if gauge_pressure is not None:
             self.gauge_pressure = gauge_pressure
+        if phase_fractions_v2 is not None:
+            self.phase_fractions_v2 = phase_fractions_v2
+        if mass_fractions_v2 is not None:
+            self.mass_fractions_v2 = mass_fractions_v2
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
         if net_radiative_heat_flux is not None:
@@ -202,6 +212,48 @@ class PressureOutletBC(object):
         """
 
         self._gauge_pressure = gauge_pressure
+
+    @property
+    def phase_fractions_v2(self):
+        """Gets the phase_fractions_v2 of this PressureOutletBC.  # noqa: E501
+
+
+        :return: The phase_fractions_v2 of this PressureOutletBC.  # noqa: E501
+        :rtype: OneOfPressureOutletBCPhaseFractionsV2
+        """
+        return self._phase_fractions_v2
+
+    @phase_fractions_v2.setter
+    def phase_fractions_v2(self, phase_fractions_v2):
+        """Sets the phase_fractions_v2 of this PressureOutletBC.
+
+
+        :param phase_fractions_v2: The phase_fractions_v2 of this PressureOutletBC.  # noqa: E501
+        :type: OneOfPressureOutletBCPhaseFractionsV2
+        """
+
+        self._phase_fractions_v2 = phase_fractions_v2
+
+    @property
+    def mass_fractions_v2(self):
+        """Gets the mass_fractions_v2 of this PressureOutletBC.  # noqa: E501
+
+
+        :return: The mass_fractions_v2 of this PressureOutletBC.  # noqa: E501
+        :rtype: OutletBackFlowMFValues
+        """
+        return self._mass_fractions_v2
+
+    @mass_fractions_v2.setter
+    def mass_fractions_v2(self, mass_fractions_v2):
+        """Sets the mass_fractions_v2 of this PressureOutletBC.
+
+
+        :param mass_fractions_v2: The mass_fractions_v2 of this PressureOutletBC.  # noqa: E501
+        :type: OutletBackFlowMFValues
+        """
+
+        self._mass_fractions_v2 = mass_fractions_v2
 
     @property
     def gauge_pressure_rgh(self):

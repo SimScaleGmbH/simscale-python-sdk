@@ -87,6 +87,7 @@ class ElectromagneticResultControl(object):
     def calculate_capacitances(self):
         """Gets the calculate_capacitances of this ElectromagneticResultControl.  # noqa: E501
 
+        Calculate the capacitance matrix of the conductive bodies.<strong><span style='color: red;'>Note that the field solution will be modified.</span></strong>  # noqa: E501
 
         :return: The calculate_capacitances of this ElectromagneticResultControl.  # noqa: E501
         :rtype: bool
@@ -97,6 +98,7 @@ class ElectromagneticResultControl(object):
     def calculate_capacitances(self, calculate_capacitances):
         """Sets the calculate_capacitances of this ElectromagneticResultControl.
 
+        Calculate the capacitance matrix of the conductive bodies.<strong><span style='color: red;'>Note that the field solution will be modified.</span></strong>  # noqa: E501
 
         :param calculate_capacitances: The calculate_capacitances of this ElectromagneticResultControl.  # noqa: E501
         :type: bool

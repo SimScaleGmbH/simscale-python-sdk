@@ -33,9 +33,19 @@ class OneOfPlasticMaterialBehaviorElastoPlasticModel(object):
     openapi_types = {
         'type': 'str',
         'youngs_modulus': 'DimensionalFunctionPressure',
-        'poissons_ratio': 'OneOfBilinearElastoPlasticModelPoissonsRatio',
+        'poissons_ratio': 'OneOfJohnsonCookElastoPlasticModelPoissonsRatio',
         'hardening_model': 'OneOfBilinearElastoPlasticModelHardeningModel',
-        'plastic_hardening': 'IsotropicPlasticHardening'
+        'plastic_hardening': 'IsotropicPlasticHardening',
+        'initial_yield_stress': 'DimensionalFunctionPressure',
+        'hardening_coefficient': 'DimensionalFunctionPressure',
+        'hardening_exponent': 'float',
+        'strain_rate_effect': 'bool',
+        'strain_rate_hardening_coefficient': 'float',
+        'reference_strain_rate': 'DimensionalStrainRate',
+        'thermal_softening_effect': 'bool',
+        'thermal_softening_exponent': 'float',
+        'reference_temperature_jc': 'DimensionalTemperature',
+        'melting_temperature_jc': 'DimensionalTemperature'
     }
 
     attribute_map = {
@@ -43,15 +53,26 @@ class OneOfPlasticMaterialBehaviorElastoPlasticModel(object):
         'youngs_modulus': 'youngsModulus',
         'poissons_ratio': 'poissonsRatio',
         'hardening_model': 'hardeningModel',
-        'plastic_hardening': 'plasticHardening'
+        'plastic_hardening': 'plasticHardening',
+        'initial_yield_stress': 'initialYieldStress',
+        'hardening_coefficient': 'hardeningCoefficient',
+        'hardening_exponent': 'hardeningExponent',
+        'strain_rate_effect': 'strainRateEffect',
+        'strain_rate_hardening_coefficient': 'strainRateHardeningCoefficient',
+        'reference_strain_rate': 'referenceStrainRate',
+        'thermal_softening_effect': 'thermalSofteningEffect',
+        'thermal_softening_exponent': 'thermalSofteningExponent',
+        'reference_temperature_jc': 'referenceTemperatureJC',
+        'melting_temperature_jc': 'meltingTemperatureJC'
     }
 
     discriminator_value_class_map = {
         'BILINEAR': 'BilinearElastoPlasticModel',
-        'MULTILINEAR': 'MultilinearElastoPlasticModel'
+        'MULTILINEAR': 'MultilinearElastoPlasticModel',
+        'JOHNSON_COOK': 'JohnsonCookElastoPlasticModel'
     }
 
-    def __init__(self, type='MULTILINEAR', youngs_modulus=None, poissons_ratio=None, hardening_model=None, plastic_hardening=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='JOHNSON_COOK', youngs_modulus=None, poissons_ratio=None, hardening_model=None, plastic_hardening=None, initial_yield_stress=None, hardening_coefficient=None, hardening_exponent=None, strain_rate_effect=None, strain_rate_hardening_coefficient=None, reference_strain_rate=None, thermal_softening_effect=None, thermal_softening_exponent=None, reference_temperature_jc=None, melting_temperature_jc=None, local_vars_configuration=None):  # noqa: E501
         """OneOfPlasticMaterialBehaviorElastoPlasticModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +83,16 @@ class OneOfPlasticMaterialBehaviorElastoPlasticModel(object):
         self._poissons_ratio = None
         self._hardening_model = None
         self._plastic_hardening = None
+        self._initial_yield_stress = None
+        self._hardening_coefficient = None
+        self._hardening_exponent = None
+        self._strain_rate_effect = None
+        self._strain_rate_hardening_coefficient = None
+        self._reference_strain_rate = None
+        self._thermal_softening_effect = None
+        self._thermal_softening_exponent = None
+        self._reference_temperature_jc = None
+        self._melting_temperature_jc = None
         self.discriminator = 'type'
 
         self.type = type
@@ -73,12 +104,32 @@ class OneOfPlasticMaterialBehaviorElastoPlasticModel(object):
             self.hardening_model = hardening_model
         if plastic_hardening is not None:
             self.plastic_hardening = plastic_hardening
+        if initial_yield_stress is not None:
+            self.initial_yield_stress = initial_yield_stress
+        if hardening_coefficient is not None:
+            self.hardening_coefficient = hardening_coefficient
+        if hardening_exponent is not None:
+            self.hardening_exponent = hardening_exponent
+        if strain_rate_effect is not None:
+            self.strain_rate_effect = strain_rate_effect
+        if strain_rate_hardening_coefficient is not None:
+            self.strain_rate_hardening_coefficient = strain_rate_hardening_coefficient
+        if reference_strain_rate is not None:
+            self.reference_strain_rate = reference_strain_rate
+        if thermal_softening_effect is not None:
+            self.thermal_softening_effect = thermal_softening_effect
+        if thermal_softening_exponent is not None:
+            self.thermal_softening_exponent = thermal_softening_exponent
+        if reference_temperature_jc is not None:
+            self.reference_temperature_jc = reference_temperature_jc
+        if melting_temperature_jc is not None:
+            self.melting_temperature_jc = melting_temperature_jc
 
     @property
     def type(self):
         """Gets the type of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
 
-        Schema name: MultilinearElastoPlasticModel  # noqa: E501
+        Schema name: JohnsonCookElastoPlasticModel  # noqa: E501
 
         :return: The type of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
         :rtype: str
@@ -89,7 +140,7 @@ class OneOfPlasticMaterialBehaviorElastoPlasticModel(object):
     def type(self, type):
         """Sets the type of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
 
-        Schema name: MultilinearElastoPlasticModel  # noqa: E501
+        Schema name: JohnsonCookElastoPlasticModel  # noqa: E501
 
         :param type: The type of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
         :type: str
@@ -126,7 +177,7 @@ class OneOfPlasticMaterialBehaviorElastoPlasticModel(object):
 
 
         :return: The poissons_ratio of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
-        :rtype: OneOfBilinearElastoPlasticModelPoissonsRatio
+        :rtype: OneOfJohnsonCookElastoPlasticModelPoissonsRatio
         """
         return self._poissons_ratio
 
@@ -136,7 +187,7 @@ class OneOfPlasticMaterialBehaviorElastoPlasticModel(object):
 
 
         :param poissons_ratio: The poissons_ratio of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
-        :type: OneOfBilinearElastoPlasticModelPoissonsRatio
+        :type: OneOfJohnsonCookElastoPlasticModelPoissonsRatio
         """
 
         self._poissons_ratio = poissons_ratio
@@ -182,6 +233,235 @@ class OneOfPlasticMaterialBehaviorElastoPlasticModel(object):
         """
 
         self._plastic_hardening = plastic_hardening
+
+    @property
+    def initial_yield_stress(self):
+        """Gets the initial_yield_stress of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+
+        :return: The initial_yield_stress of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: DimensionalFunctionPressure
+        """
+        return self._initial_yield_stress
+
+    @initial_yield_stress.setter
+    def initial_yield_stress(self, initial_yield_stress):
+        """Sets the initial_yield_stress of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+
+        :param initial_yield_stress: The initial_yield_stress of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: DimensionalFunctionPressure
+        """
+
+        self._initial_yield_stress = initial_yield_stress
+
+    @property
+    def hardening_coefficient(self):
+        """Gets the hardening_coefficient of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+
+        :return: The hardening_coefficient of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: DimensionalFunctionPressure
+        """
+        return self._hardening_coefficient
+
+    @hardening_coefficient.setter
+    def hardening_coefficient(self, hardening_coefficient):
+        """Sets the hardening_coefficient of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+
+        :param hardening_coefficient: The hardening_coefficient of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: DimensionalFunctionPressure
+        """
+
+        self._hardening_coefficient = hardening_coefficient
+
+    @property
+    def hardening_exponent(self):
+        """Gets the hardening_exponent of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+        The strain hardening exponent describes the rate at which the material hardens with respect to plastic strain.  # noqa: E501
+
+        :return: The hardening_exponent of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._hardening_exponent
+
+    @hardening_exponent.setter
+    def hardening_exponent(self, hardening_exponent):
+        """Sets the hardening_exponent of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+        The strain hardening exponent describes the rate at which the material hardens with respect to plastic strain.  # noqa: E501
+
+        :param hardening_exponent: The hardening_exponent of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                hardening_exponent is not None and hardening_exponent < 0):  # noqa: E501
+            raise ValueError("Invalid value for `hardening_exponent`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._hardening_exponent = hardening_exponent
+
+    @property
+    def strain_rate_effect(self):
+        """Gets the strain_rate_effect of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+        This term indicates how the flow stress increases with increasing strain rate.  # noqa: E501
+
+        :return: The strain_rate_effect of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._strain_rate_effect
+
+    @strain_rate_effect.setter
+    def strain_rate_effect(self, strain_rate_effect):
+        """Sets the strain_rate_effect of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+        This term indicates how the flow stress increases with increasing strain rate.  # noqa: E501
+
+        :param strain_rate_effect: The strain_rate_effect of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._strain_rate_effect = strain_rate_effect
+
+    @property
+    def strain_rate_hardening_coefficient(self):
+        """Gets the strain_rate_hardening_coefficient of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+        The strain rate hardening coefficient describes the sensitivity of the material's flow stress to changes in the strain rate.  # noqa: E501
+
+        :return: The strain_rate_hardening_coefficient of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._strain_rate_hardening_coefficient
+
+    @strain_rate_hardening_coefficient.setter
+    def strain_rate_hardening_coefficient(self, strain_rate_hardening_coefficient):
+        """Sets the strain_rate_hardening_coefficient of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+        The strain rate hardening coefficient describes the sensitivity of the material's flow stress to changes in the strain rate.  # noqa: E501
+
+        :param strain_rate_hardening_coefficient: The strain_rate_hardening_coefficient of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                strain_rate_hardening_coefficient is not None and strain_rate_hardening_coefficient < 0):  # noqa: E501
+            raise ValueError("Invalid value for `strain_rate_hardening_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._strain_rate_hardening_coefficient = strain_rate_hardening_coefficient
+
+    @property
+    def reference_strain_rate(self):
+        """Gets the reference_strain_rate of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+
+        :return: The reference_strain_rate of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: DimensionalStrainRate
+        """
+        return self._reference_strain_rate
+
+    @reference_strain_rate.setter
+    def reference_strain_rate(self, reference_strain_rate):
+        """Sets the reference_strain_rate of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+
+        :param reference_strain_rate: The reference_strain_rate of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: DimensionalStrainRate
+        """
+
+        self._reference_strain_rate = reference_strain_rate
+
+    @property
+    def thermal_softening_effect(self):
+        """Gets the thermal_softening_effect of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+        This term indicates how the material softens with increasing temperature.  # noqa: E501
+
+        :return: The thermal_softening_effect of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._thermal_softening_effect
+
+    @thermal_softening_effect.setter
+    def thermal_softening_effect(self, thermal_softening_effect):
+        """Sets the thermal_softening_effect of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+        This term indicates how the material softens with increasing temperature.  # noqa: E501
+
+        :param thermal_softening_effect: The thermal_softening_effect of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._thermal_softening_effect = thermal_softening_effect
+
+    @property
+    def thermal_softening_exponent(self):
+        """Gets the thermal_softening_exponent of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+        The thermal softening exponent describes the rate at which the material's strength decreases with increasing temperature.  # noqa: E501
+
+        :return: The thermal_softening_exponent of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._thermal_softening_exponent
+
+    @thermal_softening_exponent.setter
+    def thermal_softening_exponent(self, thermal_softening_exponent):
+        """Sets the thermal_softening_exponent of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+        The thermal softening exponent describes the rate at which the material's strength decreases with increasing temperature.  # noqa: E501
+
+        :param thermal_softening_exponent: The thermal_softening_exponent of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                thermal_softening_exponent is not None and thermal_softening_exponent <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `thermal_softening_exponent`, must be a value greater than `0`")  # noqa: E501
+
+        self._thermal_softening_exponent = thermal_softening_exponent
+
+    @property
+    def reference_temperature_jc(self):
+        """Gets the reference_temperature_jc of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+
+        :return: The reference_temperature_jc of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: DimensionalTemperature
+        """
+        return self._reference_temperature_jc
+
+    @reference_temperature_jc.setter
+    def reference_temperature_jc(self, reference_temperature_jc):
+        """Sets the reference_temperature_jc of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+
+        :param reference_temperature_jc: The reference_temperature_jc of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: DimensionalTemperature
+        """
+
+        self._reference_temperature_jc = reference_temperature_jc
+
+    @property
+    def melting_temperature_jc(self):
+        """Gets the melting_temperature_jc of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+
+
+        :return: The melting_temperature_jc of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :rtype: DimensionalTemperature
+        """
+        return self._melting_temperature_jc
+
+    @melting_temperature_jc.setter
+    def melting_temperature_jc(self, melting_temperature_jc):
+        """Sets the melting_temperature_jc of this OneOfPlasticMaterialBehaviorElastoPlasticModel.
+
+
+        :param melting_temperature_jc: The melting_temperature_jc of this OneOfPlasticMaterialBehaviorElastoPlasticModel.  # noqa: E501
+        :type: DimensionalTemperature
+        """
+
+        self._melting_temperature_jc = melting_temperature_jc
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

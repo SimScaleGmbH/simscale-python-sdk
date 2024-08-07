@@ -34,6 +34,7 @@ class RegionRefinementWithLength(object):
         'type': 'str',
         'name': 'str',
         'refinement': 'OneOfRegionRefinementWithLengthRefinement',
+        'curvature': 'OneOfRegionRefinementWithLengthCurvature',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
@@ -42,11 +43,12 @@ class RegionRefinementWithLength(object):
         'type': 'type',
         'name': 'name',
         'refinement': 'refinement',
+        'curvature': 'curvature',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='REGION_LENGTH', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='REGION_LENGTH', name=None, refinement=None, curvature=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """RegionRefinementWithLength - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -55,6 +57,7 @@ class RegionRefinementWithLength(object):
         self._type = None
         self._name = None
         self._refinement = None
+        self._curvature = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
@@ -64,6 +67,8 @@ class RegionRefinementWithLength(object):
             self.name = name
         if refinement is not None:
             self.refinement = refinement
+        if curvature is not None:
+            self.curvature = curvature
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -135,6 +140,27 @@ class RegionRefinementWithLength(object):
         """
 
         self._refinement = refinement
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this RegionRefinementWithLength.  # noqa: E501
+
+
+        :return: The curvature of this RegionRefinementWithLength.  # noqa: E501
+        :rtype: OneOfRegionRefinementWithLengthCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this RegionRefinementWithLength.
+
+
+        :param curvature: The curvature of this RegionRefinementWithLength.  # noqa: E501
+        :type: OneOfRegionRefinementWithLengthCurvature
+        """
+
+        self._curvature = curvature
 
     @property
     def topological_reference(self):

@@ -35,8 +35,6 @@ class SimmetrixMeshingSolid(object):
         'sizing': 'OneOfSimmetrixMeshingSolidSizing',
         'refinements': 'list[OneOfSimmetrixMeshingSolidRefinements]',
         'automatic_sweep_parameters': 'OneOfSimmetrixMeshingSolidAutomaticSweepParameters',
-        'enable_shell_meshing': 'bool',
-        'surface_element_type': 'str',
         'num_of_processors': 'int',
         'max_meshing_run_time': 'DimensionalTime',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixSolidSettings'
@@ -47,14 +45,12 @@ class SimmetrixMeshingSolid(object):
         'sizing': 'sizing',
         'refinements': 'refinements',
         'automatic_sweep_parameters': 'automaticSweepParameters',
-        'enable_shell_meshing': 'enableShellMeshing',
-        'surface_element_type': 'surfaceElementType',
         'num_of_processors': 'numOfProcessors',
         'max_meshing_run_time': 'maxMeshingRunTime',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings'
     }
 
-    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, automatic_sweep_parameters=None, enable_shell_meshing=None, surface_element_type=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_MESHING_SOLID', sizing=None, refinements=None, automatic_sweep_parameters=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixMeshingSolid - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,8 +60,6 @@ class SimmetrixMeshingSolid(object):
         self._sizing = None
         self._refinements = None
         self._automatic_sweep_parameters = None
-        self._enable_shell_meshing = None
-        self._surface_element_type = None
         self._num_of_processors = None
         self._max_meshing_run_time = None
         self._advanced_simmetrix_settings = None
@@ -78,10 +72,6 @@ class SimmetrixMeshingSolid(object):
             self.refinements = refinements
         if automatic_sweep_parameters is not None:
             self.automatic_sweep_parameters = automatic_sweep_parameters
-        if enable_shell_meshing is not None:
-            self.enable_shell_meshing = enable_shell_meshing
-        if surface_element_type is not None:
-            self.surface_element_type = surface_element_type
         if num_of_processors is not None:
             self.num_of_processors = num_of_processors
         if max_meshing_run_time is not None:
@@ -178,54 +168,6 @@ class SimmetrixMeshingSolid(object):
         self._automatic_sweep_parameters = automatic_sweep_parameters
 
     @property
-    def enable_shell_meshing(self):
-        """Gets the enable_shell_meshing of this SimmetrixMeshingSolid.  # noqa: E501
-
-
-        :return: The enable_shell_meshing of this SimmetrixMeshingSolid.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_shell_meshing
-
-    @enable_shell_meshing.setter
-    def enable_shell_meshing(self, enable_shell_meshing):
-        """Sets the enable_shell_meshing of this SimmetrixMeshingSolid.
-
-
-        :param enable_shell_meshing: The enable_shell_meshing of this SimmetrixMeshingSolid.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_shell_meshing = enable_shell_meshing
-
-    @property
-    def surface_element_type(self):
-        """Gets the surface_element_type of this SimmetrixMeshingSolid.  # noqa: E501
-
-
-        :return: The surface_element_type of this SimmetrixMeshingSolid.  # noqa: E501
-        :rtype: str
-        """
-        return self._surface_element_type
-
-    @surface_element_type.setter
-    def surface_element_type(self, surface_element_type):
-        """Sets the surface_element_type of this SimmetrixMeshingSolid.
-
-
-        :param surface_element_type: The surface_element_type of this SimmetrixMeshingSolid.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["TRIANGULAR", "QUADDOMINANT"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and surface_element_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `surface_element_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(surface_element_type, allowed_values)
-            )
-
-        self._surface_element_type = surface_element_type
-
-    @property
     def num_of_processors(self):
         """Gets the num_of_processors of this SimmetrixMeshingSolid.  # noqa: E501
 
@@ -245,7 +187,7 @@ class SimmetrixMeshingSolid(object):
         :param num_of_processors: The num_of_processors of this SimmetrixMeshingSolid.  # noqa: E501
         :type: int
         """
-        allowed_values = [-1, 4, 8, 16, 32, 64, 96]  # noqa: E501
+        allowed_values = [-1, 4, 8, 16, 32, 48, 64, 96]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and num_of_processors not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `num_of_processors` ({0}), must be one of {1}"  # noqa: E501

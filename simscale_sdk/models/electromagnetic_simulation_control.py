@@ -31,24 +31,84 @@ class ElectromagneticSimulationControl(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'transient_magnetics_control': 'ElectromagneticTransientControl',
+        'num_processors': 'int',
         'max_run_time': 'DimensionalTime'
     }
 
     attribute_map = {
+        'transient_magnetics_control': 'transientMagneticsControl',
+        'num_processors': 'numProcessors',
         'max_run_time': 'maxRunTime'
     }
 
-    def __init__(self, max_run_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, transient_magnetics_control=None, num_processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._transient_magnetics_control = None
+        self._num_processors = None
         self._max_run_time = None
         self.discriminator = None
 
+        if transient_magnetics_control is not None:
+            self.transient_magnetics_control = transient_magnetics_control
+        if num_processors is not None:
+            self.num_processors = num_processors
         if max_run_time is not None:
             self.max_run_time = max_run_time
+
+    @property
+    def transient_magnetics_control(self):
+        """Gets the transient_magnetics_control of this ElectromagneticSimulationControl.  # noqa: E501
+
+
+        :return: The transient_magnetics_control of this ElectromagneticSimulationControl.  # noqa: E501
+        :rtype: ElectromagneticTransientControl
+        """
+        return self._transient_magnetics_control
+
+    @transient_magnetics_control.setter
+    def transient_magnetics_control(self, transient_magnetics_control):
+        """Sets the transient_magnetics_control of this ElectromagneticSimulationControl.
+
+
+        :param transient_magnetics_control: The transient_magnetics_control of this ElectromagneticSimulationControl.  # noqa: E501
+        :type: ElectromagneticTransientControl
+        """
+
+        self._transient_magnetics_control = transient_magnetics_control
+
+    @property
+    def num_processors(self):
+        """Gets the num_processors of this ElectromagneticSimulationControl.  # noqa: E501
+
+        <p>Selecting more processor cores will speed up the simulation process. Choosing a smaller computation instance will save core hours. <a href='https://www.simscale.com/docs/simulation-setup/simulation-control-fluid/#number-of-processors' target='_blank'>Learn more</a>.</p>  # noqa: E501
+
+        :return: The num_processors of this ElectromagneticSimulationControl.  # noqa: E501
+        :rtype: int
+        """
+        return self._num_processors
+
+    @num_processors.setter
+    def num_processors(self, num_processors):
+        """Sets the num_processors of this ElectromagneticSimulationControl.
+
+        <p>Selecting more processor cores will speed up the simulation process. Choosing a smaller computation instance will save core hours. <a href='https://www.simscale.com/docs/simulation-setup/simulation-control-fluid/#number-of-processors' target='_blank'>Learn more</a>.</p>  # noqa: E501
+
+        :param num_processors: The num_processors of this ElectromagneticSimulationControl.  # noqa: E501
+        :type: int
+        """
+        allowed_values = [-1, 1, 2, 4, 8, 16, 32, 48, 64, 96, 128, 192]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and num_processors not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `num_processors` ({0}), must be one of {1}"  # noqa: E501
+                .format(num_processors, allowed_values)
+            )
+
+        self._num_processors = num_processors
 
     @property
     def max_run_time(self):

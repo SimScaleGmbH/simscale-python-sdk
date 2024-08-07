@@ -36,13 +36,7 @@ class OneOfPETSCSolverPreconditioner(object):
         'memory_percentage_for_pivoting': 'float',
         'matrix_completeness': 'int',
         'preconditioner_matrix_growth': 'float',
-        'renumbering_method': 'str',
-        'iterations_srqcg': 'int',
-        'smoother': 'str',
-        'prolongation': 'str',
-        'recycling': 'float',
-        'improve_test_space': 'bool',
-        'test_space_iterations': 'int'
+        'renumbering_method': 'str'
     }
 
     attribute_map = {
@@ -51,13 +45,7 @@ class OneOfPETSCSolverPreconditioner(object):
         'memory_percentage_for_pivoting': 'memoryPercentageForPivoting',
         'matrix_completeness': 'matrixCompleteness',
         'preconditioner_matrix_growth': 'preconditionerMatrixGrowth',
-        'renumbering_method': 'renumberingMethod',
-        'iterations_srqcg': 'iterationsSRQCG',
-        'smoother': 'smoother',
-        'prolongation': 'prolongation',
-        'recycling': 'recycling',
-        'improve_test_space': 'improveTestSpace',
-        'test_space_iterations': 'testSpaceIterations'
+        'renumbering_method': 'renumberingMethod'
     }
 
     discriminator_value_class_map = {
@@ -65,11 +53,10 @@ class OneOfPETSCSolverPreconditioner(object):
         'INCOMPLETE_LDLT_V33': 'IncompletePreconditionerV33',
         'JACOBI': 'JacobiPreconditioner',
         'SOR': 'SorPreconditioner',
-        'INACTIVE': 'InactivePreconditioner',
-        'CHRONOS': 'ChronosPreconditioner'
+        'INACTIVE': 'InactivePreconditioner'
     }
 
-    def __init__(self, type='CHRONOS', actualisation_rate=None, memory_percentage_for_pivoting=None, matrix_completeness=None, preconditioner_matrix_growth=None, renumbering_method=None, iterations_srqcg=None, smoother=None, prolongation=None, recycling=None, improve_test_space=None, test_space_iterations=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='INACTIVE', actualisation_rate=None, memory_percentage_for_pivoting=None, matrix_completeness=None, preconditioner_matrix_growth=None, renumbering_method=None, local_vars_configuration=None):  # noqa: E501
         """OneOfPETSCSolverPreconditioner - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,12 +68,6 @@ class OneOfPETSCSolverPreconditioner(object):
         self._matrix_completeness = None
         self._preconditioner_matrix_growth = None
         self._renumbering_method = None
-        self._iterations_srqcg = None
-        self._smoother = None
-        self._prolongation = None
-        self._recycling = None
-        self._improve_test_space = None
-        self._test_space_iterations = None
         self.discriminator = 'type'
 
         self.type = type
@@ -100,24 +81,12 @@ class OneOfPETSCSolverPreconditioner(object):
             self.preconditioner_matrix_growth = preconditioner_matrix_growth
         if renumbering_method is not None:
             self.renumbering_method = renumbering_method
-        if iterations_srqcg is not None:
-            self.iterations_srqcg = iterations_srqcg
-        if smoother is not None:
-            self.smoother = smoother
-        if prolongation is not None:
-            self.prolongation = prolongation
-        if recycling is not None:
-            self.recycling = recycling
-        if improve_test_space is not None:
-            self.improve_test_space = improve_test_space
-        if test_space_iterations is not None:
-            self.test_space_iterations = test_space_iterations
 
     @property
     def type(self):
         """Gets the type of this OneOfPETSCSolverPreconditioner.  # noqa: E501
 
-        Schema name: ChronosPreconditioner  # noqa: E501
+        Schema name: InactivePreconditioner  # noqa: E501
 
         :return: The type of this OneOfPETSCSolverPreconditioner.  # noqa: E501
         :rtype: str
@@ -128,7 +97,7 @@ class OneOfPETSCSolverPreconditioner(object):
     def type(self, type):
         """Sets the type of this OneOfPETSCSolverPreconditioner.
 
-        Schema name: ChronosPreconditioner  # noqa: E501
+        Schema name: InactivePreconditioner  # noqa: E501
 
         :param type: The type of this OneOfPETSCSolverPreconditioner.  # noqa: E501
         :type: str
@@ -258,156 +227,6 @@ class OneOfPETSCSolverPreconditioner(object):
             )
 
         self._renumbering_method = renumbering_method
-
-    @property
-    def iterations_srqcg(self):
-        """Gets the iterations_srqcg of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-
-
-        :return: The iterations_srqcg of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :rtype: int
-        """
-        return self._iterations_srqcg
-
-    @iterations_srqcg.setter
-    def iterations_srqcg(self, iterations_srqcg):
-        """Sets the iterations_srqcg of this OneOfPETSCSolverPreconditioner.
-
-
-        :param iterations_srqcg: The iterations_srqcg of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                iterations_srqcg is not None and iterations_srqcg < 0):  # noqa: E501
-            raise ValueError("Invalid value for `iterations_srqcg`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._iterations_srqcg = iterations_srqcg
-
-    @property
-    def smoother(self):
-        """Gets the smoother of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-
-
-        :return: The smoother of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :rtype: str
-        """
-        return self._smoother
-
-    @smoother.setter
-    def smoother(self, smoother):
-        """Sets the smoother of this OneOfPETSCSolverPreconditioner.
-
-
-        :param smoother: The smoother of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["JACOBI", "FSAI_LIGHT", "FSAI_MEDIUM", "FSAI_HEAVY"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and smoother not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `smoother` ({0}), must be one of {1}"  # noqa: E501
-                .format(smoother, allowed_values)
-            )
-
-        self._smoother = smoother
-
-    @property
-    def prolongation(self):
-        """Gets the prolongation of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-
-
-        :return: The prolongation of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :rtype: str
-        """
-        return self._prolongation
-
-    @prolongation.setter
-    def prolongation(self, prolongation):
-        """Sets the prolongation of this OneOfPETSCSolverPreconditioner.
-
-
-        :param prolongation: The prolongation of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["UNSMOOTHED", "SMOOTHED", "ENERGY_MINIMIZATION"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and prolongation not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `prolongation` ({0}), must be one of {1}"  # noqa: E501
-                .format(prolongation, allowed_values)
-            )
-
-        self._prolongation = prolongation
-
-    @property
-    def recycling(self):
-        """Gets the recycling of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-
-
-        :return: The recycling of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :rtype: float
-        """
-        return self._recycling
-
-    @recycling.setter
-    def recycling(self, recycling):
-        """Sets the recycling of this OneOfPETSCSolverPreconditioner.
-
-
-        :param recycling: The recycling of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :type: float
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                recycling is not None and recycling > 1):  # noqa: E501
-            raise ValueError("Invalid value for `recycling`, must be a value less than or equal to `1`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                recycling is not None and recycling < 0):  # noqa: E501
-            raise ValueError("Invalid value for `recycling`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._recycling = recycling
-
-    @property
-    def improve_test_space(self):
-        """Gets the improve_test_space of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-
-
-        :return: The improve_test_space of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :rtype: bool
-        """
-        return self._improve_test_space
-
-    @improve_test_space.setter
-    def improve_test_space(self, improve_test_space):
-        """Sets the improve_test_space of this OneOfPETSCSolverPreconditioner.
-
-
-        :param improve_test_space: The improve_test_space of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :type: bool
-        """
-
-        self._improve_test_space = improve_test_space
-
-    @property
-    def test_space_iterations(self):
-        """Gets the test_space_iterations of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-
-
-        :return: The test_space_iterations of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :rtype: int
-        """
-        return self._test_space_iterations
-
-    @test_space_iterations.setter
-    def test_space_iterations(self, test_space_iterations):
-        """Sets the test_space_iterations of this OneOfPETSCSolverPreconditioner.
-
-
-        :param test_space_iterations: The test_space_iterations of this OneOfPETSCSolverPreconditioner.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                test_space_iterations is not None and test_space_iterations < 0):  # noqa: E501
-            raise ValueError("Invalid value for `test_space_iterations`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._test_space_iterations = test_space_iterations
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

@@ -33,6 +33,7 @@ class OneOfSurfaceCustomSizingSizing(object):
     openapi_types = {
         'type': 'str',
         'fineness': 'float',
+        'curvature': 'OneOfCustomMeshSizingSimmetrixCurvature',
         'default_size': 'DimensionalLength',
         'min_size': 'DimensionalLength'
     }
@@ -40,6 +41,7 @@ class OneOfSurfaceCustomSizingSizing(object):
     attribute_map = {
         'type': 'type',
         'fineness': 'fineness',
+        'curvature': 'curvature',
         'default_size': 'defaultSize',
         'min_size': 'minSize'
     }
@@ -49,7 +51,7 @@ class OneOfSurfaceCustomSizingSizing(object):
         'CUSTOM': 'CustomMeshSizingSimmetrix'
     }
 
-    def __init__(self, type='CUSTOM', fineness=None, default_size=None, min_size=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CUSTOM', fineness=None, curvature=None, default_size=None, min_size=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSurfaceCustomSizingSizing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class OneOfSurfaceCustomSizingSizing(object):
 
         self._type = None
         self._fineness = None
+        self._curvature = None
         self._default_size = None
         self._min_size = None
         self.discriminator = 'type'
@@ -64,6 +67,8 @@ class OneOfSurfaceCustomSizingSizing(object):
         self.type = type
         if fineness is not None:
             self.fineness = fineness
+        if curvature is not None:
+            self.curvature = curvature
         if default_size is not None:
             self.default_size = default_size
         if min_size is not None:
@@ -122,6 +127,27 @@ class OneOfSurfaceCustomSizingSizing(object):
             raise ValueError("Invalid value for `fineness`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._fineness = fineness
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this OneOfSurfaceCustomSizingSizing.  # noqa: E501
+
+
+        :return: The curvature of this OneOfSurfaceCustomSizingSizing.  # noqa: E501
+        :rtype: OneOfCustomMeshSizingSimmetrixCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this OneOfSurfaceCustomSizingSizing.
+
+
+        :param curvature: The curvature of this OneOfSurfaceCustomSizingSizing.  # noqa: E501
+        :type: OneOfCustomMeshSizingSimmetrixCurvature
+        """
+
+        self._curvature = curvature
 
     @property
     def default_size(self):

@@ -33,6 +33,7 @@ class OneOfSimmetrixMeshingFluidSizing(object):
     openapi_types = {
         'type': 'str',
         'fineness': 'float',
+        'curvature': 'OneOfManualMeshSizingSimmetrixCurvature',
         'maximum_edge_length': 'DimensionalLength',
         'minimum_edge_length': 'DimensionalLength'
     }
@@ -40,6 +41,7 @@ class OneOfSimmetrixMeshingFluidSizing(object):
     attribute_map = {
         'type': 'type',
         'fineness': 'fineness',
+        'curvature': 'curvature',
         'maximum_edge_length': 'maximumEdgeLength',
         'minimum_edge_length': 'minimumEdgeLength'
     }
@@ -49,7 +51,7 @@ class OneOfSimmetrixMeshingFluidSizing(object):
         'MANUAL': 'ManualMeshSizingSimmetrix'
     }
 
-    def __init__(self, type='MANUAL', fineness=None, maximum_edge_length=None, minimum_edge_length=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MANUAL', fineness=None, curvature=None, maximum_edge_length=None, minimum_edge_length=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixMeshingFluidSizing - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class OneOfSimmetrixMeshingFluidSizing(object):
 
         self._type = None
         self._fineness = None
+        self._curvature = None
         self._maximum_edge_length = None
         self._minimum_edge_length = None
         self.discriminator = 'type'
@@ -64,6 +67,8 @@ class OneOfSimmetrixMeshingFluidSizing(object):
         self.type = type
         if fineness is not None:
             self.fineness = fineness
+        if curvature is not None:
+            self.curvature = curvature
         if maximum_edge_length is not None:
             self.maximum_edge_length = maximum_edge_length
         if minimum_edge_length is not None:
@@ -122,6 +127,27 @@ class OneOfSimmetrixMeshingFluidSizing(object):
             raise ValueError("Invalid value for `fineness`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._fineness = fineness
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this OneOfSimmetrixMeshingFluidSizing.  # noqa: E501
+
+
+        :return: The curvature of this OneOfSimmetrixMeshingFluidSizing.  # noqa: E501
+        :rtype: OneOfManualMeshSizingSimmetrixCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this OneOfSimmetrixMeshingFluidSizing.
+
+
+        :param curvature: The curvature of this OneOfSimmetrixMeshingFluidSizing.  # noqa: E501
+        :type: OneOfManualMeshSizingSimmetrixCurvature
+        """
+
+        self._curvature = curvature
 
     @property
     def maximum_edge_length(self):

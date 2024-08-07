@@ -32,15 +32,17 @@ class AutomaticMeshSizingSimmetrix(object):
     """
     openapi_types = {
         'type': 'str',
-        'fineness': 'float'
+        'fineness': 'float',
+        'curvature': 'OneOfAutomaticMeshSizingSimmetrixCurvature'
     }
 
     attribute_map = {
         'type': 'type',
-        'fineness': 'fineness'
+        'fineness': 'fineness',
+        'curvature': 'curvature'
     }
 
-    def __init__(self, type='AUTOMATIC_V9', fineness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='AUTOMATIC_V9', fineness=None, curvature=None, local_vars_configuration=None):  # noqa: E501
         """AutomaticMeshSizingSimmetrix - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class AutomaticMeshSizingSimmetrix(object):
 
         self._type = None
         self._fineness = None
+        self._curvature = None
         self.discriminator = None
 
         self.type = type
         if fineness is not None:
             self.fineness = fineness
+        if curvature is not None:
+            self.curvature = curvature
 
     @property
     def type(self):
@@ -107,6 +112,27 @@ class AutomaticMeshSizingSimmetrix(object):
             raise ValueError("Invalid value for `fineness`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._fineness = fineness
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this AutomaticMeshSizingSimmetrix.  # noqa: E501
+
+
+        :return: The curvature of this AutomaticMeshSizingSimmetrix.  # noqa: E501
+        :rtype: OneOfAutomaticMeshSizingSimmetrixCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this AutomaticMeshSizingSimmetrix.
+
+
+        :param curvature: The curvature of this AutomaticMeshSizingSimmetrix.  # noqa: E501
+        :type: OneOfAutomaticMeshSizingSimmetrixCurvature
+        """
+
+        self._curvature = curvature
 
     def to_dict(self):
         """Returns the model properties as a dict"""

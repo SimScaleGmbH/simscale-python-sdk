@@ -32,33 +32,33 @@ class CurrentExcitation(object):
     """
     openapi_types = {
         'type': 'str',
-        'current': 'DimensionalElectricCurrent',
+        'current_type': 'OneOfCurrentExcitationCurrentType',
         'current_rms': 'DimensionalElectricCurrent',
         'current_phase': 'DimensionalAngle'
     }
 
     attribute_map = {
         'type': 'type',
-        'current': 'current',
+        'current_type': 'currentType',
         'current_rms': 'currentRMS',
         'current_phase': 'currentPhase'
     }
 
-    def __init__(self, type='CURRENT_EXCITATION', current=None, current_rms=None, current_phase=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CURRENT_EXCITATION', current_type=None, current_rms=None, current_phase=None, local_vars_configuration=None):  # noqa: E501
         """CurrentExcitation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._current = None
+        self._current_type = None
         self._current_rms = None
         self._current_phase = None
         self.discriminator = None
 
         self.type = type
-        if current is not None:
-            self.current = current
+        if current_type is not None:
+            self.current_type = current_type
         if current_rms is not None:
             self.current_rms = current_rms
         if current_phase is not None:
@@ -90,25 +90,25 @@ class CurrentExcitation(object):
         self._type = type
 
     @property
-    def current(self):
-        """Gets the current of this CurrentExcitation.  # noqa: E501
+    def current_type(self):
+        """Gets the current_type of this CurrentExcitation.  # noqa: E501
 
 
-        :return: The current of this CurrentExcitation.  # noqa: E501
-        :rtype: DimensionalElectricCurrent
+        :return: The current_type of this CurrentExcitation.  # noqa: E501
+        :rtype: OneOfCurrentExcitationCurrentType
         """
-        return self._current
+        return self._current_type
 
-    @current.setter
-    def current(self, current):
-        """Sets the current of this CurrentExcitation.
+    @current_type.setter
+    def current_type(self, current_type):
+        """Sets the current_type of this CurrentExcitation.
 
 
-        :param current: The current of this CurrentExcitation.  # noqa: E501
-        :type: DimensionalElectricCurrent
+        :param current_type: The current_type of this CurrentExcitation.  # noqa: E501
+        :type: OneOfCurrentExcitationCurrentType
         """
 
-        self._current = current
+        self._current_type = current_type
 
     @property
     def current_rms(self):

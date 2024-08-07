@@ -32,10 +32,10 @@ class OneOfCoilExcitation(object):
     """
     openapi_types = {
         'type': 'str',
-        'current': 'DimensionalElectricCurrent',
+        'current_type': 'OneOfCurrentExcitationCurrentType',
         'current_rms': 'DimensionalElectricCurrent',
         'current_phase': 'DimensionalAngle',
-        'voltage': 'DimensionalElectricPotential',
+        'voltage_type': 'OneOfVoltageExcitationVoltageType',
         'voltage_rms': 'DimensionalElectricPotential',
         'voltage_phase': 'DimensionalAngle',
         'additional_resistance': 'DimensionalElectricResistance'
@@ -43,10 +43,10 @@ class OneOfCoilExcitation(object):
 
     attribute_map = {
         'type': 'type',
-        'current': 'current',
+        'current_type': 'currentType',
         'current_rms': 'currentRMS',
         'current_phase': 'currentPhase',
-        'voltage': 'voltage',
+        'voltage_type': 'voltageType',
         'voltage_rms': 'voltageRMS',
         'voltage_phase': 'voltagePhase',
         'additional_resistance': 'additionalResistance'
@@ -57,31 +57,31 @@ class OneOfCoilExcitation(object):
         'VOLTAGE_EXCITATION': 'VoltageExcitation'
     }
 
-    def __init__(self, type='VOLTAGE_EXCITATION', current=None, current_rms=None, current_phase=None, voltage=None, voltage_rms=None, voltage_phase=None, additional_resistance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLTAGE_EXCITATION', current_type=None, current_rms=None, current_phase=None, voltage_type=None, voltage_rms=None, voltage_phase=None, additional_resistance=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoilExcitation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._current = None
+        self._current_type = None
         self._current_rms = None
         self._current_phase = None
-        self._voltage = None
+        self._voltage_type = None
         self._voltage_rms = None
         self._voltage_phase = None
         self._additional_resistance = None
         self.discriminator = 'type'
 
         self.type = type
-        if current is not None:
-            self.current = current
+        if current_type is not None:
+            self.current_type = current_type
         if current_rms is not None:
             self.current_rms = current_rms
         if current_phase is not None:
             self.current_phase = current_phase
-        if voltage is not None:
-            self.voltage = voltage
+        if voltage_type is not None:
+            self.voltage_type = voltage_type
         if voltage_rms is not None:
             self.voltage_rms = voltage_rms
         if voltage_phase is not None:
@@ -115,25 +115,25 @@ class OneOfCoilExcitation(object):
         self._type = type
 
     @property
-    def current(self):
-        """Gets the current of this OneOfCoilExcitation.  # noqa: E501
+    def current_type(self):
+        """Gets the current_type of this OneOfCoilExcitation.  # noqa: E501
 
 
-        :return: The current of this OneOfCoilExcitation.  # noqa: E501
-        :rtype: DimensionalElectricCurrent
+        :return: The current_type of this OneOfCoilExcitation.  # noqa: E501
+        :rtype: OneOfCurrentExcitationCurrentType
         """
-        return self._current
+        return self._current_type
 
-    @current.setter
-    def current(self, current):
-        """Sets the current of this OneOfCoilExcitation.
+    @current_type.setter
+    def current_type(self, current_type):
+        """Sets the current_type of this OneOfCoilExcitation.
 
 
-        :param current: The current of this OneOfCoilExcitation.  # noqa: E501
-        :type: DimensionalElectricCurrent
+        :param current_type: The current_type of this OneOfCoilExcitation.  # noqa: E501
+        :type: OneOfCurrentExcitationCurrentType
         """
 
-        self._current = current
+        self._current_type = current_type
 
     @property
     def current_rms(self):
@@ -178,25 +178,25 @@ class OneOfCoilExcitation(object):
         self._current_phase = current_phase
 
     @property
-    def voltage(self):
-        """Gets the voltage of this OneOfCoilExcitation.  # noqa: E501
+    def voltage_type(self):
+        """Gets the voltage_type of this OneOfCoilExcitation.  # noqa: E501
 
 
-        :return: The voltage of this OneOfCoilExcitation.  # noqa: E501
-        :rtype: DimensionalElectricPotential
+        :return: The voltage_type of this OneOfCoilExcitation.  # noqa: E501
+        :rtype: OneOfVoltageExcitationVoltageType
         """
-        return self._voltage
+        return self._voltage_type
 
-    @voltage.setter
-    def voltage(self, voltage):
-        """Sets the voltage of this OneOfCoilExcitation.
+    @voltage_type.setter
+    def voltage_type(self, voltage_type):
+        """Sets the voltage_type of this OneOfCoilExcitation.
 
 
-        :param voltage: The voltage of this OneOfCoilExcitation.  # noqa: E501
-        :type: DimensionalElectricPotential
+        :param voltage_type: The voltage_type of this OneOfCoilExcitation.  # noqa: E501
+        :type: OneOfVoltageExcitationVoltageType
         """
 
-        self._voltage = voltage
+        self._voltage_type = voltage_type
 
     @property
     def voltage_rms(self):

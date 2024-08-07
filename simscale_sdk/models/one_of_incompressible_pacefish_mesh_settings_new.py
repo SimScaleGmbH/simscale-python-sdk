@@ -33,6 +33,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
     openapi_types = {
         'type': 'str',
         'fineness': 'str',
+        'progressive_refinement': 'ProgressiveRefinement',
         'reference_length': 'DimensionalLength',
         'reynolds_scaling_type': 'OneOfPacefishAutomeshReynoldsScalingType',
         'refinements': 'list[OneOfPacefishAutomeshRefinements]',
@@ -44,6 +45,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
     attribute_map = {
         'type': 'type',
         'fineness': 'fineness',
+        'progressive_refinement': 'progressiveRefinement',
         'reference_length': 'referenceLength',
         'reynolds_scaling_type': 'reynoldsScalingType',
         'refinements': 'refinements',
@@ -57,7 +59,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'PACEFISH_AUTOMESH': 'PacefishAutomesh'
     }
 
-    def __init__(self, type='PACEFISH_AUTOMESH', fineness=None, reference_length=None, reynolds_scaling_type=None, refinements=None, new_fineness=None, reference_length_computation=None, primary_topology=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PACEFISH_AUTOMESH', fineness=None, progressive_refinement=None, reference_length=None, reynolds_scaling_type=None, refinements=None, new_fineness=None, reference_length_computation=None, primary_topology=None, local_vars_configuration=None):  # noqa: E501
         """OneOfIncompressiblePacefishMeshSettingsNew - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -65,6 +67,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
 
         self._type = None
         self._fineness = None
+        self._progressive_refinement = None
         self._reference_length = None
         self._reynolds_scaling_type = None
         self._refinements = None
@@ -76,6 +79,8 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         self.type = type
         if fineness is not None:
             self.fineness = fineness
+        if progressive_refinement is not None:
+            self.progressive_refinement = progressive_refinement
         if reference_length is not None:
             self.reference_length = reference_length
         if reynolds_scaling_type is not None:
@@ -140,6 +145,27 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
             )
 
         self._fineness = fineness
+
+    @property
+    def progressive_refinement(self):
+        """Gets the progressive_refinement of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+
+
+        :return: The progressive_refinement of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+        :rtype: ProgressiveRefinement
+        """
+        return self._progressive_refinement
+
+    @progressive_refinement.setter
+    def progressive_refinement(self, progressive_refinement):
+        """Sets the progressive_refinement of this OneOfIncompressiblePacefishMeshSettingsNew.
+
+
+        :param progressive_refinement: The progressive_refinement of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+        :type: ProgressiveRefinement
+        """
+
+        self._progressive_refinement = progressive_refinement
 
     @property
     def reference_length(self):

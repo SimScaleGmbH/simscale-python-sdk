@@ -34,13 +34,12 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         'type': 'str',
         'name': 'str',
         'refinement': 'OneOfRegionRefinementWithLengthRefinement',
+        'curvature': 'OneOfSimmetrixLocalSizingRefinementCurvature',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'sizing': 'OneOfSurfaceCustomSizingSizing',
         'custom_sizing_modes': 'OneOfVolumeCustomSizingCustomSizingModes',
         'max_element_size': 'DimensionalLength',
-        'number_of_layers': 'int',
-        'total_relative_thickness': 'float',
         'layer_type': 'OneOfSimmetrixBoundaryLayerRefinementLayerType',
         'sizing_type': 'OneOfSimmetrixExtrusionMeshRefinementSizingType',
         'surface_element_type': 'str',
@@ -54,13 +53,12 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         'type': 'type',
         'name': 'name',
         'refinement': 'refinement',
+        'curvature': 'curvature',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'sizing': 'sizing',
         'custom_sizing_modes': 'customSizingModes',
         'max_element_size': 'maxElementSize',
-        'number_of_layers': 'numberOfLayers',
-        'total_relative_thickness': 'totalRelativeThickness',
         'layer_type': 'layerType',
         'sizing_type': 'sizingType',
         'surface_element_type': 'surfaceElementType',
@@ -81,7 +79,7 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         'SIMMETRIX_EXTRUSION_MESH_REFINEMENT': 'SimmetrixExtrusionMeshRefinement'
     }
 
-    def __init__(self, type='SIMMETRIX_EXTRUSION_MESH_REFINEMENT', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, sizing=None, custom_sizing_modes=None, max_element_size=None, number_of_layers=None, total_relative_thickness=None, layer_type=None, sizing_type=None, surface_element_type=None, specify_local_size=None, source_topological_reference=None, destination_topological_reference=None, distance_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_EXTRUSION_MESH_REFINEMENT', name=None, refinement=None, curvature=None, topological_reference=None, geometry_primitive_uuids=None, sizing=None, custom_sizing_modes=None, max_element_size=None, layer_type=None, sizing_type=None, surface_element_type=None, specify_local_size=None, source_topological_reference=None, destination_topological_reference=None, distance_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixMeshingFluidRefinements - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -90,13 +88,12 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         self._type = None
         self._name = None
         self._refinement = None
+        self._curvature = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._sizing = None
         self._custom_sizing_modes = None
         self._max_element_size = None
-        self._number_of_layers = None
-        self._total_relative_thickness = None
         self._layer_type = None
         self._sizing_type = None
         self._surface_element_type = None
@@ -111,6 +108,8 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
             self.name = name
         if refinement is not None:
             self.refinement = refinement
+        if curvature is not None:
+            self.curvature = curvature
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -121,10 +120,6 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
             self.custom_sizing_modes = custom_sizing_modes
         if max_element_size is not None:
             self.max_element_size = max_element_size
-        if number_of_layers is not None:
-            self.number_of_layers = number_of_layers
-        if total_relative_thickness is not None:
-            self.total_relative_thickness = total_relative_thickness
         if layer_type is not None:
             self.layer_type = layer_type
         if sizing_type is not None:
@@ -206,6 +201,27 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         """
 
         self._refinement = refinement
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+
+
+        :return: The curvature of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :rtype: OneOfSimmetrixLocalSizingRefinementCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this OneOfSimmetrixMeshingFluidRefinements.
+
+
+        :param curvature: The curvature of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
+        :type: OneOfSimmetrixLocalSizingRefinementCurvature
+        """
+
+        self._curvature = curvature
 
     @property
     def topological_reference(self):
@@ -311,58 +327,6 @@ class OneOfSimmetrixMeshingFluidRefinements(object):
         """
 
         self._max_element_size = max_element_size
-
-    @property
-    def number_of_layers(self):
-        """Gets the number_of_layers of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
-
-        The <i>Number of layers</i> defines how many prismatic boundary layers should be created. 3 is default.  # noqa: E501
-
-        :return: The number_of_layers of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
-        :rtype: int
-        """
-        return self._number_of_layers
-
-    @number_of_layers.setter
-    def number_of_layers(self, number_of_layers):
-        """Sets the number_of_layers of this OneOfSimmetrixMeshingFluidRefinements.
-
-        The <i>Number of layers</i> defines how many prismatic boundary layers should be created. 3 is default.  # noqa: E501
-
-        :param number_of_layers: The number_of_layers of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                number_of_layers is not None and number_of_layers > 20):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_layers`, must be a value less than or equal to `20`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                number_of_layers is not None and number_of_layers < 1):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_layers`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._number_of_layers = number_of_layers
-
-    @property
-    def total_relative_thickness(self):
-        """Gets the total_relative_thickness of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
-
-        It defines the thickness of all prismatic boundary layers combined in relation to the local element size.<img src=\"/spec/resources/help/imgs/simmetrix-overall-layer-thickness.png\" class=\"helpPopupImage\"/>Example 3-layer thickness of 40% (0.4) of the local mesh size.  # noqa: E501
-
-        :return: The total_relative_thickness of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
-        :rtype: float
-        """
-        return self._total_relative_thickness
-
-    @total_relative_thickness.setter
-    def total_relative_thickness(self, total_relative_thickness):
-        """Sets the total_relative_thickness of this OneOfSimmetrixMeshingFluidRefinements.
-
-        It defines the thickness of all prismatic boundary layers combined in relation to the local element size.<img src=\"/spec/resources/help/imgs/simmetrix-overall-layer-thickness.png\" class=\"helpPopupImage\"/>Example 3-layer thickness of 40% (0.4) of the local mesh size.  # noqa: E501
-
-        :param total_relative_thickness: The total_relative_thickness of this OneOfSimmetrixMeshingFluidRefinements.  # noqa: E501
-        :type: float
-        """
-
-        self._total_relative_thickness = total_relative_thickness
 
     @property
     def layer_type(self):

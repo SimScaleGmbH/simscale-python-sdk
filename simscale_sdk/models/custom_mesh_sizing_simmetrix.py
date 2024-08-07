@@ -33,16 +33,18 @@ class CustomMeshSizingSimmetrix(object):
     openapi_types = {
         'type': 'str',
         'default_size': 'DimensionalLength',
-        'min_size': 'DimensionalLength'
+        'min_size': 'DimensionalLength',
+        'curvature': 'OneOfCustomMeshSizingSimmetrixCurvature'
     }
 
     attribute_map = {
         'type': 'type',
         'default_size': 'defaultSize',
-        'min_size': 'minSize'
+        'min_size': 'minSize',
+        'curvature': 'curvature'
     }
 
-    def __init__(self, type='CUSTOM', default_size=None, min_size=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CUSTOM', default_size=None, min_size=None, curvature=None, local_vars_configuration=None):  # noqa: E501
         """CustomMeshSizingSimmetrix - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class CustomMeshSizingSimmetrix(object):
         self._type = None
         self._default_size = None
         self._min_size = None
+        self._curvature = None
         self.discriminator = None
 
         self.type = type
@@ -58,6 +61,8 @@ class CustomMeshSizingSimmetrix(object):
             self.default_size = default_size
         if min_size is not None:
             self.min_size = min_size
+        if curvature is not None:
+            self.curvature = curvature
 
     @property
     def type(self):
@@ -125,6 +130,27 @@ class CustomMeshSizingSimmetrix(object):
         """
 
         self._min_size = min_size
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this CustomMeshSizingSimmetrix.  # noqa: E501
+
+
+        :return: The curvature of this CustomMeshSizingSimmetrix.  # noqa: E501
+        :rtype: OneOfCustomMeshSizingSimmetrixCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this CustomMeshSizingSimmetrix.
+
+
+        :param curvature: The curvature of this CustomMeshSizingSimmetrix.  # noqa: E501
+        :type: OneOfCustomMeshSizingSimmetrixCurvature
+        """
+
+        self._curvature = curvature
 
     def to_dict(self):
         """Returns the model properties as a dict"""

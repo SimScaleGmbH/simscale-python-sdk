@@ -204,7 +204,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
     def porosity(self):
         """Gets the porosity of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
 
-        Porosity is the fraction of a volume of material is that is void. It ranges from φ = 0 (completely empty) to φ = 1 (completely solid).  # noqa: E501
+        Porosity is the fraction of a volume of material is that is void. It ranges from φ = 1 (completely empty) to φ = 0 (completely solid).  # noqa: E501
 
         :return: The porosity of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
         :rtype: float
@@ -215,7 +215,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
     def porosity(self, porosity):
         """Sets the porosity of this OneOfAdvancedConceptsPorousMediums.
 
-        Porosity is the fraction of a volume of material is that is void. It ranges from φ = 0 (completely empty) to φ = 1 (completely solid).  # noqa: E501
+        Porosity is the fraction of a volume of material is that is void. It ranges from φ = 1 (completely empty) to φ = 0 (completely solid).  # noqa: E501
 
         :param porosity: The porosity of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
         :type: float

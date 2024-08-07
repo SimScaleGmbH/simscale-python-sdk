@@ -34,6 +34,7 @@ class SimmetrixLocalSizingRefinement(object):
         'type': 'str',
         'name': 'str',
         'max_element_size': 'DimensionalLength',
+        'curvature': 'OneOfSimmetrixLocalSizingRefinementCurvature',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -41,10 +42,11 @@ class SimmetrixLocalSizingRefinement(object):
         'type': 'type',
         'name': 'name',
         'max_element_size': 'maxElementSize',
+        'curvature': 'curvature',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='SIMMETRIX_LOCAL_SIZING_V10', name=None, max_element_size=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_LOCAL_SIZING_V10', name=None, max_element_size=None, curvature=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixLocalSizingRefinement - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class SimmetrixLocalSizingRefinement(object):
         self._type = None
         self._name = None
         self._max_element_size = None
+        self._curvature = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -61,6 +64,8 @@ class SimmetrixLocalSizingRefinement(object):
             self.name = name
         if max_element_size is not None:
             self.max_element_size = max_element_size
+        if curvature is not None:
+            self.curvature = curvature
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -130,6 +135,27 @@ class SimmetrixLocalSizingRefinement(object):
         """
 
         self._max_element_size = max_element_size
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this SimmetrixLocalSizingRefinement.  # noqa: E501
+
+
+        :return: The curvature of this SimmetrixLocalSizingRefinement.  # noqa: E501
+        :rtype: OneOfSimmetrixLocalSizingRefinementCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this SimmetrixLocalSizingRefinement.
+
+
+        :param curvature: The curvature of this SimmetrixLocalSizingRefinement.  # noqa: E501
+        :type: OneOfSimmetrixLocalSizingRefinementCurvature
+        """
+
+        self._curvature = curvature
 
     @property
     def topological_reference(self):

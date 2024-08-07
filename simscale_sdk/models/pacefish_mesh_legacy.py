@@ -33,6 +33,7 @@ class PacefishMeshLegacy(object):
     openapi_types = {
         'type': 'str',
         'fineness': 'str',
+        'progressive_refinement': 'ProgressiveRefinement',
         'reference_length': 'DimensionalLength',
         'reynolds_scaling_type': 'ManualReynoldsScaling',
         'refinements': 'list[OneOfPacefishMeshLegacyRefinements]'
@@ -41,12 +42,13 @@ class PacefishMeshLegacy(object):
     attribute_map = {
         'type': 'type',
         'fineness': 'fineness',
+        'progressive_refinement': 'progressiveRefinement',
         'reference_length': 'referenceLength',
         'reynolds_scaling_type': 'reynoldsScalingType',
         'refinements': 'refinements'
     }
 
-    def __init__(self, type='PACEFISH_MESH_LEGACY', fineness=None, reference_length=None, reynolds_scaling_type=None, refinements=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PACEFISH_MESH_LEGACY', fineness=None, progressive_refinement=None, reference_length=None, reynolds_scaling_type=None, refinements=None, local_vars_configuration=None):  # noqa: E501
         """PacefishMeshLegacy - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class PacefishMeshLegacy(object):
 
         self._type = None
         self._fineness = None
+        self._progressive_refinement = None
         self._reference_length = None
         self._reynolds_scaling_type = None
         self._refinements = None
@@ -62,6 +65,8 @@ class PacefishMeshLegacy(object):
         self.type = type
         if fineness is not None:
             self.fineness = fineness
+        if progressive_refinement is not None:
+            self.progressive_refinement = progressive_refinement
         if reference_length is not None:
             self.reference_length = reference_length
         if reynolds_scaling_type is not None:
@@ -120,6 +125,27 @@ class PacefishMeshLegacy(object):
             )
 
         self._fineness = fineness
+
+    @property
+    def progressive_refinement(self):
+        """Gets the progressive_refinement of this PacefishMeshLegacy.  # noqa: E501
+
+
+        :return: The progressive_refinement of this PacefishMeshLegacy.  # noqa: E501
+        :rtype: ProgressiveRefinement
+        """
+        return self._progressive_refinement
+
+    @progressive_refinement.setter
+    def progressive_refinement(self, progressive_refinement):
+        """Sets the progressive_refinement of this PacefishMeshLegacy.
+
+
+        :param progressive_refinement: The progressive_refinement of this PacefishMeshLegacy.  # noqa: E501
+        :type: ProgressiveRefinement
+        """
+
+        self._progressive_refinement = progressive_refinement
 
     @property
     def reference_length(self):

@@ -33,16 +33,18 @@ class ManualMeshSizingSimmetrix(object):
     openapi_types = {
         'type': 'str',
         'maximum_edge_length': 'DimensionalLength',
-        'minimum_edge_length': 'DimensionalLength'
+        'minimum_edge_length': 'DimensionalLength',
+        'curvature': 'OneOfManualMeshSizingSimmetrixCurvature'
     }
 
     attribute_map = {
         'type': 'type',
         'maximum_edge_length': 'maximumEdgeLength',
-        'minimum_edge_length': 'minimumEdgeLength'
+        'minimum_edge_length': 'minimumEdgeLength',
+        'curvature': 'curvature'
     }
 
-    def __init__(self, type='MANUAL', maximum_edge_length=None, minimum_edge_length=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MANUAL', maximum_edge_length=None, minimum_edge_length=None, curvature=None, local_vars_configuration=None):  # noqa: E501
         """ManualMeshSizingSimmetrix - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class ManualMeshSizingSimmetrix(object):
         self._type = None
         self._maximum_edge_length = None
         self._minimum_edge_length = None
+        self._curvature = None
         self.discriminator = None
 
         self.type = type
@@ -58,6 +61,8 @@ class ManualMeshSizingSimmetrix(object):
             self.maximum_edge_length = maximum_edge_length
         if minimum_edge_length is not None:
             self.minimum_edge_length = minimum_edge_length
+        if curvature is not None:
+            self.curvature = curvature
 
     @property
     def type(self):
@@ -125,6 +130,27 @@ class ManualMeshSizingSimmetrix(object):
         """
 
         self._minimum_edge_length = minimum_edge_length
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this ManualMeshSizingSimmetrix.  # noqa: E501
+
+
+        :return: The curvature of this ManualMeshSizingSimmetrix.  # noqa: E501
+        :rtype: OneOfManualMeshSizingSimmetrixCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this ManualMeshSizingSimmetrix.
+
+
+        :param curvature: The curvature of this ManualMeshSizingSimmetrix.  # noqa: E501
+        :type: OneOfManualMeshSizingSimmetrixCurvature
+        """
+
+        self._curvature = curvature
 
     def to_dict(self):
         """Returns the model properties as a dict"""

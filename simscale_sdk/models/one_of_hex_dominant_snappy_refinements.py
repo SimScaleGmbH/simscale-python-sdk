@@ -34,6 +34,7 @@ class OneOfHexDominantSnappyRefinements(object):
         'type': 'str',
         'name': 'str',
         'refinement': 'OneOfRegionRefinementWithLengthRefinement',
+        'curvature': 'OneOfRegionRefinementWithLengthCurvature',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'min_length': 'DimensionalLength',
@@ -50,6 +51,7 @@ class OneOfHexDominantSnappyRefinements(object):
         'type': 'type',
         'name': 'name',
         'refinement': 'refinement',
+        'curvature': 'curvature',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'min_length': 'minLength',
@@ -69,7 +71,7 @@ class OneOfHexDominantSnappyRefinements(object):
         'LAYER_ADDITION_HEX_DOMINANT_SNAPPY': 'LayerAdditionHexDominantSnappy'
     }
 
-    def __init__(self, type='LAYER_ADDITION_HEX_DOMINANT_SNAPPY', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, min_length=None, max_length=None, cell_zone=None, distance_refinement_lengths=None, layers=None, expansion_ratio=None, min_thickness=None, first_layer_thickness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='LAYER_ADDITION_HEX_DOMINANT_SNAPPY', name=None, refinement=None, curvature=None, topological_reference=None, geometry_primitive_uuids=None, min_length=None, max_length=None, cell_zone=None, distance_refinement_lengths=None, layers=None, expansion_ratio=None, min_thickness=None, first_layer_thickness=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHexDominantSnappyRefinements - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -78,6 +80,7 @@ class OneOfHexDominantSnappyRefinements(object):
         self._type = None
         self._name = None
         self._refinement = None
+        self._curvature = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._min_length = None
@@ -95,6 +98,8 @@ class OneOfHexDominantSnappyRefinements(object):
             self.name = name
         if refinement is not None:
             self.refinement = refinement
+        if curvature is not None:
+            self.curvature = curvature
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -182,6 +187,27 @@ class OneOfHexDominantSnappyRefinements(object):
         """
 
         self._refinement = refinement
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this OneOfHexDominantSnappyRefinements.  # noqa: E501
+
+
+        :return: The curvature of this OneOfHexDominantSnappyRefinements.  # noqa: E501
+        :rtype: OneOfRegionRefinementWithLengthCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this OneOfHexDominantSnappyRefinements.
+
+
+        :param curvature: The curvature of this OneOfHexDominantSnappyRefinements.  # noqa: E501
+        :type: OneOfRegionRefinementWithLengthCurvature
+        """
+
+        self._curvature = curvature
 
     @property
     def topological_reference(self):

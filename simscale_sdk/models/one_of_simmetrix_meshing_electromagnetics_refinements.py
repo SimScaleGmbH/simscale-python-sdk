@@ -34,6 +34,7 @@ class OneOfSimmetrixMeshingElectromagneticsRefinements(object):
         'type': 'str',
         'name': 'str',
         'refinement': 'OneOfRegionRefinementWithLengthRefinement',
+        'curvature': 'OneOfSimmetrixLocalSizingRefinementCurvature',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'sizing': 'OneOfSurfaceCustomSizingSizing',
@@ -45,6 +46,7 @@ class OneOfSimmetrixMeshingElectromagneticsRefinements(object):
         'type': 'type',
         'name': 'name',
         'refinement': 'refinement',
+        'curvature': 'curvature',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'sizing': 'sizing',
@@ -59,7 +61,7 @@ class OneOfSimmetrixMeshingElectromagneticsRefinements(object):
         'SIMMETRIX_LOCAL_SIZING_V10': 'SimmetrixLocalSizingRefinement'
     }
 
-    def __init__(self, type='SIMMETRIX_LOCAL_SIZING_V10', name=None, refinement=None, topological_reference=None, geometry_primitive_uuids=None, sizing=None, custom_sizing_modes=None, max_element_size=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_LOCAL_SIZING_V10', name=None, refinement=None, curvature=None, topological_reference=None, geometry_primitive_uuids=None, sizing=None, custom_sizing_modes=None, max_element_size=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixMeshingElectromagneticsRefinements - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +70,7 @@ class OneOfSimmetrixMeshingElectromagneticsRefinements(object):
         self._type = None
         self._name = None
         self._refinement = None
+        self._curvature = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._sizing = None
@@ -80,6 +83,8 @@ class OneOfSimmetrixMeshingElectromagneticsRefinements(object):
             self.name = name
         if refinement is not None:
             self.refinement = refinement
+        if curvature is not None:
+            self.curvature = curvature
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -157,6 +162,27 @@ class OneOfSimmetrixMeshingElectromagneticsRefinements(object):
         """
 
         self._refinement = refinement
+
+    @property
+    def curvature(self):
+        """Gets the curvature of this OneOfSimmetrixMeshingElectromagneticsRefinements.  # noqa: E501
+
+
+        :return: The curvature of this OneOfSimmetrixMeshingElectromagneticsRefinements.  # noqa: E501
+        :rtype: OneOfSimmetrixLocalSizingRefinementCurvature
+        """
+        return self._curvature
+
+    @curvature.setter
+    def curvature(self, curvature):
+        """Sets the curvature of this OneOfSimmetrixMeshingElectromagneticsRefinements.
+
+
+        :param curvature: The curvature of this OneOfSimmetrixMeshingElectromagneticsRefinements.  # noqa: E501
+        :type: OneOfSimmetrixLocalSizingRefinementCurvature
+        """
+
+        self._curvature = curvature
 
     @property
     def topological_reference(self):

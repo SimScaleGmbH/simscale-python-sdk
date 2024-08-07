@@ -45,7 +45,8 @@ class SolidNumerics(object):
         'mechanical_line_search': 'OneOfSolidNumericsMechanicalLineSearch',
         'thermal_time_integration_type': 'ThetaMethodTimeIntegrationType',
         'thermal_resolution_type': 'OneOfSolidNumericsThermalResolutionType',
-        'thermal_line_search': 'OneOfSolidNumericsThermalLineSearch'
+        'thermal_line_search': 'OneOfSolidNumericsThermalLineSearch',
+        'remote_point_stiffness_multiplier': 'float'
     }
 
     attribute_map = {
@@ -63,10 +64,11 @@ class SolidNumerics(object):
         'mechanical_line_search': 'mechanicalLineSearch',
         'thermal_time_integration_type': 'thermalTimeIntegrationType',
         'thermal_resolution_type': 'thermalResolutionType',
-        'thermal_line_search': 'thermalLineSearch'
+        'thermal_line_search': 'thermalLineSearch',
+        'remote_point_stiffness_multiplier': 'remotePointStiffnessMultiplier'
     }
 
-    def __init__(self, harmonic_solution_method=None, solver=None, solve_model=None, eigen_solver=None, calculate_frequency=None, eigen_mode=None, enhanced_accuracy=None, modal_base=None, harmonic_response=None, mechanical_time_integration_type=None, mechanical_resolution_type=None, mechanical_line_search=None, thermal_time_integration_type=None, thermal_resolution_type=None, thermal_line_search=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, harmonic_solution_method=None, solver=None, solve_model=None, eigen_solver=None, calculate_frequency=None, eigen_mode=None, enhanced_accuracy=None, modal_base=None, harmonic_response=None, mechanical_time_integration_type=None, mechanical_resolution_type=None, mechanical_line_search=None, thermal_time_integration_type=None, thermal_resolution_type=None, thermal_line_search=None, remote_point_stiffness_multiplier=None, local_vars_configuration=None):  # noqa: E501
         """SolidNumerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -87,6 +89,7 @@ class SolidNumerics(object):
         self._thermal_time_integration_type = None
         self._thermal_resolution_type = None
         self._thermal_line_search = None
+        self._remote_point_stiffness_multiplier = None
         self.discriminator = None
 
         if harmonic_solution_method is not None:
@@ -119,6 +122,8 @@ class SolidNumerics(object):
             self.thermal_resolution_type = thermal_resolution_type
         if thermal_line_search is not None:
             self.thermal_line_search = thermal_line_search
+        if remote_point_stiffness_multiplier is not None:
+            self.remote_point_stiffness_multiplier = remote_point_stiffness_multiplier
 
     @property
     def harmonic_solution_method(self):
@@ -444,6 +449,30 @@ class SolidNumerics(object):
         """
 
         self._thermal_line_search = thermal_line_search
+
+    @property
+    def remote_point_stiffness_multiplier(self):
+        """Gets the remote_point_stiffness_multiplier of this SolidNumerics.  # noqa: E501
+
+
+        :return: The remote_point_stiffness_multiplier of this SolidNumerics.  # noqa: E501
+        :rtype: float
+        """
+        return self._remote_point_stiffness_multiplier
+
+    @remote_point_stiffness_multiplier.setter
+    def remote_point_stiffness_multiplier(self, remote_point_stiffness_multiplier):
+        """Sets the remote_point_stiffness_multiplier of this SolidNumerics.
+
+
+        :param remote_point_stiffness_multiplier: The remote_point_stiffness_multiplier of this SolidNumerics.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                remote_point_stiffness_multiplier is not None and remote_point_stiffness_multiplier <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `remote_point_stiffness_multiplier`, must be a value greater than `0`")  # noqa: E501
+
+        self._remote_point_stiffness_multiplier = remote_point_stiffness_multiplier
 
     def to_dict(self):
         """Returns the model properties as a dict"""

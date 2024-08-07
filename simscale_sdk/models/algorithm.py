@@ -42,8 +42,6 @@ class Algorithm(object):
         'max_meshing_run_time': 'DimensionalTime',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixEmSettings',
         'automatic_sweep_parameters': 'OneOfSimmetrixMeshingSolidAutomaticSweepParameters',
-        'enable_shell_meshing': 'bool',
-        'surface_element_type': 'str',
         'meshing_mode': 'str'
     }
 
@@ -59,8 +57,6 @@ class Algorithm(object):
         'max_meshing_run_time': 'maxMeshingRunTime',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings',
         'automatic_sweep_parameters': 'automaticSweepParameters',
-        'enable_shell_meshing': 'enableShellMeshing',
-        'surface_element_type': 'surfaceElementType',
         'meshing_mode': 'meshingMode'
     }
 
@@ -71,7 +67,7 @@ class Algorithm(object):
         'HEX_DOMINANT_SNAPPY_V5': 'HexDominantSnappy'
     }
 
-    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, automatic_sweep_parameters=None, enable_shell_meshing=None, surface_element_type=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, automatic_sweep_parameters=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
         """Algorithm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -88,8 +84,6 @@ class Algorithm(object):
         self._max_meshing_run_time = None
         self._advanced_simmetrix_settings = None
         self._automatic_sweep_parameters = None
-        self._enable_shell_meshing = None
-        self._surface_element_type = None
         self._meshing_mode = None
         self.discriminator = 'type'
 
@@ -114,10 +108,6 @@ class Algorithm(object):
             self.advanced_simmetrix_settings = advanced_simmetrix_settings
         if automatic_sweep_parameters is not None:
             self.automatic_sweep_parameters = automatic_sweep_parameters
-        if enable_shell_meshing is not None:
-            self.enable_shell_meshing = enable_shell_meshing
-        if surface_element_type is not None:
-            self.surface_element_type = surface_element_type
         if meshing_mode is not None:
             self.meshing_mode = meshing_mode
 
@@ -296,7 +286,7 @@ class Algorithm(object):
         :param num_of_processors: The num_of_processors of this Algorithm.  # noqa: E501
         :type: int
         """
-        allowed_values = [-1, 4, 8, 16, 32, 64, 96]  # noqa: E501
+        allowed_values = [-1, 4, 8, 16, 32, 48, 64, 96]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and num_of_processors not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `num_of_processors` ({0}), must be one of {1}"  # noqa: E501
@@ -367,54 +357,6 @@ class Algorithm(object):
         """
 
         self._automatic_sweep_parameters = automatic_sweep_parameters
-
-    @property
-    def enable_shell_meshing(self):
-        """Gets the enable_shell_meshing of this Algorithm.  # noqa: E501
-
-
-        :return: The enable_shell_meshing of this Algorithm.  # noqa: E501
-        :rtype: bool
-        """
-        return self._enable_shell_meshing
-
-    @enable_shell_meshing.setter
-    def enable_shell_meshing(self, enable_shell_meshing):
-        """Sets the enable_shell_meshing of this Algorithm.
-
-
-        :param enable_shell_meshing: The enable_shell_meshing of this Algorithm.  # noqa: E501
-        :type: bool
-        """
-
-        self._enable_shell_meshing = enable_shell_meshing
-
-    @property
-    def surface_element_type(self):
-        """Gets the surface_element_type of this Algorithm.  # noqa: E501
-
-
-        :return: The surface_element_type of this Algorithm.  # noqa: E501
-        :rtype: str
-        """
-        return self._surface_element_type
-
-    @surface_element_type.setter
-    def surface_element_type(self, surface_element_type):
-        """Sets the surface_element_type of this Algorithm.
-
-
-        :param surface_element_type: The surface_element_type of this Algorithm.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["TRIANGULAR", "QUADDOMINANT"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and surface_element_type not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `surface_element_type` ({0}), must be one of {1}"  # noqa: E501
-                .format(surface_element_type, allowed_values)
-            )
-
-        self._surface_element_type = surface_element_type
 
     @property
     def meshing_mode(self):

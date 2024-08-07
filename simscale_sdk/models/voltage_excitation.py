@@ -32,7 +32,7 @@ class VoltageExcitation(object):
     """
     openapi_types = {
         'type': 'str',
-        'voltage': 'DimensionalElectricPotential',
+        'voltage_type': 'OneOfVoltageExcitationVoltageType',
         'voltage_rms': 'DimensionalElectricPotential',
         'voltage_phase': 'DimensionalAngle',
         'additional_resistance': 'DimensionalElectricResistance'
@@ -40,28 +40,28 @@ class VoltageExcitation(object):
 
     attribute_map = {
         'type': 'type',
-        'voltage': 'voltage',
+        'voltage_type': 'voltageType',
         'voltage_rms': 'voltageRMS',
         'voltage_phase': 'voltagePhase',
         'additional_resistance': 'additionalResistance'
     }
 
-    def __init__(self, type='VOLTAGE_EXCITATION', voltage=None, voltage_rms=None, voltage_phase=None, additional_resistance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLTAGE_EXCITATION', voltage_type=None, voltage_rms=None, voltage_phase=None, additional_resistance=None, local_vars_configuration=None):  # noqa: E501
         """VoltageExcitation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._voltage = None
+        self._voltage_type = None
         self._voltage_rms = None
         self._voltage_phase = None
         self._additional_resistance = None
         self.discriminator = None
 
         self.type = type
-        if voltage is not None:
-            self.voltage = voltage
+        if voltage_type is not None:
+            self.voltage_type = voltage_type
         if voltage_rms is not None:
             self.voltage_rms = voltage_rms
         if voltage_phase is not None:
@@ -95,25 +95,25 @@ class VoltageExcitation(object):
         self._type = type
 
     @property
-    def voltage(self):
-        """Gets the voltage of this VoltageExcitation.  # noqa: E501
+    def voltage_type(self):
+        """Gets the voltage_type of this VoltageExcitation.  # noqa: E501
 
 
-        :return: The voltage of this VoltageExcitation.  # noqa: E501
-        :rtype: DimensionalElectricPotential
+        :return: The voltage_type of this VoltageExcitation.  # noqa: E501
+        :rtype: OneOfVoltageExcitationVoltageType
         """
-        return self._voltage
+        return self._voltage_type
 
-    @voltage.setter
-    def voltage(self, voltage):
-        """Sets the voltage of this VoltageExcitation.
+    @voltage_type.setter
+    def voltage_type(self, voltage_type):
+        """Sets the voltage_type of this VoltageExcitation.
 
 
-        :param voltage: The voltage of this VoltageExcitation.  # noqa: E501
-        :type: DimensionalElectricPotential
+        :param voltage_type: The voltage_type of this VoltageExcitation.  # noqa: E501
+        :type: OneOfVoltageExcitationVoltageType
         """
 
-        self._voltage = voltage
+        self._voltage_type = voltage_type
 
     @property
     def voltage_rms(self):

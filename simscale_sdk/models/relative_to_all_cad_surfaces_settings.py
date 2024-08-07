@@ -151,6 +151,7 @@ class RelativeToAllCadSurfacesSettings(object):
     def cell_size_on_surfaces(self):
         """Gets the cell_size_on_surfaces of this RelativeToAllCadSurfacesSettings.  # noqa: E501
 
+        <p>This parameter specifies the <b>size of cells close to the surfaces</b> relative to the diagonal of the CAD model. A higher value leads to a coarser mesh. Our recommendation is to start with the default value and if necessary, gradually lower the parameter until a desired mesh fineness is obtained.</p>  # noqa: E501
 
         :return: The cell_size_on_surfaces of this RelativeToAllCadSurfacesSettings.  # noqa: E501
         :rtype: float
@@ -161,6 +162,7 @@ class RelativeToAllCadSurfacesSettings(object):
     def cell_size_on_surfaces(self, cell_size_on_surfaces):
         """Sets the cell_size_on_surfaces of this RelativeToAllCadSurfacesSettings.
 
+        <p>This parameter specifies the <b>size of cells close to the surfaces</b> relative to the diagonal of the CAD model. A higher value leads to a coarser mesh. Our recommendation is to start with the default value and if necessary, gradually lower the parameter until a desired mesh fineness is obtained.</p>  # noqa: E501
 
         :param cell_size_on_surfaces: The cell_size_on_surfaces of this RelativeToAllCadSurfacesSettings.  # noqa: E501
         :type: float

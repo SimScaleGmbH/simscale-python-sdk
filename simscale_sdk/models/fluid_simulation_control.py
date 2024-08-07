@@ -151,7 +151,7 @@ class FluidSimulationControl(object):
     def number_of_iterations(self):
         """Gets the number_of_iterations of this FluidSimulationControl.  # noqa: E501
 
-        <b>Steady-state simulation:</b> This represents the number of total iterations at which the termination of simulation happens. No more iterations will be executed beyond that. <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>Learn more</a>.<br> <b>Transient simulation:</b> This represents the number of iterations per time step. The recommended value is 25. The larger the <i>Delta t</i> value is, the larger the <i>Number of iterations</i> has to be, in order to obtain more stable, converged solution. The simulation will terminate only when the <i>End time</i> is reached.</br>  # noqa: E501
+        This represents the total number of iterations at which the simulation will terminate. No further iterations will be performed beyond this point. <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :return: The number_of_iterations of this FluidSimulationControl.  # noqa: E501
         :rtype: int
@@ -162,7 +162,7 @@ class FluidSimulationControl(object):
     def number_of_iterations(self, number_of_iterations):
         """Sets the number_of_iterations of this FluidSimulationControl.
 
-        <b>Steady-state simulation:</b> This represents the number of total iterations at which the termination of simulation happens. No more iterations will be executed beyond that. <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>Learn more</a>.<br> <b>Transient simulation:</b> This represents the number of iterations per time step. The recommended value is 25. The larger the <i>Delta t</i> value is, the larger the <i>Number of iterations</i> has to be, in order to obtain more stable, converged solution. The simulation will terminate only when the <i>End time</i> is reached.</br>  # noqa: E501
+        This represents the total number of iterations at which the simulation will terminate. No further iterations will be performed beyond this point. <a href='https://www.simscale.com/docs/simulation-setup/simulation-control/' target='_blank'>Learn more</a>.  # noqa: E501
 
         :param number_of_iterations: The number_of_iterations of this FluidSimulationControl.  # noqa: E501
         :type: int
@@ -285,7 +285,7 @@ class FluidSimulationControl(object):
         :param num_processors: The num_processors of this FluidSimulationControl.  # noqa: E501
         :type: int
         """
-        allowed_values = [-1, 1, 2, 4, 8, 16, 32, 64, 96]  # noqa: E501
+        allowed_values = [-1, 1, 2, 4, 8, 16, 32, 48, 64, 96, 128, 192]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and num_processors not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `num_processors` ({0}), must be one of {1}"  # noqa: E501

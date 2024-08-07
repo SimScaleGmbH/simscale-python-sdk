@@ -50,7 +50,8 @@ class OneOfSolidNumericsSolver(object):
         'algorithm': 'str',
         'preconditioner': 'OneOfPETSCSolverPreconditioner',
         'max_iterations': 'int',
-        'convergence_threshold': 'float'
+        'convergence_threshold': 'float',
+        'advanced_settings': 'AdvancedChronosSettings'
     }
 
     attribute_map = {
@@ -73,17 +74,19 @@ class OneOfSolidNumericsSolver(object):
         'algorithm': 'algorithm',
         'preconditioner': 'preconditioner',
         'max_iterations': 'maxIterations',
-        'convergence_threshold': 'convergenceThreshold'
+        'convergence_threshold': 'convergenceThreshold',
+        'advanced_settings': 'advancedSettings'
     }
 
     discriminator_value_class_map = {
         'LDLT_V33': 'LDLTSolverV33',
         'MUMPS': 'MUMPSSolver',
         'MULTIFRONT': 'MultifrontalSolver',
-        'PETSC': 'PETSCSolver'
+        'PETSC': 'PETSCSolver',
+        'CHRONOS': 'ChronosSolver'
     }
 
-    def __init__(self, type='PETSC', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, mumps_acceleration=None, distributed_matrix_storage=None, memory_management=None, eliminate_lagrange_multipliers=None, algorithm=None, preconditioner=None, max_iterations=None, convergence_threshold=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CHRONOS', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, mumps_acceleration=None, distributed_matrix_storage=None, memory_management=None, eliminate_lagrange_multipliers=None, algorithm=None, preconditioner=None, max_iterations=None, convergence_threshold=None, advanced_settings=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidNumericsSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -109,6 +112,7 @@ class OneOfSolidNumericsSolver(object):
         self._preconditioner = None
         self._max_iterations = None
         self._convergence_threshold = None
+        self._advanced_settings = None
         self.discriminator = 'type'
 
         self.type = type
@@ -150,12 +154,14 @@ class OneOfSolidNumericsSolver(object):
             self.max_iterations = max_iterations
         if convergence_threshold is not None:
             self.convergence_threshold = convergence_threshold
+        if advanced_settings is not None:
+            self.advanced_settings = advanced_settings
 
     @property
     def type(self):
         """Gets the type of this OneOfSolidNumericsSolver.  # noqa: E501
 
-        Schema name: PETSCSolver  # noqa: E501
+        Schema name: ChronosSolver  # noqa: E501
 
         :return: The type of this OneOfSolidNumericsSolver.  # noqa: E501
         :rtype: str
@@ -166,7 +172,7 @@ class OneOfSolidNumericsSolver(object):
     def type(self, type):
         """Sets the type of this OneOfSolidNumericsSolver.
 
-        Schema name: PETSCSolver  # noqa: E501
+        Schema name: ChronosSolver  # noqa: E501
 
         :param type: The type of this OneOfSolidNumericsSolver.  # noqa: E501
         :type: str
@@ -466,7 +472,7 @@ class OneOfSolidNumericsSolver(object):
     def distributed_matrix_storage(self):
         """Gets the distributed_matrix_storage of this OneOfSolidNumericsSolver.  # noqa: E501
 
-        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor.  # noqa: E501
+        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor. Enabling this can significantly reductions in memory consumption, but introduces numerical instability in rare occasions.  # noqa: E501
 
         :return: The distributed_matrix_storage of this OneOfSolidNumericsSolver.  # noqa: E501
         :rtype: bool
@@ -477,7 +483,7 @@ class OneOfSolidNumericsSolver(object):
     def distributed_matrix_storage(self, distributed_matrix_storage):
         """Sets the distributed_matrix_storage of this OneOfSolidNumericsSolver.
 
-        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor.  # noqa: E501
+        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor. Enabling this can significantly reductions in memory consumption, but introduces numerical instability in rare occasions.  # noqa: E501
 
         :param distributed_matrix_storage: The distributed_matrix_storage of this OneOfSolidNumericsSolver.  # noqa: E501
         :type: bool
@@ -591,7 +597,7 @@ class OneOfSolidNumericsSolver(object):
     def max_iterations(self):
         """Gets the max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
 
-        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
+        Maximum number of iterations for Chronos. Should be 1000 for AMG (max 3000), and 5000 with FSAI (max 10000).  # noqa: E501
 
         :return: The max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
         :rtype: int
@@ -602,7 +608,7 @@ class OneOfSolidNumericsSolver(object):
     def max_iterations(self, max_iterations):
         """Sets the max_iterations of this OneOfSolidNumericsSolver.
 
-        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
+        Maximum number of iterations for Chronos. Should be 1000 for AMG (max 3000), and 5000 with FSAI (max 10000).  # noqa: E501
 
         :param max_iterations: The max_iterations of this OneOfSolidNumericsSolver.  # noqa: E501
         :type: int
@@ -617,7 +623,7 @@ class OneOfSolidNumericsSolver(object):
     def convergence_threshold(self):
         """Gets the convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
 
-        Set the threshold value for convergence detection for the relative convergence criteria.  # noqa: E501
+        Select the convergence tolerance. Can be smaller than with PETSc, and seems to have a big impact on the newton convergence. It is recommended to start with a smaller value in case of convergence problems e.g. 1e-8 - 1e-10.  # noqa: E501
 
         :return: The convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
         :rtype: float
@@ -628,7 +634,7 @@ class OneOfSolidNumericsSolver(object):
     def convergence_threshold(self, convergence_threshold):
         """Sets the convergence_threshold of this OneOfSolidNumericsSolver.
 
-        Set the threshold value for convergence detection for the relative convergence criteria.  # noqa: E501
+        Select the convergence tolerance. Can be smaller than with PETSc, and seems to have a big impact on the newton convergence. It is recommended to start with a smaller value in case of convergence problems e.g. 1e-8 - 1e-10.  # noqa: E501
 
         :param convergence_threshold: The convergence_threshold of this OneOfSolidNumericsSolver.  # noqa: E501
         :type: float
@@ -638,6 +644,27 @@ class OneOfSolidNumericsSolver(object):
             raise ValueError("Invalid value for `convergence_threshold`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._convergence_threshold = convergence_threshold
+
+    @property
+    def advanced_settings(self):
+        """Gets the advanced_settings of this OneOfSolidNumericsSolver.  # noqa: E501
+
+
+        :return: The advanced_settings of this OneOfSolidNumericsSolver.  # noqa: E501
+        :rtype: AdvancedChronosSettings
+        """
+        return self._advanced_settings
+
+    @advanced_settings.setter
+    def advanced_settings(self, advanced_settings):
+        """Sets the advanced_settings of this OneOfSolidNumericsSolver.
+
+
+        :param advanced_settings: The advanced_settings of this OneOfSolidNumericsSolver.  # noqa: E501
+        :type: AdvancedChronosSettings
+        """
+
+        self._advanced_settings = advanced_settings
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

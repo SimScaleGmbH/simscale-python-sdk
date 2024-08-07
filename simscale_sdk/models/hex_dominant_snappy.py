@@ -197,7 +197,7 @@ class HexDominantSnappy(object):
         :param num_of_processors: The num_of_processors of this HexDominantSnappy.  # noqa: E501
         :type: int
         """
-        allowed_values = [-1, 4, 8, 16, 32, 64, 96]  # noqa: E501
+        allowed_values = [-1, 4, 8, 16, 32, 48, 64, 96]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and num_of_processors not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `num_of_processors` ({0}), must be one of {1}"  # noqa: E501

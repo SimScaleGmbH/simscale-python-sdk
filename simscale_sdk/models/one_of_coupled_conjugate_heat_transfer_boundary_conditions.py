@@ -38,8 +38,8 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'temperature': 'AmbientTBC',
         'passive_scalars': 'list[InletOutletPSBC]',
         'phase_fraction': 'OneOfWallBCPhaseFraction',
-        'associated_phase_fractions': 'list[PhaseNameAndFixedValuePFBC]',
-        'mass_fractions': 'list[FixedValueMassFractionBC]',
+        'phase_fractions_v2': 'OneOfPressureOutletBCPhaseFractionsV2',
+        'mass_fractions_v2': 'OutletBackFlowMFValues',
         'turbulence_intensity': 'OneOfVelocityInletBCTurbulenceIntensity',
         'dissipation_type': 'OneOfVelocityInletBCDissipationType',
         'net_radiative_heat_flux': 'OneOfNaturalConvectionInletOutletBCNetRadiativeHeatFlux',
@@ -61,8 +61,8 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'temperature': 'temperature',
         'passive_scalars': 'passiveScalars',
         'phase_fraction': 'phaseFraction',
-        'associated_phase_fractions': 'associatedPhaseFractions',
-        'mass_fractions': 'massFractions',
+        'phase_fractions_v2': 'phaseFractionsV2',
+        'mass_fractions_v2': 'massFractionsV2',
         'turbulence_intensity': 'turbulenceIntensity',
         'dissipation_type': 'dissipationType',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
@@ -87,7 +87,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
 
-    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, associated_phase_fractions=None, mass_fractions=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,8 +100,8 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         self._temperature = None
         self._passive_scalars = None
         self._phase_fraction = None
-        self._associated_phase_fractions = None
-        self._mass_fractions = None
+        self._phase_fractions_v2 = None
+        self._mass_fractions_v2 = None
         self._turbulence_intensity = None
         self._dissipation_type = None
         self._net_radiative_heat_flux = None
@@ -128,10 +128,10 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
             self.passive_scalars = passive_scalars
         if phase_fraction is not None:
             self.phase_fraction = phase_fraction
-        if associated_phase_fractions is not None:
-            self.associated_phase_fractions = associated_phase_fractions
-        if mass_fractions is not None:
-            self.mass_fractions = mass_fractions
+        if phase_fractions_v2 is not None:
+            self.phase_fractions_v2 = phase_fractions_v2
+        if mass_fractions_v2 is not None:
+            self.mass_fractions_v2 = mass_fractions_v2
         if turbulence_intensity is not None:
             self.turbulence_intensity = turbulence_intensity
         if dissipation_type is not None:
@@ -309,50 +309,46 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         self._phase_fraction = phase_fraction
 
     @property
-    def associated_phase_fractions(self):
-        """Gets the associated_phase_fractions of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+    def phase_fractions_v2(self):
+        """Gets the phase_fractions_v2 of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
 
-        Please choose a boundary condition for phase fraction (alpha).  # noqa: E501
 
-        :return: The associated_phase_fractions of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: list[PhaseNameAndFixedValuePFBC]
+        :return: The phase_fractions_v2 of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: OneOfPressureOutletBCPhaseFractionsV2
         """
-        return self._associated_phase_fractions
+        return self._phase_fractions_v2
 
-    @associated_phase_fractions.setter
-    def associated_phase_fractions(self, associated_phase_fractions):
-        """Sets the associated_phase_fractions of this OneOfCoupledConjugateHeatTransferBoundaryConditions.
+    @phase_fractions_v2.setter
+    def phase_fractions_v2(self, phase_fractions_v2):
+        """Sets the phase_fractions_v2 of this OneOfCoupledConjugateHeatTransferBoundaryConditions.
 
-        Please choose a boundary condition for phase fraction (alpha).  # noqa: E501
 
-        :param associated_phase_fractions: The associated_phase_fractions of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :type: list[PhaseNameAndFixedValuePFBC]
+        :param phase_fractions_v2: The phase_fractions_v2 of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+        :type: OneOfPressureOutletBCPhaseFractionsV2
         """
 
-        self._associated_phase_fractions = associated_phase_fractions
+        self._phase_fractions_v2 = phase_fractions_v2
 
     @property
-    def mass_fractions(self):
-        """Gets the mass_fractions of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+    def mass_fractions_v2(self):
+        """Gets the mass_fractions_v2 of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
 
-        Please choose a boundary condition for component mass density fraction.  # noqa: E501
 
-        :return: The mass_fractions of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: list[FixedValueMassFractionBC]
+        :return: The mass_fractions_v2 of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: OutletBackFlowMFValues
         """
-        return self._mass_fractions
+        return self._mass_fractions_v2
 
-    @mass_fractions.setter
-    def mass_fractions(self, mass_fractions):
-        """Sets the mass_fractions of this OneOfCoupledConjugateHeatTransferBoundaryConditions.
+    @mass_fractions_v2.setter
+    def mass_fractions_v2(self, mass_fractions_v2):
+        """Sets the mass_fractions_v2 of this OneOfCoupledConjugateHeatTransferBoundaryConditions.
 
-        Please choose a boundary condition for component mass density fraction.  # noqa: E501
 
-        :param mass_fractions: The mass_fractions of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
-        :type: list[FixedValueMassFractionBC]
+        :param mass_fractions_v2: The mass_fractions_v2 of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+        :type: OutletBackFlowMFValues
         """
 
-        self._mass_fractions = mass_fractions
+        self._mass_fractions_v2 = mass_fractions_v2
 
     @property
     def turbulence_intensity(self):

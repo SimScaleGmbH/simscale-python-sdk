@@ -34,24 +34,38 @@ class OneOfWallBCTemperature(object):
         'type': 'str',
         'heat_flux': 'OneOfExternalWallHeatFluxTBCHeatFlux',
         'value': 'DimensionalTemperature',
-        'heat_source': 'OneOfTurbulentHeatFluxTBCHeatSource'
+        'total_temperature': 'DimensionalTemperature',
+        'total_temperature_function': 'DimensionalFunctionTemperature',
+        'specific_heat_ratio': 'float',
+        'heat_source': 'OneOfTurbulentHeatFluxTBCHeatSource',
+        'convection': 'WallConvectionModel',
+        'radiation': 'WallRadiationModel'
     }
 
     attribute_map = {
         'type': 'type',
         'heat_flux': 'heatFlux',
         'value': 'value',
-        'heat_source': 'heatSource'
+        'total_temperature': 'totalTemperature',
+        'total_temperature_function': 'totalTemperatureFunction',
+        'specific_heat_ratio': 'specificHeatRatio',
+        'heat_source': 'heatSource',
+        'convection': 'convection',
+        'radiation': 'radiation'
     }
 
     discriminator_value_class_map = {
         'EXTERNAL_WALL_HEAT_FLUX_TEMPERATURE': 'ExternalWallHeatFluxTBC',
         'FIXED_VALUE': 'FixedValueTBC',
         'ADIABATIC': 'AdiabaticTBC',
-        'TURBULENT_HEAT_FLUX_TEMPERATURE': 'TurbulentHeatFluxTBC'
+        'TOTAL_TEMPERATURE': 'TotalTBC',
+        'TURBULENT_HEAT_FLUX_TEMPERATURE': 'TurbulentHeatFluxTBC',
+        'CONVECTIVE_HEAT_TRANSFER': 'ConvectionTBC',
+        'RADIATIVE_HEAT_TRANSFER': 'RadiationTBC',
+        'CONVECTIVE_RADIATIVE_HEAT_TRANSFER': 'ConvectionRadiationTBC'
     }
 
-    def __init__(self, type='TURBULENT_HEAT_FLUX_TEMPERATURE', heat_flux=None, value=None, heat_source=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONVECTIVE_RADIATIVE_HEAT_TRANSFER', heat_flux=None, value=None, total_temperature=None, total_temperature_function=None, specific_heat_ratio=None, heat_source=None, convection=None, radiation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfWallBCTemperature - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,7 +74,12 @@ class OneOfWallBCTemperature(object):
         self._type = None
         self._heat_flux = None
         self._value = None
+        self._total_temperature = None
+        self._total_temperature_function = None
+        self._specific_heat_ratio = None
         self._heat_source = None
+        self._convection = None
+        self._radiation = None
         self.discriminator = 'type'
 
         self.type = type
@@ -68,14 +87,24 @@ class OneOfWallBCTemperature(object):
             self.heat_flux = heat_flux
         if value is not None:
             self.value = value
+        if total_temperature is not None:
+            self.total_temperature = total_temperature
+        if total_temperature_function is not None:
+            self.total_temperature_function = total_temperature_function
+        if specific_heat_ratio is not None:
+            self.specific_heat_ratio = specific_heat_ratio
         if heat_source is not None:
             self.heat_source = heat_source
+        if convection is not None:
+            self.convection = convection
+        if radiation is not None:
+            self.radiation = radiation
 
     @property
     def type(self):
         """Gets the type of this OneOfWallBCTemperature.  # noqa: E501
 
-        Schema name: TurbulentHeatFluxTBC  # noqa: E501
+        Schema name: ConvectionRadiationTBC  # noqa: E501
 
         :return: The type of this OneOfWallBCTemperature.  # noqa: E501
         :rtype: str
@@ -86,7 +115,7 @@ class OneOfWallBCTemperature(object):
     def type(self, type):
         """Sets the type of this OneOfWallBCTemperature.
 
-        Schema name: TurbulentHeatFluxTBC  # noqa: E501
+        Schema name: ConvectionRadiationTBC  # noqa: E501
 
         :param type: The type of this OneOfWallBCTemperature.  # noqa: E501
         :type: str
@@ -139,6 +168,72 @@ class OneOfWallBCTemperature(object):
         self._value = value
 
     @property
+    def total_temperature(self):
+        """Gets the total_temperature of this OneOfWallBCTemperature.  # noqa: E501
+
+
+        :return: The total_temperature of this OneOfWallBCTemperature.  # noqa: E501
+        :rtype: DimensionalTemperature
+        """
+        return self._total_temperature
+
+    @total_temperature.setter
+    def total_temperature(self, total_temperature):
+        """Sets the total_temperature of this OneOfWallBCTemperature.
+
+
+        :param total_temperature: The total_temperature of this OneOfWallBCTemperature.  # noqa: E501
+        :type: DimensionalTemperature
+        """
+
+        self._total_temperature = total_temperature
+
+    @property
+    def total_temperature_function(self):
+        """Gets the total_temperature_function of this OneOfWallBCTemperature.  # noqa: E501
+
+
+        :return: The total_temperature_function of this OneOfWallBCTemperature.  # noqa: E501
+        :rtype: DimensionalFunctionTemperature
+        """
+        return self._total_temperature_function
+
+    @total_temperature_function.setter
+    def total_temperature_function(self, total_temperature_function):
+        """Sets the total_temperature_function of this OneOfWallBCTemperature.
+
+
+        :param total_temperature_function: The total_temperature_function of this OneOfWallBCTemperature.  # noqa: E501
+        :type: DimensionalFunctionTemperature
+        """
+
+        self._total_temperature_function = total_temperature_function
+
+    @property
+    def specific_heat_ratio(self):
+        """Gets the specific_heat_ratio of this OneOfWallBCTemperature.  # noqa: E501
+
+
+        :return: The specific_heat_ratio of this OneOfWallBCTemperature.  # noqa: E501
+        :rtype: float
+        """
+        return self._specific_heat_ratio
+
+    @specific_heat_ratio.setter
+    def specific_heat_ratio(self, specific_heat_ratio):
+        """Sets the specific_heat_ratio of this OneOfWallBCTemperature.
+
+
+        :param specific_heat_ratio: The specific_heat_ratio of this OneOfWallBCTemperature.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                specific_heat_ratio is not None and specific_heat_ratio <= 0):  # noqa: E501
+            raise ValueError("Invalid value for `specific_heat_ratio`, must be a value greater than `0`")  # noqa: E501
+
+        self._specific_heat_ratio = specific_heat_ratio
+
+    @property
     def heat_source(self):
         """Gets the heat_source of this OneOfWallBCTemperature.  # noqa: E501
 
@@ -158,6 +253,48 @@ class OneOfWallBCTemperature(object):
         """
 
         self._heat_source = heat_source
+
+    @property
+    def convection(self):
+        """Gets the convection of this OneOfWallBCTemperature.  # noqa: E501
+
+
+        :return: The convection of this OneOfWallBCTemperature.  # noqa: E501
+        :rtype: WallConvectionModel
+        """
+        return self._convection
+
+    @convection.setter
+    def convection(self, convection):
+        """Sets the convection of this OneOfWallBCTemperature.
+
+
+        :param convection: The convection of this OneOfWallBCTemperature.  # noqa: E501
+        :type: WallConvectionModel
+        """
+
+        self._convection = convection
+
+    @property
+    def radiation(self):
+        """Gets the radiation of this OneOfWallBCTemperature.  # noqa: E501
+
+
+        :return: The radiation of this OneOfWallBCTemperature.  # noqa: E501
+        :rtype: WallRadiationModel
+        """
+        return self._radiation
+
+    @radiation.setter
+    def radiation(self, radiation):
+        """Sets the radiation of this OneOfWallBCTemperature.
+
+
+        :param radiation: The radiation of this OneOfWallBCTemperature.  # noqa: E501
+        :type: WallRadiationModel
+        """
+
+        self._radiation = radiation
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

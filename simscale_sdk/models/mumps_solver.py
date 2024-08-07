@@ -434,7 +434,7 @@ class MUMPSSolver(object):
     def distributed_matrix_storage(self):
         """Gets the distributed_matrix_storage of this MUMPSSolver.  # noqa: E501
 
-        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor. This parameter has currently no effect for <i>Harmonic</i> simulations.  # noqa: E501
+        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor. Enabling this can significantly reductions in memory consumption, but introduces numerical instability in rare occasions.  # noqa: E501
 
         :return: The distributed_matrix_storage of this MUMPSSolver.  # noqa: E501
         :rtype: bool
@@ -445,7 +445,7 @@ class MUMPSSolver(object):
     def distributed_matrix_storage(self, distributed_matrix_storage):
         """Sets the distributed_matrix_storage of this MUMPSSolver.
 
-        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor. This parameter has currently no effect for <i>Harmonic</i> simulations.  # noqa: E501
+        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor. Enabling this can significantly reductions in memory consumption, but introduces numerical instability in rare occasions.  # noqa: E501
 
         :param distributed_matrix_storage: The distributed_matrix_storage of this MUMPSSolver.  # noqa: E501
         :type: bool

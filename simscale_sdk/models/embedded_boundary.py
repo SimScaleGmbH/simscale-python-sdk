@@ -34,6 +34,7 @@ class EmbeddedBoundary(object):
         'type': 'str',
         'allow_external_flow': 'bool',
         'model': 'FluidModel',
+        'solar_calculator': 'SolarCalculator',
         'materials': 'CoupledConjugateHeatTransferMaterials',
         'initial_conditions': 'FluidInitialConditions',
         'external_flow_boundary_condition': 'OneOfEmbeddedBoundaryExternalFlowBoundaryCondition',
@@ -45,6 +46,7 @@ class EmbeddedBoundary(object):
         'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
         'is_compressible': 'bool',
         'enable_radiation': 'bool',
+        'enable_solar_load': 'bool',
         'enable_humidity_model': 'bool',
         'enable_joule_heating': 'bool',
         'turbulence_model': 'str',
@@ -56,6 +58,7 @@ class EmbeddedBoundary(object):
         'type': 'type',
         'allow_external_flow': 'allowExternalFlow',
         'model': 'model',
+        'solar_calculator': 'solarCalculator',
         'materials': 'materials',
         'initial_conditions': 'initialConditions',
         'external_flow_boundary_condition': 'externalFlowBoundaryCondition',
@@ -67,6 +70,7 @@ class EmbeddedBoundary(object):
         'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
         'is_compressible': 'isCompressible',
         'enable_radiation': 'enableRadiation',
+        'enable_solar_load': 'enableSolarLoad',
         'enable_humidity_model': 'enableHumidityModel',
         'enable_joule_heating': 'enableJouleHeating',
         'turbulence_model': 'turbulenceModel',
@@ -74,7 +78,7 @@ class EmbeddedBoundary(object):
         'num_of_passive_species': 'numOfPassiveSpecies'
     }
 
-    def __init__(self, type='EMBEDDED_BOUNDARY', allow_external_flow=None, model=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_humidity_model=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMBEDDED_BOUNDARY', allow_external_flow=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, external_flow_boundary_condition=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, embedded_boundary_meshing=None, is_compressible=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, local_vars_configuration=None):  # noqa: E501
         """EmbeddedBoundary - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -83,6 +87,7 @@ class EmbeddedBoundary(object):
         self._type = None
         self._allow_external_flow = None
         self._model = None
+        self._solar_calculator = None
         self._materials = None
         self._initial_conditions = None
         self._external_flow_boundary_condition = None
@@ -94,6 +99,7 @@ class EmbeddedBoundary(object):
         self._embedded_boundary_meshing = None
         self._is_compressible = None
         self._enable_radiation = None
+        self._enable_solar_load = None
         self._enable_humidity_model = None
         self._enable_joule_heating = None
         self._turbulence_model = None
@@ -106,6 +112,8 @@ class EmbeddedBoundary(object):
             self.allow_external_flow = allow_external_flow
         if model is not None:
             self.model = model
+        if solar_calculator is not None:
+            self.solar_calculator = solar_calculator
         if materials is not None:
             self.materials = materials
         if initial_conditions is not None:
@@ -128,6 +136,8 @@ class EmbeddedBoundary(object):
             self.is_compressible = is_compressible
         if enable_radiation is not None:
             self.enable_radiation = enable_radiation
+        if enable_solar_load is not None:
+            self.enable_solar_load = enable_solar_load
         if enable_humidity_model is not None:
             self.enable_humidity_model = enable_humidity_model
         if enable_joule_heating is not None:
@@ -207,6 +217,27 @@ class EmbeddedBoundary(object):
         """
 
         self._model = model
+
+    @property
+    def solar_calculator(self):
+        """Gets the solar_calculator of this EmbeddedBoundary.  # noqa: E501
+
+
+        :return: The solar_calculator of this EmbeddedBoundary.  # noqa: E501
+        :rtype: SolarCalculator
+        """
+        return self._solar_calculator
+
+    @solar_calculator.setter
+    def solar_calculator(self, solar_calculator):
+        """Sets the solar_calculator of this EmbeddedBoundary.
+
+
+        :param solar_calculator: The solar_calculator of this EmbeddedBoundary.  # noqa: E501
+        :type: SolarCalculator
+        """
+
+        self._solar_calculator = solar_calculator
 
     @property
     def materials(self):
@@ -442,6 +473,29 @@ class EmbeddedBoundary(object):
         """
 
         self._enable_radiation = enable_radiation
+
+    @property
+    def enable_solar_load(self):
+        """Gets the enable_solar_load of this EmbeddedBoundary.  # noqa: E501
+
+        Enables the <b>solar load</b> model in the simulation. <b>Diffuse</b> and/or <b>directional</b> solar load contributions are specified in the <b>solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent boundaries are present, internal surfaces of the domain might also be heated. All <b>internal solids</b> will be considered <b>opaque</b>. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :return: The enable_solar_load of this EmbeddedBoundary.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_solar_load
+
+    @enable_solar_load.setter
+    def enable_solar_load(self, enable_solar_load):
+        """Sets the enable_solar_load of this EmbeddedBoundary.
+
+        Enables the <b>solar load</b> model in the simulation. <b>Diffuse</b> and/or <b>directional</b> solar load contributions are specified in the <b>solar calculator</b>. The solar load terms will heat the external faces of the simulation domain. Moreover, if transparent and/or semi-transparent boundaries are present, internal surfaces of the domain might also be heated. All <b>internal solids</b> will be considered <b>opaque</b>. <a href='https://www.simscale.com/docs/analysis-types/conjugate-heat-transfer-analysis/solar-load/' target='_blank'>Learn more</a>.  # noqa: E501
+
+        :param enable_solar_load: The enable_solar_load of this EmbeddedBoundary.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_solar_load = enable_solar_load
 
     @property
     def enable_humidity_model(self):

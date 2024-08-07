@@ -32,7 +32,7 @@ class SimmetrixMeshingElectromagnetics(object):
     """
     openapi_types = {
         'type': 'str',
-        'sizing': 'AutomaticMeshSizingSimmetrix',
+        'sizing': 'OneOfSimmetrixMeshingElectromagneticsSizing',
         'refinements': 'list[OneOfSimmetrixMeshingElectromagneticsRefinements]',
         'num_of_processors': 'int',
         'max_meshing_run_time': 'DimensionalTime',
@@ -105,7 +105,7 @@ class SimmetrixMeshingElectromagnetics(object):
 
 
         :return: The sizing of this SimmetrixMeshingElectromagnetics.  # noqa: E501
-        :rtype: AutomaticMeshSizingSimmetrix
+        :rtype: OneOfSimmetrixMeshingElectromagneticsSizing
         """
         return self._sizing
 
@@ -115,7 +115,7 @@ class SimmetrixMeshingElectromagnetics(object):
 
 
         :param sizing: The sizing of this SimmetrixMeshingElectromagnetics.  # noqa: E501
-        :type: AutomaticMeshSizingSimmetrix
+        :type: OneOfSimmetrixMeshingElectromagneticsSizing
         """
 
         self._sizing = sizing
@@ -161,7 +161,7 @@ class SimmetrixMeshingElectromagnetics(object):
         :param num_of_processors: The num_of_processors of this SimmetrixMeshingElectromagnetics.  # noqa: E501
         :type: int
         """
-        allowed_values = [-1, 4, 8, 16, 32, 64, 96]  # noqa: E501
+        allowed_values = [-1, 4, 8, 16, 32, 48, 64, 96]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and num_of_processors not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `num_of_processors` ({0}), must be one of {1}"  # noqa: E501
