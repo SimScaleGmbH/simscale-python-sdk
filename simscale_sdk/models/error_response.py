@@ -35,8 +35,8 @@ class ErrorResponse(object):
         'code': 'str',
         'message': 'str',
         'details': 'dict(str, object)',
-        'trace': 'str',
-        'entries': 'list[LogEntry]'
+        'entries': 'list[LogEntry]',
+        'trace': 'str'
     }
 
     attribute_map = {
@@ -44,11 +44,11 @@ class ErrorResponse(object):
         'code': 'code',
         'message': 'message',
         'details': 'details',
-        'trace': 'trace',
-        'entries': 'entries'
+        'entries': 'entries',
+        'trace': 'trace'
     }
 
-    def __init__(self, severity=None, code=None, message=None, details=None, trace=None, entries=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, severity=None, code=None, message=None, details=None, entries=None, trace=None, local_vars_configuration=None):  # noqa: E501
         """ErrorResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,8 +58,8 @@ class ErrorResponse(object):
         self._code = None
         self._message = None
         self._details = None
-        self._trace = None
         self._entries = None
+        self._trace = None
         self.discriminator = None
 
         if severity is not None:
@@ -70,10 +70,10 @@ class ErrorResponse(object):
             self.message = message
         if details is not None:
             self.details = details
-        if trace is not None:
-            self.trace = trace
         if entries is not None:
             self.entries = entries
+        if trace is not None:
+            self.trace = trace
 
     @property
     def severity(self):
@@ -166,27 +166,6 @@ class ErrorResponse(object):
         self._details = details
 
     @property
-    def trace(self):
-        """Gets the trace of this ErrorResponse.  # noqa: E501
-
-
-        :return: The trace of this ErrorResponse.  # noqa: E501
-        :rtype: str
-        """
-        return self._trace
-
-    @trace.setter
-    def trace(self, trace):
-        """Sets the trace of this ErrorResponse.
-
-
-        :param trace: The trace of this ErrorResponse.  # noqa: E501
-        :type: str
-        """
-
-        self._trace = trace
-
-    @property
     def entries(self):
         """Gets the entries of this ErrorResponse.  # noqa: E501
 
@@ -206,6 +185,27 @@ class ErrorResponse(object):
         """
 
         self._entries = entries
+
+    @property
+    def trace(self):
+        """Gets the trace of this ErrorResponse.  # noqa: E501
+
+
+        :return: The trace of this ErrorResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._trace
+
+    @trace.setter
+    def trace(self, trace):
+        """Sets the trace of this ErrorResponse.
+
+
+        :param trace: The trace of this ErrorResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._trace = trace
 
     def to_dict(self):
         """Returns the model properties as a dict"""

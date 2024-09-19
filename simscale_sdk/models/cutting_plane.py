@@ -39,6 +39,7 @@ class CuttingPlane(object):
         'vector_grid_spacing': 'float',
         'scalar_field': 'ScalarField',
         'vector_field': 'VectorField',
+        'solid_color': 'Color',
         'project_vectors_onto_plane': 'bool',
         'render_mode': 'RenderMode'
     }
@@ -52,11 +53,12 @@ class CuttingPlane(object):
         'vector_grid_spacing': 'vectorGridSpacing',
         'scalar_field': 'scalarField',
         'vector_field': 'vectorField',
+        'solid_color': 'solidColor',
         'project_vectors_onto_plane': 'projectVectorsOntoPlane',
         'render_mode': 'renderMode'
     }
 
-    def __init__(self, name=None, center=None, normal=None, opacity=None, clipping=True, vector_grid_spacing=None, scalar_field=None, vector_field=None, project_vectors_onto_plane=False, render_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, center=None, normal=None, opacity=None, clipping=True, vector_grid_spacing=None, scalar_field=None, vector_field=None, solid_color=None, project_vectors_onto_plane=False, render_mode=None, local_vars_configuration=None):  # noqa: E501
         """CuttingPlane - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class CuttingPlane(object):
         self._vector_grid_spacing = None
         self._scalar_field = None
         self._vector_field = None
+        self._solid_color = None
         self._project_vectors_onto_plane = None
         self._render_mode = None
         self.discriminator = None
@@ -86,6 +89,8 @@ class CuttingPlane(object):
             self.scalar_field = scalar_field
         if vector_field is not None:
             self.vector_field = vector_field
+        if solid_color is not None:
+            self.solid_color = solid_color
         self.project_vectors_onto_plane = project_vectors_onto_plane
         if render_mode is not None:
             self.render_mode = render_mode
@@ -279,6 +284,27 @@ class CuttingPlane(object):
         """
 
         self._vector_field = vector_field
+
+    @property
+    def solid_color(self):
+        """Gets the solid_color of this CuttingPlane.  # noqa: E501
+
+
+        :return: The solid_color of this CuttingPlane.  # noqa: E501
+        :rtype: Color
+        """
+        return self._solid_color
+
+    @solid_color.setter
+    def solid_color(self, solid_color):
+        """Sets the solid_color of this CuttingPlane.
+
+
+        :param solid_color: The solid_color of this CuttingPlane.  # noqa: E501
+        :type: Color
+        """
+
+        self._solid_color = solid_color
 
     @property
     def project_vectors_onto_plane(self):
