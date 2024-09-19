@@ -135,7 +135,7 @@ class GeometryImportRequest(object):
         """
         if self.local_vars_configuration.client_side_validation and format is None:  # noqa: E501
             raise ValueError("Invalid value for `format`, must not be `None`")  # noqa: E501
-        allowed_values = ["ACIS", "CATIA", "CREO", "IGES", "INVENTOR", "NX", "PARASOLID", "REVIT", "RHINOCEROS", "SOLIDEDGE", "SOLIDWORKS", "STEP", "STL"]  # noqa: E501
+        allowed_values = ["ACIS", "AUTODESK", "CATIA", "CREO", "IGES", "NX", "PARASOLID", "REVIT", "RHINOCEROS", "SOLIDEDGE", "SOLIDWORKS", "STEP", "STL"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and format not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `format` ({0}), must be one of {1}"  # noqa: E501

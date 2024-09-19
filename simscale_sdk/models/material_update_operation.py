@@ -34,19 +34,17 @@ class MaterialUpdateOperation(object):
         'path': 'str',
         'material_data': 'MaterialResponse',
         'material_spec': 'object',
-        'reference': 'MaterialUpdateOperationReference',
-        'material_data_sources': 'list[str]'
+        'reference': 'MaterialUpdateOperationReference'
     }
 
     attribute_map = {
         'path': 'path',
         'material_data': 'materialData',
         'material_spec': 'materialSpec',
-        'reference': 'reference',
-        'material_data_sources': 'materialDataSources'
+        'reference': 'reference'
     }
 
-    def __init__(self, path=None, material_data=None, material_spec=None, reference=None, material_data_sources=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, path=None, material_data=None, material_spec=None, reference=None, local_vars_configuration=None):  # noqa: E501
         """MaterialUpdateOperation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,17 +54,15 @@ class MaterialUpdateOperation(object):
         self._material_data = None
         self._material_spec = None
         self._reference = None
-        self._material_data_sources = None
         self.discriminator = None
 
         self.path = path
-        self.material_data = material_data
+        if material_data is not None:
+            self.material_data = material_data
         if material_spec is not None:
             self.material_spec = material_spec
         if reference is not None:
             self.reference = reference
-        if material_data_sources is not None:
-            self.material_data_sources = material_data_sources
 
     @property
     def path(self):
@@ -111,8 +107,6 @@ class MaterialUpdateOperation(object):
         :param material_data: The material_data of this MaterialUpdateOperation.  # noqa: E501
         :type: MaterialResponse
         """
-        if self.local_vars_configuration.client_side_validation and material_data is None:  # noqa: E501
-            raise ValueError("Invalid value for `material_data`, must not be `None`")  # noqa: E501
 
         self._material_data = material_data
 
@@ -159,35 +153,6 @@ class MaterialUpdateOperation(object):
         """
 
         self._reference = reference
-
-    @property
-    def material_data_sources(self):
-        """Gets the material_data_sources of this MaterialUpdateOperation.  # noqa: E501
-
-
-        :return: The material_data_sources of this MaterialUpdateOperation.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._material_data_sources
-
-    @material_data_sources.setter
-    def material_data_sources(self, material_data_sources):
-        """Sets the material_data_sources of this MaterialUpdateOperation.
-
-
-        :param material_data_sources: The material_data_sources of this MaterialUpdateOperation.  # noqa: E501
-        :type: list[str]
-        """
-        allowed_values = ["MATERIAL_LIBRARY_DATA", "SPEC_DATA", "SCHEMA_DEFAULT"]  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                not set(material_data_sources).issubset(set(allowed_values))):  # noqa: E501
-            raise ValueError(
-                "Invalid values for `material_data_sources` [{0}], must be a subset of [{1}]"  # noqa: E501
-                .format(", ".join(map(str, set(material_data_sources) - set(allowed_values))),  # noqa: E501
-                        ", ".join(map(str, allowed_values)))
-            )
-
-        self._material_data_sources = material_data_sources
 
     def to_dict(self):
         """Returns the model properties as a dict"""

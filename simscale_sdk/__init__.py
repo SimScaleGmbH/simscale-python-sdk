@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.0.2"
+__version__ = "9.0.0"
 
 # import apis into sdk package
 from simscale_sdk.api.folders_api import FoldersApi
@@ -77,7 +77,6 @@ from simscale_sdk.models.advanced_simmetrix_solid_settings import AdvancedSimmet
 from simscale_sdk.models.advective_pbc import AdvectivePBC
 from simscale_sdk.models.advective_vbc import AdvectiveVBC
 from simscale_sdk.models.aerodynamic_roughness import AerodynamicRoughness
-from simscale_sdk.models.ai_user_model import AiUserModel
 from simscale_sdk.models.algorithm import Algorithm
 from simscale_sdk.models.all_computed_write_control import AllComputedWriteControl
 from simscale_sdk.models.ambient_pbc import AmbientPBC
@@ -113,7 +112,6 @@ from simscale_sdk.models.automatic_subspace_settings import AutomaticSubspaceSet
 from simscale_sdk.models.automatic_sweep_off import AutomaticSweepOff
 from simscale_sdk.models.automatic_sweep_on import AutomaticSweepOn
 from simscale_sdk.models.automatic_turbulence import AutomaticTurbulence
-from simscale_sdk.models.available_ai_model import AvailableAiModel
 from simscale_sdk.models.average_fields_calculation_result_control_item import AverageFieldsCalculationResultControlItem
 from simscale_sdk.models.average_velocity_momentum_source import AverageVelocityMomentumSource
 from simscale_sdk.models.base_excitation_bc import BaseExcitationBC
@@ -202,10 +200,6 @@ from simscale_sdk.models.coupled_conjugate_heat_transfer_materials import Couple
 from simscale_sdk.models.coupled_interface_thermal import CoupledInterfaceThermal
 from simscale_sdk.models.cover_spectrum import CoverSpectrum
 from simscale_sdk.models.cpu_time_write_control import CpuTimeWriteControl
-from simscale_sdk.models.create_ai_prediction_request import CreateAiPredictionRequest
-from simscale_sdk.models.create_ai_prediction_response import CreateAiPredictionResponse
-from simscale_sdk.models.create_ai_prediction_response_available_fields import CreateAiPredictionResponseAvailableFields
-from simscale_sdk.models.create_ai_prediction_response_global_outputs import CreateAiPredictionResponseGlobalOutputs
 from simscale_sdk.models.create_material_group_request import CreateMaterialGroupRequest
 from simscale_sdk.models.create_material_request import CreateMaterialRequest
 from simscale_sdk.models.create_nested_material_group_request import CreateNestedMaterialGroupRequest
@@ -413,7 +407,6 @@ from simscale_sdk.models.entity_attribute import EntityAttribute
 from simscale_sdk.models.entity_description import EntityDescription
 from simscale_sdk.models.equivalent_sand_grain_roughness import EquivalentSandGrainRoughness
 from simscale_sdk.models.error_response import ErrorResponse
-from simscale_sdk.models.error_response_all_of import ErrorResponseAllOf
 from simscale_sdk.models.error_retiming_event import ErrorRetimingEvent
 from simscale_sdk.models.estimation import Estimation
 from simscale_sdk.models.euler_time_differentiation_scheme import EulerTimeDifferentiationScheme
@@ -770,6 +763,7 @@ from simscale_sdk.models.moving_wall_vbc import MovingWallVBC
 from simscale_sdk.models.multifrontal_solver import MultifrontalSolver
 from simscale_sdk.models.multilinear_elasto_plastic_model import MultilinearElastoPlasticModel
 from simscale_sdk.models.multiphase import Multiphase
+from simscale_sdk.models.multiple_errors_response import MultipleErrorsResponse
 from simscale_sdk.models.multiplied_slave_nodes_iteration_control import MultipliedSlaveNodesIterationControl
 from simscale_sdk.models.natural_convection_inlet_outlet_bc import NaturalConvectionInletOutletBC
 from simscale_sdk.models.neo_hooke_hyper_elastic_model import NeoHookeHyperElasticModel
@@ -1493,6 +1487,8 @@ from simscale_sdk.models.simulation_run_results import SimulationRunResults
 from simscale_sdk.models.simulation_runs import SimulationRuns
 from simscale_sdk.models.simulation_spec import SimulationSpec
 from simscale_sdk.models.simulations import Simulations
+from simscale_sdk.models.single_error_response import SingleErrorResponse
+from simscale_sdk.models.single_error_response_all_of import SingleErrorResponseAllOf
 from simscale_sdk.models.single_frequency import SingleFrequency
 from simscale_sdk.models.single_step_pseudo_time_stepping import SingleStepPseudoTimeStepping
 from simscale_sdk.models.sliding_contact import SlidingContact

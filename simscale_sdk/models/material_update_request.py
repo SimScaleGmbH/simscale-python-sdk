@@ -31,23 +31,28 @@ class MaterialUpdateRequest(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'operations': 'list[MaterialUpdateOperation]'
+        'operations': 'list[MaterialUpdateOperation]',
+        'interpolation_parameters': 'dict(str, object)'
     }
 
     attribute_map = {
-        'operations': 'operations'
+        'operations': 'operations',
+        'interpolation_parameters': 'interpolationParameters'
     }
 
-    def __init__(self, operations=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, operations=None, interpolation_parameters=None, local_vars_configuration=None):  # noqa: E501
         """MaterialUpdateRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._operations = None
+        self._interpolation_parameters = None
         self.discriminator = None
 
         self.operations = operations
+        if interpolation_parameters is not None:
+            self.interpolation_parameters = interpolation_parameters
 
     @property
     def operations(self):
@@ -71,6 +76,29 @@ class MaterialUpdateRequest(object):
             raise ValueError("Invalid value for `operations`, must not be `None`")  # noqa: E501
 
         self._operations = operations
+
+    @property
+    def interpolation_parameters(self):
+        """Gets the interpolation_parameters of this MaterialUpdateRequest.  # noqa: E501
+
+        Parameters taken into account when some material property values need to be interpolated. When this object is part of a request, the parameters will be taken into account during interpolation, while when it's part of the response, the parameters show the values which were used (if any) during the interpolation. Note that the values used during interpolation might differ from what is requested.   # noqa: E501
+
+        :return: The interpolation_parameters of this MaterialUpdateRequest.  # noqa: E501
+        :rtype: dict(str, object)
+        """
+        return self._interpolation_parameters
+
+    @interpolation_parameters.setter
+    def interpolation_parameters(self, interpolation_parameters):
+        """Sets the interpolation_parameters of this MaterialUpdateRequest.
+
+        Parameters taken into account when some material property values need to be interpolated. When this object is part of a request, the parameters will be taken into account during interpolation, while when it's part of the response, the parameters show the values which were used (if any) during the interpolation. Note that the values used during interpolation might differ from what is requested.   # noqa: E501
+
+        :param interpolation_parameters: The interpolation_parameters of this MaterialUpdateRequest.  # noqa: E501
+        :type: dict(str, object)
+        """
+
+        self._interpolation_parameters = interpolation_parameters
 
     def to_dict(self):
         """Returns the model properties as a dict"""

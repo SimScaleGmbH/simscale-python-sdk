@@ -281,14 +281,6 @@ simscale\_sdk.models.aerodynamic\_roughness module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.ai\_user\_model module
--------------------------------------------
-
-.. automodule:: simscale_sdk.models.ai_user_model
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
 simscale\_sdk.models.algorithm module
 -------------------------------------
 
@@ -573,14 +565,6 @@ simscale\_sdk.models.automatic\_turbulence module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.automatic_turbulence
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.available\_ai\_model module
-------------------------------------------------
-
-.. automodule:: simscale_sdk.models.available_ai_model
    :members:
    :undoc-members:
    :show-inheritance:
@@ -1285,38 +1269,6 @@ simscale\_sdk.models.cpu\_time\_write\_control module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.cpu_time_write_control
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.create\_ai\_prediction\_request module
------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.create_ai_prediction_request
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.create\_ai\_prediction\_response module
-------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.create_ai_prediction_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.create\_ai\_prediction\_response\_available\_fields module
--------------------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.create_ai_prediction_response_available_fields
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.create\_ai\_prediction\_response\_global\_outputs module
------------------------------------------------------------------------------
-
-.. automodule:: simscale_sdk.models.create_ai_prediction_response_global_outputs
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2973,14 +2925,6 @@ simscale\_sdk.models.error\_response module
 -------------------------------------------
 
 .. automodule:: simscale_sdk.models.error_response
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-simscale\_sdk.models.error\_response\_all\_of module
-----------------------------------------------------
-
-.. automodule:: simscale_sdk.models.error_response_all_of
    :members:
    :undoc-members:
    :show-inheritance:
@@ -5817,6 +5761,14 @@ simscale\_sdk.models.multiphase module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.multiple\_errors\_response module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.multiple_errors_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.multiplied\_slave\_nodes\_iteration\_control module
 ------------------------------------------------------------------------
 
@@ -7661,6 +7613,22 @@ simscale\_sdk.models.simulations module
 ---------------------------------------
 
 .. automodule:: simscale_sdk.models.simulations
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.single\_error\_response module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.single_error_response
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.single\_error\_response\_all\_of module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.single_error_response_all_of
    :members:
    :undoc-members:
    :show-inheritance:
