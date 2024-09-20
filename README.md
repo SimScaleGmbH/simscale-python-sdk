@@ -14,7 +14,7 @@ You can install the Python package directly from the hosted git repository.
 To install a specific version:
 
 ```sh
-pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git@0.0.3
+pip install git+https://github.com/SimScaleGmbH/simscale-python-sdk.git@0.0.4
 ```
 
 Check the Releases section for the list of available versions: https://github.com/SimScaleGmbH/simscale-python-sdk/releases.

@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "0.0.3"
+__version__ = "0.0.4"
 
 # import apis into sdk package
 from simscale_sdk.api.folders_api import FoldersApi
