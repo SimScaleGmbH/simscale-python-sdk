@@ -32,7 +32,7 @@ class CreateAiPredictionResponse(object):
     """
     openapi_types = {
         'prediction_id': 'str',
-        'available_fields': 'CreateAiPredictionResponseAvailableFields',
+        'available_fields': 'list[CreateAiPredictionResponseAvailableFields]',
         'confidence_score': 'float',
         'global_outputs': 'list[CreateAiPredictionResponseGlobalOutputs]'
     }
@@ -92,7 +92,7 @@ class CreateAiPredictionResponse(object):
 
 
         :return: The available_fields of this CreateAiPredictionResponse.  # noqa: E501
-        :rtype: CreateAiPredictionResponseAvailableFields
+        :rtype: list[CreateAiPredictionResponseAvailableFields]
         """
         return self._available_fields
 
@@ -102,7 +102,7 @@ class CreateAiPredictionResponse(object):
 
 
         :param available_fields: The available_fields of this CreateAiPredictionResponse.  # noqa: E501
-        :type: CreateAiPredictionResponseAvailableFields
+        :type: list[CreateAiPredictionResponseAvailableFields]
         """
 
         self._available_fields = available_fields
