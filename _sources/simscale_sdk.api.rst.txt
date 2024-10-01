@@ -9,6 +9,14 @@ simscale\_sdk.api package
 Submodules
 ----------
 
+simscale\_sdk.api.ai\_models\_api module
+----------------------------------------
+
+.. automodule:: simscale_sdk.api.ai_models_api
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.api.folders\_api module
 -------------------------------------
 
