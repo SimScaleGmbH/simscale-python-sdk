@@ -12,9 +12,10 @@
 
 from __future__ import absolute_import
 
-__version__ = "9.1.0"
+__version__ = "9.2.0"
 
 # import apis into sdk package
+from simscale_sdk.api.ai_models_api import AIModelsApi
 from simscale_sdk.api.folders_api import FoldersApi
 from simscale_sdk.api.geometries_api import GeometriesApi
 from simscale_sdk.api.geometry_imports_api import GeometryImportsApi

@@ -3,6 +3,7 @@ from __future__ import absolute_import
 # flake8: noqa
 
 # import apis into api package
+from simscale_sdk.api.ai_models_api import AIModelsApi
 from simscale_sdk.api.folders_api import FoldersApi
 from simscale_sdk.api.geometries_api import GeometriesApi
 from simscale_sdk.api.geometry_imports_api import GeometryImportsApi
