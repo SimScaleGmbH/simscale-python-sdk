@@ -44,7 +44,8 @@ class OneOfSolidResultControlSolutionFields(object):
         'acceleration_type': 'GlobalAccelerationType',
         'harmonic_acceleration_type': 'OneOfHarmonicAccelerationResultControlItemHarmonicAccelerationType',
         'temperature_type': 'str',
-        'heat_flux_type': 'str'
+        'heat_flux_type': 'str',
+        'density_type': 'EquivalentRadiatedPowerDensityType'
     }
 
     attribute_map = {
@@ -61,7 +62,8 @@ class OneOfSolidResultControlSolutionFields(object):
         'acceleration_type': 'accelerationType',
         'harmonic_acceleration_type': 'harmonicAccelerationType',
         'temperature_type': 'temperatureType',
-        'heat_flux_type': 'heatFluxType'
+        'heat_flux_type': 'heatFluxType',
+        'density_type': 'densityType'
     }
 
     discriminator_value_class_map = {
@@ -77,10 +79,11 @@ class OneOfSolidResultControlSolutionFields(object):
         'ACCELERATION': 'AccelerationResultControlItem',
         'HARMONIC_ACCELERATION': 'HarmonicAccelerationResultControlItem',
         'TEMPERATURE': 'TemperatureResultControlItem',
-        'HEAT_FLUX': 'HeatFluxResultControlItem'
+        'HEAT_FLUX': 'HeatFluxResultControlItem',
+        'ERP_DENSITY': 'ERPDensityResultControlItem'
     }
 
-    def __init__(self, type='HEAT_FLUX', name=None, contact_type=None, displacement_type=None, harmonic_displacement_type=None, force_type=None, strain_type=None, stress_type=None, velocity_type=None, harmonic_velocity_type=None, acceleration_type=None, harmonic_acceleration_type=None, temperature_type=None, heat_flux_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ERP_DENSITY', name=None, contact_type=None, displacement_type=None, harmonic_displacement_type=None, force_type=None, strain_type=None, stress_type=None, velocity_type=None, harmonic_velocity_type=None, acceleration_type=None, harmonic_acceleration_type=None, temperature_type=None, heat_flux_type=None, density_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidResultControlSolutionFields - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -100,6 +103,7 @@ class OneOfSolidResultControlSolutionFields(object):
         self._harmonic_acceleration_type = None
         self._temperature_type = None
         self._heat_flux_type = None
+        self._density_type = None
         self.discriminator = 'type'
 
         self.type = type
@@ -129,12 +133,14 @@ class OneOfSolidResultControlSolutionFields(object):
             self.temperature_type = temperature_type
         if heat_flux_type is not None:
             self.heat_flux_type = heat_flux_type
+        if density_type is not None:
+            self.density_type = density_type
 
     @property
     def type(self):
         """Gets the type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
 
-        Schema name: HeatFluxResultControlItem  # noqa: E501
+        Schema name: ERPDensityResultControlItem  # noqa: E501
 
         :return: The type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
         :rtype: str
@@ -145,7 +151,7 @@ class OneOfSolidResultControlSolutionFields(object):
     def type(self, type):
         """Sets the type of this OneOfSolidResultControlSolutionFields.
 
-        Schema name: HeatFluxResultControlItem  # noqa: E501
+        Schema name: ERPDensityResultControlItem  # noqa: E501
 
         :param type: The type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
         :type: str
@@ -445,6 +451,27 @@ class OneOfSolidResultControlSolutionFields(object):
             )
 
         self._heat_flux_type = heat_flux_type
+
+    @property
+    def density_type(self):
+        """Gets the density_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+
+
+        :return: The density_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+        :rtype: EquivalentRadiatedPowerDensityType
+        """
+        return self._density_type
+
+    @density_type.setter
+    def density_type(self, density_type):
+        """Sets the density_type of this OneOfSolidResultControlSolutionFields.
+
+
+        :param density_type: The density_type of this OneOfSolidResultControlSolutionFields.  # noqa: E501
+        :type: EquivalentRadiatedPowerDensityType
+        """
+
+        self._density_type = density_type
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

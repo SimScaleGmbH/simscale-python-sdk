@@ -41,6 +41,8 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'mass_moment_of_inertia': 'DimensionalVectorMomentOfInertia',
         'external_point': 'DimensionalVectorLength',
         'deformation_behavior': 'str',
+        'enable_search_radius': 'bool',
+        'search_radius': 'DimensionalLength',
         'rotation': 'AngularRotation',
         'rotation_origin': 'DimensionalVectorFunctionLength',
         'rotation_axis': 'DimensionalVectorFunctionLength',
@@ -72,6 +74,8 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'mass_moment_of_inertia': 'massMomentOfInertia',
         'external_point': 'externalPoint',
         'deformation_behavior': 'deformationBehavior',
+        'enable_search_radius': 'enableSearchRadius',
+        'search_radius': 'searchRadius',
         'rotation': 'rotation',
         'rotation_origin': 'rotationOrigin',
         'rotation_axis': 'rotationAxis',
@@ -113,7 +117,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'HINGE_CONSTRAINT': 'HingeConstraintBC'
     }
 
-    def __init__(self, type='HINGE_CONSTRAINT', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, enable_heat_transfer=None, axis_origin=None, axis_direction=None, sector_angle=None, master_topological_reference=None, slave_topological_reference=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, axis_definition=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HINGE_CONSTRAINT', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, enable_search_radius=None, search_radius=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, enable_heat_transfer=None, axis_origin=None, axis_direction=None, sector_angle=None, master_topological_reference=None, slave_topological_reference=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, axis_definition=None, local_vars_configuration=None):  # noqa: E501
         """OneOfDynamicAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -129,6 +133,8 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         self._mass_moment_of_inertia = None
         self._external_point = None
         self._deformation_behavior = None
+        self._enable_search_radius = None
+        self._search_radius = None
         self._rotation = None
         self._rotation_origin = None
         self._rotation_axis = None
@@ -168,6 +174,10 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
             self.external_point = external_point
         if deformation_behavior is not None:
             self.deformation_behavior = deformation_behavior
+        if enable_search_radius is not None:
+            self.enable_search_radius = enable_search_radius
+        if search_radius is not None:
+            self.search_radius = search_radius
         if rotation is not None:
             self.rotation = rotation
         if rotation_origin is not None:
@@ -428,6 +438,48 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         self._deformation_behavior = deformation_behavior
 
     @property
+    def enable_search_radius(self):
+        """Gets the enable_search_radius of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The enable_search_radius of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_search_radius
+
+    @enable_search_radius.setter
+    def enable_search_radius(self, enable_search_radius):
+        """Sets the enable_search_radius of this OneOfDynamicAnalysisBoundaryConditions.
+
+
+        :param enable_search_radius: The enable_search_radius of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_search_radius = enable_search_radius
+
+    @property
+    def search_radius(self):
+        """Gets the search_radius of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The search_radius of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalLength
+        """
+        return self._search_radius
+
+    @search_radius.setter
+    def search_radius(self, search_radius):
+        """Sets the search_radius of this OneOfDynamicAnalysisBoundaryConditions.
+
+
+        :param search_radius: The search_radius of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalLength
+        """
+
+        self._search_radius = search_radius
+
+    @property
     def rotation(self):
         """Gets the rotation of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
 
@@ -515,6 +567,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
     def enable_heat_transfer(self):
         """Gets the enable_heat_transfer of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
 
+        <p>Define if heat transfer should be allowed across the contact. If <b>yes</b> is chosen a perfectly bonded heat contact is assumed whereas if <b>no</b> is selected no heat transfer across the contact is allowed. Mechanical contact stays with both options active. With the selection of <b>heat transfer only</b> no mechanical contact is activated but only a bonded heat contact.</p>  # noqa: E501
 
         :return: The enable_heat_transfer of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -525,6 +578,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
     def enable_heat_transfer(self, enable_heat_transfer):
         """Sets the enable_heat_transfer of this OneOfDynamicAnalysisBoundaryConditions.
 
+        <p>Define if heat transfer should be allowed across the contact. If <b>yes</b> is chosen a perfectly bonded heat contact is assumed whereas if <b>no</b> is selected no heat transfer across the contact is allowed. Mechanical contact stays with both options active. With the selection of <b>heat transfer only</b> no mechanical contact is activated but only a bonded heat contact.</p>  # noqa: E501
 
         :param enable_heat_transfer: The enable_heat_transfer of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
         :type: str

@@ -32,27 +32,27 @@ class CurrentOutflowEBC(object):
     """
     openapi_types = {
         'type': 'str',
-        'current': 'DimensionalElectricCurrent'
+        'current_function': 'DimensionalFunctionElectricCurrent'
     }
 
     attribute_map = {
         'type': 'type',
-        'current': 'current'
+        'current_function': 'currentFunction'
     }
 
-    def __init__(self, type='CURRENT_OUTFLOW', current=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CURRENT_OUTFLOW', current_function=None, local_vars_configuration=None):  # noqa: E501
         """CurrentOutflowEBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._current = None
+        self._current_function = None
         self.discriminator = None
 
         self.type = type
-        if current is not None:
-            self.current = current
+        if current_function is not None:
+            self.current_function = current_function
 
     @property
     def type(self):
@@ -80,25 +80,25 @@ class CurrentOutflowEBC(object):
         self._type = type
 
     @property
-    def current(self):
-        """Gets the current of this CurrentOutflowEBC.  # noqa: E501
+    def current_function(self):
+        """Gets the current_function of this CurrentOutflowEBC.  # noqa: E501
 
 
-        :return: The current of this CurrentOutflowEBC.  # noqa: E501
-        :rtype: DimensionalElectricCurrent
+        :return: The current_function of this CurrentOutflowEBC.  # noqa: E501
+        :rtype: DimensionalFunctionElectricCurrent
         """
-        return self._current
+        return self._current_function
 
-    @current.setter
-    def current(self, current):
-        """Sets the current of this CurrentOutflowEBC.
+    @current_function.setter
+    def current_function(self, current_function):
+        """Sets the current_function of this CurrentOutflowEBC.
 
 
-        :param current: The current of this CurrentOutflowEBC.  # noqa: E501
-        :type: DimensionalElectricCurrent
+        :param current_function: The current_function of this CurrentOutflowEBC.  # noqa: E501
+        :type: DimensionalFunctionElectricCurrent
         """
 
-        self._current = current
+        self._current_function = current_function
 
     def to_dict(self):
         """Returns the model properties as a dict"""

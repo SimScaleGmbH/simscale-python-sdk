@@ -37,6 +37,8 @@ class RemoteDisplacementLoadBC(object):
         'rotation': 'DimensionalPartialVectorFunctionAngle',
         'external_point': 'DimensionalVectorLength',
         'deformation_behavior': 'str',
+        'enable_search_radius': 'bool',
+        'search_radius': 'DimensionalLength',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -47,10 +49,12 @@ class RemoteDisplacementLoadBC(object):
         'rotation': 'rotation',
         'external_point': 'externalPoint',
         'deformation_behavior': 'deformationBehavior',
+        'enable_search_radius': 'enableSearchRadius',
+        'search_radius': 'searchRadius',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='REMOTE_DISPLACEMENT_LOAD', name=None, displacement=None, rotation=None, external_point=None, deformation_behavior=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='REMOTE_DISPLACEMENT_LOAD', name=None, displacement=None, rotation=None, external_point=None, deformation_behavior=None, enable_search_radius=None, search_radius=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """RemoteDisplacementLoadBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +66,8 @@ class RemoteDisplacementLoadBC(object):
         self._rotation = None
         self._external_point = None
         self._deformation_behavior = None
+        self._enable_search_radius = None
+        self._search_radius = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -76,6 +82,10 @@ class RemoteDisplacementLoadBC(object):
             self.external_point = external_point
         if deformation_behavior is not None:
             self.deformation_behavior = deformation_behavior
+        if enable_search_radius is not None:
+            self.enable_search_radius = enable_search_radius
+        if search_radius is not None:
+            self.search_radius = search_radius
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -216,6 +226,48 @@ class RemoteDisplacementLoadBC(object):
             )
 
         self._deformation_behavior = deformation_behavior
+
+    @property
+    def enable_search_radius(self):
+        """Gets the enable_search_radius of this RemoteDisplacementLoadBC.  # noqa: E501
+
+
+        :return: The enable_search_radius of this RemoteDisplacementLoadBC.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_search_radius
+
+    @enable_search_radius.setter
+    def enable_search_radius(self, enable_search_radius):
+        """Sets the enable_search_radius of this RemoteDisplacementLoadBC.
+
+
+        :param enable_search_radius: The enable_search_radius of this RemoteDisplacementLoadBC.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_search_radius = enable_search_radius
+
+    @property
+    def search_radius(self):
+        """Gets the search_radius of this RemoteDisplacementLoadBC.  # noqa: E501
+
+
+        :return: The search_radius of this RemoteDisplacementLoadBC.  # noqa: E501
+        :rtype: DimensionalLength
+        """
+        return self._search_radius
+
+    @search_radius.setter
+    def search_radius(self, search_radius):
+        """Sets the search_radius of this RemoteDisplacementLoadBC.
+
+
+        :param search_radius: The search_radius of this RemoteDisplacementLoadBC.  # noqa: E501
+        :type: DimensionalLength
+        """
+
+        self._search_radius = search_radius
 
     @property
     def topological_reference(self):

@@ -68,7 +68,7 @@ class TotalCharge(object):
     def type(self):
         """Gets the type of this TotalCharge.  # noqa: E501
 
-        Schema name: TotalCharge  # noqa: E501
+        Set the total charge of a body.  Schema name: TotalCharge  # noqa: E501
 
         :return: The type of this TotalCharge.  # noqa: E501
         :rtype: str
@@ -79,7 +79,7 @@ class TotalCharge(object):
     def type(self, type):
         """Sets the type of this TotalCharge.
 
-        Schema name: TotalCharge  # noqa: E501
+        Set the total charge of a body.  Schema name: TotalCharge  # noqa: E501
 
         :param type: The type of this TotalCharge.  # noqa: E501
         :type: str

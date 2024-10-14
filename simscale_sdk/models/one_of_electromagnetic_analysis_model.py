@@ -32,11 +32,13 @@ class OneOfElectromagneticAnalysisModel(object):
     """
     openapi_types = {
         'type': 'str',
+        'thermal': 'bool',
         'frequency': 'DimensionalFrequency'
     }
 
     attribute_map = {
         'type': 'type',
+        'thermal': 'thermal',
         'frequency': 'frequency'
     }
 
@@ -47,17 +49,20 @@ class OneOfElectromagneticAnalysisModel(object):
         'TIME_TRANSIENT_MAGNETICS': 'TimeTransientMagnetics'
     }
 
-    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', frequency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', thermal=None, frequency=None, local_vars_configuration=None):  # noqa: E501
         """OneOfElectromagneticAnalysisModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._thermal = None
         self._frequency = None
         self.discriminator = 'type'
 
         self.type = type
+        if thermal is not None:
+            self.thermal = thermal
         if frequency is not None:
             self.frequency = frequency
 
@@ -85,6 +90,29 @@ class OneOfElectromagneticAnalysisModel(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def thermal(self):
+        """Gets the thermal of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+
+        Coupling with thermal solves for the temperature by considering electromagnetic losses such as Ohmic, hysteric or displacement losses.  # noqa: E501
+
+        :return: The thermal of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._thermal
+
+    @thermal.setter
+    def thermal(self, thermal):
+        """Sets the thermal of this OneOfElectromagneticAnalysisModel.
+
+        Coupling with thermal solves for the temperature by considering electromagnetic losses such as Ohmic, hysteric or displacement losses.  # noqa: E501
+
+        :param thermal: The thermal of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._thermal = thermal
 
     @property
     def frequency(self):

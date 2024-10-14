@@ -32,15 +32,17 @@ class TimeHarmonicMagnetics(object):
     """
     openapi_types = {
         'type': 'str',
-        'frequency': 'DimensionalFrequency'
+        'frequency': 'DimensionalFrequency',
+        'thermal': 'bool'
     }
 
     attribute_map = {
         'type': 'type',
-        'frequency': 'frequency'
+        'frequency': 'frequency',
+        'thermal': 'thermal'
     }
 
-    def __init__(self, type='TIME_HARMONIC_MAGNETICS', frequency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TIME_HARMONIC_MAGNETICS', frequency=None, thermal=None, local_vars_configuration=None):  # noqa: E501
         """TimeHarmonicMagnetics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class TimeHarmonicMagnetics(object):
 
         self._type = None
         self._frequency = None
+        self._thermal = None
         self.discriminator = None
 
         self.type = type
         if frequency is not None:
             self.frequency = frequency
+        if thermal is not None:
+            self.thermal = thermal
 
     @property
     def type(self):
@@ -99,6 +104,29 @@ class TimeHarmonicMagnetics(object):
         """
 
         self._frequency = frequency
+
+    @property
+    def thermal(self):
+        """Gets the thermal of this TimeHarmonicMagnetics.  # noqa: E501
+
+        Coupling with thermal solves for the temperature by considering electromagnetic losses such as Ohmic, hysteric or displacement losses.  # noqa: E501
+
+        :return: The thermal of this TimeHarmonicMagnetics.  # noqa: E501
+        :rtype: bool
+        """
+        return self._thermal
+
+    @thermal.setter
+    def thermal(self, thermal):
+        """Sets the thermal of this TimeHarmonicMagnetics.
+
+        Coupling with thermal solves for the temperature by considering electromagnetic losses such as Ohmic, hysteric or displacement losses.  # noqa: E501
+
+        :param thermal: The thermal of this TimeHarmonicMagnetics.  # noqa: E501
+        :type: bool
+        """
+
+        self._thermal = thermal
 
     def to_dict(self):
         """Returns the model properties as a dict"""

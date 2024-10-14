@@ -469,8 +469,8 @@ class SolidNumerics(object):
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                remote_point_stiffness_multiplier is not None and remote_point_stiffness_multiplier <= 0):  # noqa: E501
-            raise ValueError("Invalid value for `remote_point_stiffness_multiplier`, must be a value greater than `0`")  # noqa: E501
+                remote_point_stiffness_multiplier is not None and remote_point_stiffness_multiplier < 0):  # noqa: E501
+            raise ValueError("Invalid value for `remote_point_stiffness_multiplier`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._remote_point_stiffness_multiplier = remote_point_stiffness_multiplier
 

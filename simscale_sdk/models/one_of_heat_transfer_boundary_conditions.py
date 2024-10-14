@@ -209,6 +209,7 @@ class OneOfHeatTransferBoundaryConditions(object):
     def enable_heat_transfer(self):
         """Gets the enable_heat_transfer of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
 
+        <p>Define if heat transfer should be allowed across the contact. If <b>yes</b> is chosen a perfectly bonded heat contact is assumed whereas if <b>no</b> is selected no heat transfer across the contact is allowed. Mechanical contact stays with both options active. With the selection of <b>heat transfer only</b> no mechanical contact is activated but only a bonded heat contact.</p>  # noqa: E501
 
         :return: The enable_heat_transfer of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -219,6 +220,7 @@ class OneOfHeatTransferBoundaryConditions(object):
     def enable_heat_transfer(self, enable_heat_transfer):
         """Sets the enable_heat_transfer of this OneOfHeatTransferBoundaryConditions.
 
+        <p>Define if heat transfer should be allowed across the contact. If <b>yes</b> is chosen a perfectly bonded heat contact is assumed whereas if <b>no</b> is selected no heat transfer across the contact is allowed. Mechanical contact stays with both options active. With the selection of <b>heat transfer only</b> no mechanical contact is activated but only a bonded heat contact.</p>  # noqa: E501
 
         :param enable_heat_transfer: The enable_heat_transfer of this OneOfHeatTransferBoundaryConditions.  # noqa: E501
         :type: str

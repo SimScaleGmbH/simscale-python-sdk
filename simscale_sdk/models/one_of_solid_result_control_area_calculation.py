@@ -33,7 +33,7 @@ class OneOfSolidResultControlAreaCalculation(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'field_selection': 'OneOfSumFieldsCalculationResultControlItemFieldSelection',
+        'field_selection': 'OneOfERPCalculationResultControlItemFieldSelection',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -48,10 +48,11 @@ class OneOfSolidResultControlAreaCalculation(object):
         'MIN_MAX_FIELDS_CALCULATION': 'MinMaxFieldsCalculationResultControlItem',
         'AVERAGE_FIELDS_CALCULATION': 'AverageFieldsCalculationResultControlItem',
         'SUM_FIELDS_CALCULATION': 'SumFieldsCalculationResultControlItem',
-        'HEAT_FLOW_CALCULATION': 'HeatFlowCalculationResultControlItem'
+        'HEAT_FLOW_CALCULATION': 'HeatFlowCalculationResultControlItem',
+        'ERP_CALCULATION': 'ERPCalculationResultControlItem'
     }
 
-    def __init__(self, type='HEAT_FLOW_CALCULATION', name=None, field_selection=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ERP_CALCULATION', name=None, field_selection=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidResultControlAreaCalculation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,7 +76,7 @@ class OneOfSolidResultControlAreaCalculation(object):
     def type(self):
         """Gets the type of this OneOfSolidResultControlAreaCalculation.  # noqa: E501
 
-        Schema name: HeatFlowCalculationResultControlItem  # noqa: E501
+        Schema name: ERPCalculationResultControlItem  # noqa: E501
 
         :return: The type of this OneOfSolidResultControlAreaCalculation.  # noqa: E501
         :rtype: str
@@ -86,7 +87,7 @@ class OneOfSolidResultControlAreaCalculation(object):
     def type(self, type):
         """Sets the type of this OneOfSolidResultControlAreaCalculation.
 
-        Schema name: HeatFlowCalculationResultControlItem  # noqa: E501
+        Schema name: ERPCalculationResultControlItem  # noqa: E501
 
         :param type: The type of this OneOfSolidResultControlAreaCalculation.  # noqa: E501
         :type: str
@@ -123,7 +124,7 @@ class OneOfSolidResultControlAreaCalculation(object):
 
 
         :return: The field_selection of this OneOfSolidResultControlAreaCalculation.  # noqa: E501
-        :rtype: OneOfSumFieldsCalculationResultControlItemFieldSelection
+        :rtype: OneOfERPCalculationResultControlItemFieldSelection
         """
         return self._field_selection
 
@@ -133,7 +134,7 @@ class OneOfSolidResultControlAreaCalculation(object):
 
 
         :param field_selection: The field_selection of this OneOfSolidResultControlAreaCalculation.  # noqa: E501
-        :type: OneOfSumFieldsCalculationResultControlItemFieldSelection
+        :type: OneOfERPCalculationResultControlItemFieldSelection
         """
 
         self._field_selection = field_selection

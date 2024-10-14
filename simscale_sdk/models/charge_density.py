@@ -68,7 +68,7 @@ class ChargeDensity(object):
     def type(self):
         """Gets the type of this ChargeDensity.  # noqa: E501
 
-        Schema name: ChargeDensity  # noqa: E501
+        Assign a specific charge density to a body.  Schema name: ChargeDensity  # noqa: E501
 
         :return: The type of this ChargeDensity.  # noqa: E501
         :rtype: str
@@ -79,7 +79,7 @@ class ChargeDensity(object):
     def type(self, type):
         """Sets the type of this ChargeDensity.
 
-        Schema name: ChargeDensity  # noqa: E501
+        Assign a specific charge density to a body.  Schema name: ChargeDensity  # noqa: E501
 
         :param type: The type of this ChargeDensity.  # noqa: E501
         :type: str

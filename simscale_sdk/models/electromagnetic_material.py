@@ -37,6 +37,7 @@ class ElectromagneticMaterial(object):
         'magnetic_permeability_type': 'OneOfElectromagneticMaterialMagneticPermeabilityType',
         'core_losses_type': 'OneOfElectromagneticMaterialCoreLossesType',
         'electric_permittivity_type': 'LinearIsotropicPermittivityMethod',
+        'thermal_conductivity': 'LinearIsotropicConstantThermalConductivityMethod',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
         'material_library_reference': 'MaterialLibraryReference'
@@ -49,12 +50,13 @@ class ElectromagneticMaterial(object):
         'magnetic_permeability_type': 'magneticPermeabilityType',
         'core_losses_type': 'coreLossesType',
         'electric_permittivity_type': 'electricPermittivityType',
+        'thermal_conductivity': 'thermalConductivity',
         'topological_reference': 'topologicalReference',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, name=None, material_behavior=None, electric_conductivity_type=None, magnetic_permeability_type=None, core_losses_type=None, electric_permittivity_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, material_behavior=None, electric_conductivity_type=None, magnetic_permeability_type=None, core_losses_type=None, electric_permittivity_type=None, thermal_conductivity=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class ElectromagneticMaterial(object):
         self._magnetic_permeability_type = None
         self._core_losses_type = None
         self._electric_permittivity_type = None
+        self._thermal_conductivity = None
         self._topological_reference = None
         self._built_in_material = None
         self._material_library_reference = None
@@ -83,6 +86,8 @@ class ElectromagneticMaterial(object):
             self.core_losses_type = core_losses_type
         if electric_permittivity_type is not None:
             self.electric_permittivity_type = electric_permittivity_type
+        if thermal_conductivity is not None:
+            self.thermal_conductivity = thermal_conductivity
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if built_in_material is not None:
@@ -215,6 +220,27 @@ class ElectromagneticMaterial(object):
         """
 
         self._electric_permittivity_type = electric_permittivity_type
+
+    @property
+    def thermal_conductivity(self):
+        """Gets the thermal_conductivity of this ElectromagneticMaterial.  # noqa: E501
+
+
+        :return: The thermal_conductivity of this ElectromagneticMaterial.  # noqa: E501
+        :rtype: LinearIsotropicConstantThermalConductivityMethod
+        """
+        return self._thermal_conductivity
+
+    @thermal_conductivity.setter
+    def thermal_conductivity(self, thermal_conductivity):
+        """Sets the thermal_conductivity of this ElectromagneticMaterial.
+
+
+        :param thermal_conductivity: The thermal_conductivity of this ElectromagneticMaterial.  # noqa: E501
+        :type: LinearIsotropicConstantThermalConductivityMethod
+        """
+
+        self._thermal_conductivity = thermal_conductivity
 
     @property
     def topological_reference(self):

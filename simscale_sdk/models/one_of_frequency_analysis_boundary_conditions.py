@@ -41,6 +41,8 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         'mass_moment_of_inertia': 'DimensionalVectorMomentOfInertia',
         'external_point': 'DimensionalVectorLength',
         'deformation_behavior': 'str',
+        'enable_search_radius': 'bool',
+        'search_radius': 'DimensionalLength',
         'rotation': 'AngularRotation'
     }
 
@@ -55,6 +57,8 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         'mass_moment_of_inertia': 'massMomentOfInertia',
         'external_point': 'externalPoint',
         'deformation_behavior': 'deformationBehavior',
+        'enable_search_radius': 'enableSearchRadius',
+        'search_radius': 'searchRadius',
         'rotation': 'rotation'
     }
 
@@ -69,7 +73,7 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         'CENTRIFUGAL_FORCE': 'CentrifugalForceBC'
     }
 
-    def __init__(self, type='CENTRIFUGAL_FORCE', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, rotation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CENTRIFUGAL_FORCE', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, enable_search_radius=None, search_radius=None, rotation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFrequencyAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +89,8 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
         self._mass_moment_of_inertia = None
         self._external_point = None
         self._deformation_behavior = None
+        self._enable_search_radius = None
+        self._search_radius = None
         self._rotation = None
         self.discriminator = 'type'
 
@@ -107,6 +113,10 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
             self.external_point = external_point
         if deformation_behavior is not None:
             self.deformation_behavior = deformation_behavior
+        if enable_search_radius is not None:
+            self.enable_search_radius = enable_search_radius
+        if search_radius is not None:
+            self.search_radius = search_radius
         if rotation is not None:
             self.rotation = rotation
 
@@ -331,6 +341,48 @@ class OneOfFrequencyAnalysisBoundaryConditions(object):
             )
 
         self._deformation_behavior = deformation_behavior
+
+    @property
+    def enable_search_radius(self):
+        """Gets the enable_search_radius of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The enable_search_radius of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: bool
+        """
+        return self._enable_search_radius
+
+    @enable_search_radius.setter
+    def enable_search_radius(self, enable_search_radius):
+        """Sets the enable_search_radius of this OneOfFrequencyAnalysisBoundaryConditions.
+
+
+        :param enable_search_radius: The enable_search_radius of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :type: bool
+        """
+
+        self._enable_search_radius = enable_search_radius
+
+    @property
+    def search_radius(self):
+        """Gets the search_radius of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The search_radius of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalLength
+        """
+        return self._search_radius
+
+    @search_radius.setter
+    def search_radius(self, search_radius):
+        """Sets the search_radius of this OneOfFrequencyAnalysisBoundaryConditions.
+
+
+        :param search_radius: The search_radius of this OneOfFrequencyAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalLength
+        """
+
+        self._search_radius = search_radius
 
     @property
     def rotation(self):

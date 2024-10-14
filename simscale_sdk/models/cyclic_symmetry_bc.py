@@ -88,7 +88,7 @@ class CyclicSymmetryBC(object):
     def type(self):
         """Gets the type of this CyclicSymmetryBC.  # noqa: E501
 
-        Schema name: CyclicSymmetryBC  # noqa: E501
+        <p>The <b>cyclic symmetry</b> constraint enables to model only a sector of a 360° cyclic periodic structure and reduces the computation time and memory consumption considerably. The user defines the center and axis of the cyclic symmetry as well as the sector angle. The <b>master</b> and <b>slave</b> surfaces define the cyclic periodicity boundaries. <br /><br />Important remarks: <br /><ul><li>All DOFs of the slave nodes will be constrained, adding an additional constraint on those nodes may lead to an overconstrained system.</li><li>This is a <b>linear</b> constraint, so no large rotations or large deformations are allowed in the proximity of cyclic symmetry boundaries.</li></ul></li></ul> <img src=\"/spec/resources/help/imgs/cyclic_symmetry.png\" class=\"helpPopupImage\"/> <a href='https://www.simscale.com/knowledge-base/how-to-apply-cyclic-symmetry-fea' target='_blank'>Learn more</a>.</p>  Schema name: CyclicSymmetryBC  # noqa: E501
 
         :return: The type of this CyclicSymmetryBC.  # noqa: E501
         :rtype: str
@@ -99,7 +99,7 @@ class CyclicSymmetryBC(object):
     def type(self, type):
         """Sets the type of this CyclicSymmetryBC.
 
-        Schema name: CyclicSymmetryBC  # noqa: E501
+        <p>The <b>cyclic symmetry</b> constraint enables to model only a sector of a 360° cyclic periodic structure and reduces the computation time and memory consumption considerably. The user defines the center and axis of the cyclic symmetry as well as the sector angle. The <b>master</b> and <b>slave</b> surfaces define the cyclic periodicity boundaries. <br /><br />Important remarks: <br /><ul><li>All DOFs of the slave nodes will be constrained, adding an additional constraint on those nodes may lead to an overconstrained system.</li><li>This is a <b>linear</b> constraint, so no large rotations or large deformations are allowed in the proximity of cyclic symmetry boundaries.</li></ul></li></ul> <img src=\"/spec/resources/help/imgs/cyclic_symmetry.png\" class=\"helpPopupImage\"/> <a href='https://www.simscale.com/knowledge-base/how-to-apply-cyclic-symmetry-fea' target='_blank'>Learn more</a>.</p>  Schema name: CyclicSymmetryBC  # noqa: E501
 
         :param type: The type of this CyclicSymmetryBC.  # noqa: E501
         :type: str
@@ -134,6 +134,7 @@ class CyclicSymmetryBC(object):
     def enable_heat_transfer(self):
         """Gets the enable_heat_transfer of this CyclicSymmetryBC.  # noqa: E501
 
+        <p>Define if heat transfer should be allowed across the contact. If <b>yes</b> is chosen a perfectly bonded heat contact is assumed whereas if <b>no</b> is selected no heat transfer across the contact is allowed. Mechanical contact stays with both options active. With the selection of <b>heat transfer only</b> no mechanical contact is activated but only a bonded heat contact.</p>  # noqa: E501
 
         :return: The enable_heat_transfer of this CyclicSymmetryBC.  # noqa: E501
         :rtype: str
@@ -144,6 +145,7 @@ class CyclicSymmetryBC(object):
     def enable_heat_transfer(self, enable_heat_transfer):
         """Sets the enable_heat_transfer of this CyclicSymmetryBC.
 
+        <p>Define if heat transfer should be allowed across the contact. If <b>yes</b> is chosen a perfectly bonded heat contact is assumed whereas if <b>no</b> is selected no heat transfer across the contact is allowed. Mechanical contact stays with both options active. With the selection of <b>heat transfer only</b> no mechanical contact is activated but only a bonded heat contact.</p>  # noqa: E501
 
         :param enable_heat_transfer: The enable_heat_transfer of this CyclicSymmetryBC.  # noqa: E501
         :type: str

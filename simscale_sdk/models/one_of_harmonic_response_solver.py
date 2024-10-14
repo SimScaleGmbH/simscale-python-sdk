@@ -45,8 +45,7 @@ class OneOfHarmonicResponseSolver(object):
         'postprocessing': 'str',
         'mumps_acceleration': 'OneOfMUMPSSolverMumpsAcceleration',
         'distributed_matrix_storage': 'bool',
-        'memory_management': 'str',
-        'eliminate_lagrange_multipliers': 'bool'
+        'memory_management': 'str'
     }
 
     attribute_map = {
@@ -64,17 +63,15 @@ class OneOfHarmonicResponseSolver(object):
         'postprocessing': 'postprocessing',
         'mumps_acceleration': 'mumpsAcceleration',
         'distributed_matrix_storage': 'distributedMatrixStorage',
-        'memory_management': 'memoryManagement',
-        'eliminate_lagrange_multipliers': 'eliminateLagrangeMultipliers'
+        'memory_management': 'memoryManagement'
     }
 
     discriminator_value_class_map = {
         'LDLT_V33': 'LDLTSolverV33',
-        'MUMPS': 'MUMPSSolver',
-        'MULTIFRONT': 'MultifrontalSolver'
+        'MUMPS': 'MUMPSSolver'
     }
 
-    def __init__(self, type='MULTIFRONT', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, mumps_acceleration=None, distributed_matrix_storage=None, memory_management=None, eliminate_lagrange_multipliers=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MUMPS', force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, matrix_type=None, memory_percentage_for_pivoting=None, linear_system_relative_residual=None, matrix_filtering_threshold=None, single_precision=None, preprocessing=None, renumbering_method=None, postprocessing=None, mumps_acceleration=None, distributed_matrix_storage=None, memory_management=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHarmonicResponseSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,7 +92,6 @@ class OneOfHarmonicResponseSolver(object):
         self._mumps_acceleration = None
         self._distributed_matrix_storage = None
         self._memory_management = None
-        self._eliminate_lagrange_multipliers = None
         self.discriminator = 'type'
 
         self.type = type
@@ -127,14 +123,12 @@ class OneOfHarmonicResponseSolver(object):
             self.distributed_matrix_storage = distributed_matrix_storage
         if memory_management is not None:
             self.memory_management = memory_management
-        if eliminate_lagrange_multipliers is not None:
-            self.eliminate_lagrange_multipliers = eliminate_lagrange_multipliers
 
     @property
     def type(self):
         """Gets the type of this OneOfHarmonicResponseSolver.  # noqa: E501
 
-        Schema name: MultifrontalSolver  # noqa: E501
+        Schema name: MUMPSSolver  # noqa: E501
 
         :return: The type of this OneOfHarmonicResponseSolver.  # noqa: E501
         :rtype: str
@@ -145,7 +139,7 @@ class OneOfHarmonicResponseSolver(object):
     def type(self, type):
         """Sets the type of this OneOfHarmonicResponseSolver.
 
-        Schema name: MultifrontalSolver  # noqa: E501
+        Schema name: MUMPSSolver  # noqa: E501
 
         :param type: The type of this OneOfHarmonicResponseSolver.  # noqa: E501
         :type: str
@@ -372,7 +366,7 @@ class OneOfHarmonicResponseSolver(object):
     def renumbering_method(self):
         """Gets the renumbering_method of this OneOfHarmonicResponseSolver.  # noqa: E501
 
-        Choose a renumbering method for the solution process.<br/>For large models around and above 50000 degrees of freedom you should consider using MDA.  # noqa: E501
+        Choose the renumbering method for the system matrix entries. The choice of the renumbering method has a big impact on the memory consumption and the solution time. Currently supported are:<ul><li><p><b>SCOTCH</b> is a powerful renumbering tool, suited for most scenarios and the standard choice for MUMPS.</p></ul><ul><li><p><b>PORD</b> is a renumbering tool that comes with MUMPS.</p></ul><ul><li><p><b>AMD</b> uses the <i>Approximate Minimum Degree</i> method.</p></ul><ul><li><p><b>AMF</b> uses the <i>Approximate Minimum Fill</i> method.</p></ul><ul><li><p><b>QAMD</b> is a variant of AMD with automatic detection of quasi-dense matrix lines.</p></ul>If <b>automatic</b> is selected the user let MUMPS choose the renumbering tool. The methods AMD, AMF and QAMD are generally inferior to the more sophisticated methods SCOTCH and PORD but may be a better choice in some cases.  # noqa: E501
 
         :return: The renumbering_method of this OneOfHarmonicResponseSolver.  # noqa: E501
         :rtype: str
@@ -383,12 +377,12 @@ class OneOfHarmonicResponseSolver(object):
     def renumbering_method(self, renumbering_method):
         """Sets the renumbering_method of this OneOfHarmonicResponseSolver.
 
-        Choose a renumbering method for the solution process.<br/>For large models around and above 50000 degrees of freedom you should consider using MDA.  # noqa: E501
+        Choose the renumbering method for the system matrix entries. The choice of the renumbering method has a big impact on the memory consumption and the solution time. Currently supported are:<ul><li><p><b>SCOTCH</b> is a powerful renumbering tool, suited for most scenarios and the standard choice for MUMPS.</p></ul><ul><li><p><b>PORD</b> is a renumbering tool that comes with MUMPS.</p></ul><ul><li><p><b>AMD</b> uses the <i>Approximate Minimum Degree</i> method.</p></ul><ul><li><p><b>AMF</b> uses the <i>Approximate Minimum Fill</i> method.</p></ul><ul><li><p><b>QAMD</b> is a variant of AMD with automatic detection of quasi-dense matrix lines.</p></ul>If <b>automatic</b> is selected the user let MUMPS choose the renumbering tool. The methods AMD, AMF and QAMD are generally inferior to the more sophisticated methods SCOTCH and PORD but may be a better choice in some cases.  # noqa: E501
 
         :param renumbering_method: The renumbering_method of this OneOfHarmonicResponseSolver.  # noqa: E501
         :type: str
         """
-        allowed_values = ["MDA", "MD"]  # noqa: E501
+        allowed_values = ["AMD", "SCOTCH", "AMF", "PORD", "QAMD", "AUTOMATIC"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and renumbering_method not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `renumbering_method` ({0}), must be one of {1}"  # noqa: E501
@@ -492,29 +486,6 @@ class OneOfHarmonicResponseSolver(object):
             )
 
         self._memory_management = memory_management
-
-    @property
-    def eliminate_lagrange_multipliers(self):
-        """Gets the eliminate_lagrange_multipliers of this OneOfHarmonicResponseSolver.  # noqa: E501
-
-        This option makes it possible to eliminate the Lagrange Multipliers which are introduced by generalized boundary conditions like bonded contact, remote boundary conditions and symmetry conditions. If activated, this option removes the Lagrange Multipliers which leads to a reduction of the total number of unknowns and can increase the robustness of iterative solvers.  # noqa: E501
-
-        :return: The eliminate_lagrange_multipliers of this OneOfHarmonicResponseSolver.  # noqa: E501
-        :rtype: bool
-        """
-        return self._eliminate_lagrange_multipliers
-
-    @eliminate_lagrange_multipliers.setter
-    def eliminate_lagrange_multipliers(self, eliminate_lagrange_multipliers):
-        """Sets the eliminate_lagrange_multipliers of this OneOfHarmonicResponseSolver.
-
-        This option makes it possible to eliminate the Lagrange Multipliers which are introduced by generalized boundary conditions like bonded contact, remote boundary conditions and symmetry conditions. If activated, this option removes the Lagrange Multipliers which leads to a reduction of the total number of unknowns and can increase the robustness of iterative solvers.  # noqa: E501
-
-        :param eliminate_lagrange_multipliers: The eliminate_lagrange_multipliers of this OneOfHarmonicResponseSolver.  # noqa: E501
-        :type: bool
-        """
-
-        self._eliminate_lagrange_multipliers = eliminate_lagrange_multipliers
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

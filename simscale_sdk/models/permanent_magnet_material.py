@@ -33,16 +33,16 @@ class PermanentMagnetMaterial(object):
     openapi_types = {
         'type': 'str',
         'remanence': 'DimensionalMagneticFluxDensity',
-        'magnetization_direction': 'DimensionalVectorDimensionless'
+        'magnetization_direction_type': 'OneOfPermanentMagnetMaterialMagnetizationDirectionType'
     }
 
     attribute_map = {
         'type': 'type',
         'remanence': 'remanence',
-        'magnetization_direction': 'magnetizationDirection'
+        'magnetization_direction_type': 'magnetizationDirectionType'
     }
 
-    def __init__(self, type='PERMANENT_MAGNET', remanence=None, magnetization_direction=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PERMANENT_MAGNET', remanence=None, magnetization_direction_type=None, local_vars_configuration=None):  # noqa: E501
         """PermanentMagnetMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,14 +50,14 @@ class PermanentMagnetMaterial(object):
 
         self._type = None
         self._remanence = None
-        self._magnetization_direction = None
+        self._magnetization_direction_type = None
         self.discriminator = None
 
         self.type = type
         if remanence is not None:
             self.remanence = remanence
-        if magnetization_direction is not None:
-            self.magnetization_direction = magnetization_direction
+        if magnetization_direction_type is not None:
+            self.magnetization_direction_type = magnetization_direction_type
 
     @property
     def type(self):
@@ -106,25 +106,25 @@ class PermanentMagnetMaterial(object):
         self._remanence = remanence
 
     @property
-    def magnetization_direction(self):
-        """Gets the magnetization_direction of this PermanentMagnetMaterial.  # noqa: E501
+    def magnetization_direction_type(self):
+        """Gets the magnetization_direction_type of this PermanentMagnetMaterial.  # noqa: E501
 
 
-        :return: The magnetization_direction of this PermanentMagnetMaterial.  # noqa: E501
-        :rtype: DimensionalVectorDimensionless
+        :return: The magnetization_direction_type of this PermanentMagnetMaterial.  # noqa: E501
+        :rtype: OneOfPermanentMagnetMaterialMagnetizationDirectionType
         """
-        return self._magnetization_direction
+        return self._magnetization_direction_type
 
-    @magnetization_direction.setter
-    def magnetization_direction(self, magnetization_direction):
-        """Sets the magnetization_direction of this PermanentMagnetMaterial.
+    @magnetization_direction_type.setter
+    def magnetization_direction_type(self, magnetization_direction_type):
+        """Sets the magnetization_direction_type of this PermanentMagnetMaterial.
 
 
-        :param magnetization_direction: The magnetization_direction of this PermanentMagnetMaterial.  # noqa: E501
-        :type: DimensionalVectorDimensionless
+        :param magnetization_direction_type: The magnetization_direction_type of this PermanentMagnetMaterial.  # noqa: E501
+        :type: OneOfPermanentMagnetMaterialMagnetizationDirectionType
         """
 
-        self._magnetization_direction = magnetization_direction
+        self._magnetization_direction_type = magnetization_direction_type
 
     def to_dict(self):
         """Returns the model properties as a dict"""

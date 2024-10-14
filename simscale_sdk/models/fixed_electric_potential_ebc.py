@@ -32,27 +32,27 @@ class FixedElectricPotentialEBC(object):
     """
     openapi_types = {
         'type': 'str',
-        'potential': 'DimensionalElectricPotential'
+        'potential_function': 'DimensionalFunctionElectricPotential'
     }
 
     attribute_map = {
         'type': 'type',
-        'potential': 'potential'
+        'potential_function': 'potentialFunction'
     }
 
-    def __init__(self, type='FIXED_ELECTRIC_POTENTIAL', potential=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_ELECTRIC_POTENTIAL', potential_function=None, local_vars_configuration=None):  # noqa: E501
         """FixedElectricPotentialEBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._potential = None
+        self._potential_function = None
         self.discriminator = None
 
         self.type = type
-        if potential is not None:
-            self.potential = potential
+        if potential_function is not None:
+            self.potential_function = potential_function
 
     @property
     def type(self):
@@ -80,25 +80,25 @@ class FixedElectricPotentialEBC(object):
         self._type = type
 
     @property
-    def potential(self):
-        """Gets the potential of this FixedElectricPotentialEBC.  # noqa: E501
+    def potential_function(self):
+        """Gets the potential_function of this FixedElectricPotentialEBC.  # noqa: E501
 
 
-        :return: The potential of this FixedElectricPotentialEBC.  # noqa: E501
-        :rtype: DimensionalElectricPotential
+        :return: The potential_function of this FixedElectricPotentialEBC.  # noqa: E501
+        :rtype: DimensionalFunctionElectricPotential
         """
-        return self._potential
+        return self._potential_function
 
-    @potential.setter
-    def potential(self, potential):
-        """Sets the potential of this FixedElectricPotentialEBC.
+    @potential_function.setter
+    def potential_function(self, potential_function):
+        """Sets the potential_function of this FixedElectricPotentialEBC.
 
 
-        :param potential: The potential of this FixedElectricPotentialEBC.  # noqa: E501
-        :type: DimensionalElectricPotential
+        :param potential_function: The potential_function of this FixedElectricPotentialEBC.  # noqa: E501
+        :type: DimensionalFunctionElectricPotential
         """
 
-        self._potential = potential
+        self._potential_function = potential_function
 
     def to_dict(self):
         """Returns the model properties as a dict"""

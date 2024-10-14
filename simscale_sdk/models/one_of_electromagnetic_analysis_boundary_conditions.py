@@ -36,7 +36,12 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         'topological_reference': 'TopologicalReference',
         'potential': 'DimensionalElectricPotential',
         'charge_density': 'DimensionalChargeDensity',
-        'total_charge': 'DimensionalCharge'
+        'total_charge': 'DimensionalCharge',
+        'temperature': 'DimensionalFunctionTemperature',
+        'heat_flux_value': 'DimensionalFunctionVolumetricPower',
+        'heat_transfer_coefficient': 'DimensionalFunctionThermalTransmittance',
+        'ambient_temperature': 'DimensionalFunctionTemperature',
+        'emissivity': 'DimensionalFunctionDimensionless'
     }
 
     attribute_map = {
@@ -45,7 +50,12 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         'topological_reference': 'topologicalReference',
         'potential': 'potential',
         'charge_density': 'chargeDensity',
-        'total_charge': 'totalCharge'
+        'total_charge': 'totalCharge',
+        'temperature': 'temperature',
+        'heat_flux_value': 'heatFluxValue',
+        'heat_transfer_coefficient': 'heatTransferCoefficient',
+        'ambient_temperature': 'ambientTemperature',
+        'emissivity': 'emissivity'
     }
 
     discriminator_value_class_map = {
@@ -54,10 +64,15 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         'FIXED_POTENTIAL': 'FixedPotential',
         'FLOATING_POTENTIAL': 'FloatingPotential',
         'CHARGE_DENSITY': 'ChargeDensity',
-        'TOTAL_CHARGE': 'TotalCharge'
+        'TOTAL_CHARGE': 'TotalCharge',
+        'FIXED_TEMPERATURE': 'FixedTemperature',
+        'SURFACE_HEAT_FLUX': 'SurfaceHeatFlux',
+        'VOLUME_HEAT_FLUX': 'VolumeHeatFlux',
+        'CONVECTIVE_HEAT_FLUX': 'ConvectiveHeatFlux',
+        'RADIATION_HEAT_FLUX': 'RadiationHeatFlux'
     }
 
-    def __init__(self, type='TOTAL_CHARGE', name=None, topological_reference=None, potential=None, charge_density=None, total_charge=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='RADIATION_HEAT_FLUX', name=None, topological_reference=None, potential=None, charge_density=None, total_charge=None, temperature=None, heat_flux_value=None, heat_transfer_coefficient=None, ambient_temperature=None, emissivity=None, local_vars_configuration=None):  # noqa: E501
         """OneOfElectromagneticAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +84,11 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         self._potential = None
         self._charge_density = None
         self._total_charge = None
+        self._temperature = None
+        self._heat_flux_value = None
+        self._heat_transfer_coefficient = None
+        self._ambient_temperature = None
+        self._emissivity = None
         self.discriminator = 'type'
 
         self.type = type
@@ -82,12 +102,22 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
             self.charge_density = charge_density
         if total_charge is not None:
             self.total_charge = total_charge
+        if temperature is not None:
+            self.temperature = temperature
+        if heat_flux_value is not None:
+            self.heat_flux_value = heat_flux_value
+        if heat_transfer_coefficient is not None:
+            self.heat_transfer_coefficient = heat_transfer_coefficient
+        if ambient_temperature is not None:
+            self.ambient_temperature = ambient_temperature
+        if emissivity is not None:
+            self.emissivity = emissivity
 
     @property
     def type(self):
         """Gets the type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
 
-        Schema name: TotalCharge  # noqa: E501
+        Accounts for heat transfer due to thermal radiation between surfaces.  Schema name: RadiationHeatFlux  # noqa: E501
 
         :return: The type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -98,7 +128,7 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfElectromagneticAnalysisBoundaryConditions.
 
-        Schema name: TotalCharge  # noqa: E501
+        Accounts for heat transfer due to thermal radiation between surfaces.  Schema name: RadiationHeatFlux  # noqa: E501
 
         :param type: The type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
         :type: str
@@ -212,6 +242,111 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         """
 
         self._total_charge = total_charge
+
+    @property
+    def temperature(self):
+        """Gets the temperature of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The temperature of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalFunctionTemperature
+        """
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, temperature):
+        """Sets the temperature of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param temperature: The temperature of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalFunctionTemperature
+        """
+
+        self._temperature = temperature
+
+    @property
+    def heat_flux_value(self):
+        """Gets the heat_flux_value of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The heat_flux_value of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalFunctionVolumetricPower
+        """
+        return self._heat_flux_value
+
+    @heat_flux_value.setter
+    def heat_flux_value(self, heat_flux_value):
+        """Sets the heat_flux_value of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param heat_flux_value: The heat_flux_value of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalFunctionVolumetricPower
+        """
+
+        self._heat_flux_value = heat_flux_value
+
+    @property
+    def heat_transfer_coefficient(self):
+        """Gets the heat_transfer_coefficient of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The heat_transfer_coefficient of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalFunctionThermalTransmittance
+        """
+        return self._heat_transfer_coefficient
+
+    @heat_transfer_coefficient.setter
+    def heat_transfer_coefficient(self, heat_transfer_coefficient):
+        """Sets the heat_transfer_coefficient of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param heat_transfer_coefficient: The heat_transfer_coefficient of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalFunctionThermalTransmittance
+        """
+
+        self._heat_transfer_coefficient = heat_transfer_coefficient
+
+    @property
+    def ambient_temperature(self):
+        """Gets the ambient_temperature of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The ambient_temperature of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalFunctionTemperature
+        """
+        return self._ambient_temperature
+
+    @ambient_temperature.setter
+    def ambient_temperature(self, ambient_temperature):
+        """Sets the ambient_temperature of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param ambient_temperature: The ambient_temperature of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalFunctionTemperature
+        """
+
+        self._ambient_temperature = ambient_temperature
+
+    @property
+    def emissivity(self):
+        """Gets the emissivity of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The emissivity of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalFunctionDimensionless
+        """
+        return self._emissivity
+
+    @emissivity.setter
+    def emissivity(self, emissivity):
+        """Sets the emissivity of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param emissivity: The emissivity of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalFunctionDimensionless
+        """
+
+        self._emissivity = emissivity
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

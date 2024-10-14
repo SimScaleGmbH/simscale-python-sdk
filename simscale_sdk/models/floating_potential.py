@@ -63,7 +63,7 @@ class FloatingPotential(object):
     def type(self):
         """Gets the type of this FloatingPotential.  # noqa: E501
 
-        Schema name: FloatingPotential  # noqa: E501
+        Specify a floating potential on a boundary or a body for conductive bodies with a constant but unspecified voltage value.  Schema name: FloatingPotential  # noqa: E501
 
         :return: The type of this FloatingPotential.  # noqa: E501
         :rtype: str
@@ -74,7 +74,7 @@ class FloatingPotential(object):
     def type(self, type):
         """Sets the type of this FloatingPotential.
 
-        Schema name: FloatingPotential  # noqa: E501
+        Specify a floating potential on a boundary or a body for conductive bodies with a constant but unspecified voltage value.  Schema name: FloatingPotential  # noqa: E501
 
         :param type: The type of this FloatingPotential.  # noqa: E501
         :type: str
