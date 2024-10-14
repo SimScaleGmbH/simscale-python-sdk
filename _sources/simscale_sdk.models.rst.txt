@@ -25,6 +25,14 @@ simscale\_sdk.models.absolute\_distance module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.absolute\_erp\_field\_selection module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_erp_field_selection
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.absolute\_harmonic\_acceleration\_field\_type module
 -------------------------------------------------------------------------
 
@@ -1205,6 +1213,14 @@ simscale\_sdk.models.convection\_tbc module
 -------------------------------------------
 
 .. automodule:: simscale_sdk.models.convection_tbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.convective\_heat\_flux module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.convective_heat_flux
    :members:
    :undoc-members:
    :show-inheritance:
@@ -2961,10 +2977,34 @@ simscale\_sdk.models.entity\_description module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.equivalent\_radiated\_power\_density\_type module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.equivalent_radiated_power_density_type
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.equivalent\_sand\_grain\_roughness module
 --------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.equivalent_sand_grain_roughness
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.erp\_calculation\_result\_control\_item module
+-------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.erp_calculation_result_control_item
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.erp\_density\_result\_control\_item module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.erp_density_result_control_item
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3037,6 +3077,14 @@ simscale\_sdk.models.external\_wall\_heat\_flux\_tbc module
 -----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.external_wall_heat_flux_tbc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.face\_normal\_magnetization\_direction\_method module
+--------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.face_normal_magnetization_direction_method
    :members:
    :undoc-members:
    :show-inheritance:
@@ -3517,6 +3565,14 @@ simscale\_sdk.models.fixed\_support\_bc module
 ----------------------------------------------
 
 .. automodule:: simscale_sdk.models.fixed_support_bc
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.fixed\_temperature module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.fixed_temperature
    :members:
    :undoc-members:
    :show-inheritance:
@@ -4409,6 +4465,14 @@ simscale\_sdk.models.global\_acceleration\_type module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.global\_cartesian\_magnetization\_direction\_method module
+-------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.global_cartesian_magnetization_direction_method
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.global\_cauchy\_stress\_type module
 --------------------------------------------------------
 
@@ -5257,10 +5321,18 @@ simscale\_sdk.models.linear\_isotropic\_conductivity\_method module
    :undoc-members:
    :show-inheritance:
 
-simscale\_sdk.models.linear\_isotropic\_permeabiltiy module
+simscale\_sdk.models.linear\_isotropic\_constant\_thermal\_conductivity\_method module
+--------------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.linear_isotropic_constant_thermal_conductivity_method
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.linear\_isotropic\_permeability module
 -----------------------------------------------------------
 
-.. automodule:: simscale_sdk.models.linear_isotropic_permeabiltiy
+.. automodule:: simscale_sdk.models.linear_isotropic_permeability
    :members:
    :undoc-members:
    :show-inheritance:
@@ -6873,6 +6945,14 @@ simscale\_sdk.models.qz module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.radiation\_heat\_flux module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.radiation_heat_flux
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.radiation\_tbc module
 ------------------------------------------
 
@@ -7029,6 +7109,14 @@ simscale\_sdk.models.relative\_distance module
 ----------------------------------------------
 
 .. automodule:: simscale_sdk.models.relative_distance
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.relative\_erp\_field\_selection module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_erp_field_selection
    :members:
    :undoc-members:
    :show-inheritance:
@@ -8273,6 +8361,14 @@ simscale\_sdk.models.surface\_custom\_sizing module
    :undoc-members:
    :show-inheritance:
 
+simscale\_sdk.models.surface\_heat\_flux module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.surface_heat_flux
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 simscale\_sdk.models.surface\_heat\_flux\_bc module
 ---------------------------------------------------
 
@@ -9301,6 +9397,14 @@ simscale\_sdk.models.volume\_custom\_sizing module
 --------------------------------------------------
 
 .. automodule:: simscale_sdk.models.volume_custom_sizing
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+simscale\_sdk.models.volume\_heat\_flux module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.volume_heat_flux
    :members:
    :undoc-members:
    :show-inheritance:
