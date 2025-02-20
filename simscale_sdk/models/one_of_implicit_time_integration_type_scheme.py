@@ -119,6 +119,12 @@ class OneOfImplicitTimeIntegrationTypeScheme(object):
         :param alpha: The alpha of this OneOfImplicitTimeIntegrationTypeScheme.  # noqa: E501
         :type: float
         """
+        if (self.local_vars_configuration.client_side_validation and
+                alpha is not None and alpha > 0):  # noqa: E501
+            raise ValueError("Invalid value for `alpha`, must be a value less than or equal to `0`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                alpha is not None and alpha < -0.33333):  # noqa: E501
+            raise ValueError("Invalid value for `alpha`, must be a value greater than or equal to `-0.33333`")  # noqa: E501
 
         self._alpha = alpha
 

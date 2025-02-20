@@ -35,6 +35,7 @@ class RelaxationFactor(object):
         'pressure_rgh_field': 'float',
         'passive_scalar_equation': 'float',
         'velocity_equation': 'float',
+        'velocity': 'float',
         'temperature_equation': 'float',
         'density_field': 'float',
         'enthalpy_equation': 'float',
@@ -42,8 +43,12 @@ class RelaxationFactor(object):
         'turbulent_kinetic_energy_equation': 'float',
         'omega_dissipation_rate_equation': 'float',
         'epsilon_dissipation_rate_equation': 'float',
+        'turbulent_kinetic_energy': 'float',
+        'turbulent_energy_dissipation_rate': 'float',
         'nu_tilda_equation': 'float',
         'net_radiative_heat_flux_field': 'float',
+        'internal_energy': 'float',
+        'gas_mixture_transport': 'float',
         'radiative_intensity_ray_equation': 'float',
         'specific_humidity_equation': 'float',
         'age_of_fluid_equation': 'float',
@@ -55,6 +60,7 @@ class RelaxationFactor(object):
         'pressure_rgh_field': 'pressureRghField',
         'passive_scalar_equation': 'passiveScalarEquation',
         'velocity_equation': 'velocityEquation',
+        'velocity': 'velocity',
         'temperature_equation': 'temperatureEquation',
         'density_field': 'densityField',
         'enthalpy_equation': 'enthalpyEquation',
@@ -62,15 +68,19 @@ class RelaxationFactor(object):
         'turbulent_kinetic_energy_equation': 'turbulentKineticEnergyEquation',
         'omega_dissipation_rate_equation': 'omegaDissipationRateEquation',
         'epsilon_dissipation_rate_equation': 'epsilonDissipationRateEquation',
+        'turbulent_kinetic_energy': 'turbulentKineticEnergy',
+        'turbulent_energy_dissipation_rate': 'turbulentEnergyDissipationRate',
         'nu_tilda_equation': 'nuTildaEquation',
         'net_radiative_heat_flux_field': 'netRadiativeHeatFluxField',
+        'internal_energy': 'internalEnergy',
+        'gas_mixture_transport': 'gasMixtureTransport',
         'radiative_intensity_ray_equation': 'radiativeIntensityRayEquation',
         'specific_humidity_equation': 'specificHumidityEquation',
         'age_of_fluid_equation': 'ageOfFluidEquation',
         'voltage_field': 'voltageField'
     }
 
-    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, radiative_intensity_ray_equation=None, specific_humidity_equation=None, age_of_fluid_equation=None, voltage_field=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, velocity=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, turbulent_kinetic_energy=None, turbulent_energy_dissipation_rate=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, internal_energy=None, gas_mixture_transport=None, radiative_intensity_ray_equation=None, specific_humidity_equation=None, age_of_fluid_equation=None, voltage_field=None, local_vars_configuration=None):  # noqa: E501
         """RelaxationFactor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +90,7 @@ class RelaxationFactor(object):
         self._pressure_rgh_field = None
         self._passive_scalar_equation = None
         self._velocity_equation = None
+        self._velocity = None
         self._temperature_equation = None
         self._density_field = None
         self._enthalpy_equation = None
@@ -87,8 +98,12 @@ class RelaxationFactor(object):
         self._turbulent_kinetic_energy_equation = None
         self._omega_dissipation_rate_equation = None
         self._epsilon_dissipation_rate_equation = None
+        self._turbulent_kinetic_energy = None
+        self._turbulent_energy_dissipation_rate = None
         self._nu_tilda_equation = None
         self._net_radiative_heat_flux_field = None
+        self._internal_energy = None
+        self._gas_mixture_transport = None
         self._radiative_intensity_ray_equation = None
         self._specific_humidity_equation = None
         self._age_of_fluid_equation = None
@@ -103,6 +118,8 @@ class RelaxationFactor(object):
             self.passive_scalar_equation = passive_scalar_equation
         if velocity_equation is not None:
             self.velocity_equation = velocity_equation
+        if velocity is not None:
+            self.velocity = velocity
         if temperature_equation is not None:
             self.temperature_equation = temperature_equation
         if density_field is not None:
@@ -117,10 +134,18 @@ class RelaxationFactor(object):
             self.omega_dissipation_rate_equation = omega_dissipation_rate_equation
         if epsilon_dissipation_rate_equation is not None:
             self.epsilon_dissipation_rate_equation = epsilon_dissipation_rate_equation
+        if turbulent_kinetic_energy is not None:
+            self.turbulent_kinetic_energy = turbulent_kinetic_energy
+        if turbulent_energy_dissipation_rate is not None:
+            self.turbulent_energy_dissipation_rate = turbulent_energy_dissipation_rate
         if nu_tilda_equation is not None:
             self.nu_tilda_equation = nu_tilda_equation
         if net_radiative_heat_flux_field is not None:
             self.net_radiative_heat_flux_field = net_radiative_heat_flux_field
+        if internal_energy is not None:
+            self.internal_energy = internal_energy
+        if gas_mixture_transport is not None:
+            self.gas_mixture_transport = gas_mixture_transport
         if radiative_intensity_ray_equation is not None:
             self.radiative_intensity_ray_equation = radiative_intensity_ray_equation
         if specific_humidity_equation is not None:
@@ -241,6 +266,33 @@ class RelaxationFactor(object):
             raise ValueError("Invalid value for `velocity_equation`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._velocity_equation = velocity_equation
+
+    @property
+    def velocity(self):
+        """Gets the velocity of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The velocity of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._velocity
+
+    @velocity.setter
+    def velocity(self, velocity):
+        """Sets the velocity of this RelaxationFactor.
+
+
+        :param velocity: The velocity of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                velocity is not None and velocity > 1):  # noqa: E501
+            raise ValueError("Invalid value for `velocity`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                velocity is not None and velocity < 0):  # noqa: E501
+            raise ValueError("Invalid value for `velocity`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._velocity = velocity
 
     @property
     def temperature_equation(self):
@@ -436,6 +488,60 @@ class RelaxationFactor(object):
         self._epsilon_dissipation_rate_equation = epsilon_dissipation_rate_equation
 
     @property
+    def turbulent_kinetic_energy(self):
+        """Gets the turbulent_kinetic_energy of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The turbulent_kinetic_energy of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._turbulent_kinetic_energy
+
+    @turbulent_kinetic_energy.setter
+    def turbulent_kinetic_energy(self, turbulent_kinetic_energy):
+        """Sets the turbulent_kinetic_energy of this RelaxationFactor.
+
+
+        :param turbulent_kinetic_energy: The turbulent_kinetic_energy of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                turbulent_kinetic_energy is not None and turbulent_kinetic_energy > 1):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_kinetic_energy`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                turbulent_kinetic_energy is not None and turbulent_kinetic_energy < 0):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_kinetic_energy`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._turbulent_kinetic_energy = turbulent_kinetic_energy
+
+    @property
+    def turbulent_energy_dissipation_rate(self):
+        """Gets the turbulent_energy_dissipation_rate of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The turbulent_energy_dissipation_rate of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._turbulent_energy_dissipation_rate
+
+    @turbulent_energy_dissipation_rate.setter
+    def turbulent_energy_dissipation_rate(self, turbulent_energy_dissipation_rate):
+        """Sets the turbulent_energy_dissipation_rate of this RelaxationFactor.
+
+
+        :param turbulent_energy_dissipation_rate: The turbulent_energy_dissipation_rate of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                turbulent_energy_dissipation_rate is not None and turbulent_energy_dissipation_rate > 1):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_energy_dissipation_rate`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                turbulent_energy_dissipation_rate is not None and turbulent_energy_dissipation_rate < 0):  # noqa: E501
+            raise ValueError("Invalid value for `turbulent_energy_dissipation_rate`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._turbulent_energy_dissipation_rate = turbulent_energy_dissipation_rate
+
+    @property
     def nu_tilda_equation(self):
         """Gets the nu_tilda_equation of this RelaxationFactor.  # noqa: E501
 
@@ -488,6 +594,60 @@ class RelaxationFactor(object):
             raise ValueError("Invalid value for `net_radiative_heat_flux_field`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._net_radiative_heat_flux_field = net_radiative_heat_flux_field
+
+    @property
+    def internal_energy(self):
+        """Gets the internal_energy of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The internal_energy of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._internal_energy
+
+    @internal_energy.setter
+    def internal_energy(self, internal_energy):
+        """Sets the internal_energy of this RelaxationFactor.
+
+
+        :param internal_energy: The internal_energy of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                internal_energy is not None and internal_energy > 1):  # noqa: E501
+            raise ValueError("Invalid value for `internal_energy`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                internal_energy is not None and internal_energy < 0):  # noqa: E501
+            raise ValueError("Invalid value for `internal_energy`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._internal_energy = internal_energy
+
+    @property
+    def gas_mixture_transport(self):
+        """Gets the gas_mixture_transport of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The gas_mixture_transport of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._gas_mixture_transport
+
+    @gas_mixture_transport.setter
+    def gas_mixture_transport(self, gas_mixture_transport):
+        """Sets the gas_mixture_transport of this RelaxationFactor.
+
+
+        :param gas_mixture_transport: The gas_mixture_transport of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                gas_mixture_transport is not None and gas_mixture_transport > 1):  # noqa: E501
+            raise ValueError("Invalid value for `gas_mixture_transport`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                gas_mixture_transport is not None and gas_mixture_transport < 0):  # noqa: E501
+            raise ValueError("Invalid value for `gas_mixture_transport`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._gas_mixture_transport = gas_mixture_transport
 
     @property
     def radiative_intensity_ray_equation(self):

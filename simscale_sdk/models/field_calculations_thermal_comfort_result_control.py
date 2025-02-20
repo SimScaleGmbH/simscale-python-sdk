@@ -35,7 +35,8 @@ class FieldCalculationsThermalComfortResultControl(object):
         'name': 'str',
         'clothing_coefficient_factor': 'float',
         'metabolic_rate_factor': 'float',
-        'relative_humidity_factor': 'float'
+        'relative_humidity_factor': 'float',
+        'mrt_solar_parameters': 'MrtSolarParameters'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class FieldCalculationsThermalComfortResultControl(object):
         'name': 'name',
         'clothing_coefficient_factor': 'clothingCoefficientFactor',
         'metabolic_rate_factor': 'metabolicRateFactor',
-        'relative_humidity_factor': 'relativeHumidityFactor'
+        'relative_humidity_factor': 'relativeHumidityFactor',
+        'mrt_solar_parameters': 'mrtSolarParameters'
     }
 
-    def __init__(self, type='THERMAL_COMFORT', name=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='THERMAL_COMFORT', name=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, mrt_solar_parameters=None, local_vars_configuration=None):  # noqa: E501
         """FieldCalculationsThermalComfortResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class FieldCalculationsThermalComfortResultControl(object):
         self._clothing_coefficient_factor = None
         self._metabolic_rate_factor = None
         self._relative_humidity_factor = None
+        self._mrt_solar_parameters = None
         self.discriminator = None
 
         self.type = type
@@ -68,6 +71,8 @@ class FieldCalculationsThermalComfortResultControl(object):
             self.metabolic_rate_factor = metabolic_rate_factor
         if relative_humidity_factor is not None:
             self.relative_humidity_factor = relative_humidity_factor
+        if mrt_solar_parameters is not None:
+            self.mrt_solar_parameters = mrt_solar_parameters
 
     @property
     def type(self):
@@ -198,6 +203,27 @@ class FieldCalculationsThermalComfortResultControl(object):
             raise ValueError("Invalid value for `relative_humidity_factor`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._relative_humidity_factor = relative_humidity_factor
+
+    @property
+    def mrt_solar_parameters(self):
+        """Gets the mrt_solar_parameters of this FieldCalculationsThermalComfortResultControl.  # noqa: E501
+
+
+        :return: The mrt_solar_parameters of this FieldCalculationsThermalComfortResultControl.  # noqa: E501
+        :rtype: MrtSolarParameters
+        """
+        return self._mrt_solar_parameters
+
+    @mrt_solar_parameters.setter
+    def mrt_solar_parameters(self, mrt_solar_parameters):
+        """Sets the mrt_solar_parameters of this FieldCalculationsThermalComfortResultControl.
+
+
+        :param mrt_solar_parameters: The mrt_solar_parameters of this FieldCalculationsThermalComfortResultControl.  # noqa: E501
+        :type: MrtSolarParameters
+        """
+
+        self._mrt_solar_parameters = mrt_solar_parameters
 
     def to_dict(self):
         """Returns the model properties as a dict"""

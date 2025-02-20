@@ -33,16 +33,18 @@ class FieldCalculationsOperativeTemperatureResultControl(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'result_type': 'OperativeTemperatureResultType'
+        'result_type': 'OperativeTemperatureResultType',
+        'mrt_solar_parameters': 'MrtSolarParameters'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
-        'result_type': 'resultType'
+        'result_type': 'resultType',
+        'mrt_solar_parameters': 'mrtSolarParameters'
     }
 
-    def __init__(self, type='OPERATIVE_TEMPERATURE', name=None, result_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='OPERATIVE_TEMPERATURE', name=None, result_type=None, mrt_solar_parameters=None, local_vars_configuration=None):  # noqa: E501
         """FieldCalculationsOperativeTemperatureResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class FieldCalculationsOperativeTemperatureResultControl(object):
         self._type = None
         self._name = None
         self._result_type = None
+        self._mrt_solar_parameters = None
         self.discriminator = None
 
         self.type = type
@@ -58,6 +61,8 @@ class FieldCalculationsOperativeTemperatureResultControl(object):
             self.name = name
         if result_type is not None:
             self.result_type = result_type
+        if mrt_solar_parameters is not None:
+            self.mrt_solar_parameters = mrt_solar_parameters
 
     @property
     def type(self):
@@ -128,6 +133,27 @@ class FieldCalculationsOperativeTemperatureResultControl(object):
         """
 
         self._result_type = result_type
+
+    @property
+    def mrt_solar_parameters(self):
+        """Gets the mrt_solar_parameters of this FieldCalculationsOperativeTemperatureResultControl.  # noqa: E501
+
+
+        :return: The mrt_solar_parameters of this FieldCalculationsOperativeTemperatureResultControl.  # noqa: E501
+        :rtype: MrtSolarParameters
+        """
+        return self._mrt_solar_parameters
+
+    @mrt_solar_parameters.setter
+    def mrt_solar_parameters(self, mrt_solar_parameters):
+        """Sets the mrt_solar_parameters of this FieldCalculationsOperativeTemperatureResultControl.
+
+
+        :param mrt_solar_parameters: The mrt_solar_parameters of this FieldCalculationsOperativeTemperatureResultControl.  # noqa: E501
+        :type: MrtSolarParameters
+        """
+
+        self._mrt_solar_parameters = mrt_solar_parameters
 
     def to_dict(self):
         """Returns the model properties as a dict"""

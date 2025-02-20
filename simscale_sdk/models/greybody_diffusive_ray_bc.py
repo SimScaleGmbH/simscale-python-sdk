@@ -32,15 +32,17 @@ class GreybodyDiffusiveRayBC(object):
     """
     openapi_types = {
         'type': 'str',
-        'emissivity': 'float'
+        'emissivity': 'float',
+        'farfield_black_body_temperature': 'DimensionalTemperature'
     }
 
     attribute_map = {
         'type': 'type',
-        'emissivity': 'emissivity'
+        'emissivity': 'emissivity',
+        'farfield_black_body_temperature': 'farfieldBlackBodyTemperature'
     }
 
-    def __init__(self, type='GREYBODY_DIFFUSIVE_RAY', emissivity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='GREYBODY_DIFFUSIVE_RAY', emissivity=None, farfield_black_body_temperature=None, local_vars_configuration=None):  # noqa: E501
         """GreybodyDiffusiveRayBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class GreybodyDiffusiveRayBC(object):
 
         self._type = None
         self._emissivity = None
+        self._farfield_black_body_temperature = None
         self.discriminator = None
 
         self.type = type
         if emissivity is not None:
             self.emissivity = emissivity
+        if farfield_black_body_temperature is not None:
+            self.farfield_black_body_temperature = farfield_black_body_temperature
 
     @property
     def type(self):
@@ -105,6 +110,27 @@ class GreybodyDiffusiveRayBC(object):
             raise ValueError("Invalid value for `emissivity`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._emissivity = emissivity
+
+    @property
+    def farfield_black_body_temperature(self):
+        """Gets the farfield_black_body_temperature of this GreybodyDiffusiveRayBC.  # noqa: E501
+
+
+        :return: The farfield_black_body_temperature of this GreybodyDiffusiveRayBC.  # noqa: E501
+        :rtype: DimensionalTemperature
+        """
+        return self._farfield_black_body_temperature
+
+    @farfield_black_body_temperature.setter
+    def farfield_black_body_temperature(self, farfield_black_body_temperature):
+        """Sets the farfield_black_body_temperature of this GreybodyDiffusiveRayBC.
+
+
+        :param farfield_black_body_temperature: The farfield_black_body_temperature of this GreybodyDiffusiveRayBC.  # noqa: E501
+        :type: DimensionalTemperature
+        """
+
+        self._farfield_black_body_temperature = farfield_black_body_temperature
 
     def to_dict(self):
         """Returns the model properties as a dict"""

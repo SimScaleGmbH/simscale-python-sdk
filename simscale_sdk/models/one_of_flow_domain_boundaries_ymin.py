@@ -49,6 +49,7 @@ class OneOfFlowDomainBoundariesYMIN(object):
         'pressure': 'OneOfPressureOutletBCPressure',
         'pressure_rgh': 'OneOfPressureOutletBCPressureRgh',
         'gauge_pressure': 'OneOfPressureOutletBCGaugePressure',
+        'hydrostatic_pressure': 'HydrostaticPressure',
         'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh',
         'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition',
         'reference_velocity': 'DimensionalSpeed',
@@ -75,6 +76,7 @@ class OneOfFlowDomainBoundariesYMIN(object):
         'pressure': 'pressure',
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
+        'hydrostatic_pressure': 'hydrostaticPressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
         'electric_boundary_condition': 'electricBoundaryCondition',
         'reference_velocity': 'referenceVelocity',
@@ -90,7 +92,7 @@ class OneOfFlowDomainBoundariesYMIN(object):
         'ATMOSPHERIC_BOUNDARY_LAYER_INLET': 'AtmosphericBoundaryLayerInletBC'
     }
 
-    def __init__(self, type='ATMOSPHERIC_BOUNDARY_LAYER_INLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, reference_velocity=None, reference_height=None, ground_roughness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ATMOSPHERIC_BOUNDARY_LAYER_INLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, hydrostatic_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, reference_velocity=None, reference_height=None, ground_roughness=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFlowDomainBoundariesYMIN - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -114,6 +116,7 @@ class OneOfFlowDomainBoundariesYMIN(object):
         self._pressure = None
         self._pressure_rgh = None
         self._gauge_pressure = None
+        self._hydrostatic_pressure = None
         self._gauge_pressure_rgh = None
         self._electric_boundary_condition = None
         self._reference_velocity = None
@@ -156,6 +159,8 @@ class OneOfFlowDomainBoundariesYMIN(object):
             self.pressure_rgh = pressure_rgh
         if gauge_pressure is not None:
             self.gauge_pressure = gauge_pressure
+        if hydrostatic_pressure is not None:
+            self.hydrostatic_pressure = hydrostatic_pressure
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
         if electric_boundary_condition is not None:
@@ -550,6 +555,27 @@ class OneOfFlowDomainBoundariesYMIN(object):
         """
 
         self._gauge_pressure = gauge_pressure
+
+    @property
+    def hydrostatic_pressure(self):
+        """Gets the hydrostatic_pressure of this OneOfFlowDomainBoundariesYMIN.  # noqa: E501
+
+
+        :return: The hydrostatic_pressure of this OneOfFlowDomainBoundariesYMIN.  # noqa: E501
+        :rtype: HydrostaticPressure
+        """
+        return self._hydrostatic_pressure
+
+    @hydrostatic_pressure.setter
+    def hydrostatic_pressure(self, hydrostatic_pressure):
+        """Sets the hydrostatic_pressure of this OneOfFlowDomainBoundariesYMIN.
+
+
+        :param hydrostatic_pressure: The hydrostatic_pressure of this OneOfFlowDomainBoundariesYMIN.  # noqa: E501
+        :type: HydrostaticPressure
+        """
+
+        self._hydrostatic_pressure = hydrostatic_pressure
 
     @property
     def gauge_pressure_rgh(self):

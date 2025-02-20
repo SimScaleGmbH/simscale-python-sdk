@@ -38,6 +38,7 @@ class SimmetrixMeshingFluid(object):
         'automatic_layer_settings': 'OneOfSimmetrixMeshingFluidAutomaticLayerSettings',
         'physics_based_meshing': 'bool',
         'hex_core': 'bool',
+        'automatic_sweep_parameters': 'OneOfSimmetrixMeshingFluidAutomaticSweepParameters',
         'num_of_processors': 'int',
         'max_meshing_run_time': 'DimensionalTime',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixFluidSettings'
@@ -51,12 +52,13 @@ class SimmetrixMeshingFluid(object):
         'automatic_layer_settings': 'automaticLayerSettings',
         'physics_based_meshing': 'physicsBasedMeshing',
         'hex_core': 'hexCore',
+        'automatic_sweep_parameters': 'automaticSweepParameters',
         'num_of_processors': 'numOfProcessors',
         'max_meshing_run_time': 'maxMeshingRunTime',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings'
     }
 
-    def __init__(self, type='SIMMETRIX_MESHING_FLUID_V16', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMMETRIX_MESHING_FLUID_V16', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, automatic_sweep_parameters=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimmetrixMeshingFluid - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,6 +71,7 @@ class SimmetrixMeshingFluid(object):
         self._automatic_layer_settings = None
         self._physics_based_meshing = None
         self._hex_core = None
+        self._automatic_sweep_parameters = None
         self._num_of_processors = None
         self._max_meshing_run_time = None
         self._advanced_simmetrix_settings = None
@@ -87,6 +90,8 @@ class SimmetrixMeshingFluid(object):
             self.physics_based_meshing = physics_based_meshing
         if hex_core is not None:
             self.hex_core = hex_core
+        if automatic_sweep_parameters is not None:
+            self.automatic_sweep_parameters = automatic_sweep_parameters
         if num_of_processors is not None:
             self.num_of_processors = num_of_processors
         if max_meshing_run_time is not None:
@@ -248,6 +253,27 @@ class SimmetrixMeshingFluid(object):
         """
 
         self._hex_core = hex_core
+
+    @property
+    def automatic_sweep_parameters(self):
+        """Gets the automatic_sweep_parameters of this SimmetrixMeshingFluid.  # noqa: E501
+
+
+        :return: The automatic_sweep_parameters of this SimmetrixMeshingFluid.  # noqa: E501
+        :rtype: OneOfSimmetrixMeshingFluidAutomaticSweepParameters
+        """
+        return self._automatic_sweep_parameters
+
+    @automatic_sweep_parameters.setter
+    def automatic_sweep_parameters(self, automatic_sweep_parameters):
+        """Sets the automatic_sweep_parameters of this SimmetrixMeshingFluid.
+
+
+        :param automatic_sweep_parameters: The automatic_sweep_parameters of this SimmetrixMeshingFluid.  # noqa: E501
+        :type: OneOfSimmetrixMeshingFluidAutomaticSweepParameters
+        """
+
+        self._automatic_sweep_parameters = automatic_sweep_parameters
 
     @property
     def num_of_processors(self):

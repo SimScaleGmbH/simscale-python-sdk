@@ -68,7 +68,7 @@ class ThinResistanceLayer(object):
     def type(self):
         """Gets the type of this ThinResistanceLayer.  # noqa: E501
 
-        Schema name: ThinResistanceLayer  # noqa: E501
+        <p>Choose the type of the contact resistance:</p><ul><li><p>To specify presence of thin layers with known thermal conductivity or/and electric resistivity and thickness, choose <b>Thin layer resistance</b>.</p><li><p>If the thermal/electric contact resistance is known (e.g. due to an imperfectly matching interface, choose <b>Contact resistance</b>. The resistance can be defined as surface-dependent or not, i.e. total or specific. To make a resistance inactive, set it to 0. Enter a high value to make it an isolator.</p><li><p>Conversely, if the thermal/electric contact conductance is known, choose <b>Specific conductance</b></p></ul><a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/contact-resistance/' target='_blank'>Learn more</a>.  Schema name: ThinResistanceLayer  # noqa: E501
 
         :return: The type of this ThinResistanceLayer.  # noqa: E501
         :rtype: str
@@ -79,7 +79,7 @@ class ThinResistanceLayer(object):
     def type(self, type):
         """Sets the type of this ThinResistanceLayer.
 
-        Schema name: ThinResistanceLayer  # noqa: E501
+        <p>Choose the type of the contact resistance:</p><ul><li><p>To specify presence of thin layers with known thermal conductivity or/and electric resistivity and thickness, choose <b>Thin layer resistance</b>.</p><li><p>If the thermal/electric contact resistance is known (e.g. due to an imperfectly matching interface, choose <b>Contact resistance</b>. The resistance can be defined as surface-dependent or not, i.e. total or specific. To make a resistance inactive, set it to 0. Enter a high value to make it an isolator.</p><li><p>Conversely, if the thermal/electric contact conductance is known, choose <b>Specific conductance</b></p></ul><a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/contact-resistance/' target='_blank'>Learn more</a>.  Schema name: ThinResistanceLayer  # noqa: E501
 
         :param type: The type of this ThinResistanceLayer.  # noqa: E501
         :type: str

@@ -58,9 +58,9 @@ class Analysis(object):
         'advanced_modelling': 'AdvancedModelling',
         'mesh_settings_new': 'OneOfIncompressiblePacefishMeshSettingsNew',
         'is_compressible': 'bool',
-        'is_cht': 'bool',
         'is_multicomponent': 'bool',
         'is_multiphase': 'bool',
+        'is_cht': 'bool',
         'number_of_phases': 'int',
         'cavitation_model': 'str',
         'mesh_settings': 'WindComfortMesh',
@@ -110,9 +110,9 @@ class Analysis(object):
         'advanced_modelling': 'advancedModelling',
         'mesh_settings_new': 'meshSettingsNew',
         'is_compressible': 'isCompressible',
-        'is_cht': 'isCHT',
         'is_multicomponent': 'isMulticomponent',
         'is_multiphase': 'isMultiphase',
+        'is_cht': 'isCHT',
         'number_of_phases': 'numberOfPhases',
         'cavitation_model': 'cavitationModel',
         'mesh_settings': 'meshSettings',
@@ -154,7 +154,7 @@ class Analysis(object):
         'ELECTROMAGNETIC_ANALYSIS': 'ElectromagneticAnalysis'
     }
 
-    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_cht=None, is_multicomponent=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multicomponent=None, is_multiphase=None, is_cht=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -187,9 +187,9 @@ class Analysis(object):
         self._advanced_modelling = None
         self._mesh_settings_new = None
         self._is_compressible = None
-        self._is_cht = None
         self._is_multicomponent = None
         self._is_multiphase = None
+        self._is_cht = None
         self._number_of_phases = None
         self._cavitation_model = None
         self._mesh_settings = None
@@ -264,12 +264,12 @@ class Analysis(object):
             self.mesh_settings_new = mesh_settings_new
         if is_compressible is not None:
             self.is_compressible = is_compressible
-        if is_cht is not None:
-            self.is_cht = is_cht
         if is_multicomponent is not None:
             self.is_multicomponent = is_multicomponent
         if is_multiphase is not None:
             self.is_multiphase = is_multiphase
+        if is_cht is not None:
+            self.is_cht = is_cht
         if number_of_phases is not None:
             self.number_of_phases = number_of_phases
         if cavitation_model is not None:
@@ -915,27 +915,6 @@ class Analysis(object):
         self._is_compressible = is_compressible
 
     @property
-    def is_cht(self):
-        """Gets the is_cht of this Analysis.  # noqa: E501
-
-
-        :return: The is_cht of this Analysis.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_cht
-
-    @is_cht.setter
-    def is_cht(self, is_cht):
-        """Sets the is_cht of this Analysis.
-
-
-        :param is_cht: The is_cht of this Analysis.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_cht = is_cht
-
-    @property
     def is_multicomponent(self):
         """Gets the is_multicomponent of this Analysis.  # noqa: E501
 
@@ -976,6 +955,27 @@ class Analysis(object):
         """
 
         self._is_multiphase = is_multiphase
+
+    @property
+    def is_cht(self):
+        """Gets the is_cht of this Analysis.  # noqa: E501
+
+
+        :return: The is_cht of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_cht
+
+    @is_cht.setter
+    def is_cht(self, is_cht):
+        """Sets the is_cht of this Analysis.
+
+
+        :param is_cht: The is_cht of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_cht = is_cht
 
     @property
     def number_of_phases(self):

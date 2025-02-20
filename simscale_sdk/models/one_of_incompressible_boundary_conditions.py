@@ -50,6 +50,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         'pressure_rgh': 'OneOfCustomFluidBCPressureRgh',
         'gauge_pressure': 'OneOfCustomFluidBCGaugePressure',
         'gauge_pressure_rgh': 'OneOfCustomFluidBCGaugePressureRgh',
+        'hydrostatic_pressure': 'HydrostaticPressure',
         'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition',
         'turbulent_kinetic_energy': 'OneOfCustomFluidBCTurbulentKineticEnergy',
         'omega_dissipation_rate': 'OneOfCustomFluidBCOmegaDissipationRate',
@@ -82,6 +83,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
+        'hydrostatic_pressure': 'hydrostaticPressure',
         'electric_boundary_condition': 'electricBoundaryCondition',
         'turbulent_kinetic_energy': 'turbulentKineticEnergy',
         'omega_dissipation_rate': 'omegaDissipationRate',
@@ -108,7 +110,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         'EMPTY_2D': 'Empty2DBC'
     }
 
-    def __init__(self, type='EMPTY_2D', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMPTY_2D', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, hydrostatic_pressure=None, electric_boundary_condition=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, local_vars_configuration=None):  # noqa: E501
         """OneOfIncompressibleBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -133,6 +135,7 @@ class OneOfIncompressibleBoundaryConditions(object):
         self._pressure_rgh = None
         self._gauge_pressure = None
         self._gauge_pressure_rgh = None
+        self._hydrostatic_pressure = None
         self._electric_boundary_condition = None
         self._turbulent_kinetic_energy = None
         self._omega_dissipation_rate = None
@@ -182,6 +185,8 @@ class OneOfIncompressibleBoundaryConditions(object):
             self.gauge_pressure = gauge_pressure
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
+        if hydrostatic_pressure is not None:
+            self.hydrostatic_pressure = hydrostatic_pressure
         if electric_boundary_condition is not None:
             self.electric_boundary_condition = electric_boundary_condition
         if turbulent_kinetic_energy is not None:
@@ -607,6 +612,27 @@ class OneOfIncompressibleBoundaryConditions(object):
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh
+
+    @property
+    def hydrostatic_pressure(self):
+        """Gets the hydrostatic_pressure of this OneOfIncompressibleBoundaryConditions.  # noqa: E501
+
+
+        :return: The hydrostatic_pressure of this OneOfIncompressibleBoundaryConditions.  # noqa: E501
+        :rtype: HydrostaticPressure
+        """
+        return self._hydrostatic_pressure
+
+    @hydrostatic_pressure.setter
+    def hydrostatic_pressure(self, hydrostatic_pressure):
+        """Sets the hydrostatic_pressure of this OneOfIncompressibleBoundaryConditions.
+
+
+        :param hydrostatic_pressure: The hydrostatic_pressure of this OneOfIncompressibleBoundaryConditions.  # noqa: E501
+        :type: HydrostaticPressure
+        """
+
+        self._hydrostatic_pressure = hydrostatic_pressure
 
     @property
     def electric_boundary_condition(self):

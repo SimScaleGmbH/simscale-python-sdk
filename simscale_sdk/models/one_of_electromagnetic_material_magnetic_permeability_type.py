@@ -32,7 +32,7 @@ class OneOfElectromagneticMaterialMagneticPermeabilityType(object):
     """
     openapi_types = {
         'type': 'str',
-        'relative_magnetic_permeability': 'float',
+        'relative_magnetic_permeability': 'DimensionalFunctionDimensionless',
         'bh_curve': 'DimensionalFunctionMagneticFluxDensity'
     }
 
@@ -43,7 +43,7 @@ class OneOfElectromagneticMaterialMagneticPermeabilityType(object):
     }
 
     discriminator_value_class_map = {
-        'LINEAR_ISOTROPIC': 'LinearIsotropicPermeability',
+        'ISOTROPIC_RELATIVE_MAGNETIC_PERMEABILITY': 'IsotropicRelativePermeabilityMethod',
         'NONLINEAR_ISOTROPIC': 'NonlinearIsotropicPermeability'
     }
 
@@ -95,7 +95,7 @@ class OneOfElectromagneticMaterialMagneticPermeabilityType(object):
 
 
         :return: The relative_magnetic_permeability of this OneOfElectromagneticMaterialMagneticPermeabilityType.  # noqa: E501
-        :rtype: float
+        :rtype: DimensionalFunctionDimensionless
         """
         return self._relative_magnetic_permeability
 
@@ -105,11 +105,8 @@ class OneOfElectromagneticMaterialMagneticPermeabilityType(object):
 
 
         :param relative_magnetic_permeability: The relative_magnetic_permeability of this OneOfElectromagneticMaterialMagneticPermeabilityType.  # noqa: E501
-        :type: float
+        :type: DimensionalFunctionDimensionless
         """
-        if (self.local_vars_configuration.client_side_validation and
-                relative_magnetic_permeability is not None and relative_magnetic_permeability < 0.999):  # noqa: E501
-            raise ValueError("Invalid value for `relative_magnetic_permeability`, must be a value greater than or equal to `0.999`")  # noqa: E501
 
         self._relative_magnetic_permeability = relative_magnetic_permeability
 

@@ -38,6 +38,7 @@ class PressureOutletBC(object):
         'gauge_pressure': 'OneOfPressureOutletBCGaugePressure',
         'phase_fractions_v2': 'OneOfPressureOutletBCPhaseFractionsV2',
         'mass_fractions_v2': 'OutletBackFlowMFValues',
+        'hydrostatic_pressure': 'HydrostaticPressure',
         'gauge_pressure_rgh': 'OneOfPressureOutletBCGaugePressureRgh',
         'net_radiative_heat_flux': 'OneOfPressureOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfPressureOutletBCRadiativeIntensityRay',
@@ -53,6 +54,7 @@ class PressureOutletBC(object):
         'gauge_pressure': 'gaugePressure',
         'phase_fractions_v2': 'phaseFractionsV2',
         'mass_fractions_v2': 'massFractionsV2',
+        'hydrostatic_pressure': 'hydrostaticPressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
@@ -60,7 +62,7 @@ class PressureOutletBC(object):
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_OUTLET_V30', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, phase_fractions_v2=None, mass_fractions_v2=None, gauge_pressure_rgh=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_OUTLET_V30', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, phase_fractions_v2=None, mass_fractions_v2=None, hydrostatic_pressure=None, gauge_pressure_rgh=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureOutletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class PressureOutletBC(object):
         self._gauge_pressure = None
         self._phase_fractions_v2 = None
         self._mass_fractions_v2 = None
+        self._hydrostatic_pressure = None
         self._gauge_pressure_rgh = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
@@ -93,6 +96,8 @@ class PressureOutletBC(object):
             self.phase_fractions_v2 = phase_fractions_v2
         if mass_fractions_v2 is not None:
             self.mass_fractions_v2 = mass_fractions_v2
+        if hydrostatic_pressure is not None:
+            self.hydrostatic_pressure = hydrostatic_pressure
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
         if net_radiative_heat_flux is not None:
@@ -254,6 +259,27 @@ class PressureOutletBC(object):
         """
 
         self._mass_fractions_v2 = mass_fractions_v2
+
+    @property
+    def hydrostatic_pressure(self):
+        """Gets the hydrostatic_pressure of this PressureOutletBC.  # noqa: E501
+
+
+        :return: The hydrostatic_pressure of this PressureOutletBC.  # noqa: E501
+        :rtype: HydrostaticPressure
+        """
+        return self._hydrostatic_pressure
+
+    @hydrostatic_pressure.setter
+    def hydrostatic_pressure(self, hydrostatic_pressure):
+        """Sets the hydrostatic_pressure of this PressureOutletBC.
+
+
+        :param hydrostatic_pressure: The hydrostatic_pressure of this PressureOutletBC.  # noqa: E501
+        :type: HydrostaticPressure
+        """
+
+        self._hydrostatic_pressure = hydrostatic_pressure
 
     @property
     def gauge_pressure_rgh(self):

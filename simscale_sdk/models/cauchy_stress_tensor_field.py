@@ -99,7 +99,7 @@ class CauchyStressTensorField(object):
         :param component_selection: The component_selection of this CauchyStressTensorField.  # noqa: E501
         :type: str
         """
-        allowed_values = ["XX", "YY", "ZZ", "XY", "XZ", "YZ", "ALL"]  # noqa: E501
+        allowed_values = ["XX", "YY", "ZZ", "XY", "XZ", "YZ"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and component_selection not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `component_selection` ({0}), must be one of {1}"  # noqa: E501

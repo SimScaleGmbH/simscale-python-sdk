@@ -32,17 +32,17 @@ class SimericsAnalysis(object):
     """
     openapi_types = {
         'type': 'str',
-        'model': 'FluidModel',
-        'materials': 'SimericsFluidMaterials',
-        'initial_conditions': 'FluidInitialConditions',
         'is_compressible': 'bool',
-        'is_cht': 'bool',
         'is_multicomponent': 'bool',
         'is_multiphase': 'bool',
+        'is_cht': 'bool',
         'number_of_phases': 'int',
         'cavitation_model': 'str',
         'turbulence_model': 'str',
         'time_dependency': 'OneOfSimericsAnalysisTimeDependency',
+        'model': 'FluidModel',
+        'materials': 'SimericsMaterials',
+        'initial_conditions': 'FluidInitialConditions',
         'boundary_conditions': 'list[OneOfSimericsAnalysisBoundaryConditions]',
         'advanced_concepts': 'AdvancedConcepts',
         'numerics': 'FluidNumerics',
@@ -53,17 +53,17 @@ class SimericsAnalysis(object):
 
     attribute_map = {
         'type': 'type',
-        'model': 'model',
-        'materials': 'materials',
-        'initial_conditions': 'initialConditions',
         'is_compressible': 'isCompressible',
-        'is_cht': 'isCHT',
         'is_multicomponent': 'isMulticomponent',
         'is_multiphase': 'isMultiphase',
+        'is_cht': 'isCHT',
         'number_of_phases': 'numberOfPhases',
         'cavitation_model': 'cavitationModel',
         'turbulence_model': 'turbulenceModel',
         'time_dependency': 'timeDependency',
+        'model': 'model',
+        'materials': 'materials',
+        'initial_conditions': 'initialConditions',
         'boundary_conditions': 'boundaryConditions',
         'advanced_concepts': 'advancedConcepts',
         'numerics': 'numerics',
@@ -72,24 +72,24 @@ class SimericsAnalysis(object):
         'mesh_settings': 'meshSettings'
     }
 
-    def __init__(self, type='SIMERICS_ANALYSIS', model=None, materials=None, initial_conditions=None, is_compressible=None, is_cht=None, is_multicomponent=None, is_multiphase=None, number_of_phases=None, cavitation_model=None, turbulence_model=None, time_dependency=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SIMERICS_ANALYSIS', is_compressible=None, is_multicomponent=None, is_multiphase=None, is_cht=None, number_of_phases=None, cavitation_model=None, turbulence_model=None, time_dependency=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, mesh_settings=None, local_vars_configuration=None):  # noqa: E501
         """SimericsAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._model = None
-        self._materials = None
-        self._initial_conditions = None
         self._is_compressible = None
-        self._is_cht = None
         self._is_multicomponent = None
         self._is_multiphase = None
+        self._is_cht = None
         self._number_of_phases = None
         self._cavitation_model = None
         self._turbulence_model = None
         self._time_dependency = None
+        self._model = None
+        self._materials = None
+        self._initial_conditions = None
         self._boundary_conditions = None
         self._advanced_concepts = None
         self._numerics = None
@@ -99,20 +99,14 @@ class SimericsAnalysis(object):
         self.discriminator = None
 
         self.type = type
-        if model is not None:
-            self.model = model
-        if materials is not None:
-            self.materials = materials
-        if initial_conditions is not None:
-            self.initial_conditions = initial_conditions
         if is_compressible is not None:
             self.is_compressible = is_compressible
-        if is_cht is not None:
-            self.is_cht = is_cht
         if is_multicomponent is not None:
             self.is_multicomponent = is_multicomponent
         if is_multiphase is not None:
             self.is_multiphase = is_multiphase
+        if is_cht is not None:
+            self.is_cht = is_cht
         if number_of_phases is not None:
             self.number_of_phases = number_of_phases
         if cavitation_model is not None:
@@ -121,6 +115,12 @@ class SimericsAnalysis(object):
             self.turbulence_model = turbulence_model
         if time_dependency is not None:
             self.time_dependency = time_dependency
+        if model is not None:
+            self.model = model
+        if materials is not None:
+            self.materials = materials
+        if initial_conditions is not None:
+            self.initial_conditions = initial_conditions
         if boundary_conditions is not None:
             self.boundary_conditions = boundary_conditions
         if advanced_concepts is not None:
@@ -160,69 +160,6 @@ class SimericsAnalysis(object):
         self._type = type
 
     @property
-    def model(self):
-        """Gets the model of this SimericsAnalysis.  # noqa: E501
-
-
-        :return: The model of this SimericsAnalysis.  # noqa: E501
-        :rtype: FluidModel
-        """
-        return self._model
-
-    @model.setter
-    def model(self, model):
-        """Sets the model of this SimericsAnalysis.
-
-
-        :param model: The model of this SimericsAnalysis.  # noqa: E501
-        :type: FluidModel
-        """
-
-        self._model = model
-
-    @property
-    def materials(self):
-        """Gets the materials of this SimericsAnalysis.  # noqa: E501
-
-
-        :return: The materials of this SimericsAnalysis.  # noqa: E501
-        :rtype: SimericsFluidMaterials
-        """
-        return self._materials
-
-    @materials.setter
-    def materials(self, materials):
-        """Sets the materials of this SimericsAnalysis.
-
-
-        :param materials: The materials of this SimericsAnalysis.  # noqa: E501
-        :type: SimericsFluidMaterials
-        """
-
-        self._materials = materials
-
-    @property
-    def initial_conditions(self):
-        """Gets the initial_conditions of this SimericsAnalysis.  # noqa: E501
-
-
-        :return: The initial_conditions of this SimericsAnalysis.  # noqa: E501
-        :rtype: FluidInitialConditions
-        """
-        return self._initial_conditions
-
-    @initial_conditions.setter
-    def initial_conditions(self, initial_conditions):
-        """Sets the initial_conditions of this SimericsAnalysis.
-
-
-        :param initial_conditions: The initial_conditions of this SimericsAnalysis.  # noqa: E501
-        :type: FluidInitialConditions
-        """
-
-        self._initial_conditions = initial_conditions
-
-    @property
     def is_compressible(self):
         """Gets the is_compressible of this SimericsAnalysis.  # noqa: E501
 
@@ -242,27 +179,6 @@ class SimericsAnalysis(object):
         """
 
         self._is_compressible = is_compressible
-
-    @property
-    def is_cht(self):
-        """Gets the is_cht of this SimericsAnalysis.  # noqa: E501
-
-
-        :return: The is_cht of this SimericsAnalysis.  # noqa: E501
-        :rtype: bool
-        """
-        return self._is_cht
-
-    @is_cht.setter
-    def is_cht(self, is_cht):
-        """Sets the is_cht of this SimericsAnalysis.
-
-
-        :param is_cht: The is_cht of this SimericsAnalysis.  # noqa: E501
-        :type: bool
-        """
-
-        self._is_cht = is_cht
 
     @property
     def is_multicomponent(self):
@@ -305,6 +221,27 @@ class SimericsAnalysis(object):
         """
 
         self._is_multiphase = is_multiphase
+
+    @property
+    def is_cht(self):
+        """Gets the is_cht of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The is_cht of this SimericsAnalysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_cht
+
+    @is_cht.setter
+    def is_cht(self, is_cht):
+        """Sets the is_cht of this SimericsAnalysis.
+
+
+        :param is_cht: The is_cht of this SimericsAnalysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_cht = is_cht
 
     @property
     def number_of_phases(self):
@@ -409,6 +346,69 @@ class SimericsAnalysis(object):
         """
 
         self._time_dependency = time_dependency
+
+    @property
+    def model(self):
+        """Gets the model of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The model of this SimericsAnalysis.  # noqa: E501
+        :rtype: FluidModel
+        """
+        return self._model
+
+    @model.setter
+    def model(self, model):
+        """Sets the model of this SimericsAnalysis.
+
+
+        :param model: The model of this SimericsAnalysis.  # noqa: E501
+        :type: FluidModel
+        """
+
+        self._model = model
+
+    @property
+    def materials(self):
+        """Gets the materials of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The materials of this SimericsAnalysis.  # noqa: E501
+        :rtype: SimericsMaterials
+        """
+        return self._materials
+
+    @materials.setter
+    def materials(self, materials):
+        """Sets the materials of this SimericsAnalysis.
+
+
+        :param materials: The materials of this SimericsAnalysis.  # noqa: E501
+        :type: SimericsMaterials
+        """
+
+        self._materials = materials
+
+    @property
+    def initial_conditions(self):
+        """Gets the initial_conditions of this SimericsAnalysis.  # noqa: E501
+
+
+        :return: The initial_conditions of this SimericsAnalysis.  # noqa: E501
+        :rtype: FluidInitialConditions
+        """
+        return self._initial_conditions
+
+    @initial_conditions.setter
+    def initial_conditions(self, initial_conditions):
+        """Sets the initial_conditions of this SimericsAnalysis.
+
+
+        :param initial_conditions: The initial_conditions of this SimericsAnalysis.  # noqa: E501
+        :type: FluidInitialConditions
+        """
+
+        self._initial_conditions = initial_conditions
 
     @property
     def boundary_conditions(self):

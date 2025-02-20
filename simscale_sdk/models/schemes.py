@@ -33,6 +33,7 @@ class Schemes(object):
     openapi_types = {
         'flux': 'FluxSchemes',
         'time_differentiation': 'TimeDifferentiationSchemes',
+        'spatial_discretization': 'SpatialDiscretizationSchemes',
         'gradient': 'GradientSchemes',
         'divergence': 'DivergenceSchemes',
         'laplacian': 'LaplacianSchemes',
@@ -44,6 +45,7 @@ class Schemes(object):
     attribute_map = {
         'flux': 'flux',
         'time_differentiation': 'timeDifferentiation',
+        'spatial_discretization': 'spatialDiscretization',
         'gradient': 'gradient',
         'divergence': 'divergence',
         'laplacian': 'laplacian',
@@ -52,7 +54,7 @@ class Schemes(object):
         'second_order_convection': 'secondOrderConvection'
     }
 
-    def __init__(self, flux=None, time_differentiation=None, gradient=None, divergence=None, laplacian=None, interpolation=None, surface_normal_gradient=None, second_order_convection=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, flux=None, time_differentiation=None, spatial_discretization=None, gradient=None, divergence=None, laplacian=None, interpolation=None, surface_normal_gradient=None, second_order_convection=None, local_vars_configuration=None):  # noqa: E501
         """Schemes - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class Schemes(object):
 
         self._flux = None
         self._time_differentiation = None
+        self._spatial_discretization = None
         self._gradient = None
         self._divergence = None
         self._laplacian = None
@@ -72,6 +75,8 @@ class Schemes(object):
             self.flux = flux
         if time_differentiation is not None:
             self.time_differentiation = time_differentiation
+        if spatial_discretization is not None:
+            self.spatial_discretization = spatial_discretization
         if gradient is not None:
             self.gradient = gradient
         if divergence is not None:
@@ -126,6 +131,27 @@ class Schemes(object):
         """
 
         self._time_differentiation = time_differentiation
+
+    @property
+    def spatial_discretization(self):
+        """Gets the spatial_discretization of this Schemes.  # noqa: E501
+
+
+        :return: The spatial_discretization of this Schemes.  # noqa: E501
+        :rtype: SpatialDiscretizationSchemes
+        """
+        return self._spatial_discretization
+
+    @spatial_discretization.setter
+    def spatial_discretization(self, spatial_discretization):
+        """Sets the spatial_discretization of this Schemes.
+
+
+        :param spatial_discretization: The spatial_discretization of this Schemes.  # noqa: E501
+        :type: SpatialDiscretizationSchemes
+        """
+
+        self._spatial_discretization = spatial_discretization
 
     @property
     def gradient(self):

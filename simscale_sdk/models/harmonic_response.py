@@ -31,7 +31,7 @@ class HarmonicResponse(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'solver': 'OneOfHarmonicResponseSolver'
+        'solver': 'MUMPSSolver'
     }
 
     attribute_map = {
@@ -56,7 +56,7 @@ class HarmonicResponse(object):
 
 
         :return: The solver of this HarmonicResponse.  # noqa: E501
-        :rtype: OneOfHarmonicResponseSolver
+        :rtype: MUMPSSolver
         """
         return self._solver
 
@@ -66,7 +66,7 @@ class HarmonicResponse(object):
 
 
         :param solver: The solver of this HarmonicResponse.  # noqa: E501
-        :type: OneOfHarmonicResponseSolver
+        :type: MUMPSSolver
         """
 
         self._solver = solver

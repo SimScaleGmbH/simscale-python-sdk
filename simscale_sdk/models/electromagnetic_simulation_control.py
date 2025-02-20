@@ -32,29 +32,34 @@ class ElectromagneticSimulationControl(object):
     """
     openapi_types = {
         'transient_magnetics_control': 'ElectromagneticTransientControl',
+        'write_control': 'TimeStepWriteControl',
         'num_processors': 'int',
         'max_run_time': 'DimensionalTime'
     }
 
     attribute_map = {
         'transient_magnetics_control': 'transientMagneticsControl',
+        'write_control': 'writeControl',
         'num_processors': 'numProcessors',
         'max_run_time': 'maxRunTime'
     }
 
-    def __init__(self, transient_magnetics_control=None, num_processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, transient_magnetics_control=None, write_control=None, num_processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._transient_magnetics_control = None
+        self._write_control = None
         self._num_processors = None
         self._max_run_time = None
         self.discriminator = None
 
         if transient_magnetics_control is not None:
             self.transient_magnetics_control = transient_magnetics_control
+        if write_control is not None:
+            self.write_control = write_control
         if num_processors is not None:
             self.num_processors = num_processors
         if max_run_time is not None:
@@ -80,6 +85,27 @@ class ElectromagneticSimulationControl(object):
         """
 
         self._transient_magnetics_control = transient_magnetics_control
+
+    @property
+    def write_control(self):
+        """Gets the write_control of this ElectromagneticSimulationControl.  # noqa: E501
+
+
+        :return: The write_control of this ElectromagneticSimulationControl.  # noqa: E501
+        :rtype: TimeStepWriteControl
+        """
+        return self._write_control
+
+    @write_control.setter
+    def write_control(self, write_control):
+        """Sets the write_control of this ElectromagneticSimulationControl.
+
+
+        :param write_control: The write_control of this ElectromagneticSimulationControl.  # noqa: E501
+        :type: TimeStepWriteControl
+        """
+
+        self._write_control = write_control
 
     @property
     def num_processors(self):

@@ -41,6 +41,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'clothing_coefficient_factor': 'float',
         'metabolic_rate_factor': 'float',
         'relative_humidity_factor': 'float',
+        'mrt_solar_parameters': 'MrtSolarParameters',
         'compute_sensitivities_to': 'str',
         'optimization_force_direction': 'DecimalVector',
         'topological_reference': 'TopologicalReference',
@@ -61,6 +62,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'clothing_coefficient_factor': 'clothingCoefficientFactor',
         'metabolic_rate_factor': 'metabolicRateFactor',
         'relative_humidity_factor': 'relativeHumidityFactor',
+        'mrt_solar_parameters': 'mrtSolarParameters',
         'compute_sensitivities_to': 'computeSensitivitiesTo',
         'optimization_force_direction': 'optimizationForceDirection',
         'topological_reference': 'topologicalReference',
@@ -90,7 +92,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
         'TOTAL_TURBULENCE_INTENSITY': 'FieldCalculationsTotalTIResultControl'
     }
 
-    def __init__(self, type='TOTAL_TURBULENCE_INTENSITY', name=None, pressure_type=None, result_type=None, age_of_fluid_diffusion=None, turbulent_schmidt_number=None, diffusion_coefficient=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, compute_heat_transfer_coefficient=None, reference_temperature_result_type=None, compute_nusselt_number=None, reference_nusselt_number_length=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOTAL_TURBULENCE_INTENSITY', name=None, pressure_type=None, result_type=None, age_of_fluid_diffusion=None, turbulent_schmidt_number=None, diffusion_coefficient=None, clothing_coefficient_factor=None, metabolic_rate_factor=None, relative_humidity_factor=None, mrt_solar_parameters=None, compute_sensitivities_to=None, optimization_force_direction=None, topological_reference=None, compute_heat_transfer_coefficient=None, reference_temperature_result_type=None, compute_nusselt_number=None, reference_nusselt_number_length=None, local_vars_configuration=None):  # noqa: E501
         """OneOfFluidResultControlsFieldCalculations - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -106,6 +108,7 @@ class OneOfFluidResultControlsFieldCalculations(object):
         self._clothing_coefficient_factor = None
         self._metabolic_rate_factor = None
         self._relative_humidity_factor = None
+        self._mrt_solar_parameters = None
         self._compute_sensitivities_to = None
         self._optimization_force_direction = None
         self._topological_reference = None
@@ -134,6 +137,8 @@ class OneOfFluidResultControlsFieldCalculations(object):
             self.metabolic_rate_factor = metabolic_rate_factor
         if relative_humidity_factor is not None:
             self.relative_humidity_factor = relative_humidity_factor
+        if mrt_solar_parameters is not None:
+            self.mrt_solar_parameters = mrt_solar_parameters
         if compute_sensitivities_to is not None:
             self.compute_sensitivities_to = compute_sensitivities_to
         if optimization_force_direction is not None:
@@ -390,6 +395,27 @@ class OneOfFluidResultControlsFieldCalculations(object):
             raise ValueError("Invalid value for `relative_humidity_factor`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._relative_humidity_factor = relative_humidity_factor
+
+    @property
+    def mrt_solar_parameters(self):
+        """Gets the mrt_solar_parameters of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+
+
+        :return: The mrt_solar_parameters of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :rtype: MrtSolarParameters
+        """
+        return self._mrt_solar_parameters
+
+    @mrt_solar_parameters.setter
+    def mrt_solar_parameters(self, mrt_solar_parameters):
+        """Sets the mrt_solar_parameters of this OneOfFluidResultControlsFieldCalculations.
+
+
+        :param mrt_solar_parameters: The mrt_solar_parameters of this OneOfFluidResultControlsFieldCalculations.  # noqa: E501
+        :type: MrtSolarParameters
+        """
+
+        self._mrt_solar_parameters = mrt_solar_parameters
 
     @property
     def compute_sensitivities_to(self):

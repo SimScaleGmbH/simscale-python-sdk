@@ -43,6 +43,7 @@ class PressureInletBC(object):
         'phase_fraction': 'FixedValuePFBC',
         'phase_fractions_v2': 'InletFixedPFValues',
         'mass_fractions_v2': 'InletFixedMFValues',
+        'hydrostatic_pressure': 'HydrostaticPressure',
         'net_radiative_heat_flux': 'OneOfPressureInletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfPressureInletBCRadiativeIntensityRay',
         'relative_humidity': 'FixedValueRHBC',
@@ -62,13 +63,14 @@ class PressureInletBC(object):
         'phase_fraction': 'phaseFraction',
         'phase_fractions_v2': 'phaseFractionsV2',
         'mass_fractions_v2': 'massFractionsV2',
+        'hydrostatic_pressure': 'hydrostaticPressure',
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
         'relative_humidity': 'relativeHumidity',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_INLET_V31', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_INLET_V31', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, hydrostatic_pressure=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureInletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class PressureInletBC(object):
         self._phase_fraction = None
         self._phase_fractions_v2 = None
         self._mass_fractions_v2 = None
+        self._hydrostatic_pressure = None
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
         self._relative_humidity = None
@@ -115,6 +118,8 @@ class PressureInletBC(object):
             self.phase_fractions_v2 = phase_fractions_v2
         if mass_fractions_v2 is not None:
             self.mass_fractions_v2 = mass_fractions_v2
+        if hydrostatic_pressure is not None:
+            self.hydrostatic_pressure = hydrostatic_pressure
         if net_radiative_heat_flux is not None:
             self.net_radiative_heat_flux = net_radiative_heat_flux
         if radiative_intensity_ray is not None:
@@ -381,6 +386,27 @@ class PressureInletBC(object):
         """
 
         self._mass_fractions_v2 = mass_fractions_v2
+
+    @property
+    def hydrostatic_pressure(self):
+        """Gets the hydrostatic_pressure of this PressureInletBC.  # noqa: E501
+
+
+        :return: The hydrostatic_pressure of this PressureInletBC.  # noqa: E501
+        :rtype: HydrostaticPressure
+        """
+        return self._hydrostatic_pressure
+
+    @hydrostatic_pressure.setter
+    def hydrostatic_pressure(self, hydrostatic_pressure):
+        """Sets the hydrostatic_pressure of this PressureInletBC.
+
+
+        :param hydrostatic_pressure: The hydrostatic_pressure of this PressureInletBC.  # noqa: E501
+        :type: HydrostaticPressure
+        """
+
+        self._hydrostatic_pressure = hydrostatic_pressure
 
     @property
     def net_radiative_heat_flux(self):

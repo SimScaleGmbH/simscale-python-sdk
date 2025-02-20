@@ -50,6 +50,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'pressure_rgh': 'AmbientPBC',
         'gauge_pressure': 'FanPBC',
         'gauge_pressure_rgh': 'AmbientPBC',
+        'hydrostatic_pressure': 'HydrostaticPressure',
         'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition'
     }
 
@@ -73,6 +74,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
+        'hydrostatic_pressure': 'hydrostaticPressure',
         'electric_boundary_condition': 'electricBoundaryCondition'
     }
 
@@ -87,7 +89,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
 
-    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, electric_boundary_condition=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, hydrostatic_pressure=None, electric_boundary_condition=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -112,6 +114,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         self._pressure_rgh = None
         self._gauge_pressure = None
         self._gauge_pressure_rgh = None
+        self._hydrostatic_pressure = None
         self._electric_boundary_condition = None
         self.discriminator = 'type'
 
@@ -152,6 +155,8 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
             self.gauge_pressure = gauge_pressure
         if gauge_pressure_rgh is not None:
             self.gauge_pressure_rgh = gauge_pressure_rgh
+        if hydrostatic_pressure is not None:
+            self.hydrostatic_pressure = hydrostatic_pressure
         if electric_boundary_condition is not None:
             self.electric_boundary_condition = electric_boundary_condition
 
@@ -559,6 +564,27 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         """
 
         self._gauge_pressure_rgh = gauge_pressure_rgh
+
+    @property
+    def hydrostatic_pressure(self):
+        """Gets the hydrostatic_pressure of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+
+
+        :return: The hydrostatic_pressure of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: HydrostaticPressure
+        """
+        return self._hydrostatic_pressure
+
+    @hydrostatic_pressure.setter
+    def hydrostatic_pressure(self, hydrostatic_pressure):
+        """Sets the hydrostatic_pressure of this OneOfCoupledConjugateHeatTransferBoundaryConditions.
+
+
+        :param hydrostatic_pressure: The hydrostatic_pressure of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+        :type: HydrostaticPressure
+        """
+
+        self._hydrostatic_pressure = hydrostatic_pressure
 
     @property
     def electric_boundary_condition(self):

@@ -33,11 +33,11 @@ class ElectromagneticMaterial(object):
     openapi_types = {
         'name': 'str',
         'material_behavior': 'OneOfElectromagneticMaterialMaterialBehavior',
-        'electric_conductivity_type': 'LinearIsotropicConductivityMethod',
+        'electric_conductivity_type': 'IsotropicElectricConductivityMethod',
         'magnetic_permeability_type': 'OneOfElectromagneticMaterialMagneticPermeabilityType',
         'core_losses_type': 'OneOfElectromagneticMaterialCoreLossesType',
         'electric_permittivity_type': 'LinearIsotropicPermittivityMethod',
-        'thermal_conductivity': 'LinearIsotropicConstantThermalConductivityMethod',
+        'thermal_conductivity': 'IsotropicThermalConductivityMethod',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
         'material_library_reference': 'MaterialLibraryReference'
@@ -143,7 +143,7 @@ class ElectromagneticMaterial(object):
 
 
         :return: The electric_conductivity_type of this ElectromagneticMaterial.  # noqa: E501
-        :rtype: LinearIsotropicConductivityMethod
+        :rtype: IsotropicElectricConductivityMethod
         """
         return self._electric_conductivity_type
 
@@ -153,7 +153,7 @@ class ElectromagneticMaterial(object):
 
 
         :param electric_conductivity_type: The electric_conductivity_type of this ElectromagneticMaterial.  # noqa: E501
-        :type: LinearIsotropicConductivityMethod
+        :type: IsotropicElectricConductivityMethod
         """
 
         self._electric_conductivity_type = electric_conductivity_type
@@ -227,7 +227,7 @@ class ElectromagneticMaterial(object):
 
 
         :return: The thermal_conductivity of this ElectromagneticMaterial.  # noqa: E501
-        :rtype: LinearIsotropicConstantThermalConductivityMethod
+        :rtype: IsotropicThermalConductivityMethod
         """
         return self._thermal_conductivity
 
@@ -237,7 +237,7 @@ class ElectromagneticMaterial(object):
 
 
         :param thermal_conductivity: The thermal_conductivity of this ElectromagneticMaterial.  # noqa: E501
-        :type: LinearIsotropicConstantThermalConductivityMethod
+        :type: IsotropicThermalConductivityMethod
         """
 
         self._thermal_conductivity = thermal_conductivity

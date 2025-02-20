@@ -38,10 +38,10 @@ class Algorithm(object):
         'automatic_layer_settings': 'OneOfSimmetrixMeshingFluidAutomaticLayerSettings',
         'physics_based_meshing': 'bool',
         'hex_core': 'bool',
+        'automatic_sweep_parameters': 'OneOfSimmetrixMeshingSolidAutomaticSweepParameters',
         'num_of_processors': 'int',
         'max_meshing_run_time': 'DimensionalTime',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixEmSettings',
-        'automatic_sweep_parameters': 'OneOfSimmetrixMeshingSolidAutomaticSweepParameters',
         'meshing_mode': 'str'
     }
 
@@ -53,10 +53,10 @@ class Algorithm(object):
         'automatic_layer_settings': 'automaticLayerSettings',
         'physics_based_meshing': 'physicsBasedMeshing',
         'hex_core': 'hexCore',
+        'automatic_sweep_parameters': 'automaticSweepParameters',
         'num_of_processors': 'numOfProcessors',
         'max_meshing_run_time': 'maxMeshingRunTime',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings',
-        'automatic_sweep_parameters': 'automaticSweepParameters',
         'meshing_mode': 'meshingMode'
     }
 
@@ -67,7 +67,7 @@ class Algorithm(object):
         'HEX_DOMINANT_SNAPPY_V5': 'HexDominantSnappy'
     }
 
-    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, automatic_sweep_parameters=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, automatic_sweep_parameters=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
         """Algorithm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,10 +80,10 @@ class Algorithm(object):
         self._automatic_layer_settings = None
         self._physics_based_meshing = None
         self._hex_core = None
+        self._automatic_sweep_parameters = None
         self._num_of_processors = None
         self._max_meshing_run_time = None
         self._advanced_simmetrix_settings = None
-        self._automatic_sweep_parameters = None
         self._meshing_mode = None
         self.discriminator = 'type'
 
@@ -100,14 +100,14 @@ class Algorithm(object):
             self.physics_based_meshing = physics_based_meshing
         if hex_core is not None:
             self.hex_core = hex_core
+        if automatic_sweep_parameters is not None:
+            self.automatic_sweep_parameters = automatic_sweep_parameters
         if num_of_processors is not None:
             self.num_of_processors = num_of_processors
         if max_meshing_run_time is not None:
             self.max_meshing_run_time = max_meshing_run_time
         if advanced_simmetrix_settings is not None:
             self.advanced_simmetrix_settings = advanced_simmetrix_settings
-        if automatic_sweep_parameters is not None:
-            self.automatic_sweep_parameters = automatic_sweep_parameters
         if meshing_mode is not None:
             self.meshing_mode = meshing_mode
 
@@ -267,6 +267,27 @@ class Algorithm(object):
         self._hex_core = hex_core
 
     @property
+    def automatic_sweep_parameters(self):
+        """Gets the automatic_sweep_parameters of this Algorithm.  # noqa: E501
+
+
+        :return: The automatic_sweep_parameters of this Algorithm.  # noqa: E501
+        :rtype: OneOfSimmetrixMeshingSolidAutomaticSweepParameters
+        """
+        return self._automatic_sweep_parameters
+
+    @automatic_sweep_parameters.setter
+    def automatic_sweep_parameters(self, automatic_sweep_parameters):
+        """Sets the automatic_sweep_parameters of this Algorithm.
+
+
+        :param automatic_sweep_parameters: The automatic_sweep_parameters of this Algorithm.  # noqa: E501
+        :type: OneOfSimmetrixMeshingSolidAutomaticSweepParameters
+        """
+
+        self._automatic_sweep_parameters = automatic_sweep_parameters
+
+    @property
     def num_of_processors(self):
         """Gets the num_of_processors of this Algorithm.  # noqa: E501
 
@@ -336,27 +357,6 @@ class Algorithm(object):
         """
 
         self._advanced_simmetrix_settings = advanced_simmetrix_settings
-
-    @property
-    def automatic_sweep_parameters(self):
-        """Gets the automatic_sweep_parameters of this Algorithm.  # noqa: E501
-
-
-        :return: The automatic_sweep_parameters of this Algorithm.  # noqa: E501
-        :rtype: OneOfSimmetrixMeshingSolidAutomaticSweepParameters
-        """
-        return self._automatic_sweep_parameters
-
-    @automatic_sweep_parameters.setter
-    def automatic_sweep_parameters(self, automatic_sweep_parameters):
-        """Sets the automatic_sweep_parameters of this Algorithm.
-
-
-        :param automatic_sweep_parameters: The automatic_sweep_parameters of this Algorithm.  # noqa: E501
-        :type: OneOfSimmetrixMeshingSolidAutomaticSweepParameters
-        """
-
-        self._automatic_sweep_parameters = automatic_sweep_parameters
 
     @property
     def meshing_mode(self):
