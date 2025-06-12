@@ -36,6 +36,7 @@ class DarcyMedium(object):
         'porosity': 'float',
         'permeability': 'DimensionalArea',
         'drag_coefficient': 'float',
+        'porous_material_type': 'OneOfDarcyMediumPorousMaterialType',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -45,10 +46,11 @@ class DarcyMedium(object):
         'porosity': 'porosity',
         'permeability': 'permeability',
         'drag_coefficient': 'dragCoefficient',
+        'porous_material_type': 'porousMaterialType',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='DARCY', name=None, porosity=None, permeability=None, drag_coefficient=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='DARCY', name=None, porosity=None, permeability=None, drag_coefficient=None, porous_material_type=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """DarcyMedium - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class DarcyMedium(object):
         self._porosity = None
         self._permeability = None
         self._drag_coefficient = None
+        self._porous_material_type = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -71,6 +74,8 @@ class DarcyMedium(object):
             self.permeability = permeability
         if drag_coefficient is not None:
             self.drag_coefficient = drag_coefficient
+        if porous_material_type is not None:
+            self.porous_material_type = porous_material_type
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -195,6 +200,27 @@ class DarcyMedium(object):
             raise ValueError("Invalid value for `drag_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._drag_coefficient = drag_coefficient
+
+    @property
+    def porous_material_type(self):
+        """Gets the porous_material_type of this DarcyMedium.  # noqa: E501
+
+
+        :return: The porous_material_type of this DarcyMedium.  # noqa: E501
+        :rtype: OneOfDarcyMediumPorousMaterialType
+        """
+        return self._porous_material_type
+
+    @porous_material_type.setter
+    def porous_material_type(self, porous_material_type):
+        """Sets the porous_material_type of this DarcyMedium.
+
+
+        :param porous_material_type: The porous_material_type of this DarcyMedium.  # noqa: E501
+        :type: OneOfDarcyMediumPorousMaterialType
+        """
+
+        self._porous_material_type = porous_material_type
 
     @property
     def topological_reference(self):

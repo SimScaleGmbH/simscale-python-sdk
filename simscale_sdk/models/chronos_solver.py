@@ -93,7 +93,7 @@ class ChronosSolver(object):
     def convergence_threshold(self):
         """Gets the convergence_threshold of this ChronosSolver.  # noqa: E501
 
-        Select the convergence tolerance. Can be smaller than with PETSc, and seems to have a big impact on the newton convergence. It is recommended to start with a smaller value in case of convergence problems e.g. 1e-8 - 1e-10.  # noqa: E501
+        Select the convergence tolerance. Can be smaller than with PETSc, and has a big impact on the newton convergence. It is recommended to start with a smaller value in case of convergence problems e.g. 1e-8 - 1e-10.  # noqa: E501
 
         :return: The convergence_threshold of this ChronosSolver.  # noqa: E501
         :rtype: float
@@ -104,7 +104,7 @@ class ChronosSolver(object):
     def convergence_threshold(self, convergence_threshold):
         """Sets the convergence_threshold of this ChronosSolver.
 
-        Select the convergence tolerance. Can be smaller than with PETSc, and seems to have a big impact on the newton convergence. It is recommended to start with a smaller value in case of convergence problems e.g. 1e-8 - 1e-10.  # noqa: E501
+        Select the convergence tolerance. Can be smaller than with PETSc, and has a big impact on the newton convergence. It is recommended to start with a smaller value in case of convergence problems e.g. 1e-8 - 1e-10.  # noqa: E501
 
         :param convergence_threshold: The convergence_threshold of this ChronosSolver.  # noqa: E501
         :type: float

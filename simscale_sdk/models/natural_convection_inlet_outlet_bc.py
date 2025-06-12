@@ -33,7 +33,7 @@ class NaturalConvectionInletOutletBC(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'pressure_rgh': 'AmbientPBC',
+        'pressure_rgh': 'OneOfNaturalConvectionInletOutletBCPressureRgh',
         'gauge_pressure_rgh': 'AmbientPBC',
         'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence',
         'temperature': 'AmbientTBC',
@@ -151,7 +151,7 @@ class NaturalConvectionInletOutletBC(object):
 
 
         :return: The pressure_rgh of this NaturalConvectionInletOutletBC.  # noqa: E501
-        :rtype: AmbientPBC
+        :rtype: OneOfNaturalConvectionInletOutletBCPressureRgh
         """
         return self._pressure_rgh
 
@@ -161,7 +161,7 @@ class NaturalConvectionInletOutletBC(object):
 
 
         :param pressure_rgh: The pressure_rgh of this NaturalConvectionInletOutletBC.  # noqa: E501
-        :type: AmbientPBC
+        :type: OneOfNaturalConvectionInletOutletBCPressureRgh
         """
 
         self._pressure_rgh = pressure_rgh

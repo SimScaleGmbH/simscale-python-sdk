@@ -32,20 +32,23 @@ class OneOfPressureOutletBCPressureRgh(object):
     """
     openapi_types = {
         'type': 'str',
-        'value': 'DimensionalPressure'
+        'value': 'DimensionalPressure',
+        'ambient_static_pressure': 'DimensionalPressure'
     }
 
     attribute_map = {
         'type': 'type',
-        'value': 'value'
+        'value': 'value',
+        'ambient_static_pressure': 'ambientStaticPressure'
     }
 
     discriminator_value_class_map = {
         'FIXED_VALUE': 'FixedValuePBC',
-        'FIXED_MEAN': 'MeanValuePBC'
+        'FIXED_MEAN': 'MeanValuePBC',
+        'HYDROSTATIC_ISOTHERMAL_PRESSURE': 'HydrostaticIsothermalPBC'
     }
 
-    def __init__(self, type='FIXED_MEAN', value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HYDROSTATIC_ISOTHERMAL_PRESSURE', value=None, ambient_static_pressure=None, local_vars_configuration=None):  # noqa: E501
         """OneOfPressureOutletBCPressureRgh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,17 +56,20 @@ class OneOfPressureOutletBCPressureRgh(object):
 
         self._type = None
         self._value = None
+        self._ambient_static_pressure = None
         self.discriminator = 'type'
 
         self.type = type
         if value is not None:
             self.value = value
+        if ambient_static_pressure is not None:
+            self.ambient_static_pressure = ambient_static_pressure
 
     @property
     def type(self):
         """Gets the type of this OneOfPressureOutletBCPressureRgh.  # noqa: E501
 
-        Schema name: MeanValuePBC  # noqa: E501
+        Schema name: HydrostaticIsothermalPBC  # noqa: E501
 
         :return: The type of this OneOfPressureOutletBCPressureRgh.  # noqa: E501
         :rtype: str
@@ -74,7 +80,7 @@ class OneOfPressureOutletBCPressureRgh(object):
     def type(self, type):
         """Sets the type of this OneOfPressureOutletBCPressureRgh.
 
-        Schema name: MeanValuePBC  # noqa: E501
+        Schema name: HydrostaticIsothermalPBC  # noqa: E501
 
         :param type: The type of this OneOfPressureOutletBCPressureRgh.  # noqa: E501
         :type: str
@@ -104,6 +110,27 @@ class OneOfPressureOutletBCPressureRgh(object):
         """
 
         self._value = value
+
+    @property
+    def ambient_static_pressure(self):
+        """Gets the ambient_static_pressure of this OneOfPressureOutletBCPressureRgh.  # noqa: E501
+
+
+        :return: The ambient_static_pressure of this OneOfPressureOutletBCPressureRgh.  # noqa: E501
+        :rtype: DimensionalPressure
+        """
+        return self._ambient_static_pressure
+
+    @ambient_static_pressure.setter
+    def ambient_static_pressure(self, ambient_static_pressure):
+        """Sets the ambient_static_pressure of this OneOfPressureOutletBCPressureRgh.
+
+
+        :param ambient_static_pressure: The ambient_static_pressure of this OneOfPressureOutletBCPressureRgh.  # noqa: E501
+        :type: DimensionalPressure
+        """
+
+        self._ambient_static_pressure = ambient_static_pressure
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

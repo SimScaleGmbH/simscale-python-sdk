@@ -31,45 +31,71 @@ class MarcNumerics(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'solver_settings': 'MarcSolverSettings'
+        'linear_solver_settings': 'MarcLinearSolverSettings',
+        'nonlinear_solver_settings': 'MarcNonlinearSolverSettings'
     }
 
     attribute_map = {
-        'solver_settings': 'solverSettings'
+        'linear_solver_settings': 'linearSolverSettings',
+        'nonlinear_solver_settings': 'nonlinearSolverSettings'
     }
 
-    def __init__(self, solver_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, linear_solver_settings=None, nonlinear_solver_settings=None, local_vars_configuration=None):  # noqa: E501
         """MarcNumerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._solver_settings = None
+        self._linear_solver_settings = None
+        self._nonlinear_solver_settings = None
         self.discriminator = None
 
-        if solver_settings is not None:
-            self.solver_settings = solver_settings
+        if linear_solver_settings is not None:
+            self.linear_solver_settings = linear_solver_settings
+        if nonlinear_solver_settings is not None:
+            self.nonlinear_solver_settings = nonlinear_solver_settings
 
     @property
-    def solver_settings(self):
-        """Gets the solver_settings of this MarcNumerics.  # noqa: E501
+    def linear_solver_settings(self):
+        """Gets the linear_solver_settings of this MarcNumerics.  # noqa: E501
 
 
-        :return: The solver_settings of this MarcNumerics.  # noqa: E501
-        :rtype: MarcSolverSettings
+        :return: The linear_solver_settings of this MarcNumerics.  # noqa: E501
+        :rtype: MarcLinearSolverSettings
         """
-        return self._solver_settings
+        return self._linear_solver_settings
 
-    @solver_settings.setter
-    def solver_settings(self, solver_settings):
-        """Sets the solver_settings of this MarcNumerics.
+    @linear_solver_settings.setter
+    def linear_solver_settings(self, linear_solver_settings):
+        """Sets the linear_solver_settings of this MarcNumerics.
 
 
-        :param solver_settings: The solver_settings of this MarcNumerics.  # noqa: E501
-        :type: MarcSolverSettings
+        :param linear_solver_settings: The linear_solver_settings of this MarcNumerics.  # noqa: E501
+        :type: MarcLinearSolverSettings
         """
 
-        self._solver_settings = solver_settings
+        self._linear_solver_settings = linear_solver_settings
+
+    @property
+    def nonlinear_solver_settings(self):
+        """Gets the nonlinear_solver_settings of this MarcNumerics.  # noqa: E501
+
+
+        :return: The nonlinear_solver_settings of this MarcNumerics.  # noqa: E501
+        :rtype: MarcNonlinearSolverSettings
+        """
+        return self._nonlinear_solver_settings
+
+    @nonlinear_solver_settings.setter
+    def nonlinear_solver_settings(self, nonlinear_solver_settings):
+        """Sets the nonlinear_solver_settings of this MarcNumerics.
+
+
+        :param nonlinear_solver_settings: The nonlinear_solver_settings of this MarcNumerics.  # noqa: E501
+        :type: MarcNonlinearSolverSettings
+        """
+
+        self._nonlinear_solver_settings = nonlinear_solver_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

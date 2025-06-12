@@ -43,6 +43,7 @@ class FluidCompressibleMaterial(object):
         'schmidt_number': 'float',
         'specific_heat_function': 'DimensionalFunctionSpecificHeat',
         'equation_of_state': 'OneOfFluidCompressibleMaterialEquationOfState',
+        'radiative_behavior': 'TransparentMaterial',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'built_in_material': 'str',
@@ -62,13 +63,14 @@ class FluidCompressibleMaterial(object):
         'schmidt_number': 'schmidtNumber',
         'specific_heat_function': 'specificHeatFunction',
         'equation_of_state': 'equationOfState',
+        'radiative_behavior': 'radiativeBehavior',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, specie=None, transport=None, viscosity_model=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, schmidt_number=None, specific_heat_function=None, equation_of_state=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, specie=None, transport=None, viscosity_model=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, schmidt_number=None, specific_heat_function=None, equation_of_state=None, radiative_behavior=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """FluidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -86,6 +88,7 @@ class FluidCompressibleMaterial(object):
         self._schmidt_number = None
         self._specific_heat_function = None
         self._equation_of_state = None
+        self._radiative_behavior = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._built_in_material = None
@@ -115,6 +118,8 @@ class FluidCompressibleMaterial(object):
             self.specific_heat_function = specific_heat_function
         if equation_of_state is not None:
             self.equation_of_state = equation_of_state
+        if radiative_behavior is not None:
+            self.radiative_behavior = radiative_behavior
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -397,6 +402,27 @@ class FluidCompressibleMaterial(object):
         """
 
         self._equation_of_state = equation_of_state
+
+    @property
+    def radiative_behavior(self):
+        """Gets the radiative_behavior of this FluidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The radiative_behavior of this FluidCompressibleMaterial.  # noqa: E501
+        :rtype: TransparentMaterial
+        """
+        return self._radiative_behavior
+
+    @radiative_behavior.setter
+    def radiative_behavior(self, radiative_behavior):
+        """Sets the radiative_behavior of this FluidCompressibleMaterial.
+
+
+        :param radiative_behavior: The radiative_behavior of this FluidCompressibleMaterial.  # noqa: E501
+        :type: TransparentMaterial
+        """
+
+        self._radiative_behavior = radiative_behavior
 
     @property
     def topological_reference(self):

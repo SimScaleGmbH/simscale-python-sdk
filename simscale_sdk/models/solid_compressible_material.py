@@ -35,6 +35,7 @@ class SolidCompressibleMaterial(object):
         'specie': 'SpecieDefault',
         'transport': 'OneOfSolidCompressibleMaterialTransport',
         'emissivity': 'float',
+        'radiative_behavior': 'OneOfSolidCompressibleMaterialRadiativeBehavior',
         'electric_conductivity_type': 'OneOfSolidCompressibleMaterialElectricConductivityType',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
@@ -46,13 +47,14 @@ class SolidCompressibleMaterial(object):
         'specie': 'specie',
         'transport': 'transport',
         'emissivity': 'emissivity',
+        'radiative_behavior': 'radiativeBehavior',
         'electric_conductivity_type': 'electricConductivityType',
         'topological_reference': 'topologicalReference',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, name=None, specie=None, transport=None, emissivity=None, electric_conductivity_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, specie=None, transport=None, emissivity=None, radiative_behavior=None, electric_conductivity_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """SolidCompressibleMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +64,7 @@ class SolidCompressibleMaterial(object):
         self._specie = None
         self._transport = None
         self._emissivity = None
+        self._radiative_behavior = None
         self._electric_conductivity_type = None
         self._topological_reference = None
         self._built_in_material = None
@@ -76,6 +79,8 @@ class SolidCompressibleMaterial(object):
             self.transport = transport
         if emissivity is not None:
             self.emissivity = emissivity
+        if radiative_behavior is not None:
+            self.radiative_behavior = radiative_behavior
         if electric_conductivity_type is not None:
             self.electric_conductivity_type = electric_conductivity_type
         if topological_reference is not None:
@@ -174,6 +179,27 @@ class SolidCompressibleMaterial(object):
             raise ValueError("Invalid value for `emissivity`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._emissivity = emissivity
+
+    @property
+    def radiative_behavior(self):
+        """Gets the radiative_behavior of this SolidCompressibleMaterial.  # noqa: E501
+
+
+        :return: The radiative_behavior of this SolidCompressibleMaterial.  # noqa: E501
+        :rtype: OneOfSolidCompressibleMaterialRadiativeBehavior
+        """
+        return self._radiative_behavior
+
+    @radiative_behavior.setter
+    def radiative_behavior(self, radiative_behavior):
+        """Sets the radiative_behavior of this SolidCompressibleMaterial.
+
+
+        :param radiative_behavior: The radiative_behavior of this SolidCompressibleMaterial.  # noqa: E501
+        :type: OneOfSolidCompressibleMaterialRadiativeBehavior
+        """
+
+        self._radiative_behavior = radiative_behavior
 
     @property
     def electric_conductivity_type(self):

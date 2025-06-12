@@ -34,11 +34,11 @@ class FanBC(object):
         'type': 'str',
         'name': 'str',
         'pressure': 'FanPBC',
-        'pressure_rgh': 'FanPBC',
+        'pressure_rgh': 'OneOfFanBCPressureRgh',
         'gauge_pressure': 'FanPBC',
         'gauge_pressure_rgh': 'FanPBC',
         'turbulence': 'OneOfFanBCTurbulence',
-        'temperature': 'FixedValueTBC',
+        'temperature': 'OneOfFanBCTemperature',
         'passive_scalars': 'list[FixedValuePSBC]',
         'net_radiative_heat_flux': 'OneOfFanBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfFanBCRadiativeIntensityRay',
@@ -182,7 +182,7 @@ class FanBC(object):
 
 
         :return: The pressure_rgh of this FanBC.  # noqa: E501
-        :rtype: FanPBC
+        :rtype: OneOfFanBCPressureRgh
         """
         return self._pressure_rgh
 
@@ -192,7 +192,7 @@ class FanBC(object):
 
 
         :param pressure_rgh: The pressure_rgh of this FanBC.  # noqa: E501
-        :type: FanPBC
+        :type: OneOfFanBCPressureRgh
         """
 
         self._pressure_rgh = pressure_rgh
@@ -266,7 +266,7 @@ class FanBC(object):
 
 
         :return: The temperature of this FanBC.  # noqa: E501
-        :rtype: FixedValueTBC
+        :rtype: OneOfFanBCTemperature
         """
         return self._temperature
 
@@ -276,7 +276,7 @@ class FanBC(object):
 
 
         :param temperature: The temperature of this FanBC.  # noqa: E501
-        :type: FixedValueTBC
+        :type: OneOfFanBCTemperature
         """
 
         self._temperature = temperature

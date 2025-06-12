@@ -155,7 +155,7 @@ class MultifrontalSolver(object):
     def precision_singularity_detection(self):
         """Gets the precision_singularity_detection of this MultifrontalSolver.  # noqa: E501
 
-        Define the precision value for the detection of a singular matrix. Setting it to -1 disables the singularity check. Positive values enable the check, with 9 being a good starting point. Smaller values make the check more strict. This is an advanced option that should only be used to debug a model.  # noqa: E501
+        Define the precision value for the detection of a singular matrix. Positive values enable the check, with 9 being a good starting point. Smaller values make the check more strict. This is an advanced option that should only be used to debug a model.  # noqa: E501
 
         :return: The precision_singularity_detection of this MultifrontalSolver.  # noqa: E501
         :rtype: int
@@ -166,7 +166,7 @@ class MultifrontalSolver(object):
     def precision_singularity_detection(self, precision_singularity_detection):
         """Sets the precision_singularity_detection of this MultifrontalSolver.
 
-        Define the precision value for the detection of a singular matrix. Setting it to -1 disables the singularity check. Positive values enable the check, with 9 being a good starting point. Smaller values make the check more strict. This is an advanced option that should only be used to debug a model.  # noqa: E501
+        Define the precision value for the detection of a singular matrix. Positive values enable the check, with 9 being a good starting point. Smaller values make the check more strict. This is an advanced option that should only be used to debug a model.  # noqa: E501
 
         :param precision_singularity_detection: The precision_singularity_detection of this MultifrontalSolver.  # noqa: E501
         :type: int
@@ -178,7 +178,7 @@ class MultifrontalSolver(object):
     def stop_if_singular(self):
         """Gets the stop_if_singular of this MultifrontalSolver.  # noqa: E501
 
-        Choose if the calculation should be stopped if the problem turns out to be singular. This is only relevant if the precision for detecting a singular matrix is set to a positive value.  # noqa: E501
+        Choose if the calculation should be stopped if the problem turns out to be singular.  # noqa: E501
 
         :return: The stop_if_singular of this MultifrontalSolver.  # noqa: E501
         :rtype: bool
@@ -189,7 +189,7 @@ class MultifrontalSolver(object):
     def stop_if_singular(self, stop_if_singular):
         """Sets the stop_if_singular of this MultifrontalSolver.
 
-        Choose if the calculation should be stopped if the problem turns out to be singular. This is only relevant if the precision for detecting a singular matrix is set to a positive value.  # noqa: E501
+        Choose if the calculation should be stopped if the problem turns out to be singular.  # noqa: E501
 
         :param stop_if_singular: The stop_if_singular of this MultifrontalSolver.  # noqa: E501
         :type: bool

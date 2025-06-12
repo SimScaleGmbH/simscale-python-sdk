@@ -33,21 +33,26 @@ class OneOfCoilCoilType(object):
     openapi_types = {
         'type': 'str',
         'number_of_turns': 'int',
-        'wire_diameter': 'DimensionalLength'
+        'wire_diameter': 'DimensionalLength',
+        'strand_cross_section_type': 'OneOfLitzWireCoilStrandCrossSectionType',
+        'number_of_strands_per_turn': 'int'
     }
 
     attribute_map = {
         'type': 'type',
         'number_of_turns': 'numberOfTurns',
-        'wire_diameter': 'wireDiameter'
+        'wire_diameter': 'wireDiameter',
+        'strand_cross_section_type': 'strandCrossSectionType',
+        'number_of_strands_per_turn': 'numberOfStrandsPerTurn'
     }
 
     discriminator_value_class_map = {
         'STRANDED_COIL': 'StrandedCoil',
-        'SOLID_COIL': 'SolidCoil'
+        'SOLID_COIL': 'SolidCoil',
+        'LITZ_WIRE_COIL': 'LitzWireCoil'
     }
 
-    def __init__(self, type='SOLID_COIL', number_of_turns=None, wire_diameter=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='LITZ_WIRE_COIL', number_of_turns=None, wire_diameter=None, strand_cross_section_type=None, number_of_strands_per_turn=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoilCoilType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -56,6 +61,8 @@ class OneOfCoilCoilType(object):
         self._type = None
         self._number_of_turns = None
         self._wire_diameter = None
+        self._strand_cross_section_type = None
+        self._number_of_strands_per_turn = None
         self.discriminator = 'type'
 
         self.type = type
@@ -63,12 +70,16 @@ class OneOfCoilCoilType(object):
             self.number_of_turns = number_of_turns
         if wire_diameter is not None:
             self.wire_diameter = wire_diameter
+        if strand_cross_section_type is not None:
+            self.strand_cross_section_type = strand_cross_section_type
+        if number_of_strands_per_turn is not None:
+            self.number_of_strands_per_turn = number_of_strands_per_turn
 
     @property
     def type(self):
         """Gets the type of this OneOfCoilCoilType.  # noqa: E501
 
-        Schema name: SolidCoil  # noqa: E501
+        Schema name: LitzWireCoil  # noqa: E501
 
         :return: The type of this OneOfCoilCoilType.  # noqa: E501
         :rtype: str
@@ -79,7 +90,7 @@ class OneOfCoilCoilType(object):
     def type(self, type):
         """Sets the type of this OneOfCoilCoilType.
 
-        Schema name: SolidCoil  # noqa: E501
+        Schema name: LitzWireCoil  # noqa: E501
 
         :param type: The type of this OneOfCoilCoilType.  # noqa: E501
         :type: str
@@ -135,6 +146,51 @@ class OneOfCoilCoilType(object):
         """
 
         self._wire_diameter = wire_diameter
+
+    @property
+    def strand_cross_section_type(self):
+        """Gets the strand_cross_section_type of this OneOfCoilCoilType.  # noqa: E501
+
+
+        :return: The strand_cross_section_type of this OneOfCoilCoilType.  # noqa: E501
+        :rtype: OneOfLitzWireCoilStrandCrossSectionType
+        """
+        return self._strand_cross_section_type
+
+    @strand_cross_section_type.setter
+    def strand_cross_section_type(self, strand_cross_section_type):
+        """Sets the strand_cross_section_type of this OneOfCoilCoilType.
+
+
+        :param strand_cross_section_type: The strand_cross_section_type of this OneOfCoilCoilType.  # noqa: E501
+        :type: OneOfLitzWireCoilStrandCrossSectionType
+        """
+
+        self._strand_cross_section_type = strand_cross_section_type
+
+    @property
+    def number_of_strands_per_turn(self):
+        """Gets the number_of_strands_per_turn of this OneOfCoilCoilType.  # noqa: E501
+
+
+        :return: The number_of_strands_per_turn of this OneOfCoilCoilType.  # noqa: E501
+        :rtype: int
+        """
+        return self._number_of_strands_per_turn
+
+    @number_of_strands_per_turn.setter
+    def number_of_strands_per_turn(self, number_of_strands_per_turn):
+        """Sets the number_of_strands_per_turn of this OneOfCoilCoilType.
+
+
+        :param number_of_strands_per_turn: The number_of_strands_per_turn of this OneOfCoilCoilType.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_strands_per_turn is not None and number_of_strands_per_turn < 1):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_strands_per_turn`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._number_of_strands_per_turn = number_of_strands_per_turn
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

@@ -43,6 +43,7 @@ class PressureOutletBC(object):
         'net_radiative_heat_flux': 'OneOfPressureOutletBCNetRadiativeHeatFlux',
         'radiative_intensity_ray': 'OneOfPressureOutletBCRadiativeIntensityRay',
         'relative_humidity': 'InletOutletRHBC',
+        'temperature': 'AmbientTBC',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -59,10 +60,11 @@ class PressureOutletBC(object):
         'net_radiative_heat_flux': 'netRadiativeHeatFlux',
         'radiative_intensity_ray': 'radiativeIntensityRay',
         'relative_humidity': 'relativeHumidity',
+        'temperature': 'temperature',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_OUTLET_V30', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, phase_fractions_v2=None, mass_fractions_v2=None, hydrostatic_pressure=None, gauge_pressure_rgh=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_OUTLET_V30', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, phase_fractions_v2=None, mass_fractions_v2=None, hydrostatic_pressure=None, gauge_pressure_rgh=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, temperature=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureOutletBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -80,6 +82,7 @@ class PressureOutletBC(object):
         self._net_radiative_heat_flux = None
         self._radiative_intensity_ray = None
         self._relative_humidity = None
+        self._temperature = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -106,6 +109,8 @@ class PressureOutletBC(object):
             self.radiative_intensity_ray = radiative_intensity_ray
         if relative_humidity is not None:
             self.relative_humidity = relative_humidity
+        if temperature is not None:
+            self.temperature = temperature
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -364,6 +369,27 @@ class PressureOutletBC(object):
         """
 
         self._relative_humidity = relative_humidity
+
+    @property
+    def temperature(self):
+        """Gets the temperature of this PressureOutletBC.  # noqa: E501
+
+
+        :return: The temperature of this PressureOutletBC.  # noqa: E501
+        :rtype: AmbientTBC
+        """
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, temperature):
+        """Sets the temperature of this PressureOutletBC.
+
+
+        :param temperature: The temperature of this PressureOutletBC.  # noqa: E501
+        :type: AmbientTBC
+        """
+
+        self._temperature = temperature
 
     @property
     def topological_reference(self):

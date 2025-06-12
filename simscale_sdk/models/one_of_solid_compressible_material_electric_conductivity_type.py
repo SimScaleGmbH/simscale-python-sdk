@@ -32,7 +32,6 @@ class OneOfSolidCompressibleMaterialElectricConductivityType(object):
     """
     openapi_types = {
         'type': 'str',
-        'electric_resistivity': 'DimensionalFunctionElectricResistivity',
         'electric_resistivity_function': 'DimensionalFunctionElectricResistivity',
         'electric_resistivity_x': 'DimensionalFunctionElectricResistivity',
         'electric_resistivity_y': 'DimensionalFunctionElectricResistivity',
@@ -41,7 +40,6 @@ class OneOfSolidCompressibleMaterialElectricConductivityType(object):
 
     attribute_map = {
         'type': 'type',
-        'electric_resistivity': 'electricResistivity',
         'electric_resistivity_function': 'electricResistivityFunction',
         'electric_resistivity_x': 'electricResistivityX',
         'electric_resistivity_y': 'electricResistivityY',
@@ -54,14 +52,13 @@ class OneOfSolidCompressibleMaterialElectricConductivityType(object):
         'ORTHOTROPIC_ELECTRIC_CONDUCTIVITY': 'OrthotropicElectricConductivity'
     }
 
-    def __init__(self, type='ORTHOTROPIC_ELECTRIC_CONDUCTIVITY', electric_resistivity=None, electric_resistivity_function=None, electric_resistivity_x=None, electric_resistivity_y=None, electric_resistivity_z=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ORTHOTROPIC_ELECTRIC_CONDUCTIVITY', electric_resistivity_function=None, electric_resistivity_x=None, electric_resistivity_y=None, electric_resistivity_z=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidCompressibleMaterialElectricConductivityType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._electric_resistivity = None
         self._electric_resistivity_function = None
         self._electric_resistivity_x = None
         self._electric_resistivity_y = None
@@ -69,8 +66,6 @@ class OneOfSolidCompressibleMaterialElectricConductivityType(object):
         self.discriminator = 'type'
 
         self.type = type
-        if electric_resistivity is not None:
-            self.electric_resistivity = electric_resistivity
         if electric_resistivity_function is not None:
             self.electric_resistivity_function = electric_resistivity_function
         if electric_resistivity_x is not None:
@@ -104,27 +99,6 @@ class OneOfSolidCompressibleMaterialElectricConductivityType(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def electric_resistivity(self):
-        """Gets the electric_resistivity of this OneOfSolidCompressibleMaterialElectricConductivityType.  # noqa: E501
-
-
-        :return: The electric_resistivity of this OneOfSolidCompressibleMaterialElectricConductivityType.  # noqa: E501
-        :rtype: DimensionalFunctionElectricResistivity
-        """
-        return self._electric_resistivity
-
-    @electric_resistivity.setter
-    def electric_resistivity(self, electric_resistivity):
-        """Sets the electric_resistivity of this OneOfSolidCompressibleMaterialElectricConductivityType.
-
-
-        :param electric_resistivity: The electric_resistivity of this OneOfSolidCompressibleMaterialElectricConductivityType.  # noqa: E501
-        :type: DimensionalFunctionElectricResistivity
-        """
-
-        self._electric_resistivity = electric_resistivity
 
     @property
     def electric_resistivity_function(self):

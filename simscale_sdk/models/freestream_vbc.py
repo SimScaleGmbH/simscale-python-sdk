@@ -32,15 +32,17 @@ class FreestreamVBC(object):
     """
     openapi_types = {
         'type': 'str',
-        'value': 'DimensionalVectorSpeed'
+        'value': 'DimensionalVectorSpeed',
+        'ambient_pressure': 'OneOfFreestreamVBCAmbientPressure'
     }
 
     attribute_map = {
         'type': 'type',
-        'value': 'value'
+        'value': 'value',
+        'ambient_pressure': 'ambientPressure'
     }
 
-    def __init__(self, type='FREESTREAM', value=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREESTREAM', value=None, ambient_pressure=None, local_vars_configuration=None):  # noqa: E501
         """FreestreamVBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,11 +50,14 @@ class FreestreamVBC(object):
 
         self._type = None
         self._value = None
+        self._ambient_pressure = None
         self.discriminator = None
 
         self.type = type
         if value is not None:
             self.value = value
+        if ambient_pressure is not None:
+            self.ambient_pressure = ambient_pressure
 
     @property
     def type(self):
@@ -99,6 +104,27 @@ class FreestreamVBC(object):
         """
 
         self._value = value
+
+    @property
+    def ambient_pressure(self):
+        """Gets the ambient_pressure of this FreestreamVBC.  # noqa: E501
+
+
+        :return: The ambient_pressure of this FreestreamVBC.  # noqa: E501
+        :rtype: OneOfFreestreamVBCAmbientPressure
+        """
+        return self._ambient_pressure
+
+    @ambient_pressure.setter
+    def ambient_pressure(self, ambient_pressure):
+        """Sets the ambient_pressure of this FreestreamVBC.
+
+
+        :param ambient_pressure: The ambient_pressure of this FreestreamVBC.  # noqa: E501
+        :type: OneOfFreestreamVBCAmbientPressure
+        """
+
+        self._ambient_pressure = ambient_pressure
 
     def to_dict(self):
         """Returns the model properties as a dict"""

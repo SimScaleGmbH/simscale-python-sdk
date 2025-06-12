@@ -31,29 +31,189 @@ class MarcSimulationControl(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        'end_time': 'DimensionalTime',
+        'initial_time_step': 'DimensionalTime',
+        'minimum_time_step': 'DimensionalTime',
+        'maximum_time_step': 'DimensionalTime',
+        'write_frequency': 'int',
         'num_processors': 'int',
+        'manually_assign_parallelization': 'bool',
+        'nprocds': 'int',
+        'nte': 'int',
+        'nts': 'int',
+        'nsolver': 'int',
         'max_run_time': 'DimensionalTime'
     }
 
     attribute_map = {
+        'end_time': 'endTime',
+        'initial_time_step': 'initialTimeStep',
+        'minimum_time_step': 'minimumTimeStep',
+        'maximum_time_step': 'maximumTimeStep',
+        'write_frequency': 'writeFrequency',
         'num_processors': 'numProcessors',
+        'manually_assign_parallelization': 'manuallyAssignParallelization',
+        'nprocds': 'nprocds',
+        'nte': 'nte',
+        'nts': 'nts',
+        'nsolver': 'nsolver',
         'max_run_time': 'maxRunTime'
     }
 
-    def __init__(self, num_processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, end_time=None, initial_time_step=None, minimum_time_step=None, maximum_time_step=None, write_frequency=None, num_processors=None, manually_assign_parallelization=None, nprocds=None, nte=None, nts=None, nsolver=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
         """MarcSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._end_time = None
+        self._initial_time_step = None
+        self._minimum_time_step = None
+        self._maximum_time_step = None
+        self._write_frequency = None
         self._num_processors = None
+        self._manually_assign_parallelization = None
+        self._nprocds = None
+        self._nte = None
+        self._nts = None
+        self._nsolver = None
         self._max_run_time = None
         self.discriminator = None
 
+        if end_time is not None:
+            self.end_time = end_time
+        if initial_time_step is not None:
+            self.initial_time_step = initial_time_step
+        if minimum_time_step is not None:
+            self.minimum_time_step = minimum_time_step
+        if maximum_time_step is not None:
+            self.maximum_time_step = maximum_time_step
+        if write_frequency is not None:
+            self.write_frequency = write_frequency
         if num_processors is not None:
             self.num_processors = num_processors
+        if manually_assign_parallelization is not None:
+            self.manually_assign_parallelization = manually_assign_parallelization
+        if nprocds is not None:
+            self.nprocds = nprocds
+        if nte is not None:
+            self.nte = nte
+        if nts is not None:
+            self.nts = nts
+        if nsolver is not None:
+            self.nsolver = nsolver
         if max_run_time is not None:
             self.max_run_time = max_run_time
+
+    @property
+    def end_time(self):
+        """Gets the end_time of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The end_time of this MarcSimulationControl.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._end_time
+
+    @end_time.setter
+    def end_time(self, end_time):
+        """Sets the end_time of this MarcSimulationControl.
+
+
+        :param end_time: The end_time of this MarcSimulationControl.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._end_time = end_time
+
+    @property
+    def initial_time_step(self):
+        """Gets the initial_time_step of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The initial_time_step of this MarcSimulationControl.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._initial_time_step
+
+    @initial_time_step.setter
+    def initial_time_step(self, initial_time_step):
+        """Sets the initial_time_step of this MarcSimulationControl.
+
+
+        :param initial_time_step: The initial_time_step of this MarcSimulationControl.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._initial_time_step = initial_time_step
+
+    @property
+    def minimum_time_step(self):
+        """Gets the minimum_time_step of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The minimum_time_step of this MarcSimulationControl.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._minimum_time_step
+
+    @minimum_time_step.setter
+    def minimum_time_step(self, minimum_time_step):
+        """Sets the minimum_time_step of this MarcSimulationControl.
+
+
+        :param minimum_time_step: The minimum_time_step of this MarcSimulationControl.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._minimum_time_step = minimum_time_step
+
+    @property
+    def maximum_time_step(self):
+        """Gets the maximum_time_step of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The maximum_time_step of this MarcSimulationControl.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._maximum_time_step
+
+    @maximum_time_step.setter
+    def maximum_time_step(self, maximum_time_step):
+        """Sets the maximum_time_step of this MarcSimulationControl.
+
+
+        :param maximum_time_step: The maximum_time_step of this MarcSimulationControl.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._maximum_time_step = maximum_time_step
+
+    @property
+    def write_frequency(self):
+        """Gets the write_frequency of this MarcSimulationControl.  # noqa: E501
+
+        Output results are saved every n time steps. Use a value larger than one to reduce the size of the output data and speed up the postprocessing.  # noqa: E501
+
+        :return: The write_frequency of this MarcSimulationControl.  # noqa: E501
+        :rtype: int
+        """
+        return self._write_frequency
+
+    @write_frequency.setter
+    def write_frequency(self, write_frequency):
+        """Sets the write_frequency of this MarcSimulationControl.
+
+        Output results are saved every n time steps. Use a value larger than one to reduce the size of the output data and speed up the postprocessing.  # noqa: E501
+
+        :param write_frequency: The write_frequency of this MarcSimulationControl.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                write_frequency is not None and write_frequency < 1):  # noqa: E501
+            raise ValueError("Invalid value for `write_frequency`, must be a value greater than or equal to `1`")  # noqa: E501
+
+        self._write_frequency = write_frequency
 
     @property
     def num_processors(self):
@@ -83,6 +243,123 @@ class MarcSimulationControl(object):
             )
 
         self._num_processors = num_processors
+
+    @property
+    def manually_assign_parallelization(self):
+        """Gets the manually_assign_parallelization of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The manually_assign_parallelization of this MarcSimulationControl.  # noqa: E501
+        :rtype: bool
+        """
+        return self._manually_assign_parallelization
+
+    @manually_assign_parallelization.setter
+    def manually_assign_parallelization(self, manually_assign_parallelization):
+        """Sets the manually_assign_parallelization of this MarcSimulationControl.
+
+
+        :param manually_assign_parallelization: The manually_assign_parallelization of this MarcSimulationControl.  # noqa: E501
+        :type: bool
+        """
+
+        self._manually_assign_parallelization = manually_assign_parallelization
+
+    @property
+    def nprocds(self):
+        """Gets the nprocds of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The nprocds of this MarcSimulationControl.  # noqa: E501
+        :rtype: int
+        """
+        return self._nprocds
+
+    @nprocds.setter
+    def nprocds(self, nprocds):
+        """Sets the nprocds of this MarcSimulationControl.
+
+
+        :param nprocds: The nprocds of this MarcSimulationControl.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                nprocds is not None and nprocds < -1):  # noqa: E501
+            raise ValueError("Invalid value for `nprocds`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._nprocds = nprocds
+
+    @property
+    def nte(self):
+        """Gets the nte of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The nte of this MarcSimulationControl.  # noqa: E501
+        :rtype: int
+        """
+        return self._nte
+
+    @nte.setter
+    def nte(self, nte):
+        """Sets the nte of this MarcSimulationControl.
+
+
+        :param nte: The nte of this MarcSimulationControl.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                nte is not None and nte < -1):  # noqa: E501
+            raise ValueError("Invalid value for `nte`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._nte = nte
+
+    @property
+    def nts(self):
+        """Gets the nts of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The nts of this MarcSimulationControl.  # noqa: E501
+        :rtype: int
+        """
+        return self._nts
+
+    @nts.setter
+    def nts(self, nts):
+        """Sets the nts of this MarcSimulationControl.
+
+
+        :param nts: The nts of this MarcSimulationControl.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                nts is not None and nts < -1):  # noqa: E501
+            raise ValueError("Invalid value for `nts`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._nts = nts
+
+    @property
+    def nsolver(self):
+        """Gets the nsolver of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The nsolver of this MarcSimulationControl.  # noqa: E501
+        :rtype: int
+        """
+        return self._nsolver
+
+    @nsolver.setter
+    def nsolver(self, nsolver):
+        """Sets the nsolver of this MarcSimulationControl.
+
+
+        :param nsolver: The nsolver of this MarcSimulationControl.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                nsolver is not None and nsolver < -1):  # noqa: E501
+            raise ValueError("Invalid value for `nsolver`, must be a value greater than or equal to `-1`")  # noqa: E501
+
+        self._nsolver = nsolver
 
     @property
     def max_run_time(self):

@@ -43,10 +43,13 @@ class OneOfElectromagneticResultControlProbePointFieldSelection(object):
     discriminator_value_class_map = {
         'MAGNETIC_FLUX_DENSITY': 'MagneticFluxDensityFieldSelection',
         'MAGNETIC_FIELD': 'MagneticFieldFieldSelection',
-        'ELECTRIC_CURRENT_DENSITY': 'ElectricCurrentDensityFieldSelection'
+        'ELECTRIC_CURRENT_DENSITY': 'ElectricCurrentDensityFieldSelection',
+        'ELECTRIC_POTENTIAL': 'ElectricPotentialFieldSelection',
+        'ELECTRIC_FIELD': 'ElectricFieldFieldSelection',
+        'ELECTRIC_DISPLACEMENT_FIELD': 'ElectricDisplacementFieldFieldSelection'
     }
 
-    def __init__(self, type='ELECTRIC_CURRENT_DENSITY', component_selection=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELECTRIC_DISPLACEMENT_FIELD', component_selection=None, local_vars_configuration=None):  # noqa: E501
         """OneOfElectromagneticResultControlProbePointFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,7 +67,7 @@ class OneOfElectromagneticResultControlProbePointFieldSelection(object):
     def type(self):
         """Gets the type of this OneOfElectromagneticResultControlProbePointFieldSelection.  # noqa: E501
 
-        Schema name: ElectricCurrentDensityFieldSelection  # noqa: E501
+        Schema name: ElectricDisplacementFieldFieldSelection  # noqa: E501
 
         :return: The type of this OneOfElectromagneticResultControlProbePointFieldSelection.  # noqa: E501
         :rtype: str
@@ -75,7 +78,7 @@ class OneOfElectromagneticResultControlProbePointFieldSelection(object):
     def type(self, type):
         """Sets the type of this OneOfElectromagneticResultControlProbePointFieldSelection.
 
-        Schema name: ElectricCurrentDensityFieldSelection  # noqa: E501
+        Schema name: ElectricDisplacementFieldFieldSelection  # noqa: E501
 
         :param type: The type of this OneOfElectromagneticResultControlProbePointFieldSelection.  # noqa: E501
         :type: str

@@ -46,6 +46,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'specific_heat_function': 'DimensionalFunctionSpecificHeat',
         'molar_weight': 'DimensionalMolarMass',
         'cavitation': 'Cavitation',
+        'radiative_behavior': 'TransparentMaterial',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'built_in_material': 'str',
@@ -72,6 +73,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'specific_heat_function': 'specificHeatFunction',
         'molar_weight': 'molarWeight',
         'cavitation': 'cavitation',
+        'radiative_behavior': 'radiativeBehavior',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'built_in_material': 'builtInMaterial',
@@ -87,7 +89,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         'COMPRESSIBLE': 'FluidCompressibleMaterial'
     }
 
-    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, specific_heat=None, specific_heat_function=None, molar_weight=None, cavitation=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, schmidt_number=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COMPRESSIBLE', name=None, fluid_type=None, associated_phase=None, viscosity_model=None, density=None, thermal_expansion_coefficient=None, reference_temperature=None, laminar_prandtl_number=None, laminar_prandtl_number_function=None, turbulent_prandtl_number=None, specific_heat=None, specific_heat_function=None, molar_weight=None, cavitation=None, radiative_behavior=None, topological_reference=None, geometry_primitive_uuids=None, built_in_material=None, material_library_reference=None, specie=None, transport=None, schmidt_number=None, equation_of_state=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferMaterialsFluids - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -108,6 +110,7 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         self._specific_heat_function = None
         self._molar_weight = None
         self._cavitation = None
+        self._radiative_behavior = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self._built_in_material = None
@@ -147,6 +150,8 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
             self.molar_weight = molar_weight
         if cavitation is not None:
             self.cavitation = cavitation
+        if radiative_behavior is not None:
+            self.radiative_behavior = radiative_behavior
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -500,6 +505,27 @@ class OneOfCoupledConjugateHeatTransferMaterialsFluids(object):
         """
 
         self._cavitation = cavitation
+
+    @property
+    def radiative_behavior(self):
+        """Gets the radiative_behavior of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+
+
+        :return: The radiative_behavior of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :rtype: TransparentMaterial
+        """
+        return self._radiative_behavior
+
+    @radiative_behavior.setter
+    def radiative_behavior(self, radiative_behavior):
+        """Sets the radiative_behavior of this OneOfCoupledConjugateHeatTransferMaterialsFluids.
+
+
+        :param radiative_behavior: The radiative_behavior of this OneOfCoupledConjugateHeatTransferMaterialsFluids.  # noqa: E501
+        :type: TransparentMaterial
+        """
+
+        self._radiative_behavior = radiative_behavior
 
     @property
     def topological_reference(self):

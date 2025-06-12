@@ -32,7 +32,7 @@ class MarcMaterial(object):
     """
     openapi_types = {
         'name': 'str',
-        'marc_material_behavior': 'LinearElasticMarcMaterialBehavior',
+        'marc_material_behavior': 'OneOfMarcMaterialMarcMaterialBehavior',
         'density': 'DimensionalFunctionDensity',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
@@ -102,7 +102,7 @@ class MarcMaterial(object):
 
 
         :return: The marc_material_behavior of this MarcMaterial.  # noqa: E501
-        :rtype: LinearElasticMarcMaterialBehavior
+        :rtype: OneOfMarcMaterialMarcMaterialBehavior
         """
         return self._marc_material_behavior
 
@@ -112,7 +112,7 @@ class MarcMaterial(object):
 
 
         :param marc_material_behavior: The marc_material_behavior of this MarcMaterial.  # noqa: E501
-        :type: LinearElasticMarcMaterialBehavior
+        :type: OneOfMarcMaterialMarcMaterialBehavior
         """
 
         self._marc_material_behavior = marc_material_behavior

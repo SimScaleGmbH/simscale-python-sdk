@@ -34,17 +34,19 @@ class ElectromagneticSimulationControl(object):
         'transient_magnetics_control': 'ElectromagneticTransientControl',
         'write_control': 'TimeStepWriteControl',
         'num_processors': 'int',
-        'max_run_time': 'DimensionalTime'
+        'max_run_time': 'DimensionalTime',
+        'core_loss_reference_period': 'DimensionalTime'
     }
 
     attribute_map = {
         'transient_magnetics_control': 'transientMagneticsControl',
         'write_control': 'writeControl',
         'num_processors': 'numProcessors',
-        'max_run_time': 'maxRunTime'
+        'max_run_time': 'maxRunTime',
+        'core_loss_reference_period': 'coreLossReferencePeriod'
     }
 
-    def __init__(self, transient_magnetics_control=None, write_control=None, num_processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, transient_magnetics_control=None, write_control=None, num_processors=None, max_run_time=None, core_loss_reference_period=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class ElectromagneticSimulationControl(object):
         self._write_control = None
         self._num_processors = None
         self._max_run_time = None
+        self._core_loss_reference_period = None
         self.discriminator = None
 
         if transient_magnetics_control is not None:
@@ -64,6 +67,8 @@ class ElectromagneticSimulationControl(object):
             self.num_processors = num_processors
         if max_run_time is not None:
             self.max_run_time = max_run_time
+        if core_loss_reference_period is not None:
+            self.core_loss_reference_period = core_loss_reference_period
 
     @property
     def transient_magnetics_control(self):
@@ -156,6 +161,27 @@ class ElectromagneticSimulationControl(object):
         """
 
         self._max_run_time = max_run_time
+
+    @property
+    def core_loss_reference_period(self):
+        """Gets the core_loss_reference_period of this ElectromagneticSimulationControl.  # noqa: E501
+
+
+        :return: The core_loss_reference_period of this ElectromagneticSimulationControl.  # noqa: E501
+        :rtype: DimensionalTime
+        """
+        return self._core_loss_reference_period
+
+    @core_loss_reference_period.setter
+    def core_loss_reference_period(self, core_loss_reference_period):
+        """Sets the core_loss_reference_period of this ElectromagneticSimulationControl.
+
+
+        :param core_loss_reference_period: The core_loss_reference_period of this ElectromagneticSimulationControl.  # noqa: E501
+        :type: DimensionalTime
+        """
+
+        self._core_loss_reference_period = core_loss_reference_period
 
     def to_dict(self):
         """Returns the model properties as a dict"""

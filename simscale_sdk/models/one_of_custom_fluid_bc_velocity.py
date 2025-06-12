@@ -38,6 +38,7 @@ class OneOfCustomFluidBCVelocity(object):
         'gradient': 'DimensionalVectorSpecificTurbulenceDissipationRate',
         'value': 'DimensionalVectorSpeed',
         'flow_rate': 'OneOfFlowRateMeanInletVBCFlowRate',
+        'ambient_pressure': 'OneOfFreestreamVBCAmbientPressure',
         'turbulence_wall': 'str',
         'orientation_reference': 'str',
         'wall_contact_model': 'list[WallContactAngle]',
@@ -57,6 +58,7 @@ class OneOfCustomFluidBCVelocity(object):
         'gradient': 'gradient',
         'value': 'value',
         'flow_rate': 'flowRate',
+        'ambient_pressure': 'ambientPressure',
         'turbulence_wall': 'turbulenceWall',
         'orientation_reference': 'orientationReference',
         'wall_contact_model': 'wallContactModel',
@@ -88,7 +90,7 @@ class OneOfCustomFluidBCVelocity(object):
         'SLIP': 'SlipVBC'
     }
 
-    def __init__(self, type='SLIP', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, turbulence_wall=None, orientation_reference=None, wall_contact_model=None, enable_surface_roughness=None, surface_roughness=None, no_slip_wall_roughness_type=None, phase=None, mean_velocity=None, rotation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='SLIP', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, gradient=None, value=None, flow_rate=None, ambient_pressure=None, turbulence_wall=None, orientation_reference=None, wall_contact_model=None, enable_surface_roughness=None, surface_roughness=None, no_slip_wall_roughness_type=None, phase=None, mean_velocity=None, rotation=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -101,6 +103,7 @@ class OneOfCustomFluidBCVelocity(object):
         self._gradient = None
         self._value = None
         self._flow_rate = None
+        self._ambient_pressure = None
         self._turbulence_wall = None
         self._orientation_reference = None
         self._wall_contact_model = None
@@ -125,6 +128,8 @@ class OneOfCustomFluidBCVelocity(object):
             self.value = value
         if flow_rate is not None:
             self.flow_rate = flow_rate
+        if ambient_pressure is not None:
+            self.ambient_pressure = ambient_pressure
         if turbulence_wall is not None:
             self.turbulence_wall = turbulence_wall
         if orientation_reference is not None:
@@ -294,6 +299,27 @@ class OneOfCustomFluidBCVelocity(object):
         """
 
         self._flow_rate = flow_rate
+
+    @property
+    def ambient_pressure(self):
+        """Gets the ambient_pressure of this OneOfCustomFluidBCVelocity.  # noqa: E501
+
+
+        :return: The ambient_pressure of this OneOfCustomFluidBCVelocity.  # noqa: E501
+        :rtype: OneOfFreestreamVBCAmbientPressure
+        """
+        return self._ambient_pressure
+
+    @ambient_pressure.setter
+    def ambient_pressure(self, ambient_pressure):
+        """Sets the ambient_pressure of this OneOfCustomFluidBCVelocity.
+
+
+        :param ambient_pressure: The ambient_pressure of this OneOfCustomFluidBCVelocity.  # noqa: E501
+        :type: OneOfFreestreamVBCAmbientPressure
+        """
+
+        self._ambient_pressure = ambient_pressure
 
     @property
     def turbulence_wall(self):

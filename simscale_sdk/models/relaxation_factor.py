@@ -50,6 +50,7 @@ class RelaxationFactor(object):
         'internal_energy': 'float',
         'gas_mixture_transport': 'float',
         'radiative_intensity_ray_equation': 'float',
+        'radiative_intensity_ray_field': 'float',
         'specific_humidity_equation': 'float',
         'age_of_fluid_equation': 'float',
         'voltage_field': 'float'
@@ -75,12 +76,13 @@ class RelaxationFactor(object):
         'internal_energy': 'internalEnergy',
         'gas_mixture_transport': 'gasMixtureTransport',
         'radiative_intensity_ray_equation': 'radiativeIntensityRayEquation',
+        'radiative_intensity_ray_field': 'radiativeIntensityRayField',
         'specific_humidity_equation': 'specificHumidityEquation',
         'age_of_fluid_equation': 'ageOfFluidEquation',
         'voltage_field': 'voltageField'
     }
 
-    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, velocity=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, turbulent_kinetic_energy=None, turbulent_energy_dissipation_rate=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, internal_energy=None, gas_mixture_transport=None, radiative_intensity_ray_equation=None, specific_humidity_equation=None, age_of_fluid_equation=None, voltage_field=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, velocity=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, turbulent_kinetic_energy=None, turbulent_energy_dissipation_rate=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, internal_energy=None, gas_mixture_transport=None, radiative_intensity_ray_equation=None, radiative_intensity_ray_field=None, specific_humidity_equation=None, age_of_fluid_equation=None, voltage_field=None, local_vars_configuration=None):  # noqa: E501
         """RelaxationFactor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +107,7 @@ class RelaxationFactor(object):
         self._internal_energy = None
         self._gas_mixture_transport = None
         self._radiative_intensity_ray_equation = None
+        self._radiative_intensity_ray_field = None
         self._specific_humidity_equation = None
         self._age_of_fluid_equation = None
         self._voltage_field = None
@@ -148,6 +151,8 @@ class RelaxationFactor(object):
             self.gas_mixture_transport = gas_mixture_transport
         if radiative_intensity_ray_equation is not None:
             self.radiative_intensity_ray_equation = radiative_intensity_ray_equation
+        if radiative_intensity_ray_field is not None:
+            self.radiative_intensity_ray_field = radiative_intensity_ray_field
         if specific_humidity_equation is not None:
             self.specific_humidity_equation = specific_humidity_equation
         if age_of_fluid_equation is not None:
@@ -675,6 +680,33 @@ class RelaxationFactor(object):
             raise ValueError("Invalid value for `radiative_intensity_ray_equation`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._radiative_intensity_ray_equation = radiative_intensity_ray_equation
+
+    @property
+    def radiative_intensity_ray_field(self):
+        """Gets the radiative_intensity_ray_field of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The radiative_intensity_ray_field of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._radiative_intensity_ray_field
+
+    @radiative_intensity_ray_field.setter
+    def radiative_intensity_ray_field(self, radiative_intensity_ray_field):
+        """Sets the radiative_intensity_ray_field of this RelaxationFactor.
+
+
+        :param radiative_intensity_ray_field: The radiative_intensity_ray_field of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                radiative_intensity_ray_field is not None and radiative_intensity_ray_field > 1):  # noqa: E501
+            raise ValueError("Invalid value for `radiative_intensity_ray_field`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                radiative_intensity_ray_field is not None and radiative_intensity_ray_field < 0):  # noqa: E501
+            raise ValueError("Invalid value for `radiative_intensity_ray_field`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._radiative_intensity_ray_field = radiative_intensity_ray_field
 
     @property
     def specific_humidity_equation(self):

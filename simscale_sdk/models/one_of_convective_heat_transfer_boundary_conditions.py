@@ -47,7 +47,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
         'relative_humidity': 'InletOutletRHBC',
         'topological_reference': 'TopologicalReference',
         'pressure': 'OneOfCustomFluidBCPressure',
-        'pressure_rgh': 'AmbientPBC',
+        'pressure_rgh': 'OneOfNaturalConvectionInletOutletBCPressureRgh',
         'gauge_pressure': 'OneOfCustomFluidBCGaugePressure',
         'gauge_pressure_rgh': 'AmbientPBC',
         'hydrostatic_pressure': 'HydrostaticPressure',
@@ -104,6 +104,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
         'WALL_V34': 'WallBC',
         'FAN': 'FanBC',
         'SYMMETRY': 'SymmetryBC',
+        'PERIODIC': 'PeriodicBC',
         'WEDGE': 'WedgeBC',
         'CUSTOM_V37': 'CustomFluidBC',
         'EMPTY_2D': 'Empty2DBC',
@@ -556,7 +557,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
 
 
         :return: The pressure_rgh of this OneOfConvectiveHeatTransferBoundaryConditions.  # noqa: E501
-        :rtype: AmbientPBC
+        :rtype: OneOfNaturalConvectionInletOutletBCPressureRgh
         """
         return self._pressure_rgh
 
@@ -566,7 +567,7 @@ class OneOfConvectiveHeatTransferBoundaryConditions(object):
 
 
         :param pressure_rgh: The pressure_rgh of this OneOfConvectiveHeatTransferBoundaryConditions.  # noqa: E501
-        :type: AmbientPBC
+        :type: OneOfNaturalConvectionInletOutletBCPressureRgh
         """
 
         self._pressure_rgh = pressure_rgh

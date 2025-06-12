@@ -32,52 +32,37 @@ class PETSCSolver(object):
     """
     openapi_types = {
         'type': 'str',
-        'force_symmetric': 'bool',
-        'algorithm': 'str',
-        'preconditioner': 'OneOfPETSCSolverPreconditioner',
-        'max_iterations': 'int',
         'convergence_threshold': 'float',
-        'distributed_matrix_storage': 'bool'
+        'max_iterations': 'int',
+        'advanced_petsc_settings': 'AdvancedPETSCSettings'
     }
 
     attribute_map = {
         'type': 'type',
-        'force_symmetric': 'forceSymmetric',
-        'algorithm': 'algorithm',
-        'preconditioner': 'preconditioner',
-        'max_iterations': 'maxIterations',
         'convergence_threshold': 'convergenceThreshold',
-        'distributed_matrix_storage': 'distributedMatrixStorage'
+        'max_iterations': 'maxIterations',
+        'advanced_petsc_settings': 'advancedPetscSettings'
     }
 
-    def __init__(self, type='PETSC', force_symmetric=None, algorithm=None, preconditioner=None, max_iterations=None, convergence_threshold=None, distributed_matrix_storage=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PETSC', convergence_threshold=None, max_iterations=None, advanced_petsc_settings=None, local_vars_configuration=None):  # noqa: E501
         """PETSCSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._force_symmetric = None
-        self._algorithm = None
-        self._preconditioner = None
-        self._max_iterations = None
         self._convergence_threshold = None
-        self._distributed_matrix_storage = None
+        self._max_iterations = None
+        self._advanced_petsc_settings = None
         self.discriminator = None
 
         self.type = type
-        if force_symmetric is not None:
-            self.force_symmetric = force_symmetric
-        if algorithm is not None:
-            self.algorithm = algorithm
-        if preconditioner is not None:
-            self.preconditioner = preconditioner
-        if max_iterations is not None:
-            self.max_iterations = max_iterations
         if convergence_threshold is not None:
             self.convergence_threshold = convergence_threshold
-        if distributed_matrix_storage is not None:
-            self.distributed_matrix_storage = distributed_matrix_storage
+        if max_iterations is not None:
+            self.max_iterations = max_iterations
+        if advanced_petsc_settings is not None:
+            self.advanced_petsc_settings = advanced_petsc_settings
 
     @property
     def type(self):
@@ -103,105 +88,6 @@ class PETSCSolver(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def force_symmetric(self):
-        """Gets the force_symmetric of this PETSCSolver.  # noqa: E501
-
-        Choose if you want to enforce a symmetric matrix.  # noqa: E501
-
-        :return: The force_symmetric of this PETSCSolver.  # noqa: E501
-        :rtype: bool
-        """
-        return self._force_symmetric
-
-    @force_symmetric.setter
-    def force_symmetric(self, force_symmetric):
-        """Sets the force_symmetric of this PETSCSolver.
-
-        Choose if you want to enforce a symmetric matrix.  # noqa: E501
-
-        :param force_symmetric: The force_symmetric of this PETSCSolver.  # noqa: E501
-        :type: bool
-        """
-
-        self._force_symmetric = force_symmetric
-
-    @property
-    def algorithm(self):
-        """Gets the algorithm of this PETSCSolver.  # noqa: E501
-
-        Choose the iterative solver method: <ul><li><p><b>GMRES</b>: <i>Minimal Generalised RESidual</i>, best compromise between robustness and computational speed.</p></ul><ul><li><p><b>CG</b>: <i>Conjugate Gradient</i>, only useful for symmetric matrices</p></ul><ul><li><p><b>CR</b>: <i>Conjugate Residual</i>, only useful for symmetric matrices</p></ul><ul><li><p><b>GCR</b>: <i>Generalised Conjugate Residual</i>, treats general matrices</p></ul>All available methods are of <i>Krylov</i> type.  # noqa: E501
-
-        :return: The algorithm of this PETSCSolver.  # noqa: E501
-        :rtype: str
-        """
-        return self._algorithm
-
-    @algorithm.setter
-    def algorithm(self, algorithm):
-        """Sets the algorithm of this PETSCSolver.
-
-        Choose the iterative solver method: <ul><li><p><b>GMRES</b>: <i>Minimal Generalised RESidual</i>, best compromise between robustness and computational speed.</p></ul><ul><li><p><b>CG</b>: <i>Conjugate Gradient</i>, only useful for symmetric matrices</p></ul><ul><li><p><b>CR</b>: <i>Conjugate Residual</i>, only useful for symmetric matrices</p></ul><ul><li><p><b>GCR</b>: <i>Generalised Conjugate Residual</i>, treats general matrices</p></ul>All available methods are of <i>Krylov</i> type.  # noqa: E501
-
-        :param algorithm: The algorithm of this PETSCSolver.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["CG", "CR", "GCR", "GMRES"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and algorithm not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `algorithm` ({0}), must be one of {1}"  # noqa: E501
-                .format(algorithm, allowed_values)
-            )
-
-        self._algorithm = algorithm
-
-    @property
-    def preconditioner(self):
-        """Gets the preconditioner of this PETSCSolver.  # noqa: E501
-
-
-        :return: The preconditioner of this PETSCSolver.  # noqa: E501
-        :rtype: OneOfPETSCSolverPreconditioner
-        """
-        return self._preconditioner
-
-    @preconditioner.setter
-    def preconditioner(self, preconditioner):
-        """Sets the preconditioner of this PETSCSolver.
-
-
-        :param preconditioner: The preconditioner of this PETSCSolver.  # noqa: E501
-        :type: OneOfPETSCSolverPreconditioner
-        """
-
-        self._preconditioner = preconditioner
-
-    @property
-    def max_iterations(self):
-        """Gets the max_iterations of this PETSCSolver.  # noqa: E501
-
-        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
-
-        :return: The max_iterations of this PETSCSolver.  # noqa: E501
-        :rtype: int
-        """
-        return self._max_iterations
-
-    @max_iterations.setter
-    def max_iterations(self, max_iterations):
-        """Sets the max_iterations of this PETSCSolver.
-
-        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
-
-        :param max_iterations: The max_iterations of this PETSCSolver.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                max_iterations is not None and max_iterations < 0):  # noqa: E501
-            raise ValueError("Invalid value for `max_iterations`, must be a value greater than or equal to `0`")  # noqa: E501
-
-        self._max_iterations = max_iterations
 
     @property
     def convergence_threshold(self):
@@ -230,27 +116,51 @@ class PETSCSolver(object):
         self._convergence_threshold = convergence_threshold
 
     @property
-    def distributed_matrix_storage(self):
-        """Gets the distributed_matrix_storage of this PETSCSolver.  # noqa: E501
+    def max_iterations(self):
+        """Gets the max_iterations of this PETSCSolver.  # noqa: E501
 
-        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor. Enabling this can significantly reductions in memory consumption, but introduces numerical instability in rare occasions.  # noqa: E501
+        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
 
-        :return: The distributed_matrix_storage of this PETSCSolver.  # noqa: E501
-        :rtype: bool
+        :return: The max_iterations of this PETSCSolver.  # noqa: E501
+        :rtype: int
         """
-        return self._distributed_matrix_storage
+        return self._max_iterations
 
-    @distributed_matrix_storage.setter
-    def distributed_matrix_storage(self, distributed_matrix_storage):
-        """Sets the distributed_matrix_storage of this PETSCSolver.
+    @max_iterations.setter
+    def max_iterations(self, max_iterations):
+        """Sets the max_iterations of this PETSCSolver.
 
-        Choose this parameter as <b>true</b> to ensure that the system matrix saving is distributed among the processors of the computation. If multiple cores are used only the relevant part for each core is saved. If it is set to false the whole matrix is saved for each processor. Enabling this can significantly reductions in memory consumption, but introduces numerical instability in rare occasions.  # noqa: E501
+        Set the maximum number of iterations for the iterative solver. If set to 0 PETSC sets an estimate of the maximum number of iterations.  # noqa: E501
 
-        :param distributed_matrix_storage: The distributed_matrix_storage of this PETSCSolver.  # noqa: E501
-        :type: bool
+        :param max_iterations: The max_iterations of this PETSCSolver.  # noqa: E501
+        :type: int
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                max_iterations is not None and max_iterations < 0):  # noqa: E501
+            raise ValueError("Invalid value for `max_iterations`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._max_iterations = max_iterations
+
+    @property
+    def advanced_petsc_settings(self):
+        """Gets the advanced_petsc_settings of this PETSCSolver.  # noqa: E501
+
+
+        :return: The advanced_petsc_settings of this PETSCSolver.  # noqa: E501
+        :rtype: AdvancedPETSCSettings
+        """
+        return self._advanced_petsc_settings
+
+    @advanced_petsc_settings.setter
+    def advanced_petsc_settings(self, advanced_petsc_settings):
+        """Sets the advanced_petsc_settings of this PETSCSolver.
+
+
+        :param advanced_petsc_settings: The advanced_petsc_settings of this PETSCSolver.  # noqa: E501
+        :type: AdvancedPETSCSettings
         """
 
-        self._distributed_matrix_storage = distributed_matrix_storage
+        self._advanced_petsc_settings = advanced_petsc_settings
 
     def to_dict(self):
         """Returns the model properties as a dict"""

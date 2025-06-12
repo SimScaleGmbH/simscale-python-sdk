@@ -34,6 +34,7 @@ class PressureLossFunctionMedium(object):
         'type': 'str',
         'name': 'str',
         'pressure_loss_function': 'DimensionalFunctionPressure',
+        'porous_material_type': 'OneOfPressureLossFunctionMediumPorousMaterialType',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -41,10 +42,11 @@ class PressureLossFunctionMedium(object):
         'type': 'type',
         'name': 'name',
         'pressure_loss_function': 'pressureLossFunction',
+        'porous_material_type': 'porousMaterialType',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='PRESSURE_LOSS_FUNCTION', name=None, pressure_loss_function=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_LOSS_FUNCTION', name=None, pressure_loss_function=None, porous_material_type=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """PressureLossFunctionMedium - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class PressureLossFunctionMedium(object):
         self._type = None
         self._name = None
         self._pressure_loss_function = None
+        self._porous_material_type = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -61,6 +64,8 @@ class PressureLossFunctionMedium(object):
             self.name = name
         if pressure_loss_function is not None:
             self.pressure_loss_function = pressure_loss_function
+        if porous_material_type is not None:
+            self.porous_material_type = porous_material_type
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -130,6 +135,27 @@ class PressureLossFunctionMedium(object):
         """
 
         self._pressure_loss_function = pressure_loss_function
+
+    @property
+    def porous_material_type(self):
+        """Gets the porous_material_type of this PressureLossFunctionMedium.  # noqa: E501
+
+
+        :return: The porous_material_type of this PressureLossFunctionMedium.  # noqa: E501
+        :rtype: OneOfPressureLossFunctionMediumPorousMaterialType
+        """
+        return self._porous_material_type
+
+    @porous_material_type.setter
+    def porous_material_type(self, porous_material_type):
+        """Sets the porous_material_type of this PressureLossFunctionMedium.
+
+
+        :param porous_material_type: The porous_material_type of this PressureLossFunctionMedium.  # noqa: E501
+        :type: OneOfPressureLossFunctionMediumPorousMaterialType
+        """
+
+        self._porous_material_type = porous_material_type
 
     @property
     def topological_reference(self):

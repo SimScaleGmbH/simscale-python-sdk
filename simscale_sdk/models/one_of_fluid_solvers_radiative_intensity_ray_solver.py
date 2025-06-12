@@ -34,7 +34,7 @@ class OneOfFluidSolversRadiativeIntensityRaySolver(object):
         'type': 'str',
         'absolute_tolerance': 'float',
         'relative_tolerance': 'float',
-        'preconditioner': 'OneOfPBICGSolverPreconditioner',
+        'preconditioner': 'OneOfPBICGStabSolverPreconditioner',
         'smoother': 'str',
         'num_sweeps': 'int'
     }
@@ -50,6 +50,7 @@ class OneOfFluidSolversRadiativeIntensityRaySolver(object):
 
     discriminator_value_class_map = {
         'PBICG': 'PBICGSolver',
+        'PBICGStab': 'PBICGStabSolver',
         'SMOOTH': 'SmoothSolver'
     }
 
@@ -168,7 +169,7 @@ class OneOfFluidSolversRadiativeIntensityRaySolver(object):
 
 
         :return: The preconditioner of this OneOfFluidSolversRadiativeIntensityRaySolver.  # noqa: E501
-        :rtype: OneOfPBICGSolverPreconditioner
+        :rtype: OneOfPBICGStabSolverPreconditioner
         """
         return self._preconditioner
 
@@ -178,7 +179,7 @@ class OneOfFluidSolversRadiativeIntensityRaySolver(object):
 
 
         :param preconditioner: The preconditioner of this OneOfFluidSolversRadiativeIntensityRaySolver.  # noqa: E501
-        :type: OneOfPBICGSolverPreconditioner
+        :type: OneOfPBICGStabSolverPreconditioner
         """
 
         self._preconditioner = preconditioner

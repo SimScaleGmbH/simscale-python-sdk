@@ -32,7 +32,7 @@ class AutomaticSimericsMeshSettings(object):
     """
     openapi_types = {
         'type': 'str',
-        'refinements': 'list[RegionRefinementSimerics]',
+        'refinements': 'list[OneOfAutomaticSimericsMeshSettingsRefinements]',
         'fineness': 'float',
         'enable_cad_surface_merging': 'bool'
     }
@@ -95,7 +95,7 @@ class AutomaticSimericsMeshSettings(object):
 
 
         :return: The refinements of this AutomaticSimericsMeshSettings.  # noqa: E501
-        :rtype: list[RegionRefinementSimerics]
+        :rtype: list[OneOfAutomaticSimericsMeshSettingsRefinements]
         """
         return self._refinements
 
@@ -105,7 +105,7 @@ class AutomaticSimericsMeshSettings(object):
 
 
         :param refinements: The refinements of this AutomaticSimericsMeshSettings.  # noqa: E501
-        :type: list[RegionRefinementSimerics]
+        :type: list[OneOfAutomaticSimericsMeshSettingsRefinements]
         """
 
         self._refinements = refinements

@@ -33,6 +33,7 @@ class OneOfVelocityOutletBCVelocity(object):
     openapi_types = {
         'type': 'str',
         'value': 'DimensionalVectorSpeed',
+        'ambient_pressure': 'OneOfFreestreamVBCAmbientPressure',
         'phase': 'str',
         'mean_velocity': 'DimensionalSpeed',
         'flow_rate': 'OneOfFlowRateStableOutletVBCFlowRate',
@@ -42,6 +43,7 @@ class OneOfVelocityOutletBCVelocity(object):
     attribute_map = {
         'type': 'type',
         'value': 'value',
+        'ambient_pressure': 'ambientPressure',
         'phase': 'phase',
         'mean_velocity': 'meanVelocity',
         'flow_rate': 'flowRate',
@@ -59,7 +61,7 @@ class OneOfVelocityOutletBCVelocity(object):
         'MEAN_VALUE_OUTLET_VELOCITY': 'MeanValueOutletVBC'
     }
 
-    def __init__(self, type='MEAN_VALUE_OUTLET_VELOCITY', value=None, phase=None, mean_velocity=None, flow_rate=None, normal_velocity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MEAN_VALUE_OUTLET_VELOCITY', value=None, ambient_pressure=None, phase=None, mean_velocity=None, flow_rate=None, normal_velocity=None, local_vars_configuration=None):  # noqa: E501
         """OneOfVelocityOutletBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -67,6 +69,7 @@ class OneOfVelocityOutletBCVelocity(object):
 
         self._type = None
         self._value = None
+        self._ambient_pressure = None
         self._phase = None
         self._mean_velocity = None
         self._flow_rate = None
@@ -76,6 +79,8 @@ class OneOfVelocityOutletBCVelocity(object):
         self.type = type
         if value is not None:
             self.value = value
+        if ambient_pressure is not None:
+            self.ambient_pressure = ambient_pressure
         if phase is not None:
             self.phase = phase
         if mean_velocity is not None:
@@ -130,6 +135,27 @@ class OneOfVelocityOutletBCVelocity(object):
         """
 
         self._value = value
+
+    @property
+    def ambient_pressure(self):
+        """Gets the ambient_pressure of this OneOfVelocityOutletBCVelocity.  # noqa: E501
+
+
+        :return: The ambient_pressure of this OneOfVelocityOutletBCVelocity.  # noqa: E501
+        :rtype: OneOfFreestreamVBCAmbientPressure
+        """
+        return self._ambient_pressure
+
+    @ambient_pressure.setter
+    def ambient_pressure(self, ambient_pressure):
+        """Sets the ambient_pressure of this OneOfVelocityOutletBCVelocity.
+
+
+        :param ambient_pressure: The ambient_pressure of this OneOfVelocityOutletBCVelocity.  # noqa: E501
+        :type: OneOfFreestreamVBCAmbientPressure
+        """
+
+        self._ambient_pressure = ambient_pressure
 
     @property
     def phase(self):

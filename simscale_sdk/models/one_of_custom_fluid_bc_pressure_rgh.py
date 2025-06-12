@@ -59,10 +59,11 @@ class OneOfCustomFluidBCPressureRgh(object):
         'FREESTREAM': 'FreestreamPBC',
         'FIXED_MEAN': 'MeanValuePBC',
         'ZERO_GRADIENT': 'ZeroGradientPBC',
-        'TOTAL_PRESSURE': 'TotalPBC'
+        'TOTAL_PRESSURE': 'TotalPBC',
+        'HYDROSTATIC_ISOTHERMAL_FAN_PRESSURE': 'HydrostaticFanPBC'
     }
 
-    def __init__(self, type='TOTAL_PRESSURE', direction=None, fan_pressure=None, environmental_total_pressure=None, gradient=None, value=None, total_pressure=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HYDROSTATIC_ISOTHERMAL_FAN_PRESSURE', direction=None, fan_pressure=None, environmental_total_pressure=None, gradient=None, value=None, total_pressure=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCPressureRgh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -95,7 +96,7 @@ class OneOfCustomFluidBCPressureRgh(object):
     def type(self):
         """Gets the type of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
 
-        Schema name: TotalPBC  # noqa: E501
+        <p>This pressure formulation is suitable for atmospheric flows with perfect gas fluids: the pressure decreases with increasing height to keep the domain at hydrostatic equilibrium. The ambient pressure in the input sets the pressure at ground level.  Schema name: HydrostaticFanPBC  # noqa: E501
 
         :return: The type of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
         :rtype: str
@@ -106,7 +107,7 @@ class OneOfCustomFluidBCPressureRgh(object):
     def type(self, type):
         """Sets the type of this OneOfCustomFluidBCPressureRgh.
 
-        Schema name: TotalPBC  # noqa: E501
+        <p>This pressure formulation is suitable for atmospheric flows with perfect gas fluids: the pressure decreases with increasing height to keep the domain at hydrostatic equilibrium. The ambient pressure in the input sets the pressure at ground level.  Schema name: HydrostaticFanPBC  # noqa: E501
 
         :param type: The type of this OneOfCustomFluidBCPressureRgh.  # noqa: E501
         :type: str

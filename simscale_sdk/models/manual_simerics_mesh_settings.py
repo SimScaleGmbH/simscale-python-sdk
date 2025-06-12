@@ -32,7 +32,7 @@ class ManualSimericsMeshSettings(object):
     """
     openapi_types = {
         'type': 'str',
-        'refinements': 'list[RegionRefinementSimerics]',
+        'refinements': 'list[OneOfManualSimericsMeshSettingsRefinements]',
         'cell_size_specification': 'OneOfManualSimericsMeshSettingsCellSizeSpecification',
         'enable_cad_surface_merging': 'bool'
     }
@@ -95,7 +95,7 @@ class ManualSimericsMeshSettings(object):
 
 
         :return: The refinements of this ManualSimericsMeshSettings.  # noqa: E501
-        :rtype: list[RegionRefinementSimerics]
+        :rtype: list[OneOfManualSimericsMeshSettingsRefinements]
         """
         return self._refinements
 
@@ -105,7 +105,7 @@ class ManualSimericsMeshSettings(object):
 
 
         :param refinements: The refinements of this ManualSimericsMeshSettings.  # noqa: E501
-        :type: list[RegionRefinementSimerics]
+        :type: list[OneOfManualSimericsMeshSettingsRefinements]
         """
 
         self._refinements = refinements

@@ -3,8 +3,8 @@ simscale\_sdk package
 
 .. automodule:: simscale_sdk
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 Subpackages
 -----------
@@ -23,29 +23,29 @@ simscale\_sdk.api\_client module
 
 .. automodule:: simscale_sdk.api_client
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 simscale\_sdk.configuration module
 ----------------------------------
 
 .. automodule:: simscale_sdk.configuration
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 simscale\_sdk.exceptions module
 -------------------------------
 
 .. automodule:: simscale_sdk.exceptions
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:
 
 simscale\_sdk.rest module
 -------------------------
 
 .. automodule:: simscale_sdk.rest
    :members:
-   :undoc-members:
    :show-inheritance:
+   :undoc-members:

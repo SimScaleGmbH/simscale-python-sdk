@@ -33,13 +33,15 @@ class OneOfVelocityInletBCVelocity(object):
     openapi_types = {
         'type': 'str',
         'value': 'DimensionalVectorSpeed',
-        'flow_rate': 'OneOfFlowRateMeanInletVBCFlowRate'
+        'flow_rate': 'OneOfFlowRateMeanInletVBCFlowRate',
+        'ambient_pressure': 'OneOfFreestreamVBCAmbientPressure'
     }
 
     attribute_map = {
         'type': 'type',
         'value': 'value',
-        'flow_rate': 'flowRate'
+        'flow_rate': 'flowRate',
+        'ambient_pressure': 'ambientPressure'
     }
 
     discriminator_value_class_map = {
@@ -51,7 +53,7 @@ class OneOfVelocityInletBCVelocity(object):
         'FREESTREAM': 'FreestreamVBC'
     }
 
-    def __init__(self, type='FREESTREAM', value=None, flow_rate=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FREESTREAM', value=None, flow_rate=None, ambient_pressure=None, local_vars_configuration=None):  # noqa: E501
         """OneOfVelocityInletBCVelocity - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +62,7 @@ class OneOfVelocityInletBCVelocity(object):
         self._type = None
         self._value = None
         self._flow_rate = None
+        self._ambient_pressure = None
         self.discriminator = 'type'
 
         self.type = type
@@ -67,6 +70,8 @@ class OneOfVelocityInletBCVelocity(object):
             self.value = value
         if flow_rate is not None:
             self.flow_rate = flow_rate
+        if ambient_pressure is not None:
+            self.ambient_pressure = ambient_pressure
 
     @property
     def type(self):
@@ -134,6 +139,27 @@ class OneOfVelocityInletBCVelocity(object):
         """
 
         self._flow_rate = flow_rate
+
+    @property
+    def ambient_pressure(self):
+        """Gets the ambient_pressure of this OneOfVelocityInletBCVelocity.  # noqa: E501
+
+
+        :return: The ambient_pressure of this OneOfVelocityInletBCVelocity.  # noqa: E501
+        :rtype: OneOfFreestreamVBCAmbientPressure
+        """
+        return self._ambient_pressure
+
+    @ambient_pressure.setter
+    def ambient_pressure(self, ambient_pressure):
+        """Sets the ambient_pressure of this OneOfVelocityInletBCVelocity.
+
+
+        :param ambient_pressure: The ambient_pressure of this OneOfVelocityInletBCVelocity.  # noqa: E501
+        :type: OneOfFreestreamVBCAmbientPressure
+        """
+
+        self._ambient_pressure = ambient_pressure
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

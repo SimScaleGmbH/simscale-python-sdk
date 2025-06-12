@@ -41,7 +41,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
         'radiative_intensity_ray': 'OpenBoundaryRayBC',
         'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition',
         'topological_reference': 'TopologicalReference',
-        'pressure_rgh': 'AmbientPBC',
+        'pressure_rgh': 'OneOfNaturalConvectionInletOutletBCPressureRgh',
         'gauge_pressure_rgh': 'AmbientPBC',
         'turbulence': 'OneOfNaturalConvectionInletOutletBCTurbulence',
         'passive_scalars': 'list[InletOutletPSBC]'
@@ -339,7 +339,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
 
 
         :return: The pressure_rgh of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
-        :rtype: AmbientPBC
+        :rtype: OneOfNaturalConvectionInletOutletBCPressureRgh
         """
         return self._pressure_rgh
 
@@ -349,7 +349,7 @@ class OneOfEmbeddedBoundaryExternalFlowBoundaryCondition(object):
 
 
         :param pressure_rgh: The pressure_rgh of this OneOfEmbeddedBoundaryExternalFlowBoundaryCondition.  # noqa: E501
-        :type: AmbientPBC
+        :type: OneOfNaturalConvectionInletOutletBCPressureRgh
         """
 
         self._pressure_rgh = pressure_rgh

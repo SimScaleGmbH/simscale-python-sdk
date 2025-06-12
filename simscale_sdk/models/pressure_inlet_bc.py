@@ -33,8 +33,8 @@ class PressureInletBC(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'pressure': 'TotalPBC',
-        'pressure_rgh': 'TotalPBC',
+        'pressure': 'OneOfPressureInletBCPressure',
+        'pressure_rgh': 'OneOfPressureInletBCPressureRgh',
         'gauge_pressure': 'OneOfPressureInletBCGaugePressure',
         'gauge_pressure_rgh': 'TotalPBC',
         'turbulence': 'OneOfPressureInletBCTurbulence',
@@ -181,7 +181,7 @@ class PressureInletBC(object):
 
 
         :return: The pressure of this PressureInletBC.  # noqa: E501
-        :rtype: TotalPBC
+        :rtype: OneOfPressureInletBCPressure
         """
         return self._pressure
 
@@ -191,7 +191,7 @@ class PressureInletBC(object):
 
 
         :param pressure: The pressure of this PressureInletBC.  # noqa: E501
-        :type: TotalPBC
+        :type: OneOfPressureInletBCPressure
         """
 
         self._pressure = pressure
@@ -202,7 +202,7 @@ class PressureInletBC(object):
 
 
         :return: The pressure_rgh of this PressureInletBC.  # noqa: E501
-        :rtype: TotalPBC
+        :rtype: OneOfPressureInletBCPressureRgh
         """
         return self._pressure_rgh
 
@@ -212,7 +212,7 @@ class PressureInletBC(object):
 
 
         :param pressure_rgh: The pressure_rgh of this PressureInletBC.  # noqa: E501
-        :type: TotalPBC
+        :type: OneOfPressureInletBCPressureRgh
         """
 
         self._pressure_rgh = pressure_rgh
