@@ -33,16 +33,18 @@ class MarcContact(object):
     openapi_types = {
         'type': 'str',
         'friction': 'str',
+        'contact_formulation': 'str',
         'connections': 'list[OneOfMarcContactConnections]'
     }
 
     attribute_map = {
         'type': 'type',
         'friction': 'friction',
+        'contact_formulation': 'contactFormulation',
         'connections': 'connections'
     }
 
-    def __init__(self, type='CONTACT', friction=None, connections=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONTACT', friction=None, contact_formulation=None, connections=None, local_vars_configuration=None):  # noqa: E501
         """MarcContact - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,12 +52,15 @@ class MarcContact(object):
 
         self._type = None
         self._friction = None
+        self._contact_formulation = None
         self._connections = None
         self.discriminator = None
 
         self.type = type
         if friction is not None:
             self.friction = friction
+        if contact_formulation is not None:
+            self.contact_formulation = contact_formulation
         if connections is not None:
             self.connections = connections
 
@@ -110,6 +115,33 @@ class MarcContact(object):
             )
 
         self._friction = friction
+
+    @property
+    def contact_formulation(self):
+        """Gets the contact_formulation of this MarcContact.  # noqa: E501
+
+
+        :return: The contact_formulation of this MarcContact.  # noqa: E501
+        :rtype: str
+        """
+        return self._contact_formulation
+
+    @contact_formulation.setter
+    def contact_formulation(self, contact_formulation):
+        """Sets the contact_formulation of this MarcContact.
+
+
+        :param contact_formulation: The contact_formulation of this MarcContact.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["ONE_SIDED", "DOUBLE_SIDED"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and contact_formulation not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `contact_formulation` ({0}), must be one of {1}"  # noqa: E501
+                .format(contact_formulation, allowed_values)
+            )
+
+        self._contact_formulation = contact_formulation
 
     @property
     def connections(self):

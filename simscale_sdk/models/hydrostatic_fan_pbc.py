@@ -32,33 +32,28 @@ class HydrostaticFanPBC(object):
     """
     openapi_types = {
         'type': 'str',
-        'direction': 'str',
         'fan_pressure': 'DimensionalFunctionPressure',
         'environmental_total_pressure': 'DimensionalPressure'
     }
 
     attribute_map = {
         'type': 'type',
-        'direction': 'direction',
         'fan_pressure': 'fanPressure',
         'environmental_total_pressure': 'environmentalTotalPressure'
     }
 
-    def __init__(self, type='HYDROSTATIC_ISOTHERMAL_FAN_PRESSURE', direction=None, fan_pressure=None, environmental_total_pressure=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HYDROSTATIC_ISOTHERMAL_FAN_PRESSURE', fan_pressure=None, environmental_total_pressure=None, local_vars_configuration=None):  # noqa: E501
         """HydrostaticFanPBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._direction = None
         self._fan_pressure = None
         self._environmental_total_pressure = None
         self.discriminator = None
 
         self.type = type
-        if direction is not None:
-            self.direction = direction
         if fan_pressure is not None:
             self.fan_pressure = fan_pressure
         if environmental_total_pressure is not None:
@@ -88,33 +83,6 @@ class HydrostaticFanPBC(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
-
-    @property
-    def direction(self):
-        """Gets the direction of this HydrostaticFanPBC.  # noqa: E501
-
-
-        :return: The direction of this HydrostaticFanPBC.  # noqa: E501
-        :rtype: str
-        """
-        return self._direction
-
-    @direction.setter
-    def direction(self, direction):
-        """Sets the direction of this HydrostaticFanPBC.
-
-
-        :param direction: The direction of this HydrostaticFanPBC.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["IN", "OUT"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and direction not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
-                .format(direction, allowed_values)
-            )
-
-        self._direction = direction
 
     @property
     def fan_pressure(self):

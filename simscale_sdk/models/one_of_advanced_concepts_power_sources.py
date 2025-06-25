@@ -51,10 +51,12 @@ class OneOfAdvancedConceptsPowerSources(object):
     discriminator_value_class_map = {
         'ABSOLUTE_V23': 'AbsolutePowerSource',
         'SPECIFIC_V23': 'SpecificPowerSource',
-        'HEAT_EXCHANGER_SOURCE': 'HeatExchangerSource'
+        'HEAT_EXCHANGER_SOURCE': 'HeatExchangerSource',
+        'TR_ABSOLUTE_POWER_SOURCE': 'TrAbsolutePowerSource',
+        'TR_SPECIFIC_POWER_SOURCE': 'TrSpecificPowerSource'
     }
 
-    def __init__(self, type='HEAT_EXCHANGER_SOURCE', name=None, heat_flux=None, topological_reference=None, geometry_primitive_uuids=None, heat_exchanger_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TR_SPECIFIC_POWER_SOURCE', name=None, heat_flux=None, topological_reference=None, geometry_primitive_uuids=None, heat_exchanger_mode=None, local_vars_configuration=None):  # noqa: E501
         """OneOfAdvancedConceptsPowerSources - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,7 +86,7 @@ class OneOfAdvancedConceptsPowerSources(object):
     def type(self):
         """Gets the type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
 
-        <i>Power sources</i> can be used to simulate heat generation from a volume. Three types are available:<br><li><b>Absolute</b>: Used when total power emitted by the assigned volume is known.<li><b>Specific:</b> Used when power density of the assigned volume is known.<li><b>Heat exchanger:</b> Used to model a heat exchanger on a fluid region. The heat input is computed from the total conductance (U [W/K]) and the difference between the fluid temperature (T) and the heat exchanger temperature (Tref). Q = U (T - Tref). <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: HeatExchangerSource  # noqa: E501
+        Schema name: TrSpecificPowerSource  # noqa: E501
 
         :return: The type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
         :rtype: str
@@ -95,7 +97,7 @@ class OneOfAdvancedConceptsPowerSources(object):
     def type(self, type):
         """Sets the type of this OneOfAdvancedConceptsPowerSources.
 
-        <i>Power sources</i> can be used to simulate heat generation from a volume. Three types are available:<br><li><b>Absolute</b>: Used when total power emitted by the assigned volume is known.<li><b>Specific:</b> Used when power density of the assigned volume is known.<li><b>Heat exchanger:</b> Used to model a heat exchanger on a fluid region. The heat input is computed from the total conductance (U [W/K]) and the difference between the fluid temperature (T) and the heat exchanger temperature (Tref). Q = U (T - Tref). <a href='https://www.simscale.com/docs/simulation-setup/advanced-concepts/power-sources/' target='_blank'>Learn more</a>.  Schema name: HeatExchangerSource  # noqa: E501
+        Schema name: TrSpecificPowerSource  # noqa: E501
 
         :param type: The type of this OneOfAdvancedConceptsPowerSources.  # noqa: E501
         :type: str

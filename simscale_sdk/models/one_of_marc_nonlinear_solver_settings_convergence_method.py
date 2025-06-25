@@ -32,7 +32,7 @@ class OneOfMarcNonlinearSolverSettingsConvergenceMethod(object):
     """
     openapi_types = {
         'type': 'str',
-        'convergence_criteria': 'OneOfDisplacementsConvergenceMethodConvergenceCriteria',
+        'convergence_criteria': 'OneOfResidualsOrDisplacementsConvergenceMethodConvergenceCriteria',
         'strain_energy_tolerance': 'float'
     }
 
@@ -45,10 +45,11 @@ class OneOfMarcNonlinearSolverSettingsConvergenceMethod(object):
     discriminator_value_class_map = {
         'RESIDUALS': 'ResidualsConvergenceMethod',
         'DISPLACEMENTS': 'DisplacementsConvergenceMethod',
-        'STRAIN_ENERGY': 'StrainEnergyConvergenceMethod'
+        'STRAIN_ENERGY': 'StrainEnergyConvergenceMethod',
+        'RESIDUALS_OR_DISPLACEMENTS': 'ResidualsOrDisplacementsConvergenceMethod'
     }
 
-    def __init__(self, type='STRAIN_ENERGY', convergence_criteria=None, strain_energy_tolerance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='RESIDUALS_OR_DISPLACEMENTS', convergence_criteria=None, strain_energy_tolerance=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMarcNonlinearSolverSettingsConvergenceMethod - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -69,7 +70,7 @@ class OneOfMarcNonlinearSolverSettingsConvergenceMethod(object):
     def type(self):
         """Gets the type of this OneOfMarcNonlinearSolverSettingsConvergenceMethod.  # noqa: E501
 
-        Schema name: StrainEnergyConvergenceMethod  # noqa: E501
+        Schema name: ResidualsOrDisplacementsConvergenceMethod  # noqa: E501
 
         :return: The type of this OneOfMarcNonlinearSolverSettingsConvergenceMethod.  # noqa: E501
         :rtype: str
@@ -80,7 +81,7 @@ class OneOfMarcNonlinearSolverSettingsConvergenceMethod(object):
     def type(self, type):
         """Sets the type of this OneOfMarcNonlinearSolverSettingsConvergenceMethod.
 
-        Schema name: StrainEnergyConvergenceMethod  # noqa: E501
+        Schema name: ResidualsOrDisplacementsConvergenceMethod  # noqa: E501
 
         :param type: The type of this OneOfMarcNonlinearSolverSettingsConvergenceMethod.  # noqa: E501
         :type: str
@@ -96,7 +97,7 @@ class OneOfMarcNonlinearSolverSettingsConvergenceMethod(object):
 
 
         :return: The convergence_criteria of this OneOfMarcNonlinearSolverSettingsConvergenceMethod.  # noqa: E501
-        :rtype: OneOfDisplacementsConvergenceMethodConvergenceCriteria
+        :rtype: OneOfResidualsOrDisplacementsConvergenceMethodConvergenceCriteria
         """
         return self._convergence_criteria
 
@@ -106,7 +107,7 @@ class OneOfMarcNonlinearSolverSettingsConvergenceMethod(object):
 
 
         :param convergence_criteria: The convergence_criteria of this OneOfMarcNonlinearSolverSettingsConvergenceMethod.  # noqa: E501
-        :type: OneOfDisplacementsConvergenceMethodConvergenceCriteria
+        :type: OneOfResidualsOrDisplacementsConvergenceMethodConvergenceCriteria
         """
 
         self._convergence_criteria = convergence_criteria

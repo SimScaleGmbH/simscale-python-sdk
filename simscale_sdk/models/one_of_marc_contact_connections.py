@@ -35,7 +35,8 @@ class OneOfMarcContactConnections(object):
         'name': 'str',
         'contact_bodies': 'TopologicalReference',
         'friction_coefficient': 'float',
-        'interference_fit': 'InterferenceFit'
+        'interference_fit': 'InterferenceFit',
+        'touching_faces': 'TopologicalReference'
     }
 
     attribute_map = {
@@ -43,15 +44,17 @@ class OneOfMarcContactConnections(object):
         'name': 'name',
         'contact_bodies': 'contactBodies',
         'friction_coefficient': 'frictionCoefficient',
-        'interference_fit': 'interferenceFit'
+        'interference_fit': 'interferenceFit',
+        'touching_faces': 'touchingFaces'
     }
 
     discriminator_value_class_map = {
         'BONDED': 'MarcBondedContactConnection',
-        'TOUCHING': 'MarcTouchingContactConnection'
+        'TOUCHING': 'MarcTouchingContactConnection',
+        'BONDED_AND_TOUCHING': 'MarcBondedAndTouchingContactConnection'
     }
 
-    def __init__(self, type='TOUCHING', name=None, contact_bodies=None, friction_coefficient=None, interference_fit=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='BONDED_AND_TOUCHING', name=None, contact_bodies=None, friction_coefficient=None, interference_fit=None, touching_faces=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMarcContactConnections - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,6 +65,7 @@ class OneOfMarcContactConnections(object):
         self._contact_bodies = None
         self._friction_coefficient = None
         self._interference_fit = None
+        self._touching_faces = None
         self.discriminator = 'type'
 
         self.type = type
@@ -73,12 +77,14 @@ class OneOfMarcContactConnections(object):
             self.friction_coefficient = friction_coefficient
         if interference_fit is not None:
             self.interference_fit = interference_fit
+        if touching_faces is not None:
+            self.touching_faces = touching_faces
 
     @property
     def type(self):
         """Gets the type of this OneOfMarcContactConnections.  # noqa: E501
 
-        Schema name: MarcTouchingContactConnection  # noqa: E501
+        Schema name: MarcBondedAndTouchingContactConnection  # noqa: E501
 
         :return: The type of this OneOfMarcContactConnections.  # noqa: E501
         :rtype: str
@@ -89,7 +95,7 @@ class OneOfMarcContactConnections(object):
     def type(self, type):
         """Sets the type of this OneOfMarcContactConnections.
 
-        Schema name: MarcTouchingContactConnection  # noqa: E501
+        Schema name: MarcBondedAndTouchingContactConnection  # noqa: E501
 
         :param type: The type of this OneOfMarcContactConnections.  # noqa: E501
         :type: str
@@ -182,6 +188,27 @@ class OneOfMarcContactConnections(object):
         """
 
         self._interference_fit = interference_fit
+
+    @property
+    def touching_faces(self):
+        """Gets the touching_faces of this OneOfMarcContactConnections.  # noqa: E501
+
+
+        :return: The touching_faces of this OneOfMarcContactConnections.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._touching_faces
+
+    @touching_faces.setter
+    def touching_faces(self, touching_faces):
+        """Sets the touching_faces of this OneOfMarcContactConnections.
+
+
+        :param touching_faces: The touching_faces of this OneOfMarcContactConnections.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._touching_faces = touching_faces
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

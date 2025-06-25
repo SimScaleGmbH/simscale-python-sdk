@@ -52,6 +52,7 @@ class OneOfCompressibleBoundaryConditions(object):
         'gauge_pressure_rgh': 'OneOfCustomFluidBCGaugePressureRgh',
         'hydrostatic_pressure': 'HydrostaticPressure',
         'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition',
+        'direction': 'str',
         'turbulent_kinetic_energy': 'OneOfCustomFluidBCTurbulentKineticEnergy',
         'omega_dissipation_rate': 'OneOfCustomFluidBCOmegaDissipationRate',
         'epsilon_dissipation_rate': 'OneOfCustomFluidBCEpsilonDissipationRate',
@@ -85,6 +86,7 @@ class OneOfCompressibleBoundaryConditions(object):
         'gauge_pressure_rgh': 'gaugePressureRgh',
         'hydrostatic_pressure': 'hydrostaticPressure',
         'electric_boundary_condition': 'electricBoundaryCondition',
+        'direction': 'direction',
         'turbulent_kinetic_energy': 'turbulentKineticEnergy',
         'omega_dissipation_rate': 'omegaDissipationRate',
         'epsilon_dissipation_rate': 'epsilonDissipationRate',
@@ -110,7 +112,7 @@ class OneOfCompressibleBoundaryConditions(object):
         'EMPTY_2D': 'Empty2DBC'
     }
 
-    def __init__(self, type='EMPTY_2D', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, hydrostatic_pressure=None, electric_boundary_condition=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='EMPTY_2D', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, hydrostatic_pressure=None, electric_boundary_condition=None, direction=None, turbulent_kinetic_energy=None, omega_dissipation_rate=None, epsilon_dissipation_rate=None, eddy_viscosity=None, eddy_viscosity_compressible=None, nu_tilda=None, turbulent_thermal_diffusivity=None, turbulent_thermal_diffusivity_compressible=None, turbulent_dynamic_viscosity=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCompressibleBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -137,6 +139,7 @@ class OneOfCompressibleBoundaryConditions(object):
         self._gauge_pressure_rgh = None
         self._hydrostatic_pressure = None
         self._electric_boundary_condition = None
+        self._direction = None
         self._turbulent_kinetic_energy = None
         self._omega_dissipation_rate = None
         self._epsilon_dissipation_rate = None
@@ -189,6 +192,8 @@ class OneOfCompressibleBoundaryConditions(object):
             self.hydrostatic_pressure = hydrostatic_pressure
         if electric_boundary_condition is not None:
             self.electric_boundary_condition = electric_boundary_condition
+        if direction is not None:
+            self.direction = direction
         if turbulent_kinetic_energy is not None:
             self.turbulent_kinetic_energy = turbulent_kinetic_energy
         if omega_dissipation_rate is not None:
@@ -654,6 +659,33 @@ class OneOfCompressibleBoundaryConditions(object):
         """
 
         self._electric_boundary_condition = electric_boundary_condition
+
+    @property
+    def direction(self):
+        """Gets the direction of this OneOfCompressibleBoundaryConditions.  # noqa: E501
+
+
+        :return: The direction of this OneOfCompressibleBoundaryConditions.  # noqa: E501
+        :rtype: str
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction):
+        """Sets the direction of this OneOfCompressibleBoundaryConditions.
+
+
+        :param direction: The direction of this OneOfCompressibleBoundaryConditions.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["IN", "OUT"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and direction not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
+                .format(direction, allowed_values)
+            )
+
+        self._direction = direction
 
     @property
     def turbulent_kinetic_energy(self):

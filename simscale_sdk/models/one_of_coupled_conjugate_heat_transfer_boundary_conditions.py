@@ -51,7 +51,8 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'gauge_pressure': 'FanPBC',
         'gauge_pressure_rgh': 'AmbientPBC',
         'hydrostatic_pressure': 'HydrostaticPressure',
-        'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition'
+        'electric_boundary_condition': 'OneOfWallBCElectricBoundaryCondition',
+        'direction': 'str'
     }
 
     attribute_map = {
@@ -75,7 +76,8 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'gauge_pressure': 'gaugePressure',
         'gauge_pressure_rgh': 'gaugePressureRgh',
         'hydrostatic_pressure': 'hydrostaticPressure',
-        'electric_boundary_condition': 'electricBoundaryCondition'
+        'electric_boundary_condition': 'electricBoundaryCondition',
+        'direction': 'direction'
     }
 
     discriminator_value_class_map = {
@@ -89,7 +91,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
 
-    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, hydrostatic_pressure=None, electric_boundary_condition=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='NATURAL_CONVECTION_INLET_OUTLET', name=None, velocity=None, turbulence=None, temperature=None, passive_scalars=None, phase_fraction=None, phase_fractions_v2=None, mass_fractions_v2=None, turbulence_intensity=None, dissipation_type=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, hydrostatic_pressure=None, electric_boundary_condition=None, direction=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCoupledConjugateHeatTransferBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -116,6 +118,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         self._gauge_pressure_rgh = None
         self._hydrostatic_pressure = None
         self._electric_boundary_condition = None
+        self._direction = None
         self.discriminator = 'type'
 
         self.type = type
@@ -159,6 +162,8 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
             self.hydrostatic_pressure = hydrostatic_pressure
         if electric_boundary_condition is not None:
             self.electric_boundary_condition = electric_boundary_condition
+        if direction is not None:
+            self.direction = direction
 
     @property
     def type(self):
@@ -606,6 +611,33 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         """
 
         self._electric_boundary_condition = electric_boundary_condition
+
+    @property
+    def direction(self):
+        """Gets the direction of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+
+
+        :return: The direction of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+        :rtype: str
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction):
+        """Sets the direction of this OneOfCoupledConjugateHeatTransferBoundaryConditions.
+
+
+        :param direction: The direction of this OneOfCoupledConjugateHeatTransferBoundaryConditions.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["IN", "OUT"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and direction not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
+                .format(direction, allowed_values)
+            )
+
+        self._direction = direction
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

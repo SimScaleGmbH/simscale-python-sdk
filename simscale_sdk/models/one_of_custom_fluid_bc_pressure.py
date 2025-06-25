@@ -35,7 +35,6 @@ class OneOfCustomFluidBCPressure(object):
         'relax_boundary': 'bool',
         'far_field_value': 'DimensionalPressure',
         'relaxation_length_scale': 'DimensionalLength',
-        'direction': 'str',
         'fan_pressure': 'DimensionalFunctionPressure',
         'environmental_total_pressure': 'DimensionalPressure',
         'gradient': 'DimensionalForceDensity',
@@ -49,7 +48,6 @@ class OneOfCustomFluidBCPressure(object):
         'relax_boundary': 'relaxBoundary',
         'far_field_value': 'farFieldValue',
         'relaxation_length_scale': 'relaxationLengthScale',
-        'direction': 'direction',
         'fan_pressure': 'fanPressure',
         'environmental_total_pressure': 'environmentalTotalPressure',
         'gradient': 'gradient',
@@ -72,7 +70,7 @@ class OneOfCustomFluidBCPressure(object):
         'HYDROSTATIC_ISOTHERMAL_FAN_PRESSURE': 'HydrostaticFanPBC'
     }
 
-    def __init__(self, type='HYDROSTATIC_ISOTHERMAL_FAN_PRESSURE', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, direction=None, fan_pressure=None, environmental_total_pressure=None, gradient=None, value=None, total_pressure=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HYDROSTATIC_ISOTHERMAL_FAN_PRESSURE', relax_boundary=None, far_field_value=None, relaxation_length_scale=None, fan_pressure=None, environmental_total_pressure=None, gradient=None, value=None, total_pressure=None, specific_heat_ratio=None, local_vars_configuration=None):  # noqa: E501
         """OneOfCustomFluidBCPressure - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,7 +80,6 @@ class OneOfCustomFluidBCPressure(object):
         self._relax_boundary = None
         self._far_field_value = None
         self._relaxation_length_scale = None
-        self._direction = None
         self._fan_pressure = None
         self._environmental_total_pressure = None
         self._gradient = None
@@ -98,8 +95,6 @@ class OneOfCustomFluidBCPressure(object):
             self.far_field_value = far_field_value
         if relaxation_length_scale is not None:
             self.relaxation_length_scale = relaxation_length_scale
-        if direction is not None:
-            self.direction = direction
         if fan_pressure is not None:
             self.fan_pressure = fan_pressure
         if environmental_total_pressure is not None:
@@ -200,33 +195,6 @@ class OneOfCustomFluidBCPressure(object):
         """
 
         self._relaxation_length_scale = relaxation_length_scale
-
-    @property
-    def direction(self):
-        """Gets the direction of this OneOfCustomFluidBCPressure.  # noqa: E501
-
-
-        :return: The direction of this OneOfCustomFluidBCPressure.  # noqa: E501
-        :rtype: str
-        """
-        return self._direction
-
-    @direction.setter
-    def direction(self, direction):
-        """Sets the direction of this OneOfCustomFluidBCPressure.
-
-
-        :param direction: The direction of this OneOfCustomFluidBCPressure.  # noqa: E501
-        :type: str
-        """
-        allowed_values = ["IN", "OUT"]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and direction not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
-                .format(direction, allowed_values)
-            )
-
-        self._direction = direction
 
     @property
     def fan_pressure(self):

@@ -33,6 +33,7 @@ class FanBC(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'direction': 'str',
         'pressure': 'FanPBC',
         'pressure_rgh': 'OneOfFanBCPressureRgh',
         'gauge_pressure': 'FanPBC',
@@ -49,6 +50,7 @@ class FanBC(object):
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'direction': 'direction',
         'pressure': 'pressure',
         'pressure_rgh': 'pressureRgh',
         'gauge_pressure': 'gaugePressure',
@@ -62,7 +64,7 @@ class FanBC(object):
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='FAN', name=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, passive_scalars=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FAN', name=None, direction=None, pressure=None, pressure_rgh=None, gauge_pressure=None, gauge_pressure_rgh=None, turbulence=None, temperature=None, passive_scalars=None, net_radiative_heat_flux=None, radiative_intensity_ray=None, relative_humidity=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """FanBC - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class FanBC(object):
 
         self._type = None
         self._name = None
+        self._direction = None
         self._pressure = None
         self._pressure_rgh = None
         self._gauge_pressure = None
@@ -86,6 +89,8 @@ class FanBC(object):
         self.type = type
         if name is not None:
             self.name = name
+        if direction is not None:
+            self.direction = direction
         if pressure is not None:
             self.pressure = pressure
         if pressure_rgh is not None:
@@ -154,6 +159,33 @@ class FanBC(object):
         """
 
         self._name = name
+
+    @property
+    def direction(self):
+        """Gets the direction of this FanBC.  # noqa: E501
+
+
+        :return: The direction of this FanBC.  # noqa: E501
+        :rtype: str
+        """
+        return self._direction
+
+    @direction.setter
+    def direction(self, direction):
+        """Sets the direction of this FanBC.
+
+
+        :param direction: The direction of this FanBC.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["IN", "OUT"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and direction not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `direction` ({0}), must be one of {1}"  # noqa: E501
+                .format(direction, allowed_values)
+            )
+
+        self._direction = direction
 
     @property
     def pressure(self):

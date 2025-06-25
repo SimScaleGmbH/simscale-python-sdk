@@ -48,6 +48,7 @@ class OneOfMarcLinearSolverSettingsLinearSolver(object):
 
     discriminator_value_class_map = {
         'MUMPS_DIRECT': 'MumpsDirectSolver',
+        'PARDISO_DIRECT': 'PardisoDirectSolver',
         'SPARSE_ITERATIVE': 'SparseIterative'
     }
 

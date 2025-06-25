@@ -34,22 +34,27 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
         'type': 'str',
         'youngs_modulus': 'DimensionalFunctionPressure',
         'poissons_ratio': 'OneOfLinearElasticMarcMaterialBehaviorPoissonsRatio',
-        'hyperelasticity': 'Hyperelasticity'
+        'hyperelasticity': 'Hyperelasticity',
+        'elasticity': 'ElasticityMarc',
+        'plasticity': 'PlasticityMarc'
     }
 
     attribute_map = {
         'type': 'type',
         'youngs_modulus': 'youngsModulus',
         'poissons_ratio': 'poissonsRatio',
-        'hyperelasticity': 'hyperelasticity'
+        'hyperelasticity': 'hyperelasticity',
+        'elasticity': 'elasticity',
+        'plasticity': 'plasticity'
     }
 
     discriminator_value_class_map = {
         'LINEAR_ELASTIC_MARC': 'LinearElasticMarcMaterialBehavior',
-        'HYPERELASTIC_MARC': 'HyperelasticMarcMaterialBehavior'
+        'HYPERELASTIC_MARC': 'HyperelasticMarcMaterialBehavior',
+        'ELASTOPLASTIC_MARC': 'ElastoplasticMarcMaterialBehavior'
     }
 
-    def __init__(self, type='HYPERELASTIC_MARC', youngs_modulus=None, poissons_ratio=None, hyperelasticity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELASTOPLASTIC_MARC', youngs_modulus=None, poissons_ratio=None, hyperelasticity=None, elasticity=None, plasticity=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMarcMaterialMarcMaterialBehavior - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +64,8 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
         self._youngs_modulus = None
         self._poissons_ratio = None
         self._hyperelasticity = None
+        self._elasticity = None
+        self._plasticity = None
         self.discriminator = 'type'
 
         self.type = type
@@ -68,12 +75,16 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
             self.poissons_ratio = poissons_ratio
         if hyperelasticity is not None:
             self.hyperelasticity = hyperelasticity
+        if elasticity is not None:
+            self.elasticity = elasticity
+        if plasticity is not None:
+            self.plasticity = plasticity
 
     @property
     def type(self):
         """Gets the type of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
 
-        Schema name: HyperelasticMarcMaterialBehavior  # noqa: E501
+        Schema name: ElastoplasticMarcMaterialBehavior  # noqa: E501
 
         :return: The type of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
         :rtype: str
@@ -84,7 +95,7 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
     def type(self, type):
         """Sets the type of this OneOfMarcMaterialMarcMaterialBehavior.
 
-        Schema name: HyperelasticMarcMaterialBehavior  # noqa: E501
+        Schema name: ElastoplasticMarcMaterialBehavior  # noqa: E501
 
         :param type: The type of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
         :type: str
@@ -156,6 +167,48 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
         """
 
         self._hyperelasticity = hyperelasticity
+
+    @property
+    def elasticity(self):
+        """Gets the elasticity of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+
+
+        :return: The elasticity of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :rtype: ElasticityMarc
+        """
+        return self._elasticity
+
+    @elasticity.setter
+    def elasticity(self, elasticity):
+        """Sets the elasticity of this OneOfMarcMaterialMarcMaterialBehavior.
+
+
+        :param elasticity: The elasticity of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :type: ElasticityMarc
+        """
+
+        self._elasticity = elasticity
+
+    @property
+    def plasticity(self):
+        """Gets the plasticity of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+
+
+        :return: The plasticity of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :rtype: PlasticityMarc
+        """
+        return self._plasticity
+
+    @plasticity.setter
+    def plasticity(self, plasticity):
+        """Sets the plasticity of this OneOfMarcMaterialMarcMaterialBehavior.
+
+
+        :param plasticity: The plasticity of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :type: PlasticityMarc
+        """
+
+        self._plasticity = plasticity
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
