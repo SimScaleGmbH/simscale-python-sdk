@@ -33,6 +33,14 @@ simscale\_sdk.models.absolute\_convergence\_residuals module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.absolute\_convergence\_residuals\_or\_displacements module
+-------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.absolute_convergence_residuals_or_displacements
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.absolute\_distance module
 ----------------------------------------------
 
@@ -181,6 +189,14 @@ simscale\_sdk.models.adaptive\_convergence\_residuals module
 ------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.adaptive_convergence_residuals
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.adaptive\_convergence\_residuals\_or\_displacements module
+-------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.adaptive_convergence_residuals_or_displacements
    :members:
    :show-inheritance:
    :undoc-members:
@@ -849,6 +865,14 @@ simscale\_sdk.models.castellated\_mesh\_controls module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.cauchy\_stress module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.cauchy_stress
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.cauchy\_stress\_tensor\_field module
 ---------------------------------------------------------
 
@@ -1085,6 +1109,14 @@ simscale\_sdk.models.color module
 ---------------------------------
 
 .. automodule:: simscale_sdk.models.color
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.combined\_plastic\_hardening\_marc module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.combined_plastic_hardening_marc
    :members:
    :show-inheritance:
    :undoc-members:
@@ -2905,6 +2937,22 @@ simscale\_sdk.models.elastic\_support\_bc module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.elasticity\_marc module
+--------------------------------------------
+
+.. automodule:: simscale_sdk.models.elasticity_marc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.elastoplastic\_marc\_material\_behavior module
+-------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.elastoplastic_marc_material_behavior
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.electric\_current\_density\_field\_selection module
 ------------------------------------------------------------------------
 
@@ -3121,6 +3169,14 @@ simscale\_sdk.models.entity\_description module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.equivalent\_elastic\_strain module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.equivalent_elastic_strain
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.equivalent\_radiated\_power\_density\_type module
 ----------------------------------------------------------------------
 
@@ -3213,6 +3269,14 @@ simscale\_sdk.models.expression\_function module
 ------------------------------------------------
 
 .. automodule:: simscale_sdk.models.expression_function
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.external\_force module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.external_force
    :members:
    :show-inheritance:
    :undoc-members:
@@ -4649,6 +4713,14 @@ simscale\_sdk.models.global\_damping\_value module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.global\_displacement module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.global_displacement
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.global\_displacement\_type module
 ------------------------------------------------------
 
@@ -5433,6 +5505,14 @@ simscale\_sdk.models.isotropic\_plastic\_hardening module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.isotropic\_plastic\_hardening\_marc module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.isotropic_plastic_hardening_marc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.isotropic\_relative\_permeability\_method module
 ---------------------------------------------------------------------
 
@@ -5469,6 +5549,14 @@ simscale\_sdk.models.johnson\_cook\_elasto\_plastic\_model module
 -----------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.johnson_cook_elasto_plastic_model
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.kinematic\_plastic\_hardening\_marc module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.kinematic_plastic_hardening_marc
    :members:
    :show-inheritance:
    :undoc-members:
@@ -5817,6 +5905,14 @@ simscale\_sdk.models.manual\_timestep\_definition module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.marc\_bonded\_and\_touching\_contact\_connection module
+----------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_bonded_and_touching_contact_connection
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.marc\_bonded\_contact\_connection module
 -------------------------------------------------------------
 
@@ -5829,6 +5925,78 @@ simscale\_sdk.models.marc\_contact module
 -----------------------------------------
 
 .. automodule:: simscale_sdk.models.marc_contact
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_contact\_friction\_force module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_contact_friction_force
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_contact\_friction\_stress module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_contact_friction_stress
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_contact\_gap module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_contact_gap
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_contact\_normal\_force module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_contact_normal_force
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_contact\_normal\_stress module
+---------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_contact_normal_stress
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_contact\_result\_control\_item module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_contact_result_control_item
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_contact\_status module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_contact_status
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_displacement\_result\_control\_item module
+---------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_displacement_result_control_item
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_force\_result\_control\_item module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_force_result_control_item
    :members:
    :show-inheritance:
    :undoc-members:
@@ -5865,10 +6033,34 @@ simscale\_sdk.models.marc\_numerics module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.marc\_result\_control module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_result_control
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.marc\_simulation\_control module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.marc_simulation_control
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_strain\_result\_control\_item module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_strain_result_control_item
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_stress\_result\_control\_item module
+---------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_stress_result_control_item
    :members:
    :show-inheritance:
    :undoc-members:
@@ -6221,6 +6413,14 @@ simscale\_sdk.models.multilinear\_elasto\_plastic\_model module
 ---------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.multilinear_elasto_plastic_model
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.multilinear\_model\_marc module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.multilinear_model_marc
    :members:
    :show-inheritance:
    :undoc-members:
@@ -6817,6 +7017,14 @@ simscale\_sdk.models.parametric\_material\_property module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.pardiso\_direct\_solver module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.pardiso_direct_solver
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.part module
 --------------------------------
 
@@ -7057,6 +7265,14 @@ simscale\_sdk.models.plastic\_material\_behavior module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.plasticity\_marc module
+--------------------------------------------
+
+.. automodule:: simscale_sdk.models.plasticity_marc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.plate\_data module
 ---------------------------------------
 
@@ -7257,10 +7473,26 @@ simscale\_sdk.models.principal\_strain\_type module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.principal\_stress module
+---------------------------------------------
+
+.. automodule:: simscale_sdk.models.principal_stress
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.principal\_stress\_type module
 ---------------------------------------------------
 
 .. automodule:: simscale_sdk.models.principal_stress_type
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.principal\_total\_strain module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.principal_total_strain
    :members:
    :show-inheritance:
    :undoc-members:
@@ -7357,6 +7589,14 @@ simscale\_sdk.models.rayleigh\_damping module
 ---------------------------------------------
 
 .. automodule:: simscale_sdk.models.rayleigh_damping
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.reaction\_force module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.reaction_force
    :members:
    :show-inheritance:
    :undoc-members:
@@ -7501,6 +7741,14 @@ simscale\_sdk.models.relative\_convergence\_residuals module
 ------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.relative_convergence_residuals
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.relative\_convergence\_residuals\_or\_displacements module
+-------------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.relative_convergence_residuals_or_displacements
    :members:
    :show-inheritance:
    :undoc-members:
@@ -7669,6 +7917,14 @@ simscale\_sdk.models.residuals\_convergence\_method module
 ----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.residuals_convergence_method
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.residuals\_or\_displacements\_convergence\_method module
+-----------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.residuals_or_displacements_convergence_method
    :members:
    :show-inheritance:
    :undoc-members:
@@ -9449,6 +9705,14 @@ simscale\_sdk.models.total\_resistance\_wall\_thermal module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.total\_strain module
+-----------------------------------------
+
+.. automodule:: simscale_sdk.models.total_strain
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.total\_tbc module
 --------------------------------------
 
@@ -9469,6 +9733,22 @@ simscale\_sdk.models.total\_turbulent\_kinetic\_energy module
 -------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.total_turbulent_kinetic_energy
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.tr\_absolute\_power\_source module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.tr_absolute_power_source
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.tr\_specific\_power\_source module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.tr_specific_power_source
    :members:
    :show-inheritance:
    :undoc-members:
@@ -9761,6 +10041,14 @@ simscale\_sdk.models.variable\_group\_magneticfieldstrength module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.variable\_group\_plasticstrain module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.variable_group_plasticstrain
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.variable\_group\_strain module
 ---------------------------------------------------
 
@@ -9957,6 +10245,14 @@ simscale\_sdk.models.volumetric\_species\_humidity\_source module
 -----------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.volumetric_species_humidity_source
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.von\_mises\_stress module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.von_mises_stress
    :members:
    :show-inheritance:
    :undoc-members:
