@@ -41,6 +41,7 @@ class OneOfSolidNumericsSolver(object):
         'convergence_threshold': 'float',
         'max_iterations': 'int',
         'advanced_petsc_settings': 'AdvancedPETSCSettings',
+        'non_convergence_action': 'str',
         'advanced_settings': 'AdvancedChronosSettings'
     }
 
@@ -55,6 +56,7 @@ class OneOfSolidNumericsSolver(object):
         'convergence_threshold': 'convergenceThreshold',
         'max_iterations': 'maxIterations',
         'advanced_petsc_settings': 'advancedPetscSettings',
+        'non_convergence_action': 'nonConvergenceAction',
         'advanced_settings': 'advancedSettings'
     }
 
@@ -65,7 +67,7 @@ class OneOfSolidNumericsSolver(object):
         'CHRONOS': 'ChronosSolver'
     }
 
-    def __init__(self, type='CHRONOS', advanced_mumps_settings=None, renumbering_method=None, force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, eliminate_lagrange_multipliers=None, convergence_threshold=None, max_iterations=None, advanced_petsc_settings=None, advanced_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CHRONOS', advanced_mumps_settings=None, renumbering_method=None, force_symmetric=None, precision_singularity_detection=None, stop_if_singular=None, eliminate_lagrange_multipliers=None, convergence_threshold=None, max_iterations=None, advanced_petsc_settings=None, non_convergence_action=None, advanced_settings=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSolidNumericsSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -81,6 +83,7 @@ class OneOfSolidNumericsSolver(object):
         self._convergence_threshold = None
         self._max_iterations = None
         self._advanced_petsc_settings = None
+        self._non_convergence_action = None
         self._advanced_settings = None
         self.discriminator = 'type'
 
@@ -103,6 +106,8 @@ class OneOfSolidNumericsSolver(object):
             self.max_iterations = max_iterations
         if advanced_petsc_settings is not None:
             self.advanced_petsc_settings = advanced_petsc_settings
+        if non_convergence_action is not None:
+            self.non_convergence_action = non_convergence_action
         if advanced_settings is not None:
             self.advanced_settings = advanced_settings
 
@@ -345,6 +350,33 @@ class OneOfSolidNumericsSolver(object):
         """
 
         self._advanced_petsc_settings = advanced_petsc_settings
+
+    @property
+    def non_convergence_action(self):
+        """Gets the non_convergence_action of this OneOfSolidNumericsSolver.  # noqa: E501
+
+
+        :return: The non_convergence_action of this OneOfSolidNumericsSolver.  # noqa: E501
+        :rtype: str
+        """
+        return self._non_convergence_action
+
+    @non_convergence_action.setter
+    def non_convergence_action(self, non_convergence_action):
+        """Sets the non_convergence_action of this OneOfSolidNumericsSolver.
+
+
+        :param non_convergence_action: The non_convergence_action of this OneOfSolidNumericsSolver.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STOP", "SWITCH_TO_DIRECT_SOLVER"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and non_convergence_action not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `non_convergence_action` ({0}), must be one of {1}"  # noqa: E501
+                .format(non_convergence_action, allowed_values)
+            )
+
+        self._non_convergence_action = non_convergence_action
 
     @property
     def advanced_settings(self):

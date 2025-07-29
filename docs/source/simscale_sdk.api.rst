@@ -89,6 +89,14 @@ simscale\_sdk.api.reports\_api module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.api.simulation\_result\_exports\_api module
+---------------------------------------------------------
+
+.. automodule:: simscale_sdk.api.simulation_result_exports_api
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.api.simulation\_runs\_api module
 ----------------------------------------------
 

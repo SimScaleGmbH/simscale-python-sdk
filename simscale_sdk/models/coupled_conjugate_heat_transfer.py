@@ -288,7 +288,7 @@ class CoupledConjugateHeatTransfer(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
 
-        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST.</p>  # noqa: E501
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST</a> ,<a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/#standard-k-epsilon-model' target='_blank'>k-epsilon</a></p>  # noqa: E501
 
         :return: The turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
         :rtype: str
@@ -299,12 +299,12 @@ class CoupledConjugateHeatTransfer(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this CoupledConjugateHeatTransfer.
 
-        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST.</p>  # noqa: E501
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST</a> ,<a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/#standard-k-epsilon-model' target='_blank'>k-epsilon</a></p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this CoupledConjugateHeatTransfer.  # noqa: E501
         :type: str
         """
-        allowed_values = ["NONE", "KOMEGASST"]  # noqa: E501
+        allowed_values = ["NONE", "KEPSILON", "KOMEGASST"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and turbulence_model not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `turbulence_model` ({0}), must be one of {1}"  # noqa: E501

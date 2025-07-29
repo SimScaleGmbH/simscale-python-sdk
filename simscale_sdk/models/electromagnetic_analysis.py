@@ -34,6 +34,7 @@ class ElectromagneticAnalysis(object):
         'type': 'str',
         'model': 'OneOfElectromagneticAnalysisModel',
         'materials': 'list[ElectromagneticMaterial]',
+        'initial_conditions': 'ElectromagneticInitialConditions',
         'coils': 'list[Coil]',
         'boundary_conditions': 'list[OneOfElectromagneticAnalysisBoundaryConditions]',
         'result_control': 'ElectromagneticResultControl',
@@ -45,6 +46,7 @@ class ElectromagneticAnalysis(object):
         'type': 'type',
         'model': 'model',
         'materials': 'materials',
+        'initial_conditions': 'initialConditions',
         'coils': 'coils',
         'boundary_conditions': 'boundaryConditions',
         'result_control': 'resultControl',
@@ -52,7 +54,7 @@ class ElectromagneticAnalysis(object):
         'simulation_control': 'simulationControl'
     }
 
-    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', model=None, materials=None, coils=None, boundary_conditions=None, result_control=None, numerics=None, simulation_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', model=None, materials=None, initial_conditions=None, coils=None, boundary_conditions=None, result_control=None, numerics=None, simulation_control=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class ElectromagneticAnalysis(object):
         self._type = None
         self._model = None
         self._materials = None
+        self._initial_conditions = None
         self._coils = None
         self._boundary_conditions = None
         self._result_control = None
@@ -73,6 +76,8 @@ class ElectromagneticAnalysis(object):
             self.model = model
         if materials is not None:
             self.materials = materials
+        if initial_conditions is not None:
+            self.initial_conditions = initial_conditions
         if coils is not None:
             self.coils = coils
         if boundary_conditions is not None:
@@ -150,6 +155,27 @@ class ElectromagneticAnalysis(object):
         """
 
         self._materials = materials
+
+    @property
+    def initial_conditions(self):
+        """Gets the initial_conditions of this ElectromagneticAnalysis.  # noqa: E501
+
+
+        :return: The initial_conditions of this ElectromagneticAnalysis.  # noqa: E501
+        :rtype: ElectromagneticInitialConditions
+        """
+        return self._initial_conditions
+
+    @initial_conditions.setter
+    def initial_conditions(self, initial_conditions):
+        """Sets the initial_conditions of this ElectromagneticAnalysis.
+
+
+        :param initial_conditions: The initial_conditions of this ElectromagneticAnalysis.  # noqa: E501
+        :type: ElectromagneticInitialConditions
+        """
+
+        self._initial_conditions = initial_conditions
 
     @property
     def coils(self):

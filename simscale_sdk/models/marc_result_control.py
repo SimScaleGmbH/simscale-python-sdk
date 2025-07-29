@@ -31,24 +31,34 @@ class MarcResultControl(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'solution_fields': 'list[OneOfMarcResultControlSolutionFields]'
+        'solution_fields': 'list[OneOfMarcResultControlSolutionFields]',
+        'area_calculation': 'list[OneOfMarcResultControlAreaCalculation]',
+        'volume_calculation': 'list[OneOfMarcResultControlVolumeCalculation]'
     }
 
     attribute_map = {
-        'solution_fields': 'solutionFields'
+        'solution_fields': 'solutionFields',
+        'area_calculation': 'areaCalculation',
+        'volume_calculation': 'volumeCalculation'
     }
 
-    def __init__(self, solution_fields=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, solution_fields=None, area_calculation=None, volume_calculation=None, local_vars_configuration=None):  # noqa: E501
         """MarcResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._solution_fields = None
+        self._area_calculation = None
+        self._volume_calculation = None
         self.discriminator = None
 
         if solution_fields is not None:
             self.solution_fields = solution_fields
+        if area_calculation is not None:
+            self.area_calculation = area_calculation
+        if volume_calculation is not None:
+            self.volume_calculation = volume_calculation
 
     @property
     def solution_fields(self):
@@ -70,6 +80,48 @@ class MarcResultControl(object):
         """
 
         self._solution_fields = solution_fields
+
+    @property
+    def area_calculation(self):
+        """Gets the area_calculation of this MarcResultControl.  # noqa: E501
+
+
+        :return: The area_calculation of this MarcResultControl.  # noqa: E501
+        :rtype: list[OneOfMarcResultControlAreaCalculation]
+        """
+        return self._area_calculation
+
+    @area_calculation.setter
+    def area_calculation(self, area_calculation):
+        """Sets the area_calculation of this MarcResultControl.
+
+
+        :param area_calculation: The area_calculation of this MarcResultControl.  # noqa: E501
+        :type: list[OneOfMarcResultControlAreaCalculation]
+        """
+
+        self._area_calculation = area_calculation
+
+    @property
+    def volume_calculation(self):
+        """Gets the volume_calculation of this MarcResultControl.  # noqa: E501
+
+
+        :return: The volume_calculation of this MarcResultControl.  # noqa: E501
+        :rtype: list[OneOfMarcResultControlVolumeCalculation]
+        """
+        return self._volume_calculation
+
+    @volume_calculation.setter
+    def volume_calculation(self, volume_calculation):
+        """Sets the volume_calculation of this MarcResultControl.
+
+
+        :param volume_calculation: The volume_calculation of this MarcResultControl.  # noqa: E501
+        :type: list[OneOfMarcResultControlVolumeCalculation]
+        """
+
+        self._volume_calculation = volume_calculation
 
     def to_dict(self):
         """Returns the model properties as a dict"""

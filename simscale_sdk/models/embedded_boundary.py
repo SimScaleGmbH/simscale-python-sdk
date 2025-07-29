@@ -547,7 +547,7 @@ class EmbeddedBoundary(object):
     def turbulence_model(self):
         """Gets the turbulence_model of this EmbeddedBoundary.  # noqa: E501
 
-        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST.</p>  # noqa: E501
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST</a> ,<a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/#standard-k-epsilon-model' target='_blank'>k-epsilon</a></p>  # noqa: E501
 
         :return: The turbulence_model of this EmbeddedBoundary.  # noqa: E501
         :rtype: str
@@ -558,7 +558,7 @@ class EmbeddedBoundary(object):
     def turbulence_model(self, turbulence_model):
         """Sets the turbulence_model of this EmbeddedBoundary.
 
-        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST.</p>  # noqa: E501
+        Choose a turbulence model for your CFD analysis:<ul><li><strong>No turbulence</strong>: Laminar</li><li><strong>RANS</strong>: <a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-omega-sst/' target='_blank'>k-omega SST</a> ,<a href='https://www.simscale.com/docs/simulation-setup/global-settings/k-epsilon/#standard-k-epsilon-model' target='_blank'>k-epsilon</a></p>  # noqa: E501
 
         :param turbulence_model: The turbulence_model of this EmbeddedBoundary.  # noqa: E501
         :type: str

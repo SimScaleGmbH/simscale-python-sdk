@@ -85,6 +85,7 @@ class EmbeddedBoundaryMeshing(object):
     def number_of_buffer_cells(self):
         """Gets the number_of_buffer_cells of this EmbeddedBoundaryMeshing.  # noqa: E501
 
+        Target number of cells for every cell size level. Higher number of buffer cells ensure smoother cell size transitions, which results in better accuracy but bigger computation costs. On the other hand, lower number of buffer cells will result in smaller computation costs but worse accuracy. <img src=\"/spec/resources/help/imgs/buffer_cells.png\" class=\"helpPopupImage\"/>  # noqa: E501
 
         :return: The number_of_buffer_cells of this EmbeddedBoundaryMeshing.  # noqa: E501
         :rtype: float
@@ -95,6 +96,7 @@ class EmbeddedBoundaryMeshing(object):
     def number_of_buffer_cells(self, number_of_buffer_cells):
         """Sets the number_of_buffer_cells of this EmbeddedBoundaryMeshing.
 
+        Target number of cells for every cell size level. Higher number of buffer cells ensure smoother cell size transitions, which results in better accuracy but bigger computation costs. On the other hand, lower number of buffer cells will result in smaller computation costs but worse accuracy. <img src=\"/spec/resources/help/imgs/buffer_cells.png\" class=\"helpPopupImage\"/>  # noqa: E501
 
         :param number_of_buffer_cells: The number_of_buffer_cells of this EmbeddedBoundaryMeshing.  # noqa: E501
         :type: float

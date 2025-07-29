@@ -13,6 +13,7 @@ from simscale_sdk.api.meshes_api import MeshesApi
 from simscale_sdk.api.project_permissions_api import ProjectPermissionsApi
 from simscale_sdk.api.projects_api import ProjectsApi
 from simscale_sdk.api.reports_api import ReportsApi
+from simscale_sdk.api.simulation_result_exports_api import SimulationResultExportsApi
 from simscale_sdk.api.simulation_runs_api import SimulationRunsApi
 from simscale_sdk.api.simulations_api import SimulationsApi
 from simscale_sdk.api.space_permissions_api import SpacePermissionsApi

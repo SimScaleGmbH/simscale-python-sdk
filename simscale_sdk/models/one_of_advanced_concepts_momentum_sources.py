@@ -37,7 +37,9 @@ class OneOfAdvancedConceptsMomentumSources(object):
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]',
         'fan_direction': 'DimensionalVectorDimensionless',
-        'fan_pressure': 'DimensionalFunctionPressure'
+        'fan_pressure': 'DimensionalFunctionPressure',
+        'friction_velocity': 'DimensionalVectorSpeed',
+        'relaxation_factor': 'float'
     }
 
     attribute_map = {
@@ -47,15 +49,18 @@ class OneOfAdvancedConceptsMomentumSources(object):
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'fan_direction': 'fanDirection',
-        'fan_pressure': 'fanPressure'
+        'fan_pressure': 'fanPressure',
+        'friction_velocity': 'frictionVelocity',
+        'relaxation_factor': 'relaxationFactor'
     }
 
     discriminator_value_class_map = {
         'AVERAGE_VELOCITY': 'AverageVelocityMomentumSource',
-        'FAN_PRESSURE_DROP': 'FanPressureDropMomentumSource'
+        'FAN_PRESSURE_DROP': 'FanPressureDropMomentumSource',
+        'FRICTION_VELOCITY_SOURCE': 'FrictionVelocityMomentumSource'
     }
 
-    def __init__(self, type='FAN_PRESSURE_DROP', name=None, average_velocity=None, topological_reference=None, geometry_primitive_uuids=None, fan_direction=None, fan_pressure=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FRICTION_VELOCITY_SOURCE', name=None, average_velocity=None, topological_reference=None, geometry_primitive_uuids=None, fan_direction=None, fan_pressure=None, friction_velocity=None, relaxation_factor=None, local_vars_configuration=None):  # noqa: E501
         """OneOfAdvancedConceptsMomentumSources - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +73,8 @@ class OneOfAdvancedConceptsMomentumSources(object):
         self._geometry_primitive_uuids = None
         self._fan_direction = None
         self._fan_pressure = None
+        self._friction_velocity = None
+        self._relaxation_factor = None
         self.discriminator = 'type'
 
         self.type = type
@@ -83,12 +90,16 @@ class OneOfAdvancedConceptsMomentumSources(object):
             self.fan_direction = fan_direction
         if fan_pressure is not None:
             self.fan_pressure = fan_pressure
+        if friction_velocity is not None:
+            self.friction_velocity = friction_velocity
+        if relaxation_factor is not None:
+            self.relaxation_factor = relaxation_factor
 
     @property
     def type(self):
         """Gets the type of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
 
-        Schema name: FanPressureDropMomentumSource  # noqa: E501
+        Schema name: FrictionVelocityMomentumSource  # noqa: E501
 
         :return: The type of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
         :rtype: str
@@ -99,7 +110,7 @@ class OneOfAdvancedConceptsMomentumSources(object):
     def type(self, type):
         """Sets the type of this OneOfAdvancedConceptsMomentumSources.
 
-        Schema name: FanPressureDropMomentumSource  # noqa: E501
+        Schema name: FrictionVelocityMomentumSource  # noqa: E501
 
         :param type: The type of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
         :type: str
@@ -234,6 +245,51 @@ class OneOfAdvancedConceptsMomentumSources(object):
         """
 
         self._fan_pressure = fan_pressure
+
+    @property
+    def friction_velocity(self):
+        """Gets the friction_velocity of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
+
+
+        :return: The friction_velocity of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
+        :rtype: DimensionalVectorSpeed
+        """
+        return self._friction_velocity
+
+    @friction_velocity.setter
+    def friction_velocity(self, friction_velocity):
+        """Sets the friction_velocity of this OneOfAdvancedConceptsMomentumSources.
+
+
+        :param friction_velocity: The friction_velocity of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
+        :type: DimensionalVectorSpeed
+        """
+
+        self._friction_velocity = friction_velocity
+
+    @property
+    def relaxation_factor(self):
+        """Gets the relaxation_factor of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
+
+
+        :return: The relaxation_factor of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
+        :rtype: float
+        """
+        return self._relaxation_factor
+
+    @relaxation_factor.setter
+    def relaxation_factor(self, relaxation_factor):
+        """Sets the relaxation_factor of this OneOfAdvancedConceptsMomentumSources.
+
+
+        :param relaxation_factor: The relaxation_factor of this OneOfAdvancedConceptsMomentumSources.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                relaxation_factor is not None and relaxation_factor < 0):  # noqa: E501
+            raise ValueError("Invalid value for `relaxation_factor`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._relaxation_factor = relaxation_factor
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

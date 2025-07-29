@@ -34,6 +34,7 @@ class FluidNumerics(object):
         'relaxation_type': 'str',
         'relaxation_factor': 'RelaxationFactor',
         'diagonal_relaxation_factor': 'RelaxationFactor',
+        'viscous_work_included': 'bool',
         'radiation_resolution': 'str',
         'momentum_predictor': 'bool',
         'transonic': 'bool',
@@ -60,6 +61,7 @@ class FluidNumerics(object):
         'relaxation_type': 'relaxationType',
         'relaxation_factor': 'relaxationFactor',
         'diagonal_relaxation_factor': 'diagonalRelaxationFactor',
+        'viscous_work_included': 'viscousWorkIncluded',
         'radiation_resolution': 'radiationResolution',
         'momentum_predictor': 'momentumPredictor',
         'transonic': 'transonic',
@@ -82,7 +84,7 @@ class FluidNumerics(object):
         'stabilization': 'stabilization'
     }
 
-    def __init__(self, relaxation_type=None, relaxation_factor=None, diagonal_relaxation_factor=None, radiation_resolution=None, momentum_predictor=None, transonic=None, num_outer_correctors=None, num_correctors=None, num_non_orthogonal_correctors=None, smoothing_parameter=None, damping_coefficient=None, num_alpha_spread_iterations=None, num_alpha_sweep_iterations=None, evaluate_turbulence_only_on_final_iteration=None, pressure_reference_cell=None, pressure_reference_value=None, velocity_limit=None, max_voltage_initial_iterations=None, voltage_initial_tolerance=None, residual_controls=None, solvers=None, schemes=None, stabilization=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, relaxation_type=None, relaxation_factor=None, diagonal_relaxation_factor=None, viscous_work_included=None, radiation_resolution=None, momentum_predictor=None, transonic=None, num_outer_correctors=None, num_correctors=None, num_non_orthogonal_correctors=None, smoothing_parameter=None, damping_coefficient=None, num_alpha_spread_iterations=None, num_alpha_sweep_iterations=None, evaluate_turbulence_only_on_final_iteration=None, pressure_reference_cell=None, pressure_reference_value=None, velocity_limit=None, max_voltage_initial_iterations=None, voltage_initial_tolerance=None, residual_controls=None, solvers=None, schemes=None, stabilization=None, local_vars_configuration=None):  # noqa: E501
         """FluidNumerics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -91,6 +93,7 @@ class FluidNumerics(object):
         self._relaxation_type = None
         self._relaxation_factor = None
         self._diagonal_relaxation_factor = None
+        self._viscous_work_included = None
         self._radiation_resolution = None
         self._momentum_predictor = None
         self._transonic = None
@@ -119,6 +122,8 @@ class FluidNumerics(object):
             self.relaxation_factor = relaxation_factor
         if diagonal_relaxation_factor is not None:
             self.diagonal_relaxation_factor = diagonal_relaxation_factor
+        if viscous_work_included is not None:
+            self.viscous_work_included = viscous_work_included
         if radiation_resolution is not None:
             self.radiation_resolution = radiation_resolution
         if momentum_predictor is not None:
@@ -222,6 +227,29 @@ class FluidNumerics(object):
         """
 
         self._diagonal_relaxation_factor = diagonal_relaxation_factor
+
+    @property
+    def viscous_work_included(self):
+        """Gets the viscous_work_included of this FluidNumerics.  # noqa: E501
+
+        Enabling this option makes the viscous work terms included everywhere in the domain.  # noqa: E501
+
+        :return: The viscous_work_included of this FluidNumerics.  # noqa: E501
+        :rtype: bool
+        """
+        return self._viscous_work_included
+
+    @viscous_work_included.setter
+    def viscous_work_included(self, viscous_work_included):
+        """Sets the viscous_work_included of this FluidNumerics.
+
+        Enabling this option makes the viscous work terms included everywhere in the domain.  # noqa: E501
+
+        :param viscous_work_included: The viscous_work_included of this FluidNumerics.  # noqa: E501
+        :type: bool
+        """
+
+        self._viscous_work_included = viscous_work_included
 
     @property
     def radiation_resolution(self):

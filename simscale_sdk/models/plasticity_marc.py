@@ -31,7 +31,7 @@ class PlasticityMarc(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'plasticity_model': 'MultilinearModelMarc'
+        'plasticity_model': 'OneOfPlasticityMarcPlasticityModel'
     }
 
     attribute_map = {
@@ -56,7 +56,7 @@ class PlasticityMarc(object):
 
 
         :return: The plasticity_model of this PlasticityMarc.  # noqa: E501
-        :rtype: MultilinearModelMarc
+        :rtype: OneOfPlasticityMarcPlasticityModel
         """
         return self._plasticity_model
 
@@ -66,7 +66,7 @@ class PlasticityMarc(object):
 
 
         :param plasticity_model: The plasticity_model of this PlasticityMarc.  # noqa: E501
-        :type: MultilinearModelMarc
+        :type: OneOfPlasticityMarcPlasticityModel
         """
 
         self._plasticity_model = plasticity_model

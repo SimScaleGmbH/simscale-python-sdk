@@ -35,7 +35,8 @@ class ElectromagneticSimulationControl(object):
         'write_control': 'TimeStepWriteControl',
         'num_processors': 'int',
         'max_run_time': 'DimensionalTime',
-        'core_loss_reference_period': 'DimensionalTime'
+        'core_loss_reference_period': 'DimensionalTime',
+        'time_periodic_acceleration': 'bool'
     }
 
     attribute_map = {
@@ -43,10 +44,11 @@ class ElectromagneticSimulationControl(object):
         'write_control': 'writeControl',
         'num_processors': 'numProcessors',
         'max_run_time': 'maxRunTime',
-        'core_loss_reference_period': 'coreLossReferencePeriod'
+        'core_loss_reference_period': 'coreLossReferencePeriod',
+        'time_periodic_acceleration': 'timePeriodicAcceleration'
     }
 
-    def __init__(self, transient_magnetics_control=None, write_control=None, num_processors=None, max_run_time=None, core_loss_reference_period=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, transient_magnetics_control=None, write_control=None, num_processors=None, max_run_time=None, core_loss_reference_period=None, time_periodic_acceleration=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,6 +59,7 @@ class ElectromagneticSimulationControl(object):
         self._num_processors = None
         self._max_run_time = None
         self._core_loss_reference_period = None
+        self._time_periodic_acceleration = None
         self.discriminator = None
 
         if transient_magnetics_control is not None:
@@ -69,6 +72,8 @@ class ElectromagneticSimulationControl(object):
             self.max_run_time = max_run_time
         if core_loss_reference_period is not None:
             self.core_loss_reference_period = core_loss_reference_period
+        if time_periodic_acceleration is not None:
+            self.time_periodic_acceleration = time_periodic_acceleration
 
     @property
     def transient_magnetics_control(self):
@@ -182,6 +187,29 @@ class ElectromagneticSimulationControl(object):
         """
 
         self._core_loss_reference_period = core_loss_reference_period
+
+    @property
+    def time_periodic_acceleration(self):
+        """Gets the time_periodic_acceleration of this ElectromagneticSimulationControl.  # noqa: E501
+
+        Activate when the coil excitation is periodic to accelerate simulation. For more information, please refer to our <a href='https://www.simscale.com/docs/analysis-types/electromagnetics/#time-periodic-acceleration' target='_blank'>documentation</a>.  # noqa: E501
+
+        :return: The time_periodic_acceleration of this ElectromagneticSimulationControl.  # noqa: E501
+        :rtype: bool
+        """
+        return self._time_periodic_acceleration
+
+    @time_periodic_acceleration.setter
+    def time_periodic_acceleration(self, time_periodic_acceleration):
+        """Sets the time_periodic_acceleration of this ElectromagneticSimulationControl.
+
+        Activate when the coil excitation is periodic to accelerate simulation. For more information, please refer to our <a href='https://www.simscale.com/docs/analysis-types/electromagnetics/#time-periodic-acceleration' target='_blank'>documentation</a>.  # noqa: E501
+
+        :param time_periodic_acceleration: The time_periodic_acceleration of this ElectromagneticSimulationControl.  # noqa: E501
+        :type: bool
+        """
+
+        self._time_periodic_acceleration = time_periodic_acceleration
 
     def to_dict(self):
         """Returns the model properties as a dict"""

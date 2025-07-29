@@ -34,6 +34,7 @@ class ChronosSolver(object):
         'type': 'str',
         'convergence_threshold': 'float',
         'max_iterations': 'int',
+        'non_convergence_action': 'str',
         'advanced_settings': 'AdvancedChronosSettings'
     }
 
@@ -41,10 +42,11 @@ class ChronosSolver(object):
         'type': 'type',
         'convergence_threshold': 'convergenceThreshold',
         'max_iterations': 'maxIterations',
+        'non_convergence_action': 'nonConvergenceAction',
         'advanced_settings': 'advancedSettings'
     }
 
-    def __init__(self, type='CHRONOS', convergence_threshold=None, max_iterations=None, advanced_settings=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CHRONOS', convergence_threshold=None, max_iterations=None, non_convergence_action=None, advanced_settings=None, local_vars_configuration=None):  # noqa: E501
         """ChronosSolver - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class ChronosSolver(object):
         self._type = None
         self._convergence_threshold = None
         self._max_iterations = None
+        self._non_convergence_action = None
         self._advanced_settings = None
         self.discriminator = None
 
@@ -61,6 +64,8 @@ class ChronosSolver(object):
             self.convergence_threshold = convergence_threshold
         if max_iterations is not None:
             self.max_iterations = max_iterations
+        if non_convergence_action is not None:
+            self.non_convergence_action = non_convergence_action
         if advanced_settings is not None:
             self.advanced_settings = advanced_settings
 
@@ -140,6 +145,33 @@ class ChronosSolver(object):
             raise ValueError("Invalid value for `max_iterations`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._max_iterations = max_iterations
+
+    @property
+    def non_convergence_action(self):
+        """Gets the non_convergence_action of this ChronosSolver.  # noqa: E501
+
+
+        :return: The non_convergence_action of this ChronosSolver.  # noqa: E501
+        :rtype: str
+        """
+        return self._non_convergence_action
+
+    @non_convergence_action.setter
+    def non_convergence_action(self, non_convergence_action):
+        """Sets the non_convergence_action of this ChronosSolver.
+
+
+        :param non_convergence_action: The non_convergence_action of this ChronosSolver.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["STOP", "SWITCH_TO_DIRECT_SOLVER"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and non_convergence_action not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `non_convergence_action` ({0}), must be one of {1}"  # noqa: E501
+                .format(non_convergence_action, allowed_values)
+            )
+
+        self._non_convergence_action = non_convergence_action
 
     @property
     def advanced_settings(self):

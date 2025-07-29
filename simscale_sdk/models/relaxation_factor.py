@@ -37,6 +37,7 @@ class RelaxationFactor(object):
         'velocity_equation': 'float',
         'velocity': 'float',
         'temperature_equation': 'float',
+        'temperature_field': 'float',
         'density_field': 'float',
         'enthalpy_equation': 'float',
         'internal_energy_equation': 'float',
@@ -63,6 +64,7 @@ class RelaxationFactor(object):
         'velocity_equation': 'velocityEquation',
         'velocity': 'velocity',
         'temperature_equation': 'temperatureEquation',
+        'temperature_field': 'temperatureField',
         'density_field': 'densityField',
         'enthalpy_equation': 'enthalpyEquation',
         'internal_energy_equation': 'internalEnergyEquation',
@@ -82,7 +84,7 @@ class RelaxationFactor(object):
         'voltage_field': 'voltageField'
     }
 
-    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, velocity=None, temperature_equation=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, turbulent_kinetic_energy=None, turbulent_energy_dissipation_rate=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, internal_energy=None, gas_mixture_transport=None, radiative_intensity_ray_equation=None, radiative_intensity_ray_field=None, specific_humidity_equation=None, age_of_fluid_equation=None, voltage_field=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, pressure_field=None, pressure_rgh_field=None, passive_scalar_equation=None, velocity_equation=None, velocity=None, temperature_equation=None, temperature_field=None, density_field=None, enthalpy_equation=None, internal_energy_equation=None, turbulent_kinetic_energy_equation=None, omega_dissipation_rate_equation=None, epsilon_dissipation_rate_equation=None, turbulent_kinetic_energy=None, turbulent_energy_dissipation_rate=None, nu_tilda_equation=None, net_radiative_heat_flux_field=None, internal_energy=None, gas_mixture_transport=None, radiative_intensity_ray_equation=None, radiative_intensity_ray_field=None, specific_humidity_equation=None, age_of_fluid_equation=None, voltage_field=None, local_vars_configuration=None):  # noqa: E501
         """RelaxationFactor - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -94,6 +96,7 @@ class RelaxationFactor(object):
         self._velocity_equation = None
         self._velocity = None
         self._temperature_equation = None
+        self._temperature_field = None
         self._density_field = None
         self._enthalpy_equation = None
         self._internal_energy_equation = None
@@ -125,6 +128,8 @@ class RelaxationFactor(object):
             self.velocity = velocity
         if temperature_equation is not None:
             self.temperature_equation = temperature_equation
+        if temperature_field is not None:
+            self.temperature_field = temperature_field
         if density_field is not None:
             self.density_field = density_field
         if enthalpy_equation is not None:
@@ -325,6 +330,33 @@ class RelaxationFactor(object):
             raise ValueError("Invalid value for `temperature_equation`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._temperature_equation = temperature_equation
+
+    @property
+    def temperature_field(self):
+        """Gets the temperature_field of this RelaxationFactor.  # noqa: E501
+
+
+        :return: The temperature_field of this RelaxationFactor.  # noqa: E501
+        :rtype: float
+        """
+        return self._temperature_field
+
+    @temperature_field.setter
+    def temperature_field(self, temperature_field):
+        """Sets the temperature_field of this RelaxationFactor.
+
+
+        :param temperature_field: The temperature_field of this RelaxationFactor.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                temperature_field is not None and temperature_field > 1):  # noqa: E501
+            raise ValueError("Invalid value for `temperature_field`, must be a value less than or equal to `1`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                temperature_field is not None and temperature_field < 0):  # noqa: E501
+            raise ValueError("Invalid value for `temperature_field`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._temperature_field = temperature_field
 
     @property
     def density_field(self):

@@ -31,23 +31,28 @@ class TimeTransientMagnetics(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'type': 'str'
+        'type': 'str',
+        'thermal': 'bool'
     }
 
     attribute_map = {
-        'type': 'type'
+        'type': 'type',
+        'thermal': 'thermal'
     }
 
-    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', thermal=None, local_vars_configuration=None):  # noqa: E501
         """TimeTransientMagnetics - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._thermal = None
         self.discriminator = None
 
         self.type = type
+        if thermal is not None:
+            self.thermal = thermal
 
     @property
     def type(self):
@@ -73,6 +78,29 @@ class TimeTransientMagnetics(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def thermal(self):
+        """Gets the thermal of this TimeTransientMagnetics.  # noqa: E501
+
+        Coupling with thermal solves for the temperature by considering electromagnetic losses such as Ohmic, hysteric or displacement losses.  # noqa: E501
+
+        :return: The thermal of this TimeTransientMagnetics.  # noqa: E501
+        :rtype: bool
+        """
+        return self._thermal
+
+    @thermal.setter
+    def thermal(self, thermal):
+        """Sets the thermal of this TimeTransientMagnetics.
+
+        Coupling with thermal solves for the temperature by considering electromagnetic losses such as Ohmic, hysteric or displacement losses.  # noqa: E501
+
+        :param thermal: The thermal of this TimeTransientMagnetics.  # noqa: E501
+        :type: bool
+        """
+
+        self._thermal = thermal
 
     def to_dict(self):
         """Returns the model properties as a dict"""

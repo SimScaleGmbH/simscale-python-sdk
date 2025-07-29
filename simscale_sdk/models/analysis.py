@@ -38,7 +38,7 @@ class Analysis(object):
         'element_technology': 'SolidElementTechnology',
         'model': 'OneOfElectromagneticAnalysisModel',
         'materials': 'list[ElectromagneticMaterial]',
-        'initial_conditions': 'SolidInitialConditions',
+        'initial_conditions': 'ElectromagneticInitialConditions',
         'boundary_conditions': 'list[OneOfElectromagneticAnalysisBoundaryConditions]',
         'numerics': 'ElectromagneticNumerics',
         'simulation_control': 'ElectromagneticSimulationControl',
@@ -468,7 +468,7 @@ class Analysis(object):
 
 
         :return: The initial_conditions of this Analysis.  # noqa: E501
-        :rtype: SolidInitialConditions
+        :rtype: ElectromagneticInitialConditions
         """
         return self._initial_conditions
 
@@ -478,7 +478,7 @@ class Analysis(object):
 
 
         :param initial_conditions: The initial_conditions of this Analysis.  # noqa: E501
-        :type: SolidInitialConditions
+        :type: ElectromagneticInitialConditions
         """
 
         self._initial_conditions = initial_conditions
