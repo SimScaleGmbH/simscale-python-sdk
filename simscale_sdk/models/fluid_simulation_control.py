@@ -35,6 +35,7 @@ class FluidSimulationControl(object):
         'adjoint_end_time': 'DimensionalTime',
         'number_of_iterations': 'int',
         'delta_t': 'DimensionalTime',
+        'variable_delta_t': 'DimensionalFunctionTime',
         'adjustable_timestep': 'OneOfFluidSimulationControlAdjustableTimestep',
         'write_control': 'OneOfFluidSimulationControlWriteControl',
         'relative_convergence_criteria': 'float',
@@ -50,6 +51,7 @@ class FluidSimulationControl(object):
         'adjoint_end_time': 'adjointEndTime',
         'number_of_iterations': 'numberOfIterations',
         'delta_t': 'deltaT',
+        'variable_delta_t': 'variableDeltaT',
         'adjustable_timestep': 'adjustableTimestep',
         'write_control': 'writeControl',
         'relative_convergence_criteria': 'relativeConvergenceCriteria',
@@ -60,7 +62,7 @@ class FluidSimulationControl(object):
         'decompose_algorithm': 'decomposeAlgorithm'
     }
 
-    def __init__(self, end_time=None, adjoint_end_time=None, number_of_iterations=None, delta_t=None, adjustable_timestep=None, write_control=None, relative_convergence_criteria=None, num_processors=None, max_run_time=None, velocity_scaling=None, potential_foam_initialization=None, decompose_algorithm=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, end_time=None, adjoint_end_time=None, number_of_iterations=None, delta_t=None, variable_delta_t=None, adjustable_timestep=None, write_control=None, relative_convergence_criteria=None, num_processors=None, max_run_time=None, velocity_scaling=None, potential_foam_initialization=None, decompose_algorithm=None, local_vars_configuration=None):  # noqa: E501
         """FluidSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -70,6 +72,7 @@ class FluidSimulationControl(object):
         self._adjoint_end_time = None
         self._number_of_iterations = None
         self._delta_t = None
+        self._variable_delta_t = None
         self._adjustable_timestep = None
         self._write_control = None
         self._relative_convergence_criteria = None
@@ -88,6 +91,8 @@ class FluidSimulationControl(object):
             self.number_of_iterations = number_of_iterations
         if delta_t is not None:
             self.delta_t = delta_t
+        if variable_delta_t is not None:
+            self.variable_delta_t = variable_delta_t
         if adjustable_timestep is not None:
             self.adjustable_timestep = adjustable_timestep
         if write_control is not None:
@@ -193,6 +198,27 @@ class FluidSimulationControl(object):
         """
 
         self._delta_t = delta_t
+
+    @property
+    def variable_delta_t(self):
+        """Gets the variable_delta_t of this FluidSimulationControl.  # noqa: E501
+
+
+        :return: The variable_delta_t of this FluidSimulationControl.  # noqa: E501
+        :rtype: DimensionalFunctionTime
+        """
+        return self._variable_delta_t
+
+    @variable_delta_t.setter
+    def variable_delta_t(self, variable_delta_t):
+        """Sets the variable_delta_t of this FluidSimulationControl.
+
+
+        :param variable_delta_t: The variable_delta_t of this FluidSimulationControl.  # noqa: E501
+        :type: DimensionalFunctionTime
+        """
+
+        self._variable_delta_t = variable_delta_t
 
     @property
     def adjustable_timestep(self):

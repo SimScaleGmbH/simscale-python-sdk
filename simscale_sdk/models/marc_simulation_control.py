@@ -210,6 +210,9 @@ class MarcSimulationControl(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
+                write_frequency is not None and write_frequency > 1000):  # noqa: E501
+            raise ValueError("Invalid value for `write_frequency`, must be a value less than or equal to `1000`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
                 write_frequency is not None and write_frequency < 1):  # noqa: E501
             raise ValueError("Invalid value for `write_frequency`, must be a value greater than or equal to `1`")  # noqa: E501
 

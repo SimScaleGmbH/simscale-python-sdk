@@ -535,7 +535,7 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_mesh_operation(self, project_id, mesh_operation_id, meshing_spec_schema_version='7.0', **kwargs): # noqa: E501
+    def get_mesh_operation(self, project_id, mesh_operation_id, meshing_spec_schema_version='8.0', **kwargs): # noqa: E501
         """Get information about the mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an

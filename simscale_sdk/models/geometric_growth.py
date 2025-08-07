@@ -110,8 +110,8 @@ class GeometricGrowth(object):
         :type: int
         """
         if (self.local_vars_configuration.client_side_validation and
-                number_of_layers is not None and number_of_layers > 20):  # noqa: E501
-            raise ValueError("Invalid value for `number_of_layers`, must be a value less than or equal to `20`")  # noqa: E501
+                number_of_layers is not None and number_of_layers > 40):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_layers`, must be a value less than or equal to `40`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 number_of_layers is not None and number_of_layers < 1):  # noqa: E501
             raise ValueError("Invalid value for `number_of_layers`, must be a value greater than or equal to `1`")  # noqa: E501

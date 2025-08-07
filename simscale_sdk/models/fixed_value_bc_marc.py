@@ -34,17 +34,21 @@ class FixedValueBCMarc(object):
         'type': 'str',
         'name': 'str',
         'displacement': 'DimensionalPartialVectorFunctionLength',
-        'topological_reference': 'TopologicalReference'
+        'topological_reference': 'TopologicalReference',
+        'activate_load_steps': 'bool',
+        'load_step_uuids': 'list[str]'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
         'displacement': 'displacement',
-        'topological_reference': 'topologicalReference'
+        'topological_reference': 'topologicalReference',
+        'activate_load_steps': 'activateLoadSteps',
+        'load_step_uuids': 'loadStepUuids'
     }
 
-    def __init__(self, type='FIXED_VALUE', name=None, displacement=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_VALUE', name=None, displacement=None, topological_reference=None, activate_load_steps=None, load_step_uuids=None, local_vars_configuration=None):  # noqa: E501
         """FixedValueBCMarc - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +58,8 @@ class FixedValueBCMarc(object):
         self._name = None
         self._displacement = None
         self._topological_reference = None
+        self._activate_load_steps = None
+        self._load_step_uuids = None
         self.discriminator = None
 
         self.type = type
@@ -63,6 +69,10 @@ class FixedValueBCMarc(object):
             self.displacement = displacement
         if topological_reference is not None:
             self.topological_reference = topological_reference
+        if activate_load_steps is not None:
+            self.activate_load_steps = activate_load_steps
+        if load_step_uuids is not None:
+            self.load_step_uuids = load_step_uuids
 
     @property
     def type(self):
@@ -151,6 +161,48 @@ class FixedValueBCMarc(object):
         """
 
         self._topological_reference = topological_reference
+
+    @property
+    def activate_load_steps(self):
+        """Gets the activate_load_steps of this FixedValueBCMarc.  # noqa: E501
+
+
+        :return: The activate_load_steps of this FixedValueBCMarc.  # noqa: E501
+        :rtype: bool
+        """
+        return self._activate_load_steps
+
+    @activate_load_steps.setter
+    def activate_load_steps(self, activate_load_steps):
+        """Sets the activate_load_steps of this FixedValueBCMarc.
+
+
+        :param activate_load_steps: The activate_load_steps of this FixedValueBCMarc.  # noqa: E501
+        :type: bool
+        """
+
+        self._activate_load_steps = activate_load_steps
+
+    @property
+    def load_step_uuids(self):
+        """Gets the load_step_uuids of this FixedValueBCMarc.  # noqa: E501
+
+
+        :return: The load_step_uuids of this FixedValueBCMarc.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._load_step_uuids
+
+    @load_step_uuids.setter
+    def load_step_uuids(self, load_step_uuids):
+        """Sets the load_step_uuids of this FixedValueBCMarc.
+
+
+        :param load_step_uuids: The load_step_uuids of this FixedValueBCMarc.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._load_step_uuids = load_step_uuids
 
     def to_dict(self):
         """Returns the model properties as a dict"""
