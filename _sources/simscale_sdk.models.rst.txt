@@ -2193,6 +2193,14 @@ simscale\_sdk.models.dimensional\_function\_thermal\_transmittance module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.dimensional\_function\_time module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_time
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.dimensional\_function\_total\_thermal\_transmittance module
 --------------------------------------------------------------------------------
 
@@ -5777,6 +5785,14 @@ simscale\_sdk.models.litz\_wire\_coil module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.load\_step module
+--------------------------------------
+
+.. automodule:: simscale_sdk.models.load_step
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.local\_cartesian\_box module
 -------------------------------------------------
 
@@ -6033,10 +6049,10 @@ simscale\_sdk.models.marc\_cauchy\_stress\_type module
    :show-inheritance:
    :undoc-members:
 
-simscale\_sdk.models.marc\_contact module
------------------------------------------
+simscale\_sdk.models.marc\_connection\_group module
+---------------------------------------------------
 
-.. automodule:: simscale_sdk.models.marc_contact
+.. automodule:: simscale_sdk.models.marc_connection_group
    :members:
    :show-inheritance:
    :undoc-members:
@@ -9733,6 +9749,14 @@ simscale\_sdk.models.temporal\_response\_result\_control\_item module
 ---------------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.temporal_response_result_control_item
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.testsolver\_simulation\_control module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.testsolver_simulation_control
    :members:
    :show-inheritance:
    :undoc-members:
