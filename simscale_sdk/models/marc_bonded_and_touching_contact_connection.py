@@ -33,24 +33,26 @@ class MarcBondedAndTouchingContactConnection(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
+        'position_tolerance': 'OneOfMarcBondedAndTouchingContactConnectionPositionTolerance',
         'friction_coefficient': 'float',
-        'contact_bodies': 'TopologicalReference',
-        'touching_faces': 'TopologicalReference',
         'activate_load_steps': 'bool',
-        'load_step_uuids': 'list[str]'
+        'load_step_uuids': 'list[str]',
+        'contact_bodies': 'TopologicalReference',
+        'touching_faces': 'TopologicalReference'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
+        'position_tolerance': 'positionTolerance',
         'friction_coefficient': 'frictionCoefficient',
-        'contact_bodies': 'contactBodies',
-        'touching_faces': 'touchingFaces',
         'activate_load_steps': 'activateLoadSteps',
-        'load_step_uuids': 'loadStepUuids'
+        'load_step_uuids': 'loadStepUuids',
+        'contact_bodies': 'contactBodies',
+        'touching_faces': 'touchingFaces'
     }
 
-    def __init__(self, type='BONDED_AND_TOUCHING', name=None, friction_coefficient=None, contact_bodies=None, touching_faces=None, activate_load_steps=None, load_step_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='BONDED_AND_TOUCHING', name=None, position_tolerance=None, friction_coefficient=None, activate_load_steps=None, load_step_uuids=None, contact_bodies=None, touching_faces=None, local_vars_configuration=None):  # noqa: E501
         """MarcBondedAndTouchingContactConnection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,26 +60,29 @@ class MarcBondedAndTouchingContactConnection(object):
 
         self._type = None
         self._name = None
+        self._position_tolerance = None
         self._friction_coefficient = None
-        self._contact_bodies = None
-        self._touching_faces = None
         self._activate_load_steps = None
         self._load_step_uuids = None
+        self._contact_bodies = None
+        self._touching_faces = None
         self.discriminator = None
 
         self.type = type
         if name is not None:
             self.name = name
+        if position_tolerance is not None:
+            self.position_tolerance = position_tolerance
         if friction_coefficient is not None:
             self.friction_coefficient = friction_coefficient
-        if contact_bodies is not None:
-            self.contact_bodies = contact_bodies
-        if touching_faces is not None:
-            self.touching_faces = touching_faces
         if activate_load_steps is not None:
             self.activate_load_steps = activate_load_steps
         if load_step_uuids is not None:
             self.load_step_uuids = load_step_uuids
+        if contact_bodies is not None:
+            self.contact_bodies = contact_bodies
+        if touching_faces is not None:
+            self.touching_faces = touching_faces
 
     @property
     def type(self):
@@ -126,6 +131,27 @@ class MarcBondedAndTouchingContactConnection(object):
         self._name = name
 
     @property
+    def position_tolerance(self):
+        """Gets the position_tolerance of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+
+
+        :return: The position_tolerance of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+        :rtype: OneOfMarcBondedAndTouchingContactConnectionPositionTolerance
+        """
+        return self._position_tolerance
+
+    @position_tolerance.setter
+    def position_tolerance(self, position_tolerance):
+        """Sets the position_tolerance of this MarcBondedAndTouchingContactConnection.
+
+
+        :param position_tolerance: The position_tolerance of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+        :type: OneOfMarcBondedAndTouchingContactConnectionPositionTolerance
+        """
+
+        self._position_tolerance = position_tolerance
+
+    @property
     def friction_coefficient(self):
         """Gets the friction_coefficient of this MarcBondedAndTouchingContactConnection.  # noqa: E501
 
@@ -145,6 +171,50 @@ class MarcBondedAndTouchingContactConnection(object):
         """
 
         self._friction_coefficient = friction_coefficient
+
+    @property
+    def activate_load_steps(self):
+        """Gets the activate_load_steps of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+
+        Turn this option on to assign this boundary condition or contact to specific load steps in your simulation. When enabled, you can control exactly when (and for how long) this condition is applied. If this option is turned off, the boundary condition or contact is considered globally active and remains applied throughout the entire simulation time.  # noqa: E501
+
+        :return: The activate_load_steps of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+        :rtype: bool
+        """
+        return self._activate_load_steps
+
+    @activate_load_steps.setter
+    def activate_load_steps(self, activate_load_steps):
+        """Sets the activate_load_steps of this MarcBondedAndTouchingContactConnection.
+
+        Turn this option on to assign this boundary condition or contact to specific load steps in your simulation. When enabled, you can control exactly when (and for how long) this condition is applied. If this option is turned off, the boundary condition or contact is considered globally active and remains applied throughout the entire simulation time.  # noqa: E501
+
+        :param activate_load_steps: The activate_load_steps of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+        :type: bool
+        """
+
+        self._activate_load_steps = activate_load_steps
+
+    @property
+    def load_step_uuids(self):
+        """Gets the load_step_uuids of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+
+
+        :return: The load_step_uuids of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._load_step_uuids
+
+    @load_step_uuids.setter
+    def load_step_uuids(self, load_step_uuids):
+        """Sets the load_step_uuids of this MarcBondedAndTouchingContactConnection.
+
+
+        :param load_step_uuids: The load_step_uuids of this MarcBondedAndTouchingContactConnection.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._load_step_uuids = load_step_uuids
 
     @property
     def contact_bodies(self):
@@ -187,48 +257,6 @@ class MarcBondedAndTouchingContactConnection(object):
         """
 
         self._touching_faces = touching_faces
-
-    @property
-    def activate_load_steps(self):
-        """Gets the activate_load_steps of this MarcBondedAndTouchingContactConnection.  # noqa: E501
-
-
-        :return: The activate_load_steps of this MarcBondedAndTouchingContactConnection.  # noqa: E501
-        :rtype: bool
-        """
-        return self._activate_load_steps
-
-    @activate_load_steps.setter
-    def activate_load_steps(self, activate_load_steps):
-        """Sets the activate_load_steps of this MarcBondedAndTouchingContactConnection.
-
-
-        :param activate_load_steps: The activate_load_steps of this MarcBondedAndTouchingContactConnection.  # noqa: E501
-        :type: bool
-        """
-
-        self._activate_load_steps = activate_load_steps
-
-    @property
-    def load_step_uuids(self):
-        """Gets the load_step_uuids of this MarcBondedAndTouchingContactConnection.  # noqa: E501
-
-
-        :return: The load_step_uuids of this MarcBondedAndTouchingContactConnection.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._load_step_uuids
-
-    @load_step_uuids.setter
-    def load_step_uuids(self, load_step_uuids):
-        """Sets the load_step_uuids of this MarcBondedAndTouchingContactConnection.
-
-
-        :param load_step_uuids: The load_step_uuids of this MarcBondedAndTouchingContactConnection.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._load_step_uuids = load_step_uuids
 
     def to_dict(self):
         """Returns the model properties as a dict"""

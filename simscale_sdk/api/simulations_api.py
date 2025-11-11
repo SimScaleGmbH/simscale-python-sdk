@@ -545,7 +545,7 @@ class SimulationsApi(object):
         :param async_req bool: execute request asynchronously
         :param str project_id: The project ID (required)
         :param str simulation_id: The simulation ID (required)
-        :param str simulation_spec_schema_version: Version of the schema the simulation spec should conform to
+        :param str simulation_spec_schema_version: Version of the schema the simulation spec should conform to. This can be either the external version like `30.0`, or the internal version like `internal:549`.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -571,7 +571,7 @@ class SimulationsApi(object):
         :param async_req bool: execute request asynchronously
         :param str project_id: The project ID (required)
         :param str simulation_id: The simulation ID (required)
-        :param str simulation_spec_schema_version: Version of the schema the simulation spec should conform to
+        :param str simulation_spec_schema_version: Version of the schema the simulation spec should conform to. This can be either the external version like `30.0`, or the internal version like `internal:549`.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will

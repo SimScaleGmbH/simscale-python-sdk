@@ -33,7 +33,7 @@ class MarcSumFieldsCalculationResultControlItem(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'field_selection': 'MarcForceFieldSelection',
+        'field_selection': 'OneOfMarcSumFieldsCalculationResultControlItemFieldSelection',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -116,7 +116,7 @@ class MarcSumFieldsCalculationResultControlItem(object):
 
 
         :return: The field_selection of this MarcSumFieldsCalculationResultControlItem.  # noqa: E501
-        :rtype: MarcForceFieldSelection
+        :rtype: OneOfMarcSumFieldsCalculationResultControlItemFieldSelection
         """
         return self._field_selection
 
@@ -126,7 +126,7 @@ class MarcSumFieldsCalculationResultControlItem(object):
 
 
         :param field_selection: The field_selection of this MarcSumFieldsCalculationResultControlItem.  # noqa: E501
-        :type: MarcForceFieldSelection
+        :type: OneOfMarcSumFieldsCalculationResultControlItemFieldSelection
         """
 
         self._field_selection = field_selection

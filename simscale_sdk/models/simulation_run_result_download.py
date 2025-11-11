@@ -34,21 +34,17 @@ class SimulationRunResultDownload(object):
         'format': 'str',
         'uncompressed_size_in_bytes': 'int',
         'url': 'str',
-        'compression': 'str',
-        'can_export': 'bool',
-        'available_export_formats': 'list[str]'
+        'compression': 'str'
     }
 
     attribute_map = {
         'format': 'format',
         'uncompressed_size_in_bytes': 'uncompressedSizeInBytes',
         'url': 'url',
-        'compression': 'compression',
-        'can_export': 'canExport',
-        'available_export_formats': 'availableExportFormats'
+        'compression': 'compression'
     }
 
-    def __init__(self, format=None, uncompressed_size_in_bytes=None, url=None, compression=None, can_export=None, available_export_formats=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, format=None, uncompressed_size_in_bytes=None, url=None, compression=None, local_vars_configuration=None):  # noqa: E501
         """SimulationRunResultDownload - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,8 +54,6 @@ class SimulationRunResultDownload(object):
         self._uncompressed_size_in_bytes = None
         self._url = None
         self._compression = None
-        self._can_export = None
-        self._available_export_formats = None
         self.discriminator = None
 
         if format is not None:
@@ -70,10 +64,6 @@ class SimulationRunResultDownload(object):
             self.url = url
         if compression is not None:
             self.compression = compression
-        if can_export is not None:
-            self.can_export = can_export
-        if available_export_formats is not None:
-            self.available_export_formats = available_export_formats
 
     @property
     def format(self):
@@ -172,52 +162,6 @@ class SimulationRunResultDownload(object):
             )
 
         self._compression = compression
-
-    @property
-    def can_export(self):
-        """Gets the can_export of this SimulationRunResultDownload.  # noqa: E501
-
-        Can this result be exported and downloaded  # noqa: E501
-
-        :return: The can_export of this SimulationRunResultDownload.  # noqa: E501
-        :rtype: bool
-        """
-        return self._can_export
-
-    @can_export.setter
-    def can_export(self, can_export):
-        """Sets the can_export of this SimulationRunResultDownload.
-
-        Can this result be exported and downloaded  # noqa: E501
-
-        :param can_export: The can_export of this SimulationRunResultDownload.  # noqa: E501
-        :type: bool
-        """
-
-        self._can_export = can_export
-
-    @property
-    def available_export_formats(self):
-        """Gets the available_export_formats of this SimulationRunResultDownload.  # noqa: E501
-
-        Supported export format for this result.  # noqa: E501
-
-        :return: The available_export_formats of this SimulationRunResultDownload.  # noqa: E501
-        :rtype: list[str]
-        """
-        return self._available_export_formats
-
-    @available_export_formats.setter
-    def available_export_formats(self, available_export_formats):
-        """Sets the available_export_formats of this SimulationRunResultDownload.
-
-        Supported export format for this result.  # noqa: E501
-
-        :param available_export_formats: The available_export_formats of this SimulationRunResultDownload.  # noqa: E501
-        :type: list[str]
-        """
-
-        self._available_export_formats = available_export_formats
 
     def to_dict(self):
         """Returns the model properties as a dict"""

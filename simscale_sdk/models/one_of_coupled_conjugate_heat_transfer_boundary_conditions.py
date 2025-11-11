@@ -88,6 +88,7 @@ class OneOfCoupledConjugateHeatTransferBoundaryConditions(object):
         'WALL_V34': 'WallBC',
         'FAN': 'FanBC',
         'SYMMETRY': 'SymmetryBC',
+        'PERIODIC': 'PeriodicBC',
         'NATURAL_CONVECTION_INLET_OUTLET': 'NaturalConvectionInletOutletBC'
     }
 

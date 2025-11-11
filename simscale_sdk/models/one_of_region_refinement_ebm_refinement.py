@@ -114,7 +114,7 @@ class OneOfRegionRefinementEBMRefinement(object):
     def distance_refinement_lengths(self):
         """Gets the distance_refinement_lengths of this OneOfRegionRefinementEBMRefinement.  # noqa: E501
 
-        Define the desired cell size based on the distance to the surface of the assigned volumes. The distance and mesh size need to be specified in <u>increasing order</u> (e.g. d1 = 0.1 m - s1 = 0.01m; d2 = 0.5 m - s2 = 0.03m etc);. When the distance is 0, the corresponding size is applied inside the specified volumes.  # noqa: E501
+        Define mesh element sizes inside and around the selected volumes. Each row specifies how the mesh size changes with the distance from the volume boundary: <b>Distance [m]</b> is the distance from the closest point on the boundary, <b>Default size [m]</b> is the target element size at that distance, and <b>Min. size [m]</b> is the smallest allowed element size. Distances must be specified in <u>increasing order</u> (e.g. d1 = 0 m, default = 1e-3 m, min = 5e-4 m; d2 = 0.5 m, default = 3e-3 m, min = 1e-3 m). When <b>Distance = 0</b>, the sizes apply <b>inside</b> the selected volume, and larger distances control how the mesh transitions <b>outside</b> it in all directions.  # noqa: E501
 
         :return: The distance_refinement_lengths of this OneOfRegionRefinementEBMRefinement.  # noqa: E501
         :rtype: list[RefinementLength]
@@ -125,7 +125,7 @@ class OneOfRegionRefinementEBMRefinement(object):
     def distance_refinement_lengths(self, distance_refinement_lengths):
         """Sets the distance_refinement_lengths of this OneOfRegionRefinementEBMRefinement.
 
-        Define the desired cell size based on the distance to the surface of the assigned volumes. The distance and mesh size need to be specified in <u>increasing order</u> (e.g. d1 = 0.1 m - s1 = 0.01m; d2 = 0.5 m - s2 = 0.03m etc);. When the distance is 0, the corresponding size is applied inside the specified volumes.  # noqa: E501
+        Define mesh element sizes inside and around the selected volumes. Each row specifies how the mesh size changes with the distance from the volume boundary: <b>Distance [m]</b> is the distance from the closest point on the boundary, <b>Default size [m]</b> is the target element size at that distance, and <b>Min. size [m]</b> is the smallest allowed element size. Distances must be specified in <u>increasing order</u> (e.g. d1 = 0 m, default = 1e-3 m, min = 5e-4 m; d2 = 0.5 m, default = 3e-3 m, min = 1e-3 m). When <b>Distance = 0</b>, the sizes apply <b>inside</b> the selected volume, and larger distances control how the mesh transitions <b>outside</b> it in all directions.  # noqa: E501
 
         :param distance_refinement_lengths: The distance_refinement_lengths of this OneOfRegionRefinementEBMRefinement.  # noqa: E501
         :type: list[RefinementLength]

@@ -34,6 +34,7 @@ class MarcConnectionGroup(object):
         'type': 'str',
         'friction': 'str',
         'contact_formulation': 'str',
+        'separation_control': 'str',
         'connections': 'list[OneOfMarcConnectionGroupConnections]'
     }
 
@@ -41,10 +42,11 @@ class MarcConnectionGroup(object):
         'type': 'type',
         'friction': 'friction',
         'contact_formulation': 'contactFormulation',
+        'separation_control': 'separationControl',
         'connections': 'connections'
     }
 
-    def __init__(self, type='CONTACT', friction=None, contact_formulation=None, connections=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONTACT', friction=None, contact_formulation=None, separation_control=None, connections=None, local_vars_configuration=None):  # noqa: E501
         """MarcConnectionGroup - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +55,7 @@ class MarcConnectionGroup(object):
         self._type = None
         self._friction = None
         self._contact_formulation = None
+        self._separation_control = None
         self._connections = None
         self.discriminator = None
 
@@ -61,6 +64,8 @@ class MarcConnectionGroup(object):
             self.friction = friction
         if contact_formulation is not None:
             self.contact_formulation = contact_formulation
+        if separation_control is not None:
+            self.separation_control = separation_control
         if connections is not None:
             self.connections = connections
 
@@ -142,6 +147,33 @@ class MarcConnectionGroup(object):
             )
 
         self._contact_formulation = contact_formulation
+
+    @property
+    def separation_control(self):
+        """Gets the separation_control of this MarcConnectionGroup.  # noqa: E501
+
+
+        :return: The separation_control of this MarcConnectionGroup.  # noqa: E501
+        :rtype: str
+        """
+        return self._separation_control
+
+    @separation_control.setter
+    def separation_control(self, separation_control):
+        """Sets the separation_control of this MarcConnectionGroup.
+
+
+        :param separation_control: The separation_control of this MarcConnectionGroup.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["AUTOMATIC", "FORCE", "STRESS"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and separation_control not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `separation_control` ({0}), must be one of {1}"  # noqa: E501
+                .format(separation_control, allowed_values)
+            )
+
+        self._separation_control = separation_control
 
     @property
     def connections(self):

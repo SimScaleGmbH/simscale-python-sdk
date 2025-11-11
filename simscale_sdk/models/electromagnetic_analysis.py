@@ -37,6 +37,7 @@ class ElectromagneticAnalysis(object):
         'initial_conditions': 'ElectromagneticInitialConditions',
         'coils': 'list[Coil]',
         'boundary_conditions': 'list[OneOfElectromagneticAnalysisBoundaryConditions]',
+        'advanced_concepts': 'ElectromagneticAdvancedConcepts',
         'result_control': 'ElectromagneticResultControl',
         'numerics': 'ElectromagneticNumerics',
         'simulation_control': 'ElectromagneticSimulationControl'
@@ -49,12 +50,13 @@ class ElectromagneticAnalysis(object):
         'initial_conditions': 'initialConditions',
         'coils': 'coils',
         'boundary_conditions': 'boundaryConditions',
+        'advanced_concepts': 'advancedConcepts',
         'result_control': 'resultControl',
         'numerics': 'numerics',
         'simulation_control': 'simulationControl'
     }
 
-    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', model=None, materials=None, initial_conditions=None, coils=None, boundary_conditions=None, result_control=None, numerics=None, simulation_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', model=None, materials=None, initial_conditions=None, coils=None, boundary_conditions=None, advanced_concepts=None, result_control=None, numerics=None, simulation_control=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +68,7 @@ class ElectromagneticAnalysis(object):
         self._initial_conditions = None
         self._coils = None
         self._boundary_conditions = None
+        self._advanced_concepts = None
         self._result_control = None
         self._numerics = None
         self._simulation_control = None
@@ -82,6 +85,8 @@ class ElectromagneticAnalysis(object):
             self.coils = coils
         if boundary_conditions is not None:
             self.boundary_conditions = boundary_conditions
+        if advanced_concepts is not None:
+            self.advanced_concepts = advanced_concepts
         if result_control is not None:
             self.result_control = result_control
         if numerics is not None:
@@ -218,6 +223,27 @@ class ElectromagneticAnalysis(object):
         """
 
         self._boundary_conditions = boundary_conditions
+
+    @property
+    def advanced_concepts(self):
+        """Gets the advanced_concepts of this ElectromagneticAnalysis.  # noqa: E501
+
+
+        :return: The advanced_concepts of this ElectromagneticAnalysis.  # noqa: E501
+        :rtype: ElectromagneticAdvancedConcepts
+        """
+        return self._advanced_concepts
+
+    @advanced_concepts.setter
+    def advanced_concepts(self, advanced_concepts):
+        """Sets the advanced_concepts of this ElectromagneticAnalysis.
+
+
+        :param advanced_concepts: The advanced_concepts of this ElectromagneticAnalysis.  # noqa: E501
+        :type: ElectromagneticAdvancedConcepts
+        """
+
+        self._advanced_concepts = advanced_concepts
 
     @property
     def result_control(self):

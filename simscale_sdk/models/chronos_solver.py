@@ -150,6 +150,7 @@ class ChronosSolver(object):
     def non_convergence_action(self):
         """Gets the non_convergence_action of this ChronosSolver.  # noqa: E501
 
+        Choose what happens if the linear solution with Chronos fails. Either stop the simulation, or rerun it with a direct solver (MUMPS)  # noqa: E501
 
         :return: The non_convergence_action of this ChronosSolver.  # noqa: E501
         :rtype: str
@@ -160,6 +161,7 @@ class ChronosSolver(object):
     def non_convergence_action(self, non_convergence_action):
         """Sets the non_convergence_action of this ChronosSolver.
 
+        Choose what happens if the linear solution with Chronos fails. Either stop the simulation, or rerun it with a direct solver (MUMPS)  # noqa: E501
 
         :param non_convergence_action: The non_convergence_action of this ChronosSolver.  # noqa: E501
         :type: str

@@ -44,10 +44,11 @@ class OneOfMarcContactResultControlItemContactType(object):
         'NORMAL_STRESS': 'MarcContactNormalStress',
         'FRICTION_STRESS': 'MarcContactFrictionStress',
         'GAP': 'MarcContactGap',
-        'STATUS': 'MarcContactStatus'
+        'STATUS': 'MarcContactStatus',
+        'PRESSURE': 'MarcContactPressure'
     }
 
-    def __init__(self, type='STATUS', local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE', local_vars_configuration=None):  # noqa: E501
         """OneOfMarcContactResultControlItemContactType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -62,7 +63,7 @@ class OneOfMarcContactResultControlItemContactType(object):
     def type(self):
         """Gets the type of this OneOfMarcContactResultControlItemContactType.  # noqa: E501
 
-        Schema name: MarcContactStatus  # noqa: E501
+        Schema name: MarcContactPressure  # noqa: E501
 
         :return: The type of this OneOfMarcContactResultControlItemContactType.  # noqa: E501
         :rtype: str
@@ -73,7 +74,7 @@ class OneOfMarcContactResultControlItemContactType(object):
     def type(self, type):
         """Sets the type of this OneOfMarcContactResultControlItemContactType.
 
-        Schema name: MarcContactStatus  # noqa: E501
+        Schema name: MarcContactPressure  # noqa: E501
 
         :param type: The type of this OneOfMarcContactResultControlItemContactType.  # noqa: E501
         :type: str

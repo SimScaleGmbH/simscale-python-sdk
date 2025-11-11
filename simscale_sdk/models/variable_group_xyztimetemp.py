@@ -31,44 +31,86 @@ class VariableGroupXYZTIMETEMP(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        't': 'UnitTime',
+        'temperature': 'UnitTemperature',
         'x': 'UnitLength',
         'y': 'UnitLength',
-        'z': 'UnitLength',
-        't': 'UnitTime',
-        'temperature': 'UnitTemperature'
+        'z': 'UnitLength'
     }
 
     attribute_map = {
+        't': 'T',
+        'temperature': 'Temperature',
         'x': 'X',
         'y': 'Y',
-        'z': 'Z',
-        't': 'T',
-        'temperature': 'Temperature'
+        'z': 'Z'
     }
 
-    def __init__(self, x=None, y=None, z=None, t=None, temperature=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, t=None, temperature=None, x=None, y=None, z=None, local_vars_configuration=None):  # noqa: E501
         """VariableGroupXYZTIMETEMP - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._t = None
+        self._temperature = None
         self._x = None
         self._y = None
         self._z = None
-        self._t = None
-        self._temperature = None
         self.discriminator = None
 
+        if t is not None:
+            self.t = t
+        if temperature is not None:
+            self.temperature = temperature
         if x is not None:
             self.x = x
         if y is not None:
             self.y = y
         if z is not None:
             self.z = z
-        if t is not None:
-            self.t = t
-        if temperature is not None:
-            self.temperature = temperature
+
+    @property
+    def t(self):
+        """Gets the t of this VariableGroupXYZTIMETEMP.  # noqa: E501
+
+
+        :return: The t of this VariableGroupXYZTIMETEMP.  # noqa: E501
+        :rtype: UnitTime
+        """
+        return self._t
+
+    @t.setter
+    def t(self, t):
+        """Sets the t of this VariableGroupXYZTIMETEMP.
+
+
+        :param t: The t of this VariableGroupXYZTIMETEMP.  # noqa: E501
+        :type: UnitTime
+        """
+
+        self._t = t
+
+    @property
+    def temperature(self):
+        """Gets the temperature of this VariableGroupXYZTIMETEMP.  # noqa: E501
+
+
+        :return: The temperature of this VariableGroupXYZTIMETEMP.  # noqa: E501
+        :rtype: UnitTemperature
+        """
+        return self._temperature
+
+    @temperature.setter
+    def temperature(self, temperature):
+        """Sets the temperature of this VariableGroupXYZTIMETEMP.
+
+
+        :param temperature: The temperature of this VariableGroupXYZTIMETEMP.  # noqa: E501
+        :type: UnitTemperature
+        """
+
+        self._temperature = temperature
 
     @property
     def x(self):
@@ -132,48 +174,6 @@ class VariableGroupXYZTIMETEMP(object):
         """
 
         self._z = z
-
-    @property
-    def t(self):
-        """Gets the t of this VariableGroupXYZTIMETEMP.  # noqa: E501
-
-
-        :return: The t of this VariableGroupXYZTIMETEMP.  # noqa: E501
-        :rtype: UnitTime
-        """
-        return self._t
-
-    @t.setter
-    def t(self, t):
-        """Sets the t of this VariableGroupXYZTIMETEMP.
-
-
-        :param t: The t of this VariableGroupXYZTIMETEMP.  # noqa: E501
-        :type: UnitTime
-        """
-
-        self._t = t
-
-    @property
-    def temperature(self):
-        """Gets the temperature of this VariableGroupXYZTIMETEMP.  # noqa: E501
-
-
-        :return: The temperature of this VariableGroupXYZTIMETEMP.  # noqa: E501
-        :rtype: UnitTemperature
-        """
-        return self._temperature
-
-    @temperature.setter
-    def temperature(self, temperature):
-        """Sets the temperature of this VariableGroupXYZTIMETEMP.
-
-
-        :param temperature: The temperature of this VariableGroupXYZTIMETEMP.  # noqa: E501
-        :type: UnitTemperature
-        """
-
-        self._temperature = temperature
 
     def to_dict(self):
         """Returns the model properties as a dict"""

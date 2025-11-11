@@ -33,18 +33,16 @@ class CreateMaterialGroupRequest(object):
     openapi_types = {
         'name': 'str',
         'metadata': 'object',
-        'public': 'bool',
         'team_group_id': 'int'
     }
 
     attribute_map = {
         'name': 'name',
         'metadata': 'metadata',
-        'public': 'public',
         'team_group_id': 'teamGroupId'
     }
 
-    def __init__(self, name=None, metadata=None, public=None, team_group_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, metadata=None, team_group_id=None, local_vars_configuration=None):  # noqa: E501
         """CreateMaterialGroupRequest - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -52,15 +50,12 @@ class CreateMaterialGroupRequest(object):
 
         self._name = None
         self._metadata = None
-        self._public = None
         self._team_group_id = None
         self.discriminator = None
 
         self.name = name
         if metadata is not None:
             self.metadata = metadata
-        if public is not None:
-            self.public = public
         if team_group_id is not None:
             self.team_group_id = team_group_id
 
@@ -115,27 +110,6 @@ class CreateMaterialGroupRequest(object):
         """
 
         self._metadata = metadata
-
-    @property
-    def public(self):
-        """Gets the public of this CreateMaterialGroupRequest.  # noqa: E501
-
-
-        :return: The public of this CreateMaterialGroupRequest.  # noqa: E501
-        :rtype: bool
-        """
-        return self._public
-
-    @public.setter
-    def public(self, public):
-        """Sets the public of this CreateMaterialGroupRequest.
-
-
-        :param public: The public of this CreateMaterialGroupRequest.  # noqa: E501
-        :type: bool
-        """
-
-        self._public = public
 
     @property
     def team_group_id(self):

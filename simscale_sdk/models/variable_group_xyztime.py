@@ -31,39 +31,60 @@ class VariableGroupXYZTIME(object):
                             and the value is json key in definition.
     """
     openapi_types = {
+        't': 'UnitTime',
         'x': 'UnitLength',
         'y': 'UnitLength',
-        'z': 'UnitLength',
-        't': 'UnitTime'
+        'z': 'UnitLength'
     }
 
     attribute_map = {
+        't': 'T',
         'x': 'X',
         'y': 'Y',
-        'z': 'Z',
-        't': 'T'
+        'z': 'Z'
     }
 
-    def __init__(self, x=None, y=None, z=None, t=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, t=None, x=None, y=None, z=None, local_vars_configuration=None):  # noqa: E501
         """VariableGroupXYZTIME - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
+        self._t = None
         self._x = None
         self._y = None
         self._z = None
-        self._t = None
         self.discriminator = None
 
+        if t is not None:
+            self.t = t
         if x is not None:
             self.x = x
         if y is not None:
             self.y = y
         if z is not None:
             self.z = z
-        if t is not None:
-            self.t = t
+
+    @property
+    def t(self):
+        """Gets the t of this VariableGroupXYZTIME.  # noqa: E501
+
+
+        :return: The t of this VariableGroupXYZTIME.  # noqa: E501
+        :rtype: UnitTime
+        """
+        return self._t
+
+    @t.setter
+    def t(self, t):
+        """Sets the t of this VariableGroupXYZTIME.
+
+
+        :param t: The t of this VariableGroupXYZTIME.  # noqa: E501
+        :type: UnitTime
+        """
+
+        self._t = t
 
     @property
     def x(self):
@@ -127,27 +148,6 @@ class VariableGroupXYZTIME(object):
         """
 
         self._z = z
-
-    @property
-    def t(self):
-        """Gets the t of this VariableGroupXYZTIME.  # noqa: E501
-
-
-        :return: The t of this VariableGroupXYZTIME.  # noqa: E501
-        :rtype: UnitTime
-        """
-        return self._t
-
-    @t.setter
-    def t(self, t):
-        """Sets the t of this VariableGroupXYZTIME.
-
-
-        :param t: The t of this VariableGroupXYZTIME.  # noqa: E501
-        :type: UnitTime
-        """
-
-        self._t = t
 
     def to_dict(self):
         """Returns the model properties as a dict"""

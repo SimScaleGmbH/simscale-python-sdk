@@ -31,46 +31,39 @@ class MarcSimulationControl(object):
                             and the value is json key in definition.
     """
     openapi_types = {
-        'end_time': 'DimensionalTime',
-        'initial_time_step': 'DimensionalTime',
-        'minimum_time_step': 'DimensionalTime',
-        'maximum_time_step': 'DimensionalTime',
-        'write_frequency': 'int',
+        'timestep_definition': 'OneOfMarcSimulationControlTimestepDefinition',
+        'output_writing_container': 'MarcOutputWritingContainer',
         'num_processors': 'int',
         'manually_assign_parallelization': 'bool',
         'nprocds': 'int',
         'nte': 'int',
         'nts': 'int',
         'nsolver': 'int',
-        'max_run_time': 'DimensionalTime'
+        'max_run_time': 'DimensionalTime',
+        'live_postprocessing': 'bool'
     }
 
     attribute_map = {
-        'end_time': 'endTime',
-        'initial_time_step': 'initialTimeStep',
-        'minimum_time_step': 'minimumTimeStep',
-        'maximum_time_step': 'maximumTimeStep',
-        'write_frequency': 'writeFrequency',
+        'timestep_definition': 'timestepDefinition',
+        'output_writing_container': 'outputWritingContainer',
         'num_processors': 'numProcessors',
         'manually_assign_parallelization': 'manuallyAssignParallelization',
         'nprocds': 'nprocds',
         'nte': 'nte',
         'nts': 'nts',
         'nsolver': 'nsolver',
-        'max_run_time': 'maxRunTime'
+        'max_run_time': 'maxRunTime',
+        'live_postprocessing': 'livePostprocessing'
     }
 
-    def __init__(self, end_time=None, initial_time_step=None, minimum_time_step=None, maximum_time_step=None, write_frequency=None, num_processors=None, manually_assign_parallelization=None, nprocds=None, nte=None, nts=None, nsolver=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, timestep_definition=None, output_writing_container=None, num_processors=None, manually_assign_parallelization=None, nprocds=None, nte=None, nts=None, nsolver=None, max_run_time=None, live_postprocessing=None, local_vars_configuration=None):  # noqa: E501
         """MarcSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
-        self._end_time = None
-        self._initial_time_step = None
-        self._minimum_time_step = None
-        self._maximum_time_step = None
-        self._write_frequency = None
+        self._timestep_definition = None
+        self._output_writing_container = None
         self._num_processors = None
         self._manually_assign_parallelization = None
         self._nprocds = None
@@ -78,18 +71,13 @@ class MarcSimulationControl(object):
         self._nts = None
         self._nsolver = None
         self._max_run_time = None
+        self._live_postprocessing = None
         self.discriminator = None
 
-        if end_time is not None:
-            self.end_time = end_time
-        if initial_time_step is not None:
-            self.initial_time_step = initial_time_step
-        if minimum_time_step is not None:
-            self.minimum_time_step = minimum_time_step
-        if maximum_time_step is not None:
-            self.maximum_time_step = maximum_time_step
-        if write_frequency is not None:
-            self.write_frequency = write_frequency
+        if timestep_definition is not None:
+            self.timestep_definition = timestep_definition
+        if output_writing_container is not None:
+            self.output_writing_container = output_writing_container
         if num_processors is not None:
             self.num_processors = num_processors
         if manually_assign_parallelization is not None:
@@ -104,119 +92,50 @@ class MarcSimulationControl(object):
             self.nsolver = nsolver
         if max_run_time is not None:
             self.max_run_time = max_run_time
+        if live_postprocessing is not None:
+            self.live_postprocessing = live_postprocessing
 
     @property
-    def end_time(self):
-        """Gets the end_time of this MarcSimulationControl.  # noqa: E501
+    def timestep_definition(self):
+        """Gets the timestep_definition of this MarcSimulationControl.  # noqa: E501
 
 
-        :return: The end_time of this MarcSimulationControl.  # noqa: E501
-        :rtype: DimensionalTime
+        :return: The timestep_definition of this MarcSimulationControl.  # noqa: E501
+        :rtype: OneOfMarcSimulationControlTimestepDefinition
         """
-        return self._end_time
+        return self._timestep_definition
 
-    @end_time.setter
-    def end_time(self, end_time):
-        """Sets the end_time of this MarcSimulationControl.
+    @timestep_definition.setter
+    def timestep_definition(self, timestep_definition):
+        """Sets the timestep_definition of this MarcSimulationControl.
 
 
-        :param end_time: The end_time of this MarcSimulationControl.  # noqa: E501
-        :type: DimensionalTime
+        :param timestep_definition: The timestep_definition of this MarcSimulationControl.  # noqa: E501
+        :type: OneOfMarcSimulationControlTimestepDefinition
         """
 
-        self._end_time = end_time
+        self._timestep_definition = timestep_definition
 
     @property
-    def initial_time_step(self):
-        """Gets the initial_time_step of this MarcSimulationControl.  # noqa: E501
+    def output_writing_container(self):
+        """Gets the output_writing_container of this MarcSimulationControl.  # noqa: E501
 
 
-        :return: The initial_time_step of this MarcSimulationControl.  # noqa: E501
-        :rtype: DimensionalTime
+        :return: The output_writing_container of this MarcSimulationControl.  # noqa: E501
+        :rtype: MarcOutputWritingContainer
         """
-        return self._initial_time_step
+        return self._output_writing_container
 
-    @initial_time_step.setter
-    def initial_time_step(self, initial_time_step):
-        """Sets the initial_time_step of this MarcSimulationControl.
-
-
-        :param initial_time_step: The initial_time_step of this MarcSimulationControl.  # noqa: E501
-        :type: DimensionalTime
-        """
-
-        self._initial_time_step = initial_time_step
-
-    @property
-    def minimum_time_step(self):
-        """Gets the minimum_time_step of this MarcSimulationControl.  # noqa: E501
+    @output_writing_container.setter
+    def output_writing_container(self, output_writing_container):
+        """Sets the output_writing_container of this MarcSimulationControl.
 
 
-        :return: The minimum_time_step of this MarcSimulationControl.  # noqa: E501
-        :rtype: DimensionalTime
-        """
-        return self._minimum_time_step
-
-    @minimum_time_step.setter
-    def minimum_time_step(self, minimum_time_step):
-        """Sets the minimum_time_step of this MarcSimulationControl.
-
-
-        :param minimum_time_step: The minimum_time_step of this MarcSimulationControl.  # noqa: E501
-        :type: DimensionalTime
+        :param output_writing_container: The output_writing_container of this MarcSimulationControl.  # noqa: E501
+        :type: MarcOutputWritingContainer
         """
 
-        self._minimum_time_step = minimum_time_step
-
-    @property
-    def maximum_time_step(self):
-        """Gets the maximum_time_step of this MarcSimulationControl.  # noqa: E501
-
-
-        :return: The maximum_time_step of this MarcSimulationControl.  # noqa: E501
-        :rtype: DimensionalTime
-        """
-        return self._maximum_time_step
-
-    @maximum_time_step.setter
-    def maximum_time_step(self, maximum_time_step):
-        """Sets the maximum_time_step of this MarcSimulationControl.
-
-
-        :param maximum_time_step: The maximum_time_step of this MarcSimulationControl.  # noqa: E501
-        :type: DimensionalTime
-        """
-
-        self._maximum_time_step = maximum_time_step
-
-    @property
-    def write_frequency(self):
-        """Gets the write_frequency of this MarcSimulationControl.  # noqa: E501
-
-        Output results are saved every n time steps. Use a value larger than one to reduce the size of the output data and speed up the postprocessing.  # noqa: E501
-
-        :return: The write_frequency of this MarcSimulationControl.  # noqa: E501
-        :rtype: int
-        """
-        return self._write_frequency
-
-    @write_frequency.setter
-    def write_frequency(self, write_frequency):
-        """Sets the write_frequency of this MarcSimulationControl.
-
-        Output results are saved every n time steps. Use a value larger than one to reduce the size of the output data and speed up the postprocessing.  # noqa: E501
-
-        :param write_frequency: The write_frequency of this MarcSimulationControl.  # noqa: E501
-        :type: int
-        """
-        if (self.local_vars_configuration.client_side_validation and
-                write_frequency is not None and write_frequency > 1000):  # noqa: E501
-            raise ValueError("Invalid value for `write_frequency`, must be a value less than or equal to `1000`")  # noqa: E501
-        if (self.local_vars_configuration.client_side_validation and
-                write_frequency is not None and write_frequency < 1):  # noqa: E501
-            raise ValueError("Invalid value for `write_frequency`, must be a value greater than or equal to `1`")  # noqa: E501
-
-        self._write_frequency = write_frequency
+        self._output_writing_container = output_writing_container
 
     @property
     def num_processors(self):
@@ -384,6 +303,27 @@ class MarcSimulationControl(object):
         """
 
         self._max_run_time = max_run_time
+
+    @property
+    def live_postprocessing(self):
+        """Gets the live_postprocessing of this MarcSimulationControl.  # noqa: E501
+
+
+        :return: The live_postprocessing of this MarcSimulationControl.  # noqa: E501
+        :rtype: bool
+        """
+        return self._live_postprocessing
+
+    @live_postprocessing.setter
+    def live_postprocessing(self, live_postprocessing):
+        """Sets the live_postprocessing of this MarcSimulationControl.
+
+
+        :param live_postprocessing: The live_postprocessing of this MarcSimulationControl.  # noqa: E501
+        :type: bool
+        """
+
+        self._live_postprocessing = live_postprocessing
 
     def to_dict(self):
         """Returns the model properties as a dict"""

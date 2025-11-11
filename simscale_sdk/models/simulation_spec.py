@@ -54,7 +54,7 @@ class SimulationSpec(object):
         'parameters': 'parameters'
     }
 
-    def __init__(self, simulation_id=None, name=None, version='30.0', created_at=None, modified_at=None, geometry_id=None, mesh_id=None, model=None, parameters=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, simulation_id=None, name=None, version='31.0', created_at=None, modified_at=None, geometry_id=None, mesh_id=None, model=None, parameters=None, local_vars_configuration=None):  # noqa: E501
         """SimulationSpec - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -134,6 +134,7 @@ class SimulationSpec(object):
     def version(self):
         """Gets the version of this SimulationSpec.  # noqa: E501
 
+        The schema version of the simulation spec. This can be either the external version like `30.0`, or the internal version like `internal:549`.  # noqa: E501
 
         :return: The version of this SimulationSpec.  # noqa: E501
         :rtype: str
@@ -144,6 +145,7 @@ class SimulationSpec(object):
     def version(self, version):
         """Sets the version of this SimulationSpec.
 
+        The schema version of the simulation spec. This can be either the external version like `30.0`, or the internal version like `internal:549`.  # noqa: E501
 
         :param version: The version of this SimulationSpec.  # noqa: E501
         :type: str

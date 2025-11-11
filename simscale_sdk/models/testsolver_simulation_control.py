@@ -32,15 +32,17 @@ class TestsolverSimulationControl(object):
     """
     openapi_types = {
         'num_processors': 'int',
-        'max_run_time': 'DimensionalTime'
+        'max_run_time': 'DimensionalTime',
+        'execution_mode': 'str'
     }
 
     attribute_map = {
         'num_processors': 'numProcessors',
-        'max_run_time': 'maxRunTime'
+        'max_run_time': 'maxRunTime',
+        'execution_mode': 'executionMode'
     }
 
-    def __init__(self, num_processors=None, max_run_time=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, num_processors=None, max_run_time=None, execution_mode=None, local_vars_configuration=None):  # noqa: E501
         """TestsolverSimulationControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -48,12 +50,15 @@ class TestsolverSimulationControl(object):
 
         self._num_processors = None
         self._max_run_time = None
+        self._execution_mode = None
         self.discriminator = None
 
         if num_processors is not None:
             self.num_processors = num_processors
         if max_run_time is not None:
             self.max_run_time = max_run_time
+        if execution_mode is not None:
+            self.execution_mode = execution_mode
 
     @property
     def num_processors(self):
@@ -104,6 +109,27 @@ class TestsolverSimulationControl(object):
         """
 
         self._max_run_time = max_run_time
+
+    @property
+    def execution_mode(self):
+        """Gets the execution_mode of this TestsolverSimulationControl.  # noqa: E501
+
+
+        :return: The execution_mode of this TestsolverSimulationControl.  # noqa: E501
+        :rtype: str
+        """
+        return self._execution_mode
+
+    @execution_mode.setter
+    def execution_mode(self, execution_mode):
+        """Sets the execution_mode of this TestsolverSimulationControl.
+
+
+        :param execution_mode: The execution_mode of this TestsolverSimulationControl.  # noqa: E501
+        :type: str
+        """
+
+        self._execution_mode = execution_mode
 
     def to_dict(self):
         """Returns the model properties as a dict"""

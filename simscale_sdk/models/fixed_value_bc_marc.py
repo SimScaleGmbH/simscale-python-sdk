@@ -34,21 +34,21 @@ class FixedValueBCMarc(object):
         'type': 'str',
         'name': 'str',
         'displacement': 'DimensionalPartialVectorFunctionLength',
-        'topological_reference': 'TopologicalReference',
         'activate_load_steps': 'bool',
-        'load_step_uuids': 'list[str]'
+        'load_step_uuids': 'list[str]',
+        'topological_reference': 'TopologicalReference'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
         'displacement': 'displacement',
-        'topological_reference': 'topologicalReference',
         'activate_load_steps': 'activateLoadSteps',
-        'load_step_uuids': 'loadStepUuids'
+        'load_step_uuids': 'loadStepUuids',
+        'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='FIXED_VALUE', name=None, displacement=None, topological_reference=None, activate_load_steps=None, load_step_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_VALUE', name=None, displacement=None, activate_load_steps=None, load_step_uuids=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """FixedValueBCMarc - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -57,9 +57,9 @@ class FixedValueBCMarc(object):
         self._type = None
         self._name = None
         self._displacement = None
-        self._topological_reference = None
         self._activate_load_steps = None
         self._load_step_uuids = None
+        self._topological_reference = None
         self.discriminator = None
 
         self.type = type
@@ -67,12 +67,12 @@ class FixedValueBCMarc(object):
             self.name = name
         if displacement is not None:
             self.displacement = displacement
-        if topological_reference is not None:
-            self.topological_reference = topological_reference
         if activate_load_steps is not None:
             self.activate_load_steps = activate_load_steps
         if load_step_uuids is not None:
             self.load_step_uuids = load_step_uuids
+        if topological_reference is not None:
+            self.topological_reference = topological_reference
 
     @property
     def type(self):
@@ -142,30 +142,10 @@ class FixedValueBCMarc(object):
         self._displacement = displacement
 
     @property
-    def topological_reference(self):
-        """Gets the topological_reference of this FixedValueBCMarc.  # noqa: E501
-
-
-        :return: The topological_reference of this FixedValueBCMarc.  # noqa: E501
-        :rtype: TopologicalReference
-        """
-        return self._topological_reference
-
-    @topological_reference.setter
-    def topological_reference(self, topological_reference):
-        """Sets the topological_reference of this FixedValueBCMarc.
-
-
-        :param topological_reference: The topological_reference of this FixedValueBCMarc.  # noqa: E501
-        :type: TopologicalReference
-        """
-
-        self._topological_reference = topological_reference
-
-    @property
     def activate_load_steps(self):
         """Gets the activate_load_steps of this FixedValueBCMarc.  # noqa: E501
 
+        Turn this option on to assign this boundary condition or contact to specific load steps in your simulation. When enabled, you can control exactly when (and for how long) this condition is applied. If this option is turned off, the boundary condition or contact is considered globally active and remains applied throughout the entire simulation time.  # noqa: E501
 
         :return: The activate_load_steps of this FixedValueBCMarc.  # noqa: E501
         :rtype: bool
@@ -176,6 +156,7 @@ class FixedValueBCMarc(object):
     def activate_load_steps(self, activate_load_steps):
         """Sets the activate_load_steps of this FixedValueBCMarc.
 
+        Turn this option on to assign this boundary condition or contact to specific load steps in your simulation. When enabled, you can control exactly when (and for how long) this condition is applied. If this option is turned off, the boundary condition or contact is considered globally active and remains applied throughout the entire simulation time.  # noqa: E501
 
         :param activate_load_steps: The activate_load_steps of this FixedValueBCMarc.  # noqa: E501
         :type: bool
@@ -203,6 +184,27 @@ class FixedValueBCMarc(object):
         """
 
         self._load_step_uuids = load_step_uuids
+
+    @property
+    def topological_reference(self):
+        """Gets the topological_reference of this FixedValueBCMarc.  # noqa: E501
+
+
+        :return: The topological_reference of this FixedValueBCMarc.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._topological_reference
+
+    @topological_reference.setter
+    def topological_reference(self, topological_reference):
+        """Sets the topological_reference of this FixedValueBCMarc.
+
+
+        :param topological_reference: The topological_reference of this FixedValueBCMarc.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._topological_reference = topological_reference
 
     def to_dict(self):
         """Returns the model properties as a dict"""

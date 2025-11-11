@@ -34,14 +34,16 @@ class OneOfSimmetrixMeshingFluidAutomaticSweepParameters(object):
         'type': 'str',
         'maximum_number_of_layers': 'int',
         'minimum_number_of_layers': 'int',
-        'surface_element_type': 'str'
+        'surface_element_type': 'str',
+        'extrusion_direction': 'str'
     }
 
     attribute_map = {
         'type': 'type',
         'maximum_number_of_layers': 'maximumNumberOfLayers',
         'minimum_number_of_layers': 'minimumNumberOfLayers',
-        'surface_element_type': 'surfaceElementType'
+        'surface_element_type': 'surfaceElementType',
+        'extrusion_direction': 'extrusionDirection'
     }
 
     discriminator_value_class_map = {
@@ -49,7 +51,7 @@ class OneOfSimmetrixMeshingFluidAutomaticSweepParameters(object):
         'AUTOMATIC_SWEEP_MESHING_OFF': 'AutomaticSweepOff'
     }
 
-    def __init__(self, type='AUTOMATIC_SWEEP_MESHING_OFF', maximum_number_of_layers=None, minimum_number_of_layers=None, surface_element_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='AUTOMATIC_SWEEP_MESHING_OFF', maximum_number_of_layers=None, minimum_number_of_layers=None, surface_element_type=None, extrusion_direction=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixMeshingFluidAutomaticSweepParameters - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -59,6 +61,7 @@ class OneOfSimmetrixMeshingFluidAutomaticSweepParameters(object):
         self._maximum_number_of_layers = None
         self._minimum_number_of_layers = None
         self._surface_element_type = None
+        self._extrusion_direction = None
         self.discriminator = 'type'
 
         self.type = type
@@ -68,6 +71,8 @@ class OneOfSimmetrixMeshingFluidAutomaticSweepParameters(object):
             self.minimum_number_of_layers = minimum_number_of_layers
         if surface_element_type is not None:
             self.surface_element_type = surface_element_type
+        if extrusion_direction is not None:
+            self.extrusion_direction = extrusion_direction
 
     @property
     def type(self):
@@ -168,6 +173,35 @@ class OneOfSimmetrixMeshingFluidAutomaticSweepParameters(object):
             )
 
         self._surface_element_type = surface_element_type
+
+    @property
+    def extrusion_direction(self):
+        """Gets the extrusion_direction of this OneOfSimmetrixMeshingFluidAutomaticSweepParameters.  # noqa: E501
+
+        If a part can be extruded along multiple directions, choose whether to extrude along the shortest or the longest direction (e.g. a simple plate can be extruded along its thickness or the other two dimensions. Choose Shortest to extrude across the thickness).  # noqa: E501
+
+        :return: The extrusion_direction of this OneOfSimmetrixMeshingFluidAutomaticSweepParameters.  # noqa: E501
+        :rtype: str
+        """
+        return self._extrusion_direction
+
+    @extrusion_direction.setter
+    def extrusion_direction(self, extrusion_direction):
+        """Sets the extrusion_direction of this OneOfSimmetrixMeshingFluidAutomaticSweepParameters.
+
+        If a part can be extruded along multiple directions, choose whether to extrude along the shortest or the longest direction (e.g. a simple plate can be extruded along its thickness or the other two dimensions. Choose Shortest to extrude across the thickness).  # noqa: E501
+
+        :param extrusion_direction: The extrusion_direction of this OneOfSimmetrixMeshingFluidAutomaticSweepParameters.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["SHORTEST", "LONGEST"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and extrusion_direction not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `extrusion_direction` ({0}), must be one of {1}"  # noqa: E501
+                .format(extrusion_direction, allowed_values)
+            )
+
+        self._extrusion_direction = extrusion_direction
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

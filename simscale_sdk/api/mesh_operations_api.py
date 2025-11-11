@@ -535,18 +535,18 @@ class MeshOperationsApi(object):
             _request_timeout=local_var_params.get('_request_timeout'),
             collection_formats=collection_formats)
 
-    def get_mesh_operation(self, project_id, mesh_operation_id, meshing_spec_schema_version='8.0', **kwargs): # noqa: E501
+    def get_mesh_operation(self, project_id, mesh_operation_id, **kwargs): # noqa: E501
         """Get information about the mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_mesh_operation(project_id, mesh_operation_id, meshing_spec_schema_version, async_req=True)
+        >>> thread = api.get_mesh_operation(project_id, mesh_operation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str project_id: The project ID (required)
         :param str mesh_operation_id: The mesh operation ID (required)
-        :param str meshing_spec_schema_version: Version of the schema the meshing spec should conform to (required)
+        :param str meshing_spec_schema_version: Version of the schema the meshing spec should conform to. This can be either the external version like `8.0`, or the internal version like `internal:53`.
         :param _preload_content: if False, the urllib3.HTTPResponse object will
                                  be returned without reading/decoding response
                                  data. Default is True.
@@ -559,20 +559,20 @@ class MeshOperationsApi(object):
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
-        return self.get_mesh_operation_with_http_info(project_id, mesh_operation_id, meshing_spec_schema_version, **kwargs)  # noqa: E501
+        return self.get_mesh_operation_with_http_info(project_id, mesh_operation_id, **kwargs)  # noqa: E501
 
-    def get_mesh_operation_with_http_info(self, project_id, mesh_operation_id, meshing_spec_schema_version, **kwargs):  # noqa: E501
+    def get_mesh_operation_with_http_info(self, project_id, mesh_operation_id, **kwargs):  # noqa: E501
         """Get information about the mesh operation  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
-        >>> thread = api.get_mesh_operation_with_http_info(project_id, mesh_operation_id, meshing_spec_schema_version, async_req=True)
+        >>> thread = api.get_mesh_operation_with_http_info(project_id, mesh_operation_id, async_req=True)
         >>> result = thread.get()
 
         :param async_req bool: execute request asynchronously
         :param str project_id: The project ID (required)
         :param str mesh_operation_id: The mesh operation ID (required)
-        :param str meshing_spec_schema_version: Version of the schema the meshing spec should conform to (required)
+        :param str meshing_spec_schema_version: Version of the schema the meshing spec should conform to. This can be either the external version like `8.0`, or the internal version like `internal:53`.
         :param _return_http_data_only: response data without head status code
                                        and headers
         :param _preload_content: if False, the urllib3.HTTPResponse object will
@@ -619,10 +619,6 @@ class MeshOperationsApi(object):
         if self.api_client.client_side_validation and ('mesh_operation_id' not in local_var_params or  # noqa: E501
                                                         local_var_params['mesh_operation_id'] is None):  # noqa: E501
             raise ApiValueError("Missing the required parameter `mesh_operation_id` when calling `get_mesh_operation`")  # noqa: E501
-        # verify the required parameter 'meshing_spec_schema_version' is set
-        if self.api_client.client_side_validation and ('meshing_spec_schema_version' not in local_var_params or  # noqa: E501
-                                                        local_var_params['meshing_spec_schema_version'] is None):  # noqa: E501
-            raise ApiValueError("Missing the required parameter `meshing_spec_schema_version` when calling `get_mesh_operation`")  # noqa: E501
 
         if self.api_client.client_side_validation and 'project_id' in local_var_params and not re.search(r'^\d+$', local_var_params['project_id']):  # noqa: E501
             raise ApiValueError("Invalid value for parameter `project_id` when calling `get_mesh_operation`, must conform to the pattern `/^\d+$/`")  # noqa: E501

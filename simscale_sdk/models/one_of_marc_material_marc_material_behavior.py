@@ -36,7 +36,10 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
         'poissons_ratio': 'OneOfLinearElasticMarcMaterialBehaviorPoissonsRatio',
         'hyperelasticity': 'Hyperelasticity',
         'elasticity': 'ElasticityMarc',
-        'plasticity': 'PlasticityMarc'
+        'plasticity': 'PlasticityMarc',
+        'primary_network': 'PrimaryNetwork',
+        'viscoelastic_network': 'ViscoelasticNetwork',
+        'elastoplastic_network': 'ElastoplasticNetwork'
     }
 
     attribute_map = {
@@ -45,16 +48,20 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
         'poissons_ratio': 'poissonsRatio',
         'hyperelasticity': 'hyperelasticity',
         'elasticity': 'elasticity',
-        'plasticity': 'plasticity'
+        'plasticity': 'plasticity',
+        'primary_network': 'primaryNetwork',
+        'viscoelastic_network': 'viscoelasticNetwork',
+        'elastoplastic_network': 'elastoplasticNetwork'
     }
 
     discriminator_value_class_map = {
         'LINEAR_ELASTIC_MARC': 'LinearElasticMarcMaterialBehavior',
         'HYPERELASTIC_MARC': 'HyperelasticMarcMaterialBehavior',
-        'ELASTOPLASTIC_MARC': 'ElastoplasticMarcMaterialBehavior'
+        'ELASTOPLASTIC_MARC': 'ElastoplasticMarcMaterialBehavior',
+        'VISCOPLASTIC_MARC': 'ViscoplasticMarcMaterialBehavior'
     }
 
-    def __init__(self, type='ELASTOPLASTIC_MARC', youngs_modulus=None, poissons_ratio=None, hyperelasticity=None, elasticity=None, plasticity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VISCOPLASTIC_MARC', youngs_modulus=None, poissons_ratio=None, hyperelasticity=None, elasticity=None, plasticity=None, primary_network=None, viscoelastic_network=None, elastoplastic_network=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMarcMaterialMarcMaterialBehavior - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -66,6 +73,9 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
         self._hyperelasticity = None
         self._elasticity = None
         self._plasticity = None
+        self._primary_network = None
+        self._viscoelastic_network = None
+        self._elastoplastic_network = None
         self.discriminator = 'type'
 
         self.type = type
@@ -79,12 +89,18 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
             self.elasticity = elasticity
         if plasticity is not None:
             self.plasticity = plasticity
+        if primary_network is not None:
+            self.primary_network = primary_network
+        if viscoelastic_network is not None:
+            self.viscoelastic_network = viscoelastic_network
+        if elastoplastic_network is not None:
+            self.elastoplastic_network = elastoplastic_network
 
     @property
     def type(self):
         """Gets the type of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
 
-        Schema name: ElastoplasticMarcMaterialBehavior  # noqa: E501
+        Schema name: ViscoplasticMarcMaterialBehavior  # noqa: E501
 
         :return: The type of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
         :rtype: str
@@ -95,7 +111,7 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
     def type(self, type):
         """Sets the type of this OneOfMarcMaterialMarcMaterialBehavior.
 
-        Schema name: ElastoplasticMarcMaterialBehavior  # noqa: E501
+        Schema name: ViscoplasticMarcMaterialBehavior  # noqa: E501
 
         :param type: The type of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
         :type: str
@@ -209,6 +225,69 @@ class OneOfMarcMaterialMarcMaterialBehavior(object):
         """
 
         self._plasticity = plasticity
+
+    @property
+    def primary_network(self):
+        """Gets the primary_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+
+
+        :return: The primary_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :rtype: PrimaryNetwork
+        """
+        return self._primary_network
+
+    @primary_network.setter
+    def primary_network(self, primary_network):
+        """Sets the primary_network of this OneOfMarcMaterialMarcMaterialBehavior.
+
+
+        :param primary_network: The primary_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :type: PrimaryNetwork
+        """
+
+        self._primary_network = primary_network
+
+    @property
+    def viscoelastic_network(self):
+        """Gets the viscoelastic_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+
+
+        :return: The viscoelastic_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :rtype: ViscoelasticNetwork
+        """
+        return self._viscoelastic_network
+
+    @viscoelastic_network.setter
+    def viscoelastic_network(self, viscoelastic_network):
+        """Sets the viscoelastic_network of this OneOfMarcMaterialMarcMaterialBehavior.
+
+
+        :param viscoelastic_network: The viscoelastic_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :type: ViscoelasticNetwork
+        """
+
+        self._viscoelastic_network = viscoelastic_network
+
+    @property
+    def elastoplastic_network(self):
+        """Gets the elastoplastic_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+
+
+        :return: The elastoplastic_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :rtype: ElastoplasticNetwork
+        """
+        return self._elastoplastic_network
+
+    @elastoplastic_network.setter
+    def elastoplastic_network(self, elastoplastic_network):
+        """Sets the elastoplastic_network of this OneOfMarcMaterialMarcMaterialBehavior.
+
+
+        :param elastoplastic_network: The elastoplastic_network of this OneOfMarcMaterialMarcMaterialBehavior.  # noqa: E501
+        :type: ElastoplasticNetwork
+        """
+
+        self._elastoplastic_network = elastoplastic_network
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

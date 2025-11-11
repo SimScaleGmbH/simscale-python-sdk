@@ -311,12 +311,12 @@ class FluidSimulationControl(object):
         :param num_processors: The num_processors of this FluidSimulationControl.  # noqa: E501
         :type: int
         """
-        allowed_values = [-1, 1, 2, 4, 8, 16, 32, 48, 64, 96, 128, 192]  # noqa: E501
-        if self.local_vars_configuration.client_side_validation and num_processors not in allowed_values:  # noqa: E501
-            raise ValueError(
-                "Invalid value for `num_processors` ({0}), must be one of {1}"  # noqa: E501
-                .format(num_processors, allowed_values)
-            )
+        if (self.local_vars_configuration.client_side_validation and
+                num_processors is not None and num_processors > 192):  # noqa: E501
+            raise ValueError("Invalid value for `num_processors`, must be a value less than or equal to `192`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                num_processors is not None and num_processors < -1):  # noqa: E501
+            raise ValueError("Invalid value for `num_processors`, must be a value greater than or equal to `-1`")  # noqa: E501
 
         self._num_processors = num_processors
 

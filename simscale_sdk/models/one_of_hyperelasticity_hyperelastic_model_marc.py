@@ -38,7 +38,9 @@ class OneOfHyperelasticityHyperelasticModelMarc(object):
         'c20': 'DimensionalPressure',
         'c30': 'DimensionalPressure',
         'bulk_modulus': 'DimensionalPressure',
-        'number_of_terms': 'OneOfOgdenHyperelasticModelMarcNumberOfTerms'
+        'number_of_terms': 'OneOfOgdenHyperelasticModelMarcNumberOfTerms',
+        'deformation_mode': 'str',
+        'engineering_stress_strain_curve': 'DimensionalFunctionPressure'
     }
 
     attribute_map = {
@@ -49,15 +51,18 @@ class OneOfHyperelasticityHyperelasticModelMarc(object):
         'c20': 'c20',
         'c30': 'c30',
         'bulk_modulus': 'bulkModulus',
-        'number_of_terms': 'numberOfTerms'
+        'number_of_terms': 'numberOfTerms',
+        'deformation_mode': 'deformationMode',
+        'engineering_stress_strain_curve': 'engineeringStressStrainCurve'
     }
 
     discriminator_value_class_map = {
         'MOONEY_TYPE_MARC': 'MooneyTypeHyperelasticModelMarc',
-        'OGDEN_MARC': 'OgdenHyperelasticModelMarc'
+        'OGDEN_MARC': 'OgdenHyperelasticModelMarc',
+        'MARLOW_MARC': 'MarlowHyperelasticModelMarc'
     }
 
-    def __init__(self, type='OGDEN_MARC', c10=None, c01=None, c11=None, c20=None, c30=None, bulk_modulus=None, number_of_terms=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MARLOW_MARC', c10=None, c01=None, c11=None, c20=None, c30=None, bulk_modulus=None, number_of_terms=None, deformation_mode=None, engineering_stress_strain_curve=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHyperelasticityHyperelasticModelMarc - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -71,6 +76,8 @@ class OneOfHyperelasticityHyperelasticModelMarc(object):
         self._c30 = None
         self._bulk_modulus = None
         self._number_of_terms = None
+        self._deformation_mode = None
+        self._engineering_stress_strain_curve = None
         self.discriminator = 'type'
 
         self.type = type
@@ -88,12 +95,16 @@ class OneOfHyperelasticityHyperelasticModelMarc(object):
             self.bulk_modulus = bulk_modulus
         if number_of_terms is not None:
             self.number_of_terms = number_of_terms
+        if deformation_mode is not None:
+            self.deformation_mode = deformation_mode
+        if engineering_stress_strain_curve is not None:
+            self.engineering_stress_strain_curve = engineering_stress_strain_curve
 
     @property
     def type(self):
         """Gets the type of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
 
-        Schema name: OgdenHyperelasticModelMarc  # noqa: E501
+        Schema name: MarlowHyperelasticModelMarc  # noqa: E501
 
         :return: The type of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
         :rtype: str
@@ -104,7 +115,7 @@ class OneOfHyperelasticityHyperelasticModelMarc(object):
     def type(self, type):
         """Sets the type of this OneOfHyperelasticityHyperelasticModelMarc.
 
-        Schema name: OgdenHyperelasticModelMarc  # noqa: E501
+        Schema name: MarlowHyperelasticModelMarc  # noqa: E501
 
         :param type: The type of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
         :type: str
@@ -260,6 +271,54 @@ class OneOfHyperelasticityHyperelasticModelMarc(object):
         """
 
         self._number_of_terms = number_of_terms
+
+    @property
+    def deformation_mode(self):
+        """Gets the deformation_mode of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
+
+
+        :return: The deformation_mode of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
+        :rtype: str
+        """
+        return self._deformation_mode
+
+    @deformation_mode.setter
+    def deformation_mode(self, deformation_mode):
+        """Sets the deformation_mode of this OneOfHyperelasticityHyperelasticModelMarc.
+
+
+        :param deformation_mode: The deformation_mode of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["UNIAXIAL", "EQUI_BIAXIAL", "PURE_SHEAR"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and deformation_mode not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `deformation_mode` ({0}), must be one of {1}"  # noqa: E501
+                .format(deformation_mode, allowed_values)
+            )
+
+        self._deformation_mode = deformation_mode
+
+    @property
+    def engineering_stress_strain_curve(self):
+        """Gets the engineering_stress_strain_curve of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
+
+
+        :return: The engineering_stress_strain_curve of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
+        :rtype: DimensionalFunctionPressure
+        """
+        return self._engineering_stress_strain_curve
+
+    @engineering_stress_strain_curve.setter
+    def engineering_stress_strain_curve(self, engineering_stress_strain_curve):
+        """Sets the engineering_stress_strain_curve of this OneOfHyperelasticityHyperelasticModelMarc.
+
+
+        :param engineering_stress_strain_curve: The engineering_stress_strain_curve of this OneOfHyperelasticityHyperelasticModelMarc.  # noqa: E501
+        :type: DimensionalFunctionPressure
+        """
+
+        self._engineering_stress_strain_curve = engineering_stress_strain_curve
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

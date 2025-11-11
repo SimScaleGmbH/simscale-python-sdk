@@ -34,23 +34,26 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
         'type': 'str',
         'displacement_type': 'MarcGlobalDisplacementFieldType',
         'stress_type': 'OneOfMarcStressFieldSelectionStressType',
-        'strain_type': 'OneOfMarcStrainFieldSelectionStrainType'
+        'strain_type': 'OneOfMarcStrainFieldSelectionStrainType',
+        'contact_type': 'OneOfMarcContactFieldSelectionContactType'
     }
 
     attribute_map = {
         'type': 'type',
         'displacement_type': 'displacementType',
         'stress_type': 'stressType',
-        'strain_type': 'strainType'
+        'strain_type': 'strainType',
+        'contact_type': 'contactType'
     }
 
     discriminator_value_class_map = {
         'DISPLACEMENT': 'MarcDisplacementFieldSelection',
         'STRESS': 'MarcStressFieldSelection',
-        'STRAIN': 'MarcStrainFieldSelection'
+        'STRAIN': 'MarcStrainFieldSelection',
+        'CONTACT': 'MarcContactFieldSelection'
     }
 
-    def __init__(self, type='STRAIN', displacement_type=None, stress_type=None, strain_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONTACT', displacement_type=None, stress_type=None, strain_type=None, contact_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +63,7 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
         self._displacement_type = None
         self._stress_type = None
         self._strain_type = None
+        self._contact_type = None
         self.discriminator = 'type'
 
         self.type = type
@@ -69,12 +73,14 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
             self.stress_type = stress_type
         if strain_type is not None:
             self.strain_type = strain_type
+        if contact_type is not None:
+            self.contact_type = contact_type
 
     @property
     def type(self):
         """Gets the type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
 
-        Schema name: MarcStrainFieldSelection  # noqa: E501
+        Schema name: MarcContactFieldSelection  # noqa: E501
 
         :return: The type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
         :rtype: str
@@ -85,7 +91,7 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
     def type(self, type):
         """Sets the type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.
 
-        Schema name: MarcStrainFieldSelection  # noqa: E501
+        Schema name: MarcContactFieldSelection  # noqa: E501
 
         :param type: The type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
         :type: str
@@ -157,6 +163,27 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
         """
 
         self._strain_type = strain_type
+
+    @property
+    def contact_type(self):
+        """Gets the contact_type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The contact_type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfMarcContactFieldSelectionContactType
+        """
+        return self._contact_type
+
+    @contact_type.setter
+    def contact_type(self, contact_type):
+        """Sets the contact_type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.
+
+
+        :param contact_type: The contact_type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfMarcContactFieldSelectionContactType
+        """
+
+        self._contact_type = contact_type
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

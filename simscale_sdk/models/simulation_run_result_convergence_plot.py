@@ -36,7 +36,9 @@ class SimulationRunResultConvergencePlot(object):
         'category': 'str',
         'direction': 'float',
         'modified_at': 'datetime',
-        'download': 'SimulationRunResultDownload'
+        'download': 'SimulationRunResultDownload',
+        'workbench_url': 'str',
+        'available_export_formats': 'list[str]'
     }
 
     attribute_map = {
@@ -45,10 +47,12 @@ class SimulationRunResultConvergencePlot(object):
         'category': 'category',
         'direction': 'direction',
         'modified_at': 'modifiedAt',
-        'download': 'download'
+        'download': 'download',
+        'workbench_url': 'workbenchUrl',
+        'available_export_formats': 'availableExportFormats'
     }
 
-    def __init__(self, type='CONVERGENCE_PLOT', result_id=None, category=None, direction=None, modified_at=None, download=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONVERGENCE_PLOT', result_id=None, category=None, direction=None, modified_at=None, download=None, workbench_url=None, available_export_formats=None, local_vars_configuration=None):  # noqa: E501
         """SimulationRunResultConvergencePlot - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,6 +64,8 @@ class SimulationRunResultConvergencePlot(object):
         self._direction = None
         self._modified_at = None
         self._download = None
+        self._workbench_url = None
+        self._available_export_formats = None
         self.discriminator = None
 
         self.type = type
@@ -73,6 +79,10 @@ class SimulationRunResultConvergencePlot(object):
             self.modified_at = modified_at
         if download is not None:
             self.download = download
+        if workbench_url is not None:
+            self.workbench_url = workbench_url
+        if available_export_formats is not None:
+            self.available_export_formats = available_export_formats
 
     @property
     def type(self):
@@ -209,6 +219,52 @@ class SimulationRunResultConvergencePlot(object):
         """
 
         self._download = download
+
+    @property
+    def workbench_url(self):
+        """Gets the workbench_url of this SimulationRunResultConvergencePlot.  # noqa: E501
+
+        URL for opening the convergence plot in the Workbench.  # noqa: E501
+
+        :return: The workbench_url of this SimulationRunResultConvergencePlot.  # noqa: E501
+        :rtype: str
+        """
+        return self._workbench_url
+
+    @workbench_url.setter
+    def workbench_url(self, workbench_url):
+        """Sets the workbench_url of this SimulationRunResultConvergencePlot.
+
+        URL for opening the convergence plot in the Workbench.  # noqa: E501
+
+        :param workbench_url: The workbench_url of this SimulationRunResultConvergencePlot.  # noqa: E501
+        :type: str
+        """
+
+        self._workbench_url = workbench_url
+
+    @property
+    def available_export_formats(self):
+        """Gets the available_export_formats of this SimulationRunResultConvergencePlot.  # noqa: E501
+
+        Supported export format for this result.  # noqa: E501
+
+        :return: The available_export_formats of this SimulationRunResultConvergencePlot.  # noqa: E501
+        :rtype: list[str]
+        """
+        return self._available_export_formats
+
+    @available_export_formats.setter
+    def available_export_formats(self, available_export_formats):
+        """Sets the available_export_formats of this SimulationRunResultConvergencePlot.
+
+        Supported export format for this result.  # noqa: E501
+
+        :param available_export_formats: The available_export_formats of this SimulationRunResultConvergencePlot.  # noqa: E501
+        :type: list[str]
+        """
+
+        self._available_export_formats = available_export_formats
 
     def to_dict(self):
         """Returns the model properties as a dict"""

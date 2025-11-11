@@ -33,16 +33,16 @@ class Analysis(object):
     openapi_types = {
         'type': 'str',
         'non_linear_analysis': 'bool',
-        'connection_groups': 'list[Contact]',
-        'connectors': 'list[OneOfFrequencyAnalysisConnectors]',
-        'element_technology': 'SolidElementTechnology',
+        'connection_groups': 'list[MarcConnectionGroup]',
+        'connectors': 'list[RemotePointConnectionMarc]',
+        'element_technology': 'MarcElementTechnology',
         'model': 'OneOfElectromagneticAnalysisModel',
-        'materials': 'list[ElectromagneticMaterial]',
+        'materials': 'list[MarcMaterial]',
         'initial_conditions': 'ElectromagneticInitialConditions',
-        'boundary_conditions': 'list[OneOfElectromagneticAnalysisBoundaryConditions]',
-        'numerics': 'ElectromagneticNumerics',
-        'simulation_control': 'ElectromagneticSimulationControl',
-        'result_control': 'ElectromagneticResultControl',
+        'boundary_conditions': 'list[OneOfMarcAnalysisBoundaryConditions]',
+        'numerics': 'MarcNumerics',
+        'simulation_control': 'MarcSimulationControl',
+        'result_control': 'MarcResultControl',
         'mesh_order': 'str',
         'time_dependency': 'OneOfConjugateHeatTransferTimeDependency',
         'inertia_effect': 'str',
@@ -51,7 +51,7 @@ class Analysis(object):
         'algorithm': 'str',
         'num_of_passive_species': 'int',
         'enable_adjoint_optimization': 'bool',
-        'advanced_concepts': 'AdvancedConcepts',
+        'advanced_concepts': 'ElectromagneticAdvancedConcepts',
         'bounding_box_uuid': 'str',
         'material': 'IncompressibleMaterial',
         'flow_domain_boundaries': 'FlowDomainBoundaries',
@@ -79,7 +79,8 @@ class Analysis(object):
         'embedded_boundary_meshing': 'EmbeddedBoundaryMeshing',
         'use_local_time_stepping': 'bool',
         'global_physics': 'SolidGlobalPhysics',
-        'coils': 'list[Coil]'
+        'coils': 'list[Coil]',
+        'load_steps': 'list[LoadStep]'
     }
 
     attribute_map = {
@@ -131,7 +132,8 @@ class Analysis(object):
         'embedded_boundary_meshing': 'embeddedBoundaryMeshing',
         'use_local_time_stepping': 'useLocalTimeStepping',
         'global_physics': 'globalPhysics',
-        'coils': 'coils'
+        'coils': 'coils',
+        'load_steps': 'loadSteps'
     }
 
     discriminator_value_class_map = {
@@ -151,10 +153,11 @@ class Analysis(object):
         'CONJUGATE_HEAT_TRANSFER': 'ConjugateHeatTransfer',
         'HARMONIC_ANALYSIS': 'HarmonicAnalysis',
         'FREQUENCY_ANALYSIS': 'FrequencyAnalysis',
-        'ELECTROMAGNETIC_ANALYSIS': 'ElectromagneticAnalysis'
+        'ELECTROMAGNETIC_ANALYSIS': 'ElectromagneticAnalysis',
+        'MARC_ANALYSIS': 'MarcAnalysis'
     }
 
-    def __init__(self, type='ELECTROMAGNETIC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multicomponent=None, is_multiphase=None, is_cht=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MARC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multicomponent=None, is_multiphase=None, is_cht=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, load_steps=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -209,6 +212,7 @@ class Analysis(object):
         self._use_local_time_stepping = None
         self._global_physics = None
         self._coils = None
+        self._load_steps = None
         self.discriminator = 'type'
 
         self.type = type
@@ -308,12 +312,14 @@ class Analysis(object):
             self.global_physics = global_physics
         if coils is not None:
             self.coils = coils
+        if load_steps is not None:
+            self.load_steps = load_steps
 
     @property
     def type(self):
         """Gets the type of this Analysis.  # noqa: E501
 
-        Schema name: ElectromagneticAnalysis  # noqa: E501
+        Schema name: MarcAnalysis  # noqa: E501
 
         :return: The type of this Analysis.  # noqa: E501
         :rtype: str
@@ -324,7 +330,7 @@ class Analysis(object):
     def type(self, type):
         """Sets the type of this Analysis.
 
-        Schema name: ElectromagneticAnalysis  # noqa: E501
+        Schema name: MarcAnalysis  # noqa: E501
 
         :param type: The type of this Analysis.  # noqa: E501
         :type: str
@@ -363,7 +369,7 @@ class Analysis(object):
 
 
         :return: The connection_groups of this Analysis.  # noqa: E501
-        :rtype: list[Contact]
+        :rtype: list[MarcConnectionGroup]
         """
         return self._connection_groups
 
@@ -373,7 +379,7 @@ class Analysis(object):
 
 
         :param connection_groups: The connection_groups of this Analysis.  # noqa: E501
-        :type: list[Contact]
+        :type: list[MarcConnectionGroup]
         """
 
         self._connection_groups = connection_groups
@@ -384,7 +390,7 @@ class Analysis(object):
 
 
         :return: The connectors of this Analysis.  # noqa: E501
-        :rtype: list[OneOfFrequencyAnalysisConnectors]
+        :rtype: list[RemotePointConnectionMarc]
         """
         return self._connectors
 
@@ -394,7 +400,7 @@ class Analysis(object):
 
 
         :param connectors: The connectors of this Analysis.  # noqa: E501
-        :type: list[OneOfFrequencyAnalysisConnectors]
+        :type: list[RemotePointConnectionMarc]
         """
 
         self._connectors = connectors
@@ -405,7 +411,7 @@ class Analysis(object):
 
 
         :return: The element_technology of this Analysis.  # noqa: E501
-        :rtype: SolidElementTechnology
+        :rtype: MarcElementTechnology
         """
         return self._element_technology
 
@@ -415,7 +421,7 @@ class Analysis(object):
 
 
         :param element_technology: The element_technology of this Analysis.  # noqa: E501
-        :type: SolidElementTechnology
+        :type: MarcElementTechnology
         """
 
         self._element_technology = element_technology
@@ -447,7 +453,7 @@ class Analysis(object):
 
 
         :return: The materials of this Analysis.  # noqa: E501
-        :rtype: list[ElectromagneticMaterial]
+        :rtype: list[MarcMaterial]
         """
         return self._materials
 
@@ -457,7 +463,7 @@ class Analysis(object):
 
 
         :param materials: The materials of this Analysis.  # noqa: E501
-        :type: list[ElectromagneticMaterial]
+        :type: list[MarcMaterial]
         """
 
         self._materials = materials
@@ -489,7 +495,7 @@ class Analysis(object):
 
 
         :return: The boundary_conditions of this Analysis.  # noqa: E501
-        :rtype: list[OneOfElectromagneticAnalysisBoundaryConditions]
+        :rtype: list[OneOfMarcAnalysisBoundaryConditions]
         """
         return self._boundary_conditions
 
@@ -499,7 +505,7 @@ class Analysis(object):
 
 
         :param boundary_conditions: The boundary_conditions of this Analysis.  # noqa: E501
-        :type: list[OneOfElectromagneticAnalysisBoundaryConditions]
+        :type: list[OneOfMarcAnalysisBoundaryConditions]
         """
 
         self._boundary_conditions = boundary_conditions
@@ -510,7 +516,7 @@ class Analysis(object):
 
 
         :return: The numerics of this Analysis.  # noqa: E501
-        :rtype: ElectromagneticNumerics
+        :rtype: MarcNumerics
         """
         return self._numerics
 
@@ -520,7 +526,7 @@ class Analysis(object):
 
 
         :param numerics: The numerics of this Analysis.  # noqa: E501
-        :type: ElectromagneticNumerics
+        :type: MarcNumerics
         """
 
         self._numerics = numerics
@@ -531,7 +537,7 @@ class Analysis(object):
 
 
         :return: The simulation_control of this Analysis.  # noqa: E501
-        :rtype: ElectromagneticSimulationControl
+        :rtype: MarcSimulationControl
         """
         return self._simulation_control
 
@@ -541,7 +547,7 @@ class Analysis(object):
 
 
         :param simulation_control: The simulation_control of this Analysis.  # noqa: E501
-        :type: ElectromagneticSimulationControl
+        :type: MarcSimulationControl
         """
 
         self._simulation_control = simulation_control
@@ -552,7 +558,7 @@ class Analysis(object):
 
 
         :return: The result_control of this Analysis.  # noqa: E501
-        :rtype: ElectromagneticResultControl
+        :rtype: MarcResultControl
         """
         return self._result_control
 
@@ -562,7 +568,7 @@ class Analysis(object):
 
 
         :param result_control: The result_control of this Analysis.  # noqa: E501
-        :type: ElectromagneticResultControl
+        :type: MarcResultControl
         """
 
         self._result_control = result_control
@@ -771,7 +777,7 @@ class Analysis(object):
 
 
         :return: The advanced_concepts of this Analysis.  # noqa: E501
-        :rtype: AdvancedConcepts
+        :rtype: ElectromagneticAdvancedConcepts
         """
         return self._advanced_concepts
 
@@ -781,7 +787,7 @@ class Analysis(object):
 
 
         :param advanced_concepts: The advanced_concepts of this Analysis.  # noqa: E501
-        :type: AdvancedConcepts
+        :type: ElectromagneticAdvancedConcepts
         """
 
         self._advanced_concepts = advanced_concepts
@@ -1405,6 +1411,27 @@ class Analysis(object):
         """
 
         self._coils = coils
+
+    @property
+    def load_steps(self):
+        """Gets the load_steps of this Analysis.  # noqa: E501
+
+
+        :return: The load_steps of this Analysis.  # noqa: E501
+        :rtype: list[LoadStep]
+        """
+        return self._load_steps
+
+    @load_steps.setter
+    def load_steps(self, load_steps):
+        """Sets the load_steps of this Analysis.
+
+
+        :param load_steps: The load_steps of this Analysis.  # noqa: E501
+        :type: list[LoadStep]
+        """
+
+        self._load_steps = load_steps
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

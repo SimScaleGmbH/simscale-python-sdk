@@ -35,9 +35,9 @@ class MarcTouchingContactConnection(object):
         'name': 'str',
         'friction_coefficient': 'float',
         'interference_fit': 'InterferenceFit',
-        'contact_bodies': 'TopologicalReference',
         'activate_load_steps': 'bool',
-        'load_step_uuids': 'list[str]'
+        'load_step_uuids': 'list[str]',
+        'contact_bodies': 'TopologicalReference'
     }
 
     attribute_map = {
@@ -45,12 +45,12 @@ class MarcTouchingContactConnection(object):
         'name': 'name',
         'friction_coefficient': 'frictionCoefficient',
         'interference_fit': 'interferenceFit',
-        'contact_bodies': 'contactBodies',
         'activate_load_steps': 'activateLoadSteps',
-        'load_step_uuids': 'loadStepUuids'
+        'load_step_uuids': 'loadStepUuids',
+        'contact_bodies': 'contactBodies'
     }
 
-    def __init__(self, type='TOUCHING', name=None, friction_coefficient=None, interference_fit=None, contact_bodies=None, activate_load_steps=None, load_step_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TOUCHING', name=None, friction_coefficient=None, interference_fit=None, activate_load_steps=None, load_step_uuids=None, contact_bodies=None, local_vars_configuration=None):  # noqa: E501
         """MarcTouchingContactConnection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -60,9 +60,9 @@ class MarcTouchingContactConnection(object):
         self._name = None
         self._friction_coefficient = None
         self._interference_fit = None
-        self._contact_bodies = None
         self._activate_load_steps = None
         self._load_step_uuids = None
+        self._contact_bodies = None
         self.discriminator = None
 
         self.type = type
@@ -72,12 +72,12 @@ class MarcTouchingContactConnection(object):
             self.friction_coefficient = friction_coefficient
         if interference_fit is not None:
             self.interference_fit = interference_fit
-        if contact_bodies is not None:
-            self.contact_bodies = contact_bodies
         if activate_load_steps is not None:
             self.activate_load_steps = activate_load_steps
         if load_step_uuids is not None:
             self.load_step_uuids = load_step_uuids
+        if contact_bodies is not None:
+            self.contact_bodies = contact_bodies
 
     @property
     def type(self):
@@ -168,30 +168,10 @@ class MarcTouchingContactConnection(object):
         self._interference_fit = interference_fit
 
     @property
-    def contact_bodies(self):
-        """Gets the contact_bodies of this MarcTouchingContactConnection.  # noqa: E501
-
-
-        :return: The contact_bodies of this MarcTouchingContactConnection.  # noqa: E501
-        :rtype: TopologicalReference
-        """
-        return self._contact_bodies
-
-    @contact_bodies.setter
-    def contact_bodies(self, contact_bodies):
-        """Sets the contact_bodies of this MarcTouchingContactConnection.
-
-
-        :param contact_bodies: The contact_bodies of this MarcTouchingContactConnection.  # noqa: E501
-        :type: TopologicalReference
-        """
-
-        self._contact_bodies = contact_bodies
-
-    @property
     def activate_load_steps(self):
         """Gets the activate_load_steps of this MarcTouchingContactConnection.  # noqa: E501
 
+        Turn this option on to assign this boundary condition or contact to specific load steps in your simulation. When enabled, you can control exactly when (and for how long) this condition is applied. If this option is turned off, the boundary condition or contact is considered globally active and remains applied throughout the entire simulation time.  # noqa: E501
 
         :return: The activate_load_steps of this MarcTouchingContactConnection.  # noqa: E501
         :rtype: bool
@@ -202,6 +182,7 @@ class MarcTouchingContactConnection(object):
     def activate_load_steps(self, activate_load_steps):
         """Sets the activate_load_steps of this MarcTouchingContactConnection.
 
+        Turn this option on to assign this boundary condition or contact to specific load steps in your simulation. When enabled, you can control exactly when (and for how long) this condition is applied. If this option is turned off, the boundary condition or contact is considered globally active and remains applied throughout the entire simulation time.  # noqa: E501
 
         :param activate_load_steps: The activate_load_steps of this MarcTouchingContactConnection.  # noqa: E501
         :type: bool
@@ -229,6 +210,27 @@ class MarcTouchingContactConnection(object):
         """
 
         self._load_step_uuids = load_step_uuids
+
+    @property
+    def contact_bodies(self):
+        """Gets the contact_bodies of this MarcTouchingContactConnection.  # noqa: E501
+
+
+        :return: The contact_bodies of this MarcTouchingContactConnection.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._contact_bodies
+
+    @contact_bodies.setter
+    def contact_bodies(self, contact_bodies):
+        """Sets the contact_bodies of this MarcTouchingContactConnection.
+
+
+        :param contact_bodies: The contact_bodies of this MarcTouchingContactConnection.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._contact_bodies = contact_bodies
 
     def to_dict(self):
         """Returns the model properties as a dict"""

@@ -62,7 +62,7 @@ class MeshOperation(object):
         'mesh_id': 'meshId'
     }
 
-    def __init__(self, mesh_operation_id=None, name=None, version='8.0', geometry_id=None, model=None, created_at=None, modified_at=None, started_at=None, finished_at=None, compute_resource=None, status=None, progress=None, mesh_id=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, mesh_operation_id=None, name=None, version='9.0', geometry_id=None, model=None, created_at=None, modified_at=None, started_at=None, finished_at=None, compute_resource=None, status=None, progress=None, mesh_id=None, local_vars_configuration=None):  # noqa: E501
         """MeshOperation - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -158,6 +158,7 @@ class MeshOperation(object):
     def version(self):
         """Gets the version of this MeshOperation.  # noqa: E501
 
+        The schema version of the mesh operation. This can be either the external version like `8.0`, or the internal version like `internal:53`.  # noqa: E501
 
         :return: The version of this MeshOperation.  # noqa: E501
         :rtype: str
@@ -168,6 +169,7 @@ class MeshOperation(object):
     def version(self, version):
         """Sets the version of this MeshOperation.
 
+        The schema version of the mesh operation. This can be either the external version like `8.0`, or the internal version like `internal:53`.  # noqa: E501
 
         :param version: The version of this MeshOperation.  # noqa: E501
         :type: str

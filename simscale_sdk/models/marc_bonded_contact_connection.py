@@ -33,20 +33,22 @@ class MarcBondedContactConnection(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'contact_bodies': 'TopologicalReference',
+        'position_tolerance': 'OneOfMarcBondedContactConnectionPositionTolerance',
         'activate_load_steps': 'bool',
-        'load_step_uuids': 'list[str]'
+        'load_step_uuids': 'list[str]',
+        'contact_bodies': 'TopologicalReference'
     }
 
     attribute_map = {
         'type': 'type',
         'name': 'name',
-        'contact_bodies': 'contactBodies',
+        'position_tolerance': 'positionTolerance',
         'activate_load_steps': 'activateLoadSteps',
-        'load_step_uuids': 'loadStepUuids'
+        'load_step_uuids': 'loadStepUuids',
+        'contact_bodies': 'contactBodies'
     }
 
-    def __init__(self, type='BONDED', name=None, contact_bodies=None, activate_load_steps=None, load_step_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='BONDED', name=None, position_tolerance=None, activate_load_steps=None, load_step_uuids=None, contact_bodies=None, local_vars_configuration=None):  # noqa: E501
         """MarcBondedContactConnection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,20 +56,23 @@ class MarcBondedContactConnection(object):
 
         self._type = None
         self._name = None
-        self._contact_bodies = None
+        self._position_tolerance = None
         self._activate_load_steps = None
         self._load_step_uuids = None
+        self._contact_bodies = None
         self.discriminator = None
 
         self.type = type
         if name is not None:
             self.name = name
-        if contact_bodies is not None:
-            self.contact_bodies = contact_bodies
+        if position_tolerance is not None:
+            self.position_tolerance = position_tolerance
         if activate_load_steps is not None:
             self.activate_load_steps = activate_load_steps
         if load_step_uuids is not None:
             self.load_step_uuids = load_step_uuids
+        if contact_bodies is not None:
+            self.contact_bodies = contact_bodies
 
     @property
     def type(self):
@@ -116,30 +121,31 @@ class MarcBondedContactConnection(object):
         self._name = name
 
     @property
-    def contact_bodies(self):
-        """Gets the contact_bodies of this MarcBondedContactConnection.  # noqa: E501
+    def position_tolerance(self):
+        """Gets the position_tolerance of this MarcBondedContactConnection.  # noqa: E501
 
 
-        :return: The contact_bodies of this MarcBondedContactConnection.  # noqa: E501
-        :rtype: TopologicalReference
+        :return: The position_tolerance of this MarcBondedContactConnection.  # noqa: E501
+        :rtype: OneOfMarcBondedContactConnectionPositionTolerance
         """
-        return self._contact_bodies
+        return self._position_tolerance
 
-    @contact_bodies.setter
-    def contact_bodies(self, contact_bodies):
-        """Sets the contact_bodies of this MarcBondedContactConnection.
+    @position_tolerance.setter
+    def position_tolerance(self, position_tolerance):
+        """Sets the position_tolerance of this MarcBondedContactConnection.
 
 
-        :param contact_bodies: The contact_bodies of this MarcBondedContactConnection.  # noqa: E501
-        :type: TopologicalReference
+        :param position_tolerance: The position_tolerance of this MarcBondedContactConnection.  # noqa: E501
+        :type: OneOfMarcBondedContactConnectionPositionTolerance
         """
 
-        self._contact_bodies = contact_bodies
+        self._position_tolerance = position_tolerance
 
     @property
     def activate_load_steps(self):
         """Gets the activate_load_steps of this MarcBondedContactConnection.  # noqa: E501
 
+        Turn this option on to assign this boundary condition or contact to specific load steps in your simulation. When enabled, you can control exactly when (and for how long) this condition is applied. If this option is turned off, the boundary condition or contact is considered globally active and remains applied throughout the entire simulation time.  # noqa: E501
 
         :return: The activate_load_steps of this MarcBondedContactConnection.  # noqa: E501
         :rtype: bool
@@ -150,6 +156,7 @@ class MarcBondedContactConnection(object):
     def activate_load_steps(self, activate_load_steps):
         """Sets the activate_load_steps of this MarcBondedContactConnection.
 
+        Turn this option on to assign this boundary condition or contact to specific load steps in your simulation. When enabled, you can control exactly when (and for how long) this condition is applied. If this option is turned off, the boundary condition or contact is considered globally active and remains applied throughout the entire simulation time.  # noqa: E501
 
         :param activate_load_steps: The activate_load_steps of this MarcBondedContactConnection.  # noqa: E501
         :type: bool
@@ -177,6 +184,27 @@ class MarcBondedContactConnection(object):
         """
 
         self._load_step_uuids = load_step_uuids
+
+    @property
+    def contact_bodies(self):
+        """Gets the contact_bodies of this MarcBondedContactConnection.  # noqa: E501
+
+
+        :return: The contact_bodies of this MarcBondedContactConnection.  # noqa: E501
+        :rtype: TopologicalReference
+        """
+        return self._contact_bodies
+
+    @contact_bodies.setter
+    def contact_bodies(self, contact_bodies):
+        """Sets the contact_bodies of this MarcBondedContactConnection.
+
+
+        :param contact_bodies: The contact_bodies of this MarcBondedContactConnection.  # noqa: E501
+        :type: TopologicalReference
+        """
+
+        self._contact_bodies = contact_bodies
 
     def to_dict(self):
         """Returns the model properties as a dict"""

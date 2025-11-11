@@ -36,6 +36,7 @@ class OneOfMinMaxFieldsCalculationResultControlItemFieldSelection(object):
         'component_selection': 'str',
         'output_method': 'str',
         'force_type': 'OneOfForceFieldSelectionForceType',
+        'contact_type': 'OneOfContactFieldSelectionContactType',
         'strain_type': 'OneOfStrainFieldSelectionStrainType',
         'stress_type': 'OneOfStressFieldSelectionStressType',
         'velocity_type': 'OneOfVelocityFieldSelectionVelocityType',
@@ -48,6 +49,7 @@ class OneOfMinMaxFieldsCalculationResultControlItemFieldSelection(object):
         'component_selection': 'componentSelection',
         'output_method': 'outputMethod',
         'force_type': 'forceType',
+        'contact_type': 'contactType',
         'strain_type': 'strainType',
         'stress_type': 'stressType',
         'velocity_type': 'velocityType',
@@ -57,6 +59,7 @@ class OneOfMinMaxFieldsCalculationResultControlItemFieldSelection(object):
     discriminator_value_class_map = {
         'DISPLACEMENT': 'DisplacementFieldSelection',
         'FORCE': 'ForceFieldSelection',
+        'CONTACT': 'ContactFieldSelection',
         'STRAIN': 'StrainFieldSelection',
         'STRESS': 'StressFieldSelection',
         'VELOCITY': 'VelocityFieldSelection',
@@ -65,7 +68,7 @@ class OneOfMinMaxFieldsCalculationResultControlItemFieldSelection(object):
         'HEAT_FLUX': 'HeatFluxFieldSelection'
     }
 
-    def __init__(self, type='HEAT_FLUX', displacement_type=None, component_selection=None, output_method=None, force_type=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HEAT_FLUX', displacement_type=None, component_selection=None, output_method=None, force_type=None, contact_type=None, strain_type=None, stress_type=None, velocity_type=None, acceleration_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMinMaxFieldsCalculationResultControlItemFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -76,6 +79,7 @@ class OneOfMinMaxFieldsCalculationResultControlItemFieldSelection(object):
         self._component_selection = None
         self._output_method = None
         self._force_type = None
+        self._contact_type = None
         self._strain_type = None
         self._stress_type = None
         self._velocity_type = None
@@ -91,6 +95,8 @@ class OneOfMinMaxFieldsCalculationResultControlItemFieldSelection(object):
             self.output_method = output_method
         if force_type is not None:
             self.force_type = force_type
+        if contact_type is not None:
+            self.contact_type = contact_type
         if strain_type is not None:
             self.strain_type = strain_type
         if stress_type is not None:
@@ -222,6 +228,27 @@ class OneOfMinMaxFieldsCalculationResultControlItemFieldSelection(object):
         """
 
         self._force_type = force_type
+
+    @property
+    def contact_type(self):
+        """Gets the contact_type of this OneOfMinMaxFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The contact_type of this OneOfMinMaxFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :rtype: OneOfContactFieldSelectionContactType
+        """
+        return self._contact_type
+
+    @contact_type.setter
+    def contact_type(self, contact_type):
+        """Sets the contact_type of this OneOfMinMaxFieldsCalculationResultControlItemFieldSelection.
+
+
+        :param contact_type: The contact_type of this OneOfMinMaxFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :type: OneOfContactFieldSelectionContactType
+        """
+
+        self._contact_type = contact_type
 
     @property
     def strain_type(self):

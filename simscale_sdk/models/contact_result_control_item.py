@@ -123,7 +123,7 @@ class ContactResultControlItem(object):
         :param contact_type: The contact_type of this ContactResultControlItem.  # noqa: E501
         :type: str
         """
-        allowed_values = ["PRESSURE", "STATE"]  # noqa: E501
+        allowed_values = ["PRESSURE", "RESULT"]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and contact_type not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `contact_type` ({0}), must be one of {1}"  # noqa: E501

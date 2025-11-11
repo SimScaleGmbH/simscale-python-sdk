@@ -42,7 +42,11 @@ class OneOfMarcStrainFieldSelectionStrainType(object):
 
     discriminator_value_class_map = {
         'TOTAL': 'MarcTotalStrainType',
+        'ELASTIC': 'MarcElasticStrainType',
+        'PLASTIC': 'MarcPlasticStrainType',
         'PRINCIPAL_TOTAL': 'MarcPrincipalTotalStrainType',
+        'PRINCIPAL_ELASTIC': 'MarcPrincipalElasticStrainType',
+        'PRINCIPAL_PLASTIC': 'MarcPrincipalPlasticStrainType',
         'EQUIVALENT_ELASTIC': 'MarcEquivalentElasticStrainType',
         'EQUIVALENT_PLASTIC': 'MarcEquivalentPlasticStrainType'
     }

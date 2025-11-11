@@ -40,7 +40,11 @@ class OneOfMarcStrainResultControlItemStrainType(object):
 
     discriminator_value_class_map = {
         'TOTAL': 'TotalStrain',
+        'ELASTIC': 'ElasticStrain',
+        'PLASTIC': 'PlasticStrain',
         'PRINCIPAL_TOTAL': 'PrincipalTotalStrain',
+        'PRINCIPAL_ELASTIC': 'PrincipalElasticStrain',
+        'PRINCIPAL_PLASTIC': 'PrincipalPlasticStrain',
         'EQUIVALENT_ELASTIC': 'EquivalentElasticStrain',
         'EQUIVALENT_PLASTIC': 'EquivalentPlasticStrain'
     }

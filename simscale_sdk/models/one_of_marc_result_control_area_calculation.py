@@ -33,7 +33,7 @@ class OneOfMarcResultControlAreaCalculation(object):
     openapi_types = {
         'type': 'str',
         'name': 'str',
-        'field_selection': 'MarcForceFieldSelection',
+        'field_selection': 'OneOfMarcSumFieldsCalculationResultControlItemFieldSelection',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -122,7 +122,7 @@ class OneOfMarcResultControlAreaCalculation(object):
 
 
         :return: The field_selection of this OneOfMarcResultControlAreaCalculation.  # noqa: E501
-        :rtype: MarcForceFieldSelection
+        :rtype: OneOfMarcSumFieldsCalculationResultControlItemFieldSelection
         """
         return self._field_selection
 
@@ -132,7 +132,7 @@ class OneOfMarcResultControlAreaCalculation(object):
 
 
         :param field_selection: The field_selection of this OneOfMarcResultControlAreaCalculation.  # noqa: E501
-        :type: MarcForceFieldSelection
+        :type: OneOfMarcSumFieldsCalculationResultControlItemFieldSelection
         """
 
         self._field_selection = field_selection
