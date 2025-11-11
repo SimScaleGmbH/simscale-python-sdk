@@ -2557,11 +2557,11 @@ returns the request thread.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation">
-<span class="sig-name descname"><span class="pre">get_mesh_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_operation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meshing_spec_schema_version</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'8.0'</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_mesh_operation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_operation_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation" title="Link to this definition">¶</a></dt>
 <dd><p>Get information about the mesh operation  # noqa: E501</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True
-&gt;&gt;&gt; thread = api.get_mesh_operation(project_id, mesh_operation_id, meshing_spec_schema_version, async_req=True)
+&gt;&gt;&gt; thread = api.get_mesh_operation(project_id, mesh_operation_id, async_req=True)
 &gt;&gt;&gt; result = thread.get()</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2569,7 +2569,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>bool</strong> (<em>async_req</em>) – execute request asynchronously</p></li>
 <li><p><strong>project_id</strong> (<em>str</em>) – The project ID (required)</p></li>
 <li><p><strong>mesh_operation_id</strong> (<em>str</em>) – The mesh operation ID (required)</p></li>
-<li><p><strong>meshing_spec_schema_version</strong> (<em>str</em>) – Version of the schema the meshing spec should conform to (required)</p></li>
+<li><p><strong>meshing_spec_schema_version</strong> (<em>str</em>) – Version of the schema the meshing spec should conform to. This can be either the external version like <cite>8.0</cite>, or the internal version like <cite>internal:53</cite>.</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
 be returned without reading/decoding response
 data. Default is True.</p></li>
@@ -2723,11 +2723,11 @@ returns the request thread.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation_with_http_info">
-<span class="sig-name descname"><span class="pre">get_mesh_operation_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_operation_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">meshing_spec_schema_version</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation_with_http_info" title="Link to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">get_mesh_operation_with_http_info</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">project_id</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_operation_id</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#simscale_sdk.api.mesh_operations_api.MeshOperationsApi.get_mesh_operation_with_http_info" title="Link to this definition">¶</a></dt>
 <dd><p>Get information about the mesh operation  # noqa: E501</p>
 <p>This method makes a synchronous HTTP request by default. To make an
 asynchronous HTTP request, please pass async_req=True
-&gt;&gt;&gt; thread = api.get_mesh_operation_with_http_info(project_id, mesh_operation_id, meshing_spec_schema_version, async_req=True)
+&gt;&gt;&gt; thread = api.get_mesh_operation_with_http_info(project_id, mesh_operation_id, async_req=True)
 &gt;&gt;&gt; result = thread.get()</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -2735,7 +2735,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>bool</strong> (<em>async_req</em>) – execute request asynchronously</p></li>
 <li><p><strong>project_id</strong> (<em>str</em>) – The project ID (required)</p></li>
 <li><p><strong>mesh_operation_id</strong> (<em>str</em>) – The mesh operation ID (required)</p></li>
-<li><p><strong>meshing_spec_schema_version</strong> (<em>str</em>) – Version of the schema the meshing spec should conform to (required)</p></li>
+<li><p><strong>meshing_spec_schema_version</strong> (<em>str</em>) – Version of the schema the meshing spec should conform to. This can be either the external version like <cite>8.0</cite>, or the internal version like <cite>internal:53</cite>.</p></li>
 <li><p><strong>_return_http_data_only</strong> – response data without head status code
 and headers</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
@@ -4746,7 +4746,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>project_id</strong> (<em>str</em>) – The project ID (required)</p></li>
 <li><p><strong>simulation_id</strong> (<em>str</em>) – The simulation ID (required)</p></li>
 <li><p><strong>run_id</strong> (<em>str</em>) – The simulation run ID (required)</p></li>
-<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to</p></li>
+<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to. This can be either the external version like <cite>30.0</cite>, or the internal version like <cite>internal:549</cite>.</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
 be returned without reading/decoding response
 data. Default is True.</p></li>
@@ -4779,7 +4779,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>project_id</strong> (<em>str</em>) – The project ID (required)</p></li>
 <li><p><strong>simulation_id</strong> (<em>str</em>) – The simulation ID (required)</p></li>
 <li><p><strong>run_id</strong> (<em>str</em>) – The simulation run ID (required)</p></li>
-<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to</p></li>
+<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to. This can be either the external version like <cite>30.0</cite>, or the internal version like <cite>internal:549</cite>.</p></li>
 <li><p><strong>_return_http_data_only</strong> – response data without head status code
 and headers</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
@@ -4895,7 +4895,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>simulation_id</strong> (<em>str</em>) – The simulation ID (required)</p></li>
 <li><p><strong>run_id</strong> (<em>str</em>) – The simulation run ID (required)</p></li>
 <li><p><strong>sub_run_id</strong> (<em>str</em>) – The simulation sub-run ID (required)</p></li>
-<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to</p></li>
+<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to. This can be either the external version like <cite>30.0</cite>, or the internal version like <cite>internal:549</cite>.</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
 be returned without reading/decoding response
 data. Default is True.</p></li>
@@ -4929,7 +4929,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>simulation_id</strong> (<em>str</em>) – The simulation ID (required)</p></li>
 <li><p><strong>run_id</strong> (<em>str</em>) – The simulation run ID (required)</p></li>
 <li><p><strong>sub_run_id</strong> (<em>str</em>) – The simulation sub-run ID (required)</p></li>
-<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to</p></li>
+<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to. This can be either the external version like <cite>30.0</cite>, or the internal version like <cite>internal:549</cite>.</p></li>
 <li><p><strong>_return_http_data_only</strong> – response data without head status code
 and headers</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
@@ -5540,7 +5540,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>bool</strong> (<em>async_req</em>) – execute request asynchronously</p></li>
 <li><p><strong>project_id</strong> (<em>str</em>) – The project ID (required)</p></li>
 <li><p><strong>simulation_id</strong> (<em>str</em>) – The simulation ID (required)</p></li>
-<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to</p></li>
+<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to. This can be either the external version like <cite>30.0</cite>, or the internal version like <cite>internal:549</cite>.</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
 be returned without reading/decoding response
 data. Default is True.</p></li>
@@ -5642,7 +5642,7 @@ asynchronous HTTP request, please pass async_req=True
 <li><p><strong>bool</strong> (<em>async_req</em>) – execute request asynchronously</p></li>
 <li><p><strong>project_id</strong> (<em>str</em>) – The project ID (required)</p></li>
 <li><p><strong>simulation_id</strong> (<em>str</em>) – The simulation ID (required)</p></li>
-<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to</p></li>
+<li><p><strong>simulation_spec_schema_version</strong> (<em>str</em>) – Version of the schema the simulation spec should conform to. This can be either the external version like <cite>30.0</cite>, or the internal version like <cite>internal:549</cite>.</p></li>
 <li><p><strong>_return_http_data_only</strong> – response data without head status code
 and headers</p></li>
 <li><p><strong>_preload_content</strong> – if False, the urllib3.HTTPResponse object will
