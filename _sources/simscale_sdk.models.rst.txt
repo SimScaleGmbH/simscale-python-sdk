@@ -385,6 +385,14 @@ simscale\_sdk.models.all\_computed\_write\_control module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.all\_connector\_point\_data\_results module
+----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.all_connector_point_data_results
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.allowed\_direction module
 ----------------------------------------------
 
@@ -441,6 +449,14 @@ simscale\_sdk.models.animation\_output\_settings module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.animation\_report\_from\_state\_properties module
+----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.animation_report_from_state_properties
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.animation\_report\_properties module
 ---------------------------------------------------------
 
@@ -461,6 +477,14 @@ simscale\_sdk.models.area\_average\_result\_control module
 ----------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.area_average_result_control
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.area\_density\_mass module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.area_density_mass
    :members:
    :show-inheritance:
    :undoc-members:
@@ -645,6 +669,14 @@ simscale\_sdk.models.automatic\_simerics\_mesh\_settings module
 ---------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.automatic_simerics_mesh_settings
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.automatic\_state\_metadata module
+------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.automatic_state_metadata
    :members:
    :show-inheritance:
    :undoc-members:
@@ -849,6 +881,22 @@ simscale\_sdk.models.cad\_feature module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.cad\_feature\_request module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.cad_feature_request
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.cad\_feature\_response module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.cad_feature_response
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.cad\_import\_request module
 ------------------------------------------------
 
@@ -877,6 +925,22 @@ simscale\_sdk.models.cad\_internal\_format module
 -------------------------------------------------
 
 .. automodule:: simscale_sdk.models.cad_internal_format
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.cad\_query\_request module
+-----------------------------------------------
+
+.. automodule:: simscale_sdk.models.cad_query_request
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.cad\_query\_response module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.cad_query_response
    :members:
    :show-inheritance:
    :undoc-members:
@@ -1705,6 +1769,14 @@ simscale\_sdk.models.custom\_comfort\_criterion\_result\_control module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.custom\_connector\_point\_data\_results module
+-------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.custom_connector_point_data_results
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.custom\_contact\_stiffness module
 ------------------------------------------------------
 
@@ -1893,6 +1965,14 @@ simscale\_sdk.models.decimal\_vector2d module
 ---------------------------------------------
 
 .. automodule:: simscale_sdk.models.decimal_vector2d
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.default\_state\_metadata module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.default_state_metadata
    :members:
    :show-inheritance:
    :undoc-members:
@@ -2481,6 +2561,14 @@ simscale\_sdk.models.dimensional\_mass module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.dimensional\_mass\_area\_density module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_mass_area_density
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.dimensional\_mass\_flow\_rate module
 ---------------------------------------------------------
 
@@ -3041,6 +3129,14 @@ simscale\_sdk.models.distributed\_isotropic\_stiffness\_definition module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.distributed\_mass\_bc module
+-------------------------------------------------
+
+.. automodule:: simscale_sdk.models.distributed_mass_bc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.distributed\_orthotropic\_stiffness\_definition module
 ---------------------------------------------------------------------------
 
@@ -3153,6 +3249,14 @@ simscale\_sdk.models.elastoplastic\_network module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.electric\_current module
+---------------------------------------------
+
+.. automodule:: simscale_sdk.models.electric_current
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.electric\_current\_density\_field\_selection module
 ------------------------------------------------------------------------
 
@@ -3253,6 +3357,14 @@ simscale\_sdk.models.electromagnetic\_numerics module
 -----------------------------------------------------
 
 .. automodule:: simscale_sdk.models.electromagnetic_numerics
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.electromagnetic\_resistance\_set module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.electromagnetic_resistance_set
    :members:
    :show-inheritance:
    :undoc-members:
@@ -5745,6 +5857,14 @@ simscale\_sdk.models.isotropic\_expansion module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.isotropic\_loss\_tangent module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.isotropic_loss_tangent
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.isotropic\_plastic\_hardening module
 ---------------------------------------------------------
 
@@ -6153,6 +6273,14 @@ simscale\_sdk.models.manual\_simerics\_mesh\_settings module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.manual\_state\_metadata module
+---------------------------------------------------
+
+.. automodule:: simscale_sdk.models.manual_state_metadata
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.manual\_surface\_sizing\_pacefish module
 -------------------------------------------------------------
 
@@ -6229,6 +6357,14 @@ simscale\_sdk.models.marc\_connection\_group module
 ---------------------------------------------------
 
 .. automodule:: simscale_sdk.models.marc_connection_group
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_connector\_point\_data\_item module
+--------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_connector_point_data_item
    :members:
    :show-inheritance:
    :undoc-members:
@@ -7165,6 +7301,14 @@ simscale\_sdk.models.no\_damage module
 --------------------------------------
 
 .. automodule:: simscale_sdk.models.no_damage
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.no\_dielectric\_losses module
+--------------------------------------------------
+
+.. automodule:: simscale_sdk.models.no_dielectric_losses
    :members:
    :show-inheritance:
    :undoc-members:
@@ -8569,6 +8713,30 @@ simscale\_sdk.models.report\_download module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.report\_from\_state\_properties module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.report_from_state_properties
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.report\_from\_state\_request module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.report_from_state_request
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.report\_properties module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.report_properties
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.report\_request module
 -------------------------------------------
 
@@ -8853,6 +9021,14 @@ simscale\_sdk.models.screenshot\_output\_settings module
 --------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.screenshot_output_settings
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.screenshot\_report\_from\_state\_properties module
+-----------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.screenshot_report_from_state_properties
    :members:
    :show-inheritance:
    :undoc-members:
@@ -9509,6 +9685,22 @@ simscale\_sdk.models.star\_thermal\_resistance\_network module
 --------------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.star_thermal_resistance_network
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.state\_metadata module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.state_metadata
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.state\_response module
+-------------------------------------------
+
+.. automodule:: simscale_sdk.models.state_response
    :members:
    :show-inheritance:
    :undoc-members:
@@ -10297,6 +10489,14 @@ simscale\_sdk.models.time\_hardening\_creep\_formulation module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.time\_harmonic\_electrics module
+-----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.time_harmonic_electrics
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.time\_harmonic\_magnetics module
 -----------------------------------------------------
 
@@ -10405,6 +10605,14 @@ simscale\_sdk.models.total\_linear\_strain\_type module
 -------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.total_linear_strain_type
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.total\_mass module
+---------------------------------------
+
+.. automodule:: simscale_sdk.models.total_mass
    :members:
    :show-inheritance:
    :undoc-members:

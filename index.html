@@ -10,8 +10,8 @@
     <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
     <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="_static/doctools.js?v=9bcbadda"></script>
-    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="simscale_sdk" href="modules.html" />
@@ -178,6 +178,16 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.api.html#module-simscale_sdk.api.postprocessing_api">simscale_sdk.api.postprocessing_api module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.postprocessing_api.PostprocessingApi"><code class="docutils literal notranslate"><span class="pre">PostprocessingApi</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.postprocessing_api.PostprocessingApi.get_automatic_states"><code class="docutils literal notranslate"><span class="pre">PostprocessingApi.get_automatic_states()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.postprocessing_api.PostprocessingApi.get_automatic_states_with_http_info"><code class="docutils literal notranslate"><span class="pre">PostprocessingApi.get_automatic_states_with_http_info()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.postprocessing_api.PostprocessingApi.get_manual_states"><code class="docutils literal notranslate"><span class="pre">PostprocessingApi.get_manual_states()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.postprocessing_api.PostprocessingApi.get_manual_states_with_http_info"><code class="docutils literal notranslate"><span class="pre">PostprocessingApi.get_manual_states_with_http_info()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.api.html#module-simscale_sdk.api.project_permissions_api">simscale_sdk.api.project_permissions_api module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.project_permissions_api.ProjectPermissionsApi"><code class="docutils literal notranslate"><span class="pre">ProjectPermissionsApi</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.project_permissions_api.ProjectPermissionsApi.get_requester_project_permissions"><code class="docutils literal notranslate"><span class="pre">ProjectPermissionsApi.get_requester_project_permissions()</span></code></a></li>
@@ -207,6 +217,8 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.reports_api.ReportsApi.cancel_report_job"><code class="docutils literal notranslate"><span class="pre">ReportsApi.cancel_report_job()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.reports_api.ReportsApi.cancel_report_job_with_http_info"><code class="docutils literal notranslate"><span class="pre">ReportsApi.cancel_report_job_with_http_info()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.reports_api.ReportsApi.create_report"><code class="docutils literal notranslate"><span class="pre">ReportsApi.create_report()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.reports_api.ReportsApi.create_report_from_postprocessing_state"><code class="docutils literal notranslate"><span class="pre">ReportsApi.create_report_from_postprocessing_state()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.reports_api.ReportsApi.create_report_from_postprocessing_state_with_http_info"><code class="docutils literal notranslate"><span class="pre">ReportsApi.create_report_from_postprocessing_state_with_http_info()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.reports_api.ReportsApi.create_report_with_http_info"><code class="docutils literal notranslate"><span class="pre">ReportsApi.create_report_with_http_info()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.reports_api.ReportsApi.delete_report"><code class="docutils literal notranslate"><span class="pre">ReportsApi.delete_report()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.api.html#simscale_sdk.api.reports_api.ReportsApi.delete_report_with_http_info"><code class="docutils literal notranslate"><span class="pre">ReportsApi.delete_report_with_http_info()</span></code></a></li>
@@ -1003,6 +1015,17 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.all_connector_point_data_results">simscale_sdk.models.all_connector_point_data_results module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.all_connector_point_data_results.AllConnectorPointDataResults"><code class="docutils literal notranslate"><span class="pre">AllConnectorPointDataResults</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.all_connector_point_data_results.AllConnectorPointDataResults.attribute_map"><code class="docutils literal notranslate"><span class="pre">AllConnectorPointDataResults.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.all_connector_point_data_results.AllConnectorPointDataResults.openapi_types"><code class="docutils literal notranslate"><span class="pre">AllConnectorPointDataResults.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.all_connector_point_data_results.AllConnectorPointDataResults.to_dict"><code class="docutils literal notranslate"><span class="pre">AllConnectorPointDataResults.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.all_connector_point_data_results.AllConnectorPointDataResults.to_str"><code class="docutils literal notranslate"><span class="pre">AllConnectorPointDataResults.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.all_connector_point_data_results.AllConnectorPointDataResults.type"><code class="docutils literal notranslate"><span class="pre">AllConnectorPointDataResults.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.allowed_direction">simscale_sdk.models.allowed_direction module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.allowed_direction.AllowedDirection"><code class="docutils literal notranslate"><span class="pre">AllowedDirection</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.allowed_direction.AllowedDirection.attribute_map"><code class="docutils literal notranslate"><span class="pre">AllowedDirection.attribute_map</span></code></a></li>
@@ -1099,6 +1122,7 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.analysis.Analysis.numerics"><code class="docutils literal notranslate"><span class="pre">Analysis.numerics</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.analysis.Analysis.openapi_types"><code class="docutils literal notranslate"><span class="pre">Analysis.openapi_types</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.analysis.Analysis.pedestrian_comfort_map"><code class="docutils literal notranslate"><span class="pre">Analysis.pedestrian_comfort_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.analysis.Analysis.radiation_model"><code class="docutils literal notranslate"><span class="pre">Analysis.radiation_model</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.analysis.Analysis.region_of_interest"><code class="docutils literal notranslate"><span class="pre">Analysis.region_of_interest</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.analysis.Analysis.result_control"><code class="docutils literal notranslate"><span class="pre">Analysis.result_control</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.analysis.Analysis.simulation_control"><code class="docutils literal notranslate"><span class="pre">Analysis.simulation_control</span></code></a></li>
@@ -1145,6 +1169,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.animation_report_from_state_properties">simscale_sdk.models.animation_report_from_state_properties module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_from_state_properties.AnimationReportFromStateProperties"><code class="docutils literal notranslate"><span class="pre">AnimationReportFromStateProperties</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_from_state_properties.AnimationReportFromStateProperties.attribute_map"><code class="docutils literal notranslate"><span class="pre">AnimationReportFromStateProperties.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_from_state_properties.AnimationReportFromStateProperties.openapi_types"><code class="docutils literal notranslate"><span class="pre">AnimationReportFromStateProperties.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_from_state_properties.AnimationReportFromStateProperties.output_settings"><code class="docutils literal notranslate"><span class="pre">AnimationReportFromStateProperties.output_settings</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_from_state_properties.AnimationReportFromStateProperties.report_type"><code class="docutils literal notranslate"><span class="pre">AnimationReportFromStateProperties.report_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_from_state_properties.AnimationReportFromStateProperties.state_metadata"><code class="docutils literal notranslate"><span class="pre">AnimationReportFromStateProperties.state_metadata</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_from_state_properties.AnimationReportFromStateProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">AnimationReportFromStateProperties.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_from_state_properties.AnimationReportFromStateProperties.to_str"><code class="docutils literal notranslate"><span class="pre">AnimationReportFromStateProperties.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.animation_report_properties">simscale_sdk.models.animation_report_properties module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_properties.AnimationReportProperties"><code class="docutils literal notranslate"><span class="pre">AnimationReportProperties</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.animation_report_properties.AnimationReportProperties.attribute_map"><code class="docutils literal notranslate"><span class="pre">AnimationReportProperties.attribute_map</span></code></a></li>
@@ -1180,6 +1217,18 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_average_result_control.AreaAverageResultControl.topological_reference"><code class="docutils literal notranslate"><span class="pre">AreaAverageResultControl.topological_reference</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_average_result_control.AreaAverageResultControl.type"><code class="docutils literal notranslate"><span class="pre">AreaAverageResultControl.type</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_average_result_control.AreaAverageResultControl.write_control"><code class="docutils literal notranslate"><span class="pre">AreaAverageResultControl.write_control</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.area_density_mass">simscale_sdk.models.area_density_mass module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_density_mass.AreaDensityMass"><code class="docutils literal notranslate"><span class="pre">AreaDensityMass</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_density_mass.AreaDensityMass.attribute_map"><code class="docutils literal notranslate"><span class="pre">AreaDensityMass.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_density_mass.AreaDensityMass.mass"><code class="docutils literal notranslate"><span class="pre">AreaDensityMass.mass</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_density_mass.AreaDensityMass.openapi_types"><code class="docutils literal notranslate"><span class="pre">AreaDensityMass.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_density_mass.AreaDensityMass.to_dict"><code class="docutils literal notranslate"><span class="pre">AreaDensityMass.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_density_mass.AreaDensityMass.to_str"><code class="docutils literal notranslate"><span class="pre">AreaDensityMass.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.area_density_mass.AreaDensityMass.type"><code class="docutils literal notranslate"><span class="pre">AreaDensityMass.type</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1467,6 +1516,18 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_simerics_mesh_settings.AutomaticSimericsMeshSettings.to_dict"><code class="docutils literal notranslate"><span class="pre">AutomaticSimericsMeshSettings.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_simerics_mesh_settings.AutomaticSimericsMeshSettings.to_str"><code class="docutils literal notranslate"><span class="pre">AutomaticSimericsMeshSettings.to_str()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_simerics_mesh_settings.AutomaticSimericsMeshSettings.type"><code class="docutils literal notranslate"><span class="pre">AutomaticSimericsMeshSettings.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.automatic_state_metadata">simscale_sdk.models.automatic_state_metadata module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_state_metadata.AutomaticStateMetadata"><code class="docutils literal notranslate"><span class="pre">AutomaticStateMetadata</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_state_metadata.AutomaticStateMetadata.attribute_map"><code class="docutils literal notranslate"><span class="pre">AutomaticStateMetadata.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_state_metadata.AutomaticStateMetadata.openapi_types"><code class="docutils literal notranslate"><span class="pre">AutomaticStateMetadata.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_state_metadata.AutomaticStateMetadata.state_type"><code class="docutils literal notranslate"><span class="pre">AutomaticStateMetadata.state_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_state_metadata.AutomaticStateMetadata.state_uuid"><code class="docutils literal notranslate"><span class="pre">AutomaticStateMetadata.state_uuid</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_state_metadata.AutomaticStateMetadata.to_dict"><code class="docutils literal notranslate"><span class="pre">AutomaticStateMetadata.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.automatic_state_metadata.AutomaticStateMetadata.to_str"><code class="docutils literal notranslate"><span class="pre">AutomaticStateMetadata.to_str()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1833,6 +1894,32 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.cad_feature_request">simscale_sdk.models.cad_feature_request module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_request.CadFeatureRequest"><code class="docutils literal notranslate"><span class="pre">CadFeatureRequest</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_request.CadFeatureRequest.attribute_map"><code class="docutils literal notranslate"><span class="pre">CadFeatureRequest.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_request.CadFeatureRequest.feature"><code class="docutils literal notranslate"><span class="pre">CadFeatureRequest.feature</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_request.CadFeatureRequest.openapi_types"><code class="docutils literal notranslate"><span class="pre">CadFeatureRequest.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_request.CadFeatureRequest.parameters"><code class="docutils literal notranslate"><span class="pre">CadFeatureRequest.parameters</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_request.CadFeatureRequest.to_dict"><code class="docutils literal notranslate"><span class="pre">CadFeatureRequest.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_request.CadFeatureRequest.to_str"><code class="docutils literal notranslate"><span class="pre">CadFeatureRequest.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.cad_feature_response">simscale_sdk.models.cad_feature_response module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse.attribute_map"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse.cad_feature_id"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse.cad_feature_id</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse.cad_state_id"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse.cad_state_id</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse.failure_reason"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse.failure_reason</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse.openapi_types"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse.status"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse.status</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse.to_dict"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_feature_response.CadFeatureResponse.to_str"><code class="docutils literal notranslate"><span class="pre">CadFeatureResponse.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.cad_import_request">simscale_sdk.models.cad_import_request module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_import_request.CadImportRequest"><code class="docutils literal notranslate"><span class="pre">CadImportRequest</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_import_request.CadImportRequest.attribute_map"><code class="docutils literal notranslate"><span class="pre">CadImportRequest.attribute_map</span></code></a></li>
@@ -1886,6 +1973,31 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_internal_format.CadInternalFormat.openapi_types"><code class="docutils literal notranslate"><span class="pre">CadInternalFormat.openapi_types</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_internal_format.CadInternalFormat.to_dict"><code class="docutils literal notranslate"><span class="pre">CadInternalFormat.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_internal_format.CadInternalFormat.to_str"><code class="docutils literal notranslate"><span class="pre">CadInternalFormat.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.cad_query_request">simscale_sdk.models.cad_query_request module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_request.CadQueryRequest"><code class="docutils literal notranslate"><span class="pre">CadQueryRequest</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_request.CadQueryRequest.attribute_map"><code class="docutils literal notranslate"><span class="pre">CadQueryRequest.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_request.CadQueryRequest.openapi_types"><code class="docutils literal notranslate"><span class="pre">CadQueryRequest.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_request.CadQueryRequest.parameters"><code class="docutils literal notranslate"><span class="pre">CadQueryRequest.parameters</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_request.CadQueryRequest.query"><code class="docutils literal notranslate"><span class="pre">CadQueryRequest.query</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_request.CadQueryRequest.to_dict"><code class="docutils literal notranslate"><span class="pre">CadQueryRequest.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_request.CadQueryRequest.to_str"><code class="docutils literal notranslate"><span class="pre">CadQueryRequest.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.cad_query_response">simscale_sdk.models.cad_query_response module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_response.CadQueryResponse"><code class="docutils literal notranslate"><span class="pre">CadQueryResponse</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_response.CadQueryResponse.attribute_map"><code class="docutils literal notranslate"><span class="pre">CadQueryResponse.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_response.CadQueryResponse.failure_reason"><code class="docutils literal notranslate"><span class="pre">CadQueryResponse.failure_reason</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_response.CadQueryResponse.openapi_types"><code class="docutils literal notranslate"><span class="pre">CadQueryResponse.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_response.CadQueryResponse.result"><code class="docutils literal notranslate"><span class="pre">CadQueryResponse.result</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_response.CadQueryResponse.status"><code class="docutils literal notranslate"><span class="pre">CadQueryResponse.status</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_response.CadQueryResponse.to_dict"><code class="docutils literal notranslate"><span class="pre">CadQueryResponse.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.cad_query_response.CadQueryResponse.to_str"><code class="docutils literal notranslate"><span class="pre">CadQueryResponse.to_str()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -2925,6 +3037,7 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.coupled_conjugate_heat_transfer.CoupledConjugateHeatTransfer.num_of_passive_species"><code class="docutils literal notranslate"><span class="pre">CoupledConjugateHeatTransfer.num_of_passive_species</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.coupled_conjugate_heat_transfer.CoupledConjugateHeatTransfer.numerics"><code class="docutils literal notranslate"><span class="pre">CoupledConjugateHeatTransfer.numerics</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.coupled_conjugate_heat_transfer.CoupledConjugateHeatTransfer.openapi_types"><code class="docutils literal notranslate"><span class="pre">CoupledConjugateHeatTransfer.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.coupled_conjugate_heat_transfer.CoupledConjugateHeatTransfer.radiation_model"><code class="docutils literal notranslate"><span class="pre">CoupledConjugateHeatTransfer.radiation_model</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.coupled_conjugate_heat_transfer.CoupledConjugateHeatTransfer.result_control"><code class="docutils literal notranslate"><span class="pre">CoupledConjugateHeatTransfer.result_control</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.coupled_conjugate_heat_transfer.CoupledConjugateHeatTransfer.simulation_control"><code class="docutils literal notranslate"><span class="pre">CoupledConjugateHeatTransfer.simulation_control</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.coupled_conjugate_heat_transfer.CoupledConjugateHeatTransfer.solar_calculator"><code class="docutils literal notranslate"><span class="pre">CoupledConjugateHeatTransfer.solar_calculator</span></code></a></li>
@@ -3008,6 +3121,7 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.create_ai_prediction_response.CreateAiPredictionResponse.global_outputs"><code class="docutils literal notranslate"><span class="pre">CreateAiPredictionResponse.global_outputs</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.create_ai_prediction_response.CreateAiPredictionResponse.openapi_types"><code class="docutils literal notranslate"><span class="pre">CreateAiPredictionResponse.openapi_types</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.create_ai_prediction_response.CreateAiPredictionResponse.prediction_id"><code class="docutils literal notranslate"><span class="pre">CreateAiPredictionResponse.prediction_id</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.create_ai_prediction_response.CreateAiPredictionResponse.result_id"><code class="docutils literal notranslate"><span class="pre">CreateAiPredictionResponse.result_id</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.create_ai_prediction_response.CreateAiPredictionResponse.to_dict"><code class="docutils literal notranslate"><span class="pre">CreateAiPredictionResponse.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.create_ai_prediction_response.CreateAiPredictionResponse.to_str"><code class="docutils literal notranslate"><span class="pre">CreateAiPredictionResponse.to_str()</span></code></a></li>
 </ul>
@@ -3242,6 +3356,23 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_comfort_criterion_result_control.CustomComfortCriterionResultControl.to_dict"><code class="docutils literal notranslate"><span class="pre">CustomComfortCriterionResultControl.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_comfort_criterion_result_control.CustomComfortCriterionResultControl.to_str"><code class="docutils literal notranslate"><span class="pre">CustomComfortCriterionResultControl.to_str()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_comfort_criterion_result_control.CustomComfortCriterionResultControl.type"><code class="docutils literal notranslate"><span class="pre">CustomComfortCriterionResultControl.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.custom_connector_point_data_results">simscale_sdk.models.custom_connector_point_data_results module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.attribute_map"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.displacements"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.displacements</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.external_forces"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.external_forces</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.external_moments"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.external_moments</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.openapi_types"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.reaction_forces"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.reaction_forces</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.reaction_moments"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.reaction_moments</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.rotations"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.rotations</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.to_dict"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.to_str"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.custom_connector_point_data_results.CustomConnectorPointDataResults.type"><code class="docutils literal notranslate"><span class="pre">CustomConnectorPointDataResults.type</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -3604,6 +3735,18 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.decimal_vector2d.DecimalVector2d.to_str"><code class="docutils literal notranslate"><span class="pre">DecimalVector2d.to_str()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.decimal_vector2d.DecimalVector2d.x"><code class="docutils literal notranslate"><span class="pre">DecimalVector2d.x</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.decimal_vector2d.DecimalVector2d.y"><code class="docutils literal notranslate"><span class="pre">DecimalVector2d.y</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.default_state_metadata">simscale_sdk.models.default_state_metadata module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.default_state_metadata.DefaultStateMetadata"><code class="docutils literal notranslate"><span class="pre">DefaultStateMetadata</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.default_state_metadata.DefaultStateMetadata.attribute_map"><code class="docutils literal notranslate"><span class="pre">DefaultStateMetadata.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.default_state_metadata.DefaultStateMetadata.openapi_types"><code class="docutils literal notranslate"><span class="pre">DefaultStateMetadata.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.default_state_metadata.DefaultStateMetadata.state_analysis_type"><code class="docutils literal notranslate"><span class="pre">DefaultStateMetadata.state_analysis_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.default_state_metadata.DefaultStateMetadata.state_type"><code class="docutils literal notranslate"><span class="pre">DefaultStateMetadata.state_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.default_state_metadata.DefaultStateMetadata.to_dict"><code class="docutils literal notranslate"><span class="pre">DefaultStateMetadata.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.default_state_metadata.DefaultStateMetadata.to_str"><code class="docutils literal notranslate"><span class="pre">DefaultStateMetadata.to_str()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -4477,6 +4620,18 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.dimensional_mass_area_density">simscale_sdk.models.dimensional_mass_area_density module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_area_density.DimensionalMassAreaDensity"><code class="docutils literal notranslate"><span class="pre">DimensionalMassAreaDensity</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_area_density.DimensionalMassAreaDensity.attribute_map"><code class="docutils literal notranslate"><span class="pre">DimensionalMassAreaDensity.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_area_density.DimensionalMassAreaDensity.openapi_types"><code class="docutils literal notranslate"><span class="pre">DimensionalMassAreaDensity.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_area_density.DimensionalMassAreaDensity.to_dict"><code class="docutils literal notranslate"><span class="pre">DimensionalMassAreaDensity.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_area_density.DimensionalMassAreaDensity.to_str"><code class="docutils literal notranslate"><span class="pre">DimensionalMassAreaDensity.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_area_density.DimensionalMassAreaDensity.unit"><code class="docutils literal notranslate"><span class="pre">DimensionalMassAreaDensity.unit</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_area_density.DimensionalMassAreaDensity.value"><code class="docutils literal notranslate"><span class="pre">DimensionalMassAreaDensity.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.dimensional_mass_flow_rate">simscale_sdk.models.dimensional_mass_flow_rate module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_flow_rate.DimensionalMassFlowRate"><code class="docutils literal notranslate"><span class="pre">DimensionalMassFlowRate</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.dimensional_mass_flow_rate.DimensionalMassFlowRate.attribute_map"><code class="docutils literal notranslate"><span class="pre">DimensionalMassFlowRate.attribute_map</span></code></a></li>
@@ -5318,6 +5473,20 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.distributed_mass_bc">simscale_sdk.models.distributed_mass_bc module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC.attribute_map"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC.mass_definition"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC.mass_definition</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC.name"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC.name</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC.openapi_types"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC.to_dict"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC.to_str"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC.topological_reference"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC.topological_reference</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_mass_bc.DistributedMassBC.type"><code class="docutils literal notranslate"><span class="pre">DistributedMassBC.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.distributed_orthotropic_stiffness_definition">simscale_sdk.models.distributed_orthotropic_stiffness_definition module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_orthotropic_stiffness_definition.DistributedOrthotropicStiffnessDefinition"><code class="docutils literal notranslate"><span class="pre">DistributedOrthotropicStiffnessDefinition</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.distributed_orthotropic_stiffness_definition.DistributedOrthotropicStiffnessDefinition.attribute_map"><code class="docutils literal notranslate"><span class="pre">DistributedOrthotropicStiffnessDefinition.attribute_map</span></code></a></li>
@@ -5527,6 +5696,21 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.electric_current">simscale_sdk.models.electric_current module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.attribute_map"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.current_rms"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.current_rms</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.name"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.name</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.openapi_types"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.phase"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.phase</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.to_dict"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.to_str"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.topology"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.topology</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current.ElectricCurrent.type"><code class="docutils literal notranslate"><span class="pre">ElectricCurrent.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.electric_current_density_field_selection">simscale_sdk.models.electric_current_density_field_selection module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current_density_field_selection.ElectricCurrentDensityFieldSelection"><code class="docutils literal notranslate"><span class="pre">ElectricCurrentDensityFieldSelection</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electric_current_density_field_selection.ElectricCurrentDensityFieldSelection.attribute_map"><code class="docutils literal notranslate"><span class="pre">ElectricCurrentDensityFieldSelection.attribute_map</span></code></a></li>
@@ -5673,6 +5857,7 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_material.ElectromagneticMaterial.built_in_material"><code class="docutils literal notranslate"><span class="pre">ElectromagneticMaterial.built_in_material</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_material.ElectromagneticMaterial.core_losses_type"><code class="docutils literal notranslate"><span class="pre">ElectromagneticMaterial.core_losses_type</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_material.ElectromagneticMaterial.density_type"><code class="docutils literal notranslate"><span class="pre">ElectromagneticMaterial.density_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_material.ElectromagneticMaterial.dielectric_loss_type"><code class="docutils literal notranslate"><span class="pre">ElectromagneticMaterial.dielectric_loss_type</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_material.ElectromagneticMaterial.electric_conductivity_type"><code class="docutils literal notranslate"><span class="pre">ElectromagneticMaterial.electric_conductivity_type</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_material.ElectromagneticMaterial.electric_permittivity_type"><code class="docutils literal notranslate"><span class="pre">ElectromagneticMaterial.electric_permittivity_type</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_material.ElectromagneticMaterial.magnetic_permeability_type"><code class="docutils literal notranslate"><span class="pre">ElectromagneticMaterial.magnetic_permeability_type</span></code></a></li>
@@ -5701,6 +5886,19 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.electromagnetic_resistance_set">simscale_sdk.models.electromagnetic_resistance_set module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_resistance_set.ElectromagneticResistanceSet"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResistanceSet</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_resistance_set.ElectromagneticResistanceSet.attribute_map"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResistanceSet.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_resistance_set.ElectromagneticResistanceSet.entry_port"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResistanceSet.entry_port</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_resistance_set.ElectromagneticResistanceSet.exit_port"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResistanceSet.exit_port</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_resistance_set.ElectromagneticResistanceSet.name"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResistanceSet.name</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_resistance_set.ElectromagneticResistanceSet.openapi_types"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResistanceSet.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_resistance_set.ElectromagneticResistanceSet.to_dict"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResistanceSet.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_resistance_set.ElectromagneticResistanceSet.to_str"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResistanceSet.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.electromagnetic_result_control">simscale_sdk.models.electromagnetic_result_control module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_result_control.ElectromagneticResultControl"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResultControl</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_result_control.ElectromagneticResultControl.attribute_map"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResultControl.attribute_map</span></code></a></li>
@@ -5709,6 +5907,7 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_result_control.ElectromagneticResultControl.forces_and_torques"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResultControl.forces_and_torques</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_result_control.ElectromagneticResultControl.openapi_types"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResultControl.openapi_types</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_result_control.ElectromagneticResultControl.probe_points"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResultControl.probe_points</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_result_control.ElectromagneticResultControl.resistance_sets"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResultControl.resistance_sets</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_result_control.ElectromagneticResultControl.to_dict"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResultControl.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.electromagnetic_result_control.ElectromagneticResultControl.to_str"><code class="docutils literal notranslate"><span class="pre">ElectromagneticResultControl.to_str()</span></code></a></li>
 </ul>
@@ -6898,7 +7097,9 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.attribute_map"><code class="docutils literal notranslate"><span class="pre">FixedPotential.attribute_map</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.name"><code class="docutils literal notranslate"><span class="pre">FixedPotential.name</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.openapi_types"><code class="docutils literal notranslate"><span class="pre">FixedPotential.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.phase"><code class="docutils literal notranslate"><span class="pre">FixedPotential.phase</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.potential"><code class="docutils literal notranslate"><span class="pre">FixedPotential.potential</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.potential_rms"><code class="docutils literal notranslate"><span class="pre">FixedPotential.potential_rms</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.to_dict"><code class="docutils literal notranslate"><span class="pre">FixedPotential.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.to_str"><code class="docutils literal notranslate"><span class="pre">FixedPotential.to_str()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fixed_potential.FixedPotential.topological_reference"><code class="docutils literal notranslate"><span class="pre">FixedPotential.topological_reference</span></code></a></li>
@@ -7511,6 +7712,7 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fluid_solvers.FluidSolvers.epsilon_dissipation_rate_solver"><code class="docutils literal notranslate"><span class="pre">FluidSolvers.epsilon_dissipation_rate_solver</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fluid_solvers.FluidSolvers.internal_energy_final_solver"><code class="docutils literal notranslate"><span class="pre">FluidSolvers.internal_energy_final_solver</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fluid_solvers.FluidSolvers.internal_energy_solver"><code class="docutils literal notranslate"><span class="pre">FluidSolvers.internal_energy_solver</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fluid_solvers.FluidSolvers.internal_net_radiative_heat_flux_solver"><code class="docutils literal notranslate"><span class="pre">FluidSolvers.internal_net_radiative_heat_flux_solver</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fluid_solvers.FluidSolvers.nu_tilda_final_solver"><code class="docutils literal notranslate"><span class="pre">FluidSolvers.nu_tilda_final_solver</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fluid_solvers.FluidSolvers.nu_tilda_solver"><code class="docutils literal notranslate"><span class="pre">FluidSolvers.nu_tilda_solver</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.fluid_solvers.FluidSolvers.omega_dissipation_rate_final_solver"><code class="docutils literal notranslate"><span class="pre">FluidSolvers.omega_dissipation_rate_final_solver</span></code></a></li>
@@ -9869,6 +10071,18 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.isotropic_loss_tangent">simscale_sdk.models.isotropic_loss_tangent module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_loss_tangent.IsotropicLossTangent"><code class="docutils literal notranslate"><span class="pre">IsotropicLossTangent</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_loss_tangent.IsotropicLossTangent.attribute_map"><code class="docutils literal notranslate"><span class="pre">IsotropicLossTangent.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_loss_tangent.IsotropicLossTangent.dielectric_loss_tangent"><code class="docutils literal notranslate"><span class="pre">IsotropicLossTangent.dielectric_loss_tangent</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_loss_tangent.IsotropicLossTangent.openapi_types"><code class="docutils literal notranslate"><span class="pre">IsotropicLossTangent.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_loss_tangent.IsotropicLossTangent.to_dict"><code class="docutils literal notranslate"><span class="pre">IsotropicLossTangent.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_loss_tangent.IsotropicLossTangent.to_str"><code class="docutils literal notranslate"><span class="pre">IsotropicLossTangent.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_loss_tangent.IsotropicLossTangent.type"><code class="docutils literal notranslate"><span class="pre">IsotropicLossTangent.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.isotropic_plastic_hardening">simscale_sdk.models.isotropic_plastic_hardening module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_plastic_hardening.IsotropicPlasticHardening"><code class="docutils literal notranslate"><span class="pre">IsotropicPlasticHardening</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.isotropic_plastic_hardening.IsotropicPlasticHardening.attribute_map"><code class="docutils literal notranslate"><span class="pre">IsotropicPlasticHardening.attribute_map</span></code></a></li>
@@ -10580,6 +10794,18 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.manual_state_metadata">simscale_sdk.models.manual_state_metadata module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_state_metadata.ManualStateMetadata"><code class="docutils literal notranslate"><span class="pre">ManualStateMetadata</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_state_metadata.ManualStateMetadata.attribute_map"><code class="docutils literal notranslate"><span class="pre">ManualStateMetadata.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_state_metadata.ManualStateMetadata.openapi_types"><code class="docutils literal notranslate"><span class="pre">ManualStateMetadata.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_state_metadata.ManualStateMetadata.state_type"><code class="docutils literal notranslate"><span class="pre">ManualStateMetadata.state_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_state_metadata.ManualStateMetadata.state_uuid"><code class="docutils literal notranslate"><span class="pre">ManualStateMetadata.state_uuid</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_state_metadata.ManualStateMetadata.to_dict"><code class="docutils literal notranslate"><span class="pre">ManualStateMetadata.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_state_metadata.ManualStateMetadata.to_str"><code class="docutils literal notranslate"><span class="pre">ManualStateMetadata.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.manual_surface_sizing_pacefish">simscale_sdk.models.manual_surface_sizing_pacefish module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_surface_sizing_pacefish.ManualSurfaceSizingPacefish"><code class="docutils literal notranslate"><span class="pre">ManualSurfaceSizingPacefish</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.manual_surface_sizing_pacefish.ManualSurfaceSizingPacefish.additional_directional_cells"><code class="docutils literal notranslate"><span class="pre">ManualSurfaceSizingPacefish.additional_directional_cells</span></code></a></li>
@@ -10726,6 +10952,19 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connection_group.MarcConnectionGroup.to_dict"><code class="docutils literal notranslate"><span class="pre">MarcConnectionGroup.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connection_group.MarcConnectionGroup.to_str"><code class="docutils literal notranslate"><span class="pre">MarcConnectionGroup.to_str()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connection_group.MarcConnectionGroup.type"><code class="docutils literal notranslate"><span class="pre">MarcConnectionGroup.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.marc_connector_point_data_item">simscale_sdk.models.marc_connector_point_data_item module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connector_point_data_item.MarcConnectorPointDataItem"><code class="docutils literal notranslate"><span class="pre">MarcConnectorPointDataItem</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connector_point_data_item.MarcConnectorPointDataItem.attribute_map"><code class="docutils literal notranslate"><span class="pre">MarcConnectorPointDataItem.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connector_point_data_item.MarcConnectorPointDataItem.geometry_primitive_uuids"><code class="docutils literal notranslate"><span class="pre">MarcConnectorPointDataItem.geometry_primitive_uuids</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connector_point_data_item.MarcConnectorPointDataItem.name"><code class="docutils literal notranslate"><span class="pre">MarcConnectorPointDataItem.name</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connector_point_data_item.MarcConnectorPointDataItem.openapi_types"><code class="docutils literal notranslate"><span class="pre">MarcConnectorPointDataItem.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connector_point_data_item.MarcConnectorPointDataItem.results"><code class="docutils literal notranslate"><span class="pre">MarcConnectorPointDataItem.results</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connector_point_data_item.MarcConnectorPointDataItem.to_dict"><code class="docutils literal notranslate"><span class="pre">MarcConnectorPointDataItem.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_connector_point_data_item.MarcConnectorPointDataItem.to_str"><code class="docutils literal notranslate"><span class="pre">MarcConnectorPointDataItem.to_str()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -11211,6 +11450,7 @@
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_result_control.MarcResultControl"><code class="docutils literal notranslate"><span class="pre">MarcResultControl</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_result_control.MarcResultControl.area_calculation"><code class="docutils literal notranslate"><span class="pre">MarcResultControl.area_calculation</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_result_control.MarcResultControl.attribute_map"><code class="docutils literal notranslate"><span class="pre">MarcResultControl.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_result_control.MarcResultControl.connector_point_data"><code class="docutils literal notranslate"><span class="pre">MarcResultControl.connector_point_data</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_result_control.MarcResultControl.openapi_types"><code class="docutils literal notranslate"><span class="pre">MarcResultControl.openapi_types</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_result_control.MarcResultControl.solution_fields"><code class="docutils literal notranslate"><span class="pre">MarcResultControl.solution_fields</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.marc_result_control.MarcResultControl.to_dict"><code class="docutils literal notranslate"><span class="pre">MarcResultControl.to_dict()</span></code></a></li>
@@ -12253,6 +12493,17 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_damage.NoDamage.to_dict"><code class="docutils literal notranslate"><span class="pre">NoDamage.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_damage.NoDamage.to_str"><code class="docutils literal notranslate"><span class="pre">NoDamage.to_str()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_damage.NoDamage.type"><code class="docutils literal notranslate"><span class="pre">NoDamage.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.no_dielectric_losses">simscale_sdk.models.no_dielectric_losses module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_dielectric_losses.NoDielectricLosses"><code class="docutils literal notranslate"><span class="pre">NoDielectricLosses</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_dielectric_losses.NoDielectricLosses.attribute_map"><code class="docutils literal notranslate"><span class="pre">NoDielectricLosses.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_dielectric_losses.NoDielectricLosses.openapi_types"><code class="docutils literal notranslate"><span class="pre">NoDielectricLosses.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_dielectric_losses.NoDielectricLosses.to_dict"><code class="docutils literal notranslate"><span class="pre">NoDielectricLosses.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_dielectric_losses.NoDielectricLosses.to_str"><code class="docutils literal notranslate"><span class="pre">NoDielectricLosses.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.no_dielectric_losses.NoDielectricLosses.type"><code class="docutils literal notranslate"><span class="pre">NoDielectricLosses.type</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -13411,7 +13662,6 @@
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.plastic_material_behavior">simscale_sdk.models.plastic_material_behavior module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.plastic_material_behavior.PlasticMaterialBehavior"><code class="docutils literal notranslate"><span class="pre">PlasticMaterialBehavior</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.plastic_material_behavior.PlasticMaterialBehavior.attribute_map"><code class="docutils literal notranslate"><span class="pre">PlasticMaterialBehavior.attribute_map</span></code></a></li>
-<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.plastic_material_behavior.PlasticMaterialBehavior.creep_formulation"><code class="docutils literal notranslate"><span class="pre">PlasticMaterialBehavior.creep_formulation</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.plastic_material_behavior.PlasticMaterialBehavior.elasto_plastic_model"><code class="docutils literal notranslate"><span class="pre">PlasticMaterialBehavior.elasto_plastic_model</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.plastic_material_behavior.PlasticMaterialBehavior.openapi_types"><code class="docutils literal notranslate"><span class="pre">PlasticMaterialBehavior.openapi_types</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.plastic_material_behavior.PlasticMaterialBehavior.to_dict"><code class="docutils literal notranslate"><span class="pre">PlasticMaterialBehavior.to_dict()</span></code></a></li>
@@ -14639,6 +14889,53 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.report_from_state_properties">simscale_sdk.models.report_from_state_properties module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.attribute_map"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.discriminator_value_class_map"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.discriminator_value_class_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.get_real_child_model"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.get_real_child_model()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.openapi_types"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.output_settings"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.output_settings</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.report_type"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.report_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.state_metadata"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.state_metadata</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_properties.ReportFromStateProperties.to_str"><code class="docutils literal notranslate"><span class="pre">ReportFromStateProperties.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.report_from_state_request">simscale_sdk.models.report_from_state_request module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.attribute_map"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.description"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.description</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.name"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.name</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.openapi_types"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.report_from_state_properties"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.report_from_state_properties</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.report_id"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.report_id</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.result_ids"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.result_ids</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.to_dict"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_from_state_request.ReportFromStateRequest.to_str"><code class="docutils literal notranslate"><span class="pre">ReportFromStateRequest.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.report_properties">simscale_sdk.models.report_properties module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties"><code class="docutils literal notranslate"><span class="pre">ReportProperties</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.attribute_map"><code class="docutils literal notranslate"><span class="pre">ReportProperties.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.camera_settings"><code class="docutils literal notranslate"><span class="pre">ReportProperties.camera_settings</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.discriminator_value_class_map"><code class="docutils literal notranslate"><span class="pre">ReportProperties.discriminator_value_class_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.filters"><code class="docutils literal notranslate"><span class="pre">ReportProperties.filters</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.get_real_child_model"><code class="docutils literal notranslate"><span class="pre">ReportProperties.get_real_child_model()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.model_settings"><code class="docutils literal notranslate"><span class="pre">ReportProperties.model_settings</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.openapi_types"><code class="docutils literal notranslate"><span class="pre">ReportProperties.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.output_settings"><code class="docutils literal notranslate"><span class="pre">ReportProperties.output_settings</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.report_type"><code class="docutils literal notranslate"><span class="pre">ReportProperties.report_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">ReportProperties.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_properties.ReportProperties.to_str"><code class="docutils literal notranslate"><span class="pre">ReportProperties.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.report_request">simscale_sdk.models.report_request module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_request.ReportRequest"><code class="docutils literal notranslate"><span class="pre">ReportRequest</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_request.ReportRequest.attribute_map"><code class="docutils literal notranslate"><span class="pre">ReportRequest.attribute_map</span></code></a></li>
@@ -14664,6 +14961,7 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_response.ReportResponse.finished_at"><code class="docutils literal notranslate"><span class="pre">ReportResponse.finished_at</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_response.ReportResponse.name"><code class="docutils literal notranslate"><span class="pre">ReportResponse.name</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_response.ReportResponse.openapi_types"><code class="docutils literal notranslate"><span class="pre">ReportResponse.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_response.ReportResponse.report_from_state_properties"><code class="docutils literal notranslate"><span class="pre">ReportResponse.report_from_state_properties</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_response.ReportResponse.report_id"><code class="docutils literal notranslate"><span class="pre">ReportResponse.report_id</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_response.ReportResponse.report_properties"><code class="docutils literal notranslate"><span class="pre">ReportResponse.report_properties</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.report_response.ReportResponse.result_ids"><code class="docutils literal notranslate"><span class="pre">ReportResponse.result_ids</span></code></a></li>
@@ -15130,6 +15428,19 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_output_settings.ScreenshotOutputSettings.show_legend"><code class="docutils literal notranslate"><span class="pre">ScreenshotOutputSettings.show_legend</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_output_settings.ScreenshotOutputSettings.to_dict"><code class="docutils literal notranslate"><span class="pre">ScreenshotOutputSettings.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_output_settings.ScreenshotOutputSettings.to_str"><code class="docutils literal notranslate"><span class="pre">ScreenshotOutputSettings.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.screenshot_report_from_state_properties">simscale_sdk.models.screenshot_report_from_state_properties module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_report_from_state_properties.ScreenshotReportFromStateProperties"><code class="docutils literal notranslate"><span class="pre">ScreenshotReportFromStateProperties</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_report_from_state_properties.ScreenshotReportFromStateProperties.attribute_map"><code class="docutils literal notranslate"><span class="pre">ScreenshotReportFromStateProperties.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_report_from_state_properties.ScreenshotReportFromStateProperties.openapi_types"><code class="docutils literal notranslate"><span class="pre">ScreenshotReportFromStateProperties.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_report_from_state_properties.ScreenshotReportFromStateProperties.output_settings"><code class="docutils literal notranslate"><span class="pre">ScreenshotReportFromStateProperties.output_settings</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_report_from_state_properties.ScreenshotReportFromStateProperties.report_type"><code class="docutils literal notranslate"><span class="pre">ScreenshotReportFromStateProperties.report_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_report_from_state_properties.ScreenshotReportFromStateProperties.state_metadata"><code class="docutils literal notranslate"><span class="pre">ScreenshotReportFromStateProperties.state_metadata</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_report_from_state_properties.ScreenshotReportFromStateProperties.to_dict"><code class="docutils literal notranslate"><span class="pre">ScreenshotReportFromStateProperties.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.screenshot_report_from_state_properties.ScreenshotReportFromStateProperties.to_str"><code class="docutils literal notranslate"><span class="pre">ScreenshotReportFromStateProperties.to_str()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -16369,6 +16680,34 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.state_metadata">simscale_sdk.models.state_metadata module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata"><code class="docutils literal notranslate"><span class="pre">StateMetadata</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.attribute_map"><code class="docutils literal notranslate"><span class="pre">StateMetadata.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.discriminator_value_class_map"><code class="docutils literal notranslate"><span class="pre">StateMetadata.discriminator_value_class_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.get_real_child_model"><code class="docutils literal notranslate"><span class="pre">StateMetadata.get_real_child_model()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.openapi_types"><code class="docutils literal notranslate"><span class="pre">StateMetadata.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.state_analysis_type"><code class="docutils literal notranslate"><span class="pre">StateMetadata.state_analysis_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.state_type"><code class="docutils literal notranslate"><span class="pre">StateMetadata.state_type</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.state_uuid"><code class="docutils literal notranslate"><span class="pre">StateMetadata.state_uuid</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.to_dict"><code class="docutils literal notranslate"><span class="pre">StateMetadata.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_metadata.StateMetadata.to_str"><code class="docutils literal notranslate"><span class="pre">StateMetadata.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.state_response">simscale_sdk.models.state_response module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_response.StateResponse"><code class="docutils literal notranslate"><span class="pre">StateResponse</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_response.StateResponse.attribute_map"><code class="docutils literal notranslate"><span class="pre">StateResponse.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_response.StateResponse.openapi_types"><code class="docutils literal notranslate"><span class="pre">StateResponse.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_response.StateResponse.state_description"><code class="docutils literal notranslate"><span class="pre">StateResponse.state_description</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_response.StateResponse.state_name"><code class="docutils literal notranslate"><span class="pre">StateResponse.state_name</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_response.StateResponse.state_uuid"><code class="docutils literal notranslate"><span class="pre">StateResponse.state_uuid</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_response.StateResponse.to_dict"><code class="docutils literal notranslate"><span class="pre">StateResponse.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.state_response.StateResponse.to_str"><code class="docutils literal notranslate"><span class="pre">StateResponse.to_str()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.static_analysis">simscale_sdk.models.static_analysis module</a><ul>
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.static_analysis.StaticAnalysis"><code class="docutils literal notranslate"><span class="pre">StaticAnalysis</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.static_analysis.StaticAnalysis.attribute_map"><code class="docutils literal notranslate"><span class="pre">StaticAnalysis.attribute_map</span></code></a></li>
@@ -17547,6 +17886,7 @@
 <li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.testsolver_simulation_control.TestsolverSimulationControl"><code class="docutils literal notranslate"><span class="pre">TestsolverSimulationControl</span></code></a><ul>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.testsolver_simulation_control.TestsolverSimulationControl.attribute_map"><code class="docutils literal notranslate"><span class="pre">TestsolverSimulationControl.attribute_map</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.testsolver_simulation_control.TestsolverSimulationControl.execution_mode"><code class="docutils literal notranslate"><span class="pre">TestsolverSimulationControl.execution_mode</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.testsolver_simulation_control.TestsolverSimulationControl.execution_mode_config"><code class="docutils literal notranslate"><span class="pre">TestsolverSimulationControl.execution_mode_config</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.testsolver_simulation_control.TestsolverSimulationControl.max_run_time"><code class="docutils literal notranslate"><span class="pre">TestsolverSimulationControl.max_run_time</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.testsolver_simulation_control.TestsolverSimulationControl.num_processors"><code class="docutils literal notranslate"><span class="pre">TestsolverSimulationControl.num_processors</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.testsolver_simulation_control.TestsolverSimulationControl.openapi_types"><code class="docutils literal notranslate"><span class="pre">TestsolverSimulationControl.openapi_types</span></code></a></li>
@@ -17677,6 +18017,18 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_hardening_creep_formulation.TimeHardeningCreepFormulation.to_dict"><code class="docutils literal notranslate"><span class="pre">TimeHardeningCreepFormulation.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_hardening_creep_formulation.TimeHardeningCreepFormulation.to_str"><code class="docutils literal notranslate"><span class="pre">TimeHardeningCreepFormulation.to_str()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_hardening_creep_formulation.TimeHardeningCreepFormulation.type"><code class="docutils literal notranslate"><span class="pre">TimeHardeningCreepFormulation.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.time_harmonic_electrics">simscale_sdk.models.time_harmonic_electrics module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_harmonic_electrics.TimeHarmonicElectrics"><code class="docutils literal notranslate"><span class="pre">TimeHarmonicElectrics</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_harmonic_electrics.TimeHarmonicElectrics.attribute_map"><code class="docutils literal notranslate"><span class="pre">TimeHarmonicElectrics.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_harmonic_electrics.TimeHarmonicElectrics.frequency"><code class="docutils literal notranslate"><span class="pre">TimeHarmonicElectrics.frequency</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_harmonic_electrics.TimeHarmonicElectrics.openapi_types"><code class="docutils literal notranslate"><span class="pre">TimeHarmonicElectrics.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_harmonic_electrics.TimeHarmonicElectrics.to_dict"><code class="docutils literal notranslate"><span class="pre">TimeHarmonicElectrics.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_harmonic_electrics.TimeHarmonicElectrics.to_str"><code class="docutils literal notranslate"><span class="pre">TimeHarmonicElectrics.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.time_harmonic_electrics.TimeHarmonicElectrics.type"><code class="docutils literal notranslate"><span class="pre">TimeHarmonicElectrics.type</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -17860,6 +18212,18 @@
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_linear_strain_type.TotalLinearStrainType.to_dict"><code class="docutils literal notranslate"><span class="pre">TotalLinearStrainType.to_dict()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_linear_strain_type.TotalLinearStrainType.to_str"><code class="docutils literal notranslate"><span class="pre">TotalLinearStrainType.to_str()</span></code></a></li>
 <li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_linear_strain_type.TotalLinearStrainType.type"><code class="docutils literal notranslate"><span class="pre">TotalLinearStrainType.type</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l5"><a class="reference internal" href="simscale_sdk.models.html#module-simscale_sdk.models.total_mass">simscale_sdk.models.total_mass module</a><ul>
+<li class="toctree-l6"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_mass.TotalMass"><code class="docutils literal notranslate"><span class="pre">TotalMass</span></code></a><ul>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_mass.TotalMass.attribute_map"><code class="docutils literal notranslate"><span class="pre">TotalMass.attribute_map</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_mass.TotalMass.mass"><code class="docutils literal notranslate"><span class="pre">TotalMass.mass</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_mass.TotalMass.openapi_types"><code class="docutils literal notranslate"><span class="pre">TotalMass.openapi_types</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_mass.TotalMass.to_dict"><code class="docutils literal notranslate"><span class="pre">TotalMass.to_dict()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_mass.TotalMass.to_str"><code class="docutils literal notranslate"><span class="pre">TotalMass.to_str()</span></code></a></li>
+<li class="toctree-l7"><a class="reference internal" href="simscale_sdk.models.html#simscale_sdk.models.total_mass.TotalMass.type"><code class="docutils literal notranslate"><span class="pre">TotalMass.type</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -19766,7 +20130,7 @@
       &#169;2023, SimScale GmbH.
       
       |
-      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 9.0.4</a>
       &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
       
       |

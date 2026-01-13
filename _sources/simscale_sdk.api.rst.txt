@@ -65,6 +65,14 @@ simscale\_sdk.api.meshes\_api module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.api.postprocessing\_api module
+--------------------------------------------
+
+.. automodule:: simscale_sdk.api.postprocessing_api
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.api.project\_permissions\_api module
 --------------------------------------------------
 
