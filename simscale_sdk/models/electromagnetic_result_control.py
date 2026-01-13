@@ -34,17 +34,19 @@ class ElectromagneticResultControl(object):
         'calculate_inductances': 'bool',
         'calculate_capacitances': 'bool',
         'forces_and_torques': 'list[ForceAndTorque]',
-        'probe_points': 'list[ElectromagneticResultControlProbePoint]'
+        'probe_points': 'list[ElectromagneticResultControlProbePoint]',
+        'resistance_sets': 'list[ElectromagneticResistanceSet]'
     }
 
     attribute_map = {
         'calculate_inductances': 'calculateInductances',
         'calculate_capacitances': 'calculateCapacitances',
         'forces_and_torques': 'forcesAndTorques',
-        'probe_points': 'probePoints'
+        'probe_points': 'probePoints',
+        'resistance_sets': 'resistanceSets'
     }
 
-    def __init__(self, calculate_inductances=None, calculate_capacitances=None, forces_and_torques=None, probe_points=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, calculate_inductances=None, calculate_capacitances=None, forces_and_torques=None, probe_points=None, resistance_sets=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -54,6 +56,7 @@ class ElectromagneticResultControl(object):
         self._calculate_capacitances = None
         self._forces_and_torques = None
         self._probe_points = None
+        self._resistance_sets = None
         self.discriminator = None
 
         if calculate_inductances is not None:
@@ -64,6 +67,8 @@ class ElectromagneticResultControl(object):
             self.forces_and_torques = forces_and_torques
         if probe_points is not None:
             self.probe_points = probe_points
+        if resistance_sets is not None:
+            self.resistance_sets = resistance_sets
 
     @property
     def calculate_inductances(self):
@@ -152,6 +157,27 @@ class ElectromagneticResultControl(object):
         """
 
         self._probe_points = probe_points
+
+    @property
+    def resistance_sets(self):
+        """Gets the resistance_sets of this ElectromagneticResultControl.  # noqa: E501
+
+
+        :return: The resistance_sets of this ElectromagneticResultControl.  # noqa: E501
+        :rtype: list[ElectromagneticResistanceSet]
+        """
+        return self._resistance_sets
+
+    @resistance_sets.setter
+    def resistance_sets(self, resistance_sets):
+        """Sets the resistance_sets of this ElectromagneticResultControl.
+
+
+        :param resistance_sets: The resistance_sets of this ElectromagneticResultControl.  # noqa: E501
+        :type: list[ElectromagneticResistanceSet]
+        """
+
+        self._resistance_sets = resistance_sets
 
     def to_dict(self):
         """Returns the model properties as a dict"""

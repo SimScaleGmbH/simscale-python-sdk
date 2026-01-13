@@ -283,7 +283,7 @@ class FoldersApi(object):
     def get_folder_info(self, space_id, folder_id, **kwargs): # noqa: E501
         """Get Folder Info  # noqa: E501
 
-        Get Folder metadata and current user permissions  # noqa: E501
+        Get Folder metadata and current user permissions.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_folder_info(space_id, folder_id, async_req=True)
@@ -309,7 +309,7 @@ class FoldersApi(object):
     def get_folder_info_with_http_info(self, space_id, folder_id, **kwargs):  # noqa: E501
         """Get Folder Info  # noqa: E501
 
-        Get Folder metadata and current user permissions  # noqa: E501
+        Get Folder metadata and current user permissions.  # noqa: E501
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
         >>> thread = api.get_folder_info_with_http_info(space_id, folder_id, async_req=True)

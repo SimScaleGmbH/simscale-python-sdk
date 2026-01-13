@@ -58,6 +58,7 @@ class FluidSolvers(object):
         'epsilon_dissipation_rate_final_solver': 'OneOfFluidSolversEpsilonDissipationRateFinalSolver',
         'passive_scalar_solver': 'OneOfFluidSolversPassiveScalarSolver',
         'radiative_intensity_ray_solver': 'OneOfFluidSolversRadiativeIntensityRaySolver',
+        'internal_net_radiative_heat_flux_solver': 'PBICGStabSolver',
         'specific_humidity_solver': 'OneOfFluidSolversSpecificHumiditySolver',
         'voltage_solver': 'OneOfFluidSolversVoltageSolver'
     }
@@ -90,11 +91,12 @@ class FluidSolvers(object):
         'epsilon_dissipation_rate_final_solver': 'epsilonDissipationRateFinalSolver',
         'passive_scalar_solver': 'passiveScalarSolver',
         'radiative_intensity_ray_solver': 'radiativeIntensityRaySolver',
+        'internal_net_radiative_heat_flux_solver': 'internalNetRadiativeHeatFluxSolver',
         'specific_humidity_solver': 'specificHumiditySolver',
         'voltage_solver': 'voltageSolver'
     }
 
-    def __init__(self, phase_fraction_solver=None, velocity_solver=None, velocity_final_solver=None, density_solver=None, density_final_solver=None, pressure_solver=None, pressure_final_solver=None, temperature_solver=None, temperature_final_solver=None, pressure_rgh_solver=None, pressure_rgh_final_solver=None, solid_enthalpy_solver=None, solid_enthalpy_final_solver=None, enthalpy_solver=None, enthalpy_final_solver=None, internal_energy_solver=None, internal_energy_final_solver=None, turbulent_kinetic_energy_solver=None, turbulent_kinetic_energy_final_solver=None, nu_tilda_solver=None, nu_tilda_final_solver=None, omega_dissipation_rate_solver=None, omega_dissipation_rate_final_solver=None, epsilon_dissipation_rate_solver=None, epsilon_dissipation_rate_final_solver=None, passive_scalar_solver=None, radiative_intensity_ray_solver=None, specific_humidity_solver=None, voltage_solver=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, phase_fraction_solver=None, velocity_solver=None, velocity_final_solver=None, density_solver=None, density_final_solver=None, pressure_solver=None, pressure_final_solver=None, temperature_solver=None, temperature_final_solver=None, pressure_rgh_solver=None, pressure_rgh_final_solver=None, solid_enthalpy_solver=None, solid_enthalpy_final_solver=None, enthalpy_solver=None, enthalpy_final_solver=None, internal_energy_solver=None, internal_energy_final_solver=None, turbulent_kinetic_energy_solver=None, turbulent_kinetic_energy_final_solver=None, nu_tilda_solver=None, nu_tilda_final_solver=None, omega_dissipation_rate_solver=None, omega_dissipation_rate_final_solver=None, epsilon_dissipation_rate_solver=None, epsilon_dissipation_rate_final_solver=None, passive_scalar_solver=None, radiative_intensity_ray_solver=None, internal_net_radiative_heat_flux_solver=None, specific_humidity_solver=None, voltage_solver=None, local_vars_configuration=None):  # noqa: E501
         """FluidSolvers - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -127,6 +129,7 @@ class FluidSolvers(object):
         self._epsilon_dissipation_rate_final_solver = None
         self._passive_scalar_solver = None
         self._radiative_intensity_ray_solver = None
+        self._internal_net_radiative_heat_flux_solver = None
         self._specific_humidity_solver = None
         self._voltage_solver = None
         self.discriminator = None
@@ -185,6 +188,8 @@ class FluidSolvers(object):
             self.passive_scalar_solver = passive_scalar_solver
         if radiative_intensity_ray_solver is not None:
             self.radiative_intensity_ray_solver = radiative_intensity_ray_solver
+        if internal_net_radiative_heat_flux_solver is not None:
+            self.internal_net_radiative_heat_flux_solver = internal_net_radiative_heat_flux_solver
         if specific_humidity_solver is not None:
             self.specific_humidity_solver = specific_humidity_solver
         if voltage_solver is not None:
@@ -756,6 +761,27 @@ class FluidSolvers(object):
         """
 
         self._radiative_intensity_ray_solver = radiative_intensity_ray_solver
+
+    @property
+    def internal_net_radiative_heat_flux_solver(self):
+        """Gets the internal_net_radiative_heat_flux_solver of this FluidSolvers.  # noqa: E501
+
+
+        :return: The internal_net_radiative_heat_flux_solver of this FluidSolvers.  # noqa: E501
+        :rtype: PBICGStabSolver
+        """
+        return self._internal_net_radiative_heat_flux_solver
+
+    @internal_net_radiative_heat_flux_solver.setter
+    def internal_net_radiative_heat_flux_solver(self, internal_net_radiative_heat_flux_solver):
+        """Sets the internal_net_radiative_heat_flux_solver of this FluidSolvers.
+
+
+        :param internal_net_radiative_heat_flux_solver: The internal_net_radiative_heat_flux_solver of this FluidSolvers.  # noqa: E501
+        :type: PBICGStabSolver
+        """
+
+        self._internal_net_radiative_heat_flux_solver = internal_net_radiative_heat_flux_solver
 
     @property
     def specific_humidity_solver(self):

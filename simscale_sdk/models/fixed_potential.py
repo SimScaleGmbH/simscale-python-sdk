@@ -34,6 +34,8 @@ class FixedPotential(object):
         'type': 'str',
         'name': 'str',
         'potential': 'DimensionalElectricPotential',
+        'potential_rms': 'DimensionalElectricPotential',
+        'phase': 'DimensionalAngle',
         'topological_reference': 'TopologicalReference'
     }
 
@@ -41,10 +43,12 @@ class FixedPotential(object):
         'type': 'type',
         'name': 'name',
         'potential': 'potential',
+        'potential_rms': 'potentialRMS',
+        'phase': 'phase',
         'topological_reference': 'topologicalReference'
     }
 
-    def __init__(self, type='FIXED_POTENTIAL', name=None, potential=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_POTENTIAL', name=None, potential=None, potential_rms=None, phase=None, topological_reference=None, local_vars_configuration=None):  # noqa: E501
         """FixedPotential - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -53,6 +57,8 @@ class FixedPotential(object):
         self._type = None
         self._name = None
         self._potential = None
+        self._potential_rms = None
+        self._phase = None
         self._topological_reference = None
         self.discriminator = None
 
@@ -61,6 +67,10 @@ class FixedPotential(object):
             self.name = name
         if potential is not None:
             self.potential = potential
+        if potential_rms is not None:
+            self.potential_rms = potential_rms
+        if phase is not None:
+            self.phase = phase
         if topological_reference is not None:
             self.topological_reference = topological_reference
 
@@ -130,6 +140,48 @@ class FixedPotential(object):
         """
 
         self._potential = potential
+
+    @property
+    def potential_rms(self):
+        """Gets the potential_rms of this FixedPotential.  # noqa: E501
+
+
+        :return: The potential_rms of this FixedPotential.  # noqa: E501
+        :rtype: DimensionalElectricPotential
+        """
+        return self._potential_rms
+
+    @potential_rms.setter
+    def potential_rms(self, potential_rms):
+        """Sets the potential_rms of this FixedPotential.
+
+
+        :param potential_rms: The potential_rms of this FixedPotential.  # noqa: E501
+        :type: DimensionalElectricPotential
+        """
+
+        self._potential_rms = potential_rms
+
+    @property
+    def phase(self):
+        """Gets the phase of this FixedPotential.  # noqa: E501
+
+
+        :return: The phase of this FixedPotential.  # noqa: E501
+        :rtype: DimensionalAngle
+        """
+        return self._phase
+
+    @phase.setter
+    def phase(self, phase):
+        """Sets the phase of this FixedPotential.
+
+
+        :param phase: The phase of this FixedPotential.  # noqa: E501
+        :type: DimensionalAngle
+        """
+
+        self._phase = phase
 
     @property
     def topological_reference(self):

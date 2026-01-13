@@ -34,7 +34,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
         'type': 'str',
         'directional_dependency': 'OneOfLinearElasticMaterialBehaviorDirectionalDependency',
         'damping': 'OneOfLinearElasticMaterialBehaviorDamping',
-        'creep_formulation': 'OneOfPlasticMaterialBehaviorCreepFormulation',
+        'creep_formulation': 'OneOfLinearElasticMaterialBehaviorCreepFormulation',
         'hyper_elastic_model': 'OneOfHyperElasticMaterialBehaviorHyperElasticModel',
         'elasto_plastic_model': 'OneOfPlasticMaterialBehaviorElastoPlasticModel'
     }
@@ -153,7 +153,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
 
 
         :return: The creep_formulation of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
-        :rtype: OneOfPlasticMaterialBehaviorCreepFormulation
+        :rtype: OneOfLinearElasticMaterialBehaviorCreepFormulation
         """
         return self._creep_formulation
 
@@ -163,7 +163,7 @@ class OneOfSolidMaterialMaterialBehavior(object):
 
 
         :param creep_formulation: The creep_formulation of this OneOfSolidMaterialMaterialBehavior.  # noqa: E501
-        :type: OneOfPlasticMaterialBehaviorCreepFormulation
+        :type: OneOfLinearElasticMaterialBehaviorCreepFormulation
         """
 
         self._creep_formulation = creep_formulation

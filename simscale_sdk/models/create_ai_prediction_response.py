@@ -32,6 +32,7 @@ class CreateAiPredictionResponse(object):
     """
     openapi_types = {
         'prediction_id': 'str',
+        'result_id': 'str',
         'available_fields': 'list[CreateAiPredictionResponseAvailableFields]',
         'confidence_score': 'float',
         'global_outputs': 'list[CreateAiPredictionResponseGlobalOutputs]'
@@ -39,18 +40,20 @@ class CreateAiPredictionResponse(object):
 
     attribute_map = {
         'prediction_id': 'predictionId',
+        'result_id': 'resultId',
         'available_fields': 'availableFields',
         'confidence_score': 'confidenceScore',
         'global_outputs': 'globalOutputs'
     }
 
-    def __init__(self, prediction_id=None, available_fields=None, confidence_score=None, global_outputs=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, prediction_id=None, result_id=None, available_fields=None, confidence_score=None, global_outputs=None, local_vars_configuration=None):  # noqa: E501
         """CreateAiPredictionResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._prediction_id = None
+        self._result_id = None
         self._available_fields = None
         self._confidence_score = None
         self._global_outputs = None
@@ -58,6 +61,8 @@ class CreateAiPredictionResponse(object):
 
         if prediction_id is not None:
             self.prediction_id = prediction_id
+        if result_id is not None:
+            self.result_id = result_id
         if available_fields is not None:
             self.available_fields = available_fields
         if confidence_score is not None:
@@ -85,6 +90,27 @@ class CreateAiPredictionResponse(object):
         """
 
         self._prediction_id = prediction_id
+
+    @property
+    def result_id(self):
+        """Gets the result_id of this CreateAiPredictionResponse.  # noqa: E501
+
+
+        :return: The result_id of this CreateAiPredictionResponse.  # noqa: E501
+        :rtype: str
+        """
+        return self._result_id
+
+    @result_id.setter
+    def result_id(self, result_id):
+        """Sets the result_id of this CreateAiPredictionResponse.
+
+
+        :param result_id: The result_id of this CreateAiPredictionResponse.  # noqa: E501
+        :type: str
+        """
+
+        self._result_id = result_id
 
     @property
     def available_fields(self):

@@ -158,7 +158,7 @@ class SimulationsApi(object):
             collection_formats=collection_formats)
 
     def create_geometry_primitive(self, project_id, geometry_primitive, **kwargs): # noqa: E501
-        """Create a geometry primitive for reference within a Simulation spec.  # noqa: E501
+        """Create a geometry primitive for reference within a Simulation spec  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -183,7 +183,7 @@ class SimulationsApi(object):
         return self.create_geometry_primitive_with_http_info(project_id, geometry_primitive, **kwargs)  # noqa: E501
 
     def create_geometry_primitive_with_http_info(self, project_id, geometry_primitive, **kwargs):  # noqa: E501
-        """Create a geometry primitive for reference within a Simulation spec.  # noqa: E501
+        """Create a geometry primitive for reference within a Simulation spec  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

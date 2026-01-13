@@ -39,7 +39,8 @@ class ReportResponse(object):
         'finished_at': 'datetime',
         'status': 'str',
         'result_ids': 'list[str]',
-        'report_properties': 'OneOfReportProperties',
+        'report_properties': 'ReportProperties',
+        'report_from_state_properties': 'ReportFromStateProperties',
         'download': 'DownloadInfo',
         'failure_reason': 'ReportResponseFailureReason'
     }
@@ -54,11 +55,12 @@ class ReportResponse(object):
         'status': 'status',
         'result_ids': 'resultIds',
         'report_properties': 'reportProperties',
+        'report_from_state_properties': 'reportFromStateProperties',
         'download': 'download',
         'failure_reason': 'failureReason'
     }
 
-    def __init__(self, report_id=None, name=None, description=None, created_at=None, started_at=None, finished_at=None, status=None, result_ids=None, report_properties=None, download=None, failure_reason=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, report_id=None, name=None, description=None, created_at=None, started_at=None, finished_at=None, status=None, result_ids=None, report_properties=None, report_from_state_properties=None, download=None, failure_reason=None, local_vars_configuration=None):  # noqa: E501
         """ReportResponse - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -73,6 +75,7 @@ class ReportResponse(object):
         self._status = None
         self._result_ids = None
         self._report_properties = None
+        self._report_from_state_properties = None
         self._download = None
         self._failure_reason = None
         self.discriminator = None
@@ -91,6 +94,8 @@ class ReportResponse(object):
             self.result_ids = result_ids
         if report_properties is not None:
             self.report_properties = report_properties
+        if report_from_state_properties is not None:
+            self.report_from_state_properties = report_from_state_properties
         if download is not None:
             self.download = download
         if failure_reason is not None:
@@ -300,7 +305,7 @@ class ReportResponse(object):
 
 
         :return: The report_properties of this ReportResponse.  # noqa: E501
-        :rtype: OneOfReportProperties
+        :rtype: ReportProperties
         """
         return self._report_properties
 
@@ -310,10 +315,31 @@ class ReportResponse(object):
 
 
         :param report_properties: The report_properties of this ReportResponse.  # noqa: E501
-        :type: OneOfReportProperties
+        :type: ReportProperties
         """
 
         self._report_properties = report_properties
+
+    @property
+    def report_from_state_properties(self):
+        """Gets the report_from_state_properties of this ReportResponse.  # noqa: E501
+
+
+        :return: The report_from_state_properties of this ReportResponse.  # noqa: E501
+        :rtype: ReportFromStateProperties
+        """
+        return self._report_from_state_properties
+
+    @report_from_state_properties.setter
+    def report_from_state_properties(self, report_from_state_properties):
+        """Sets the report_from_state_properties of this ReportResponse.
+
+
+        :param report_from_state_properties: The report_from_state_properties of this ReportResponse.  # noqa: E501
+        :type: ReportFromStateProperties
+        """
+
+        self._report_from_state_properties = report_from_state_properties
 
     @property
     def download(self):

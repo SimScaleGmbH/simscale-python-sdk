@@ -33,13 +33,14 @@ class ElectromagneticMaterial(object):
     openapi_types = {
         'name': 'str',
         'material_behavior': 'OneOfElectromagneticMaterialMaterialBehavior',
-        'electric_conductivity_type': 'IsotropicElectricConductivityMethod',
+        'electric_conductivity_type': 'OneOfElectromagneticMaterialElectricConductivityType',
         'magnetic_permeability_type': 'OneOfElectromagneticMaterialMagneticPermeabilityType',
         'electric_permittivity_type': 'LinearIsotropicPermittivityMethod',
         'density_type': 'IsotropicDensityMethod',
         'specific_heat_type': 'IsotropicSpecificHeatMethod',
         'thermal_conductivity': 'IsotropicThermalConductivityMethod',
         'core_losses_type': 'OneOfElectromagneticMaterialCoreLossesType',
+        'dielectric_loss_type': 'OneOfElectromagneticMaterialDielectricLossType',
         'topological_reference': 'TopologicalReference',
         'built_in_material': 'str',
         'material_library_reference': 'MaterialLibraryReference'
@@ -55,12 +56,13 @@ class ElectromagneticMaterial(object):
         'specific_heat_type': 'specificHeatType',
         'thermal_conductivity': 'thermalConductivity',
         'core_losses_type': 'coreLossesType',
+        'dielectric_loss_type': 'dielectricLossType',
         'topological_reference': 'topologicalReference',
         'built_in_material': 'builtInMaterial',
         'material_library_reference': 'materialLibraryReference'
     }
 
-    def __init__(self, name=None, material_behavior=None, electric_conductivity_type=None, magnetic_permeability_type=None, electric_permittivity_type=None, density_type=None, specific_heat_type=None, thermal_conductivity=None, core_losses_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, name=None, material_behavior=None, electric_conductivity_type=None, magnetic_permeability_type=None, electric_permittivity_type=None, density_type=None, specific_heat_type=None, thermal_conductivity=None, core_losses_type=None, dielectric_loss_type=None, topological_reference=None, built_in_material=None, material_library_reference=None, local_vars_configuration=None):  # noqa: E501
         """ElectromagneticMaterial - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -75,6 +77,7 @@ class ElectromagneticMaterial(object):
         self._specific_heat_type = None
         self._thermal_conductivity = None
         self._core_losses_type = None
+        self._dielectric_loss_type = None
         self._topological_reference = None
         self._built_in_material = None
         self._material_library_reference = None
@@ -98,6 +101,8 @@ class ElectromagneticMaterial(object):
             self.thermal_conductivity = thermal_conductivity
         if core_losses_type is not None:
             self.core_losses_type = core_losses_type
+        if dielectric_loss_type is not None:
+            self.dielectric_loss_type = dielectric_loss_type
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if built_in_material is not None:
@@ -153,7 +158,7 @@ class ElectromagneticMaterial(object):
 
 
         :return: The electric_conductivity_type of this ElectromagneticMaterial.  # noqa: E501
-        :rtype: IsotropicElectricConductivityMethod
+        :rtype: OneOfElectromagneticMaterialElectricConductivityType
         """
         return self._electric_conductivity_type
 
@@ -163,7 +168,7 @@ class ElectromagneticMaterial(object):
 
 
         :param electric_conductivity_type: The electric_conductivity_type of this ElectromagneticMaterial.  # noqa: E501
-        :type: IsotropicElectricConductivityMethod
+        :type: OneOfElectromagneticMaterialElectricConductivityType
         """
 
         self._electric_conductivity_type = electric_conductivity_type
@@ -293,6 +298,27 @@ class ElectromagneticMaterial(object):
         """
 
         self._core_losses_type = core_losses_type
+
+    @property
+    def dielectric_loss_type(self):
+        """Gets the dielectric_loss_type of this ElectromagneticMaterial.  # noqa: E501
+
+
+        :return: The dielectric_loss_type of this ElectromagneticMaterial.  # noqa: E501
+        :rtype: OneOfElectromagneticMaterialDielectricLossType
+        """
+        return self._dielectric_loss_type
+
+    @dielectric_loss_type.setter
+    def dielectric_loss_type(self, dielectric_loss_type):
+        """Sets the dielectric_loss_type of this ElectromagneticMaterial.
+
+
+        :param dielectric_loss_type: The dielectric_loss_type of this ElectromagneticMaterial.  # noqa: E501
+        :type: OneOfElectromagneticMaterialDielectricLossType
+        """
+
+        self._dielectric_loss_type = dielectric_loss_type
 
     @property
     def topological_reference(self):

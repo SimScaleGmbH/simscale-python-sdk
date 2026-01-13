@@ -10,6 +10,7 @@ from simscale_sdk.api.geometry_imports_api import GeometryImportsApi
 from simscale_sdk.api.materials_api import MaterialsApi
 from simscale_sdk.api.mesh_operations_api import MeshOperationsApi
 from simscale_sdk.api.meshes_api import MeshesApi
+from simscale_sdk.api.postprocessing_api import PostprocessingApi
 from simscale_sdk.api.project_permissions_api import ProjectPermissionsApi
 from simscale_sdk.api.projects_api import ProjectsApi
 from simscale_sdk.api.reports_api import ReportsApi

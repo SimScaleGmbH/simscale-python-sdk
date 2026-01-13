@@ -34,7 +34,7 @@ class ReportRequest(object):
         'name': 'str',
         'description': 'str',
         'result_ids': 'list[str]',
-        'report_properties': 'OneOfReportProperties',
+        'report_properties': 'ReportProperties',
         'report_id': 'str'
     }
 
@@ -131,7 +131,7 @@ class ReportRequest(object):
     def result_ids(self):
         """Gets the result_ids of this ReportRequest.  # noqa: E501
 
-        The resultIds the report should be created for.  # noqa: E501
+        The IDs of the results for which the report should be created.  # noqa: E501
 
         :return: The result_ids of this ReportRequest.  # noqa: E501
         :rtype: list[str]
@@ -142,7 +142,7 @@ class ReportRequest(object):
     def result_ids(self, result_ids):
         """Sets the result_ids of this ReportRequest.
 
-        The resultIds the report should be created for.  # noqa: E501
+        The IDs of the results for which the report should be created.  # noqa: E501
 
         :param result_ids: The result_ids of this ReportRequest.  # noqa: E501
         :type: list[str]
@@ -158,7 +158,7 @@ class ReportRequest(object):
 
 
         :return: The report_properties of this ReportRequest.  # noqa: E501
-        :rtype: OneOfReportProperties
+        :rtype: ReportProperties
         """
         return self._report_properties
 
@@ -168,7 +168,7 @@ class ReportRequest(object):
 
 
         :param report_properties: The report_properties of this ReportRequest.  # noqa: E501
-        :type: OneOfReportProperties
+        :type: ReportProperties
         """
         if self.local_vars_configuration.client_side_validation and report_properties is None:  # noqa: E501
             raise ValueError("Invalid value for `report_properties`, must not be `None`")  # noqa: E501

@@ -35,13 +35,17 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         'name': 'str',
         'topological_reference': 'TopologicalReference',
         'potential': 'DimensionalElectricPotential',
+        'potential_rms': 'DimensionalElectricPotential',
+        'phase': 'DimensionalAngle',
         'charge_density': 'DimensionalChargeDensity',
         'total_charge': 'DimensionalCharge',
         'temperature': 'DimensionalFunctionTemperature',
         'heat_flux_value': 'DimensionalFunctionVolumetricPower',
         'heat_transfer_coefficient': 'DimensionalFunctionThermalTransmittance',
         'ambient_temperature': 'DimensionalFunctionTemperature',
-        'emissivity': 'DimensionalFunctionDimensionless'
+        'emissivity': 'DimensionalFunctionDimensionless',
+        'topology': 'OneOfElectricCurrentTopology',
+        'current_rms': 'DimensionalElectricCurrent'
     }
 
     attribute_map = {
@@ -49,13 +53,17 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         'name': 'name',
         'topological_reference': 'topologicalReference',
         'potential': 'potential',
+        'potential_rms': 'potentialRMS',
+        'phase': 'phase',
         'charge_density': 'chargeDensity',
         'total_charge': 'totalCharge',
         'temperature': 'temperature',
         'heat_flux_value': 'heatFluxValue',
         'heat_transfer_coefficient': 'heatTransferCoefficient',
         'ambient_temperature': 'ambientTemperature',
-        'emissivity': 'emissivity'
+        'emissivity': 'emissivity',
+        'topology': 'topology',
+        'current_rms': 'currentRMS'
     }
 
     discriminator_value_class_map = {
@@ -69,10 +77,11 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         'SURFACE_HEAT_FLUX': 'SurfaceHeatFlux',
         'VOLUME_HEAT_FLUX': 'VolumeHeatFlux',
         'CONVECTIVE_HEAT_FLUX': 'ConvectiveHeatFlux',
-        'RADIATION_HEAT_FLUX': 'RadiationHeatFlux'
+        'RADIATION_HEAT_FLUX': 'RadiationHeatFlux',
+        'ELECTRIC_CURRENT': 'ElectricCurrent'
     }
 
-    def __init__(self, type='RADIATION_HEAT_FLUX', name=None, topological_reference=None, potential=None, charge_density=None, total_charge=None, temperature=None, heat_flux_value=None, heat_transfer_coefficient=None, ambient_temperature=None, emissivity=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ELECTRIC_CURRENT', name=None, topological_reference=None, potential=None, potential_rms=None, phase=None, charge_density=None, total_charge=None, temperature=None, heat_flux_value=None, heat_transfer_coefficient=None, ambient_temperature=None, emissivity=None, topology=None, current_rms=None, local_vars_configuration=None):  # noqa: E501
         """OneOfElectromagneticAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -82,6 +91,8 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         self._name = None
         self._topological_reference = None
         self._potential = None
+        self._potential_rms = None
+        self._phase = None
         self._charge_density = None
         self._total_charge = None
         self._temperature = None
@@ -89,6 +100,8 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         self._heat_transfer_coefficient = None
         self._ambient_temperature = None
         self._emissivity = None
+        self._topology = None
+        self._current_rms = None
         self.discriminator = 'type'
 
         self.type = type
@@ -98,6 +111,10 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
             self.topological_reference = topological_reference
         if potential is not None:
             self.potential = potential
+        if potential_rms is not None:
+            self.potential_rms = potential_rms
+        if phase is not None:
+            self.phase = phase
         if charge_density is not None:
             self.charge_density = charge_density
         if total_charge is not None:
@@ -112,12 +129,16 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
             self.ambient_temperature = ambient_temperature
         if emissivity is not None:
             self.emissivity = emissivity
+        if topology is not None:
+            self.topology = topology
+        if current_rms is not None:
+            self.current_rms = current_rms
 
     @property
     def type(self):
         """Gets the type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
 
-        Accounts for heat transfer due to thermal radiation between surfaces.  Schema name: RadiationHeatFlux  # noqa: E501
+        Specify the electric current flowing along a path  Schema name: ElectricCurrent  # noqa: E501
 
         :return: The type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
         :rtype: str
@@ -128,7 +149,7 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
     def type(self, type):
         """Sets the type of this OneOfElectromagneticAnalysisBoundaryConditions.
 
-        Accounts for heat transfer due to thermal radiation between surfaces.  Schema name: RadiationHeatFlux  # noqa: E501
+        Specify the electric current flowing along a path  Schema name: ElectricCurrent  # noqa: E501
 
         :param type: The type of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
         :type: str
@@ -200,6 +221,48 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         """
 
         self._potential = potential
+
+    @property
+    def potential_rms(self):
+        """Gets the potential_rms of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The potential_rms of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalElectricPotential
+        """
+        return self._potential_rms
+
+    @potential_rms.setter
+    def potential_rms(self, potential_rms):
+        """Sets the potential_rms of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param potential_rms: The potential_rms of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalElectricPotential
+        """
+
+        self._potential_rms = potential_rms
+
+    @property
+    def phase(self):
+        """Gets the phase of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The phase of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalAngle
+        """
+        return self._phase
+
+    @phase.setter
+    def phase(self, phase):
+        """Sets the phase of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param phase: The phase of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalAngle
+        """
+
+        self._phase = phase
 
     @property
     def charge_density(self):
@@ -347,6 +410,48 @@ class OneOfElectromagneticAnalysisBoundaryConditions(object):
         """
 
         self._emissivity = emissivity
+
+    @property
+    def topology(self):
+        """Gets the topology of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The topology of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: OneOfElectricCurrentTopology
+        """
+        return self._topology
+
+    @topology.setter
+    def topology(self, topology):
+        """Sets the topology of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param topology: The topology of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: OneOfElectricCurrentTopology
+        """
+
+        self._topology = topology
+
+    @property
+    def current_rms(self):
+        """Gets the current_rms of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The current_rms of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: DimensionalElectricCurrent
+        """
+        return self._current_rms
+
+    @current_rms.setter
+    def current_rms(self, current_rms):
+        """Sets the current_rms of this OneOfElectromagneticAnalysisBoundaryConditions.
+
+
+        :param current_rms: The current_rms of this OneOfElectromagneticAnalysisBoundaryConditions.  # noqa: E501
+        :type: DimensionalElectricCurrent
+        """
+
+        self._current_rms = current_rms
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

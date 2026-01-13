@@ -1781,7 +1781,7 @@ class SimulationRunsApi(object):
             collection_formats=collection_formats)
 
     def get_simulation_run_sub_runs(self, project_id, simulation_id, run_id, **kwargs): # noqa: E501
-        """List of subruns of parametric runs  # noqa: E501
+        """List of sub-runs of parametric runs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -1809,7 +1809,7 @@ class SimulationRunsApi(object):
         return self.get_simulation_run_sub_runs_with_http_info(project_id, simulation_id, run_id, **kwargs)  # noqa: E501
 
     def get_simulation_run_sub_runs_with_http_info(self, project_id, simulation_id, run_id, **kwargs):  # noqa: E501
-        """List of subruns of parametric runs  # noqa: E501
+        """List of sub-runs of parametric runs  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True

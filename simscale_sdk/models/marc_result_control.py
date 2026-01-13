@@ -33,16 +33,18 @@ class MarcResultControl(object):
     openapi_types = {
         'solution_fields': 'list[OneOfMarcResultControlSolutionFields]',
         'area_calculation': 'list[OneOfMarcResultControlAreaCalculation]',
-        'volume_calculation': 'list[OneOfMarcResultControlVolumeCalculation]'
+        'volume_calculation': 'list[OneOfMarcResultControlVolumeCalculation]',
+        'connector_point_data': 'list[MarcConnectorPointDataItem]'
     }
 
     attribute_map = {
         'solution_fields': 'solutionFields',
         'area_calculation': 'areaCalculation',
-        'volume_calculation': 'volumeCalculation'
+        'volume_calculation': 'volumeCalculation',
+        'connector_point_data': 'connectorPointData'
     }
 
-    def __init__(self, solution_fields=None, area_calculation=None, volume_calculation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, solution_fields=None, area_calculation=None, volume_calculation=None, connector_point_data=None, local_vars_configuration=None):  # noqa: E501
         """MarcResultControl - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class MarcResultControl(object):
         self._solution_fields = None
         self._area_calculation = None
         self._volume_calculation = None
+        self._connector_point_data = None
         self.discriminator = None
 
         if solution_fields is not None:
@@ -59,6 +62,8 @@ class MarcResultControl(object):
             self.area_calculation = area_calculation
         if volume_calculation is not None:
             self.volume_calculation = volume_calculation
+        if connector_point_data is not None:
+            self.connector_point_data = connector_point_data
 
     @property
     def solution_fields(self):
@@ -122,6 +127,27 @@ class MarcResultControl(object):
         """
 
         self._volume_calculation = volume_calculation
+
+    @property
+    def connector_point_data(self):
+        """Gets the connector_point_data of this MarcResultControl.  # noqa: E501
+
+
+        :return: The connector_point_data of this MarcResultControl.  # noqa: E501
+        :rtype: list[MarcConnectorPointDataItem]
+        """
+        return self._connector_point_data
+
+    @connector_point_data.setter
+    def connector_point_data(self, connector_point_data):
+        """Sets the connector_point_data of this MarcResultControl.
+
+
+        :param connector_point_data: The connector_point_data of this MarcResultControl.  # noqa: E501
+        :type: list[MarcConnectorPointDataItem]
+        """
+
+        self._connector_point_data = connector_point_data
 
     def to_dict(self):
         """Returns the model properties as a dict"""

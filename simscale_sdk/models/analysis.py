@@ -69,6 +69,7 @@ class Analysis(object):
         'pedestrian_comfort_map': 'list[PedestrianComfortSurface]',
         'additional_result_export': 'FluidResultControls',
         'enable_radiation': 'bool',
+        'radiation_model': 'str',
         'enable_solar_load': 'bool',
         'enable_humidity_model': 'bool',
         'enable_joule_heating': 'bool',
@@ -122,6 +123,7 @@ class Analysis(object):
         'pedestrian_comfort_map': 'pedestrianComfortMap',
         'additional_result_export': 'additionalResultExport',
         'enable_radiation': 'enableRadiation',
+        'radiation_model': 'radiationModel',
         'enable_solar_load': 'enableSolarLoad',
         'enable_humidity_model': 'enableHumidityModel',
         'enable_joule_heating': 'enableJouleHeating',
@@ -157,7 +159,7 @@ class Analysis(object):
         'MARC_ANALYSIS': 'MarcAnalysis'
     }
 
-    def __init__(self, type='MARC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multicomponent=None, is_multiphase=None, is_cht=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, load_steps=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MARC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multicomponent=None, is_multiphase=None, is_cht=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, radiation_model=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, load_steps=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -201,6 +203,7 @@ class Analysis(object):
         self._pedestrian_comfort_map = None
         self._additional_result_export = None
         self._enable_radiation = None
+        self._radiation_model = None
         self._enable_solar_load = None
         self._enable_humidity_model = None
         self._enable_joule_heating = None
@@ -290,6 +293,8 @@ class Analysis(object):
             self.additional_result_export = additional_result_export
         if enable_radiation is not None:
             self.enable_radiation = enable_radiation
+        if radiation_model is not None:
+            self.radiation_model = radiation_model
         if enable_solar_load is not None:
             self.enable_solar_load = enable_solar_load
         if enable_humidity_model is not None:
@@ -1164,6 +1169,35 @@ class Analysis(object):
         """
 
         self._enable_radiation = enable_radiation
+
+    @property
+    def radiation_model(self):
+        """Gets the radiation_model of this Analysis.  # noqa: E501
+
+        Choose a radiation model:<ul><li> Use the <strong>Discrete Ordinates</strong> model if your geometry contains many complex surfaces or (semi) transparent solids.</li><li> Use the <strong>View Factors</strong> model for faster computation on less complex geometries. <strong>Transparent solids are not supported with this model.</strong></li></ul>  # noqa: E501
+
+        :return: The radiation_model of this Analysis.  # noqa: E501
+        :rtype: str
+        """
+        return self._radiation_model
+
+    @radiation_model.setter
+    def radiation_model(self, radiation_model):
+        """Sets the radiation_model of this Analysis.
+
+        Choose a radiation model:<ul><li> Use the <strong>Discrete Ordinates</strong> model if your geometry contains many complex surfaces or (semi) transparent solids.</li><li> Use the <strong>View Factors</strong> model for faster computation on less complex geometries. <strong>Transparent solids are not supported with this model.</strong></li></ul>  # noqa: E501
+
+        :param radiation_model: The radiation_model of this Analysis.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["FV_DOM", "VIEW_FACTORS"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and radiation_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `radiation_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(radiation_model, allowed_values)
+            )
+
+        self._radiation_model = radiation_model
 
     @property
     def enable_solar_load(self):

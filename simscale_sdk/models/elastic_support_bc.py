@@ -68,7 +68,7 @@ class ElasticSupportBC(object):
     def type(self):
         """Gets the type of this ElasticSupportBC.  # noqa: E501
 
-        <p>The <b>elastic support</b> constraint can be used to model an <b>elastic foundation</b> between the assigned surfaces and the rigid ground. Additionally it can be used to <b>prevent rigid body motions</b> in a nonlinear analysis. The constraint acts on tension and compression forces and all stiffness values are expressed in the global coordinate system.<br><a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/elastic-support/' target'blank'>Learn more</a>.</p>  Schema name: ElasticSupportBC  # noqa: E501
+        <p>The <b>elastic support</b> constraint can be used to model an <b>elastic foundation</b> between the assigned surfaces and the rigid ground. Additionally it can be used to <b>prevent rigid body motions</b> in a nonlinear analysis. The constraint acts on tension and compression forces and all stiffness values are expressed in the global coordinate system.<br><a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/elastic-support/' target='_blank'>Learn more</a>.</p>  Schema name: ElasticSupportBC  # noqa: E501
 
         :return: The type of this ElasticSupportBC.  # noqa: E501
         :rtype: str
@@ -79,7 +79,7 @@ class ElasticSupportBC(object):
     def type(self, type):
         """Sets the type of this ElasticSupportBC.
 
-        <p>The <b>elastic support</b> constraint can be used to model an <b>elastic foundation</b> between the assigned surfaces and the rigid ground. Additionally it can be used to <b>prevent rigid body motions</b> in a nonlinear analysis. The constraint acts on tension and compression forces and all stiffness values are expressed in the global coordinate system.<br><a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/elastic-support/' target'blank'>Learn more</a>.</p>  Schema name: ElasticSupportBC  # noqa: E501
+        <p>The <b>elastic support</b> constraint can be used to model an <b>elastic foundation</b> between the assigned surfaces and the rigid ground. Additionally it can be used to <b>prevent rigid body motions</b> in a nonlinear analysis. The constraint acts on tension and compression forces and all stiffness values are expressed in the global coordinate system.<br><a href='https://www.simscale.com/docs/simulation-setup/boundary-conditions/elastic-support/' target='_blank'>Learn more</a>.</p>  Schema name: ElasticSupportBC  # noqa: E501
 
         :param type: The type of this ElasticSupportBC.  # noqa: E501
         :type: str

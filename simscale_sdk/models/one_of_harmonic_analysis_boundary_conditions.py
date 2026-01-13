@@ -46,6 +46,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'deformation_behavior': 'str',
         'enable_search_radius': 'bool',
         'search_radius': 'DimensionalLength',
+        'mass_definition': 'OneOfDistributedMassBCMassDefinition',
         'rotation': 'AngularRotation',
         'force': 'DimensionalVectorFunctionForce',
         'scaling': 'DimensionalFunctionDimensionless',
@@ -71,6 +72,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'deformation_behavior': 'deformationBehavior',
         'enable_search_radius': 'enableSearchRadius',
         'search_radius': 'searchRadius',
+        'mass_definition': 'massDefinition',
         'rotation': 'rotation',
         'force': 'force',
         'scaling': 'scaling',
@@ -87,6 +89,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'FIXED_SUPPORT': 'FixedSupportBC',
         'FIXED_VALUE': 'FixedValueBC',
         'POINT_MASS': 'PointMassBC',
+        'DISTRIBUTED_MASS': 'DistributedMassBC',
         'REMOTE_DISPLACEMENT_LOAD': 'RemoteDisplacementLoadBC',
         'SYMMETRY_PLANE': 'SymmetryPlaneBC',
         'CENTRIFUGAL_FORCE': 'CentrifugalForceBC',
@@ -98,7 +101,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         'VOLUME_LOAD': 'VolumeLoadBC'
     }
 
-    def __init__(self, type='VOLUME_LOAD', name=None, direction=None, acceleration=None, phase_angle=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, enable_search_radius=None, search_radius=None, rotation=None, force=None, scaling=None, pressure=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='VOLUME_LOAD', name=None, direction=None, acceleration=None, phase_angle=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, enable_search_radius=None, search_radius=None, mass_definition=None, rotation=None, force=None, scaling=None, pressure=None, moment=None, remote_point=None, load=None, local_vars_configuration=None):  # noqa: E501
         """OneOfHarmonicAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -119,6 +122,7 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         self._deformation_behavior = None
         self._enable_search_radius = None
         self._search_radius = None
+        self._mass_definition = None
         self._rotation = None
         self._force = None
         self._scaling = None
@@ -157,6 +161,8 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
             self.enable_search_radius = enable_search_radius
         if search_radius is not None:
             self.search_radius = search_radius
+        if mass_definition is not None:
+            self.mass_definition = mass_definition
         if rotation is not None:
             self.rotation = rotation
         if force is not None:
@@ -498,6 +504,27 @@ class OneOfHarmonicAnalysisBoundaryConditions(object):
         """
 
         self._search_radius = search_radius
+
+    @property
+    def mass_definition(self):
+        """Gets the mass_definition of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The mass_definition of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: OneOfDistributedMassBCMassDefinition
+        """
+        return self._mass_definition
+
+    @mass_definition.setter
+    def mass_definition(self, mass_definition):
+        """Sets the mass_definition of this OneOfHarmonicAnalysisBoundaryConditions.
+
+
+        :param mass_definition: The mass_definition of this OneOfHarmonicAnalysisBoundaryConditions.  # noqa: E501
+        :type: OneOfDistributedMassBCMassDefinition
+        """
+
+        self._mass_definition = mass_definition
 
     @property
     def rotation(self):

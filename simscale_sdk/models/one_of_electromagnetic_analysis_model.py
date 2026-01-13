@@ -32,39 +32,40 @@ class OneOfElectromagneticAnalysisModel(object):
     """
     openapi_types = {
         'type': 'str',
-        'thermal': 'bool',
-        'frequency': 'DimensionalFrequency'
+        'frequency': 'DimensionalFrequency',
+        'thermal': 'bool'
     }
 
     attribute_map = {
         'type': 'type',
-        'thermal': 'thermal',
-        'frequency': 'frequency'
+        'frequency': 'frequency',
+        'thermal': 'thermal'
     }
 
     discriminator_value_class_map = {
         'ELECTROSTATICS': 'Electrostatics',
+        'TIME_HARMONIC_ELECTRICS': 'TimeHarmonicElectrics',
         'MAGNETOSTATICS': 'Magnetostatics',
         'TIME_HARMONIC_MAGNETICS': 'TimeHarmonicMagnetics',
         'TIME_TRANSIENT_MAGNETICS': 'TimeTransientMagnetics'
     }
 
-    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', thermal=None, frequency=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', frequency=None, thermal=None, local_vars_configuration=None):  # noqa: E501
         """OneOfElectromagneticAnalysisModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
-        self._thermal = None
         self._frequency = None
+        self._thermal = None
         self.discriminator = 'type'
 
         self.type = type
-        if thermal is not None:
-            self.thermal = thermal
         if frequency is not None:
             self.frequency = frequency
+        if thermal is not None:
+            self.thermal = thermal
 
     @property
     def type(self):
@@ -92,6 +93,27 @@ class OneOfElectromagneticAnalysisModel(object):
         self._type = type
 
     @property
+    def frequency(self):
+        """Gets the frequency of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+
+
+        :return: The frequency of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+        :rtype: DimensionalFrequency
+        """
+        return self._frequency
+
+    @frequency.setter
+    def frequency(self, frequency):
+        """Sets the frequency of this OneOfElectromagneticAnalysisModel.
+
+
+        :param frequency: The frequency of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+        :type: DimensionalFrequency
+        """
+
+        self._frequency = frequency
+
+    @property
     def thermal(self):
         """Gets the thermal of this OneOfElectromagneticAnalysisModel.  # noqa: E501
 
@@ -113,27 +135,6 @@ class OneOfElectromagneticAnalysisModel(object):
         """
 
         self._thermal = thermal
-
-    @property
-    def frequency(self):
-        """Gets the frequency of this OneOfElectromagneticAnalysisModel.  # noqa: E501
-
-
-        :return: The frequency of this OneOfElectromagneticAnalysisModel.  # noqa: E501
-        :rtype: DimensionalFrequency
-        """
-        return self._frequency
-
-    @frequency.setter
-    def frequency(self, frequency):
-        """Sets the frequency of this OneOfElectromagneticAnalysisModel.
-
-
-        :param frequency: The frequency of this OneOfElectromagneticAnalysisModel.  # noqa: E501
-        :type: DimensionalFrequency
-        """
-
-        self._frequency = frequency
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""

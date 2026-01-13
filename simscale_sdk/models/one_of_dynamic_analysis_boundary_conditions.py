@@ -43,6 +43,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'deformation_behavior': 'str',
         'enable_search_radius': 'bool',
         'search_radius': 'DimensionalLength',
+        'mass_definition': 'OneOfDistributedMassBCMassDefinition',
         'rotation': 'AngularRotation',
         'rotation_origin': 'DimensionalVectorFunctionLength',
         'rotation_axis': 'DimensionalVectorFunctionLength',
@@ -76,6 +77,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'deformation_behavior': 'deformationBehavior',
         'enable_search_radius': 'enableSearchRadius',
         'search_radius': 'searchRadius',
+        'mass_definition': 'massDefinition',
         'rotation': 'rotation',
         'rotation_origin': 'rotationOrigin',
         'rotation_axis': 'rotationAxis',
@@ -102,6 +104,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'FIXED_SUPPORT': 'FixedSupportBC',
         'FIXED_VALUE': 'FixedValueBC',
         'POINT_MASS': 'PointMassBC',
+        'DISTRIBUTED_MASS': 'DistributedMassBC',
         'REMOTE_DISPLACEMENT_LOAD': 'RemoteDisplacementLoadBC',
         'ROTATING_MOTION': 'RotatingMotionBC',
         'SYMMETRY_PLANE': 'SymmetryPlaneBC',
@@ -117,7 +120,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         'HINGE_CONSTRAINT': 'HingeConstraintBC'
     }
 
-    def __init__(self, type='HINGE_CONSTRAINT', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, enable_search_radius=None, search_radius=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, enable_heat_transfer=None, axis_origin=None, axis_direction=None, sector_angle=None, master_topological_reference=None, slave_topological_reference=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, axis_definition=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='HINGE_CONSTRAINT', name=None, preload=None, topological_reference=None, spring_stiffness=None, displacement=None, mass=None, mass_moment_of_inertia=None, external_point=None, deformation_behavior=None, enable_search_radius=None, search_radius=None, mass_definition=None, rotation=None, rotation_origin=None, rotation_axis=None, omega=None, enable_heat_transfer=None, axis_origin=None, axis_direction=None, sector_angle=None, master_topological_reference=None, slave_topological_reference=None, pressure=None, force=None, scaling=None, phase_angle=None, moment=None, remote_point=None, load=None, axis_definition=None, local_vars_configuration=None):  # noqa: E501
         """OneOfDynamicAnalysisBoundaryConditions - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -135,6 +138,7 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         self._deformation_behavior = None
         self._enable_search_radius = None
         self._search_radius = None
+        self._mass_definition = None
         self._rotation = None
         self._rotation_origin = None
         self._rotation_axis = None
@@ -178,6 +182,8 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
             self.enable_search_radius = enable_search_radius
         if search_radius is not None:
             self.search_radius = search_radius
+        if mass_definition is not None:
+            self.mass_definition = mass_definition
         if rotation is not None:
             self.rotation = rotation
         if rotation_origin is not None:
@@ -478,6 +484,27 @@ class OneOfDynamicAnalysisBoundaryConditions(object):
         """
 
         self._search_radius = search_radius
+
+    @property
+    def mass_definition(self):
+        """Gets the mass_definition of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+
+
+        :return: The mass_definition of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+        :rtype: OneOfDistributedMassBCMassDefinition
+        """
+        return self._mass_definition
+
+    @mass_definition.setter
+    def mass_definition(self, mass_definition):
+        """Sets the mass_definition of this OneOfDynamicAnalysisBoundaryConditions.
+
+
+        :param mass_definition: The mass_definition of this OneOfDynamicAnalysisBoundaryConditions.  # noqa: E501
+        :type: OneOfDistributedMassBCMassDefinition
+        """
+
+        self._mass_definition = mass_definition
 
     @property
     def rotation(self):

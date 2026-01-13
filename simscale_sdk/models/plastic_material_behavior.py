@@ -32,17 +32,15 @@ class PlasticMaterialBehavior(object):
     """
     openapi_types = {
         'type': 'str',
-        'elasto_plastic_model': 'OneOfPlasticMaterialBehaviorElastoPlasticModel',
-        'creep_formulation': 'OneOfPlasticMaterialBehaviorCreepFormulation'
+        'elasto_plastic_model': 'OneOfPlasticMaterialBehaviorElastoPlasticModel'
     }
 
     attribute_map = {
         'type': 'type',
-        'elasto_plastic_model': 'elastoPlasticModel',
-        'creep_formulation': 'creepFormulation'
+        'elasto_plastic_model': 'elastoPlasticModel'
     }
 
-    def __init__(self, type='PLASTIC', elasto_plastic_model=None, creep_formulation=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PLASTIC', elasto_plastic_model=None, local_vars_configuration=None):  # noqa: E501
         """PlasticMaterialBehavior - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -50,14 +48,11 @@ class PlasticMaterialBehavior(object):
 
         self._type = None
         self._elasto_plastic_model = None
-        self._creep_formulation = None
         self.discriminator = None
 
         self.type = type
         if elasto_plastic_model is not None:
             self.elasto_plastic_model = elasto_plastic_model
-        if creep_formulation is not None:
-            self.creep_formulation = creep_formulation
 
     @property
     def type(self):
@@ -104,27 +99,6 @@ class PlasticMaterialBehavior(object):
         """
 
         self._elasto_plastic_model = elasto_plastic_model
-
-    @property
-    def creep_formulation(self):
-        """Gets the creep_formulation of this PlasticMaterialBehavior.  # noqa: E501
-
-
-        :return: The creep_formulation of this PlasticMaterialBehavior.  # noqa: E501
-        :rtype: OneOfPlasticMaterialBehaviorCreepFormulation
-        """
-        return self._creep_formulation
-
-    @creep_formulation.setter
-    def creep_formulation(self, creep_formulation):
-        """Sets the creep_formulation of this PlasticMaterialBehavior.
-
-
-        :param creep_formulation: The creep_formulation of this PlasticMaterialBehavior.  # noqa: E501
-        :type: OneOfPlasticMaterialBehaviorCreepFormulation
-        """
-
-        self._creep_formulation = creep_formulation
 
     def to_dict(self):
         """Returns the model properties as a dict"""

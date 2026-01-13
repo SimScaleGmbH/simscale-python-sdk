@@ -34,6 +34,7 @@ class CoupledConjugateHeatTransfer(object):
         'type': 'str',
         'is_compressible': 'bool',
         'enable_radiation': 'bool',
+        'radiation_model': 'str',
         'enable_solar_load': 'bool',
         'enable_humidity_model': 'bool',
         'enable_joule_heating': 'bool',
@@ -57,6 +58,7 @@ class CoupledConjugateHeatTransfer(object):
         'type': 'type',
         'is_compressible': 'isCompressible',
         'enable_radiation': 'enableRadiation',
+        'radiation_model': 'radiationModel',
         'enable_solar_load': 'enableSolarLoad',
         'enable_humidity_model': 'enableHumidityModel',
         'enable_joule_heating': 'enableJouleHeating',
@@ -76,7 +78,7 @@ class CoupledConjugateHeatTransfer(object):
         'contact_handling_mode': 'contactHandlingMode'
     }
 
-    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='COUPLED_CONJUGATE_HEAT_TRANSFER', is_compressible=None, enable_radiation=None, radiation_model=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, turbulence_model=None, time_dependency=None, num_of_passive_species=None, connection_groups=None, model=None, solar_calculator=None, materials=None, initial_conditions=None, boundary_conditions=None, advanced_concepts=None, numerics=None, simulation_control=None, result_control=None, contact_handling_mode=None, local_vars_configuration=None):  # noqa: E501
         """CoupledConjugateHeatTransfer - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +87,7 @@ class CoupledConjugateHeatTransfer(object):
         self._type = None
         self._is_compressible = None
         self._enable_radiation = None
+        self._radiation_model = None
         self._enable_solar_load = None
         self._enable_humidity_model = None
         self._enable_joule_heating = None
@@ -109,6 +112,8 @@ class CoupledConjugateHeatTransfer(object):
             self.is_compressible = is_compressible
         if enable_radiation is not None:
             self.enable_radiation = enable_radiation
+        if radiation_model is not None:
+            self.radiation_model = radiation_model
         if enable_solar_load is not None:
             self.enable_solar_load = enable_solar_load
         if enable_humidity_model is not None:
@@ -214,6 +219,35 @@ class CoupledConjugateHeatTransfer(object):
         """
 
         self._enable_radiation = enable_radiation
+
+    @property
+    def radiation_model(self):
+        """Gets the radiation_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+
+        Choose a radiation model:<ul><li> Use the <strong>Discrete Ordinates</strong> model if your geometry contains many complex surfaces or (semi) transparent solids.</li><li> Use the <strong>View Factors</strong> model for faster computation on less complex geometries. <strong>Transparent solids are not supported with this model.</strong></li></ul>  # noqa: E501
+
+        :return: The radiation_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :rtype: str
+        """
+        return self._radiation_model
+
+    @radiation_model.setter
+    def radiation_model(self, radiation_model):
+        """Sets the radiation_model of this CoupledConjugateHeatTransfer.
+
+        Choose a radiation model:<ul><li> Use the <strong>Discrete Ordinates</strong> model if your geometry contains many complex surfaces or (semi) transparent solids.</li><li> Use the <strong>View Factors</strong> model for faster computation on less complex geometries. <strong>Transparent solids are not supported with this model.</strong></li></ul>  # noqa: E501
+
+        :param radiation_model: The radiation_model of this CoupledConjugateHeatTransfer.  # noqa: E501
+        :type: str
+        """
+        allowed_values = ["FV_DOM", "VIEW_FACTORS"]  # noqa: E501
+        if self.local_vars_configuration.client_side_validation and radiation_model not in allowed_values:  # noqa: E501
+            raise ValueError(
+                "Invalid value for `radiation_model` ({0}), must be one of {1}"  # noqa: E501
+                .format(radiation_model, allowed_values)
+            )
+
+        self._radiation_model = radiation_model
 
     @property
     def enable_solar_load(self):
