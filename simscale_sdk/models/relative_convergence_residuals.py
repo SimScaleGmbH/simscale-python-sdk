@@ -33,16 +33,18 @@ class RelativeConvergenceResiduals(object):
     openapi_types = {
         'type': 'str',
         'relative_force_tolerance': 'float',
-        'relative_moment_tolerance': 'float'
+        'relative_moment_tolerance': 'float',
+        'relative_residual_auto_switch': 'bool'
     }
 
     attribute_map = {
         'type': 'type',
         'relative_force_tolerance': 'relativeForceTolerance',
-        'relative_moment_tolerance': 'relativeMomentTolerance'
+        'relative_moment_tolerance': 'relativeMomentTolerance',
+        'relative_residual_auto_switch': 'relativeResidualAutoSwitch'
     }
 
-    def __init__(self, type='RELATIVE', relative_force_tolerance=None, relative_moment_tolerance=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='RELATIVE', relative_force_tolerance=None, relative_moment_tolerance=None, relative_residual_auto_switch=None, local_vars_configuration=None):  # noqa: E501
         """RelativeConvergenceResiduals - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -51,6 +53,7 @@ class RelativeConvergenceResiduals(object):
         self._type = None
         self._relative_force_tolerance = None
         self._relative_moment_tolerance = None
+        self._relative_residual_auto_switch = None
         self.discriminator = None
 
         self.type = type
@@ -58,6 +61,8 @@ class RelativeConvergenceResiduals(object):
             self.relative_force_tolerance = relative_force_tolerance
         if relative_moment_tolerance is not None:
             self.relative_moment_tolerance = relative_moment_tolerance
+        if relative_residual_auto_switch is not None:
+            self.relative_residual_auto_switch = relative_residual_auto_switch
 
     @property
     def type(self):
@@ -131,6 +136,27 @@ class RelativeConvergenceResiduals(object):
             raise ValueError("Invalid value for `relative_moment_tolerance`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._relative_moment_tolerance = relative_moment_tolerance
+
+    @property
+    def relative_residual_auto_switch(self):
+        """Gets the relative_residual_auto_switch of this RelativeConvergenceResiduals.  # noqa: E501
+
+
+        :return: The relative_residual_auto_switch of this RelativeConvergenceResiduals.  # noqa: E501
+        :rtype: bool
+        """
+        return self._relative_residual_auto_switch
+
+    @relative_residual_auto_switch.setter
+    def relative_residual_auto_switch(self, relative_residual_auto_switch):
+        """Sets the relative_residual_auto_switch of this RelativeConvergenceResiduals.
+
+
+        :param relative_residual_auto_switch: The relative_residual_auto_switch of this RelativeConvergenceResiduals.  # noqa: E501
+        :type: bool
+        """
+
+        self._relative_residual_auto_switch = relative_residual_auto_switch
 
     def to_dict(self):
         """Returns the model properties as a dict"""

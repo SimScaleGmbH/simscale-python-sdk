@@ -34,6 +34,7 @@ class OneOfResidualsConvergenceMethodConvergenceCriteria(object):
         'type': 'str',
         'relative_force_tolerance': 'float',
         'relative_moment_tolerance': 'float',
+        'relative_residual_auto_switch': 'bool',
         'max_residual_force': 'DimensionalForce',
         'max_residual_moment': 'DimensionalTorque'
     }
@@ -42,6 +43,7 @@ class OneOfResidualsConvergenceMethodConvergenceCriteria(object):
         'type': 'type',
         'relative_force_tolerance': 'relativeForceTolerance',
         'relative_moment_tolerance': 'relativeMomentTolerance',
+        'relative_residual_auto_switch': 'relativeResidualAutoSwitch',
         'max_residual_force': 'maxResidualForce',
         'max_residual_moment': 'maxResidualMoment'
     }
@@ -52,7 +54,7 @@ class OneOfResidualsConvergenceMethodConvergenceCriteria(object):
         'ADAPTIVE': 'AdaptiveConvergenceResiduals'
     }
 
-    def __init__(self, type='ADAPTIVE', relative_force_tolerance=None, relative_moment_tolerance=None, max_residual_force=None, max_residual_moment=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='ADAPTIVE', relative_force_tolerance=None, relative_moment_tolerance=None, relative_residual_auto_switch=None, max_residual_force=None, max_residual_moment=None, local_vars_configuration=None):  # noqa: E501
         """OneOfResidualsConvergenceMethodConvergenceCriteria - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class OneOfResidualsConvergenceMethodConvergenceCriteria(object):
         self._type = None
         self._relative_force_tolerance = None
         self._relative_moment_tolerance = None
+        self._relative_residual_auto_switch = None
         self._max_residual_force = None
         self._max_residual_moment = None
         self.discriminator = 'type'
@@ -70,6 +73,8 @@ class OneOfResidualsConvergenceMethodConvergenceCriteria(object):
             self.relative_force_tolerance = relative_force_tolerance
         if relative_moment_tolerance is not None:
             self.relative_moment_tolerance = relative_moment_tolerance
+        if relative_residual_auto_switch is not None:
+            self.relative_residual_auto_switch = relative_residual_auto_switch
         if max_residual_force is not None:
             self.max_residual_force = max_residual_force
         if max_residual_moment is not None:
@@ -147,6 +152,27 @@ class OneOfResidualsConvergenceMethodConvergenceCriteria(object):
             raise ValueError("Invalid value for `relative_moment_tolerance`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._relative_moment_tolerance = relative_moment_tolerance
+
+    @property
+    def relative_residual_auto_switch(self):
+        """Gets the relative_residual_auto_switch of this OneOfResidualsConvergenceMethodConvergenceCriteria.  # noqa: E501
+
+
+        :return: The relative_residual_auto_switch of this OneOfResidualsConvergenceMethodConvergenceCriteria.  # noqa: E501
+        :rtype: bool
+        """
+        return self._relative_residual_auto_switch
+
+    @relative_residual_auto_switch.setter
+    def relative_residual_auto_switch(self, relative_residual_auto_switch):
+        """Sets the relative_residual_auto_switch of this OneOfResidualsConvergenceMethodConvergenceCriteria.
+
+
+        :param relative_residual_auto_switch: The relative_residual_auto_switch of this OneOfResidualsConvergenceMethodConvergenceCriteria.  # noqa: E501
+        :type: bool
+        """
+
+        self._relative_residual_auto_switch = relative_residual_auto_switch
 
     @property
     def max_residual_force(self):

@@ -12,7 +12,7 @@
 
 from __future__ import absolute_import
 
-__version__ = "17.0.0"
+__version__ = "18.0.0"
 
 # import apis into sdk package
 from simscale_sdk.api.ai_models_api import AIModelsApi
@@ -496,6 +496,7 @@ from simscale_sdk.models.event_log_response import EventLogResponse
 from simscale_sdk.models.explicit_time_integration_type import ExplicitTimeIntegrationType
 from simscale_sdk.models.expression_function import ExpressionFunction
 from simscale_sdk.models.external_force import ExternalForce
+from simscale_sdk.models.external_pressure import ExternalPressure
 from simscale_sdk.models.external_wall_heat_flux_tbc import ExternalWallHeatFluxTBC
 from simscale_sdk.models.face_normal_magnetization_direction_method import FaceNormalMagnetizationDirectionMethod
 from simscale_sdk.models.fair_weather_conditions import FairWeatherConditions
@@ -869,6 +870,7 @@ from simscale_sdk.models.marc_element_technology import MarcElementTechnology
 from simscale_sdk.models.marc_equivalent_elastic_strain_type import MarcEquivalentElasticStrainType
 from simscale_sdk.models.marc_equivalent_plastic_strain_type import MarcEquivalentPlasticStrainType
 from simscale_sdk.models.marc_external_force_type import MarcExternalForceType
+from simscale_sdk.models.marc_external_pressure_type import MarcExternalPressureType
 from simscale_sdk.models.marc_force_field_selection import MarcForceFieldSelection
 from simscale_sdk.models.marc_force_result_control_item import MarcForceResultControlItem
 from simscale_sdk.models.marc_global_displacement_field_type import MarcGlobalDisplacementFieldType
@@ -879,6 +881,8 @@ from simscale_sdk.models.marc_nonlinear_solver_settings import MarcNonlinearSolv
 from simscale_sdk.models.marc_numerics import MarcNumerics
 from simscale_sdk.models.marc_output_writing_container import MarcOutputWritingContainer
 from simscale_sdk.models.marc_plastic_strain_type import MarcPlasticStrainType
+from simscale_sdk.models.marc_pressure_field_selection import MarcPressureFieldSelection
+from simscale_sdk.models.marc_pressure_result_control_item import MarcPressureResultControlItem
 from simscale_sdk.models.marc_principal_elastic_strain_type import MarcPrincipalElasticStrainType
 from simscale_sdk.models.marc_principal_plastic_strain_type import MarcPrincipalPlasticStrainType
 from simscale_sdk.models.marc_principal_stress_type import MarcPrincipalStressType

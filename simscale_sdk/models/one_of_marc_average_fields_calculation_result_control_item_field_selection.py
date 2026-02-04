@@ -33,6 +33,7 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
     openapi_types = {
         'type': 'str',
         'displacement_type': 'MarcGlobalDisplacementFieldType',
+        'pressure_type': 'MarcExternalPressureType',
         'stress_type': 'OneOfMarcStressFieldSelectionStressType',
         'strain_type': 'OneOfMarcStrainFieldSelectionStrainType',
         'contact_type': 'OneOfMarcContactFieldSelectionContactType'
@@ -41,6 +42,7 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
     attribute_map = {
         'type': 'type',
         'displacement_type': 'displacementType',
+        'pressure_type': 'pressureType',
         'stress_type': 'stressType',
         'strain_type': 'strainType',
         'contact_type': 'contactType'
@@ -48,12 +50,13 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
 
     discriminator_value_class_map = {
         'DISPLACEMENT': 'MarcDisplacementFieldSelection',
+        'PRESSURE': 'MarcPressureFieldSelection',
         'STRESS': 'MarcStressFieldSelection',
         'STRAIN': 'MarcStrainFieldSelection',
         'CONTACT': 'MarcContactFieldSelection'
     }
 
-    def __init__(self, type='CONTACT', displacement_type=None, stress_type=None, strain_type=None, contact_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONTACT', displacement_type=None, pressure_type=None, stress_type=None, strain_type=None, contact_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +64,7 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
 
         self._type = None
         self._displacement_type = None
+        self._pressure_type = None
         self._stress_type = None
         self._strain_type = None
         self._contact_type = None
@@ -69,6 +73,8 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
         self.type = type
         if displacement_type is not None:
             self.displacement_type = displacement_type
+        if pressure_type is not None:
+            self.pressure_type = pressure_type
         if stress_type is not None:
             self.stress_type = stress_type
         if strain_type is not None:
@@ -121,6 +127,27 @@ class OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection(object):
         """
 
         self._displacement_type = displacement_type
+
+    @property
+    def pressure_type(self):
+        """Gets the pressure_type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+
+
+        :return: The pressure_type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :rtype: MarcExternalPressureType
+        """
+        return self._pressure_type
+
+    @pressure_type.setter
+    def pressure_type(self, pressure_type):
+        """Sets the pressure_type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.
+
+
+        :param pressure_type: The pressure_type of this OneOfMarcAverageFieldsCalculationResultControlItemFieldSelection.  # noqa: E501
+        :type: MarcExternalPressureType
+        """
+
+        self._pressure_type = pressure_type
 
     @property
     def stress_type(self):

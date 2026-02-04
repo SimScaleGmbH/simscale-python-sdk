@@ -105,8 +105,8 @@ class OneOfRegionRefinementWithLengthCurvature(object):
         :type: float
         """
         if (self.local_vars_configuration.client_side_validation and
-                relative_curvature is not None and relative_curvature > 50):  # noqa: E501
-            raise ValueError("Invalid value for `relative_curvature`, must be a value less than or equal to `50`")  # noqa: E501
+                relative_curvature is not None and relative_curvature > 360):  # noqa: E501
+            raise ValueError("Invalid value for `relative_curvature`, must be a value less than or equal to `360`")  # noqa: E501
         if (self.local_vars_configuration.client_side_validation and
                 relative_curvature is not None and relative_curvature < 0):  # noqa: E501
             raise ValueError("Invalid value for `relative_curvature`, must be a value greater than or equal to `0`")  # noqa: E501

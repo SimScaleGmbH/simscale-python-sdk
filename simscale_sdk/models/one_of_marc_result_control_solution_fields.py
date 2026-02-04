@@ -35,6 +35,7 @@ class OneOfMarcResultControlSolutionFields(object):
         'name': 'str',
         'displacement_type': 'GlobalDisplacement',
         'force_type': 'OneOfMarcForceResultControlItemForceType',
+        'pressure_type': 'ExternalPressure',
         'stress_type': 'OneOfMarcStressResultControlItemStressType',
         'strain_type': 'OneOfMarcStrainResultControlItemStrainType',
         'contact_type': 'OneOfMarcContactResultControlItemContactType'
@@ -45,6 +46,7 @@ class OneOfMarcResultControlSolutionFields(object):
         'name': 'name',
         'displacement_type': 'displacementType',
         'force_type': 'forceType',
+        'pressure_type': 'pressureType',
         'stress_type': 'stressType',
         'strain_type': 'strainType',
         'contact_type': 'contactType'
@@ -53,12 +55,13 @@ class OneOfMarcResultControlSolutionFields(object):
     discriminator_value_class_map = {
         'DISPLACEMENT': 'MarcDisplacementResultControlItem',
         'FORCE': 'MarcForceResultControlItem',
+        'PRESSURE': 'MarcPressureResultControlItem',
         'STRESS': 'MarcStressResultControlItem',
         'STRAIN': 'MarcStrainResultControlItem',
         'CONTACT': 'MarcContactResultControlItem'
     }
 
-    def __init__(self, type='CONTACT', name=None, displacement_type=None, force_type=None, stress_type=None, strain_type=None, contact_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='CONTACT', name=None, displacement_type=None, force_type=None, pressure_type=None, stress_type=None, strain_type=None, contact_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfMarcResultControlSolutionFields - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -68,6 +71,7 @@ class OneOfMarcResultControlSolutionFields(object):
         self._name = None
         self._displacement_type = None
         self._force_type = None
+        self._pressure_type = None
         self._stress_type = None
         self._strain_type = None
         self._contact_type = None
@@ -80,6 +84,8 @@ class OneOfMarcResultControlSolutionFields(object):
             self.displacement_type = displacement_type
         if force_type is not None:
             self.force_type = force_type
+        if pressure_type is not None:
+            self.pressure_type = pressure_type
         if stress_type is not None:
             self.stress_type = stress_type
         if strain_type is not None:
@@ -174,6 +180,27 @@ class OneOfMarcResultControlSolutionFields(object):
         """
 
         self._force_type = force_type
+
+    @property
+    def pressure_type(self):
+        """Gets the pressure_type of this OneOfMarcResultControlSolutionFields.  # noqa: E501
+
+
+        :return: The pressure_type of this OneOfMarcResultControlSolutionFields.  # noqa: E501
+        :rtype: ExternalPressure
+        """
+        return self._pressure_type
+
+    @pressure_type.setter
+    def pressure_type(self, pressure_type):
+        """Sets the pressure_type of this OneOfMarcResultControlSolutionFields.
+
+
+        :param pressure_type: The pressure_type of this OneOfMarcResultControlSolutionFields.  # noqa: E501
+        :type: ExternalPressure
+        """
+
+        self._pressure_type = pressure_type
 
     @property
     def stress_type(self):
