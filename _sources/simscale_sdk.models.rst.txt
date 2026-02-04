@@ -3617,6 +3617,14 @@ simscale\_sdk.models.external\_force module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.external\_pressure module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.external_pressure
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.external\_wall\_heat\_flux\_tbc module
 -----------------------------------------------------------
 
@@ -6569,6 +6577,14 @@ simscale\_sdk.models.marc\_external\_force\_type module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.marc\_external\_pressure\_type module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_external_pressure_type
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.marc\_force\_field\_selection module
 ---------------------------------------------------------
 
@@ -6645,6 +6661,22 @@ simscale\_sdk.models.marc\_plastic\_strain\_type module
 -------------------------------------------------------
 
 .. automodule:: simscale_sdk.models.marc_plastic_strain_type
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_pressure\_field\_selection module
+------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_pressure_field_selection
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.marc\_pressure\_result\_control\_item module
+-----------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.marc_pressure_result_control_item
    :members:
    :show-inheritance:
    :undoc-members:
