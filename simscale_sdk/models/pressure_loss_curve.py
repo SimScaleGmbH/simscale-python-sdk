@@ -35,6 +35,7 @@ class PressureLossCurve(object):
         'name': 'str',
         'pressure_loss_data': 'PressureLossData',
         'directional_dependency': 'DirectionalDependency',
+        'porous_media_heat_transfer': 'OneOfPressureLossCurvePorousMediaHeatTransfer',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
@@ -44,11 +45,12 @@ class PressureLossCurve(object):
         'name': 'name',
         'pressure_loss_data': 'pressureLossData',
         'directional_dependency': 'directionalDependency',
+        'porous_media_heat_transfer': 'porousMediaHeatTransfer',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='PRESSURE_LOSS_CURVE', name=None, pressure_loss_data=None, directional_dependency=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PRESSURE_LOSS_CURVE', name=None, pressure_loss_data=None, directional_dependency=None, porous_media_heat_transfer=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """PressureLossCurve - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class PressureLossCurve(object):
         self._name = None
         self._pressure_loss_data = None
         self._directional_dependency = None
+        self._porous_media_heat_transfer = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
@@ -69,6 +72,8 @@ class PressureLossCurve(object):
             self.pressure_loss_data = pressure_loss_data
         if directional_dependency is not None:
             self.directional_dependency = directional_dependency
+        if porous_media_heat_transfer is not None:
+            self.porous_media_heat_transfer = porous_media_heat_transfer
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -161,6 +166,27 @@ class PressureLossCurve(object):
         """
 
         self._directional_dependency = directional_dependency
+
+    @property
+    def porous_media_heat_transfer(self):
+        """Gets the porous_media_heat_transfer of this PressureLossCurve.  # noqa: E501
+
+
+        :return: The porous_media_heat_transfer of this PressureLossCurve.  # noqa: E501
+        :rtype: OneOfPressureLossCurvePorousMediaHeatTransfer
+        """
+        return self._porous_media_heat_transfer
+
+    @porous_media_heat_transfer.setter
+    def porous_media_heat_transfer(self, porous_media_heat_transfer):
+        """Sets the porous_media_heat_transfer of this PressureLossCurve.
+
+
+        :param porous_media_heat_transfer: The porous_media_heat_transfer of this PressureLossCurve.  # noqa: E501
+        :type: OneOfPressureLossCurvePorousMediaHeatTransfer
+        """
+
+        self._porous_media_heat_transfer = porous_media_heat_transfer
 
     @property
     def topological_reference(self):

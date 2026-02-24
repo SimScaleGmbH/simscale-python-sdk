@@ -36,6 +36,7 @@ class DarcyForchheimerMedium(object):
         'coefficient_d': 'DimensionalVectorReciprocalPermeability',
         'coefficient_f': 'DimensionalVectorAbsorptivity',
         'orientation': 'OneOfDarcyForchheimerMediumOrientation',
+        'porous_media_heat_transfer': 'OneOfDarcyForchheimerMediumPorousMediaHeatTransfer',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
@@ -46,11 +47,12 @@ class DarcyForchheimerMedium(object):
         'coefficient_d': 'coefficientD',
         'coefficient_f': 'coefficientF',
         'orientation': 'orientation',
+        'porous_media_heat_transfer': 'porousMediaHeatTransfer',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='DARCY_FORCHHEIMER', name=None, coefficient_d=None, coefficient_f=None, orientation=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='DARCY_FORCHHEIMER', name=None, coefficient_d=None, coefficient_f=None, orientation=None, porous_media_heat_transfer=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """DarcyForchheimerMedium - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -61,6 +63,7 @@ class DarcyForchheimerMedium(object):
         self._coefficient_d = None
         self._coefficient_f = None
         self._orientation = None
+        self._porous_media_heat_transfer = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
@@ -74,6 +77,8 @@ class DarcyForchheimerMedium(object):
             self.coefficient_f = coefficient_f
         if orientation is not None:
             self.orientation = orientation
+        if porous_media_heat_transfer is not None:
+            self.porous_media_heat_transfer = porous_media_heat_transfer
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -187,6 +192,27 @@ class DarcyForchheimerMedium(object):
         """
 
         self._orientation = orientation
+
+    @property
+    def porous_media_heat_transfer(self):
+        """Gets the porous_media_heat_transfer of this DarcyForchheimerMedium.  # noqa: E501
+
+
+        :return: The porous_media_heat_transfer of this DarcyForchheimerMedium.  # noqa: E501
+        :rtype: OneOfDarcyForchheimerMediumPorousMediaHeatTransfer
+        """
+        return self._porous_media_heat_transfer
+
+    @porous_media_heat_transfer.setter
+    def porous_media_heat_transfer(self, porous_media_heat_transfer):
+        """Sets the porous_media_heat_transfer of this DarcyForchheimerMedium.
+
+
+        :param porous_media_heat_transfer: The porous_media_heat_transfer of this DarcyForchheimerMedium.  # noqa: E501
+        :type: OneOfDarcyForchheimerMediumPorousMediaHeatTransfer
+        """
+
+        self._porous_media_heat_transfer = porous_media_heat_transfer
 
     @property
     def topological_reference(self):

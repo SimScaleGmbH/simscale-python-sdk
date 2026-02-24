@@ -32,6 +32,7 @@ class WindComfortMesh(object):
     """
     openapi_types = {
         'wind_comfort_fineness': 'OneOfWindComfortMeshWindComfortFineness',
+        'automatic_gap_closing': 'OneOfWindComfortMeshAutomaticGapClosing',
         'progressive_refinement': 'ProgressiveRefinement',
         'reynolds_scaling_type': 'OneOfWindComfortMeshReynoldsScalingType',
         'refinements': 'list[OneOfWindComfortMeshRefinements]'
@@ -39,18 +40,20 @@ class WindComfortMesh(object):
 
     attribute_map = {
         'wind_comfort_fineness': 'windComfortFineness',
+        'automatic_gap_closing': 'automaticGapClosing',
         'progressive_refinement': 'progressiveRefinement',
         'reynolds_scaling_type': 'reynoldsScalingType',
         'refinements': 'refinements'
     }
 
-    def __init__(self, wind_comfort_fineness=None, progressive_refinement=None, reynolds_scaling_type=None, refinements=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, wind_comfort_fineness=None, automatic_gap_closing=None, progressive_refinement=None, reynolds_scaling_type=None, refinements=None, local_vars_configuration=None):  # noqa: E501
         """WindComfortMesh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._wind_comfort_fineness = None
+        self._automatic_gap_closing = None
         self._progressive_refinement = None
         self._reynolds_scaling_type = None
         self._refinements = None
@@ -58,6 +61,8 @@ class WindComfortMesh(object):
 
         if wind_comfort_fineness is not None:
             self.wind_comfort_fineness = wind_comfort_fineness
+        if automatic_gap_closing is not None:
+            self.automatic_gap_closing = automatic_gap_closing
         if progressive_refinement is not None:
             self.progressive_refinement = progressive_refinement
         if reynolds_scaling_type is not None:
@@ -85,6 +90,27 @@ class WindComfortMesh(object):
         """
 
         self._wind_comfort_fineness = wind_comfort_fineness
+
+    @property
+    def automatic_gap_closing(self):
+        """Gets the automatic_gap_closing of this WindComfortMesh.  # noqa: E501
+
+
+        :return: The automatic_gap_closing of this WindComfortMesh.  # noqa: E501
+        :rtype: OneOfWindComfortMeshAutomaticGapClosing
+        """
+        return self._automatic_gap_closing
+
+    @automatic_gap_closing.setter
+    def automatic_gap_closing(self, automatic_gap_closing):
+        """Sets the automatic_gap_closing of this WindComfortMesh.
+
+
+        :param automatic_gap_closing: The automatic_gap_closing of this WindComfortMesh.  # noqa: E501
+        :type: OneOfWindComfortMeshAutomaticGapClosing
+        """
+
+        self._automatic_gap_closing = automatic_gap_closing
 
     @property
     def progressive_refinement(self):

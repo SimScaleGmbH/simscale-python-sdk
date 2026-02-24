@@ -38,6 +38,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'reynolds_scaling_type': 'OneOfPacefishAutomeshReynoldsScalingType',
         'refinements': 'list[OneOfPacefishAutomeshRefinements]',
         'new_fineness': 'OneOfPacefishAutomeshNewFineness',
+        'automatic_gap_closing': 'OneOfPacefishAutomeshAutomaticGapClosing',
         'reference_length_computation': 'OneOfPacefishAutomeshReferenceLengthComputation',
         'primary_topology': 'OneOfPacefishAutomeshPrimaryTopology'
     }
@@ -50,6 +51,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'reynolds_scaling_type': 'reynoldsScalingType',
         'refinements': 'refinements',
         'new_fineness': 'newFineness',
+        'automatic_gap_closing': 'automaticGapClosing',
         'reference_length_computation': 'referenceLengthComputation',
         'primary_topology': 'primaryTopology'
     }
@@ -59,7 +61,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         'PACEFISH_AUTOMESH': 'PacefishAutomesh'
     }
 
-    def __init__(self, type='PACEFISH_AUTOMESH', fineness=None, progressive_refinement=None, reference_length=None, reynolds_scaling_type=None, refinements=None, new_fineness=None, reference_length_computation=None, primary_topology=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PACEFISH_AUTOMESH', fineness=None, progressive_refinement=None, reference_length=None, reynolds_scaling_type=None, refinements=None, new_fineness=None, automatic_gap_closing=None, reference_length_computation=None, primary_topology=None, local_vars_configuration=None):  # noqa: E501
         """OneOfIncompressiblePacefishMeshSettingsNew - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -72,6 +74,7 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         self._reynolds_scaling_type = None
         self._refinements = None
         self._new_fineness = None
+        self._automatic_gap_closing = None
         self._reference_length_computation = None
         self._primary_topology = None
         self.discriminator = 'type'
@@ -89,6 +92,8 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
             self.refinements = refinements
         if new_fineness is not None:
             self.new_fineness = new_fineness
+        if automatic_gap_closing is not None:
+            self.automatic_gap_closing = automatic_gap_closing
         if reference_length_computation is not None:
             self.reference_length_computation = reference_length_computation
         if primary_topology is not None:
@@ -250,6 +255,27 @@ class OneOfIncompressiblePacefishMeshSettingsNew(object):
         """
 
         self._new_fineness = new_fineness
+
+    @property
+    def automatic_gap_closing(self):
+        """Gets the automatic_gap_closing of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+
+
+        :return: The automatic_gap_closing of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+        :rtype: OneOfPacefishAutomeshAutomaticGapClosing
+        """
+        return self._automatic_gap_closing
+
+    @automatic_gap_closing.setter
+    def automatic_gap_closing(self, automatic_gap_closing):
+        """Sets the automatic_gap_closing of this OneOfIncompressiblePacefishMeshSettingsNew.
+
+
+        :param automatic_gap_closing: The automatic_gap_closing of this OneOfIncompressiblePacefishMeshSettingsNew.  # noqa: E501
+        :type: OneOfPacefishAutomeshAutomaticGapClosing
+        """
+
+        self._automatic_gap_closing = automatic_gap_closing
 
     @property
     def reference_length_computation(self):

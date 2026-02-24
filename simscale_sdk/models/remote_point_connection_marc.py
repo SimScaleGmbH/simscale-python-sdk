@@ -119,6 +119,7 @@ class RemotePointConnectionMarc(object):
     def behavior(self):
         """Gets the behavior of this RemotePointConnectionMarc.  # noqa: E501
 
+        <p><b>Behavior</b>: Create a connector between a remote point and a set of entities of the model. The remote point can then be used in a point load or point displacement condition to apply a point force/moment load or constraint to the model.<br><ul><li><b>Rigid (RBE2)</b>: This option creates a kinematically rigid link between the reference point and the assigned entities. It ensures the connected nodes move and rotate as a single rigid body, which is ideal for modeling stiff components like bolts or heavy mounting brackets, but it can artificially over-stiffen the assembly.<br><li><b>Deformable (RBE3)</b>: This option distributes the loads and displacements of the reference point to the connected nodes using a weighted interpolation. It allows the connected faces to deform and expand naturally without adding artificial stiffness, making it suitable for distributing mass or applying loads to flexible structures.</ul></p>  # noqa: E501
 
         :return: The behavior of this RemotePointConnectionMarc.  # noqa: E501
         :rtype: str
@@ -129,6 +130,7 @@ class RemotePointConnectionMarc(object):
     def behavior(self, behavior):
         """Sets the behavior of this RemotePointConnectionMarc.
 
+        <p><b>Behavior</b>: Create a connector between a remote point and a set of entities of the model. The remote point can then be used in a point load or point displacement condition to apply a point force/moment load or constraint to the model.<br><ul><li><b>Rigid (RBE2)</b>: This option creates a kinematically rigid link between the reference point and the assigned entities. It ensures the connected nodes move and rotate as a single rigid body, which is ideal for modeling stiff components like bolts or heavy mounting brackets, but it can artificially over-stiffen the assembly.<br><li><b>Deformable (RBE3)</b>: This option distributes the loads and displacements of the reference point to the connected nodes using a weighted interpolation. It allows the connected faces to deform and expand naturally without adding artificial stiffness, making it suitable for distributing mass or applying loads to flexible structures.</ul></p>  # noqa: E501
 
         :param behavior: The behavior of this RemotePointConnectionMarc.  # noqa: E501
         :type: str
@@ -146,6 +148,7 @@ class RemotePointConnectionMarc(object):
     def geometry_primitive_uuids(self):
         """Gets the geometry_primitive_uuids of this RemotePointConnectionMarc.  # noqa: E501
 
+        <p>Create or select the point geometry primitive which should be connected to the assigned surfaces, volumes or edges via the defined connection type.</p>  # noqa: E501
 
         :return: The geometry_primitive_uuids of this RemotePointConnectionMarc.  # noqa: E501
         :rtype: list[str]
@@ -156,6 +159,7 @@ class RemotePointConnectionMarc(object):
     def geometry_primitive_uuids(self, geometry_primitive_uuids):
         """Sets the geometry_primitive_uuids of this RemotePointConnectionMarc.
 
+        <p>Create or select the point geometry primitive which should be connected to the assigned surfaces, volumes or edges via the defined connection type.</p>  # noqa: E501
 
         :param geometry_primitive_uuids: The geometry_primitive_uuids of this RemotePointConnectionMarc.  # noqa: E501
         :type: list[str]

@@ -32,12 +32,14 @@ class OneOfElectromagneticAnalysisModel(object):
     """
     openapi_types = {
         'type': 'str',
+        'breakdown': 'bool',
         'frequency': 'DimensionalFrequency',
         'thermal': 'bool'
     }
 
     attribute_map = {
         'type': 'type',
+        'breakdown': 'breakdown',
         'frequency': 'frequency',
         'thermal': 'thermal'
     }
@@ -50,18 +52,21 @@ class OneOfElectromagneticAnalysisModel(object):
         'TIME_TRANSIENT_MAGNETICS': 'TimeTransientMagnetics'
     }
 
-    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', frequency=None, thermal=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='TIME_TRANSIENT_MAGNETICS', breakdown=None, frequency=None, thermal=None, local_vars_configuration=None):  # noqa: E501
         """OneOfElectromagneticAnalysisModel - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._breakdown = None
         self._frequency = None
         self._thermal = None
         self.discriminator = 'type'
 
         self.type = type
+        if breakdown is not None:
+            self.breakdown = breakdown
         if frequency is not None:
             self.frequency = frequency
         if thermal is not None:
@@ -91,6 +96,29 @@ class OneOfElectromagneticAnalysisModel(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def breakdown(self):
+        """Gets the breakdown of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+
+        Enabling allows the specification of the dielectric breakdown voltage for each material and the calculation of the safety factor.  # noqa: E501
+
+        :return: The breakdown of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._breakdown
+
+    @breakdown.setter
+    def breakdown(self, breakdown):
+        """Sets the breakdown of this OneOfElectromagneticAnalysisModel.
+
+        Enabling allows the specification of the dielectric breakdown voltage for each material and the calculation of the safety factor.  # noqa: E501
+
+        :param breakdown: The breakdown of this OneOfElectromagneticAnalysisModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._breakdown = breakdown
 
     @property
     def frequency(self):

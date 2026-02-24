@@ -35,6 +35,7 @@ class PowerLawMedium(object):
         'name': 'str',
         'linear_coefficient': 'float',
         'exponent_coefficient': 'float',
+        'porous_media_heat_transfer': 'OneOfPowerLawMediumPorousMediaHeatTransfer',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
@@ -44,11 +45,12 @@ class PowerLawMedium(object):
         'name': 'name',
         'linear_coefficient': 'linearCoefficient',
         'exponent_coefficient': 'exponentCoefficient',
+        'porous_media_heat_transfer': 'porousMediaHeatTransfer',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='POWER_LAW', name=None, linear_coefficient=None, exponent_coefficient=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='POWER_LAW', name=None, linear_coefficient=None, exponent_coefficient=None, porous_media_heat_transfer=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """PowerLawMedium - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class PowerLawMedium(object):
         self._name = None
         self._linear_coefficient = None
         self._exponent_coefficient = None
+        self._porous_media_heat_transfer = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
@@ -69,6 +72,8 @@ class PowerLawMedium(object):
             self.linear_coefficient = linear_coefficient
         if exponent_coefficient is not None:
             self.exponent_coefficient = exponent_coefficient
+        if porous_media_heat_transfer is not None:
+            self.porous_media_heat_transfer = porous_media_heat_transfer
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -173,6 +178,27 @@ class PowerLawMedium(object):
             raise ValueError("Invalid value for `exponent_coefficient`, must be a value greater than or equal to `0`")  # noqa: E501
 
         self._exponent_coefficient = exponent_coefficient
+
+    @property
+    def porous_media_heat_transfer(self):
+        """Gets the porous_media_heat_transfer of this PowerLawMedium.  # noqa: E501
+
+
+        :return: The porous_media_heat_transfer of this PowerLawMedium.  # noqa: E501
+        :rtype: OneOfPowerLawMediumPorousMediaHeatTransfer
+        """
+        return self._porous_media_heat_transfer
+
+    @porous_media_heat_transfer.setter
+    def porous_media_heat_transfer(self, porous_media_heat_transfer):
+        """Sets the porous_media_heat_transfer of this PowerLawMedium.
+
+
+        :param porous_media_heat_transfer: The porous_media_heat_transfer of this PowerLawMedium.  # noqa: E501
+        :type: OneOfPowerLawMediumPorousMediaHeatTransfer
+        """
+
+        self._porous_media_heat_transfer = porous_media_heat_transfer
 
     @property
     def topological_reference(self):

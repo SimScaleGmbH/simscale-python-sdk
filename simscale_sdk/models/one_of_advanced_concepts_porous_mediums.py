@@ -42,6 +42,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
         'coefficient_d': 'DimensionalVectorReciprocalPermeability',
         'coefficient_f': 'DimensionalVectorAbsorptivity',
         'orientation': 'OneOfFixedCoeffMediumOrientation',
+        'porous_media_heat_transfer': 'OneOfPerforatedPlatePorousMediaHeatTransfer',
         'geometry_primitive_uuids': 'list[str]',
         'alpha': 'DimensionalVectorSpecificTurbulenceDissipationRate',
         'beta': 'DimensionalVectorAbsorptivity',
@@ -66,6 +67,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
         'coefficient_d': 'coefficientD',
         'coefficient_f': 'coefficientF',
         'orientation': 'orientation',
+        'porous_media_heat_transfer': 'porousMediaHeatTransfer',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids',
         'alpha': 'alpha',
         'beta': 'beta',
@@ -88,7 +90,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
         'PERFORATED_PLATE': 'PerforatedPlate'
     }
 
-    def __init__(self, type='PERFORATED_PLATE', name=None, porosity=None, permeability=None, drag_coefficient=None, porous_material_type=None, topological_reference=None, pressure_loss_function=None, coefficient_d=None, coefficient_f=None, orientation=None, geometry_primitive_uuids=None, alpha=None, beta=None, reference_density=None, linear_coefficient=None, exponent_coefficient=None, pressure_loss_data=None, directional_dependency=None, plate_data=None, darcy_forchheimer_type=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PERFORATED_PLATE', name=None, porosity=None, permeability=None, drag_coefficient=None, porous_material_type=None, topological_reference=None, pressure_loss_function=None, coefficient_d=None, coefficient_f=None, orientation=None, porous_media_heat_transfer=None, geometry_primitive_uuids=None, alpha=None, beta=None, reference_density=None, linear_coefficient=None, exponent_coefficient=None, pressure_loss_data=None, directional_dependency=None, plate_data=None, darcy_forchheimer_type=None, local_vars_configuration=None):  # noqa: E501
         """OneOfAdvancedConceptsPorousMediums - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -105,6 +107,7 @@ class OneOfAdvancedConceptsPorousMediums(object):
         self._coefficient_d = None
         self._coefficient_f = None
         self._orientation = None
+        self._porous_media_heat_transfer = None
         self._geometry_primitive_uuids = None
         self._alpha = None
         self._beta = None
@@ -138,6 +141,8 @@ class OneOfAdvancedConceptsPorousMediums(object):
             self.coefficient_f = coefficient_f
         if orientation is not None:
             self.orientation = orientation
+        if porous_media_heat_transfer is not None:
+            self.porous_media_heat_transfer = porous_media_heat_transfer
         if geometry_primitive_uuids is not None:
             self.geometry_primitive_uuids = geometry_primitive_uuids
         if alpha is not None:
@@ -406,6 +411,27 @@ class OneOfAdvancedConceptsPorousMediums(object):
         """
 
         self._orientation = orientation
+
+    @property
+    def porous_media_heat_transfer(self):
+        """Gets the porous_media_heat_transfer of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+
+
+        :return: The porous_media_heat_transfer of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :rtype: OneOfPerforatedPlatePorousMediaHeatTransfer
+        """
+        return self._porous_media_heat_transfer
+
+    @porous_media_heat_transfer.setter
+    def porous_media_heat_transfer(self, porous_media_heat_transfer):
+        """Sets the porous_media_heat_transfer of this OneOfAdvancedConceptsPorousMediums.
+
+
+        :param porous_media_heat_transfer: The porous_media_heat_transfer of this OneOfAdvancedConceptsPorousMediums.  # noqa: E501
+        :type: OneOfPerforatedPlatePorousMediaHeatTransfer
+        """
+
+        self._porous_media_heat_transfer = porous_media_heat_transfer
 
     @property
     def geometry_primitive_uuids(self):

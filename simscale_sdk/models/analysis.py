@@ -81,6 +81,7 @@ class Analysis(object):
         'use_local_time_stepping': 'bool',
         'global_physics': 'SolidGlobalPhysics',
         'coils': 'list[Coil]',
+        'thermal_effects': 'bool',
         'load_steps': 'list[LoadStep]'
     }
 
@@ -135,6 +136,7 @@ class Analysis(object):
         'use_local_time_stepping': 'useLocalTimeStepping',
         'global_physics': 'globalPhysics',
         'coils': 'coils',
+        'thermal_effects': 'thermalEffects',
         'load_steps': 'loadSteps'
     }
 
@@ -159,7 +161,7 @@ class Analysis(object):
         'MARC_ANALYSIS': 'MarcAnalysis'
     }
 
-    def __init__(self, type='MARC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multicomponent=None, is_multiphase=None, is_cht=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, radiation_model=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, load_steps=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MARC_ANALYSIS', non_linear_analysis=None, connection_groups=None, connectors=None, element_technology=None, model=None, materials=None, initial_conditions=None, boundary_conditions=None, numerics=None, simulation_control=None, result_control=None, mesh_order=None, time_dependency=None, inertia_effect=None, turbulence_model=None, adjoint_turbulence_model=None, algorithm=None, num_of_passive_species=None, enable_adjoint_optimization=None, advanced_concepts=None, bounding_box_uuid=None, material=None, flow_domain_boundaries=None, advanced_modelling=None, mesh_settings_new=None, is_compressible=None, is_multicomponent=None, is_multiphase=None, is_cht=None, number_of_phases=None, cavitation_model=None, mesh_settings=None, region_of_interest=None, wind_conditions=None, pedestrian_comfort_map=None, additional_result_export=None, enable_radiation=None, radiation_model=None, enable_solar_load=None, enable_humidity_model=None, enable_joule_heating=None, solar_calculator=None, contact_handling_mode=None, allow_external_flow=None, external_flow_boundary_condition=None, embedded_boundary_meshing=None, use_local_time_stepping=None, global_physics=None, coils=None, thermal_effects=None, load_steps=None, local_vars_configuration=None):  # noqa: E501
         """Analysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -215,6 +217,7 @@ class Analysis(object):
         self._use_local_time_stepping = None
         self._global_physics = None
         self._coils = None
+        self._thermal_effects = None
         self._load_steps = None
         self.discriminator = 'type'
 
@@ -317,6 +320,8 @@ class Analysis(object):
             self.global_physics = global_physics
         if coils is not None:
             self.coils = coils
+        if thermal_effects is not None:
+            self.thermal_effects = thermal_effects
         if load_steps is not None:
             self.load_steps = load_steps
 
@@ -1445,6 +1450,29 @@ class Analysis(object):
         """
 
         self._coils = coils
+
+    @property
+    def thermal_effects(self):
+        """Gets the thermal_effects of this Analysis.  # noqa: E501
+
+        <p>Choose whether <b>thermal effects</b> should be included in the analysis, such as <b>heat conduction</b>, <b>thermal loads</b>, <b>temperature fields</b>, <b>thermal expansion</b>, and <b>temperature-dependent material properties</b>. When thermal effects are disabled, the analysis is purely mechanical and assumes constant temperature.</p>  # noqa: E501
+
+        :return: The thermal_effects of this Analysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._thermal_effects
+
+    @thermal_effects.setter
+    def thermal_effects(self, thermal_effects):
+        """Sets the thermal_effects of this Analysis.
+
+        <p>Choose whether <b>thermal effects</b> should be included in the analysis, such as <b>heat conduction</b>, <b>thermal loads</b>, <b>temperature fields</b>, <b>thermal expansion</b>, and <b>temperature-dependent material properties</b>. When thermal effects are disabled, the analysis is purely mechanical and assumes constant temperature.</p>  # noqa: E501
+
+        :param thermal_effects: The thermal_effects of this Analysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._thermal_effects = thermal_effects
 
     @property
     def load_steps(self):

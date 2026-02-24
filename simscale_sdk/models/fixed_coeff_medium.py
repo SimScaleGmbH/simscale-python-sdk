@@ -37,6 +37,7 @@ class FixedCoeffMedium(object):
         'beta': 'DimensionalVectorAbsorptivity',
         'reference_density': 'DimensionalDensity',
         'orientation': 'OneOfFixedCoeffMediumOrientation',
+        'porous_media_heat_transfer': 'OneOfFixedCoeffMediumPorousMediaHeatTransfer',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
@@ -48,11 +49,12 @@ class FixedCoeffMedium(object):
         'beta': 'beta',
         'reference_density': 'referenceDensity',
         'orientation': 'orientation',
+        'porous_media_heat_transfer': 'porousMediaHeatTransfer',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='FIXED_COEFFICIENTS', name=None, alpha=None, beta=None, reference_density=None, orientation=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIXED_COEFFICIENTS', name=None, alpha=None, beta=None, reference_density=None, orientation=None, porous_media_heat_transfer=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """FixedCoeffMedium - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -64,6 +66,7 @@ class FixedCoeffMedium(object):
         self._beta = None
         self._reference_density = None
         self._orientation = None
+        self._porous_media_heat_transfer = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
@@ -79,6 +82,8 @@ class FixedCoeffMedium(object):
             self.reference_density = reference_density
         if orientation is not None:
             self.orientation = orientation
+        if porous_media_heat_transfer is not None:
+            self.porous_media_heat_transfer = porous_media_heat_transfer
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -213,6 +218,27 @@ class FixedCoeffMedium(object):
         """
 
         self._orientation = orientation
+
+    @property
+    def porous_media_heat_transfer(self):
+        """Gets the porous_media_heat_transfer of this FixedCoeffMedium.  # noqa: E501
+
+
+        :return: The porous_media_heat_transfer of this FixedCoeffMedium.  # noqa: E501
+        :rtype: OneOfFixedCoeffMediumPorousMediaHeatTransfer
+        """
+        return self._porous_media_heat_transfer
+
+    @porous_media_heat_transfer.setter
+    def porous_media_heat_transfer(self, porous_media_heat_transfer):
+        """Sets the porous_media_heat_transfer of this FixedCoeffMedium.
+
+
+        :param porous_media_heat_transfer: The porous_media_heat_transfer of this FixedCoeffMedium.  # noqa: E501
+        :type: OneOfFixedCoeffMediumPorousMediaHeatTransfer
+        """
+
+        self._porous_media_heat_transfer = porous_media_heat_transfer
 
     @property
     def topological_reference(self):

@@ -51,10 +51,11 @@ class OneOfSimmetrixBoundaryLayerRefinementLayerType(object):
     discriminator_value_class_map = {
         'FRACTIONAL_HEIGHT_1': 'FractionalHeight1',
         'FRACTIONAL_HEIGHT_2': 'FractionalHeight2',
-        'GEOMETRIC_GROWTH': 'GeometricGrowth'
+        'GEOMETRIC_GROWTH': 'GeometricGrowth',
+        'FIRST_LAYER_GROWTH': 'FirstLayerGrowth'
     }
 
-    def __init__(self, type='GEOMETRIC_GROWTH', number_of_layers=None, total_relative_thickness=None, first_layer_size=None, growth_rate=None, total_absolute_thickness=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='FIRST_LAYER_GROWTH', number_of_layers=None, total_relative_thickness=None, first_layer_size=None, growth_rate=None, total_absolute_thickness=None, local_vars_configuration=None):  # noqa: E501
         """OneOfSimmetrixBoundaryLayerRefinementLayerType - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -84,7 +85,7 @@ class OneOfSimmetrixBoundaryLayerRefinementLayerType(object):
     def type(self):
         """Gets the type of this OneOfSimmetrixBoundaryLayerRefinementLayerType.  # noqa: E501
 
-        Schema name: GeometricGrowth  # noqa: E501
+        Schema name: FirstLayerGrowth  # noqa: E501
 
         :return: The type of this OneOfSimmetrixBoundaryLayerRefinementLayerType.  # noqa: E501
         :rtype: str
@@ -95,7 +96,7 @@ class OneOfSimmetrixBoundaryLayerRefinementLayerType(object):
     def type(self, type):
         """Sets the type of this OneOfSimmetrixBoundaryLayerRefinementLayerType.
 
-        Schema name: GeometricGrowth  # noqa: E501
+        Schema name: FirstLayerGrowth  # noqa: E501
 
         :param type: The type of this OneOfSimmetrixBoundaryLayerRefinementLayerType.  # noqa: E501
         :type: str

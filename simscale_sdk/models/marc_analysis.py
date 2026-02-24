@@ -32,6 +32,7 @@ class MarcAnalysis(object):
     """
     openapi_types = {
         'type': 'str',
+        'thermal_effects': 'bool',
         'connection_groups': 'list[MarcConnectionGroup]',
         'connectors': 'list[RemotePointConnectionMarc]',
         'element_technology': 'MarcElementTechnology',
@@ -45,6 +46,7 @@ class MarcAnalysis(object):
 
     attribute_map = {
         'type': 'type',
+        'thermal_effects': 'thermalEffects',
         'connection_groups': 'connectionGroups',
         'connectors': 'connectors',
         'element_technology': 'elementTechnology',
@@ -56,13 +58,14 @@ class MarcAnalysis(object):
         'result_control': 'resultControl'
     }
 
-    def __init__(self, type='MARC_ANALYSIS', connection_groups=None, connectors=None, element_technology=None, materials=None, boundary_conditions=None, numerics=None, load_steps=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='MARC_ANALYSIS', thermal_effects=None, connection_groups=None, connectors=None, element_technology=None, materials=None, boundary_conditions=None, numerics=None, load_steps=None, simulation_control=None, result_control=None, local_vars_configuration=None):  # noqa: E501
         """MarcAnalysis - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
         self.local_vars_configuration = local_vars_configuration
 
         self._type = None
+        self._thermal_effects = None
         self._connection_groups = None
         self._connectors = None
         self._element_technology = None
@@ -75,6 +78,8 @@ class MarcAnalysis(object):
         self.discriminator = None
 
         self.type = type
+        if thermal_effects is not None:
+            self.thermal_effects = thermal_effects
         if connection_groups is not None:
             self.connection_groups = connection_groups
         if connectors is not None:
@@ -118,6 +123,29 @@ class MarcAnalysis(object):
             raise ValueError("Invalid value for `type`, must not be `None`")  # noqa: E501
 
         self._type = type
+
+    @property
+    def thermal_effects(self):
+        """Gets the thermal_effects of this MarcAnalysis.  # noqa: E501
+
+        <p>Choose whether <b>thermal effects</b> should be included in the analysis, such as <b>heat conduction</b>, <b>thermal loads</b>, <b>temperature fields</b>, <b>thermal expansion</b>, and <b>temperature-dependent material properties</b>. When thermal effects are disabled, the analysis is purely mechanical and assumes constant temperature.</p>  # noqa: E501
+
+        :return: The thermal_effects of this MarcAnalysis.  # noqa: E501
+        :rtype: bool
+        """
+        return self._thermal_effects
+
+    @thermal_effects.setter
+    def thermal_effects(self, thermal_effects):
+        """Sets the thermal_effects of this MarcAnalysis.
+
+        <p>Choose whether <b>thermal effects</b> should be included in the analysis, such as <b>heat conduction</b>, <b>thermal loads</b>, <b>temperature fields</b>, <b>thermal expansion</b>, and <b>temperature-dependent material properties</b>. When thermal effects are disabled, the analysis is purely mechanical and assumes constant temperature.</p>  # noqa: E501
+
+        :param thermal_effects: The thermal_effects of this MarcAnalysis.  # noqa: E501
+        :type: bool
+        """
+
+        self._thermal_effects = thermal_effects
 
     @property
     def connection_groups(self):

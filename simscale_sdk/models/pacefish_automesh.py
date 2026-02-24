@@ -33,6 +33,7 @@ class PacefishAutomesh(object):
     openapi_types = {
         'type': 'str',
         'new_fineness': 'OneOfPacefishAutomeshNewFineness',
+        'automatic_gap_closing': 'OneOfPacefishAutomeshAutomaticGapClosing',
         'progressive_refinement': 'ProgressiveRefinement',
         'reference_length_computation': 'OneOfPacefishAutomeshReferenceLengthComputation',
         'reynolds_scaling_type': 'OneOfPacefishAutomeshReynoldsScalingType',
@@ -43,6 +44,7 @@ class PacefishAutomesh(object):
     attribute_map = {
         'type': 'type',
         'new_fineness': 'newFineness',
+        'automatic_gap_closing': 'automaticGapClosing',
         'progressive_refinement': 'progressiveRefinement',
         'reference_length_computation': 'referenceLengthComputation',
         'reynolds_scaling_type': 'reynoldsScalingType',
@@ -50,7 +52,7 @@ class PacefishAutomesh(object):
         'refinements': 'refinements'
     }
 
-    def __init__(self, type='PACEFISH_AUTOMESH', new_fineness=None, progressive_refinement=None, reference_length_computation=None, reynolds_scaling_type=None, primary_topology=None, refinements=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PACEFISH_AUTOMESH', new_fineness=None, automatic_gap_closing=None, progressive_refinement=None, reference_length_computation=None, reynolds_scaling_type=None, primary_topology=None, refinements=None, local_vars_configuration=None):  # noqa: E501
         """PacefishAutomesh - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class PacefishAutomesh(object):
 
         self._type = None
         self._new_fineness = None
+        self._automatic_gap_closing = None
         self._progressive_refinement = None
         self._reference_length_computation = None
         self._reynolds_scaling_type = None
@@ -68,6 +71,8 @@ class PacefishAutomesh(object):
         self.type = type
         if new_fineness is not None:
             self.new_fineness = new_fineness
+        if automatic_gap_closing is not None:
+            self.automatic_gap_closing = automatic_gap_closing
         if progressive_refinement is not None:
             self.progressive_refinement = progressive_refinement
         if reference_length_computation is not None:
@@ -124,6 +129,27 @@ class PacefishAutomesh(object):
         """
 
         self._new_fineness = new_fineness
+
+    @property
+    def automatic_gap_closing(self):
+        """Gets the automatic_gap_closing of this PacefishAutomesh.  # noqa: E501
+
+
+        :return: The automatic_gap_closing of this PacefishAutomesh.  # noqa: E501
+        :rtype: OneOfPacefishAutomeshAutomaticGapClosing
+        """
+        return self._automatic_gap_closing
+
+    @automatic_gap_closing.setter
+    def automatic_gap_closing(self, automatic_gap_closing):
+        """Sets the automatic_gap_closing of this PacefishAutomesh.
+
+
+        :param automatic_gap_closing: The automatic_gap_closing of this PacefishAutomesh.  # noqa: E501
+        :type: OneOfPacefishAutomeshAutomaticGapClosing
+        """
+
+        self._automatic_gap_closing = automatic_gap_closing
 
     @property
     def progressive_refinement(self):

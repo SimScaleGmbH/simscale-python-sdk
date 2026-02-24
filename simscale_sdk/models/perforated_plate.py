@@ -35,6 +35,7 @@ class PerforatedPlate(object):
         'name': 'str',
         'plate_data': 'PlateData',
         'darcy_forchheimer_type': 'RectifyingDarcyForchheimer',
+        'porous_media_heat_transfer': 'OneOfPerforatedPlatePorousMediaHeatTransfer',
         'topological_reference': 'TopologicalReference',
         'geometry_primitive_uuids': 'list[str]'
     }
@@ -44,11 +45,12 @@ class PerforatedPlate(object):
         'name': 'name',
         'plate_data': 'plateData',
         'darcy_forchheimer_type': 'darcyForchheimerType',
+        'porous_media_heat_transfer': 'porousMediaHeatTransfer',
         'topological_reference': 'topologicalReference',
         'geometry_primitive_uuids': 'geometryPrimitiveUuids'
     }
 
-    def __init__(self, type='PERFORATED_PLATE', name=None, plate_data=None, darcy_forchheimer_type=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='PERFORATED_PLATE', name=None, plate_data=None, darcy_forchheimer_type=None, porous_media_heat_transfer=None, topological_reference=None, geometry_primitive_uuids=None, local_vars_configuration=None):  # noqa: E501
         """PerforatedPlate - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -58,6 +60,7 @@ class PerforatedPlate(object):
         self._name = None
         self._plate_data = None
         self._darcy_forchheimer_type = None
+        self._porous_media_heat_transfer = None
         self._topological_reference = None
         self._geometry_primitive_uuids = None
         self.discriminator = None
@@ -69,6 +72,8 @@ class PerforatedPlate(object):
             self.plate_data = plate_data
         if darcy_forchheimer_type is not None:
             self.darcy_forchheimer_type = darcy_forchheimer_type
+        if porous_media_heat_transfer is not None:
+            self.porous_media_heat_transfer = porous_media_heat_transfer
         if topological_reference is not None:
             self.topological_reference = topological_reference
         if geometry_primitive_uuids is not None:
@@ -161,6 +166,27 @@ class PerforatedPlate(object):
         """
 
         self._darcy_forchheimer_type = darcy_forchheimer_type
+
+    @property
+    def porous_media_heat_transfer(self):
+        """Gets the porous_media_heat_transfer of this PerforatedPlate.  # noqa: E501
+
+
+        :return: The porous_media_heat_transfer of this PerforatedPlate.  # noqa: E501
+        :rtype: OneOfPerforatedPlatePorousMediaHeatTransfer
+        """
+        return self._porous_media_heat_transfer
+
+    @porous_media_heat_transfer.setter
+    def porous_media_heat_transfer(self, porous_media_heat_transfer):
+        """Sets the porous_media_heat_transfer of this PerforatedPlate.
+
+
+        :param porous_media_heat_transfer: The porous_media_heat_transfer of this PerforatedPlate.  # noqa: E501
+        :type: OneOfPerforatedPlatePorousMediaHeatTransfer
+        """
+
+        self._porous_media_heat_transfer = porous_media_heat_transfer
 
     @property
     def topological_reference(self):
