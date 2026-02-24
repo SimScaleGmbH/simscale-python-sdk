@@ -2249,6 +2249,14 @@ simscale\_sdk.models.dimensional\_function\_electric\_current module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.dimensional\_function\_electric\_field\_strength module
+----------------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.dimensional_function_electric_field_strength
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.dimensional\_function\_electric\_potential module
 ----------------------------------------------------------------------
 
@@ -3193,6 +3201,14 @@ simscale\_sdk.models.e\_const\_thermo module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.effective\_conductivity\_heat\_transfer module
+-------------------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.effective_conductivity_heat_transfer
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.eigen\_mode\_verification module
 -----------------------------------------------------
 
@@ -3881,6 +3897,14 @@ simscale\_sdk.models.filters module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.first\_layer\_growth module
+------------------------------------------------
+
+.. automodule:: simscale_sdk.models.first_layer_growth
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.first\_mode module
 ---------------------------------------
 
@@ -4421,6 +4445,14 @@ simscale\_sdk.models.fluid\_numerics module
 -------------------------------------------
 
 .. automodule:: simscale_sdk.models.fluid_numerics
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.fluid\_only\_heat\_transfer module
+-------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.fluid_only_heat_transfer
    :members:
    :show-inheritance:
    :undoc-members:
@@ -5833,6 +5865,14 @@ simscale\_sdk.models.isotropic\_density\_method module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.isotropic\_dielectric\_strength module
+-----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.isotropic_dielectric_strength
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.isotropic\_directional\_dependency module
 --------------------------------------------------------------
 
@@ -6089,6 +6129,14 @@ simscale\_sdk.models.local\_cartesian\_box module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.local\_element\_size\_cf\_mesh module
+----------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.local_element_size_cf_mesh
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.local\_element\_size\_ebm module
 -----------------------------------------------------
 
@@ -6189,6 +6237,14 @@ simscale\_sdk.models.magnetostatics module
 ------------------------------------------
 
 .. automodule:: simscale_sdk.models.magnetostatics
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.manual\_cf\_mesh\_sizing module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.manual_cf_mesh_sizing
    :members:
    :show-inheritance:
    :undoc-members:
@@ -7009,6 +7065,14 @@ simscale\_sdk.models.min\_max\_fields\_calculation\_result\_control\_item module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.minimum\_gap\_size module
+----------------------------------------------
+
+.. automodule:: simscale_sdk.models.minimum_gap_size
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.mixed\_timestep\_calculation\_type module
 --------------------------------------------------------------
 
@@ -7341,6 +7405,14 @@ simscale\_sdk.models.no\_dielectric\_losses module
 --------------------------------------------------
 
 .. automodule:: simscale_sdk.models.no_dielectric_losses
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.no\_dielectric\_strength module
+----------------------------------------------------
+
+.. automodule:: simscale_sdk.models.no_dielectric_strength
    :members:
    :show-inheritance:
    :undoc-members:
@@ -8529,6 +8601,14 @@ simscale\_sdk.models.region\_of\_interest module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.region\_refinement\_cf\_mesh module
+--------------------------------------------------------
+
+.. automodule:: simscale_sdk.models.region_refinement_cf_mesh
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.region\_refinement\_ebm module
 ---------------------------------------------------
 
@@ -9413,6 +9493,14 @@ simscale\_sdk.models.slip\_vbc module
 -------------------------------------
 
 .. automodule:: simscale_sdk.models.slip_vbc
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
+simscale\_sdk.models.smallest\_cell module
+------------------------------------------
+
+.. automodule:: simscale_sdk.models.smallest_cell
    :members:
    :show-inheritance:
    :undoc-members:
