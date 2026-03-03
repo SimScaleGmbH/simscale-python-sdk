@@ -8185,6 +8185,14 @@ simscale\_sdk.models.point\_mass\_bc module
    :show-inheritance:
    :undoc-members:
 
+simscale\_sdk.models.polygrid\_meshing module
+---------------------------------------------
+
+.. automodule:: simscale_sdk.models.polygrid_meshing
+   :members:
+   :show-inheritance:
+   :undoc-members:
+
 simscale\_sdk.models.polynomial\_function module
 ------------------------------------------------
 

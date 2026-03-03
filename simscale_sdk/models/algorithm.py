@@ -32,8 +32,8 @@ class Algorithm(object):
     """
     openapi_types = {
         'type': 'str',
-        'sizing': 'OneOfHexDominantSnappySizing',
-        'refinements': 'list[OneOfHexDominantSnappyRefinements]',
+        'sizing': 'OneOfPolygridMeshingSizing',
+        'refinements': 'list[OneOfPolygridMeshingRefinements]',
         'cell_zones': 'list[SimmetrixCellZones]',
         'automatic_layer_settings': 'OneOfSimmetrixMeshingFluidAutomaticLayerSettings',
         'physics_based_meshing': 'bool',
@@ -42,7 +42,8 @@ class Algorithm(object):
         'num_of_processors': 'int',
         'max_meshing_run_time': 'DimensionalTime',
         'advanced_simmetrix_settings': 'AdvancedSimmetrixEmSettings',
-        'meshing_mode': 'str'
+        'meshing_mode': 'str',
+        'number_of_buffer_cells': 'float'
     }
 
     attribute_map = {
@@ -57,17 +58,19 @@ class Algorithm(object):
         'num_of_processors': 'numOfProcessors',
         'max_meshing_run_time': 'maxMeshingRunTime',
         'advanced_simmetrix_settings': 'advancedSimmetrixSettings',
-        'meshing_mode': 'meshingMode'
+        'meshing_mode': 'meshingMode',
+        'number_of_buffer_cells': 'numberOfBufferCells'
     }
 
     discriminator_value_class_map = {
         'SIMMETRIX_MESHING_FLUID_V16': 'SimmetrixMeshingFluid',
         'SIMMETRIX_MESHING_SOLID': 'SimmetrixMeshingSolid',
         'SIMMETRIX_MESHING_ELECTROMAGNETICS': 'SimmetrixMeshingElectromagnetics',
-        'HEX_DOMINANT_SNAPPY_V5': 'HexDominantSnappy'
+        'HEX_DOMINANT_SNAPPY_V5': 'HexDominantSnappy',
+        'POLYGRID_MESHING': 'PolygridMeshing'
     }
 
-    def __init__(self, type='HEX_DOMINANT_SNAPPY_V5', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, automatic_sweep_parameters=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, meshing_mode=None, local_vars_configuration=None):  # noqa: E501
+    def __init__(self, type='POLYGRID_MESHING', sizing=None, refinements=None, cell_zones=None, automatic_layer_settings=None, physics_based_meshing=None, hex_core=None, automatic_sweep_parameters=None, num_of_processors=None, max_meshing_run_time=None, advanced_simmetrix_settings=None, meshing_mode=None, number_of_buffer_cells=None, local_vars_configuration=None):  # noqa: E501
         """Algorithm - a model defined in OpenAPI"""  # noqa: E501
         if local_vars_configuration is None:
             local_vars_configuration = Configuration()
@@ -85,6 +88,7 @@ class Algorithm(object):
         self._max_meshing_run_time = None
         self._advanced_simmetrix_settings = None
         self._meshing_mode = None
+        self._number_of_buffer_cells = None
         self.discriminator = 'type'
 
         self.type = type
@@ -110,12 +114,14 @@ class Algorithm(object):
             self.advanced_simmetrix_settings = advanced_simmetrix_settings
         if meshing_mode is not None:
             self.meshing_mode = meshing_mode
+        if number_of_buffer_cells is not None:
+            self.number_of_buffer_cells = number_of_buffer_cells
 
     @property
     def type(self):
         """Gets the type of this Algorithm.  # noqa: E501
 
-        Schema name: HexDominantSnappy  # noqa: E501
+        Schema name: PolygridMeshing  # noqa: E501
 
         :return: The type of this Algorithm.  # noqa: E501
         :rtype: str
@@ -126,7 +132,7 @@ class Algorithm(object):
     def type(self, type):
         """Sets the type of this Algorithm.
 
-        Schema name: HexDominantSnappy  # noqa: E501
+        Schema name: PolygridMeshing  # noqa: E501
 
         :param type: The type of this Algorithm.  # noqa: E501
         :type: str
@@ -142,7 +148,7 @@ class Algorithm(object):
 
 
         :return: The sizing of this Algorithm.  # noqa: E501
-        :rtype: OneOfHexDominantSnappySizing
+        :rtype: OneOfPolygridMeshingSizing
         """
         return self._sizing
 
@@ -152,7 +158,7 @@ class Algorithm(object):
 
 
         :param sizing: The sizing of this Algorithm.  # noqa: E501
-        :type: OneOfHexDominantSnappySizing
+        :type: OneOfPolygridMeshingSizing
         """
 
         self._sizing = sizing
@@ -163,7 +169,7 @@ class Algorithm(object):
 
 
         :return: The refinements of this Algorithm.  # noqa: E501
-        :rtype: list[OneOfHexDominantSnappyRefinements]
+        :rtype: list[OneOfPolygridMeshingRefinements]
         """
         return self._refinements
 
@@ -173,7 +179,7 @@ class Algorithm(object):
 
 
         :param refinements: The refinements of this Algorithm.  # noqa: E501
-        :type: list[OneOfHexDominantSnappyRefinements]
+        :type: list[OneOfPolygridMeshingRefinements]
         """
 
         self._refinements = refinements
@@ -307,7 +313,7 @@ class Algorithm(object):
         :param num_of_processors: The num_of_processors of this Algorithm.  # noqa: E501
         :type: int
         """
-        allowed_values = [-1, 4, 8, 16, 32, 48, 64, 96]  # noqa: E501
+        allowed_values = [-1, 4, 8, 16, 32, 64, 96]  # noqa: E501
         if self.local_vars_configuration.client_side_validation and num_of_processors not in allowed_values:  # noqa: E501
             raise ValueError(
                 "Invalid value for `num_of_processors` ({0}), must be one of {1}"  # noqa: E501
@@ -386,6 +392,35 @@ class Algorithm(object):
             )
 
         self._meshing_mode = meshing_mode
+
+    @property
+    def number_of_buffer_cells(self):
+        """Gets the number_of_buffer_cells of this Algorithm.  # noqa: E501
+
+        Target number of cells for every cell size level. Higher number of buffer cells ensure smoother cell size transitions, which results in better accuracy but bigger computation costs. On the other hand, lower number of buffer cells will result in smaller computation costs but worse accuracy. <img src=\"/spec/resources/help/imgs/buffer_cells.png\" class=\"helpPopupImage\"/>  # noqa: E501
+
+        :return: The number_of_buffer_cells of this Algorithm.  # noqa: E501
+        :rtype: float
+        """
+        return self._number_of_buffer_cells
+
+    @number_of_buffer_cells.setter
+    def number_of_buffer_cells(self, number_of_buffer_cells):
+        """Sets the number_of_buffer_cells of this Algorithm.
+
+        Target number of cells for every cell size level. Higher number of buffer cells ensure smoother cell size transitions, which results in better accuracy but bigger computation costs. On the other hand, lower number of buffer cells will result in smaller computation costs but worse accuracy. <img src=\"/spec/resources/help/imgs/buffer_cells.png\" class=\"helpPopupImage\"/>  # noqa: E501
+
+        :param number_of_buffer_cells: The number_of_buffer_cells of this Algorithm.  # noqa: E501
+        :type: float
+        """
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_buffer_cells is not None and number_of_buffer_cells > 10):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_buffer_cells`, must be a value less than or equal to `10`")  # noqa: E501
+        if (self.local_vars_configuration.client_side_validation and
+                number_of_buffer_cells is not None and number_of_buffer_cells < 0):  # noqa: E501
+            raise ValueError("Invalid value for `number_of_buffer_cells`, must be a value greater than or equal to `0`")  # noqa: E501
+
+        self._number_of_buffer_cells = number_of_buffer_cells
 
     def get_real_child_model(self, data):
         """Returns the real base class specified by the discriminator"""
